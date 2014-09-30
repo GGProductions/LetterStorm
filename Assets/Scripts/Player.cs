@@ -32,9 +32,11 @@ public class Player : MonoBehaviour {
     private int numberOfTimesToBlink = 10;
     private int blinkCount = 0;
 
+
 	// Use this for initialization
 	void Start () {
-        
+		//	transform.rotation = new Vector3(90,0,0);
+
 	}
 	
 	// Update is called once per frame
@@ -44,20 +46,29 @@ public class Player : MonoBehaviour {
         {
             // Amount to move
             float amtToMove = Input.GetAxis("Horizontal") * PlayerSpeed * Time.deltaTime;
+			float amtTomoveForward = Input.GetAxis("Vertical") *  PlayerSpeed * Time.deltaTime ;
+
 
             // Move the player
-            transform.Translate(Vector3.right * amtToMove);
+			transform.Translate(Vector3.right * amtToMove,Space.World);
+			transform.Translate(Vector3.up * amtTomoveForward);
 
-            // Screen Wrap 
-            if (transform.position.x <= -7.5f)
-                transform.position = new Vector3(7.4f, transform.position.y, transform.position.z);
-            else if (transform.position.x >= 7.5f)
-                transform.position = new Vector3(-7.4f, transform.position.y, transform.position.z);
+            // left and right player movement limitation
+            if (transform.position.x <= -6f)
+                transform.position = new Vector3(-6f, transform.position.y, transform.position.z);
+            else if (transform.position.x >= 6)
+                transform.position = new Vector3(6f, transform.position.y, transform.position.z);
+
+			// up and down player movement limitation
+			if (transform.position.z >5f)
+				transform.position = new Vector3(gameObject.transform.position.x,0,5f);
+			else if (transform.position.z <-5f)
+				transform.position = new Vector3(gameObject.transform.position.x,0,-5f);
 
             if (Input.GetKeyDown("space"))
             {
                 // Fire projectile
-                Vector3 position = new Vector3(transform.position.x, transform.position.y + ProjectileOffset);
+				Vector3 position = new Vector3(transform.position.x, transform.position.y ,transform.position.z + ProjectileOffset);
                 Instantiate(ProjectilePrefab, position, Quaternion.identity);
             }
         }
@@ -88,18 +99,18 @@ public class Player : MonoBehaviour {
         state = State.Explosion;
         Instantiate(ExplosionPrefab, transform.position, Quaternion.identity);
         gameObject.renderer.enabled = false;
-        transform.position = new Vector3(0f, -6.8f, transform.position.z);
+		transform.position = new Vector3(0f,  transform.position.y ,-6.8f);
         yield return new WaitForSeconds(shipInvisibleTime);
 
         if (Player.Lives > 0)
         {
             gameObject.renderer.enabled = true;
 
-            while (transform.position.y < -4.7f)
+            while (transform.position.z < -4f)
             {
                 // Move the ship up
                 float amtToMove = shipMoveOnToScreenSpeed * Time.deltaTime;
-                transform.position = new Vector3(0f, transform.position.y + amtToMove, transform.position.z);
+				transform.position = new Vector3(0f,transform.position.y , transform.position.z+ amtToMove);
 
                 yield return 0;
             }

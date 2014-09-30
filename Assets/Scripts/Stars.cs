@@ -18,11 +18,11 @@ public class Stars : MonoBehaviour
     void Update()
     {
         float amtToMove = Speed * Time.deltaTime;
-        transform.Translate(Vector3.down * amtToMove, Space.World);
+        transform.Translate(Vector3.back * amtToMove, Space.World);
 
-        if (transform.position.y < -12.3)
+        if (transform.position.z < -12.3)
         {
-            transform.position = new Vector3(transform.position.x, 12.3f, transform.position.z);
+            transform.position = new Vector3(transform.position.x,  transform.position.y,  12);
         }
     }
     #endregion
