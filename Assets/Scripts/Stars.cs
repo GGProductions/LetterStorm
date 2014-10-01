@@ -22,7 +22,7 @@ public class Stars : MonoBehaviour
 
         if (transform.position.z < -12.3)
         {
-            transform.position = new Vector3(transform.position.x,  transform.position.y,  12);
+            transform.position = new Vector3(transform.position.x,  transform.position.y,  14.645f);
         }
     }
     #endregion
