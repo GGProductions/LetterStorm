@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: 1a2962083f4990c4fb90b85bab1e34b6
+guid: a4f2603c94a2e4af7a480741634dec49
 TextureImporter:
   fileIDToRecycleName:
-    21300000: SpaceShooter_Lose
+    21300000: you_win
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

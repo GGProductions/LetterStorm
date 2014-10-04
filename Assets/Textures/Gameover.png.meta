@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: adcf4f7b85728184896192fdc33b6aac
+guid: fc8c23d74bb5646b39515a2e2418eae5
 TextureImporter:
   fileIDToRecycleName:
-    21300000: SpaceShooter_Win
+    21300000: Gameover
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
