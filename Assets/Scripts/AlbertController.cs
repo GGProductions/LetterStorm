@@ -33,7 +33,7 @@ public class AlbertController : MonoBehaviour {
 		animation["walking"].layer = 0;
 		animation["falling"].layer = 0;
 	}
-    private GameObject poof;
+	private GameObject poof;
 	void Update() {
 
 		if (Input.GetKeyDown("space"))
@@ -44,8 +44,8 @@ public class AlbertController : MonoBehaviour {
 			//Instantiate(ProjectilePrefab, position, myAmmoSpawn.rotation);
 			poof =Instantiate(ProjectilePrefab, position, this.transform.rotation) as GameObject;
 
-          //  poof = Instantiate(Projectile,Spawn.position,Spawn.rotation);
-            poof.rigidbody.AddForce( transform.forward * 1000.0f);
+		  //  poof = Instantiate(Projectile,Spawn.position,Spawn.rotation);
+			poof.rigidbody.AddForce( transform.forward * 1000.0f);
 		}
 
 
@@ -70,8 +70,9 @@ public class AlbertController : MonoBehaviour {
 		}
 		else
 		{
-			animation.CrossFade("idleing");
-			mytransform.Translate(Vector3.back * 0.018f);
+           animation.CrossFade("walking");
+			//animation.CrossFade("idleing");
+			//mytransform.Translate(Vector3.back * 0.018f);
 
 		}
 
