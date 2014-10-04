@@ -16,14 +16,19 @@ namespace GGProductions.LetterStorm.Utilities
         {
             PlayerData loadedData = null;
 
+			// If the save file exists...
             //if (File.Exists("C:/Users/David/AppData/LocalLow/Unity" + "/playerInfo.dat"))
             if (File.Exists(Application.persistentDataPath + "/playerInfo.dat"))
             {
-                FileStream file = File.Open("C:/Users/David/AppData/LocalLow/Unity" + "/playerInfo.dat", FileMode.Open);
-                BinaryFormatter bf = new BinaryFormatter();
-
+				// Open up the save file for reading
+                //FileStream file = File.Open("C:/Users/David/AppData/LocalLow/Unity" + "/playerInfo.dat", FileMode.Open);
+				FileStream file = File.Open(Application.persistentDataPath + "/playerInfo.dat", FileMode.Open);
+				
+				// Create a binary formatter and use it to deserialize the PlayerData from the save file
+				BinaryFormatter bf = new BinaryFormatter();
                 loadedData = (PlayerData)bf.Deserialize(file);
 
+				// Close stream to the release lock on file
                 file.Close();
             }
 
@@ -41,7 +46,7 @@ namespace GGProductions.LetterStorm.Utilities
             FileStream file = File.Open(Application.persistentDataPath + "/playerInfo.dat", FileMode.Open);
             //FileStream file = File.Create("C:/Users/David/AppData/LocalLow/Unity" + "/playerInfo.dat");
 
-            // Create a binary formatter and use it to serialize this object to the save file
+            // Create a binary formatter and use it to serialize the PlayerData to the save file
             BinaryFormatter bf = new BinaryFormatter();
             bf.Serialize(file, dataToSave);
 
