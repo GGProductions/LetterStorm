@@ -70,8 +70,9 @@ public class AlbertController : MonoBehaviour {
 		}
 		else
 		{
-			animation.CrossFade("idleing");
-			mytransform.Translate(Vector3.back * 0.018f);
+			animation.CrossFade("walking");
+			//animation.CrossFade("idleing");
+			//mytransform.Translate(Vector3.back * 0.018f);
 
 		}
 
