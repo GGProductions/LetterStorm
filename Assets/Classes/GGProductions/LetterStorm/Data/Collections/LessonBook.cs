@@ -34,8 +34,6 @@ namespace GGProductions.LetterStorm.Data.Collections
         public LessonBook()
         {
             _lessons = new LessonCollection();
-
-            CreateSampleLesson();
         }
         #endregion Constructors -----------------------------------------------
 
@@ -43,7 +41,7 @@ namespace GGProductions.LetterStorm.Data.Collections
         /// <summary>
         /// Create a sample Lesson with a few basic words and hints
         /// </summary>
-        private void CreateSampleLesson()
+        public void CreateSampleLesson()
         {
             // Create a sample Lesson with a few words and hints
             Lesson sampleLesson = new Lesson("Sample Lesson");
