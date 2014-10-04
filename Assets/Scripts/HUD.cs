@@ -15,7 +15,5 @@ public class HUD : MonoBehaviour {
         GUI.Label(new Rect(10, 30, 250, 20), "Lives: " + Player.Lives.ToString());
         GUI.Label(new Rect(10, 50, 250, 20), "Letters Collected: ");
         GUI.Label(new Rect(10, 70, 250, 20), "Letters Needed: ");
-
-        Lives.text = "Lives: " + Player.Lives;
     }
 }
