@@ -38,9 +38,9 @@ public class Enemy : MonoBehaviour
         transform.Rotate(new Vector3(-1, 0, 0) * rotationSpeed);
 
         float amtToMove = currentSpeed * Time.deltaTime;
-        transform.Translate(Vector3.down * amtToMove, Space.World);
+        transform.Translate(Vector3.back * amtToMove, Space.World);
 
-        if (transform.position.y <= -6.2f)
+        if (transform.position.z <= -6.2f)
         {
             SetPositionAndSpeed();
             Player.Missed++;
@@ -57,8 +57,8 @@ public class Enemy : MonoBehaviour
 
         currentSpeed = Random.Range(MinSpeed, MaxSpeed);
         x = Random.Range(-6f, 6f);
-        y = 7.0f;
-        z = 0.0f;
+        y = 0.0f;
+        z = 7.0f;
 
         transform.position = new Vector3(x, y, z);
         transform.localScale = new Vector3(currentScaleX, currentScaleY, currentScaleZ);

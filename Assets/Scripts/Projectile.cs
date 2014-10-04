@@ -20,9 +20,9 @@ public class Projectile : MonoBehaviour {
 	void Update () 
     {
         float amtToMove = ProjectileSpeed * Time.deltaTime;
-        myTransform.Translate(Vector3.up * amtToMove);
+        myTransform.Translate(Vector3.forward * amtToMove);
 
-        if (myTransform.position.y > 4.7f)
+        if (myTransform.position.z > 5.7f)
             Destroy(this.gameObject);
 	}
 
