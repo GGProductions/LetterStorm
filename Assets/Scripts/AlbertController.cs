@@ -40,22 +40,12 @@ public class AlbertController : MonoBehaviour {
 		{
 			// Fire projectile
 			Vector3 position = new Vector3(myAmmoSpawn.position.x, myAmmoSpawn.position.y, myAmmoSpawn.position.z);
-		   //Instantiate(ProjectilePrefab, position, Quaternion.identity);
-			//Instantiate(ProjectilePrefab, position, myAmmoSpawn.rotation);
 			poof =Instantiate(ProjectilePrefab, position, this.transform.rotation) as GameObject;
-
-		  //  poof = Instantiate(Projectile,Spawn.position,Spawn.rotation);
 			poof.rigidbody.AddForce( transform.forward * 1000.0f);
 		}
 
-
-
-
-
 		float leftRight = Input.GetAxis("Horizontal") * PlayerSpeed * Time.deltaTime;
 		float forwardBackward = Input.GetAxis("Vertical") *  PlayerSpeed * Time.deltaTime ;
-
-
 
 		if(leftRight != 0 || forwardBackward != 0){
 			animation.CrossFade("walking");
@@ -73,20 +63,9 @@ public class AlbertController : MonoBehaviour {
 			animation.CrossFade("walking");
 			//animation.CrossFade("idleing");
 			//mytransform.Translate(Vector3.back * 0.018f);
-
 		}
 
 
-
-		
-	
-
-
-
-
-
-
-		
 		if (mytransform.position.x <= -7f)
 			mytransform.position = new Vector3(-7f, transform.position.y, transform.position.z);
 		else if (mytransform.position.x >= 7)
@@ -99,10 +78,19 @@ public class AlbertController : MonoBehaviour {
 			mytransform.position = new Vector3(gameObject.transform.position.x,transform.position.y, -4.9f);
 
 
+	}
 
-	
-	
 
+	void OnTriggerEnter(Collider otherObj) {
+
+		Context.PlayerInventory.AddCollectedLetter(otherObj.name);
+
+
+
+		//if (otherObj.name == "A") {
+		//	Debug.Log("yes A");
+	//	}
+	//	Debug.Log("name is" + otherObj.name);
 
 	}
 	
