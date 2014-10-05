@@ -6,6 +6,9 @@ public class HUD : MonoBehaviour {
     #region Private Variables ---------------------------------------------
     // Private variables representing components of the HUD
     private GUIText LabelLives;
+    private int InventoryBoxWidth = (int)(Screen.width * .75);
+    private int InventoryBoxHeight = 30;
+    private int InventoryBoxBottomMargin = 5;
 
     // If game is paused or not paused
     private bool isPaused;
@@ -31,9 +34,9 @@ public class HUD : MonoBehaviour {
         //GUI.Label(new Rect(10, 70, 250, 20), "Letters Needed: ");
 
         GUILayout.Box("Lives: " + Context.PlayerLives.ToString());
-        GUILayout.Box("Letters Collected: ");
+        GUILayout.Box("Letters Collected: " + Context.PlayerInventory.TotalCollectedLetters);
         GUILayout.Box("Letters Needed: ");
-        //GUI.Box(new Rect(10, 10, 100, 100), "hi");
+        GUI.Box(new Rect(Screen.width / 2 - InventoryBoxWidth / 2, Screen.height - InventoryBoxHeight - InventoryBoxBottomMargin, InventoryBoxWidth, InventoryBoxHeight), Context.PlayerInventory.A.Count.ToString());
 
         
     }
@@ -60,9 +63,9 @@ public class HUD : MonoBehaviour {
                 isPaused = true;
             }
         }
-        else if (Input.GetKeyDown(KeyCode.Plus))
+        else if (Input.GetKeyDown(KeyCode.L))
         {
-            Context.Inventory.AddCollectedLetter("A");
+            Context.PlayerInventory.AddCollectedLetter("A");
         }
     }
 }

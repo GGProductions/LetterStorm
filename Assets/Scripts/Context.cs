@@ -9,7 +9,7 @@ public class Context : MonoBehaviour {
     public static int PlayerLives;
 
     // Player inventory
-    public static Inventory Inventory;
+    public static Inventory PlayerInventory;
 
     // Stores the alphabet for efficient coding
     public static char[] Alphabet;
@@ -20,7 +20,7 @@ public class Context : MonoBehaviour {
     void Start()
     {
         PlayerLives = 3;
-        Inventory = new Inventory();
+        PlayerInventory = new Inventory();
         Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
     }
 }
