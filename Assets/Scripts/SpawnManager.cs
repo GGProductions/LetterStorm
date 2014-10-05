@@ -8,11 +8,5 @@ public class SpawnManager : MonoBehaviour {
 	
 	}
 
-    IEnumerator EnemySpawn()
-    {
-        while()
-        {
-
-        }
-    }
+    
 }
