@@ -83,7 +83,7 @@ public class Player : MonoBehaviour {
 
 	void OnTriggerEnter(Collider otherObject)
 	{
-		if (otherObject.tag == "enemy" && state == State.Playing)
+		if ((otherObject.tag == "enemy") && state == State.Playing)
 		{
 			Player.Lives--;
 

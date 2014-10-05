@@ -7,12 +7,12 @@ public class Projectile : MonoBehaviour {
     public GameObject ExplosionPrefab;
 
     private Transform myTransform;
+    private string enemyType;
     private Enemy enemy;
 
 	// Use this for initialization
 	void Start () 
     {
-        enemy = (Enemy) GameObject.Find("Enemy").GetComponent("Enemy");
         myTransform = transform;
 	}
 	
@@ -28,6 +28,9 @@ public class Projectile : MonoBehaviour {
 
     void OnTriggerEnter(Collider otherObject)
     {
+        enemyType = otherObject.name;
+        Debug.Log(enemyType);
+        enemy = (Enemy)GameObject.Find(enemyType).GetComponent("Enemy");
         if (otherObject.tag == "enemy")
         {
             Instantiate(ExplosionPrefab, enemy.transform.position, enemy.transform.rotation);
