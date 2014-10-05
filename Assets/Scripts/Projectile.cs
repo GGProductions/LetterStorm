@@ -29,7 +29,6 @@ public class Projectile : MonoBehaviour {
     void OnTriggerEnter(Collider otherObject)
     {
         enemyType = otherObject.name;
-        Debug.Log(enemyType);
         enemy = (Enemy)GameObject.Find(enemyType).GetComponent("Enemy");
         if (otherObject.tag == "enemy")
         {
