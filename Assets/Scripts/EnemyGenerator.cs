@@ -33,6 +33,10 @@ public class EnemyGenerator : MonoBehaviour {
 				case State.SpawnEnemy:
 					SpawnEnemy();
 					break;
+                case State.Idle:
+                    Idle();
+                    break;
+
 			}
 
 			yield return 0;
@@ -84,6 +88,13 @@ public class EnemyGenerator : MonoBehaviour {
 		state = EnemyGenerator.State.Idle;
 	}
 
+	private void Idle() {
+        foreach (GameObject gob in spawnPoints) {
+                Debug.Log("child's name is  " +gob.GetComponentInChildren<Transform>().name);
+       
+        }
+	}
+
 	//make sure we have at least one enemy prefab to spawn
 	private bool CheckEnemyPrefabs()
 	{
@@ -126,6 +137,8 @@ public class EnemyGenerator : MonoBehaviour {
 
 		return gos.ToArray();
 	}
+
+
 }
 
  
