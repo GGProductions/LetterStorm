@@ -42,7 +42,8 @@ public class Enemy : MonoBehaviour
 
         if (transform.position.z <= -6.2f)
         {
-            SetPositionAndSpeed();
+            //SetPositionAndSpeed();
+            Destroy(this.gameObject);
             Player.Missed++;
         }
     }
@@ -60,7 +61,7 @@ public class Enemy : MonoBehaviour
         y = 0.0f;
         z = 7.0f;
 
-        transform.position = new Vector3(x, y, z);
+        //transform.position = new Vector3(x, y, z);
         transform.localScale = new Vector3(currentScaleX, currentScaleY, currentScaleZ);
     }
     #endregion

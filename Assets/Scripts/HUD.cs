@@ -140,5 +140,9 @@ public class HUD : MonoBehaviour {
         {
             Context.PlayerInventory.AddCollectedLetter("A");
         }
+        else if (Input.GetKeyDown(KeyCode.K))
+        {
+            Context.PlayerInventory.SubtractCollectedLetter("A");
+        }
     }
 }
