@@ -33,6 +33,9 @@ public class EnemyGenerator : MonoBehaviour {
 				case State.SpawnEnemy:
 					SpawnEnemy();
 					break;
+                case State.Idle:
+                    Idle();
+                    break;
 			}
 
 			yield return 0;
@@ -41,8 +44,6 @@ public class EnemyGenerator : MonoBehaviour {
 
 	private void Initialize()
 	{
-		Debug.Log("***We are in Initialize function***");
-
 		if (!CheckEnemyPrefabs())
 		{
 			return;
@@ -57,13 +58,11 @@ public class EnemyGenerator : MonoBehaviour {
 
 	private void Setup()
 	{
-		Debug.Log("***We are in Setup function***");
 		state = EnemyGenerator.State.SpawnEnemy;
 	}
 
 	private void SpawnEnemy()
 	{
-		Debug.Log("***SpawnEnemy***");
 		GameObject[] gos = AvailableSpawnPoints();
 
 		int enemyindex = 0;
@@ -83,6 +82,11 @@ public class EnemyGenerator : MonoBehaviour {
 		}
 		state = EnemyGenerator.State.Idle;
 	}
+
+    private void Idle()
+    {
+        state = EnemyGenerator.State.SpawnEnemy;
+    }
 
 	//make sure we have at least one enemy prefab to spawn
 	private bool CheckEnemyPrefabs()
@@ -119,7 +123,7 @@ public class EnemyGenerator : MonoBehaviour {
 		{
 			if (spawnPoints[i].transform.childCount == 0)
 			{
-				Debug.Log("***Spawn Point Available");
+				//Debug.Log("***Spawn Point Available");
 				gos.Add(spawnPoints[i]);
 			}
 		}
