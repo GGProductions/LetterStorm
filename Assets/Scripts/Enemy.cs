@@ -7,6 +7,9 @@ public class Enemy : MonoBehaviour
     public float MinSpeed;
     public float MaxSpeed;
 
+    //randomly generated number to decide which pathing algorithm to take
+    
+
     private float MinRotateSpeed = 60f;
     private float MaxRotateSpeed = 120f;
 
@@ -23,13 +26,18 @@ public class Enemy : MonoBehaviour
     #endregion
 
     #region Properties
+    
+    private int path;
+
 
     #endregion
 
     #region Functions
     void Start()
     {
-        SetPositionAndSpeed();
+        
+        SetScaleAndSpeed();
+        path = Random.Range(0, 4);
     }
 
     void Update()
@@ -38,17 +46,16 @@ public class Enemy : MonoBehaviour
         transform.Rotate(new Vector3(-1, 0, 0) * rotationSpeed);
 
         float amtToMove = currentSpeed * Time.deltaTime;
-        transform.Translate(Vector3.back * amtToMove, Space.World);
+        findPath(amtToMove);
 
         if (transform.position.z <= -6.2f)
         {
-            //SetPositionAndSpeed();
             Destroy(this.gameObject);
             Player.Missed++;
         }
     }
 
-    public void SetPositionAndSpeed()
+    public void SetScaleAndSpeed()
     {
         currentRotationSpeed = Random.Range(MinRotateSpeed, MaxRotateSpeed);
 
@@ -61,8 +68,26 @@ public class Enemy : MonoBehaviour
         y = 0.0f;
         z = 7.0f;
 
-        //transform.position = new Vector3(x, y, z);
         transform.localScale = new Vector3(currentScaleX, currentScaleY, currentScaleZ);
+        
     }
+    public void findPath(float atm)
+    {
+        switch (path)
+        {
+            case 0:
+                transform.Translate(Vector3.back * atm, Space.World);
+                break;
+            case 1:
+                transform.Translate(new Vector3(0.5f, 0f, -1f) * atm, Space.World);
+                break;
+            case 2:
+                transform.Translate(new Vector3(-0.5f, 0f, -1f) * atm, Space.World);
+                break;
+            case 3:
+                transform.Translate(new Vector3(0f, 0f, -2f) * atm, Space.World);
+                break;
+        }
+   } 
     #endregion
 }

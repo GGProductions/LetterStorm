@@ -3,7 +3,7 @@ using System.Collections;
 
 public class SmartEnemy : Enemy {
 
-	// Use this for initialization
+	/*// Use this for initialization
 	void Start () {
 	
 	}
@@ -11,5 +11,5 @@ public class SmartEnemy : Enemy {
 	// Update is called once per frame
 	void Update () {
 	
-	}
+	}*/
 }

@@ -71,8 +71,6 @@ public class EnemyGenerator : MonoBehaviour {
 
 			enemyindex = Random.Range(0, enemyPrefabs.Length);
 
-		   // GameObject go = Instantiate(enemyPrefabs[enemyindex],
-			 //                               gos[i].transform.position, Quaternion.identity) as GameObject;
 			GameObject go = Instantiate(enemyPrefabs[enemyindex],
 											gos[i].transform.position, Quaternion.Euler(270, 0, 0)) as GameObject;
 
