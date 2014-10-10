@@ -9,18 +9,21 @@ public class Enemy : MonoBehaviour
 
     //randomly generated number to decide which pathing algorithm to take
     
-
+    //Min/Max speed
     private float MinRotateSpeed = 60f;
     private float MaxRotateSpeed = 120f;
-
+    
+    //Min/Max scale
     private float MinScale = 0.8f;
     private float MaxScale = 2f;
 
+    //Current rotation speed/scale
     private float currentRotationSpeed;
     private float currentScaleX;
     private float currentScaleY;
     private float currentScaleZ;
 
+    //Current speed and direction
     private float currentSpeed;
     private float x, y, z;
     #endregion
