@@ -14,7 +14,9 @@ public class EnemyGenerator : MonoBehaviour {
 	public GameObject[] spawnPoints;        //array to hold references to all spawn points
 
 	public State state;                     //local variable that holds current state
-
+    
+    private int smartSpawns = 4;
+    private int dumbSpawns = 4;
 	void Awake()
 	{
 		state = EnemyGenerator.State.Initialize;
@@ -65,10 +67,18 @@ public class EnemyGenerator : MonoBehaviour {
 	{
 		GameObject[] gos = AvailableSpawnPoints();
 
-		int enemyindex = 0;
+        int enemyindex = Random.Range(0, spawnPoints.Length);
+
+        if (enemyindex == 1)
+        {
+            smartSpawn();
+        }
+        else
+        {
+            dumbSpawn();
+        }
 		for (int i = 0; i < gos.Length; i++)
 		{
-
 			enemyindex = Random.Range(0, enemyPrefabs.Length);
 
 			GameObject go = Instantiate(enemyPrefabs[enemyindex],
@@ -119,7 +129,7 @@ public class EnemyGenerator : MonoBehaviour {
 
 		for (int i = 0; i < spawnPoints.Length; i++)
 		{
-			if (spawnPoints[i].transform.childCount == 0)
+			if (spawnPoints[i].transform.childCount < 3)
 			{
 				//Debug.Log("***Spawn Point Available");
 				gos.Add(spawnPoints[i]);
@@ -128,6 +138,44 @@ public class EnemyGenerator : MonoBehaviour {
 
 		return gos.ToArray();
 	}
+
+    //spawning patterns for smart enemies
+    private void smartSpawn() 
+    {
+        int spawn = Random.Range(0, smartSpawns);
+        switch(spawn)
+        {
+            case 0:
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+        }
+    }
+
+    //spawning patterns for dumb enemies
+    private void dumbSpawn()
+    {
+        int spawn = Random.Range(0, dumbSpawns);
+        switch (spawn)
+        {
+            case 0:
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+        }
+    }
 }
 
  

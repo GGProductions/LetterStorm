@@ -15,7 +15,7 @@ public class DumbEnemy : Enemy {
 
     public override void findPath(float atm)
     {
-        switch (path)
+        switch (Path)
         {
             case 0:
                 transform.Translate(Vector3.back * atm, Space.World);
