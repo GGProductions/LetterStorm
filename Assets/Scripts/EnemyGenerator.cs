@@ -36,6 +36,7 @@ public class EnemyGenerator : MonoBehaviour {
                 case State.Idle:
                     Idle();
                     break;
+
 			}
 
 			yield return 0;
@@ -83,10 +84,12 @@ public class EnemyGenerator : MonoBehaviour {
 		state = EnemyGenerator.State.Idle;
 	}
 
+
     private void Idle()
     {
         state = EnemyGenerator.State.SpawnEnemy;
     }
+
 
 	//make sure we have at least one enemy prefab to spawn
 	private bool CheckEnemyPrefabs()
@@ -130,6 +133,8 @@ public class EnemyGenerator : MonoBehaviour {
 
 		return gos.ToArray();
 	}
+
+
 }
 
  
