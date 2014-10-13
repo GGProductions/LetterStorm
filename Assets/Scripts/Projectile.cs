@@ -51,7 +51,7 @@ public class Projectile : MonoBehaviour {
             Player.Score += 100;
 
             if (Player.Score >= 1000)
-                Application.LoadLevel(3);
+                Application.LoadLevel(4);
         }
     }
 }
