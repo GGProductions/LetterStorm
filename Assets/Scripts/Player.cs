@@ -131,7 +131,7 @@ public class Player : MonoBehaviour {
 			state = State.Playing;
 		}
 		else
-			Application.LoadLevel(2);
+			Application.LoadLevel(3);
 		
 	}
 }
