@@ -10,7 +10,8 @@ namespace GGProductions.LetterStorm.Utilities
     {
         #region Load State ----------------------------------------------------
         /// <summary>
-        /// Load all player data from persistent storage
+        /// Load all player data from persistent storage.  If not data has been 
+        /// saved, an empty PlayerData object is returned.
         /// </summary>
         public static PlayerData Load()
         {
@@ -30,6 +31,12 @@ namespace GGProductions.LetterStorm.Utilities
 
 				// Close stream to the release lock on file
                 file.Close();
+            }
+            // Else, if the save file could not be located (perhaps because 
+            // it has not yet been created), create an empty PlayerData object
+            else
+            {
+                loadedData = new PlayerData();
             }
 
             return loadedData;
