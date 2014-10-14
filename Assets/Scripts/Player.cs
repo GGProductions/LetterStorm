@@ -88,7 +88,7 @@ public class Player : MonoBehaviour {
 			Player.Lives--;
 
 			Enemy enemy = (Enemy)otherObject.gameObject.GetComponent("Enemy");
-			enemy.SetPositionAndSpeed();
+			enemy.SetScaleAndSpeed();
 
 			StartCoroutine(DestroyShip());
 		}
