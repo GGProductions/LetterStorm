@@ -18,7 +18,7 @@ public class EnemyGenerator : MonoBehaviour
 
     private int smartSpawns = 4;
     private int dumbSpawns = 4;
-    private bool spawning = false;
+    //private bool spawning = false;
 
     void Awake()
     {
@@ -38,7 +38,7 @@ public class EnemyGenerator : MonoBehaviour
                     Setup();
                     break;
                 case State.SpawnEnemy:
-                    StartCoroutine(SpawnEnemy());
+                    SpawnEnemy();
                     break;
                 case State.Idle:
                     Idle();
@@ -65,18 +65,18 @@ public class EnemyGenerator : MonoBehaviour
 
     private void Setup()
     {
-        if (!spawning)
+        /*if (!spawning)
         {
-            spawning = true;
+            spawning = true;*/
             state = EnemyGenerator.State.SpawnEnemy;
-        }
+       /* }
         else
         {
             state = EnemyGenerator.State.Idle;
-        }
+        }*/
     }
 
-    private IEnumerator SpawnEnemy()
+    private void SpawnEnemy()
     {
         /// <summary>
         /// The Enemy Spawn Manager makes the following decisions:
@@ -92,7 +92,6 @@ public class EnemyGenerator : MonoBehaviour
 
         for (int i = 0; i < spawnCount; i++)
         {
-            Debug.Log("spawn = " + spawn);
             int enemyindex = Random.Range(0, enemyPrefabs.Length);
 
             GameObject go = Instantiate(enemyPrefabs[enemyindex],
@@ -103,9 +102,7 @@ public class EnemyGenerator : MonoBehaviour
             spawn = (spawn + 1) % gos.Length;
 
         }
-        yield return new WaitForSeconds(3);
 
-        spawning = false;
         state = EnemyGenerator.State.Idle;
     }
 
@@ -149,11 +146,9 @@ public class EnemyGenerator : MonoBehaviour
         {
             if (spawnPoints[i].transform.childCount == 0)
             {
-                //Debug.Log("***Spawn Point Available");
                 gos.Add(spawnPoints[i]);
             }
 
-            Debug.Log("childcount =" + spawnPoints[i].transform.childCount);
         }
 
         return gos.ToArray();
@@ -161,7 +156,7 @@ public class EnemyGenerator : MonoBehaviour
 
     private int SpawnQuantity(int splen)
     {
-        return Random.Range(0, splen) + 1;
+        return Random.Range(0, splen);
     }
 
 }
