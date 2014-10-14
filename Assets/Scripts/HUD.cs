@@ -35,8 +35,8 @@ public class HUD : MonoBehaviour {
         GUILayout.Box("Lives: " + Context.PlayerLives.ToString());
         GUILayout.Box("Letters Collected: " + Context.PlayerInventory.TotalCollectedLetters);
         GUILayout.Box("Letters Needed: ");
-        
-        InventoryWindow();
+
+        DisplayInventoryWindow();
         
     }
 
@@ -44,7 +44,7 @@ public class HUD : MonoBehaviour {
     /// Method that updates HUD once every frame
     /// Displays game, player information, and player inventory
     /// </summary>
-    void InventoryWindow()
+    void DisplayInventoryWindow()
     {
 
         GUILayout.BeginArea(new Rect(
@@ -53,6 +53,7 @@ public class HUD : MonoBehaviour {
             InventoryItemBoxWidth * 31,                                                 // Width
             InventoryItemBoxHeight * 3));                                               // Height
 
+        #region Letter Type in Inventory --------------------------------------------
         GUILayout.BeginHorizontal();
         GUILayout.Button("A", GUILayout.Height(InventoryItemBoxHeight), GUILayout.Width(InventoryItemBoxWidth));
         GUILayout.Button("B", GUILayout.Height(InventoryItemBoxHeight), GUILayout.Width(InventoryItemBoxWidth));
@@ -81,7 +82,9 @@ public class HUD : MonoBehaviour {
         GUILayout.Button("Y", GUILayout.Height(InventoryItemBoxHeight), GUILayout.Width(InventoryItemBoxWidth));
         GUILayout.Button("Z", GUILayout.Height(InventoryItemBoxHeight), GUILayout.Width(InventoryItemBoxWidth));
         GUILayout.EndHorizontal();
+        #endregion Letter Type in Inventory -----------------------------------------
 
+        #region Letters' Count in Inventory -----------------------------------------
         GUILayout.BeginHorizontal();
         GUILayout.Button(Context.PlayerInventory.A.Count.ToString(), GUILayout.Height(InventoryItemBoxHeight), GUILayout.Width(InventoryItemBoxWidth));
         GUILayout.Button(Context.PlayerInventory.B.Count.ToString(), GUILayout.Height(InventoryItemBoxHeight), GUILayout.Width(InventoryItemBoxWidth));
@@ -110,6 +113,7 @@ public class HUD : MonoBehaviour {
         GUILayout.Button(Context.PlayerInventory.Y.Count.ToString(), GUILayout.Height(InventoryItemBoxHeight), GUILayout.Width(InventoryItemBoxWidth));
         GUILayout.Button(Context.PlayerInventory.Z.Count.ToString(), GUILayout.Height(InventoryItemBoxHeight), GUILayout.Width(InventoryItemBoxWidth));
         GUILayout.EndHorizontal();
+        #endregion Letters' Count in Inventory --------------------------------------
 
         GUILayout.EndArea();
     }
