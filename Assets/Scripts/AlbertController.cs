@@ -84,7 +84,9 @@ public class AlbertController : MonoBehaviour {
 	void OnTriggerEnter(Collider otherObj) {
 
 		Context.PlayerInventory.AddCollectedLetter(otherObj.name);
+		GameObject go = otherObj.gameObject;
 
+		Destroy(go);
 
 
 		//if (otherObj.name == "A") {
