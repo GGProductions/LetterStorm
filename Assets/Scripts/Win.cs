@@ -25,7 +25,7 @@ public class Win : MonoBehaviour
             Player.Score = 0;
             Player.Lives = 3;
             Player.Missed = 0;
-            Application.LoadLevel(1);
+            Application.LoadLevel(2);
         }
         
         if(GUI.Button(new Rect(130, Screen.height / 2 + 50, 75, 20), "Next Level"))
@@ -33,15 +33,15 @@ public class Win : MonoBehaviour
             Player.Score = 0;
             Player.Lives = 3;
             Player.Missed = 0;
-            Application.LoadLevel(0);
+            Application.LoadLevel(1);
         }
         
         if(GUI.Button(new Rect(130, Screen.height / 2 + 75, 75, 20), "Main Menu"))
         {
-            Application.LoadLevel(0);
             Player.Score = 0;
             Player.Lives = 3;
             Player.Missed = 0;
+			Application.LoadLevel(1);
         }
     }
 

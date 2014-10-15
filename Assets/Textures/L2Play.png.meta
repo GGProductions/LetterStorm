@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: 183d6600e87ba42bc91b273ff82bb97a
+guid: 83ba94ca2dc8c42ac891fea635aaab17
 TextureImporter:
   fileIDToRecycleName:
-    21300000: LetterStorm
+    21300000: L2Play
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -26,9 +26,9 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 1
     mipBias: -1
-    wrapMode: -1
+    wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
