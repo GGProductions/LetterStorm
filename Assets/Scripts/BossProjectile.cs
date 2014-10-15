@@ -7,6 +7,7 @@ public class BossProjectile : MonoBehaviour {
     public float projectileSpeed;
    // public GameObject boom2;
 
+    public GameObject explosion;
 
     void Start()
     {
@@ -23,5 +24,22 @@ public class BossProjectile : MonoBehaviour {
         if (transform.position.z > 6.4f || transform.position.z < -7f || transform.position.x < -10f || transform.position.x > 10f) { Destroy(this.gameObject); }
 
     }
+
+    void OnTriggerEnter(Collider otherObj)
+    {
+        if (otherObj.tag == "albertTag")
+            // Context.PlayerInventory.AddCollectedLetter(otherObj.name);
+            //GameObject go = otherObj.gameObject;
+        {
+            Instantiate(explosion, this.transform.position, this.transform.rotation);
+
+
+            Destroy(gameObject);
+        }
+
+
+
+    }
+
 
 }

@@ -64,7 +64,16 @@ public class AlbertController2 : MonoBehaviour {
 
         float leftRight = Input.GetAxis("Horizontal") * PlayerSpeed * Time.deltaTime;
         float forwardBackward = Input.GetAxis("Vertical") * PlayerSpeed * Time.deltaTime;
+        if (leftRight != 0 && forwardBackward != 0)
+        {
 
+            //slw speed
+            mytransform.Translate(Vector3.right * leftRight /2 , Space.World);
+            mytransform.Translate(Vector3.forward * forwardBackward);
+
+        }
+
+        else
         if (leftRight != 0 || forwardBackward != 0)
         {
             if (forwardBackward<0)
@@ -107,13 +116,11 @@ public class AlbertController2 : MonoBehaviour {
     {
 
         Context.PlayerInventory.AddCollectedLetter(otherObj.name);
+        GameObject go = otherObj.gameObject;
 
+        Destroy(go);
 
-
-        //if (otherObj.name == "A") {
-        //	Debug.Log("yes A");
-        //	}
-        //	Debug.Log("name is" + otherObj.name);
+   
 
     }
 

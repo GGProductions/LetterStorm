@@ -47,6 +47,17 @@ public class AlbertController : MonoBehaviour {
 		float leftRight = Input.GetAxis("Horizontal") * PlayerSpeed * Time.deltaTime;
 		float forwardBackward = Input.GetAxis("Vertical") *  PlayerSpeed * Time.deltaTime ;
 
+
+		if (leftRight != 0 && forwardBackward != 0)
+		{
+
+            //slw speed
+
+
+		}
+
+		else
+
 		if(leftRight != 0 || forwardBackward != 0){
 			animation.CrossFade("walking");
 			// Move the player
@@ -57,6 +68,10 @@ public class AlbertController : MonoBehaviour {
 			float tiltAroundz = Input.GetAxis("Horizontal") * tiltAngle;      
 			Quaternion target = Quaternion.Euler(0,tiltAroundz,0);
 			transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * smooth);
+
+
+		   
+
 		}
 		else
 		{

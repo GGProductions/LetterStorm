@@ -14,11 +14,16 @@ public class Vowel : MonoBehaviour {
 	void Update () {
 	
 	}
-	void OnTriggerEnter(Collider otherObj) { if (otherObj.tag == "projectileTag") {
-		Instantiate(theDrop, transform.position, transform.rotation);
+	void OnTriggerEnter(Collider otherObj) { 
+		
+		if (otherObj.tag == "projectileTag") {
+		GameObject go = Instantiate(theDrop, transform.position, Quaternion.Euler(270, 0, 0) ) as GameObject;
+		go.name = theDrop.name;
 
-
-		Destroy(gameObject);   } 
+		Destroy(otherObj.gameObject);
+		Destroy(gameObject);  
+	
+	} 
 	
 	}
 
