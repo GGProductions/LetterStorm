@@ -95,7 +95,7 @@ public class EnemyGenerator : MonoBehaviour
             int enemyindex = Random.Range(0, enemyPrefabs.Length);
 
             GameObject go = Instantiate(enemyPrefabs[enemyindex],
-                                            gos[spawn].transform.position, Quaternion.Euler(270, 0, 0)) as GameObject;
+                                            gos[spawn].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
 
             go.name = enemyPrefabs[enemyindex].name;
             go.transform.parent = gos[spawn].transform;
