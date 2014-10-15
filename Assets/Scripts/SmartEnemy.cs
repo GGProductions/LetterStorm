@@ -10,8 +10,9 @@ public class SmartEnemy : Enemy {
 	
 	// Update is called once per frame
 	void Update () {
-	
+     
 	}*/
+
     public override void findPath(float atm)
     {
         switch (Path)
@@ -26,8 +27,21 @@ public class SmartEnemy : Enemy {
                 transform.Translate(new Vector3(-0.5f, 0f, -1f) * atm, Space.World);
                 break;
             case 3:
-                transform.Translate(new Vector3(0f, 0f, -2f) * atm, Space.World);
+                SinMove(atm);
                 break;
         }
-    } 
+    }
+
+    private void SinMove(float atm)
+    {
+        if (transform.position.z <= 1.5f)
+        {
+            //sinusoidal patrol
+            transform.Translate(new Vector3(1f, 0, 0) * atm, Space.World);
+        }
+        else
+        {
+            transform.Translate(Vector3.back * atm, Space.World);
+        }
+    }
 }

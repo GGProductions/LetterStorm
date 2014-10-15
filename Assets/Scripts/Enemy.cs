@@ -42,8 +42,8 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        float rotationSpeed = currentRotationSpeed * Time.deltaTime;
-        transform.Rotate(new Vector3(-1, 0, 0) * rotationSpeed);
+        //float rotationSpeed = currentRotationSpeed * Time.deltaTime;
+        //transform.Rotate(new Vector3(-1, 0, 0) * rotationSpeed);
 
         float amtToMove = currentSpeed * Time.deltaTime;
         findPath(amtToMove);
@@ -57,7 +57,7 @@ public class Enemy : MonoBehaviour
 
     public void SetScaleAndSpeed()
     {
-        currentRotationSpeed = Random.Range(MinRotateSpeed, MaxRotateSpeed);
+        //currentRotationSpeed = Random.Range(MinRotateSpeed, MaxRotateSpeed);
 
         currentScaleX = Random.Range(MinScale, MaxScale);
         currentScaleY = Random.Range(MinScale, MaxScale);
