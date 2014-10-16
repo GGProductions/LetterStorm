@@ -133,8 +133,12 @@ public class EnemyGenerator : MonoBehaviour
 
     private void Boss()
     {
+       // GameObject go = Instantiate(BossPrefab,
+         //                                   spawnPoints[2].transform.position, Quaternion.Euler(180, 0, 180)) as GameObject;
+
         GameObject go = Instantiate(BossPrefab,
-                                            spawnPoints[2].transform.position, Quaternion.Euler(180, 0, 180)) as GameObject;
+                                           new Vector3(0,0,2), Quaternion.Euler(180, 0, 180)) as GameObject;
+
 
         bossSpawned = true;
         state = EnemyGenerator.State.Idle;
