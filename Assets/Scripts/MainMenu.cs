@@ -56,7 +56,7 @@ public class MainMenu : MonoBehaviour
 		{
 			if(GUI.Button(new Rect(240, Screen.height / 2 - 65, 75, 20), "Play"))
 			{
-				Application.LoadLevel(2);
+				Application.LoadLevel(1);
 			}
 			
 			if(GUI.Button(new Rect(240, Screen.height / 2 - 30, 75, 20), "L 2 Play"))
