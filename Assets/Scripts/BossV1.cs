@@ -7,9 +7,10 @@ public class BossV1 : MonoBehaviour {
 	private Vector3 planeLoc;
 	private Vector3 rotShift;
 	public Quaternion angleNeeded;
-	
+	private int hitcount;
 	// Use this for initialization
 	void Start () {
+		hitcount = 0;
 		rotShift = new Vector3(0, 90, 0);
 	}
 	
@@ -29,12 +30,26 @@ public class BossV1 : MonoBehaviour {
 		angleNeeded = Quaternion.LookRotation(planeLoc - transform.position);
 		
 		transform.rotation= Quaternion.Slerp(transform.rotation, angleNeeded, Time.deltaTime*damp);
-		
-		
-		
-		
+
+
+        if (hitcount > 5)
+        {
+            Destroy(gameObject);
+        }
 		
 	}
+
+	
+
+	void OnTriggerEnter(Collider otherObj) { if (otherObj.tag == "projectileTag") {
+		 hitcount++;
+		 Debug.Log(hitcount);
+	}
+	
+	}
+
+
+
 }
 
 

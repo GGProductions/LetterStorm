@@ -9,7 +9,7 @@ public class Boss1_move : MonoBehaviour {
 	private float tem;
 	// Use this for initializationz
 	void Start () {
-        here = new Vector3( 0f, -1.265074f, 3.1677f);
+		here = new Vector3( 0f, -1.265074f, 3.1677f);
 
 		gameObject.transform.position = here;
 
@@ -25,7 +25,7 @@ public class Boss1_move : MonoBehaviour {
 		//float factor=Mathf.Cos((Time.time))  ;
 		float factor = Mathf.Cos((tem));
 		transform.Translate(Vector3.right * (factor / 20), Space.World);
-		Debug.Log(factor);
+	//	Debug.Log(factor);
 
 		//transform.Translate(Vector3.back * 0.02f);
 		if (transform.position.z < 2.5f)
@@ -34,6 +34,8 @@ public class Boss1_move : MonoBehaviour {
 			transform.position = new Vector3(transform.position.x, transform.position.y, 2.5f);
 
 		}
+
+		
 
 	}
 	

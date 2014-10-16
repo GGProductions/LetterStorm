@@ -1,0 +1,329 @@
+fileFormatVersion: 2
+guid: 82d98ab6c61e6cf4b8c4b5a7cfdf8658
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Armature_002
+    100002: Bone
+    100004: Bone_003
+    100006: browl
+    100008: browr
+    100010: highteeth
+    100012: low
+    100014: lowteeth
+    100016: //RootNode
+    100018: O_MonsterMesh
+    100020: top
+    400000: Armature_002
+    400002: Bone
+    400004: Bone_003
+    400006: browl
+    400008: browr
+    400010: highteeth
+    400012: low
+    400014: lowteeth
+    400016: //RootNode
+    400018: O_MonsterMesh
+    400020: top
+    4300000: O_MonsterMesh
+    7400000: A_MonsterBob
+    7400002: E_monsterBob
+    7400004: I_BOB
+    7400006: O_bob
+    7400008: U_bob
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: O_MonsterMesh
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 3
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: A_MonsterBob
+      takeName: A_MonsterBob
+      firstFrame: -1
+      lastFrame: 40
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature_002
+        weight: 1
+      - path: Armature_002/Bone
+        weight: 1
+      - path: Armature_002/Bone/low
+        weight: 1
+      - path: Armature_002/Bone/low/lowteeth
+        weight: 1
+      - path: Armature_002/Bone/top
+        weight: 1
+      - path: Armature_002/Bone/top/Bone_003
+        weight: 1
+      - path: Armature_002/Bone/top/Bone_003/browl
+        weight: 1
+      - path: Armature_002/Bone/top/Bone_003/browr
+        weight: 1
+      - path: Armature_002/Bone/top/highteeth
+        weight: 1
+      - path: O_MonsterMesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: E_monsterBob
+      takeName: E_monsterBob
+      firstFrame: 0
+      lastFrame: 39
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature_002
+        weight: 1
+      - path: Armature_002/Bone
+        weight: 1
+      - path: Armature_002/Bone/low
+        weight: 1
+      - path: Armature_002/Bone/low/lowteeth
+        weight: 1
+      - path: Armature_002/Bone/top
+        weight: 1
+      - path: Armature_002/Bone/top/Bone_003
+        weight: 1
+      - path: Armature_002/Bone/top/Bone_003/browl
+        weight: 1
+      - path: Armature_002/Bone/top/Bone_003/browr
+        weight: 1
+      - path: Armature_002/Bone/top/highteeth
+        weight: 1
+      - path: O_MonsterMesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: I_BOB
+      takeName: I_BOB
+      firstFrame: -1
+      lastFrame: 39
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature_002
+        weight: 1
+      - path: Armature_002/Bone
+        weight: 1
+      - path: Armature_002/Bone/low
+        weight: 1
+      - path: Armature_002/Bone/low/lowteeth
+        weight: 1
+      - path: Armature_002/Bone/top
+        weight: 1
+      - path: Armature_002/Bone/top/Bone_003
+        weight: 1
+      - path: Armature_002/Bone/top/Bone_003/browl
+        weight: 1
+      - path: Armature_002/Bone/top/Bone_003/browr
+        weight: 1
+      - path: Armature_002/Bone/top/highteeth
+        weight: 1
+      - path: O_MonsterMesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: O_bob
+      takeName: O_bob
+      firstFrame: -1
+      lastFrame: 39
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature_002
+        weight: 1
+      - path: Armature_002/Bone
+        weight: 1
+      - path: Armature_002/Bone/low
+        weight: 1
+      - path: Armature_002/Bone/low/lowteeth
+        weight: 1
+      - path: Armature_002/Bone/top
+        weight: 1
+      - path: Armature_002/Bone/top/Bone_003
+        weight: 1
+      - path: Armature_002/Bone/top/Bone_003/browl
+        weight: 1
+      - path: Armature_002/Bone/top/Bone_003/browr
+        weight: 1
+      - path: Armature_002/Bone/top/highteeth
+        weight: 1
+      - path: O_MonsterMesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: U_bob
+      takeName: U_bob
+      firstFrame: -1
+      lastFrame: 39
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature_002
+        weight: 1
+      - path: Armature_002/Bone
+        weight: 1
+      - path: Armature_002/Bone/low
+        weight: 1
+      - path: Armature_002/Bone/low/lowteeth
+        weight: 1
+      - path: Armature_002/Bone/top
+        weight: 1
+      - path: Armature_002/Bone/top/Bone_003
+        weight: 1
+      - path: Armature_002/Bone/top/Bone_003/browl
+        weight: 1
+      - path: Armature_002/Bone/top/Bone_003/browr
+        weight: 1
+      - path: Armature_002/Bone/top/highteeth
+        weight: 1
+      - path: O_MonsterMesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .5
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 

@@ -33,7 +33,7 @@ public class AlbertProjectile : MonoBehaviour {
 
 
 
-        if (otherObj.tag == "enemy")
+        if (otherObj.tag == "enemy" || otherObj.tag == "bossTag")
         {
              Instantiate(boom, transform.position, Quaternion.Euler(270, 0, 0)) ;
             Destroy(gameObject);
