@@ -9,7 +9,9 @@ public class Boss1_move : MonoBehaviour {
 	private float tem;
 	// Use this for initializationz
 	void Start () {
+
 		here = new Vector3( 0f, -0f, 3.1677f);
+
 
 		gameObject.transform.position = here;
 
