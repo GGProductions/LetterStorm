@@ -18,7 +18,7 @@ public class BossV1 : MonoBehaviour {
 	void Update () {
 		
 		//	 planeLoc =GameObject.Find("playerFlatPrefab").transform.position;
-		planeLoc =GameObject.Find("AlbertPrefab").transform.position;
+		planeLoc =GameObject.Find("AlbertPrefab2").transform.position;
 		
 		//Debug.Log(planeLoc);
 

@@ -9,15 +9,19 @@ public class EnemyGenerator : MonoBehaviour
         Idle,
         Initialize,
         Setup,
-        SpawnEnemy
+        SpawnEnemy,
+        Boss
     }
     public GameObject[] enemyPrefabs;       //array to hold all the prefabs of enemies we wish to spawn
     public GameObject[] spawnPoints;        //array to hold references to all spawn points
+    public GameObject BossPrefab;           // boss of the game
 
     public State state;                     //local variable that holds current state
 
     private int smartSpawns = 4;
     private int dumbSpawns = 4;
+    private int enemiesSpawned = 0;
+    private bool bossSpawned = false;
     //private bool spawning = false;
 
     void Awake()
@@ -42,6 +46,9 @@ public class EnemyGenerator : MonoBehaviour
                     break;
                 case State.Idle:
                     Idle();
+                    break;
+                case State.Boss:
+                    Boss();
                     break;
             }
 
@@ -68,7 +75,19 @@ public class EnemyGenerator : MonoBehaviour
         /*if (!spawning)
         {
             spawning = true;*/
+        if (enemiesSpawned >= 20 && !bossSpawned)
+        {
+            state = EnemyGenerator.State.Boss;
+        }
+        else if (bossSpawned)
+        {
+            state = EnemyGenerator.State.Idle;
+        }
+        else
+        {
             state = EnemyGenerator.State.SpawnEnemy;
+
+        }
        /* }
         else
         {
@@ -100,6 +119,7 @@ public class EnemyGenerator : MonoBehaviour
             go.name = enemyPrefabs[enemyindex].name;
             go.transform.parent = gos[spawn].transform;
             spawn = (spawn + 1) % gos.Length;
+            enemiesSpawned++;
 
         }
 
@@ -109,6 +129,15 @@ public class EnemyGenerator : MonoBehaviour
     private void Idle()
     {
         state = EnemyGenerator.State.Setup;
+    }
+
+    private void Boss()
+    {
+        GameObject go = Instantiate(BossPrefab,
+                                            spawnPoints[2].transform.position, Quaternion.Euler(180, 0, 180)) as GameObject;
+
+        bossSpawned = true;
+        state = EnemyGenerator.State.Idle;
     }
 
 
