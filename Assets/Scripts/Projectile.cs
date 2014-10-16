@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+    using UnityEngine;
 using System.Collections;
 
 public class Projectile : MonoBehaviour {
@@ -7,12 +7,17 @@ public class Projectile : MonoBehaviour {
     public GameObject ExplosionPrefab;
 
     private Transform myTransform;
-    private Enemy enemy;
+    private string enemyType;
+    private GameObject enemy;
+
+    // Spawn Points
+    private Transform spawnPointTransform;
+    private GameObject spawnPoint;
+
 
 	// Use this for initialization
 	void Start () 
     {
-        enemy = (Enemy) GameObject.Find("Enemy").GetComponent("Enemy");
         myTransform = transform;
 	}
 	
@@ -20,28 +25,33 @@ public class Projectile : MonoBehaviour {
 	void Update () 
     {
         float amtToMove = ProjectileSpeed * Time.deltaTime;
-        myTransform.Translate(Vector3.up * amtToMove);
+        myTransform.Translate(Vector3.forward * amtToMove);
 
-        if (myTransform.position.y > 4.7f)
+        if (myTransform.position.z > 5.7f)
             Destroy(this.gameObject);
 	}
 
     void OnTriggerEnter(Collider otherObject)
     {
+        enemy = otherObject.gameObject;
+        //enemyType = otherObject.name;
+
+        //enemy = (Enemy)GameObject.Find(enemyType).GetComponent("Enemy");
         if (otherObject.tag == "enemy")
         {
             Instantiate(ExplosionPrefab, enemy.transform.position, enemy.transform.rotation);
 
-            enemy.MinSpeed += 1.2f;
-            enemy.MaxSpeed += 1.9f;
+            //enemy.MinSpeed += 1.2f;
+            //enemy.MaxSpeed += 1.9f;
 
-            enemy.SetPositionAndSpeed();
-
+            //enemy.SetPositionAndSpeed();
+            //Debug.Log(enemy.);
             Destroy(gameObject);
+            Destroy(enemy);
             Player.Score += 100;
-
+            /*
             if (Player.Score >= 1000)
-                Application.LoadLevel(3);
+                Application.LoadLevel(4);*/
         }
     }
 }
