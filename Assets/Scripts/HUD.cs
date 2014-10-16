@@ -15,7 +15,6 @@ public class HUD : MonoBehaviour {
 
     private Color DefaultLetterButtonColor;
     private Color SelectedLetterButtonColor = Color.green;
-    public GUIStyle SelectedLetterButtonStyle;
     private string SelectedLetter = "";
 
     // If game is paused or not paused
@@ -30,7 +29,6 @@ public class HUD : MonoBehaviour {
         isPaused = false;
         InventoryStyle = new GUIStyle();
         DefaultLetterButtonColor = GUI.backgroundColor;
-        //SelectedLetterButtonStyle.normal.background = SelectedLetterButtonColor;
     }
 
     /// <summary>
