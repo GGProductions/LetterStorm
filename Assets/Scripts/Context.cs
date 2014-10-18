@@ -14,6 +14,9 @@ public class Context : MonoBehaviour {
     // Stores the alphabet for efficient coding
     public static char[] Alphabet;
 
+    // Boss word hint
+    public static string BossWordHint;
+
     /// <summary>
     /// Method that runs only once in the beginning
     /// </summary>
@@ -22,5 +25,6 @@ public class Context : MonoBehaviour {
         PlayerLives = 3;
         PlayerInventory = new Inventory();
         Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
+        BossWordHint = "\nRoar, I am a hint >:D Rawrawrawrawrwrwarw";
     }
 }
