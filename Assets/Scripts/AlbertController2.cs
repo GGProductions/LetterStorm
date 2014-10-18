@@ -37,9 +37,13 @@ public class AlbertController2 : MonoBehaviour {
         animation.wrapMode = WrapMode.Loop;
         animation["idleing"].layer = 1;
         animation["walking"].layer = 1;
-        animation["falling"].layer = 1;
+      
         animation["walkingback"].layer = 1;
+        
+
+        animation.wrapMode = WrapMode.Default;
         animation["throwing"].layer = 1;
+        animation["falling"].layer = 1;
     }
     private GameObject poof;
     void Update()
@@ -117,11 +121,25 @@ public class AlbertController2 : MonoBehaviour {
         if (otherObj.tag != "bossTag" && otherObj.tag != "bossProjectileTag")
         {
 
+
+
             Context.PlayerInventory.AddCollectedLetter(otherObj.name);
             GameObject go = otherObj.gameObject;
 
             Destroy(go);
+
+
+
         }
+
+        else
+        {
+            animation.CrossFade("falling");
+        }
+
+
+
+
 
 
    

@@ -18,7 +18,7 @@ public class EnemyGenerator : MonoBehaviour
 
     public State state;                     //local variable that holds current state
 
-    public string TheWord;
+
 
     private int smartSpawns = 4;
     private int dumbSpawns = 4;
@@ -32,7 +32,6 @@ public class EnemyGenerator : MonoBehaviour
     {
         state = EnemyGenerator.State.Initialize;
 
-        TheWord = "bird";
     }
     // Use this for initialization
     IEnumerator Start()

@@ -3,12 +3,8 @@ using System.Collections;
 
 public class BossProjectile : MonoBehaviour {
 
-    // declar a folat variable  (declaring a public in the header before START makes the values accessible mid game
     public float projectileSpeed;
-   // public GameObject boom2;
-
     public GameObject explosion;
-
     void Start()
     {
 
@@ -28,12 +24,8 @@ public class BossProjectile : MonoBehaviour {
     void OnTriggerEnter(Collider otherObj)
     {
         if (otherObj.tag == "albertTag")
-            // Context.PlayerInventory.AddCollectedLetter(otherObj.name);
-            //GameObject go = otherObj.gameObject;
         {
             Instantiate(explosion, this.transform.position, this.transform.rotation);
-
-
             Destroy(gameObject);
         }
 

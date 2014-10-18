@@ -16,26 +16,13 @@ public class Boss1_move : MonoBehaviour {
 
 	// Use this for initializationz
 
-    void Awake() {
-  
-    
+    void Awake() {    
     }
 
 	void Start () {
-
-      
-
-
-
-
-
 		here = new Vector3( 0f, -0f, 3.1677f);
-
-
 		gameObject.transform.position = here;
-
 		tem = 0;	
-	
 	}
 	
 	// Update is called once per frame
@@ -46,9 +33,6 @@ public class Boss1_move : MonoBehaviour {
 		//float factor=Mathf.Cos((Time.time))  ;
 		float factor = Mathf.Cos((tem));
 		transform.Translate(Vector3.right * (factor / 20), Space.World);
-	//	Debug.Log(factor);
-
-		//transform.Translate(Vector3.back * 0.02f);
 		if (transform.position.z < 2.5f)
 		{
 
@@ -60,17 +44,6 @@ public class Boss1_move : MonoBehaviour {
 
 	}
 
-    void OnTriggerEnter() {
-
-        string lenetrnam = "N";
-
-        //  if (wordHook.transform.childCount > 0 ) Destroy(wordHook.transform.GetChild(0).gameObject);
-
-
-      //  GameObject go = Instantiate(Resources.Load("Boss_letters/" + lenetrnam + "boss"), _wordHook.transform.position, Quaternion.identity) as GameObject;
-
-   //    go.transform.parent = _wordHook.transform;//
-    
-    }
+ 
 	
 }
