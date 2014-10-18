@@ -114,7 +114,8 @@ public class AlbertController2 : MonoBehaviour {
 
     void OnTriggerEnter(Collider otherObj)
     {
-        if (otherObj.tag != "bossTag") {
+        if (otherObj.tag != "bossTag" && otherObj.tag != "bossProjectileTag")
+        {
 
             Context.PlayerInventory.AddCollectedLetter(otherObj.name);
             GameObject go = otherObj.gameObject;

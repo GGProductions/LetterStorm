@@ -7,8 +7,27 @@ public class Boss1_move : MonoBehaviour {
 	private Vector3 here;
 
 	private float tem;
+
+	//public GameObject wordHook;
+
+    private Transform _wordHook;
+
+    //public GameObject[] alphabet;
+
 	// Use this for initializationz
+
+    void Awake() {
+  
+    
+    }
+
 	void Start () {
+
+      
+
+
+
+
 
 		here = new Vector3( 0f, -0f, 3.1677f);
 
@@ -40,5 +59,18 @@ public class Boss1_move : MonoBehaviour {
 		
 
 	}
+
+    void OnTriggerEnter() {
+
+        string lenetrnam = "N";
+
+        //  if (wordHook.transform.childCount > 0 ) Destroy(wordHook.transform.GetChild(0).gameObject);
+
+
+      //  GameObject go = Instantiate(Resources.Load("Boss_letters/" + lenetrnam + "boss"), _wordHook.transform.position, Quaternion.identity) as GameObject;
+
+   //    go.transform.parent = _wordHook.transform;//
+    
+    }
 	
 }
