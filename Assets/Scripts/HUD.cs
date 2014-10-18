@@ -40,7 +40,6 @@ public class HUD : MonoBehaviour {
         GUILayout.Box("Lives: " + Context.PlayerLives.ToString());
         GUILayout.Box("Letters Collected: " + Context.PlayerInventory.TotalCollectedLetters);
         GUILayout.Box("Letters Needed: ");
-        GUILayout.Box("Hint: " + Context.BossWordHint.ToString());
 
         DisplayInventoryWindow();
         
