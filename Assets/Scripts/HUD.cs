@@ -70,6 +70,7 @@ public class HUD : MonoBehaviour {
         {
             SelectedLetter = "A";
             GUI.color = DefaultLetterButtonColor;
+            //Application.LoadLevel("MainMenu");
         }
 
         // B --------------------------------------------
