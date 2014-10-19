@@ -8,6 +8,7 @@ public class CollectedLetter : MonoBehaviour
     // Private variables representing name of the letter, and to store its count
     private string _name;
     private int _count;
+    private bool _isEmpty;
     #endregion Private Variables ------------------------------------------
 
     #region Properties ----------------------------------------------------
@@ -38,6 +39,20 @@ public class CollectedLetter : MonoBehaviour
         set
         {
             _count = value;
+        }
+    }
+
+    /// <summary>
+    /// Returns true if there is none of a letter
+    /// </summary>
+    public bool isEmpty
+    {
+        get
+        {
+            if (_count <= 0)
+                return true;
+            else
+                return false;
         }
     }
     #endregion Properties -------------------------------------------------
