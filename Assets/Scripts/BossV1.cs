@@ -41,7 +41,8 @@ public class BossV1  : MonoBehaviour {
 
 	
 
-	void OnTriggerEnter(Collider otherObj) { if (otherObj.tag == "projectileTag") {
+	void OnTriggerEnter(Collider otherObj) { 
+        if (otherObj.tag == "projectileTag") {
 		 hitcount++;
 		 Debug.Log(hitcount);
 	}

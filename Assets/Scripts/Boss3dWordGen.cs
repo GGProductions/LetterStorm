@@ -37,7 +37,7 @@ public class Boss3dWordGen : MonoBehaviour {
 		_wordHook = this.transform.FindChild("Boss_Word_hook");
 
 		 wordGenerated = Context.Curriculum.Lessons[0].Words.GetRandomWord().Text ;
-
+	//	wordGenerated = "strawberry";
 		int wordlength = wordGenerated.Length;
 		Debug.Log(wordlength + " size");
 		char letter;
@@ -59,13 +59,21 @@ public class Boss3dWordGen : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerEnter(Collider otherObj) { 
-		collisioncount++;
+	void OnTriggerEnter(Collider otherObj) {
 
-		if (collisioncount < wordGenerated.Length + 1)
-		{
-			List3dLetterGO[collisioncount - 1].GetComponent<MeshRenderer>().enabled = enabled;
+		if (otherObj.tag == "projectileTag") {
 
+			collisioncount++;
+
+			if (collisioncount < wordGenerated.Length + 1)
+			{
+				List3dLetterGO[collisioncount - 1].GetComponent<MeshRenderer>().enabled = enabled;
+
+			}
+		
 		}
+	
 	}
 }
+
+
