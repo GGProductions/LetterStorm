@@ -18,15 +18,20 @@ public class EnemyGenerator : MonoBehaviour
 
     public State state;                     //local variable that holds current state
 
+
+
     private int smartSpawns = 4;
     private int dumbSpawns = 4;
     private int enemiesSpawned = 0;
     private bool bossSpawned = false;
     //private bool spawning = false;
 
+    
+
     void Awake()
     {
         state = EnemyGenerator.State.Initialize;
+
     }
     // Use this for initialization
     IEnumerator Start()
@@ -75,7 +80,7 @@ public class EnemyGenerator : MonoBehaviour
         /*if (!spawning)
         {
             spawning = true;*/
-        if (enemiesSpawned >= 20 && !bossSpawned)
+        if (enemiesSpawned >= 3 && !bossSpawned)
         {
             state = EnemyGenerator.State.Boss;
         }

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BossV1 : MonoBehaviour {
+public class BossV1  : MonoBehaviour {
 
 	
 	private Vector3 planeLoc;

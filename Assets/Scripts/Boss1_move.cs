@@ -7,16 +7,22 @@ public class Boss1_move : MonoBehaviour {
 	private Vector3 here;
 
 	private float tem;
+
+	//public GameObject wordHook;
+
+    private Transform _wordHook;
+
+    //public GameObject[] alphabet;
+
 	// Use this for initializationz
+
+    void Awake() {    
+    }
+
 	void Start () {
-
 		here = new Vector3( 0f, -0f, 3.1677f);
-
-
 		gameObject.transform.position = here;
-
 		tem = 0;	
-	
 	}
 	
 	// Update is called once per frame
@@ -27,9 +33,6 @@ public class Boss1_move : MonoBehaviour {
 		//float factor=Mathf.Cos((Time.time))  ;
 		float factor = Mathf.Cos((tem));
 		transform.Translate(Vector3.right * (factor / 20), Space.World);
-	//	Debug.Log(factor);
-
-		//transform.Translate(Vector3.back * 0.02f);
 		if (transform.position.z < 2.5f)
 		{
 
@@ -40,5 +43,7 @@ public class Boss1_move : MonoBehaviour {
 		
 
 	}
+
+ 
 	
 }
