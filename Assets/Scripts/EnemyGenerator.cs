@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using GGProductions.LetterStorm.Data;
+using GGProductions.LetterStorm.Data.Collections;
 
 public class EnemyGenerator : MonoBehaviour
 {
@@ -18,12 +20,15 @@ public class EnemyGenerator : MonoBehaviour
 
     public State state;                     //local variable that holds current state
 
-
-
     private int smartSpawns = 4;
     private int dumbSpawns = 4;
     private int enemiesSpawned = 0;
     private bool bossSpawned = false;
+
+    private Inventory inv = Context.PlayerInventory;
+    private Word word = Context.Curriculum.Lessons[0].Words.GetRandomWord();
+ 
+
     //private bool spawning = false;
 
     
@@ -72,6 +77,7 @@ public class EnemyGenerator : MonoBehaviour
         {
             return;
         }
+
         state = EnemyGenerator.State.Setup;
     }
 
@@ -80,7 +86,7 @@ public class EnemyGenerator : MonoBehaviour
         /*if (!spawning)
         {
             spawning = true;*/
-        if (enemiesSpawned >= 20 && !bossSpawned)
+        if (enemiesSpawned >= 50 && !bossSpawned)
         {
             state = EnemyGenerator.State.Boss;
         }
@@ -93,11 +99,6 @@ public class EnemyGenerator : MonoBehaviour
             state = EnemyGenerator.State.SpawnEnemy;
 
         }
-       /* }
-        else
-        {
-            state = EnemyGenerator.State.Idle;
-        }*/
     }
 
     private void SpawnEnemy()
@@ -128,7 +129,7 @@ public class EnemyGenerator : MonoBehaviour
 
         }
 
-        state = EnemyGenerator.State.Idle;
+        state = EnemyGenerator.State.Setup;
     }
 
     private void Idle()
