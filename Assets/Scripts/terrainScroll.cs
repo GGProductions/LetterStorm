@@ -22,8 +22,9 @@ public class terrainScroll : MonoBehaviour {
 
         if (transform.position.z < -16)
         {
-          
-            transform.position = new Vector3(transform.position.x, transform.position.y, 176f);
+            Destroy(gameObject);
+            //old option to send th eblock back to the start w
+            //transform.position = new Vector3(transform.position.x, transform.position.y, 176f);
         }
     }
     #endregion

@@ -80,7 +80,7 @@ public class EnemyGenerator : MonoBehaviour
         /*if (!spawning)
         {
             spawning = true;*/
-        if (enemiesSpawned >= 20 && !bossSpawned)
+        if (enemiesSpawned >= 50 && !bossSpawned)
         {
             state = EnemyGenerator.State.Boss;
         }

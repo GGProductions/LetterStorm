@@ -42,7 +42,7 @@ public class AlbertController2 : MonoBehaviour {
         
 
         animation.wrapMode = WrapMode.Default;
-        animation["throwing"].layer = 1;
+        animation["throwing"].layer = 0;
         animation["falling"].layer = 1;
     }
     private GameObject poof;
@@ -136,14 +136,7 @@ public class AlbertController2 : MonoBehaviour {
         {
             animation.CrossFade("falling");
         }
-
-
-
-
-
-
    
-
     }
 
 
