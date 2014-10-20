@@ -53,7 +53,7 @@ public class Context : MonoBehaviour
     /// <summary>
     /// Method that runs only once in the beginning
     /// </summary>
-    void Start()
+    void Awake()
     {
         PlayerLives = 3;
         PlayerInventory = new Inventory();
