@@ -102,7 +102,6 @@ public class EnemyGenerator : MonoBehaviour
     private void Setup()
     {
         reqLetter = letterList[UnityEngine.Random.Range(0, letterList.Count)];
-        Debug.Log(reqLetter);
 
         if (enemiesSpawned >= 50 && !bossSpawned)
         {
@@ -115,7 +114,6 @@ public class EnemyGenerator : MonoBehaviour
         else
         {
             state = State.SpawnEnemy;
-
         }
     }
 
@@ -129,12 +127,19 @@ public class EnemyGenerator : MonoBehaviour
         /// </summary>
      
         GameObject[] gos = AvailableSpawnPoints();
+        Debug.Log(gos.Length);
 
         int spawnMax = SpawnQuantity(gos.Length);
-        int reqSpawn = UnityEngine.Random.Range(0, gos.Length);
 
-        GameObject req = Instantiate(enemyPrefabs[LetterDict[reqLetter]],
+        int reqSpawn = UnityEngine.Random.Range(0, gos.Length);
+        Debug.Log("reqSpawn" + reqSpawn);
+        if (spawnMax > 0)
+        {
+            GameObject req = Instantiate(enemyPrefabs[LetterDict[reqLetter]],
                                 gos[reqSpawn].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
+            req.transform.parent = gos[reqSpawn].transform;
+        }
+        
 
         gos = AvailableSpawnPoints();
         spawnMax = SpawnQuantity(gos.Length);
@@ -164,8 +169,6 @@ public class EnemyGenerator : MonoBehaviour
 
     private void Boss()
     {
-       // GameObject go = Instantiate(BossPrefab,
-         //                                   spawnPoints[2].transform.position, Quaternion.Euler(180, 0, 180)) as GameObject;
 
         GameObject go = Instantiate(BossPrefab,
                                            new Vector3(0,0,2), Quaternion.Euler(180, 0, 180)) as GameObject;
