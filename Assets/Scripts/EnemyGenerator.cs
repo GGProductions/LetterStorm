@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using GGProductions.LetterStorm.Data;
+using GGProductions.LetterStorm.Data.Collections;
 
 public class EnemyGenerator : MonoBehaviour
 {
-    public enum State
+    private enum State
     {
         Idle,
         Initialize,
@@ -12,25 +15,35 @@ public class EnemyGenerator : MonoBehaviour
         SpawnEnemy,
         Boss
     }
+
+    private Dictionary<char, int> LetterDict = new Dictionary<char, int>();
+    private char[] alphabet;
+
     public GameObject[] enemyPrefabs;       //array to hold all the prefabs of enemies we wish to spawn
     public GameObject[] spawnPoints;        //array to hold references to all spawn points
     public GameObject BossPrefab;           // boss of the game
 
-    public State state;                     //local variable that holds current state
-
-
+    private State state;                     //local variable that holds current state
 
     private int smartSpawns = 4;
     private int dumbSpawns = 4;
     private int enemiesSpawned = 0;
     private bool bossSpawned = false;
+
+    private Inventory inv;
+    private Word word;
+    private List<char> letterList;
+
+    private char reqLetter;
+ 
+
     //private bool spawning = false;
 
     
 
     void Awake()
     {
-        state = EnemyGenerator.State.Initialize;
+        state = State.Initialize;
 
     }
     // Use this for initialization
@@ -72,32 +85,40 @@ public class EnemyGenerator : MonoBehaviour
         {
             return;
         }
-        state = EnemyGenerator.State.Setup;
+
+        inv = Context.PlayerInventory;
+        word = Context.Curriculum.Lessons[0].Words.GetRandomWord();
+        letterList = new List<char>(word.Text);
+        alphabet = Context.Alphabet;
+
+        for (int i = 0; i < alphabet.Length; i++)
+        {
+            LetterDict.Add(Char.ToLower(alphabet[i]), i);
+        }
+
+            state = State.Setup;
     }
 
     private void Setup()
     {
-        /*if (!spawning)
-        {
-            spawning = true;*/
+
+        reqLetter = letterList[UnityEngine.Random.Range(0, letterList.Count)];
+        Debug.Log(reqLetter);
+
+
         if (enemiesSpawned >= 50 && !bossSpawned)
         {
-            state = EnemyGenerator.State.Boss;
+            state = State.Boss;
         }
         else if (bossSpawned)
         {
-            state = EnemyGenerator.State.Idle;
+            state = State.Idle;
         }
         else
         {
-            state = EnemyGenerator.State.SpawnEnemy;
+            state = State.SpawnEnemy;
 
         }
-       /* }
-        else
-        {
-            state = EnemyGenerator.State.Idle;
-        }*/
     }
 
     private void SpawnEnemy()
@@ -111,12 +132,19 @@ public class EnemyGenerator : MonoBehaviour
      
         GameObject[] gos = AvailableSpawnPoints();
 
-        int spawnCount = SpawnQuantity(gos.Length);
-        int spawn = Random.Range(0, gos.Length);
+        int spawnMax = SpawnQuantity(gos.Length);
+        int reqSpawn = UnityEngine.Random.Range(0, gos.Length);
 
-        for (int i = 0; i < spawnCount; i++)
+        GameObject req = Instantiate(enemyPrefabs[LetterDict[reqLetter]],
+                                gos[reqSpawn].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
+
+        gos = AvailableSpawnPoints();
+        spawnMax = SpawnQuantity(gos.Length);
+        int spawn = UnityEngine.Random.Range(0, gos.Length);
+
+        for (int i = 0; i < spawnMax; i++)
         {
-            int enemyindex = Random.Range(0, enemyPrefabs.Length);
+            int enemyindex = UnityEngine.Random.Range(0, enemyPrefabs.Length);
 
             GameObject go = Instantiate(enemyPrefabs[enemyindex],
                                             gos[spawn].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
@@ -128,12 +156,12 @@ public class EnemyGenerator : MonoBehaviour
 
         }
 
-        state = EnemyGenerator.State.Idle;
+        state = State.Setup;
     }
 
     private void Idle()
     {
-        state = EnemyGenerator.State.Setup;
+        state = State.Setup;
     }
 
     private void Boss()
@@ -146,7 +174,7 @@ public class EnemyGenerator : MonoBehaviour
 
 
         bossSpawned = true;
-        state = EnemyGenerator.State.Idle;
+        state = State.Idle;
     }
 
 
@@ -195,7 +223,7 @@ public class EnemyGenerator : MonoBehaviour
 
     private int SpawnQuantity(int splen)
     {
-        return Random.Range(0, splen);
+        return UnityEngine.Random.Range(0, splen);
     }
 
 }
