@@ -34,7 +34,7 @@ public class ManageLessons : MonoBehaviour
         if (playerData == null)
         {
             playerData = GameStateUtilities.Load();
-            playerData.Curriculum.CreateSampleLesson();
+            playerData.Curriculum.CreateSampleLessons();
         }
 
 

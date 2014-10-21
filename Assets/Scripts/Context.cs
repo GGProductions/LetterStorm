@@ -83,7 +83,7 @@ public class Context : MonoBehaviour
         // If the user has not created any lessons, create a sample lesson to work with
         if (_curriculum.Lessons.Count == 0)
         {
-            _curriculum.CreateSampleLesson();
+            _curriculum.CreateSampleLessons();
         }
 
         // If the game state should be loaded (ie the user is loading a saved game)...
