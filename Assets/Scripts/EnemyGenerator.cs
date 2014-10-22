@@ -103,6 +103,7 @@ public class EnemyGenerator : MonoBehaviour
 
     private void Setup()
     {
+<<<<<<< HEAD
        // for (int i = 0; i < letterList.Count; i++) {
          //   Debug.Log("item "+ i +" "+ letterList[i]);
        // }
@@ -110,6 +111,9 @@ public class EnemyGenerator : MonoBehaviour
             reqLetter = letterList[UnityEngine.Random.Range(0, letterList.Count)];
       //  Debug.Log(reqLetter);
 
+=======
+        reqLetter = letterList[UnityEngine.Random.Range(0, letterList.Count)];
+>>>>>>> 16de5a3317854043132f5ec7ab34dfe46e1a9e72
 
         if (enemiesSpawned >= 20 && !bossSpawned)
         {
@@ -122,7 +126,6 @@ public class EnemyGenerator : MonoBehaviour
         else
         {
             state = State.SpawnEnemy;
-
         }
     }
 
@@ -136,15 +139,21 @@ public class EnemyGenerator : MonoBehaviour
         /// </summary>
      
         GameObject[] gos = AvailableSpawnPoints();
+        Debug.Log(gos.Length);
 
         int spawnMax = SpawnQuantity(gos.Length);
+
+
         int reqSpawn = UnityEngine.Random.Range(0, gos.Length);
-        for (int i = 0; i < LetterDict.Count; i++)
+        Debug.Log("reqSpawn" + reqSpawn);
+        if (spawnMax > 0)
         {
-            Debug.Log("item " + i + " " + LetterDict[reqLetter]);
-        }
-        GameObject req = Instantiate(enemyPrefabs[LetterDict[reqLetter]],
+            GameObject req = Instantiate(enemyPrefabs[LetterDict[reqLetter]],
+
                                 gos[reqSpawn].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
+            req.transform.parent = gos[reqSpawn].transform;
+        }
+        
 
         gos = AvailableSpawnPoints();
         spawnMax = SpawnQuantity(gos.Length);
@@ -174,8 +183,6 @@ public class EnemyGenerator : MonoBehaviour
 
     private void Boss()
     {
-       // GameObject go = Instantiate(BossPrefab,
-         //                                   spawnPoints[2].transform.position, Quaternion.Euler(180, 0, 180)) as GameObject;
 
         GameObject go = Instantiate(BossPrefab,
                                            new Vector3(0,0,2), Quaternion.Euler(180, 0, 180)) as GameObject;
