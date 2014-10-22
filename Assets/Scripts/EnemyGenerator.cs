@@ -89,6 +89,8 @@ public class EnemyGenerator : MonoBehaviour
         inv = Context.PlayerInventory;
         word = Context.Curriculum.Lessons[0].Words.GetRandomWord();
         letterList = new List<char>(word.Text);
+
+
         alphabet = Context.Alphabet;
 
         for (int i = 0; i < alphabet.Length; i++)
@@ -101,12 +103,15 @@ public class EnemyGenerator : MonoBehaviour
 
     private void Setup()
     {
+       // for (int i = 0; i < letterList.Count; i++) {
+         //   Debug.Log("item "+ i +" "+ letterList[i]);
+       // }
 
-        reqLetter = letterList[UnityEngine.Random.Range(0, letterList.Count)];
-        Debug.Log(reqLetter);
+            reqLetter = letterList[UnityEngine.Random.Range(0, letterList.Count)];
+      //  Debug.Log(reqLetter);
 
 
-        if (enemiesSpawned >= 50 && !bossSpawned)
+        if (enemiesSpawned >= 20 && !bossSpawned)
         {
             state = State.Boss;
         }
@@ -134,7 +139,10 @@ public class EnemyGenerator : MonoBehaviour
 
         int spawnMax = SpawnQuantity(gos.Length);
         int reqSpawn = UnityEngine.Random.Range(0, gos.Length);
-
+        for (int i = 0; i < LetterDict.Count; i++)
+        {
+            Debug.Log("item " + i + " " + LetterDict[reqLetter]);
+        }
         GameObject req = Instantiate(enemyPrefabs[LetterDict[reqLetter]],
                                 gos[reqSpawn].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
 
