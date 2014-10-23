@@ -248,81 +248,107 @@ public class Inventory : MonoBehaviour
         {
             case "A":
                 A.Count--;
+                if (A.Count < 0) A.Count = 0;
                 break;
             case "B":
                 B.Count--;
+                if (B.Count < 0) B.Count = 0;
                 break;
             case "C":
                 C.Count--;
+                if (C.Count < 0) C.Count = 0;
                 break;
             case "D":
                 D.Count--;
+                if (D.Count < 0) D.Count = 0;
                 break;
             case "E":
                 E.Count--;
+                if (E.Count < 0) E.Count = 0;
                 break;
             case "F":
                 F.Count--;
+                if (F.Count < 0) F.Count = 0;
                 break;
             case "G":
                 G.Count--;
+                if (G.Count < 0) G.Count = 0;
                 break;
             case "H":
                 H.Count--;
+                if (H.Count < 0) H.Count = 0;
                 break;
             case "I":
                 I.Count--;
+                if (I.Count < 0) I.Count = 0;
                 break;
             case "J":
                 J.Count--;
+                if (J.Count < 0) J.Count = 0;
                 break;
             case "K":
                 K.Count--;
+                if (K.Count < 0) K.Count = 0;
                 break;
             case "L":
                 L.Count--;
+                if (L.Count < 0) L.Count = 0;
                 break;
             case "M":
                 M.Count--;
+                if (M.Count < 0) M.Count = 0;
                 break;
             case "N":
                 N.Count--;
+                if (N.Count < 0) N.Count = 0;
                 break;
             case "O":
                 O.Count--;
+                if (O.Count < 0) O.Count = 0;
                 break;
             case "P":
                 P.Count--;
+                if (P.Count < 0) P.Count = 0;
                 break;
             case "Q":
                 Q.Count--;
+                if (Q.Count < 0) Q.Count = 0;
                 break;
             case "R":
                 R.Count--;
+                if (R.Count < 0) R.Count = 0;
                 break;
             case "S":
                 S.Count--;
+                if (S.Count < 0) S.Count = 0;
                 break;
             case "T":
                 T.Count--;
+                if (T.Count < 0) T.Count = 0;
                 break;
             case "U":
                 U.Count--;
+                if (U.Count < 0) U.Count = 0;
                 break;
             case "V":
                 V.Count--;
+                if (V.Count < 0) V.Count = 0;
                 break;
             case "W":
                 W.Count--;
+                if (W.Count < 0) W.Count = 0;
                 break;
             case "X":
                 X.Count--;
+                if (X.Count < 0) X.Count = 0;
                 break;
             case "Y":
                 Y.Count--;
+                if (Y.Count < 0) Y.Count = 0;
                 break;
             case "Z":
                 Z.Count--;
+                if (Z.Count < 0) Z.Count = 0;
                 break;
             default:
                 break;

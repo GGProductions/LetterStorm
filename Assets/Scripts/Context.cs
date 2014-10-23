@@ -17,6 +17,7 @@ public class Context : MonoBehaviour
     private static LessonBook _curriculum;
     private static int _playerLives;
     private static Inventory _playerInventory;
+    private static string _selectedLetter;
     private static char[] _alphabet;
     #endregion Private Variables ------------------------------------------
 
@@ -39,6 +40,13 @@ public class Context : MonoBehaviour
     {
         get { return _playerInventory; }
         set { _playerInventory = value; }
+    }
+
+    /// <summary>Selected letter in inventory</summary>
+    public static string SelectedLetter
+    {
+        get { return _selectedLetter; }
+        set { _selectedLetter = value; }
     }
 
     /// <summary>Tracks player lives</summary>
