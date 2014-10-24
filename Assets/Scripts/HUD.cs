@@ -8,16 +8,15 @@ public class HUD : MonoBehaviour {
     private GUIText LabelLives;
     GUIStyle InventoryStyle;
     private int InventoryBoxWidth = (int)(Screen.width * .75);
-    private int InventoryItemBoxWidth = 25;
-    private int InventoryItemBoxHeight = 20;
+    private int InventoryItemBoxWidth = (int)(Screen.width / 40);
+    private int InventoryItemBoxHeight = (int)(Screen.width / 40);
+    private float InventoryLetterFontSize = (float)(Screen.height * 0.0255f);
     private int InventoryBoxBottomMargin = 5;
-    //private int InventoryBoxSideMargin = 5;
 
     private Color DefaultLetterButtonColor;
     private Color SelectedLetterButtonColor = Color.green;
-    private string SelectedLetter = "";
     private static ArrayList CurrentLettersInInventory = new ArrayList();
-    char[] Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
+    private char[] Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
 
     // If game is paused or not paused
     private bool isPaused;
@@ -41,7 +40,8 @@ public class HUD : MonoBehaviour {
     {
         GUILayout.Box("Lives: " + Context.PlayerLives.ToString());
         GUILayout.Box("Letters Collected: " + Context.PlayerInventory.TotalCollectedLetters);
-        GUILayout.Box("Letters Needed: ");
+        GUILayout.Box("Test Screen Width: " + Screen.width.ToString());
+        GUILayout.Box("Test Screen Height: " + Screen.height.ToString());
         GUILayout.Box("Hint: " + Context.BossWordHint.ToString());
 
         DisplayInventoryWindow();
@@ -54,6 +54,20 @@ public class HUD : MonoBehaviour {
     /// </summary>
     void DisplayInventoryWindow()
     {
+        // Determine size of inventory "boxes"
+        if (Screen.width <= 1000)
+        {
+            InventoryItemBoxWidth = (int)(Screen.width / 25);
+            InventoryItemBoxHeight = (int)(Screen.width / 25);
+        }
+        else
+        {
+            InventoryItemBoxWidth = (int)(Screen.width / 40);
+            InventoryItemBoxHeight = (int)(Screen.width / 40);
+        }
+
+        // Font size of letters in inventory boxes-++
+        InventoryLetterFontSize = InventoryItemBoxHeight * 0.57f;
 
         // Determine which letters to show in the inventory
         CurrentLettersInInventory.Clear();
@@ -101,25 +115,29 @@ public class HUD : MonoBehaviour {
 
         #region Letter Type in Inventory --------------------------------------------
         GUILayout.BeginHorizontal();
-
+        GUILayout.FlexibleSpace();
         GUI.color = DefaultLetterButtonColor;
 
         // Create an entry in the inventory for each letter the player has collected
         for (int ii = 0; ii < CurrentLettersInInventory.Count; ii++)
         {
-            GUI.color = SelectedLetter == CurrentLettersInInventory[ii].ToString() ? SelectedLetterButtonColor : DefaultLetterButtonColor;
-            if (GUILayout.Button(CurrentLettersInInventory[ii].ToString(), GUILayout.Height(InventoryItemBoxHeight), GUILayout.Width(InventoryItemBoxWidth)))
+            string currentLetter = CurrentLettersInInventory[ii].ToString();
+            GUI.color = Context.SelectedLetter == currentLetter ? SelectedLetterButtonColor : DefaultLetterButtonColor;
+            if (GUILayout.Button(
+                "<size=" + InventoryLetterFontSize + ">" + currentLetter + "</size>", 
+                GUILayout.Height(InventoryItemBoxHeight), GUILayout.Width(InventoryItemBoxWidth)))
             {
-                SelectedLetter = CurrentLettersInInventory[ii].ToString();
+                Context.SelectedLetter = currentLetter;
                 GUI.color = DefaultLetterButtonColor;
             }
         }
+        GUILayout.FlexibleSpace();
         GUILayout.EndHorizontal();
         #endregion Letter Type in Inventory -----------------------------------------
 
         #region Letters' Count in Inventory -----------------------------------------
         GUILayout.BeginHorizontal();
-
+        GUILayout.FlexibleSpace();
         GUI.color = DefaultLetterButtonColor;
 
         // Draw the inventory [count of each letter] that has been collected
@@ -128,66 +146,140 @@ public class HUD : MonoBehaviour {
             string InventoryLetter = CurrentLettersInInventory[ii].ToString();
 
             // Change color of letter in inventory if it is selected
-            GUI.color = SelectedLetter == CurrentLettersInInventory[ii].ToString() ? SelectedLetterButtonColor : DefaultLetterButtonColor;
+            GUI.color = Context.SelectedLetter == CurrentLettersInInventory[ii].ToString() ? SelectedLetterButtonColor : DefaultLetterButtonColor;
 
             // Show count of letter
             if (InventoryLetter == "A")
-                GUILayout.Button(Context.PlayerInventory.A.Count.ToString(), GUILayout.Height(InventoryItemBoxHeight), GUILayout.Width(InventoryItemBoxWidth));
+                GUILayout.Button(
+                    "<size=" + InventoryLetterFontSize + ">" + Context.PlayerInventory.A.Count.ToString() + "</size>", 
+                    GUILayout.Height(InventoryItemBoxHeight), GUILayout.Width(InventoryItemBoxWidth));
             else if (InventoryLetter == "B")
-                GUILayout.Button(Context.PlayerInventory.B.Count.ToString(), GUILayout.Height(InventoryItemBoxHeight), GUILayout.Width(InventoryItemBoxWidth));
+                GUILayout.Button(
+                    "<size=" + InventoryLetterFontSize + ">" + Context.PlayerInventory.B.Count.ToString() + "</size>", 
+                    GUILayout.Height(InventoryItemBoxHeight), GUILayout.Width(InventoryItemBoxWidth));
             else if (InventoryLetter == "C")
-                GUILayout.Button(Context.PlayerInventory.C.Count.ToString(), GUILayout.Height(InventoryItemBoxHeight), GUILayout.Width(InventoryItemBoxWidth));
+                GUILayout.Button(
+                    "<size=" + InventoryLetterFontSize + ">" + Context.PlayerInventory.C.Count.ToString() + "</size>", 
+                    GUILayout.Height(InventoryItemBoxHeight), GUILayout.Width(InventoryItemBoxWidth));
             else if (InventoryLetter == "D")
-                GUILayout.Button(Context.PlayerInventory.D.Count.ToString(), GUILayout.Height(InventoryItemBoxHeight), GUILayout.Width(InventoryItemBoxWidth));
+                GUILayout.Button(
+                    "<size=" + InventoryLetterFontSize + ">" + Context.PlayerInventory.D.Count.ToString() + "</size>", 
+                    GUILayout.Height(InventoryItemBoxHeight), GUILayout.Width(InventoryItemBoxWidth));
             else if (InventoryLetter == "E")
-                GUILayout.Button(Context.PlayerInventory.E.Count.ToString(), GUILayout.Height(InventoryItemBoxHeight), GUILayout.Width(InventoryItemBoxWidth));
+                GUILayout.Button(
+                    "<size=" + InventoryLetterFontSize + ">" + Context.PlayerInventory.E.Count.ToString() + "</size>", 
+                    GUILayout.Height(InventoryItemBoxHeight), GUILayout.Width(InventoryItemBoxWidth));
             else if (InventoryLetter == "F")
-                GUILayout.Button(Context.PlayerInventory.F.Count.ToString(), GUILayout.Height(InventoryItemBoxHeight), GUILayout.Width(InventoryItemBoxWidth));
+                GUILayout.Button(
+                    "<size=" + InventoryLetterFontSize + ">" + Context.PlayerInventory.F.Count.ToString() + "</size>", 
+                    GUILayout.Height(InventoryItemBoxHeight), 
+                    GUILayout.Width(InventoryItemBoxWidth));
             else if (InventoryLetter == "G")
-                GUILayout.Button(Context.PlayerInventory.G.Count.ToString(), GUILayout.Height(InventoryItemBoxHeight), GUILayout.Width(InventoryItemBoxWidth));
+                GUILayout.Button(
+                    "<size=" + InventoryLetterFontSize + ">" + Context.PlayerInventory.G.Count.ToString() + "</size>", 
+                    GUILayout.Height(InventoryItemBoxHeight), 
+                    GUILayout.Width(InventoryItemBoxWidth));
             else if (InventoryLetter == "H")
-                GUILayout.Button(Context.PlayerInventory.H.Count.ToString(), GUILayout.Height(InventoryItemBoxHeight), GUILayout.Width(InventoryItemBoxWidth));
+                GUILayout.Button(
+                    "<size=" + InventoryLetterFontSize + ">" + Context.PlayerInventory.H.Count.ToString() + "</size>", 
+                    GUILayout.Height(InventoryItemBoxHeight), 
+                    GUILayout.Width(InventoryItemBoxWidth));
             else if (InventoryLetter == "I")
-                GUILayout.Button(Context.PlayerInventory.I.Count.ToString(), GUILayout.Height(InventoryItemBoxHeight), GUILayout.Width(InventoryItemBoxWidth));
+                GUILayout.Button(
+                    "<size=" + InventoryLetterFontSize + ">" + Context.PlayerInventory.I.Count.ToString() + "</size>", 
+                    GUILayout.Height(InventoryItemBoxHeight), 
+                    GUILayout.Width(InventoryItemBoxWidth));
             else if (InventoryLetter == "J")
-                GUILayout.Button(Context.PlayerInventory.J.Count.ToString(), GUILayout.Height(InventoryItemBoxHeight), GUILayout.Width(InventoryItemBoxWidth));
+                GUILayout.Button(
+                    "<size=" + InventoryLetterFontSize + ">" + Context.PlayerInventory.J.Count.ToString() + "</size>", 
+                    GUILayout.Height(InventoryItemBoxHeight), 
+                    GUILayout.Width(InventoryItemBoxWidth));
             else if (InventoryLetter == "K")
-                GUILayout.Button(Context.PlayerInventory.K.Count.ToString(), GUILayout.Height(InventoryItemBoxHeight), GUILayout.Width(InventoryItemBoxWidth));
+                GUILayout.Button(
+                    "<size=" + InventoryLetterFontSize + ">" + Context.PlayerInventory.K.Count.ToString() + "</size>", 
+                    GUILayout.Height(InventoryItemBoxHeight), 
+                    GUILayout.Width(InventoryItemBoxWidth));
             else if (InventoryLetter == "L")
-                GUILayout.Button(Context.PlayerInventory.L.Count.ToString(), GUILayout.Height(InventoryItemBoxHeight), GUILayout.Width(InventoryItemBoxWidth));
+                GUILayout.Button(
+                    "<size=" + InventoryLetterFontSize + ">" + Context.PlayerInventory.L.Count.ToString() + "</size>", 
+                    GUILayout.Height(InventoryItemBoxHeight), 
+                    GUILayout.Width(InventoryItemBoxWidth));
             else if (InventoryLetter == "M")
-                GUILayout.Button(Context.PlayerInventory.M.Count.ToString(), GUILayout.Height(InventoryItemBoxHeight), GUILayout.Width(InventoryItemBoxWidth));
+                GUILayout.Button(
+                    "<size=" + InventoryLetterFontSize + ">" + Context.PlayerInventory.M.Count.ToString() + "</size>", 
+                    GUILayout.Height(InventoryItemBoxHeight), 
+                    GUILayout.Width(InventoryItemBoxWidth));
             else if (InventoryLetter == "N")
-                GUILayout.Button(Context.PlayerInventory.N.Count.ToString(), GUILayout.Height(InventoryItemBoxHeight), GUILayout.Width(InventoryItemBoxWidth));
+                GUILayout.Button(
+                    "<size=" + InventoryLetterFontSize + ">" + Context.PlayerInventory.N.Count.ToString() + "</size>", 
+                    GUILayout.Height(InventoryItemBoxHeight), 
+                    GUILayout.Width(InventoryItemBoxWidth));
             else if (InventoryLetter == "O")
-                GUILayout.Button(Context.PlayerInventory.O.Count.ToString(), GUILayout.Height(InventoryItemBoxHeight), GUILayout.Width(InventoryItemBoxWidth));
+                GUILayout.Button(
+                    "<size=" + InventoryLetterFontSize + ">" + Context.PlayerInventory.O.Count.ToString() + "</size>", 
+                    GUILayout.Height(InventoryItemBoxHeight), 
+                    GUILayout.Width(InventoryItemBoxWidth));
             else if (InventoryLetter == "P")
-                GUILayout.Button(Context.PlayerInventory.P.Count.ToString(), GUILayout.Height(InventoryItemBoxHeight), GUILayout.Width(InventoryItemBoxWidth));
+                GUILayout.Button(
+                    "<size=" + InventoryLetterFontSize + ">" + Context.PlayerInventory.P.Count.ToString() + "</size>", 
+                    GUILayout.Height(InventoryItemBoxHeight), 
+                    GUILayout.Width(InventoryItemBoxWidth));
             else if (InventoryLetter == "Q")
-                GUILayout.Button(Context.PlayerInventory.Q.Count.ToString(), GUILayout.Height(InventoryItemBoxHeight), GUILayout.Width(InventoryItemBoxWidth));
+                GUILayout.Button(
+                    "<size=" + InventoryLetterFontSize + ">" + Context.PlayerInventory.Q.Count.ToString() + "</size>", 
+                    GUILayout.Height(InventoryItemBoxHeight), 
+                    GUILayout.Width(InventoryItemBoxWidth));
             else if (InventoryLetter == "R")
-                GUILayout.Button(Context.PlayerInventory.R.Count.ToString(), GUILayout.Height(InventoryItemBoxHeight), GUILayout.Width(InventoryItemBoxWidth));
+                GUILayout.Button(
+                    "<size=" + InventoryLetterFontSize + ">" + Context.PlayerInventory.R.Count.ToString() + "</size>", 
+                    GUILayout.Height(InventoryItemBoxHeight), 
+                    GUILayout.Width(InventoryItemBoxWidth));
             else if (InventoryLetter == "S")
-                GUILayout.Button(Context.PlayerInventory.S.Count.ToString(), GUILayout.Height(InventoryItemBoxHeight), GUILayout.Width(InventoryItemBoxWidth));
+                GUILayout.Button(
+                    "<size=" + InventoryLetterFontSize + ">" + Context.PlayerInventory.S.Count.ToString() + "</size>", 
+                    GUILayout.Height(InventoryItemBoxHeight), 
+                    GUILayout.Width(InventoryItemBoxWidth));
             else if (InventoryLetter == "T")
-                GUILayout.Button(Context.PlayerInventory.T.Count.ToString(), GUILayout.Height(InventoryItemBoxHeight), GUILayout.Width(InventoryItemBoxWidth));
+                GUILayout.Button(
+                    "<size=" + InventoryLetterFontSize + ">" + Context.PlayerInventory.T.Count.ToString() + "</size>", 
+                    GUILayout.Height(InventoryItemBoxHeight), 
+                    GUILayout.Width(InventoryItemBoxWidth));
             else if (InventoryLetter == "U")
-                GUILayout.Button(Context.PlayerInventory.U.Count.ToString(), GUILayout.Height(InventoryItemBoxHeight), GUILayout.Width(InventoryItemBoxWidth));
+                GUILayout.Button(
+                    "<size=" + InventoryLetterFontSize + ">" + Context.PlayerInventory.U.Count.ToString() + "</size>", 
+                    GUILayout.Height(InventoryItemBoxHeight), 
+                    GUILayout.Width(InventoryItemBoxWidth));
             else if (InventoryLetter == "V")
-                GUILayout.Button(Context.PlayerInventory.V.Count.ToString(), GUILayout.Height(InventoryItemBoxHeight), GUILayout.Width(InventoryItemBoxWidth));
+                GUILayout.Button(
+                    "<size=" + InventoryLetterFontSize + ">" + Context.PlayerInventory.V.Count.ToString() + "</size>", 
+                    GUILayout.Height(InventoryItemBoxHeight), 
+                    GUILayout.Width(InventoryItemBoxWidth));
             else if (InventoryLetter == "W")
-                GUILayout.Button(Context.PlayerInventory.W.Count.ToString(), GUILayout.Height(InventoryItemBoxHeight), GUILayout.Width(InventoryItemBoxWidth));
+                GUILayout.Button(
+                    "<size=" + InventoryLetterFontSize + ">" + Context.PlayerInventory.W.Count.ToString() + "</size>", 
+                    GUILayout.Height(InventoryItemBoxHeight), 
+                    GUILayout.Width(InventoryItemBoxWidth));
             else if (InventoryLetter == "X")
-                GUILayout.Button(Context.PlayerInventory.X.Count.ToString(), GUILayout.Height(InventoryItemBoxHeight), GUILayout.Width(InventoryItemBoxWidth));
+                GUILayout.Button(
+                    "<size=" + InventoryLetterFontSize + ">" + Context.PlayerInventory.X.Count.ToString() + "</size>", 
+                    GUILayout.Height(InventoryItemBoxHeight), 
+                    GUILayout.Width(InventoryItemBoxWidth));
             else if (InventoryLetter == "Y")
-                GUILayout.Button(Context.PlayerInventory.Y.Count.ToString(), GUILayout.Height(InventoryItemBoxHeight), GUILayout.Width(InventoryItemBoxWidth));
+                GUILayout.Button(
+                    "<size=" + InventoryLetterFontSize + ">" + Context.PlayerInventory.Y.Count.ToString() + "</size>", 
+                    GUILayout.Height(InventoryItemBoxHeight), 
+                    GUILayout.Width(InventoryItemBoxWidth));
             else if (InventoryLetter == "Z")
-                GUILayout.Button(Context.PlayerInventory.Z.Count.ToString(), GUILayout.Height(InventoryItemBoxHeight), GUILayout.Width(InventoryItemBoxWidth));
-
+                GUILayout.Button(
+                    "<size=" + InventoryLetterFontSize + ">" + Context.PlayerInventory.Z.Count.ToString() + "</size>", 
+                    GUILayout.Height(InventoryItemBoxHeight), 
+                    GUILayout.Width(InventoryItemBoxWidth));
 
             // Reset to default color for the next button
             GUI.color = DefaultLetterButtonColor;
         }
+
+        GUILayout.FlexibleSpace();
         GUILayout.EndHorizontal();
         #endregion Letters' Count in Inventory --------------------------------------
 
