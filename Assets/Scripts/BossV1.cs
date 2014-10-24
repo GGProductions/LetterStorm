@@ -4,12 +4,21 @@ using System.Collections;
 public class BossV1  : MonoBehaviour {
 
 	
+
 	private Vector3 planeLoc;
 	private Vector3 rotShift;
 	public Quaternion angleNeeded;
 	private int hitcount;
+	private GameObject theBoss;
+  private  Boss3dWordGen b3dwg;
+	void Awake()
+	{
+		theBoss = GameObject.Find("Boss1Prefab_V2(Clone)");
+		b3dwg = theBoss.GetComponent<Boss3dWordGen>();
+	}
 	// Use this for initialization
 	void Start () {
+
 		hitcount = 0;
 		rotShift = new Vector3(0, 90, 0);
 	}
@@ -32,19 +41,28 @@ public class BossV1  : MonoBehaviour {
 		transform.rotation= Quaternion.Slerp(transform.rotation, angleNeeded, Time.deltaTime*damp);
 
 
-        if (hitcount > 5)
-        {
-            Destroy(gameObject);
-        }
+		if (hitcount > 6)
+		{
+			b3dwg.AllerAlbert();
+			Destroy(gameObject);
+		}
 		
 	}
 
 	
 
 	void OnTriggerEnter(Collider otherObj) { 
-        if (otherObj.tag == "projectileTag") {
+		 //otherObj.tag == "projectileTag" || 
+		if (otherObj.tag == "projectileTag" || otherObj.tag == "letterProjectile")
+		{
+
+
+
 		 hitcount++;
-		 Debug.Log(hitcount);
+		// Debug.Log(hitcount);
+
+
+			
 	}
 	
 	}

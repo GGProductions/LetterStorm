@@ -367,4 +367,10 @@ public class Inventory : MonoBehaviour
     }
     #endregion Constructors -----------------------------------------------
 
+
+    public void take_letterAway(string letter) { 
+       DecrementLetter( letter);
+    }
+
+  
 }

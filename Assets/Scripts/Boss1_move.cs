@@ -3,21 +3,19 @@ using System.Collections;
 
 public class Boss1_move : MonoBehaviour {
 	private int hitCount;
-
 	private Vector3 here;
-
 	private float tem;
 
-	//public GameObject wordHook;
+    //public delegate void gunsDied();
+    //public static event gunsDied 
 
-    private Transform _wordHook;
+	//private Transform _wordHook;
 
-    //public GameObject[] alphabet;
-
+	//public GameObject[] alphabet;
 	// Use this for initializationz
 
-    void Awake() {    
-    }
+	void Awake() {    
+	}
 
 	void Start () {
 		here = new Vector3( 0f, -0f, 3.1677f);

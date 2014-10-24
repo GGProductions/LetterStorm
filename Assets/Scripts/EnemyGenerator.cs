@@ -22,6 +22,10 @@ public class EnemyGenerator : MonoBehaviour
     public GameObject[] enemyPrefabs;       //array to hold all the prefabs of enemies we wish to spawn
     public GameObject[] spawnPoints;        //array to hold references to all spawn points
     public GameObject BossPrefab;           // boss of the game
+    public bool WordSolvingStage = false;  //hey Paul: this coul be a state ... I just needed a quick way to lett Albert know what stage it is
+                                            //when albert kills the boss guns, the boss informs the enemy generator that it is now Word solving time
+                                            // labert  checks what stage it is , and when it is word sloving time, he can start shoting letters
+
 
     private State state;                     //local variable that holds current state
 
@@ -29,6 +33,7 @@ public class EnemyGenerator : MonoBehaviour
     private int dumbSpawns = 4;
     private int enemiesSpawned = 0;
     private bool bossSpawned = false;
+
 
     private Inventory inv;
     private Word word;
@@ -103,17 +108,10 @@ public class EnemyGenerator : MonoBehaviour
 
     private void Setup()
     {
-<<<<<<< HEAD
-       // for (int i = 0; i < letterList.Count; i++) {
-         //   Debug.Log("item "+ i +" "+ letterList[i]);
-       // }
 
-            reqLetter = letterList[UnityEngine.Random.Range(0, letterList.Count)];
-      //  Debug.Log(reqLetter);
 
-=======
         reqLetter = letterList[UnityEngine.Random.Range(0, letterList.Count)];
->>>>>>> 16de5a3317854043132f5ec7ab34dfe46e1a9e72
+
 
         if (enemiesSpawned >= 20 && !bossSpawned)
         {
@@ -139,13 +137,13 @@ public class EnemyGenerator : MonoBehaviour
         /// </summary>
      
         GameObject[] gos = AvailableSpawnPoints();
-        Debug.Log(gos.Length);
+     //   Debug.Log(gos.Length);
 
         int spawnMax = SpawnQuantity(gos.Length);
 
 
         int reqSpawn = UnityEngine.Random.Range(0, gos.Length);
-        Debug.Log("reqSpawn" + reqSpawn);
+        //Debug.Log("reqSpawn" + reqSpawn);
         if (spawnMax > 0)
         {
             GameObject req = Instantiate(enemyPrefabs[LetterDict[reqLetter]],
