@@ -44,7 +44,7 @@ namespace GGProductions.LetterStorm.Utilities
             }
             // The code above will fail when hosted on the web, as their is no persistent data path to write to.
             // Default to returning an empty PlayerData object if that is the case.
-            catch (Exception ex)
+            catch (Exception)
             {
                 loadedData = new PlayerData();
             }
@@ -60,7 +60,7 @@ namespace GGProductions.LetterStorm.Utilities
         public static void Save(PlayerData dataToSave)
         {
             // Open up the save file for writing, creating it if it does not already exist
-            FileStream file = File.Open(Application.persistentDataPath + "/playerInfo.dat", FileMode.Open);
+            FileStream file = File.Open(Application.persistentDataPath + "/playerInfo.dat", FileMode.OpenOrCreate);
             //FileStream file = File.Create("C:/Users/David/AppData/LocalLow/Unity" + "/playerInfo.dat");
 
             // Create a binary formatter and use it to serialize the PlayerData to the save file
