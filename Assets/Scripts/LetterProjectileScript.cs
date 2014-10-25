@@ -4,6 +4,7 @@ using System.Collections;
 public class LetterProjectileScript : MonoBehaviour {
 
     private float currentRotationSpeed;
+    
     // Use this for initialization
     void Start()
     {
@@ -22,7 +23,11 @@ public class LetterProjectileScript : MonoBehaviour {
         //rigidbody.AddForce(Vector3.forward * 10);
 
         if (transform.position.z > 20 || transform.position.z < -10 || transform.position.x > 8 || transform.position.x < -8)
+        {
+            Messenger<char>.Broadcast("letter projectile died", this.transform.name[0]);
             Destroy(gameObject);
+
+        }
 
         if (startCounter) { timer += Time.deltaTime; }
         if (timer > 1f) {
@@ -57,6 +62,7 @@ public class LetterProjectileScript : MonoBehaviour {
         }
            
     }
+
 
 
 

@@ -40,7 +40,7 @@ public class EnemyGenerator : MonoBehaviour
     private List<char> letterList;
 
     private char reqLetter;
- 
+        
 
     //private bool spawning = false;
 
@@ -92,7 +92,7 @@ public class EnemyGenerator : MonoBehaviour
         }
 
         inv = Context.PlayerInventory;
-        word = Context.Curriculum.Lessons[0].Words.GetRandomWord();
+        word = Context.Word;
         letterList = new List<char>(word.Text);
 
 
@@ -113,7 +113,7 @@ public class EnemyGenerator : MonoBehaviour
         reqLetter = letterList[UnityEngine.Random.Range(0, letterList.Count)];
 
 
-        if (enemiesSpawned >= 20 && !bossSpawned)
+        if (enemiesSpawned >= 15 && !bossSpawned)
         {
             state = State.Boss;
         }
@@ -238,5 +238,30 @@ public class EnemyGenerator : MonoBehaviour
     {
         return UnityEngine.Random.Range(0, splen);
     }
+
+    public void OnEnable()
+    {
+        Messenger<char>.AddListener("letter projectile died", InventoryCheck);
+    }
+    public void OnDisable()
+    {
+        Messenger<char>.RemoveListener("letter projectile died", InventoryCheck);
+    }
+
+    public void InventoryCheck(char c)
+    {
+        Debug.Log("A good letter has died today: " + c);
+        if (inv.GetLetterCount(c.ToString()) < 1) {
+            int enemyindex = UnityEngine.Random.Range(0, enemyPrefabs.Length);
+            GameObject go = Instantiate(enemyPrefabs[LetterDict[c]],
+                                            spawnPoints[3].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
+        }
+    }
+
+    public void BroadcastCheck()
+    {
+        Debug.Log("Hi.");
+    }
+
 
 }

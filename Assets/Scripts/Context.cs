@@ -19,10 +19,32 @@ public class Context : MonoBehaviour
     private static Inventory _playerInventory;
     private static string _selectedLetter;
     private static char[] _alphabet;
+    private static Word _word;
+    private static int _level = 1;
     #endregion Private Variables ------------------------------------------
 
     #region Properties ----------------------------------------------------
     /// <summary>Stores the alphabet for efficient coding</summary>
+
+    public static int LevelNum
+    {
+        get
+        {
+            return _level;
+        }
+    }
+    public static Word Word
+    {
+        get 
+        {
+            if (_word == null)
+            {
+                _word = Curriculum.Lessons[0].Words.GetRandomWord();
+            }
+
+            return _word; 
+        }
+    }
     public static char[] Alphabet
     {
         get { return _alphabet; }
@@ -99,6 +121,12 @@ public class Context : MonoBehaviour
         {
             // PLACEHOLDER: This code has not yet been implimented
         }
+    }
+
+    public static void PrepareForNextLevel()
+    {
+        _word = null;
+        _level++;
     }
     #endregion Helper Methods -------------------------------------------------
 }
