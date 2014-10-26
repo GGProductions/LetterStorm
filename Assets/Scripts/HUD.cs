@@ -126,6 +126,7 @@ public class HUD : MonoBehaviour {
         #region Letter Type in Inventory --------------------------------------------
         GUILayout.BeginHorizontal();
         GUILayout.FlexibleSpace();
+        GUI.backgroundColor = Color.black;
 
         GUI.color = DefaultLetterButtonColor;
 
