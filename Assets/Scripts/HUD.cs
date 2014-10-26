@@ -50,7 +50,7 @@ public class HUD : MonoBehaviour {
         GUILayout.Box("Letters Collected: " + Context.PlayerInventory.TotalCollectedLetters);
         GUILayout.Box("Test Screen Width: " + Screen.width.ToString());
         GUILayout.Box("Test Screen Height: " + Screen.height.ToString());
-        GUILayout.Box("Hint: " + Context.BossWordHint.ToString());
+        GUILayout.Box("Hint: " + Context.Word.Hint);
 
         DisplayInventoryWindow();
         

@@ -117,7 +117,7 @@ public class AlbertController2 : MonoBehaviour {
 
                     // Debug.Log(" letname is "+LetterBulletname);%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
                     //&&&&&&&&&&&&&&&&&&&&&&&&& GARENTEE A SHOT OF LETTER... if ( >0) only shoots if you have that lettter 
-                    if (Context.PlayerInventory.GetLetterCount(LettercChosen)  <100 ) {
+                    if (Context.PlayerInventory.GetLetterCount(LettercChosen)  > 0 ) {
                         poof = Instantiate(Resources.Load("LettesProjectile/" + LetterBulletname), position, Quaternion.Euler(-90, 0, 0)) as GameObject;
                         poof.rigidbody.AddForce(transform.forward * 1000.0f);
                         Context.PlayerInventory.take_letterAway(LettercChosen);
