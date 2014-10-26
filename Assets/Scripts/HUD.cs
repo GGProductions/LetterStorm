@@ -4,18 +4,17 @@ using System.Collections;
 public class HUD : MonoBehaviour {
 
     #region Private Variables ---------------------------------------------
-    // Private variables representing components of the HUD
-    private GUIText LabelLives;
-    GUIStyle InventoryStyle;
-    private int InventoryBoxWidth = (int)(Screen.width * .75);
-    private int InventoryItemBoxWidth = (int)(Screen.width / 40);
-    private int InventoryItemBoxHeight = (int)(Screen.width / 40);
-    private float InventoryLetterFontSize = (float)(Screen.height * 0.0255f);
-    private int InventoryBoxBottomMargin = 5;
+    // Private variables representing components of the HUD; Initialized in the Start() functions
+    private GUIStyle InventoryStyle;
+    private int InventoryBoxWidth;
+    private int InventoryItemBoxWidth;
+    private int InventoryItemBoxHeight;
+    private int InventoryBoxBottomMargin;
+    private float InventoryLetterFontSize;
 
     private Color DefaultLetterButtonColor;
-    private Color SelectedLetterButtonColor = Color.green;
-    private static ArrayList CurrentLettersInInventory = new ArrayList();
+    private Color SelectedLetterButtonColor;
+    private static ArrayList CurrentLettersInInventory;
     private char[] Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
 
     // If game is paused or not paused
@@ -30,6 +29,15 @@ public class HUD : MonoBehaviour {
         isPaused = false;
         InventoryStyle = new GUIStyle();
         DefaultLetterButtonColor = GUI.backgroundColor;
+
+        CurrentLettersInInventory = new ArrayList();
+        SelectedLetterButtonColor = Color.green;
+
+        InventoryBoxWidth = (int)(Screen.width * .75);
+        InventoryItemBoxWidth = (int)(Screen.width / 40);
+        InventoryItemBoxHeight = (int)(Screen.width / 40);
+        InventoryLetterFontSize = (float)(Screen.height * 0.0255f);
+        InventoryBoxBottomMargin = 5;
     }
 
     /// <summary>
@@ -66,7 +74,7 @@ public class HUD : MonoBehaviour {
             InventoryItemBoxHeight = (int)(Screen.width / 40);
         }
 
-        // Font size of letters in inventory boxes-++
+        // Font size of letters in inventory boxes
         InventoryLetterFontSize = InventoryItemBoxHeight * 0.57f;
 
         // Determine which letters to show in the inventory
@@ -107,18 +115,20 @@ public class HUD : MonoBehaviour {
             }
         }
 
+        // Define inventory box area
         GUILayout.BeginArea(new Rect(
             Screen.width / 2 - InventoryItemBoxWidth * 31 / 2,                          // X start position
             Screen.height - InventoryItemBoxHeight * 3 - InventoryBoxBottomMargin,      // Y start position
             InventoryItemBoxWidth * 31,                                                 // Width
             InventoryItemBoxHeight * 3));                                               // Height
 
+        // Draw collected letters in Inventory
         #region Letter Type in Inventory --------------------------------------------
         GUILayout.BeginHorizontal();
         GUILayout.FlexibleSpace();
+
         GUI.color = DefaultLetterButtonColor;
 
-        // Create an entry in the inventory for each letter the player has collected
         for (int ii = 0; ii < CurrentLettersInInventory.Count; ii++)
         {
             string currentLetter = CurrentLettersInInventory[ii].ToString();
@@ -131,22 +141,24 @@ public class HUD : MonoBehaviour {
                 GUI.color = DefaultLetterButtonColor;
             }
         }
+
         GUILayout.FlexibleSpace();
         GUILayout.EndHorizontal();
         #endregion Letter Type in Inventory -----------------------------------------
 
+        // Draw the inventory [count of each letter] that has been collected
         #region Letters' Count in Inventory -----------------------------------------
         GUILayout.BeginHorizontal();
         GUILayout.FlexibleSpace();
+
         GUI.color = DefaultLetterButtonColor;
 
-        // Draw the inventory [count of each letter] that has been collected
         for (int ii = 0; ii < CurrentLettersInInventory.Count; ii++)
         {
             string InventoryLetter = CurrentLettersInInventory[ii].ToString();
 
             // Change color of letter in inventory if it is selected
-            GUI.color = Context.SelectedLetter == CurrentLettersInInventory[ii].ToString() ? SelectedLetterButtonColor : DefaultLetterButtonColor;
+            GUI.color = Context.SelectedLetter == InventoryLetter ? SelectedLetterButtonColor : DefaultLetterButtonColor;
 
             // Show count of letter
             if (InventoryLetter == "A")
