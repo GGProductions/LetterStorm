@@ -109,10 +109,9 @@ public class EnemyGenerator : MonoBehaviour
 
     private void Setup()
     {
-        
-        reqLetter = letterList[UnityEngine.Random.Range(0, letterList.Count)];
-
-        if (enemiesSpawned >= 15 && !bossSpawned)
+        Debug.Log("Count in setup: ");
+        Debug.Log(letterList.Count);
+        if (letterList.Count < 1 && !bossSpawned)
         {
             state = State.Boss;
         }
@@ -134,41 +133,14 @@ public class EnemyGenerator : MonoBehaviour
         // The number of enemies we will spawn, selected randomly
         int numOfEnemies = SpawnQuantity(emptySpawns.Length);
 
-        // the index of the spawnpoint for the letter we must generate, as long as there are required letters to generate
-        int reqSpawn = UnityEngine.Random.Range(0, emptySpawns.Length);
-
-        if (numOfEnemies > 0)
-        {
-            GameObject req = Instantiate(enemyPrefabs[LetterDict[reqLetter]],
-
-                                emptySpawns[reqSpawn].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
-            req.transform.parent = emptySpawns[reqSpawn].transform;
-        }
-        
-        emptySpawns = AvailableSpawnPoints();
-        numOfEnemies = SpawnQuantity(emptySpawns.Length);
-        int spawn = UnityEngine.Random.Range(0, emptySpawns.Length);
-
-        for (int i = 0; i < numOfEnemies; i++)
-        {
-            int enemyindex = UnityEngine.Random.Range(0, enemyPrefabs.Length);
-
-            GameObject go = Instantiate(enemyPrefabs[enemyindex],
-                                            emptySpawns[spawn].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
-
-            go.name = enemyPrefabs[enemyindex].name;
-            go.transform.parent = emptySpawns[spawn].transform;
-            spawn = (spawn + 1) % emptySpawns.Length;
-            enemiesSpawned++;
-
-        }
+        SpawnEnemyHelper(emptySpawns, numOfEnemies);
 
         state = State.Setup;
     }
 
     private void Idle()
     {
-        state = State.Setup;
+        
     }
 
     private void Boss()
@@ -231,34 +203,75 @@ public class EnemyGenerator : MonoBehaviour
         return UnityEngine.Random.Range(0, splen);
     }
 
+    private void SpawnEnemyHelper(GameObject[] sps, int sc)
+    {
+        if (letterList.Count >= 1)
+            reqLetter = letterList[UnityEngine.Random.Range(0, letterList.Count)];
+
+        int enemyIndex = UnityEngine.Random.Range(0, enemyPrefabs.Length);
+
+        for (int i = 0; i < sc; i++)
+        {
+
+            if (i == 0 && UnityEngine.Random.Range(0,2) > 0)
+            {
+                RequiredSpawn(sps, reqLetter, sc);
+            }
+            else
+            {
+                RandomSpawn(sps, enemyIndex, sc);
+                sc= (sc+ 1) % sps.Length;
+            }
+
+            enemyIndex = UnityEngine.Random.Range(0, enemyPrefabs.Length);
+            enemiesSpawned++;
+
+        }
+    }
+
+    public void RequiredSpawn(GameObject[] sps, char rl, int si)
+    {
+         GameObject go = Instantiate(enemyPrefabs[LetterDict[rl]],
+                               sps[si].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
+
+         go.name = enemyPrefabs[LetterDict[rl]].name;
+         go.transform.parent = sps[si].transform;
+    }
+
+    public void RandomSpawn(GameObject[] sps, int ei, int si)
+    {
+        GameObject go = Instantiate(enemyPrefabs[ei],
+                               sps[si].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
+
+        go.name = enemyPrefabs[ei].name;
+        go.transform.parent = sps[si].transform;
+    }
     public void OnEnable()
     {
         Messenger<char>.AddListener("letter projectile died", InventoryCheck);
-        Messenger<char>.AddListener("picked up a letter", RequirementCheck);
+        Messenger<string>.AddListener("picked up a letter", RequirementCheck);
     }
     public void OnDisable()
     {
         Messenger<char>.RemoveListener("letter projectile died", InventoryCheck);
-        Messenger<char>.RemoveListener("picked up a letter", RequirementCheck);
+        Messenger<string>.RemoveListener("picked up a letter", RequirementCheck);
     }
-
 
     public void InventoryCheck(char c)
     {
-        Debug.Log("A good letter has died today: " + c);
         if (Context.PlayerInventory.GetLetterCount(c.ToString()) < 1) {
-            int enemyindex = UnityEngine.Random.Range(0, enemyPrefabs.Length);
-            GameObject go = Instantiate(enemyPrefabs[LetterDict[c]],
+            GameObject go = Instantiate(Resources.Load("LettesProjectile/" + c + "_projectilePrefab"),
                                             spawnPoints[3].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
+            Debug.Log("instantiated a: " + c);
         }
     }
 
-    public void RequirementCheck(char c)
+    public void RequirementCheck(string s)
     {
-        Debug.Log("I picked somethingi up");
-        if (Context.PlayerInventory.GetLetterCount(c.ToString()) > 0 && letterList.Contains(c))
+        if (Context.PlayerInventory.GetLetterCount(s) > 0 && letterList.Contains(s.ToLower()[0]))
         {
-            letterList.Remove(c);
+            letterList.Remove(s.ToLower()[0]);
+            Debug.Log("Count in reqcheck: ");
             Debug.Log(letterList.Count);
         }
     }
