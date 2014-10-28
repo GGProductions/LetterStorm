@@ -6,8 +6,8 @@ public class Boss1_move : MonoBehaviour {
 	private Vector3 here;
 	private float tem;
 
-    //public delegate void gunsDied();
-    //public static event gunsDied 
+	//public delegate void gunsDied();
+	//public static event gunsDied 
 
 	//private Transform _wordHook;
 

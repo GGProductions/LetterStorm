@@ -13,6 +13,7 @@ public class BossV1  : MonoBehaviour {
   private  Boss3dWordGen b3dwg;
 	void Awake()
 	{
+
 		theBoss = GameObject.Find("Boss1Prefab_V2(Clone)");
 		b3dwg = theBoss.GetComponent<Boss3dWordGen>();
 	}

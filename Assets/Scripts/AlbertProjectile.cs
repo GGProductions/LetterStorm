@@ -7,7 +7,7 @@ public class AlbertProjectile : MonoBehaviour {
 	private float currentRotationSpeed;
 	// Use this for initialization
 	void Start () {
-		currentRotationSpeed = 500f;
+		currentRotationSpeed = 300f;
 	}
 	
 	// Update is called once per frame

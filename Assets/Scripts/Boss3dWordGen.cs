@@ -81,22 +81,22 @@ public  class Boss3dWordGen : MonoBehaviour {
 				 
 				 //wordGenerated_index_of_currLetterTosolve++;
 				 Debug.Log( input.ToString() +" "+ Context.Word.Text[wordGenerated_index_of_currLetterTosolve].ToString());
-                 if (input == Context.Word.Text[wordGenerated_index_of_currLetterTosolve])
+				 if (input == Context.Word.Text[wordGenerated_index_of_currLetterTosolve])
 				 {
 					 Debug.Log("ITS A MATCH)");
-                     if (wordGenerated_index_of_currLetterTosolve < Context.Word.Text.Length + 1)
-                     {
-                         List3dLetterGO[wordGenerated_index_of_currLetterTosolve].GetComponent<MeshRenderer>().enabled = enabled;
-                         wordGenerated_index_of_currLetterTosolve++;
-                         Destroy(otherObj.gameObject);
-                         //collisioncount++;
-                     }
-                     else { Destroy(otherObj.gameObject); }
-                     if (wordGenerated_index_of_currLetterTosolve == Context.Word.Text.Length)
-                     {
-                         Context.PrepareForNextLevel();
-                         Application.LoadLevel(2);
-                     }
+					 if (wordGenerated_index_of_currLetterTosolve < Context.Word.Text.Length + 1)
+					 {
+						 List3dLetterGO[wordGenerated_index_of_currLetterTosolve].GetComponent<MeshRenderer>().enabled = enabled;
+						 wordGenerated_index_of_currLetterTosolve++;
+						 Destroy(otherObj.gameObject);
+						 //collisioncount++;
+					 }
+					 else { Destroy(otherObj.gameObject); }
+					 if (wordGenerated_index_of_currLetterTosolve == Context.Word.Text.Length)
+					 {
+						 Context.PrepareForNextLevel();
+						 Application.LoadLevel(2);
+					 }
 
 
 				 }

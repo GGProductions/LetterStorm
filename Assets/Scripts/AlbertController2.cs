@@ -50,15 +50,16 @@ public class AlbertController2 : MonoBehaviour {
     void Start()
     {
         animation.wrapMode = WrapMode.Loop;
-        animation["idleing"].layer = 1;
-        animation["walking"].layer = 1;
+        animation["idleing"].layer = 0;
+        animation["walking"].layer = 0;
       
-        animation["walkingback"].layer = 1;
+        animation["walkingback"].layer = 0;
         
 
         animation.wrapMode = WrapMode.Default;
-        animation["throwing"].layer = 0;
-        animation["falling"].layer = 1;
+        animation["throwing"].layer = 3;
+        animation["falling"].layer = 0;
+        animation.Stop();
     }
     private GameObject poof;
     void Update()
