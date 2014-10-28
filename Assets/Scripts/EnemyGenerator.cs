@@ -261,8 +261,9 @@ public class EnemyGenerator : MonoBehaviour
     {
         if (Context.PlayerInventory.GetLetterCount(c.ToString()) < 1) {
             GameObject go = Instantiate(Resources.Load("LettesProjectile/" + c + "_projectilePrefab"),
-                                            spawnPoints[3].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
-            Debug.Log("instantiated a: " + c);
+                                            spawnPoints[3].transform.position, Quaternion.Euler(90, 0, 0)) as GameObject;
+            go.AddComponent("CollectibleChar");
+            
         }
     }
 
