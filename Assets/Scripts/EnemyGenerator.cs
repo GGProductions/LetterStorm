@@ -109,8 +109,8 @@ public class EnemyGenerator : MonoBehaviour
 
     private void Setup()
     {
-        Debug.Log("Count in setup: ");
-        Debug.Log(letterList.Count);
+        //Debug.Log("Count in setup: ");
+        //Debug.Log(letterList.Count);
         if (letterList.Count < 1 && !bossSpawned)
         {
             state = State.Boss;
@@ -269,7 +269,7 @@ public class EnemyGenerator : MonoBehaviour
 
     public void RequirementCheck(string s)
     {
-        if (Context.PlayerInventory.GetLetterCount(s) > 0 && letterList.Contains(s.ToLower()[0]))
+        if (letterList.Contains(s.ToLower()[0]))
         {
             letterList.Remove(s.ToLower()[0]);
             Debug.Log("Count in reqcheck: ");
