@@ -201,7 +201,8 @@ public class AlbertController2 : MonoBehaviour {
         if (otherObj.tag == "letterProjectile") {
             Debug.Log("name of letterpickedup " + otherObj.name);
             char input=otherObj.name[0];
-
+            Messenger<char>.Broadcast("picked up a letter", (char)input);   // Nabil: Added this so I can remove letters from my dict whenever Albert has picked them up to keep from overspawning
+                                                                            // letters that he needs but already has -Paul
             Context.PlayerInventory.AddCollectedLetter(input.ToString().ToUpper()); 
         }
         else

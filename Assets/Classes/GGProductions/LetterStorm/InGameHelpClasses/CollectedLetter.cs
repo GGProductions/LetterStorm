@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CollectedLetter : MonoBehaviour
+public class CollectedLetter
 {
 
     #region Private Variables ---------------------------------------------

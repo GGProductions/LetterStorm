@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Inventory : MonoBehaviour
+public class Inventory
 {
     #region Private Variables ---------------------------------------------
     // Private variables representing the collection of collectible letters 

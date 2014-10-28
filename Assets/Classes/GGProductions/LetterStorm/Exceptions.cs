@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GGProductions.LetterStorm.Data.Collections
+namespace GGProductions.LetterStorm.Data
 {
     /// <summary>
     /// Exception thrown when an attempt is made to retrieve an untested Word
@@ -31,6 +31,22 @@ namespace GGProductions.LetterStorm.Data.Collections
         public LessonNotFoundException():
             base("The specified lesson could not be located.  It may have been deleted.") 
         { 
+        }
+    }
+
+    /// <summary>
+    /// Exception thrown when an attempt is made to retrieve an enemy difficulty level using 
+    /// an id that does not match any of the existing difficulty levels' IDs
+    /// </summary>
+    public class EnemyDifficultyNotFoundException : NullReferenceException
+    {
+        /// <summary>
+        /// Exception thrown when an attempt is made to retrieve an enemy difficulty level using 
+        /// an id that does not match any of the existing difficulty levels' IDs
+        /// </summary>
+        public EnemyDifficultyNotFoundException() :
+            base("The specified enemy difficulty level could not be located.  It may have been deleted.")
+        {
         }
     }
 }
