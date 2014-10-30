@@ -1,15 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BossV1 : MonoBehaviour {
+public class BossV1  : MonoBehaviour {
 
 	
+
 	private Vector3 planeLoc;
 	private Vector3 rotShift;
 	public Quaternion angleNeeded;
 	private int hitcount;
+	//private GameObject theBoss;
+	//private Boss b3dwg;
+	void Awake()
+	{
+
+	}
 	// Use this for initialization
 	void Start () {
+
 		hitcount = 0;
 		rotShift = new Vector3(0, 90, 0);
 	}
@@ -32,18 +40,28 @@ public class BossV1 : MonoBehaviour {
 		transform.rotation= Quaternion.Slerp(transform.rotation, angleNeeded, Time.deltaTime*damp);
 
 
-        if (hitcount > 5)
-        {
-            Destroy(gameObject);
-        }
+		if (hitcount > 0)
+		{
+			//b3dwg.AllerAlbert();
+			Destroy(gameObject);
+		}
 		
 	}
 
 	
 
-	void OnTriggerEnter(Collider otherObj) { if (otherObj.tag == "projectileTag") {
+	void OnTriggerEnter(Collider otherObj) { 
+		 //otherObj.tag == "projectileTag" || 
+		if (otherObj.tag == "projectileTag" || otherObj.tag == "letterProjectile")
+		{
+
+
+
 		 hitcount++;
-		 Debug.Log(hitcount);
+		// Debug.Log(hitcount);
+
+
+			
 	}
 	
 	}

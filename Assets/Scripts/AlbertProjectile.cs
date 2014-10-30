@@ -7,7 +7,7 @@ public class AlbertProjectile : MonoBehaviour {
 	private float currentRotationSpeed;
 	// Use this for initialization
 	void Start () {
-		currentRotationSpeed = 500f;
+		currentRotationSpeed = 300f;
 	}
 	
 	// Update is called once per frame
@@ -33,13 +33,13 @@ public class AlbertProjectile : MonoBehaviour {
 
 
 
-        if (otherObj.tag == "enemy" || otherObj.tag == "bossTag")
-        {
-             Instantiate(boom, transform.position, Quaternion.Euler(270, 0, 0)) ;
-            Destroy(gameObject);
-       
+		if (otherObj.tag == "enemy" || otherObj.tag == "bossTag")
+		{
+			 Instantiate(boom, transform.position, Quaternion.Euler(270, 0, 0)) ;
+			Destroy(gameObject);
+	   
 
-        } 
+		} 
 
 
 

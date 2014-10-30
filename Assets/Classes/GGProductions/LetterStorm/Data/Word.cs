@@ -84,6 +84,7 @@ namespace GGProductions.LetterStorm.Data
         public Word(string text)
         {
             _text = text;
+            _hint = String.Empty;
         }
 
         /// <summary>
