@@ -27,10 +27,10 @@ public class AlbertController2 : MonoBehaviour {
     public string LetterBulletname;
 
     void OnEnable(){
-        Boss3dWordGen.OnMyGunsDied += ListenToBoss;}
+        Boss_3d_wordGen.OnMyGunsDied += ListenToBoss;}
     
     void OnDisable(){
-        Boss3dWordGen.OnMyGunsDied -= ListenToBoss;
+        Boss_3d_wordGen.OnMyGunsDied -= ListenToBoss;
     }
 
     void ListenToBoss() { Debug.Log("Albert heard you"); LetterMode = true; }
@@ -40,15 +40,19 @@ public class AlbertController2 : MonoBehaviour {
         LetterBulletname = string.Empty;
         mytransform = this.transform;
         myAmmoSpawn = transform.Find("AmmoSpawnPoint");
-        animation.AddClip(walkAnimationClip, "walking");
+        
         animation.AddClip(idleAnimationClip, "idleing");
         animation.AddClip(fallAnimationClip, "falling");
         animation.AddClip(wakBackAnimationClip, "walkingback");
         animation.AddClip(throwAnimationClip, "throwing");
+
+        animation.wrapMode = WrapMode.Loop;
+        animation.AddClip(walkAnimationClip, "walking");
+        animation.Stop();
     }
 
     void Start()
-    {
+    {/*
         animation.wrapMode = WrapMode.Loop;
         animation["idleing"].layer = 0;
         animation["walking"].layer = 0;
@@ -60,6 +64,7 @@ public class AlbertController2 : MonoBehaviour {
         animation["throwing"].layer = 3;
         animation["falling"].layer = 0;
         animation.Stop();
+      * */
     }
     private GameObject poof;
     void Update()
@@ -98,11 +103,12 @@ public class AlbertController2 : MonoBehaviour {
 
         if (Input.GetKeyDown("space"))
         {
+            animation.CrossFade("throwing");
             Vector3 position = new Vector3(myAmmoSpawn.position.x, myAmmoSpawn.position.y, myAmmoSpawn.position.z);
 
             if (!LetterMode)
             {
-                animation.CrossFade("throwing");
+               // animation.CrossFade("throwing");
                 // Fire projectile
                 poof = Instantiate(ProjectilePrefab, position, this.transform.rotation) as GameObject;
                 poof.rigidbody.AddForce(transform.forward * 1000.0f);
@@ -120,6 +126,7 @@ public class AlbertController2 : MonoBehaviour {
                     //&&&&&&&&&&&&&&&&&&&&&&&&& GARENTEE A SHOT OF LETTER... if ( >0) only shoots if you have that lettter 
                     if (Context.PlayerInventory.GetLetterCount(LettercChosen)  > 0 ) {
                         poof = Instantiate(Resources.Load("LettesProjectile/" + LetterBulletname), position, Quaternion.Euler(-90, 0, 0)) as GameObject;
+                       // poof.GetComponent<LetterProjectileScript>().isactive = false; I can't change this here
                         poof.rigidbody.AddForce(transform.forward * 1000.0f);
                         Context.PlayerInventory.take_letterAway(LettercChosen);
                     }

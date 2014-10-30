@@ -9,13 +9,11 @@ public class BossV1  : MonoBehaviour {
 	private Vector3 rotShift;
 	public Quaternion angleNeeded;
 	private int hitcount;
-	private GameObject theBoss;
-  private  Boss3dWordGen b3dwg;
+	//private GameObject theBoss;
+	//private Boss b3dwg;
 	void Awake()
 	{
 
-		theBoss = GameObject.Find("Boss1Prefab_V2(Clone)");
-		b3dwg = theBoss.GetComponent<Boss3dWordGen>();
 	}
 	// Use this for initialization
 	void Start () {
@@ -42,9 +40,9 @@ public class BossV1  : MonoBehaviour {
 		transform.rotation= Quaternion.Slerp(transform.rotation, angleNeeded, Time.deltaTime*damp);
 
 
-		if (hitcount > 6)
+		if (hitcount > 0)
 		{
-			b3dwg.AllerAlbert();
+			//b3dwg.AllerAlbert();
 			Destroy(gameObject);
 		}
 		

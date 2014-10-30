@@ -1,0 +1,427 @@
+fileFormatVersion: 2
+guid: 07e92547083303b4e8a788a9f5b2a880
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Armature_textedBoss
+    100002: Bone
+    100004: Bone1_L
+    100006: Bone1_R
+    100008: Bone2_L
+    100010: Bone2_R
+    100012: Bone3_L
+    100014: Bone3_R
+    100016: Bone4_L
+    100018: Bone4_R
+    100020: Bone6_L
+    100022: Bone6_R
+    100024: Bone_002_L_001
+    100026: Bone_002_L_002
+    100028: Bone_002_L_003
+    100030: Bone_002_L_004
+    100032: Bone_002_L_005
+    100034: Bone_002_L_006
+    100036: Bone_002_L_007
+    100038: Bone_002_L_008
+    100040: Bone_002_R_001
+    100042: Bone_002_R_002
+    100044: Bone_002_R_003
+    100046: Bone_002_R_004
+    100048: Bone_002_R_005
+    100050: Bone_002_R_006
+    100052: Bone_002_R_007
+    100054: Bone_002_R_008
+    100056: Bone_004_L_001
+    100058: Bone_004_R_001
+    100060: Bone_005
+    100062: //RootNode
+    100064: Cube_002
+    100066: texturedBodd
+    100068: Armature
+    100070: boss_texted_anim
+    400000: Armature_textedBoss
+    400002: Bone
+    400004: Bone1_L
+    400006: Bone1_R
+    400008: Bone2_L
+    400010: Bone2_R
+    400012: Bone3_L
+    400014: Bone3_R
+    400016: Bone4_L
+    400018: Bone4_R
+    400020: Bone6_L
+    400022: Bone6_R
+    400024: Bone_002_L_001
+    400026: Bone_002_L_002
+    400028: Bone_002_L_003
+    400030: Bone_002_L_004
+    400032: Bone_002_L_005
+    400034: Bone_002_L_006
+    400036: Bone_002_L_007
+    400038: Bone_002_L_008
+    400040: Bone_002_R_001
+    400042: Bone_002_R_002
+    400044: Bone_002_R_003
+    400046: Bone_002_R_004
+    400048: Bone_002_R_005
+    400050: Bone_002_R_006
+    400052: Bone_002_R_007
+    400054: Bone_002_R_008
+    400056: Bone_004_L_001
+    400058: Bone_004_R_001
+    400060: Bone_005
+    400062: //RootNode
+    400064: Cube_002
+    400066: texturedBodd
+    400068: Armature
+    400070: boss_texted_anim
+    2300000: Cube_002
+    2300002: boss_texted_anim
+    3300000: Cube_002
+    3300002: boss_texted_anim
+    4300000: texturedBodd
+    4300002: boss_texted_anim
+    7400000: Default Take
+    7400002: BossAction1
+    7400004: curleup
+    7400006: PoseLib
+    7400008: unCurl
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: texturedBodd
+    13700002: Bone
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 3
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: BossAction1
+      takeName: BossAction1
+      firstFrame: 0
+      lastFrame: 240
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature_textedBoss
+        weight: 1
+      - path: Armature_textedBoss/Bone
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone6_L
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone6_L/Bone4_L
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone6_L/Bone4_L/Bone3_L
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone6_L/Bone4_L/Bone3_L/Bone2_L
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone6_L/Bone4_L/Bone3_L/Bone2_L/Bone1_L
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone6_R
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone6_R/Bone4_R
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone6_R/Bone4_R/Bone3_R
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone6_R/Bone4_R/Bone3_R/Bone2_R
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone6_R/Bone4_R/Bone3_R/Bone2_R/Bone1_R
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_L_001
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_L_001/Bone_002_L_002
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_L_001/Bone_002_L_002/Bone_002_L_003
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_L_001/Bone_002_L_002/Bone_002_L_003/Bone_002_L_004
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_L_001/Bone_002_L_002/Bone_002_L_003/Bone_002_L_004/Bone_002_L_005
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_L_001/Bone_002_L_002/Bone_002_L_003/Bone_002_L_004/Bone_002_L_005/Bone_002_L_006
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_L_001/Bone_002_L_002/Bone_002_L_003/Bone_002_L_004/Bone_002_L_005/Bone_002_L_006/Bone_002_L_007
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_L_001/Bone_002_L_002/Bone_002_L_003/Bone_002_L_004/Bone_002_L_005/Bone_002_L_006/Bone_002_L_007/Bone_002_L_008
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_R_001
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_R_001/Bone_002_R_002
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_R_001/Bone_002_R_002/Bone_002_R_003
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_R_001/Bone_002_R_002/Bone_002_R_003/Bone_002_R_004
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_R_001/Bone_002_R_002/Bone_002_R_003/Bone_002_R_004/Bone_002_R_005
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_R_001/Bone_002_R_002/Bone_002_R_003/Bone_002_R_004/Bone_002_R_005/Bone_002_R_006
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_R_001/Bone_002_R_002/Bone_002_R_003/Bone_002_R_004/Bone_002_R_005/Bone_002_R_006/Bone_002_R_007
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_R_001/Bone_002_R_002/Bone_002_R_003/Bone_002_R_004/Bone_002_R_005/Bone_002_R_006/Bone_002_R_007/Bone_002_R_008
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_004_L_001
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_004_R_001
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_005
+        weight: 1
+      - path: Cube_002
+        weight: 1
+      - path: texturedBodd
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: curleup
+      takeName: curleup
+      firstFrame: -1
+      lastFrame: 59
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature_textedBoss
+        weight: 1
+      - path: Armature_textedBoss/Bone
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone6_L
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone6_L/Bone4_L
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone6_L/Bone4_L/Bone3_L
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone6_L/Bone4_L/Bone3_L/Bone2_L
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone6_L/Bone4_L/Bone3_L/Bone2_L/Bone1_L
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone6_R
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone6_R/Bone4_R
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone6_R/Bone4_R/Bone3_R
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone6_R/Bone4_R/Bone3_R/Bone2_R
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone6_R/Bone4_R/Bone3_R/Bone2_R/Bone1_R
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_L_001
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_L_001/Bone_002_L_002
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_L_001/Bone_002_L_002/Bone_002_L_003
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_L_001/Bone_002_L_002/Bone_002_L_003/Bone_002_L_004
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_L_001/Bone_002_L_002/Bone_002_L_003/Bone_002_L_004/Bone_002_L_005
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_L_001/Bone_002_L_002/Bone_002_L_003/Bone_002_L_004/Bone_002_L_005/Bone_002_L_006
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_L_001/Bone_002_L_002/Bone_002_L_003/Bone_002_L_004/Bone_002_L_005/Bone_002_L_006/Bone_002_L_007
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_L_001/Bone_002_L_002/Bone_002_L_003/Bone_002_L_004/Bone_002_L_005/Bone_002_L_006/Bone_002_L_007/Bone_002_L_008
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_R_001
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_R_001/Bone_002_R_002
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_R_001/Bone_002_R_002/Bone_002_R_003
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_R_001/Bone_002_R_002/Bone_002_R_003/Bone_002_R_004
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_R_001/Bone_002_R_002/Bone_002_R_003/Bone_002_R_004/Bone_002_R_005
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_R_001/Bone_002_R_002/Bone_002_R_003/Bone_002_R_004/Bone_002_R_005/Bone_002_R_006
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_R_001/Bone_002_R_002/Bone_002_R_003/Bone_002_R_004/Bone_002_R_005/Bone_002_R_006/Bone_002_R_007
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_R_001/Bone_002_R_002/Bone_002_R_003/Bone_002_R_004/Bone_002_R_005/Bone_002_R_006/Bone_002_R_007/Bone_002_R_008
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_004_L_001
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_004_R_001
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_005
+        weight: 1
+      - path: Cube_002
+        weight: 1
+      - path: texturedBodd
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: unCurl
+      takeName: unCurl
+      firstFrame: -1
+      lastFrame: 59
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature_textedBoss
+        weight: 1
+      - path: Armature_textedBoss/Bone
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone6_L
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone6_L/Bone4_L
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone6_L/Bone4_L/Bone3_L
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone6_L/Bone4_L/Bone3_L/Bone2_L
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone6_L/Bone4_L/Bone3_L/Bone2_L/Bone1_L
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone6_R
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone6_R/Bone4_R
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone6_R/Bone4_R/Bone3_R
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone6_R/Bone4_R/Bone3_R/Bone2_R
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone6_R/Bone4_R/Bone3_R/Bone2_R/Bone1_R
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_L_001
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_L_001/Bone_002_L_002
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_L_001/Bone_002_L_002/Bone_002_L_003
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_L_001/Bone_002_L_002/Bone_002_L_003/Bone_002_L_004
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_L_001/Bone_002_L_002/Bone_002_L_003/Bone_002_L_004/Bone_002_L_005
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_L_001/Bone_002_L_002/Bone_002_L_003/Bone_002_L_004/Bone_002_L_005/Bone_002_L_006
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_L_001/Bone_002_L_002/Bone_002_L_003/Bone_002_L_004/Bone_002_L_005/Bone_002_L_006/Bone_002_L_007
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_L_001/Bone_002_L_002/Bone_002_L_003/Bone_002_L_004/Bone_002_L_005/Bone_002_L_006/Bone_002_L_007/Bone_002_L_008
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_R_001
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_R_001/Bone_002_R_002
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_R_001/Bone_002_R_002/Bone_002_R_003
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_R_001/Bone_002_R_002/Bone_002_R_003/Bone_002_R_004
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_R_001/Bone_002_R_002/Bone_002_R_003/Bone_002_R_004/Bone_002_R_005
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_R_001/Bone_002_R_002/Bone_002_R_003/Bone_002_R_004/Bone_002_R_005/Bone_002_R_006
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_R_001/Bone_002_R_002/Bone_002_R_003/Bone_002_R_004/Bone_002_R_005/Bone_002_R_006/Bone_002_R_007
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_002_R_001/Bone_002_R_002/Bone_002_R_003/Bone_002_R_004/Bone_002_R_005/Bone_002_R_006/Bone_002_R_007/Bone_002_R_008
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_004_L_001
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_004_R_001
+        weight: 1
+      - path: Armature_textedBoss/Bone/Bone_005
+        weight: 1
+      - path: Cube_002
+        weight: 1
+      - path: texturedBodd
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .600000024
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 
