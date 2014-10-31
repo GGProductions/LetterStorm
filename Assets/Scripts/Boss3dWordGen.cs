@@ -4,17 +4,25 @@ using System.Collections.Generic;
 using GGProductions.LetterStorm.Data;
 using GGProductions.LetterStorm.Data.Collections;
 
-public  class Boss3dWordGen : MonoBehaviour {
+public class Boss_3d_wordGenBoss3dWordGen : MonoBehaviour
+{
 
 
 	public delegate void gunsDied();
 	public static event gunsDied OnMyGunsDied;
+
 	private int NumberOfGunsDestroyed = 0;
 	public  void AllerAlbert() {
 		NumberOfGunsDestroyed++;
 	if(NumberOfGunsDestroyed==2)OnMyGunsDied(); 
 	
 	}
+
+	//***********************************************************
+	public delegate void bosshitwrongletter();
+	public static event bosshitwrongletter OnBossWrong;
+
+
 	private Transform _wordHook;
 	private List<GameObject> List3dLetterGO = new List<GameObject>();
 	private int wordGenerated_index_of_currLetterTosolve ;
@@ -24,11 +32,15 @@ public  class Boss3dWordGen : MonoBehaviour {
 	private float kerning=0.6f;
 
 	EnemyGenerator _enemygen;
-
+	
 	//Context ctxt;
-	private int collisioncount = 0;
+	
+
+	//void Start() { bossmove = GameObject.Find("Boss1Prefab_V2").GetComponent<Boss1_move>(); }
 
 	void Awake () {
+	  //  theBossBody = GameObject.Find("Boss1Prefab_V2");
+	   
 		wordGenerated_index_of_currLetterTosolve = 0;
 		fetchWordandConstruct();
 
@@ -50,7 +62,7 @@ public  class Boss3dWordGen : MonoBehaviour {
 
 	//	wordGenerated = "strawberry";
 		int wordlength = Context.Word.Text.Length;
-		Debug.Log(wordlength + " size");
+	//	Debug.Log(wordlength + " size");
 		char letter;
 		int cnt;
 		for (cnt = 0; cnt < wordlength; cnt++)
@@ -71,6 +83,8 @@ public  class Boss3dWordGen : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider otherObj) {
+	 //   bossmove.getPissed();
+
 		if (NumberOfGunsDestroyed == 2)
 		{ //otherObj.tag == "projectileTag" || 
 			if (otherObj.tag == "letterProjectile")
@@ -80,7 +94,7 @@ public  class Boss3dWordGen : MonoBehaviour {
 				// string LetterThatJustHitMe = input.ToString().ToUpper();
 				 
 				 //wordGenerated_index_of_currLetterTosolve++;
-				 Debug.Log( input.ToString() +" "+ Context.Word.Text[wordGenerated_index_of_currLetterTosolve].ToString());
+				// Debug.Log( input.ToString() +" "+ Context.Word.Text[wordGenerated_index_of_currLetterTosolve].ToString());
 				 if (input == Context.Word.Text[wordGenerated_index_of_currLetterTosolve])
 				 {
 					 Debug.Log("ITS A MATCH)");
@@ -91,19 +105,35 @@ public  class Boss3dWordGen : MonoBehaviour {
 						 Destroy(otherObj.gameObject);
 						 //collisioncount++;
 					 }
-					 else { Destroy(otherObj.gameObject); }
+					 else {
+						
+						 Destroy(otherObj.gameObject);
+					 }
 					 if (wordGenerated_index_of_currLetterTosolve == Context.Word.Text.Length)
 					 {
+
+
 						 Context.PrepareForNextLevel();
 						 Application.LoadLevel(2);
 					 }
 
 
 				 }
-				  
+				 else
+					 if (input != Context.Word.Text[wordGenerated_index_of_currLetterTosolve])
+				 { 
+					 //*************************************************************************************************************
+						OnBossWrong();
+						// Messenger<string>.Broadcast("hit wrong letter", otherObj.name);
+					   
+					 Debug.Log("iam the wromg letter"); }
+				//////this.transform.GetComponent<Boss1_move>().getPissed("yo");
 			}
 			else
+			   
 			{
+				
+				
 				char nameofletterthathit = otherObj.name[0];			
 			}
 

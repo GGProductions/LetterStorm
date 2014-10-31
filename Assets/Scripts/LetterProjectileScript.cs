@@ -4,13 +4,13 @@ using System.Collections;
 public class LetterProjectileScript : MonoBehaviour {
 
     private float currentRotationSpeed;
-    
+
     // Use this for initialization
     void Start()
     {
+       
         currentRotationSpeed = 5f;
     }
-    private bool isCounting = false;
     // Update is called once per frame
     void Update()
     {
@@ -42,6 +42,7 @@ public class LetterProjectileScript : MonoBehaviour {
     private float timer;
     void OnTriggerEnter(Collider otherObj)
     {
+      //  isactive = false;
 
         
         if (otherObj.tag == "bossTag")
@@ -49,6 +50,7 @@ public class LetterProjectileScript : MonoBehaviour {
             this.transform.GetComponent<SphereCollider>().isTrigger = false;
             startCounter=true;
             timer = 0;
+            
            //  gameObject.rigidbody.AddForce(transform.up * 1100f);
             // Instantiate(boom, transform.position, Quaternion.Euler(270, 0, 0));
             //    Destroy(gameObject);
@@ -57,7 +59,7 @@ public class LetterProjectileScript : MonoBehaviour {
         if (otherObj.tag == "AlbertPrefab2")
         {
             Debug.Log("I am letter --->albert");
-            this.transform.GetComponent<SphereCollider>().isTrigger = true;
+           // this.transform.GetComponent<SphereCollider>().isTrigger = true;
             Destroy(gameObject);
         }
            

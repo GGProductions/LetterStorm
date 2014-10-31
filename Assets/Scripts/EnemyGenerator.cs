@@ -148,7 +148,7 @@ public class EnemyGenerator : MonoBehaviour
 
         GameObject go = Instantiate(BossPrefab,
                                            new Vector3(0,0,2), Quaternion.Euler(180, 0, 180)) as GameObject;
-
+        go.name = BossPrefab.name;
 
         bossSpawned = true;
         state = State.Idle;
@@ -262,6 +262,10 @@ public class EnemyGenerator : MonoBehaviour
         if (Context.PlayerInventory.GetLetterCount(c.ToString()) < 1) {
             GameObject go = Instantiate(Resources.Load("LettesProjectile/" + c + "_projectilePrefab"),
                                             spawnPoints[3].transform.position, Quaternion.Euler(90, 0, 0)) as GameObject;
+
+           // go.transform.parent = this.transform;
+           // go.transform.GetComponent<LetterProjectileScript>().setinactive();
+
             go.AddComponent("CollectibleChar");
             
         }
@@ -272,8 +276,8 @@ public class EnemyGenerator : MonoBehaviour
         if (letterList.Contains(s.ToLower()[0]))
         {
             letterList.Remove(s.ToLower()[0]);
-            Debug.Log("Count in reqcheck: ");
-            Debug.Log(letterList.Count);
+         //   Debug.Log("Count in reqcheck: ");
+        //    Debug.Log(letterList.Count);
         }
     }
     #endregion Helper Methods ---------------------------------------------

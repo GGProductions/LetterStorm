@@ -21,8 +21,7 @@ public class LandGenerator : MonoBehaviour {
 	public GameObject block8;
 	public GameObject block9;
 */
-	private bool block1_wasSpawned = false;
-	private bool block2_wasSpawned = false;
+
 
 	public enum State
 	{
@@ -87,7 +86,7 @@ public class LandGenerator : MonoBehaviour {
 	public void Changestate() {
 	
 		int choice=0;
-		Debug.Log("changeState" + state.ToString() + choice);
+	//	Debug.Log("changeState" + state.ToString() + choice);
 		///STATE1
 
 		if (state == LandGenerator.State.brick) {
@@ -104,7 +103,7 @@ public class LandGenerator : MonoBehaviour {
 		///STATE13
 		if (state == LandGenerator.State.sand)
 		{
-			choice = Random.RandomRange(0, 3);
+			choice = Random.Range(0, 3);
 			if (choice == 0) { state = LandGenerator.State.sanddirt; sanddirt();}
 			else
 				if (choice == 1) { state = LandGenerator.State.sandbrick; sandbrick(); }
@@ -118,7 +117,7 @@ public class LandGenerator : MonoBehaviour {
 		else
 		///STATE5
 		if (state == LandGenerator.State.sanddirt) {
-			choice = Random.RandomRange(0, 4);
+			choice = Random.Range(0, 4);
 			if (choice == 0) { state = LandGenerator.State.dirt; dirt(); }
 			else
 				if (choice == 1) { state = LandGenerator.State.grass; grass(); }
@@ -130,7 +129,7 @@ public class LandGenerator : MonoBehaviour {
 		else
 		///STATE6
 		if (state == LandGenerator.State.dirt) {
-			choice = Random.RandomRange(0, 4);
+			choice = Random.Range(0, 4);
 			if (choice == 0) { state = LandGenerator.State.grass; grass(); }
 			else
 				if (choice == 1) { state = LandGenerator.State.dirt; dirt(); }
@@ -148,7 +147,7 @@ public class LandGenerator : MonoBehaviour {
 
 		if (state == LandGenerator.State.grass)
 		{
-			choice = Random.RandomRange(0, 4);
+			choice = Random.Range(0, 4);
 			if (choice == 0) { state = LandGenerator.State.bridge; bridge(); }
 			else
 				if (choice == 1) { state = LandGenerator.State.grass; grass(); }
@@ -163,7 +162,7 @@ public class LandGenerator : MonoBehaviour {
 		///STATE8
 		if (state == LandGenerator.State.bridge)
 		{
-			choice = Random.RandomRange(0, 3);
+			choice = Random.Range(0, 3);
 
 			if (choice == 0) { state = LandGenerator.State.dirtsand; dirtsand(); }
 			else
