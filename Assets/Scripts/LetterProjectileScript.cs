@@ -31,6 +31,7 @@ public class LetterProjectileScript : MonoBehaviour {
 
         if (startCounter) { timer += Time.deltaTime; }
         if (timer > 1f) {
+            isactive = false; 
             this.transform.GetComponent<SphereCollider>().isTrigger = true;
             timer = 0;
             startCounter = false;
@@ -40,9 +41,11 @@ public class LetterProjectileScript : MonoBehaviour {
 
     private bool startCounter = false;
     private float timer;
+    public bool isactive;
+
     void OnTriggerEnter(Collider otherObj)
     {
-      //  isactive = false;
+       
 
         
         if (otherObj.tag == "bossTag")
@@ -50,7 +53,7 @@ public class LetterProjectileScript : MonoBehaviour {
             this.transform.GetComponent<SphereCollider>().isTrigger = false;
             startCounter=true;
             timer = 0;
-            
+           // isactive = false;     
            //  gameObject.rigidbody.AddForce(transform.up * 1100f);
             // Instantiate(boom, transform.position, Quaternion.Euler(270, 0, 0));
             //    Destroy(gameObject);

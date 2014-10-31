@@ -110,6 +110,7 @@ public class AlbertController2 : MonoBehaviour {
             {
                // animation.CrossFade("throwing");
                 // Fire projectile
+                
                 poof = Instantiate(ProjectilePrefab, position, this.transform.rotation) as GameObject;
                 poof.rigidbody.AddForce(transform.forward * 1000.0f);
             }
@@ -126,7 +127,7 @@ public class AlbertController2 : MonoBehaviour {
                     //&&&&&&&&&&&&&&&&&&&&&&&&& GARENTEE A SHOT OF LETTER... if ( >0) only shoots if you have that lettter 
                     if (Context.PlayerInventory.GetLetterCount(LettercChosen)  > 0 ) {
                         poof = Instantiate(Resources.Load("LettesProjectile/" + LetterBulletname), position, Quaternion.Euler(-90, 0, 0)) as GameObject;
-                       // poof.GetComponent<LetterProjectileScript>().isactive = false; I can't change this here
+                        poof.GetComponent<LetterProjectileScript>().isactive = true;// I can't change this here
                         poof.rigidbody.AddForce(transform.forward * 1000.0f);
                         Context.PlayerInventory.take_letterAway(LettercChosen);
                     }

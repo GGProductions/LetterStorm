@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Boss1_move : MonoBehaviour {
+public class Boss1_moveV2 : MonoBehaviour {
 	private int hitCount;
 	private Vector3 here;
 	private float tem;

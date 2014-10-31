@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BossProjectile : MonoBehaviour {
+public class BossProjectile_V1 : MonoBehaviour {
 
     public float projectileSpeed;
     public GameObject explosion;
