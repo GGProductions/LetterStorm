@@ -25,91 +25,9 @@ public class ManageLessons : MonoBehaviour
     /// for the selected lesson's words within the CurrentLessons Area
     /// </summary>
     private static Vector2 lessonWordsScrollPosition;
-
-    /// <summary>
-    /// The styles used for header labels
-    /// </summary>
-    private GUIStyle _headerStyle
-    {
-        get
-        {
-            return smartMenuSkin.customStyles.First(s => s.name.Equals("headerStyle", System.StringComparison.OrdinalIgnoreCase));
-        }
-    }
-
-    /// <summary>
-    /// The styles used for subheader labels
-    /// </summary>
-    private GUIStyle _subHeaderStyle
-    {
-        get
-        {
-            return smartMenuSkin.customStyles.First(s => s.name.Equals("subHeaderStyle", System.StringComparison.OrdinalIgnoreCase));
-        }
-    }
-
-    /// <summary>
-    /// The style used for most buttons
-    /// </summary>
-    private GUIStyle _generalButtonStyle
-    {
-        get
-        {
-            return smartMenuSkin.customStyles.First(s => s.name.Equals("generalButtonStyle", System.StringComparison.OrdinalIgnoreCase));
-        }
-    }
-
-    /// <summary>
-    /// The styles used for create buttons
-    /// </summary>
-    private GUIStyle _createButtonStyle
-    {
-        get
-        {
-            return smartMenuSkin.customStyles.First(s => s.name.Equals("createButtonStyle", System.StringComparison.OrdinalIgnoreCase));
-        }
-    }
-
-    /// <summary>
-    /// The styles used for delete buttons
-    /// </summary>
-    private GUIStyle _deleteButtonStyle
-    {
-        get
-        {
-            return smartMenuSkin.customStyles.First(s => s.name.Equals("deleteButtonStyle", System.StringComparison.OrdinalIgnoreCase));
-        }
-    }
-
-    /// <summary>
-    /// The styles used by the input fields
-    /// </summary>
-    private GUIStyle _inputFieldsStyle
-    {
-        get
-        {
-            return smartMenuSkin.customStyles.First(s => s.name.Equals("inputFieldsStyle", System.StringComparison.OrdinalIgnoreCase));
-        }
-    }
-
-    /// <summary>
-    /// The styles used for return to main menu button
-    /// </summary>
-    private GUIStyle _mainMenuButtonStyle
-    {
-        get
-        {
-            return smartMenuSkin.customStyles.First(s => s.name.Equals("mainMenuButtonStyle", System.StringComparison.OrdinalIgnoreCase));
-        }
-    }
     #endregion Private Variables ----------------------------------------------
 
     #region Public Variables --------------------------------------------------
-    /// <summary>
-    /// The GUI skin containing all the styles used for the GUI elements
-    /// </summary>
-    public GUISkin smartMenuSkin;
-    
     /// <summary>
     /// The background image for the screen
     /// </summary>
@@ -124,6 +42,41 @@ public class ManageLessons : MonoBehaviour
     /// The backgound image to use for the word area
     /// </summary>
     public Texture wordAreaBackgroundImg;
+
+    /// <summary>
+    /// The styles used for header labels
+    /// </summary>
+    public GUIStyle headerStyle;
+
+    /// <summary>
+    /// The styles used for subheader labels
+    /// </summary>
+    public GUIStyle subHeaderStyle;
+
+    /// <summary>
+    /// The style used for most buttons
+    /// </summary>
+    public GUIStyle generalButtonStyle;
+
+    /// <summary>
+    /// The styles used for create buttons
+    /// </summary>
+    public GUIStyle createButtonStyle;
+
+    /// <summary>
+    /// The styles used for delete buttons
+    /// </summary>
+    public GUIStyle deleteButtonStyle;
+
+    /// <summary>
+    /// The styles used by the input fields
+    /// </summary>
+    public GUIStyle inputFieldsStyle;
+
+    /// <summary>
+    /// The styles used for return to main menu button
+    /// </summary>
+    public GUIStyle mainMenuButtonStyle;
     #endregion Public Variables -----------------------------------------------
 
     void OnGUI()
@@ -209,7 +162,7 @@ public class ManageLessons : MonoBehaviour
         int oldSelectedLessonIdx = selectedLessonBtnIdx;
 
         // Create the Curriculum header label
-        GUILayout.Label("Curriculum", _headerStyle);
+        GUILayout.Label("Curriculum", headerStyle);
 
         // Create the button used to create a new lesson, and do so if it has been clicked
         CreateNewLessonBtn(ref selectedLessonBtnIdx, ref oldSelectedLessonIdx);
@@ -219,7 +172,7 @@ public class ManageLessons : MonoBehaviour
         
         // Build a vertical, one-column grid of buttons corresponding to the 
         // lesson names, and note which one the player selected
-        selectedLessonBtnIdx = GUILayout.SelectionGrid(selectedLessonBtnIdx, lessonNames.ToArray(), 1, _generalButtonStyle);
+        selectedLessonBtnIdx = GUILayout.SelectionGrid(selectedLessonBtnIdx, lessonNames.ToArray(), 1, generalButtonStyle);
 
         GUILayout.EndScrollView();
 
@@ -245,7 +198,7 @@ public class ManageLessons : MonoBehaviour
     private void CreateNewLessonBtn(ref int selectedLessonIdx, ref int oldSelectedLessonIdx)
     {
         // Create the button used to create a new lesson.  If it was clicked...
-        if (GUILayout.Button("New Lesson", _createButtonStyle))
+        if (GUILayout.Button("New Lesson", createButtonStyle))
         {   // If a lesson with the same name does not already exist...
             if (lessonNames.Contains("Lesson") == false)
             {
@@ -282,18 +235,18 @@ public class ManageLessons : MonoBehaviour
         GUILayout.BeginVertical();
 
         // Create the Lesson header label
-        GUILayout.Label("Lesson", _headerStyle);
+        GUILayout.Label("Lesson", headerStyle);
 
         // Create the Lesson name subheader label
-        GUILayout.Label("Name: ", _subHeaderStyle);
+        GUILayout.Label("Name: ", subHeaderStyle);
 
         // Create the text field used to update the current lesson's name, 
         // and do so if the user changes its contents
         CreateLessonNameTextField(lessonIdx);
 
         // Create the Words subheader label
-        GUILayout.Label("", _subHeaderStyle);
-        GUILayout.Label("Words: ", _subHeaderStyle);
+        GUILayout.Label("", subHeaderStyle);
+        GUILayout.Label("Words: ", subHeaderStyle);
 
         // Create the button used to create a new word, and do so if it has been clicked
         CreateNewWordBtn(lessonIdx, ref selectedWordBtnIdx);
@@ -303,7 +256,7 @@ public class ManageLessons : MonoBehaviour
 
         // Build a vertical, one-column grid of buttons corresponding to the 
         // lesson words, and note which one the player selected
-        selectedWordBtnIdx = GUILayout.SelectionGrid(selectedWordBtnIdx, lessonWordTexts.ToArray(), 1, _generalButtonStyle);
+        selectedWordBtnIdx = GUILayout.SelectionGrid(selectedWordBtnIdx, lessonWordTexts.ToArray(), 1, generalButtonStyle);
 
         GUILayout.EndScrollView();
 
@@ -325,7 +278,7 @@ public class ManageLessons : MonoBehaviour
     private void CreateLessonNameTextField(int lessonIdx)
     {
         // Build the text field used to update the current lesson's name, and retrieve any text the user entered
-        string lessonName = GUILayout.TextField(lessonNames[lessonIdx], 50, _inputFieldsStyle);
+        string lessonName = GUILayout.TextField(lessonNames[lessonIdx], 50, inputFieldsStyle);
         // If text was entered by the user, and if it only contains characters, numbers, or spaces, accept/store it
         if (lessonNames[lessonIdx].Equals(lessonName, System.StringComparison.InvariantCultureIgnoreCase) == false &&
             Regex.IsMatch(lessonName, "([^A-Za-z0-9 ]+)") == false)
@@ -345,7 +298,7 @@ public class ManageLessons : MonoBehaviour
     private void CreateNewWordBtn(int lessonIdx, ref int selectedWordIdx)
     {
         // If the button used to create a new word was clicked...
-        if (GUILayout.Button("New Word", _createButtonStyle))
+        if (GUILayout.Button("New Word", createButtonStyle))
         {   // If the lesson does not already contain a new word...
             if (lessonWordTexts.Contains("word") == false)
             {
@@ -367,7 +320,7 @@ public class ManageLessons : MonoBehaviour
     private void CreateDeleteLessonBtn(ref int lessonIdx)
     {
         // Create the button used to delete the selected lesson.  If it was clicked...
-        if (GUILayout.Button("Delete Lesson", _deleteButtonStyle))
+        if (GUILayout.Button("Delete Lesson", deleteButtonStyle))
         {   // If there is at least one lesson left...
             if (lessonNames.Count > 1)
             {   // Remove the lesson from the curriculum
@@ -402,9 +355,9 @@ public class ManageLessons : MonoBehaviour
 
         // Create the text fields to edit the word text and hint, retrieving anything the user entered
         Word wordToEdit = playerData.Curriculum.Lessons[lessonIdx].Words[wordIdx];
-        GUILayout.Label("Word: ", _subHeaderStyle);
+        GUILayout.Label("Word: ", subHeaderStyle);
         CreateWordTextTextField(lessonIdx, wordToEdit);
-        GUILayout.Label("Hint: ", _subHeaderStyle);
+        GUILayout.Label("Hint: ", subHeaderStyle);
         CreateWordHintTextArea(wordToEdit);
         
         // End the controller wrappers
@@ -429,7 +382,7 @@ public class ManageLessons : MonoBehaviour
     private void CreateWordTextTextField(int lessonIdx, Word wordToEdit)
     {
         // Create the text field used to edit the word's text, and retrieve its current contents
-        string wordText = GUILayout.TextField(wordToEdit.Text, 25, _inputFieldsStyle);
+        string wordText = GUILayout.TextField(wordToEdit.Text, 25, inputFieldsStyle);
 
         // If text was entered by the user, and if it only contains characters, accept/store it
         if (wordToEdit.Text.Equals(wordText, System.StringComparison.InvariantCultureIgnoreCase) == false &&
@@ -449,7 +402,7 @@ public class ManageLessons : MonoBehaviour
     private void CreateWordHintTextArea(Word wordToEdit)
     {
         // Create the text area used to edit the word's hint, and store any changes to the hint
-        wordToEdit.Hint = GUILayout.TextArea(wordToEdit.Hint, 150, _inputFieldsStyle);
+        wordToEdit.Hint = GUILayout.TextArea(wordToEdit.Hint, 150, inputFieldsStyle);
     }
 
     /// <summary>
@@ -461,7 +414,7 @@ public class ManageLessons : MonoBehaviour
     private void CreateDeleteWordBtn(int lessonIdx, ref int wordIdx)
     {
         // If the button used to delete the selected word was clicked...
-        if (GUILayout.Button("Delete Word", _deleteButtonStyle))
+        if (GUILayout.Button("Delete Word", deleteButtonStyle))
         {   // If there is at least one word left in the lesson...
             if (lessonWordTexts.Count > 1)
             {   // Remove the word from the lesson
@@ -486,7 +439,7 @@ public class ManageLessons : MonoBehaviour
     private void CreateMainMenuBtn()
     {
         // Create the button used to create a new lesson.  If it was clicked...
-        if (GUI.Button(new Rect(Screen.width - 200, Screen.height - 90, 150, 40), "Main Menu", _mainMenuButtonStyle))
+        if (GUI.Button(new Rect(Screen.width - 200, Screen.height - 90, 150, 40), "Main Menu", mainMenuButtonStyle))
         {
             GameStateUtilities.Save(playerData);
 
