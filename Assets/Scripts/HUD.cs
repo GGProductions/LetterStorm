@@ -17,6 +17,11 @@ public class HUD : MonoBehaviour {
     private static ArrayList CurrentLettersInInventory;
     private char[] Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
 
+    public Texture2D NormalButtonTexture_A;
+    public Texture2D image;
+    string text = "ButtonText";
+    GUIContent content = new GUIContent();
+
     // If game is paused or not paused
     private bool isPaused;
     #endregion Private Variables ------------------------------------------
@@ -38,6 +43,10 @@ public class HUD : MonoBehaviour {
         InventoryItemBoxHeight = (int)(Screen.width / 40);
         InventoryLetterFontSize = (float)(Screen.height * 0.0255f);
         InventoryBoxBottomMargin = 5;
+
+        //JETODO
+        content.image = (Texture2D)image;
+        content.text = text;
     }
 
     /// <summary>
@@ -126,9 +135,14 @@ public class HUD : MonoBehaviour {
         #region Letter Type in Inventory --------------------------------------------
         GUILayout.BeginHorizontal();
         GUILayout.FlexibleSpace();
-        GUI.backgroundColor = Color.black;
+        //GUI.backgroundColor = Color.black;
 
         GUI.color = DefaultLetterButtonColor;
+
+        GUI.skin.button.normal.background = (Texture2D)content.image;//image;
+        
+        //GUI.skin.button.hover.background
+        // GUI.skin.button.active.background
 
         for (int ii = 0; ii < CurrentLettersInInventory.Count; ii++)
         {
