@@ -18,7 +18,6 @@ public class HUD : MonoBehaviour {
     private char[] Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
 
     public Texture2D NormalButtonTexture_A;
-    public Texture2D image;
     string text = "ButtonText";
     GUIContent content = new GUIContent();
 
@@ -45,7 +44,7 @@ public class HUD : MonoBehaviour {
         InventoryBoxBottomMargin = 5;
 
         //JETODO
-        content.image = (Texture2D)image;
+        content.image = (Texture2D)NormalButtonTexture_A;
         content.text = text;
     }
 
@@ -135,7 +134,7 @@ public class HUD : MonoBehaviour {
         #region Letter Type in Inventory --------------------------------------------
         GUILayout.BeginHorizontal();
         GUILayout.FlexibleSpace();
-        //GUI.backgroundColor = Color.black;
+        GUI.backgroundColor = Color.black;
 
         GUI.color = DefaultLetterButtonColor;
 
