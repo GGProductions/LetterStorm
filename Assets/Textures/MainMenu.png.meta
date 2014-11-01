@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: f58443e9ed0d44cca960a8df2cb0a50a
+guid: c77b4c8a672484ee0968f05f31b59065
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Splash
+    21300000: MainMenu
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
