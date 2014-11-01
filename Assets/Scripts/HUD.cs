@@ -17,6 +17,9 @@ public class HUD : MonoBehaviour {
     private static ArrayList CurrentLettersInInventory;
     private char[] Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
 
+    public Texture2D ResumeGameButtonTexture;
+    private GUIStyle emptyStyle = new GUIStyle();
+
     // If game is paused or not paused
     private bool isPaused;
     #endregion Private Variables ------------------------------------------
@@ -297,6 +300,18 @@ public class HUD : MonoBehaviour {
         #endregion Letters' Count in Inventory --------------------------------------
 
         GUILayout.EndArea();
+
+        // Draw pause menu
+        if (isPaused)
+        {
+            if (GUI.Button(new Rect(Screen.width / 2 - ResumeGameButtonTexture.width / 2, Screen.height / 2 - ResumeGameButtonTexture.height / 2, ResumeGameButtonTexture.width, ResumeGameButtonTexture.height), ResumeGameButtonTexture, emptyStyle))
+            {
+                Time.timeScale = 1;
+                isPaused = false;
+                //Application.Quit only works in built version. Not in editor
+            }
+        }
+
     }
 
     /// <summary>
@@ -305,20 +320,50 @@ public class HUD : MonoBehaviour {
     /// </summary>
     void Update()
     {
+        /*
         // If [Esc] is pressed, pause the game
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)
             {
-                // Unpause
-                Time.timeScale = 1;
+                // Unpausecale = 1;
                 isPaused = false;
+
             }
             else
             {
                 // Pause
+                GUI.Button(new Rect(Screen.width / 2 - QuitGameButtonTexture.width / 2 / 2, Screen.height / 2 - QuitGameButtonTexture.height / 2, QuitGameButtonTexture.width, QuitGameButtonTexture.height), QuitGameButtonTexture);
                 Time.timeScale = 0;
                 isPaused = true;
+
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.L))
+        {
+            Context.PlayerInventory.AddCollectedLetter("A");
+        }
+        else if (Input.GetKeyDown(KeyCode.K))
+        {
+            Context.PlayerInventory.SubtractCollectedLetter("A");
+        }*/
+
+        // If [Esc] is pressed, pause the game
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            // If paused already, unpause
+            if (isPaused)
+            {
+                Time.timeScale = 1;
+                isPaused = false;
+
+            }
+            // If not paused, pause game
+            else
+            {
+                Time.timeScale = 0;
+                isPaused = true;
+
             }
         }
         else if (Input.GetKeyDown(KeyCode.L))

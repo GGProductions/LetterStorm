@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: ac711f1f41c02400d80c386c27318fbf
+guid: 1903cb36fd3334288bdf14c51edd3e10
 TextureImporter:
   fileIDToRecycleName:
-    21300000: letter
+    21300000: YouWin
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

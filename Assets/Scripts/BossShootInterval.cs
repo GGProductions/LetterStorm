@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BossShootInterval_V1 : MonoBehaviour {
+public class BossShootInterval : MonoBehaviour {
     public GameObject theShot;
     public float fireRate = 1.8f;
 

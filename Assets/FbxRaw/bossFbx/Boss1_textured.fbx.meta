@@ -110,11 +110,11 @@ ModelImporter:
       takeName: BossAction1
       firstFrame: 0
       lastFrame: 240
-      wrapMode: 2
+      wrapMode: 1
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
-      loop: 1
+      loop: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
@@ -204,7 +204,7 @@ ModelImporter:
       takeName: curleup
       firstFrame: -1
       lastFrame: 59
-      wrapMode: 0
+      wrapMode: 8
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
