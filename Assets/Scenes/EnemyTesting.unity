@@ -2248,7 +2248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff4c3923019b2304395cc0efa6893506, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NormalButtonTexture_A: {fileID: 2800000, guid: 344c413f09e816c45bbd77b09fb6f17c,
+  ResumeGameButtonTexture: {fileID: 2800000, guid: d4f78ad8ac3f38145be8842e02f331fd,
     type: 3}
 --- !u!4 &1986525867
 Transform:
