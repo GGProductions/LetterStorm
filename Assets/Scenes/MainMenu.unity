@@ -170,4 +170,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df4ffabfbc95fdd449effb184dce5978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundTexture: {fileID: 2800000, guid: ac711f1f41c02400d80c386c27318fbf, type: 3}
+  backgroundTexture: {fileID: 2800000, guid: c77b4c8a672484ee0968f05f31b59065, type: 3}
