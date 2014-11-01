@@ -20,7 +20,7 @@ public class Win : MonoBehaviour
             Player.Score = 0;
             Player.Lives = 3;
             Player.Missed = 0;
-            Application.LoadLevel(2);
+            Application.LoadLevel("EnemyTesting");
         }
         
 		//JR if pressed load Next Level
@@ -30,13 +30,13 @@ public class Win : MonoBehaviour
             Player.Score = 0;
             Player.Lives = 3;
             Player.Missed = 0;
-            Application.LoadLevel(1);
+            Application.LoadLevel("EnemyTesting");
         }
         
 		//JR if pressed load Main Menu
         if(GUI.Button(new Rect(Screen.width / 2 - 40 , Screen.height / 2 + 75, 80, 20), "Main Menu"))
         {
-			Application.LoadLevel(1);
+			Application.LoadLevel("MainMenu");
         }
     }
 }

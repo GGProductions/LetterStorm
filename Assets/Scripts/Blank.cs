@@ -34,7 +34,7 @@ public class Blank : MonoBehaviour
 		//JR Button for return to Main Menu
  	 	if(GUI.Button(new Rect(Screen.width / 2 - 40 , Screen.height / 2 + 125 , 80, 20), "Main Menu"))
         {
-			Application.LoadLevel(1);
+			Application.LoadLevel("MainMenu");
         }
     }
 }

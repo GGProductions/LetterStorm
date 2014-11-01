@@ -17,7 +17,7 @@ public class Lose : MonoBehaviour
         {
 
 		//JR Loads level and gives players fresh lives, however score and misses should stay the same
-            Application.LoadLevel(2);
+			Application.LoadLevel("EnemyTesting");
             Player.Lives = 3;
         }
         
@@ -26,7 +26,7 @@ public class Lose : MonoBehaviour
         {
 
 			//JR Loads level and gives players fresh lives and 0s out the score and misses
-            Application.LoadLevel(2);
+            Application.LoadLevel("EnemyTesting");
             Player.Score = 0;
             Player.Lives = 3;
             Player.Missed = 0;
@@ -35,7 +35,7 @@ public class Lose : MonoBehaviour
 		//JR if pressed load Main Menu
         if(GUI.Button(new Rect(Screen.width / 2 - 40 , Screen.height / 2 + 75, 80, 20), "Main Menu"))
         {
-            Application.LoadLevel(1);
+            Application.LoadLevel("MainMenu");
 
         }
     }

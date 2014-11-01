@@ -28,7 +28,7 @@ public class MainMenu : MonoBehaviour
 		//JR if Button is pressed load scene
 		if(GUI.Button(new Rect(Screen.width / 2 - 40 , Screen.height / 2 - 30, 80, 20), "Play"))
 		{
-			Application.LoadLevel(2);
+			Application.LoadLevel("EnemyTesting");
 			//JR loads level with 3 lives, 0 score and misses
             Player.Score = 0;
             Player.Lives = 3;
@@ -40,7 +40,7 @@ public class MainMenu : MonoBehaviour
 		//JR if Button is pressed load scene
 		if(GUI.Button(new Rect(Screen.width / 2 - 40 , Screen.height / 2 + 5, 80, 20), "L 2 Play"))
 		{
-			Application.LoadLevel(5);
+			Application.LoadLevel("learn");
 		}
 			
 		//JR Creates "Options" button on the Main Menu, this button Loads Options scene
@@ -48,7 +48,7 @@ public class MainMenu : MonoBehaviour
 		//JR swapped positions with "License" button on the Main Menu
 		if(GUI.Button(new Rect(Screen.width / 2 - 40 , Screen.height / 2 + 75 , 80, 20), "Options"))
 		{
-			Application.LoadLevel(6);
+			Application.LoadLevel("ManageLessons");
 		}
 			
 		//JR Creates "Story" button on the Main Menu, this button Loads Blank scene
@@ -56,7 +56,7 @@ public class MainMenu : MonoBehaviour
 		//JR swapped positions with "Options" button on the Main Menu
 		if(GUI.Button(new Rect(Screen.width / 2 - 40 , Screen.height / 2 + 40, 80, 20), "Story"))
 		{
-			Application.LoadLevel(7);
+			Application.LoadLevel("License");
 		}
 			
 		//JR Creates "Quit" button on the Main Menu

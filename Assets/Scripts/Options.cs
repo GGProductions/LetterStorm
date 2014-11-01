@@ -24,7 +24,7 @@ public class Options : MonoBehaviour
 		//JR Creates and displays Main Menu button, if pressed takes you to Main Menu
         if(GUI.Button(new Rect(Screen.width / 2 - 40 , Screen.height / 2 + 125 , 80, 20), "Main Menu"))
         {
-			Application.LoadLevel(1);
+			Application.LoadLevel("MainMenu");
         }
     }
 }

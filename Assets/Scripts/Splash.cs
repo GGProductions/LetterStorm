@@ -23,7 +23,7 @@ public class Splash : MonoBehaviour {
     {
         yield return new WaitForSeconds( delayTime );
         
-        Application.LoadLevel(1);
+        Application.LoadLevel("MainMenu");
         
     }
 }
