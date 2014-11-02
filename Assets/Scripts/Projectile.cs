@@ -49,9 +49,7 @@ public class Projectile : MonoBehaviour {
             Destroy(gameObject);
             Destroy(enemy);
             Player.Score += 100;
-            /*
-            if (Player.Score >= 1000)
-                Application.LoadLevel(4);*/
+
         }
     }
 }

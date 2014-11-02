@@ -27,11 +27,14 @@ public class Boss_Motion_animation : MonoBehaviour {
 		animation.wrapMode = WrapMode.Loop;
 		animation.AddClip(ActionAnimationClip, "action");
 		//animation.wrapMode = WrapMode.Default;
-		animation.wrapMode = WrapMode.Clamp;
-		animation.AddClip(CurlUpAnimationClip, "curl");
-		animation.AddClip(UncurlAnimationClip, "uncurl");
-		animation.Stop();
 
+
+
+
+		//animation.Stop();
+	//	animation["curl"].layer = 1;
+	//	animation["uncurl"].layer = 0;
+	//	animation["action"].layer = 0;
 	}
 
 	public Transform startMarker;
@@ -46,6 +49,11 @@ public class Boss_Motion_animation : MonoBehaviour {
 	// Use this for initialization
 
 	void Start () {
+
+		animation.wrapMode = WrapMode.Once;
+		animation.AddClip(CurlUpAnimationClip, "curl");
+		animation.AddClip(UncurlAnimationClip, "uncurl");
+
 
 		//startMarker = new Vector3 (-4f, 0f, 0f);
 	   // startTime = Time.time;
@@ -66,8 +74,7 @@ public class Boss_Motion_animation : MonoBehaviour {
 			transform.rotation = Quaternion.Euler(0, 180, 0);
 			//animation.CrossFade("curl");
 			float amtToMove = 6.52f * Time.deltaTime;
-			transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - amtToMove);
-		   
+			transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - amtToMove);	   
 		}
 		*/
 		animation.CrossFade("action");
@@ -99,9 +106,59 @@ public class Boss_Motion_animation : MonoBehaviour {
 		//StartCoroutine(Curlup());
 		//StartCoroutine(Rotatinator());
 		//animation.CrossFade("curl");
-		StartCoroutine(rush());
+		StartCoroutine(Func2());
 		Debug.Log("AALLLDONE");
 	//	transform.rotation = Quaternion.Euler(0, 180, 0); 
+	}
+	 IEnumerator Func1(){
+		 animation.CrossFade("curl");
+		 yield return new WaitForSeconds(animation["curl"].length);
+
+	 }
+
+		
+	IEnumerator Func2()
+	{
+		yield return StartCoroutine(Func1());
+
+		switchon = false;
+
+		float x = transform.position.x;
+		int tme = 0;
+		while (tme < 72)
+		{
+			tme++;
+			float rotationSpeed = 3000 * Time.deltaTime;
+			transform.Rotate(new Vector3(10, 0, 0) * rotationSpeed);
+
+			Debug.Log(tme);
+
+			yield return 0;
+
+
+		}
+
+		while (transform.position.z > -4f)
+		{
+			transform.rotation = Quaternion.Euler(0, 180, 0);
+			//animation.CrossFade("curl");
+			float amtToMove = 6.52f * Time.deltaTime;
+			transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - amtToMove);
+			yield return 0;
+		}
+
+		while (transform.position.z < 4.0f)
+		{
+			animation.CrossFade("uncurl");
+			float amtToMove = 5.52f * Time.deltaTime;
+			transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + amtToMove);
+			yield return 0;
+		}
+
+		transform.rotation = Quaternion.Euler(0, 180, 0);
+		yield return new WaitForSeconds(0.2f);
+
+		yield return null;
 	}
 
 

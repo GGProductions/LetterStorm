@@ -1,47 +1,42 @@
 using UnityEngine;
 using System.Collections;
 
+//JR this is the Lose scene
 public class Lose : MonoBehaviour
 {
-    #region Fields
-
+	//JR Texture for the background in the scene
     public Texture backgroundTexture;
 
-    private int buttonWidth = 200;
-    private int buttonHeight = 50;
-    #endregion
-
-    #region Properties
-
-    #endregion
-
-    #region Functions
     void OnGUI()
     {
+		//JR Calls up background texture which is a .png file inside textures folder
         GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), backgroundTexture);
+		
+		//JR if pressed continue playing last level with fresh lives
+        if(GUI.Button(new Rect(Screen.width / 2 - 100, Screen.height / 2 + 25, 200, 20), "Insert Coin, to continue playing"))
+        {
 
-        if(GUI.Button(new Rect(70, Screen.height / 2 + 25, 200, 20), "Insert Coin, to continue playing"))
-        {
-            Application.LoadLevel(2);
+		//JR Loads level and gives players fresh lives, however score and misses should stay the same
+			Application.LoadLevel("EnemyTesting");
             Player.Lives = 3;
         }
         
-        if(GUI.Button(new Rect(123, Screen.height / 2 + 50, 90, 20), "Restart Level"))
+		//JR if pressed continue playing last level with fresh lives, score and misses
+        if(GUI.Button(new Rect(Screen.width / 2 - 45, Screen.height / 2 + 50, 90, 20), "Restart Level"))
         {
-            Application.LoadLevel(2);
+
+			//JR Loads level and gives players fresh lives and 0s out the score and misses
+            Application.LoadLevel("EnemyTesting");
             Player.Score = 0;
             Player.Lives = 3;
             Player.Missed = 0;
         }
         
-        if(GUI.Button(new Rect(130, Screen.height / 2 + 75, 75, 20), "Main Menu"))
+		//JR if pressed load Main Menu
+        if(GUI.Button(new Rect(Screen.width / 2 - 40 , Screen.height / 2 + 75, 80, 20), "Main Menu"))
         {
-            Application.LoadLevel(1);
-            Player.Score = 0;
-            Player.Lives = 3;
-            Player.Missed = 0;
+            Application.LoadLevel("MainMenu");
+
         }
     }
-
-    #endregion
 }
