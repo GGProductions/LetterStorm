@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: 344c413f09e816c45bbd77b09fb6f17c
+guid: 28b57e8b594d5f1428dde371f18caf9d
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Inventory_A_Normal
+    21300000: difficultyHardBtn_Select
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -22,13 +22,13 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   seamlessCubemap: 0
-  textureFormat: -3
-  maxTextureSize: 256
+  textureFormat: -1
+  maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: 1
+    aniso: -1
     mipBias: -1
-    wrapMode: 1
+    wrapMode: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
