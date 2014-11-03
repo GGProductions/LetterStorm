@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: 62b92e9810f573f42ae17bde218945f2
+guid: 06fc7a4f96ed70d42a4ec9423d3583e1
 TextureImporter:
   fileIDToRecycleName:
-    21300000: scribbleCircle
+    21300000: brownArrow
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -26,9 +26,9 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 1
     mipBias: -1
-    wrapMode: -1
+    wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
