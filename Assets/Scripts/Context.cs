@@ -3,6 +3,8 @@ using System.Collections;
 using GGProductions.LetterStorm.Data.Collections;
 using GGProductions.LetterStorm.Data;
 using GGProductions.LetterStorm.Utilities;
+using System;
+using GGProductions.LetterStorm.Configuration;
 
 public class Context : MonoBehaviour
 {
@@ -21,6 +23,8 @@ public class Context : MonoBehaviour
     private static char[] _alphabet;
     private static Word _word;
     private static int _level = 1;
+    private EnemyDifficulty _enemyDifficulty;
+    private Guid _currentLessonId;
     #endregion Private Variables ------------------------------------------
 
     #region Properties ----------------------------------------------------
@@ -76,6 +80,20 @@ public class Context : MonoBehaviour
     {
         get { return _playerLives; }
         set { _playerLives = value; }
+    }
+
+    /// <summary>The enemy difficulty level chosen for the game playthrough</summary>
+    public EnemyDifficulty EnemyDifficulty
+    {
+        get { return _enemyDifficulty; }
+        set { _enemyDifficulty = value; }
+    }
+
+    /// <summary>The id of the lesson chosen for the game playthrough</summary>
+    public Guid CurrentLessonId
+    {
+        get { return _currentLessonId; }
+        set { _currentLessonId = value; }
     }
     #endregion Properties -------------------------------------------------
 
