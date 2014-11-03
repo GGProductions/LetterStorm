@@ -19,10 +19,14 @@ public class HUD : MonoBehaviour {
 
     // Pause Menu Textures
     public Texture2D ResumeGameButtonTexture;
+    public Texture2D QuitGameButtonTexture;
     public Texture2D CorkBoardTexture;
     private int CorkBoardBorderSize;
+    private int CorkBoardDivisionSizeWidth;
+    private int CorkBoardDivisionSizeHeight;
+
     private GUIStyle emptyStyle = new GUIStyle();
-    private GUIStyle guiStyle = new GUIStyle();
+    private GUIStyle pauseMenuButtonsStyle = new GUIStyle();
     
 
     // If game is paused or not paused
@@ -41,12 +45,17 @@ public class HUD : MonoBehaviour {
         CurrentLettersInInventory = new ArrayList();
         SelectedLetterButtonColor = Color.green;
 
+        // Dimensions - Inventory
         InventoryBoxWidth = (int)(Screen.width * .75);
         InventoryItemBoxWidth = (int)(Screen.width / 40);
         InventoryItemBoxHeight = (int)(Screen.width / 40);
         InventoryLetterFontSize = (float)(Screen.height * 0.0255f);
         InventoryBoxBottomMargin = 5;
 
+        // Dimensions - CorkBoard for pause menu
+        CorkBoardBorderSize = CorkBoardTexture.width / 15;
+        CorkBoardDivisionSizeWidth = (CorkBoardTexture.width - CorkBoardBorderSize * 4) / 3;
+        CorkBoardDivisionSizeHeight = (CorkBoardTexture.height - CorkBoardBorderSize * 4) / 2;
     }
 
     /// <summary>
@@ -316,19 +325,29 @@ public class HUD : MonoBehaviour {
             GUI.DrawTexture(new Rect(Screen.width / 2 - CorkBoardTexture.width / 2, Screen.height / 2 - CorkBoardTexture.height / 2, CorkBoardTexture.width, CorkBoardTexture.height), CorkBoardTexture, ScaleMode.ScaleToFit, true);
 
             // Draw pause menu buttons
-            if (GUI.Button(new Rect(Screen.width / 2 - ResumeGameButtonTexture.width / 2, Screen.height / 2 - ResumeGameButtonTexture.height / 2, ResumeGameButtonTexture.width, ResumeGameButtonTexture.height), ResumeGameButtonTexture, emptyStyle))
+            // Resume button
+            if (GUI.Button(new Rect(Screen.width / 2 - CorkBoardTexture.width / 2 + CorkBoardBorderSize, 
+                Screen.height / 2 - CorkBoardTexture.height / 2 + CorkBoardBorderSize, 
+                CorkBoardDivisionSizeWidth, 
+                CorkBoardDivisionSizeHeight), ResumeGameButtonTexture, emptyStyle))
             {
                 Time.timeScale = 1;
                 isPaused = false;
-                //Application.Quit only works in built version. Not in editor
+            }
+            // Quit game button
+            if (GUI.Button(new Rect(Screen.width / 2 - CorkBoardTexture.width / 2 + CorkBoardTexture.width / 2 + CorkBoardBorderSize * 3, 
+                Screen.height / 2 - CorkBoardTexture.height / 2 + CorkBoardBorderSize, 
+                CorkBoardDivisionSizeWidth, 
+                CorkBoardDivisionSizeHeight), QuitGameButtonTexture, emptyStyle))
+            {
+                Application.Quit();
             }
 
             // Draw pause menu button words
-            guiStyle = GUI.skin.label;
-            guiStyle.alignment = TextAnchor.MiddleCenter;
-            guiStyle.normal.textColor = Color.black;
-
-            GUI.TextField(new Rect(Screen.width / 2 - ResumeGameButtonTexture.width / 2, Screen.height / 2 - ResumeGameButtonTexture.height / 2, ResumeGameButtonTexture.width, ResumeGameButtonTexture.height), "<size=" + InventoryLetterFontSize + ">" + "Resume" + "</size>", guiStyle);
+            //pauseMenuButtonsStyle = GUI.skin.label;
+            //pauseMenuButtonsStyle.alignment = TextAnchor.MiddleCenter;
+            //pauseMenuButtonsStyle.normal.textColor = Color.black;
+            //GUI.TextField(new Rect(Screen.width / 2 - CorkBoardTexture.width / 2 + CorkBoardBorderSize, Screen.height / 2 - CorkBoardTexture.height / 2 + CorkBoardBorderSize, CorkBoardDivisionSizeWidth, CorkBoardDivisionSizeHeight), "<size=" + InventoryLetterFontSize + ">" + "Resume" + "</size>", pauseMenuButtonsStyle);
         }
 
     }
