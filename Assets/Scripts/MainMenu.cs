@@ -1,22 +1,13 @@
 using UnityEngine;
 using System.Collections;
 
+//JD Main Menu Scene
 public class MainMenu : MonoBehaviour
 {
-	//JR menu fields at the start of the display
-	
-	private bool _isFirstMenu = true;
-	private bool _isHowPlayMenu = false;
-	private bool _isOptionsMenu = false;
-	private bool _isBlankMenu = false;
-    
+	//JR Texture for the background in the scene
     public Texture backgroundTexture;
     
-    private string instructionText = "Blahblahblahblahblahblahblahblahblahblahblah.\nBlahblahblahblahblahblahblahblahblahblahblah.\nBlahblahblahblahblahblahblahblahblahblahblah.\nBlahblahblahblahblahblahblahblahblahblahblah.\nBlahblahblahblahblahblahblahblahblahblahblah.\nBlahblahblahblahblahblahblahblahblahblahblah.\nBlahblahblahblahblahblahblahblahblahblahblah.\nBlahblahblahblahblahblahblahblahblahblahblah.\n";
-    
-    private string optionText = "Blahblahblahblahblahblahblahblahblahblahblah.\nBlahblahblahblahblahblahblahblahblahblahblah.\nBlahblahblahblahblahblahblahblahblahblahblah.\nBlahblahblahblahblahblahblahblahblahblahblah.\nBlahblahblahblahblahblahblahblahblahblahblah.\nBlahblahblahblahblahblahblahblahblahblahblah.\nBlahblahblahblahblahblahblahblahblahblahblah.\nBlahblahblahblahblahblahblahblahblahblahblah.\n";
-	
-	//JR game title call up public string gameTitle = "LetterStorm";
+
 	
 	void start()
 	{
@@ -30,83 +21,49 @@ public class MainMenu : MonoBehaviour
 	
 	void OnGUI()
 	{
-		//JR game title call up GUI.Label(new Rect(30, 75, 300, 25), gameTitle);
+		//JR Calls up background texture which is a .png file inside textures folder
         GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), backgroundTexture);
-		FirstMenu();
-		HowPlayMenu();
-		OptionsMenu();
-		BlankMenu();
 		
-		if(_isHowPlayMenu == true || _isOptionsMenu == true || _isBlankMenu ==true)
+		//JR Displays "Play"" button on the Main Menu, this button Loads level1 scene
+		//JR if Button is pressed load scene
+		if(GUI.Button(new Rect(Screen.width / 2 - 40 , Screen.height / 2 - 30, 80, 20), "Play"))
 		{
-			if(GUI.Button(new Rect(10, Screen.height - 35, 75, 20), "Main Menu"))
-			{
-				_isHowPlayMenu = false;
-				_isOptionsMenu = false;
-				_isBlankMenu = false;
-				
-				_isFirstMenu = true;
-			}
+			Application.LoadLevel("NewGame");
+			//JR loads level with 3 lives, 0 score and misses
+            Player.Score = 0;
+            Player.Lives = 3;
+            Player.Missed = 0;
 		}
-	}
-	
-	void FirstMenu()
-	{
-		if(_isFirstMenu)
+
+			
+		//JR Creates "L 2 Play" button on the Main Menu, this button Loads Learn scene
+		//JR if Button is pressed load scene
+		if(GUI.Button(new Rect(Screen.width / 2 - 40 , Screen.height / 2 + 5, 80, 20), "L 2 Play"))
 		{
-			if(GUI.Button(new Rect(240, Screen.height / 2 - 65, 75, 20), "Play"))
-			{
-				Application.LoadLevel("EnemyTesting");
-			}
-			
-			if(GUI.Button(new Rect(240, Screen.height / 2 - 30, 75, 20), "L 2 Play"))
-			{
-				_isFirstMenu = false;
-				_isHowPlayMenu = true;
-                GUI.Label(new Rect(10, 10, 200, 200), instructionText);
-			}
-			
-			if(GUI.Button(new Rect(240, Screen.height / 2 + 5 , 75, 20), "Options"))
-			{
-				_isFirstMenu = false;
-				_isOptionsMenu = true;
-                GUI.Label(new Rect(10, 10, 200, 200), optionText);
-			}
-			
-			if(GUI.Button(new Rect(240, Screen.height / 2 + 40, 75, 20), "Blank"))
-			{
-				_isFirstMenu = false;
-				_isBlankMenu = true;
-			}
-			
-			if(GUI.Button(new Rect(240, Screen.height / 2 + 75, 75, 20), "Quit"))
-			{
-				Application.Quit();
-			}
+			Application.LoadLevel("learn");
 		}
-	}
-	
-	void HowPlayMenu()
-	{
-		if(_isHowPlayMenu)
+			
+		//JR Creates "Options" button on the Main Menu, this button Loads Options scene
+		//JR if Button is pressed load scene
+		//JR swapped positions with "License" button on the Main Menu
+		if(GUI.Button(new Rect(Screen.width / 2 - 40 , Screen.height / 2 + 75 , 80, 20), "Options"))
 		{
-			
+			Application.LoadLevel("ManageLessons");
 		}
-	}
-	
-	void OptionsMenu()
-	{
-		if(_isOptionsMenu)
+			
+		//JR Creates "Story" button on the Main Menu, this button Loads Blank scene
+		//JR if Button is pressed load scene
+		//JR swapped positions with "Options" button on the Main Menu
+		if(GUI.Button(new Rect(Screen.width / 2 - 40 , Screen.height / 2 + 40, 80, 20), "Story"))
 		{
-			
+			Application.LoadLevel("License");
 		}
-	}
-	
-	void BlankMenu()
-	{
-		if(_isBlankMenu)
+			
+		//JR Creates "Quit" button on the Main Menu
+		//JR if Button is pressed quit game
+		if(GUI.Button(new Rect(Screen.width / 2 - 40 , Screen.height / 2 + 105, 80, 20), "Quit"))
 		{
-			
-		}
-	}
+			Application.Quit();
+		}	
+	}	
 }

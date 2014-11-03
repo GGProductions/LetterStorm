@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: 2c3de91cc6161254db9bb0722ecf9bc7
+guid: 1903cb36fd3334288bdf14c51edd3e10
 TextureImporter:
   fileIDToRecycleName:
-    21300000: pinkEraser
+    21300000: YouWin
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -26,9 +26,9 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 1
     mipBias: -1
-    wrapMode: -1
+    wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50

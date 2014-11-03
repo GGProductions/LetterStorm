@@ -418,7 +418,6 @@ MonoBehaviour:
   - {fileID: 100004, guid: 7e6f72e6ca9160b4bb9550645f6d11f1, type: 2}
   - {fileID: 100002, guid: 9dae0653324085a489f6bc72c50aa42f, type: 2}
   - {fileID: 100004, guid: a5087d5ef11c8c740b2a9603ec53aec6, type: 2}
-  - {fileID: 100002, guid: 66af7afaff2581e4594dc006f9e9b7c6, type: 2}
   - {fileID: 100016, guid: 64a80db10124e0e429c3830f7d9e405f, type: 2}
   - {fileID: 100004, guid: ea222cd35360fd84f9114589a9c2bdc0, type: 2}
   spawnPoints:
@@ -2203,7 +2202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff4c3923019b2304395cc0efa6893506, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NormalButtonTexture_A: {fileID: 2800000, guid: 344c413f09e816c45bbd77b09fb6f17c,
+  ResumeGameButtonTexture: {fileID: 2800000, guid: d4f78ad8ac3f38145be8842e02f331fd,
     type: 3}
 --- !u!4 &1986525867
 Transform:

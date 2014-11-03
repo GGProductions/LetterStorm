@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: ac711f1f41c02400d80c386c27318fbf
+guid: 06fc7a4f96ed70d42a4ec9423d3583e1
 TextureImporter:
   fileIDToRecycleName:
-    21300000: letter
+    21300000: brownArrow
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
