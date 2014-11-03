@@ -17,8 +17,18 @@ public class HUD : MonoBehaviour {
     private static ArrayList CurrentLettersInInventory;
     private char[] Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
 
+    // Pause Menu Textures
     public Texture2D ResumeGameButtonTexture;
+    public Texture2D HowToPlayGameButtonTexture;
+    public Texture2D QuitGameButtonTexture;
+    public Texture2D CorkBoardTexture;
+    private int CorkBoardBorderSize;
+    private int CorkBoardDivisionSizeWidth;
+    private int CorkBoardDivisionSizeHeight;
+
     private GUIStyle emptyStyle = new GUIStyle();
+    private GUIStyle pauseMenuButtonsStyle = new GUIStyle();
+    
 
     // If game is paused or not paused
     private bool isPaused;
@@ -36,11 +46,17 @@ public class HUD : MonoBehaviour {
         CurrentLettersInInventory = new ArrayList();
         SelectedLetterButtonColor = Color.green;
 
+        // Dimensions - Inventory
         InventoryBoxWidth = (int)(Screen.width * .75);
         InventoryItemBoxWidth = (int)(Screen.width / 40);
         InventoryItemBoxHeight = (int)(Screen.width / 40);
         InventoryLetterFontSize = (float)(Screen.height * 0.0255f);
         InventoryBoxBottomMargin = 5;
+
+        // Dimensions - CorkBoard for pause menu
+        CorkBoardBorderSize = CorkBoardTexture.width / 15;
+        CorkBoardDivisionSizeWidth = (CorkBoardTexture.width - CorkBoardBorderSize * 4) / 3;
+        CorkBoardDivisionSizeHeight = (CorkBoardTexture.height - CorkBoardBorderSize * 4) / 2;
     }
 
     /// <summary>
@@ -65,7 +81,7 @@ public class HUD : MonoBehaviour {
     /// </summary>
     void DisplayInventoryWindow()
     {
-        // Determine size of inventory "boxes"
+        // Determine size of inventory "boxes" depending on screen size
         if (Screen.width <= 1000)
         {
             InventoryItemBoxWidth = (int)(Screen.width / 25);
@@ -304,12 +320,44 @@ public class HUD : MonoBehaviour {
         // Draw pause menu
         if (isPaused)
         {
-            if (GUI.Button(new Rect(Screen.width / 2 - ResumeGameButtonTexture.width / 2, Screen.height / 2 - ResumeGameButtonTexture.height / 2, ResumeGameButtonTexture.width, ResumeGameButtonTexture.height), ResumeGameButtonTexture, emptyStyle))
+            GUI.skin.button.alignment = TextAnchor.MiddleCenter;
+
+            // Draw pause menu background
+            GUI.DrawTexture(new Rect(Screen.width / 2 - CorkBoardTexture.width / 2, Screen.height / 2 - CorkBoardTexture.height / 2, CorkBoardTexture.width, CorkBoardTexture.height), CorkBoardTexture, ScaleMode.ScaleToFit, true);
+
+            // Draw pause menu buttons
+            // Resume button
+            if (GUI.Button(new Rect(Screen.width / 2 - CorkBoardTexture.width / 2 + CorkBoardBorderSize,
+                Screen.height / 2 - CorkBoardTexture.height / 2 + CorkBoardBorderSize * 2, 
+                CorkBoardDivisionSizeWidth, 
+                CorkBoardDivisionSizeHeight), ResumeGameButtonTexture, emptyStyle))
             {
                 Time.timeScale = 1;
                 isPaused = false;
-                //Application.Quit only works in built version. Not in editor
             }
+            // How to play button //HowToPlayGameButtonTexture
+            if (GUI.Button(new Rect(Screen.width / 2 - CorkBoardTexture.width / 2 + CorkBoardDivisionSizeWidth + CorkBoardBorderSize * 2,
+                Screen.height / 2 - CorkBoardTexture.height / 2 + CorkBoardBorderSize * 2,
+                CorkBoardDivisionSizeWidth,
+                CorkBoardDivisionSizeHeight), HowToPlayGameButtonTexture, emptyStyle))
+            {
+                //Application.LoadLevel("learn");
+            }
+            // Quit game button
+            if (GUI.Button(new Rect(Screen.width / 2 - CorkBoardTexture.width / 2 + CorkBoardDivisionSizeWidth * 2 + CorkBoardBorderSize * 3,
+                Screen.height / 2 - CorkBoardTexture.height / 2 + CorkBoardBorderSize * 2, 
+                CorkBoardDivisionSizeWidth, 
+                CorkBoardDivisionSizeHeight), QuitGameButtonTexture, emptyStyle))
+            {
+                Application.Quit();
+            }
+
+
+            // Draw pause menu button words
+            //pauseMenuButtonsStyle = GUI.skin.label;
+            //pauseMenuButtonsStyle.alignment = TextAnchor.MiddleCenter;
+            //pauseMenuButtonsStyle.normal.textColor = Color.black;
+            //GUI.TextField(new Rect(Screen.width / 2 - CorkBoardTexture.width / 2 + CorkBoardBorderSize, Screen.height / 2 - CorkBoardTexture.height / 2 + CorkBoardBorderSize, CorkBoardDivisionSizeWidth, CorkBoardDivisionSizeHeight), "<size=" + InventoryLetterFontSize + ">" + "Resume" + "</size>", pauseMenuButtonsStyle);
         }
 
     }
@@ -320,33 +368,6 @@ public class HUD : MonoBehaviour {
     /// </summary>
     void Update()
     {
-        /*
-        // If [Esc] is pressed, pause the game
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (isPaused)
-            {
-                // Unpausecale = 1;
-                isPaused = false;
-
-            }
-            else
-            {
-                // Pause
-                GUI.Button(new Rect(Screen.width / 2 - QuitGameButtonTexture.width / 2 / 2, Screen.height / 2 - QuitGameButtonTexture.height / 2, QuitGameButtonTexture.width, QuitGameButtonTexture.height), QuitGameButtonTexture);
-                Time.timeScale = 0;
-                isPaused = true;
-
-            }
-        }
-        else if (Input.GetKeyDown(KeyCode.L))
-        {
-            Context.PlayerInventory.AddCollectedLetter("A");
-        }
-        else if (Input.GetKeyDown(KeyCode.K))
-        {
-            Context.PlayerInventory.SubtractCollectedLetter("A");
-        }*/
 
         // If [Esc] is pressed, pause the game
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -365,7 +386,7 @@ public class HUD : MonoBehaviour {
                 isPaused = true;
 
             }
-        }
+        }/*
         else if (Input.GetKeyDown(KeyCode.L))
         {
             Context.PlayerInventory.AddCollectedLetter("A");
@@ -373,6 +394,6 @@ public class HUD : MonoBehaviour {
         else if (Input.GetKeyDown(KeyCode.K))
         {
             Context.PlayerInventory.SubtractCollectedLetter("A");
-        }
+        }*/
     }
 }
