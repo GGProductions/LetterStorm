@@ -2247,8 +2247,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff4c3923019b2304395cc0efa6893506, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ResumeGameButtonTexture: {fileID: 2800000, guid: d4f78ad8ac3f38145be8842e02f331fd,
+  ResumeGameButtonTexture: {fileID: 2800000, guid: 670b927203340fc48ad5a53bde0f9ac8,
     type: 3}
+  CorkBoardTexture: {fileID: 2800000, guid: b3a5d6d3e54f2984b9d6962623638c68, type: 3}
 --- !u!4 &1986525867
 Transform:
   m_ObjectHideFlags: 0

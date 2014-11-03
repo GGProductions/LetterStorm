@@ -17,8 +17,13 @@ public class HUD : MonoBehaviour {
     private static ArrayList CurrentLettersInInventory;
     private char[] Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
 
+    // Pause Menu Textures
     public Texture2D ResumeGameButtonTexture;
+    public Texture2D CorkBoardTexture;
+    private int CorkBoardBorderSize;
     private GUIStyle emptyStyle = new GUIStyle();
+    private GUIStyle guiStyle = new GUIStyle();
+    
 
     // If game is paused or not paused
     private bool isPaused;
@@ -41,6 +46,7 @@ public class HUD : MonoBehaviour {
         InventoryItemBoxHeight = (int)(Screen.width / 40);
         InventoryLetterFontSize = (float)(Screen.height * 0.0255f);
         InventoryBoxBottomMargin = 5;
+
     }
 
     /// <summary>
@@ -65,7 +71,7 @@ public class HUD : MonoBehaviour {
     /// </summary>
     void DisplayInventoryWindow()
     {
-        // Determine size of inventory "boxes"
+        // Determine size of inventory "boxes" depending on screen size
         if (Screen.width <= 1000)
         {
             InventoryItemBoxWidth = (int)(Screen.width / 25);
@@ -304,12 +310,25 @@ public class HUD : MonoBehaviour {
         // Draw pause menu
         if (isPaused)
         {
+            GUI.skin.button.alignment = TextAnchor.MiddleCenter;
+
+            // Draw pause menu background
+            GUI.DrawTexture(new Rect(Screen.width / 2 - CorkBoardTexture.width / 2, Screen.height / 2 - CorkBoardTexture.height / 2, CorkBoardTexture.width, CorkBoardTexture.height), CorkBoardTexture, ScaleMode.ScaleToFit, true);
+
+            // Draw pause menu buttons
             if (GUI.Button(new Rect(Screen.width / 2 - ResumeGameButtonTexture.width / 2, Screen.height / 2 - ResumeGameButtonTexture.height / 2, ResumeGameButtonTexture.width, ResumeGameButtonTexture.height), ResumeGameButtonTexture, emptyStyle))
             {
                 Time.timeScale = 1;
                 isPaused = false;
                 //Application.Quit only works in built version. Not in editor
             }
+
+            // Draw pause menu button words
+            guiStyle = GUI.skin.label;
+            guiStyle.alignment = TextAnchor.MiddleCenter;
+            guiStyle.normal.textColor = Color.black;
+
+            GUI.TextField(new Rect(Screen.width / 2 - ResumeGameButtonTexture.width / 2, Screen.height / 2 - ResumeGameButtonTexture.height / 2, ResumeGameButtonTexture.width, ResumeGameButtonTexture.height), "<size=" + InventoryLetterFontSize + ">" + "Resume" + "</size>", guiStyle);
         }
 
     }
@@ -320,33 +339,6 @@ public class HUD : MonoBehaviour {
     /// </summary>
     void Update()
     {
-        /*
-        // If [Esc] is pressed, pause the game
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (isPaused)
-            {
-                // Unpausecale = 1;
-                isPaused = false;
-
-            }
-            else
-            {
-                // Pause
-                GUI.Button(new Rect(Screen.width / 2 - QuitGameButtonTexture.width / 2 / 2, Screen.height / 2 - QuitGameButtonTexture.height / 2, QuitGameButtonTexture.width, QuitGameButtonTexture.height), QuitGameButtonTexture);
-                Time.timeScale = 0;
-                isPaused = true;
-
-            }
-        }
-        else if (Input.GetKeyDown(KeyCode.L))
-        {
-            Context.PlayerInventory.AddCollectedLetter("A");
-        }
-        else if (Input.GetKeyDown(KeyCode.K))
-        {
-            Context.PlayerInventory.SubtractCollectedLetter("A");
-        }*/
 
         // If [Esc] is pressed, pause the game
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -365,7 +357,7 @@ public class HUD : MonoBehaviour {
                 isPaused = true;
 
             }
-        }
+        }/*
         else if (Input.GetKeyDown(KeyCode.L))
         {
             Context.PlayerInventory.AddCollectedLetter("A");
@@ -373,6 +365,6 @@ public class HUD : MonoBehaviour {
         else if (Input.GetKeyDown(KeyCode.K))
         {
             Context.PlayerInventory.SubtractCollectedLetter("A");
-        }
+        }*/
     }
 }
