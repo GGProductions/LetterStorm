@@ -71,7 +71,7 @@ public class AlbertController2 : MonoBehaviour {
     }
     private GameObject poof;
     void Update()
-    {
+    {/*
         if (Input.GetKeyDown(KeyCode.A) ) { LetterBulletname = "a_projectilePrefab"; }
            if (Input.GetKeyDown(KeyCode.B)) { LetterBulletname = "b_projectilePrefab"; }
            if (Input.GetKeyDown(KeyCode.C)) { LetterBulletname = "c_projectilePrefab"; }
@@ -98,7 +98,7 @@ public class AlbertController2 : MonoBehaviour {
            if (Input.GetKeyDown(KeyCode.X)) { LetterBulletname = "x_projectilePrefab"; }
            if (Input.GetKeyDown(KeyCode.Y)) { LetterBulletname = "y_projectilePrefab"; }
            if (Input.GetKeyDown(KeyCode.Z)) { LetterBulletname = "z_projectilePrefab"; }
-
+        */
 
          /*
         if (Input.GetKeyDown("space"))
@@ -108,8 +108,8 @@ public class AlbertController2 : MonoBehaviour {
         }
        // moveabout();
         */
-SwitchCaseMove ( gettirrection());
-
+//SwitchCaseMove ( gettirrection());
+        oldupdate();
 
 
 //Debug.Log(x.ToString());
