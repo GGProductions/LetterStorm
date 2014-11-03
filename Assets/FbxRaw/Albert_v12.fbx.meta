@@ -100,7 +100,679 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Action_002
+      takeName: Action_002
+      firstFrame: -1
+      lastFrame: 0
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Albert
+        weight: 1
+      - path: arma
+        weight: 1
+      - path: arma/MainBone
+        weight: 1
+      - path: arma/MainBone/belly
+        weight: 1
+      - path: arma/MainBone/belly/chest
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L/arm_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L/arm_L/farm_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L/arm_L/farm_L/wrist_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L/arm_L/farm_L/wrist_L/hand_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L/arm_L/farm_L/wrist_L/hand_L/finger_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L/arm_L/farm_L/wrist_L/thumb_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R/arm_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R/arm_R/farm_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R/arm_R/farm_R/wrist_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R/arm_R/farm_R/wrist_R/hand_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R/arm_R/farm_R/wrist_R/hand_R/finger_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R/arm_R/farm_R/wrist_R/thumb_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/neck
+        weight: 1
+      - path: arma/MainBone/belly/chest/neck/chest_003
+        weight: 1
+      - path: arma/MainBone/belly/chest/sling
+        weight: 1
+      - path: arma/MainBone/belly/chest/sling/book
+        weight: 1
+      - path: arma/MainBone/hip
+        weight: 1
+      - path: arma/MainBone/hip/hip_L
+        weight: 1
+      - path: arma/MainBone/hip/hip_L/leg_L
+        weight: 1
+      - path: arma/MainBone/hip/hip_L/leg_L/shin_L
+        weight: 1
+      - path: arma/MainBone/hip/hip_L/leg_L/shin_L/foot_L
+        weight: 1
+      - path: arma/MainBone/hip/hip_L/leg_L/shin_L/foot_L/toe_L
+        weight: 1
+      - path: arma/MainBone/hip/hip_R
+        weight: 1
+      - path: arma/MainBone/hip/hip_R/leg_R
+        weight: 1
+      - path: arma/MainBone/hip/hip_R/leg_R/shin_R
+        weight: 1
+      - path: arma/MainBone/hip/hip_R/leg_R/shin_R/foot_R
+        weight: 1
+      - path: arma/MainBone/hip/hip_R/leg_R/shin_R/foot_R/toe_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: fall
+      takeName: fall
+      firstFrame: -1
+      lastFrame: 15
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Albert
+        weight: 1
+      - path: arma
+        weight: 1
+      - path: arma/MainBone
+        weight: 1
+      - path: arma/MainBone/belly
+        weight: 1
+      - path: arma/MainBone/belly/chest
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L/arm_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L/arm_L/farm_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L/arm_L/farm_L/wrist_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L/arm_L/farm_L/wrist_L/hand_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L/arm_L/farm_L/wrist_L/hand_L/finger_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L/arm_L/farm_L/wrist_L/thumb_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R/arm_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R/arm_R/farm_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R/arm_R/farm_R/wrist_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R/arm_R/farm_R/wrist_R/hand_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R/arm_R/farm_R/wrist_R/hand_R/finger_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R/arm_R/farm_R/wrist_R/thumb_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/neck
+        weight: 1
+      - path: arma/MainBone/belly/chest/neck/chest_003
+        weight: 1
+      - path: arma/MainBone/belly/chest/sling
+        weight: 1
+      - path: arma/MainBone/belly/chest/sling/book
+        weight: 1
+      - path: arma/MainBone/hip
+        weight: 1
+      - path: arma/MainBone/hip/hip_L
+        weight: 1
+      - path: arma/MainBone/hip/hip_L/leg_L
+        weight: 1
+      - path: arma/MainBone/hip/hip_L/leg_L/shin_L
+        weight: 1
+      - path: arma/MainBone/hip/hip_L/leg_L/shin_L/foot_L
+        weight: 1
+      - path: arma/MainBone/hip/hip_L/leg_L/shin_L/foot_L/toe_L
+        weight: 1
+      - path: arma/MainBone/hip/hip_R
+        weight: 1
+      - path: arma/MainBone/hip/hip_R/leg_R
+        weight: 1
+      - path: arma/MainBone/hip/hip_R/leg_R/shin_R
+        weight: 1
+      - path: arma/MainBone/hip/hip_R/leg_R/shin_R/foot_R
+        weight: 1
+      - path: arma/MainBone/hip/hip_R/leg_R/shin_R/foot_R/toe_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: idle2
+      takeName: idle2
+      firstFrame: -1
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Albert
+        weight: 1
+      - path: arma
+        weight: 1
+      - path: arma/MainBone
+        weight: 1
+      - path: arma/MainBone/belly
+        weight: 1
+      - path: arma/MainBone/belly/chest
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L/arm_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L/arm_L/farm_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L/arm_L/farm_L/wrist_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L/arm_L/farm_L/wrist_L/hand_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L/arm_L/farm_L/wrist_L/hand_L/finger_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L/arm_L/farm_L/wrist_L/thumb_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R/arm_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R/arm_R/farm_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R/arm_R/farm_R/wrist_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R/arm_R/farm_R/wrist_R/hand_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R/arm_R/farm_R/wrist_R/hand_R/finger_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R/arm_R/farm_R/wrist_R/thumb_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/neck
+        weight: 1
+      - path: arma/MainBone/belly/chest/neck/chest_003
+        weight: 1
+      - path: arma/MainBone/belly/chest/sling
+        weight: 1
+      - path: arma/MainBone/belly/chest/sling/book
+        weight: 1
+      - path: arma/MainBone/hip
+        weight: 1
+      - path: arma/MainBone/hip/hip_L
+        weight: 1
+      - path: arma/MainBone/hip/hip_L/leg_L
+        weight: 1
+      - path: arma/MainBone/hip/hip_L/leg_L/shin_L
+        weight: 1
+      - path: arma/MainBone/hip/hip_L/leg_L/shin_L/foot_L
+        weight: 1
+      - path: arma/MainBone/hip/hip_L/leg_L/shin_L/foot_L/toe_L
+        weight: 1
+      - path: arma/MainBone/hip/hip_R
+        weight: 1
+      - path: arma/MainBone/hip/hip_R/leg_R
+        weight: 1
+      - path: arma/MainBone/hip/hip_R/leg_R/shin_R
+        weight: 1
+      - path: arma/MainBone/hip/hip_R/leg_R/shin_R/foot_R
+        weight: 1
+      - path: arma/MainBone/hip/hip_R/leg_R/shin_R/foot_R/toe_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: PoseLib
+      takeName: PoseLib
+      firstFrame: 0
+      lastFrame: 2
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Albert
+        weight: 1
+      - path: arma
+        weight: 1
+      - path: arma/MainBone
+        weight: 1
+      - path: arma/MainBone/belly
+        weight: 1
+      - path: arma/MainBone/belly/chest
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L/arm_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L/arm_L/farm_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L/arm_L/farm_L/wrist_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L/arm_L/farm_L/wrist_L/hand_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L/arm_L/farm_L/wrist_L/hand_L/finger_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L/arm_L/farm_L/wrist_L/thumb_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R/arm_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R/arm_R/farm_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R/arm_R/farm_R/wrist_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R/arm_R/farm_R/wrist_R/hand_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R/arm_R/farm_R/wrist_R/hand_R/finger_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R/arm_R/farm_R/wrist_R/thumb_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/neck
+        weight: 1
+      - path: arma/MainBone/belly/chest/neck/chest_003
+        weight: 1
+      - path: arma/MainBone/belly/chest/sling
+        weight: 1
+      - path: arma/MainBone/belly/chest/sling/book
+        weight: 1
+      - path: arma/MainBone/hip
+        weight: 1
+      - path: arma/MainBone/hip/hip_L
+        weight: 1
+      - path: arma/MainBone/hip/hip_L/leg_L
+        weight: 1
+      - path: arma/MainBone/hip/hip_L/leg_L/shin_L
+        weight: 1
+      - path: arma/MainBone/hip/hip_L/leg_L/shin_L/foot_L
+        weight: 1
+      - path: arma/MainBone/hip/hip_L/leg_L/shin_L/foot_L/toe_L
+        weight: 1
+      - path: arma/MainBone/hip/hip_R
+        weight: 1
+      - path: arma/MainBone/hip/hip_R/leg_R
+        weight: 1
+      - path: arma/MainBone/hip/hip_R/leg_R/shin_R
+        weight: 1
+      - path: arma/MainBone/hip/hip_R/leg_R/shin_R/foot_R
+        weight: 1
+      - path: arma/MainBone/hip/hip_R/leg_R/shin_R/foot_R/toe_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: run
+      takeName: run
+      firstFrame: -1
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Albert
+        weight: 1
+      - path: arma
+        weight: 1
+      - path: arma/MainBone
+        weight: 1
+      - path: arma/MainBone/belly
+        weight: 1
+      - path: arma/MainBone/belly/chest
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L/arm_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L/arm_L/farm_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L/arm_L/farm_L/wrist_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L/arm_L/farm_L/wrist_L/hand_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L/arm_L/farm_L/wrist_L/hand_L/finger_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L/arm_L/farm_L/wrist_L/thumb_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R/arm_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R/arm_R/farm_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R/arm_R/farm_R/wrist_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R/arm_R/farm_R/wrist_R/hand_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R/arm_R/farm_R/wrist_R/hand_R/finger_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R/arm_R/farm_R/wrist_R/thumb_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/neck
+        weight: 1
+      - path: arma/MainBone/belly/chest/neck/chest_003
+        weight: 1
+      - path: arma/MainBone/belly/chest/sling
+        weight: 1
+      - path: arma/MainBone/belly/chest/sling/book
+        weight: 1
+      - path: arma/MainBone/hip
+        weight: 1
+      - path: arma/MainBone/hip/hip_L
+        weight: 1
+      - path: arma/MainBone/hip/hip_L/leg_L
+        weight: 1
+      - path: arma/MainBone/hip/hip_L/leg_L/shin_L
+        weight: 1
+      - path: arma/MainBone/hip/hip_L/leg_L/shin_L/foot_L
+        weight: 1
+      - path: arma/MainBone/hip/hip_L/leg_L/shin_L/foot_L/toe_L
+        weight: 1
+      - path: arma/MainBone/hip/hip_R
+        weight: 1
+      - path: arma/MainBone/hip/hip_R/leg_R
+        weight: 1
+      - path: arma/MainBone/hip/hip_R/leg_R/shin_R
+        weight: 1
+      - path: arma/MainBone/hip/hip_R/leg_R/shin_R/foot_R
+        weight: 1
+      - path: arma/MainBone/hip/hip_R/leg_R/shin_R/foot_R/toe_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: throw1
+      takeName: throw1
+      firstFrame: 3.9000001
+      lastFrame: 10
+      wrapMode: 4
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Albert
+        weight: 1
+      - path: arma
+        weight: 1
+      - path: arma/MainBone
+        weight: 1
+      - path: arma/MainBone/belly
+        weight: 1
+      - path: arma/MainBone/belly/chest
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L/arm_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L/arm_L/farm_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L/arm_L/farm_L/wrist_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L/arm_L/farm_L/wrist_L/hand_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L/arm_L/farm_L/wrist_L/hand_L/finger_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L/arm_L/farm_L/wrist_L/thumb_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R/arm_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R/arm_R/farm_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R/arm_R/farm_R/wrist_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R/arm_R/farm_R/wrist_R/hand_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R/arm_R/farm_R/wrist_R/hand_R/finger_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R/arm_R/farm_R/wrist_R/thumb_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/neck
+        weight: 1
+      - path: arma/MainBone/belly/chest/neck/chest_003
+        weight: 1
+      - path: arma/MainBone/belly/chest/sling
+        weight: 1
+      - path: arma/MainBone/belly/chest/sling/book
+        weight: 1
+      - path: arma/MainBone/hip
+        weight: 1
+      - path: arma/MainBone/hip/hip_L
+        weight: 1
+      - path: arma/MainBone/hip/hip_L/leg_L
+        weight: 1
+      - path: arma/MainBone/hip/hip_L/leg_L/shin_L
+        weight: 1
+      - path: arma/MainBone/hip/hip_L/leg_L/shin_L/foot_L
+        weight: 1
+      - path: arma/MainBone/hip/hip_L/leg_L/shin_L/foot_L/toe_L
+        weight: 1
+      - path: arma/MainBone/hip/hip_R
+        weight: 1
+      - path: arma/MainBone/hip/hip_R/leg_R
+        weight: 1
+      - path: arma/MainBone/hip/hip_R/leg_R/shin_R
+        weight: 1
+      - path: arma/MainBone/hip/hip_R/leg_R/shin_R/foot_R
+        weight: 1
+      - path: arma/MainBone/hip/hip_R/leg_R/shin_R/foot_R/toe_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: walkBack1
+      takeName: walkBack1
+      firstFrame: -1
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Albert
+        weight: 1
+      - path: arma
+        weight: 1
+      - path: arma/MainBone
+        weight: 1
+      - path: arma/MainBone/belly
+        weight: 1
+      - path: arma/MainBone/belly/chest
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L/arm_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L/arm_L/farm_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L/arm_L/farm_L/wrist_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L/arm_L/farm_L/wrist_L/hand_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L/arm_L/farm_L/wrist_L/hand_L/finger_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_L/arm_L/farm_L/wrist_L/thumb_L
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R/arm_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R/arm_R/farm_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R/arm_R/farm_R/wrist_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R/arm_R/farm_R/wrist_R/hand_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R/arm_R/farm_R/wrist_R/hand_R/finger_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/clav_R/arm_R/farm_R/wrist_R/thumb_R
+        weight: 1
+      - path: arma/MainBone/belly/chest/neck
+        weight: 1
+      - path: arma/MainBone/belly/chest/neck/chest_003
+        weight: 1
+      - path: arma/MainBone/belly/chest/sling
+        weight: 1
+      - path: arma/MainBone/belly/chest/sling/book
+        weight: 1
+      - path: arma/MainBone/hip
+        weight: 1
+      - path: arma/MainBone/hip/hip_L
+        weight: 1
+      - path: arma/MainBone/hip/hip_L/leg_L
+        weight: 1
+      - path: arma/MainBone/hip/hip_L/leg_L/shin_L
+        weight: 1
+      - path: arma/MainBone/hip/hip_L/leg_L/shin_L/foot_L
+        weight: 1
+      - path: arma/MainBone/hip/hip_L/leg_L/shin_L/foot_L/toe_L
+        weight: 1
+      - path: arma/MainBone/hip/hip_R
+        weight: 1
+      - path: arma/MainBone/hip/hip_R/leg_R
+        weight: 1
+      - path: arma/MainBone/hip/hip_R/leg_R/shin_R
+        weight: 1
+      - path: arma/MainBone/hip/hip_R/leg_R/shin_R/foot_R
+        weight: 1
+      - path: arma/MainBone/hip/hip_R/leg_R/shin_R/foot_R/toe_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
