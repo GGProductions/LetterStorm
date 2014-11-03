@@ -19,6 +19,7 @@ public class HUD : MonoBehaviour {
 
     // Pause Menu Textures
     public Texture2D ResumeGameButtonTexture;
+    public Texture2D HowToPlayGameButtonTexture;
     public Texture2D QuitGameButtonTexture;
     public Texture2D CorkBoardTexture;
     private int CorkBoardBorderSize;
@@ -326,22 +327,31 @@ public class HUD : MonoBehaviour {
 
             // Draw pause menu buttons
             // Resume button
-            if (GUI.Button(new Rect(Screen.width / 2 - CorkBoardTexture.width / 2 + CorkBoardBorderSize, 
-                Screen.height / 2 - CorkBoardTexture.height / 2 + CorkBoardBorderSize, 
+            if (GUI.Button(new Rect(Screen.width / 2 - CorkBoardTexture.width / 2 + CorkBoardBorderSize,
+                Screen.height / 2 - CorkBoardTexture.height / 2 + CorkBoardBorderSize * 2, 
                 CorkBoardDivisionSizeWidth, 
                 CorkBoardDivisionSizeHeight), ResumeGameButtonTexture, emptyStyle))
             {
                 Time.timeScale = 1;
                 isPaused = false;
             }
+            // How to play button //HowToPlayGameButtonTexture
+            if (GUI.Button(new Rect(Screen.width / 2 - CorkBoardTexture.width / 2 + CorkBoardDivisionSizeWidth + CorkBoardBorderSize * 2,
+                Screen.height / 2 - CorkBoardTexture.height / 2 + CorkBoardBorderSize * 2,
+                CorkBoardDivisionSizeWidth,
+                CorkBoardDivisionSizeHeight), HowToPlayGameButtonTexture, emptyStyle))
+            {
+                //Application.LoadLevel("learn");
+            }
             // Quit game button
-            if (GUI.Button(new Rect(Screen.width / 2 - CorkBoardTexture.width / 2 + CorkBoardTexture.width / 2 + CorkBoardBorderSize * 3, 
-                Screen.height / 2 - CorkBoardTexture.height / 2 + CorkBoardBorderSize, 
+            if (GUI.Button(new Rect(Screen.width / 2 - CorkBoardTexture.width / 2 + CorkBoardDivisionSizeWidth * 2 + CorkBoardBorderSize * 3,
+                Screen.height / 2 - CorkBoardTexture.height / 2 + CorkBoardBorderSize * 2, 
                 CorkBoardDivisionSizeWidth, 
                 CorkBoardDivisionSizeHeight), QuitGameButtonTexture, emptyStyle))
             {
                 Application.Quit();
             }
+
 
             // Draw pause menu button words
             //pauseMenuButtonsStyle = GUI.skin.label;
