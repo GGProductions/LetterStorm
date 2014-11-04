@@ -2247,18 +2247,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff4c3923019b2304395cc0efa6893506, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ResumeGameButtonTexture: {fileID: 2800000, guid: 670b927203340fc48ad5a53bde0f9ac8,
+  ResumeGameButtonTexture: {fileID: 2800000, guid: 39fad58494d79a64b8d35c74f8da2a87,
     type: 3}
-  HowToPlayGameButtonTexture: {fileID: 2800000, guid: 2379a304729521f40b3cbb8520f632bc,
+  HowToPlayGameButtonTexture: {fileID: 2800000, guid: 38d5e0c8d7ae84741aa6d0434ab211a3,
     type: 3}
-  QuitGameButtonTexture: {fileID: 2800000, guid: d4fe9a6e7a0cf9642855a63f527b2b3a,
+  QuitGameButtonTexture: {fileID: 2800000, guid: 80e3cc4f5b6ea5741ade5987614f6928,
     type: 3}
-  MainMenuGameButtonTexture: {fileID: 2800000, guid: 5dd09465a7b76c54bba19b4368e963f2,
+  MainMenuGameButtonTexture: {fileID: 2800000, guid: 0e44f685beac3974592f328a5140f281,
     type: 3}
-  SettingsGameButtonTexture: {fileID: 2800000, guid: 183e19557c03c3449bed2dcecad412a2,
+  SettingsGameButtonTexture: {fileID: 2800000, guid: 48662023ca29dea4ca61ac642d5460ce,
     type: 3}
-  SaveGameButtonTexture: {fileID: 2800000, guid: d25b9601c6e033644be36a43f6f9ed8c,
+  SaveGameButtonTexture: {fileID: 2800000, guid: ce65547e7f2279d40998c3ebb946111a,
     type: 3}
+  HowToPlayTexture1: {fileID: 2800000, guid: 0053068102092f64195962ba4e32ef67, type: 3}
   CorkBoardTexture: {fileID: 2800000, guid: 722ddafb95b7ecb42a60e126e38b6df1, type: 3}
 --- !u!4 &1986525867
 Transform:

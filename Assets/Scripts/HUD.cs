@@ -24,6 +24,10 @@ public class HUD : MonoBehaviour {
     public Texture2D MainMenuGameButtonTexture;
     public Texture2D SettingsGameButtonTexture;
     public Texture2D SaveGameButtonTexture;
+
+    // How to Play Textures
+    public Texture2D HowToPlayTexture1;
+
     public Texture2D CorkBoardTexture;
     private int CorkBoardBorderSize;
     private int CorkBoardDivisionSizeWidth;
@@ -35,6 +39,7 @@ public class HUD : MonoBehaviour {
 
     // If game is paused or not paused
     private bool isPaused;
+    private bool isInHowToPlayMenu;
     #endregion Private Variables ------------------------------------------
 
     /// <summary>
@@ -43,6 +48,7 @@ public class HUD : MonoBehaviour {
     void Start()
     {
         isPaused = false;
+        isInHowToPlayMenu = false;
         InventoryStyle = new GUIStyle();
         DefaultLetterButtonColor = GUI.backgroundColor;
 
@@ -326,58 +332,75 @@ public class HUD : MonoBehaviour {
             // Draw pause menu background
             GUI.DrawTexture(new Rect(Screen.width / 2 - CorkBoardTexture.width / 2, Screen.height / 2 - CorkBoardTexture.height / 2, CorkBoardTexture.width, CorkBoardTexture.height), CorkBoardTexture, ScaleMode.ScaleToFit, true);
 
-            // Draw pause menu buttons
-            // Resume button
-            if (GUI.Button(new Rect(Screen.width / 2 - CorkBoardTexture.width / 2 + CorkBoardBorderSize,
-                Screen.height / 2 - CorkBoardTexture.height / 2 + CorkBoardBorderSize * 2, 
-                CorkBoardDivisionSizeWidth, 
-                CorkBoardDivisionSizeHeight), ResumeGameButtonTexture, emptyStyle))
+            if (!isInHowToPlayMenu)
             {
-                Time.timeScale = 1;
-                isPaused = false;
-            }
-            // How to play button //HowToPlayGameButtonTexture
-            if (GUI.Button(new Rect(Screen.width / 2 - CorkBoardTexture.width / 2 + CorkBoardDivisionSizeWidth + CorkBoardBorderSize * 2,
-                Screen.height / 2 - CorkBoardTexture.height / 2 + CorkBoardBorderSize * 2,
-                CorkBoardDivisionSizeWidth,
-                CorkBoardDivisionSizeHeight), HowToPlayGameButtonTexture, emptyStyle))
-            {
-                //Application.LoadLevel("learn");
-            }
-            // Quit game button
-            if (GUI.Button(new Rect(Screen.width / 2 - CorkBoardTexture.width / 2 + CorkBoardDivisionSizeWidth * 2 + CorkBoardBorderSize * 3,
-                Screen.height / 2 - CorkBoardTexture.height / 2 + CorkBoardBorderSize * 2, 
-                CorkBoardDivisionSizeWidth, 
-                CorkBoardDivisionSizeHeight), QuitGameButtonTexture, emptyStyle))
-            {
-                Application.Quit();
-            }
-            // Main menu button
-            if (GUI.Button(new Rect(Screen.width / 2 - CorkBoardTexture.width / 2 + CorkBoardBorderSize,
-                Screen.height / 2 - CorkBoardTexture.height / 2 + CorkBoardBorderSize * 2 + CorkBoardDivisionSizeHeight,
-                CorkBoardDivisionSizeWidth,
-                CorkBoardDivisionSizeHeight), MainMenuGameButtonTexture, emptyStyle))
-            {
-                Context.PlayerLives = 3;
-                Context.PlayerInventory = new Inventory();
-                isPaused = false;
-                Application.LoadLevel("MainMenu");
-            }
-            // Save game button
-            if (GUI.Button(new Rect(Screen.width / 2 - CorkBoardTexture.width / 2 + CorkBoardDivisionSizeWidth + CorkBoardBorderSize * 2,
-                Screen.height / 2 - CorkBoardTexture.height / 2 + CorkBoardBorderSize * 2 + CorkBoardDivisionSizeHeight,
-                CorkBoardDivisionSizeWidth,
-                CorkBoardDivisionSizeHeight), SaveGameButtonTexture, emptyStyle))
-            {
+                // Draw pause menu buttons
+                // Resume button
+                if (GUI.Button(new Rect(Screen.width / 2 - CorkBoardTexture.width / 2 + CorkBoardBorderSize,
+                    Screen.height / 2 - CorkBoardTexture.height / 2 + CorkBoardBorderSize * 2,
+                    CorkBoardDivisionSizeWidth,
+                    CorkBoardDivisionSizeHeight), ResumeGameButtonTexture, emptyStyle))
+                {
+                    Time.timeScale = 1;
+                    isPaused = false;
+                    isInHowToPlayMenu = false;
+                }
+                // How to play button //HowToPlayGameButtonTexture
+                if (GUI.Button(new Rect(Screen.width / 2 - CorkBoardTexture.width / 2 + CorkBoardDivisionSizeWidth + CorkBoardBorderSize * 2,
+                    Screen.height / 2 - CorkBoardTexture.height / 2 + CorkBoardBorderSize * 2,
+                    CorkBoardDivisionSizeWidth,
+                    CorkBoardDivisionSizeHeight), HowToPlayGameButtonTexture, emptyStyle))
+                {
+                    isInHowToPlayMenu = true;
+                }
+                // Quit game button
+                if (GUI.Button(new Rect(Screen.width / 2 - CorkBoardTexture.width / 2 + CorkBoardDivisionSizeWidth * 2 + CorkBoardBorderSize * 3,
+                    Screen.height / 2 - CorkBoardTexture.height / 2 + CorkBoardBorderSize * 2,
+                    CorkBoardDivisionSizeWidth,
+                    CorkBoardDivisionSizeHeight), QuitGameButtonTexture, emptyStyle))
+                {
+                    Application.Quit();
+                }
+                // Main menu button
+                if (GUI.Button(new Rect(Screen.width / 2 - CorkBoardTexture.width / 2 + CorkBoardBorderSize,
+                    Screen.height / 2 - CorkBoardTexture.height / 2 + CorkBoardBorderSize * 2 + CorkBoardDivisionSizeHeight,
+                    CorkBoardDivisionSizeWidth,
+                    CorkBoardDivisionSizeHeight), MainMenuGameButtonTexture, emptyStyle))
+                {
+                    Context.PlayerLives = 3;
+                    Context.PlayerInventory = new Inventory();
+                    isPaused = false;
+                    Application.LoadLevel("MainMenu");
+                }
+                // Save game button
+                if (GUI.Button(new Rect(Screen.width / 2 - CorkBoardTexture.width / 2 + CorkBoardDivisionSizeWidth + CorkBoardBorderSize * 2,
+                    Screen.height / 2 - CorkBoardTexture.height / 2 + CorkBoardBorderSize * 2 + CorkBoardDivisionSizeHeight,
+                    CorkBoardDivisionSizeWidth,
+                    CorkBoardDivisionSizeHeight), SaveGameButtonTexture, emptyStyle))
+                {
 
+                }
+                // Settings button
+                if (GUI.Button(new Rect(Screen.width / 2 - CorkBoardTexture.width / 2 + CorkBoardDivisionSizeWidth * 2 + CorkBoardBorderSize * 3,
+                    Screen.height / 2 - CorkBoardTexture.height / 2 + CorkBoardBorderSize * 2 + CorkBoardDivisionSizeHeight,
+                    CorkBoardDivisionSizeWidth,
+                    CorkBoardDivisionSizeHeight), SettingsGameButtonTexture, emptyStyle))
+                {
+                    Application.LoadLevel("ManageLessons");
+                }
             }
-            // Settings button
-            if (GUI.Button(new Rect(Screen.width / 2 - CorkBoardTexture.width / 2 + CorkBoardDivisionSizeWidth * 2 + CorkBoardBorderSize * 3,
-                Screen.height / 2 - CorkBoardTexture.height / 2 + CorkBoardBorderSize * 2 + CorkBoardDivisionSizeHeight,
-                CorkBoardDivisionSizeWidth,
-                CorkBoardDivisionSizeHeight), SettingsGameButtonTexture, emptyStyle))
+
+            // How to Play Menu
+            else if (isInHowToPlayMenu)
             {
-                Application.LoadLevel("ManageLessons");
+                // How to play, Page 1
+                if (GUI.Button(new Rect(Screen.width / 2 - HowToPlayTexture1.width / 2,
+                    Screen.height / 2 - HowToPlayTexture1.height / 2,
+                    HowToPlayTexture1.width,
+                    HowToPlayTexture1.height), HowToPlayTexture1, emptyStyle))
+                {
+                    isInHowToPlayMenu = false;
+                }
             }
 
             // Draw pause menu button words
@@ -403,6 +426,7 @@ public class HUD : MonoBehaviour {
             {
                 Time.timeScale = 1;
                 isPaused = false;
+                isInHowToPlayMenu = false;
 
             }
             // If not paused, pause game
