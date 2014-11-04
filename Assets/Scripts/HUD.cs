@@ -5,7 +5,8 @@ public class HUD : MonoBehaviour {
 
     #region Private Variables ---------------------------------------------
     // Private variables representing components of the HUD; Initialized in the Start() functions
-    private GUIStyle InventoryStyle;
+
+    // Inventory sizes
     private int InventoryBoxWidth;
     private int InventoryItemBoxWidth;
     private int InventoryItemBoxHeight;
@@ -41,7 +42,8 @@ public class HUD : MonoBehaviour {
     // Scale factors for screen resize
     private float scaleFactorPauseMenuButtons;
 
-    private GUIStyle emptyStyle = new GUIStyle();
+    // Useful styles
+    private GUIStyle emptyStyle = new GUIStyle();   // Null style, for transparent backgrounds
     private GUIStyle pauseMenuButtonsStyle = new GUIStyle();
     
 
@@ -57,7 +59,6 @@ public class HUD : MonoBehaviour {
     {
         isPaused = false;
         isInHowToPlayMenu = false;
-        InventoryStyle = new GUIStyle();
         DefaultLetterButtonColor = GUI.backgroundColor;
 
         CurrentLettersInInventory = new ArrayList();
@@ -94,9 +95,9 @@ public class HUD : MonoBehaviour {
         GUILayout.Box("Lives: " + Context.PlayerLives.ToString());
         GUILayout.Box("Letters Collected: " + Context.PlayerInventory.TotalCollectedLetters);
         GUILayout.Box("Hint: " + Context.Word.Hint);
-
-        DisplayInventoryWindow();
         
+        DisplayPauseMenu();
+        DisplayInventoryWindow();
     }
 
     /// <summary>
@@ -133,6 +134,8 @@ public class HUD : MonoBehaviour {
         // Font size of letters in inventory boxes
         InventoryLetterFontSize = InventoryItemBoxHeight * 0.57f;
 
+        
+        #region Determine which letters to show in the inventory --------------------------------------------
         // Determine which letters to show in the inventory
         CurrentLettersInInventory.Clear();
         for (int ii = 0; ii < Alphabet.Length; ii++)
@@ -170,6 +173,7 @@ public class HUD : MonoBehaviour {
                 else if (!Context.PlayerInventory.Z.isEmpty && letter == "Z") { CurrentLettersInInventory.Add(letter); continue; }
             }
         }
+        #endregion Determine which letters to show in the inventory -----------------------------------------
 
         // Define inventory box area
         GUILayout.BeginArea(new Rect(
@@ -178,8 +182,9 @@ public class HUD : MonoBehaviour {
             InventoryItemBoxWidth * 31,                                                 // Width
             InventoryItemBoxHeight * 3));                                               // Height
 
+        #region Letter in Inventory --------------------------------------------
         // Draw collected letters in Inventory
-        #region Letter Type in Inventory --------------------------------------------
+
         GUILayout.BeginHorizontal();
         GUILayout.FlexibleSpace();
         GUI.backgroundColor = Color.black;
@@ -203,8 +208,9 @@ public class HUD : MonoBehaviour {
         GUILayout.EndHorizontal();
         #endregion Letter Type in Inventory -----------------------------------------
 
-        // Draw the inventory [count of each letter] that has been collected
         #region Letters' Count in Inventory -----------------------------------------
+        // Draw the inventory [count of each letter] that has been collected
+
         GUILayout.BeginHorizontal();
         GUILayout.FlexibleSpace();
 
@@ -354,6 +360,10 @@ public class HUD : MonoBehaviour {
 
         GUILayout.EndArea();
 
+    }
+
+    void DisplayPauseMenu()
+    {
         // Draw pause menu
         if (isPaused)
         {
@@ -398,9 +408,11 @@ public class HUD : MonoBehaviour {
                     CorkBoardDivisionSizeWidth,
                     CorkBoardDivisionSizeHeight), MainMenuGameButtonTexture, emptyStyle))
                 {
+                    // Reset values and reload to Main Menu
                     Context.PlayerLives = 3;
                     Context.PlayerInventory = new Inventory();
                     isPaused = false;
+                    //Destroy(GameObject.Find("Context"));
                     Application.LoadLevel("MainMenu");
                 }
                 // Save game button
@@ -421,11 +433,10 @@ public class HUD : MonoBehaviour {
                     //Application.LoadLevel("EnemyTesting");
                 }
             }
-
             // How to Play Menu
             else if (isInHowToPlayMenu)
             {
-                // How to play, Page 1
+                // How to play, Page 1 Instructions
                 if (GUI.Button(new Rect(Screen.width / 2 - HowToPlayTexture1Width / 2,
                     Screen.height / 2 - HowToPlayTexture1Height / 2,
                     HowToPlayTexture1Width,
@@ -441,7 +452,6 @@ public class HUD : MonoBehaviour {
             //pauseMenuButtonsStyle.normal.textColor = Color.black;
             //GUI.TextField(new Rect(Screen.width / 2 - CorkBoardTexture.width / 2 + CorkBoardBorderSize, Screen.height / 2 - CorkBoardTexture.height / 2 + CorkBoardBorderSize, CorkBoardDivisionSizeWidth, CorkBoardDivisionSizeHeight), "<size=" + InventoryLetterFontSize + ">" + "Resume" + "</size>", pauseMenuButtonsStyle);
         }
-
     }
 
     /// <summary>
