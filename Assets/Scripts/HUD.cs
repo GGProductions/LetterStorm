@@ -27,11 +27,19 @@ public class HUD : MonoBehaviour {
 
     // How to Play Textures
     public Texture2D HowToPlayTexture1;
+    private float HowToPlayTexture1Width;
+    private float HowToPlayTexture1Height;
 
+    // Pause Menu Background Texture
     public Texture2D CorkBoardTexture;
-    private int CorkBoardBorderSize;
-    private int CorkBoardDivisionSizeWidth;
-    private int CorkBoardDivisionSizeHeight;
+    private float CorkBoardBorderSize;
+    private float CorkBoardWidth;
+    private float CorkBoardHeight;
+    private float CorkBoardDivisionSizeWidth;
+    private float CorkBoardDivisionSizeHeight;
+
+    // Scale factors for screen resize
+    private float scaleFactorPauseMenuButtons;
 
     private GUIStyle emptyStyle = new GUIStyle();
     private GUIStyle pauseMenuButtonsStyle = new GUIStyle();
@@ -54,6 +62,9 @@ public class HUD : MonoBehaviour {
 
         CurrentLettersInInventory = new ArrayList();
         SelectedLetterButtonColor = Color.green;
+        
+        // Scaling factors
+        scaleFactorPauseMenuButtons = 1;
 
         // Dimensions - Inventory
         InventoryBoxWidth = (int)(Screen.width * .75);
@@ -63,9 +74,15 @@ public class HUD : MonoBehaviour {
         InventoryBoxBottomMargin = 5;
 
         // Dimensions - CorkBoard for pause menu
-        CorkBoardBorderSize = CorkBoardTexture.width / 15;
-        CorkBoardDivisionSizeWidth = (CorkBoardTexture.width - CorkBoardBorderSize * 4) / 3;
-        CorkBoardDivisionSizeHeight = (CorkBoardTexture.height - CorkBoardBorderSize * 4) / 2;
+        CorkBoardWidth = CorkBoardTexture.width;//
+        CorkBoardHeight = CorkBoardTexture.height;// * scaleFactorPauseMenuButtons
+        CorkBoardBorderSize = CorkBoardWidth / 15;
+        CorkBoardDivisionSizeWidth = (CorkBoardWidth - CorkBoardBorderSize * 4) / 3;
+        CorkBoardDivisionSizeHeight = (CorkBoardHeight - CorkBoardBorderSize * 4) / 2;
+
+        // Dimensions - How To Play Menu
+        HowToPlayTexture1Width = HowToPlayTexture1.width;
+        HowToPlayTexture1Height = HowToPlayTexture1.height;
     }
 
     /// <summary>
@@ -93,12 +110,25 @@ public class HUD : MonoBehaviour {
         {
             InventoryItemBoxWidth = (int)(Screen.width / 25);
             InventoryItemBoxHeight = (int)(Screen.width / 25);
+            scaleFactorPauseMenuButtons = 0.60f;
         }
         else
         {
             InventoryItemBoxWidth = (int)(Screen.width / 40);
             InventoryItemBoxHeight = (int)(Screen.width / 40);
+            scaleFactorPauseMenuButtons = 1;
         }
+
+        // Dimensions - CorkBoard for pause menu
+        CorkBoardWidth = CorkBoardTexture.width * scaleFactorPauseMenuButtons;
+        CorkBoardHeight = CorkBoardTexture.height * scaleFactorPauseMenuButtons;
+        CorkBoardBorderSize = CorkBoardWidth / 15 * scaleFactorPauseMenuButtons;
+        CorkBoardDivisionSizeWidth = (CorkBoardWidth - CorkBoardBorderSize * 4) / 3;
+        CorkBoardDivisionSizeHeight = (CorkBoardHeight - CorkBoardBorderSize * 4) / 2;
+
+        // Dimensions - How To Play Menu
+        HowToPlayTexture1Width = HowToPlayTexture1.width * scaleFactorPauseMenuButtons;
+        HowToPlayTexture1Height = HowToPlayTexture1.height * scaleFactorPauseMenuButtons;
 
         // Font size of letters in inventory boxes
         InventoryLetterFontSize = InventoryItemBoxHeight * 0.57f;
@@ -330,14 +360,15 @@ public class HUD : MonoBehaviour {
             GUI.skin.button.alignment = TextAnchor.MiddleCenter;
 
             // Draw pause menu background
-            GUI.DrawTexture(new Rect(Screen.width / 2 - CorkBoardTexture.width / 2, Screen.height / 2 - CorkBoardTexture.height / 2, CorkBoardTexture.width, CorkBoardTexture.height), CorkBoardTexture, ScaleMode.ScaleToFit, true);
+            GUI.DrawTexture(new Rect(Screen.width / 2 - CorkBoardWidth / 2,
+                Screen.height / 2 - CorkBoardHeight / 2, CorkBoardWidth, CorkBoardHeight), CorkBoardTexture, ScaleMode.ScaleToFit, true);
 
             if (!isInHowToPlayMenu)
             {
                 // Draw pause menu buttons
                 // Resume button
-                if (GUI.Button(new Rect(Screen.width / 2 - CorkBoardTexture.width / 2 + CorkBoardBorderSize,
-                    Screen.height / 2 - CorkBoardTexture.height / 2 + CorkBoardBorderSize * 2,
+                if (GUI.Button(new Rect(Screen.width / 2 - CorkBoardWidth / 2 + CorkBoardBorderSize,
+                    Screen.height / 2 - CorkBoardHeight / 2 + CorkBoardBorderSize * 2,
                     CorkBoardDivisionSizeWidth,
                     CorkBoardDivisionSizeHeight), ResumeGameButtonTexture, emptyStyle))
                 {
@@ -345,25 +376,25 @@ public class HUD : MonoBehaviour {
                     isPaused = false;
                     isInHowToPlayMenu = false;
                 }
-                // How to play button //HowToPlayGameButtonTexture
-                if (GUI.Button(new Rect(Screen.width / 2 - CorkBoardTexture.width / 2 + CorkBoardDivisionSizeWidth + CorkBoardBorderSize * 2,
-                    Screen.height / 2 - CorkBoardTexture.height / 2 + CorkBoardBorderSize * 2,
+                // How to play button
+                if (GUI.Button(new Rect(Screen.width / 2 - CorkBoardWidth / 2 + CorkBoardDivisionSizeWidth + CorkBoardBorderSize * 2,
+                    Screen.height / 2 - CorkBoardHeight / 2 + CorkBoardBorderSize * 2,
                     CorkBoardDivisionSizeWidth,
                     CorkBoardDivisionSizeHeight), HowToPlayGameButtonTexture, emptyStyle))
                 {
                     isInHowToPlayMenu = true;
                 }
                 // Quit game button
-                if (GUI.Button(new Rect(Screen.width / 2 - CorkBoardTexture.width / 2 + CorkBoardDivisionSizeWidth * 2 + CorkBoardBorderSize * 3,
-                    Screen.height / 2 - CorkBoardTexture.height / 2 + CorkBoardBorderSize * 2,
+                if (GUI.Button(new Rect(Screen.width / 2 - CorkBoardWidth / 2 + CorkBoardDivisionSizeWidth * 2 + CorkBoardBorderSize * 3,
+                    Screen.height / 2 - CorkBoardHeight / 2 + CorkBoardBorderSize * 2,
                     CorkBoardDivisionSizeWidth,
                     CorkBoardDivisionSizeHeight), QuitGameButtonTexture, emptyStyle))
                 {
                     Application.Quit();
                 }
                 // Main menu button
-                if (GUI.Button(new Rect(Screen.width / 2 - CorkBoardTexture.width / 2 + CorkBoardBorderSize,
-                    Screen.height / 2 - CorkBoardTexture.height / 2 + CorkBoardBorderSize * 2 + CorkBoardDivisionSizeHeight,
+                if (GUI.Button(new Rect(Screen.width / 2 - CorkBoardWidth / 2 + CorkBoardBorderSize,
+                    Screen.height / 2 - CorkBoardHeight / 2 + CorkBoardBorderSize * 2 + CorkBoardDivisionSizeHeight,
                     CorkBoardDivisionSizeWidth,
                     CorkBoardDivisionSizeHeight), MainMenuGameButtonTexture, emptyStyle))
                 {
@@ -373,20 +404,21 @@ public class HUD : MonoBehaviour {
                     Application.LoadLevel("MainMenu");
                 }
                 // Save game button
-                if (GUI.Button(new Rect(Screen.width / 2 - CorkBoardTexture.width / 2 + CorkBoardDivisionSizeWidth + CorkBoardBorderSize * 2,
-                    Screen.height / 2 - CorkBoardTexture.height / 2 + CorkBoardBorderSize * 2 + CorkBoardDivisionSizeHeight,
+                if (GUI.Button(new Rect(Screen.width / 2 - CorkBoardWidth / 2 + CorkBoardDivisionSizeWidth + CorkBoardBorderSize * 2,
+                    Screen.height / 2 - CorkBoardHeight / 2 + CorkBoardBorderSize * 2 + CorkBoardDivisionSizeHeight,
                     CorkBoardDivisionSizeWidth,
                     CorkBoardDivisionSizeHeight), SaveGameButtonTexture, emptyStyle))
                 {
 
                 }
                 // Settings button
-                if (GUI.Button(new Rect(Screen.width / 2 - CorkBoardTexture.width / 2 + CorkBoardDivisionSizeWidth * 2 + CorkBoardBorderSize * 3,
-                    Screen.height / 2 - CorkBoardTexture.height / 2 + CorkBoardBorderSize * 2 + CorkBoardDivisionSizeHeight,
+                if (GUI.Button(new Rect(Screen.width / 2 - CorkBoardWidth / 2 + CorkBoardDivisionSizeWidth * 2 + CorkBoardBorderSize * 3,
+                    Screen.height / 2 - CorkBoardHeight / 2 + CorkBoardBorderSize * 2 + CorkBoardDivisionSizeHeight,
                     CorkBoardDivisionSizeWidth,
                     CorkBoardDivisionSizeHeight), SettingsGameButtonTexture, emptyStyle))
                 {
                     Application.LoadLevel("ManageLessons");
+                    //Application.LoadLevel("EnemyTesting");
                 }
             }
 
@@ -394,10 +426,10 @@ public class HUD : MonoBehaviour {
             else if (isInHowToPlayMenu)
             {
                 // How to play, Page 1
-                if (GUI.Button(new Rect(Screen.width / 2 - HowToPlayTexture1.width / 2,
-                    Screen.height / 2 - HowToPlayTexture1.height / 2,
-                    HowToPlayTexture1.width,
-                    HowToPlayTexture1.height), HowToPlayTexture1, emptyStyle))
+                if (GUI.Button(new Rect(Screen.width / 2 - HowToPlayTexture1Width / 2,
+                    Screen.height / 2 - HowToPlayTexture1Height / 2,
+                    HowToPlayTexture1Width,
+                    HowToPlayTexture1Height), HowToPlayTexture1, emptyStyle))
                 {
                     isInHowToPlayMenu = false;
                 }
