@@ -57,6 +57,7 @@ public class HUD : MonoBehaviour {
     /// </summary>
     void Start()
     {
+        Time.timeScale = 1;
         isPaused = false;
         isInHowToPlayMenu = false;
         DefaultLetterButtonColor = GUI.backgroundColor;
@@ -411,8 +412,6 @@ public class HUD : MonoBehaviour {
                     // Reset values and reload to Main Menu
                     Context.PlayerLives = 3;
                     Context.PlayerInventory = new Inventory();
-                    isPaused = false;
-                    //Destroy(GameObject.Find("Context"));
                     Application.LoadLevel("MainMenu");
                 }
                 // Save game button
@@ -430,7 +429,6 @@ public class HUD : MonoBehaviour {
                     CorkBoardDivisionSizeHeight), SettingsGameButtonTexture, emptyStyle))
                 {
                     Application.LoadLevel("ManageLessons");
-                    //Application.LoadLevel("EnemyTesting");
                 }
             }
             // How to Play Menu
