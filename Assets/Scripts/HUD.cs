@@ -57,7 +57,6 @@ public class HUD : MonoBehaviour {
     /// </summary>
     void Start()
     {
-        Time.timeScale = 1;
         isPaused = false;
         isInHowToPlayMenu = false;
         DefaultLetterButtonColor = GUI.backgroundColor;
@@ -412,6 +411,7 @@ public class HUD : MonoBehaviour {
                     // Reset values and reload to Main Menu
                     Context.PlayerLives = 3;
                     Context.PlayerInventory = new Inventory();
+                    Time.timeScale = 1; // Unpause
                     Application.LoadLevel("MainMenu");
                 }
                 // Save game button
