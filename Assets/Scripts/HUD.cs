@@ -21,6 +21,9 @@ public class HUD : MonoBehaviour {
     public Texture2D ResumeGameButtonTexture;
     public Texture2D HowToPlayGameButtonTexture;
     public Texture2D QuitGameButtonTexture;
+    public Texture2D MainMenuGameButtonTexture;
+    public Texture2D SettingsGameButtonTexture;
+    public Texture2D SaveGameButtonTexture;
     public Texture2D CorkBoardTexture;
     private int CorkBoardBorderSize;
     private int CorkBoardDivisionSizeWidth;
@@ -67,8 +70,6 @@ public class HUD : MonoBehaviour {
     {
         GUILayout.Box("Lives: " + Context.PlayerLives.ToString());
         GUILayout.Box("Letters Collected: " + Context.PlayerInventory.TotalCollectedLetters);
-        GUILayout.Box("Test Screen Width: " + Screen.width.ToString());
-        GUILayout.Box("Test Screen Height: " + Screen.height.ToString());
         GUILayout.Box("Hint: " + Context.Word.Hint);
 
         DisplayInventoryWindow();
@@ -351,7 +352,33 @@ public class HUD : MonoBehaviour {
             {
                 Application.Quit();
             }
+            // Main menu button
+            if (GUI.Button(new Rect(Screen.width / 2 - CorkBoardTexture.width / 2 + CorkBoardBorderSize,
+                Screen.height / 2 - CorkBoardTexture.height / 2 + CorkBoardBorderSize * 2 + CorkBoardDivisionSizeHeight,
+                CorkBoardDivisionSizeWidth,
+                CorkBoardDivisionSizeHeight), MainMenuGameButtonTexture, emptyStyle))
+            {
+                Context.PlayerLives = 3;
+                Context.PlayerInventory = new Inventory();
+                isPaused = false;
+                Application.LoadLevel("MainMenu");
+            }
+            // Save game button
+            if (GUI.Button(new Rect(Screen.width / 2 - CorkBoardTexture.width / 2 + CorkBoardDivisionSizeWidth + CorkBoardBorderSize * 2,
+                Screen.height / 2 - CorkBoardTexture.height / 2 + CorkBoardBorderSize * 2 + CorkBoardDivisionSizeHeight,
+                CorkBoardDivisionSizeWidth,
+                CorkBoardDivisionSizeHeight), SaveGameButtonTexture, emptyStyle))
+            {
 
+            }
+            // Settings button
+            if (GUI.Button(new Rect(Screen.width / 2 - CorkBoardTexture.width / 2 + CorkBoardDivisionSizeWidth * 2 + CorkBoardBorderSize * 3,
+                Screen.height / 2 - CorkBoardTexture.height / 2 + CorkBoardBorderSize * 2 + CorkBoardDivisionSizeHeight,
+                CorkBoardDivisionSizeWidth,
+                CorkBoardDivisionSizeHeight), SettingsGameButtonTexture, emptyStyle))
+            {
+                Application.LoadLevel("ManageLessons");
+            }
 
             // Draw pause menu button words
             //pauseMenuButtonsStyle = GUI.skin.label;
@@ -363,8 +390,7 @@ public class HUD : MonoBehaviour {
     }
 
     /// <summary>
-    /// Method that runs once every frame
-    /// Control for keypresses and inventory
+    /// Control for keypresses
     /// </summary>
     void Update()
     {

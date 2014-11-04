@@ -8,10 +8,6 @@ using GGProductions.LetterStorm.Configuration;
 
 public class Context : MonoBehaviour
 {
-    #region Pathfinding Variables ---------------------------------------------
-    // Boss word hint
-    public static string BossWordHint;
-    #endregion Pathfinding Variables ------------------------------------------
 
     #region Private Variables ---------------------------------------------
     // Create the private variables that the this class's 
@@ -106,7 +102,6 @@ public class Context : MonoBehaviour
         PlayerLives = 3;
         PlayerInventory = new Inventory();
         Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
-        BossWordHint = "\nRoar, I am a hint >:D Rawrawrawrawrwrwarw";
 
         // Populate the Context from the save file
         LoadDataFromSaveFile(false);
