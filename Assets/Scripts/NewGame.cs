@@ -154,7 +154,11 @@ public class NewGame : MonoBehaviour {
     /// </summary>
     public Texture easyDifficultyImg, normalDifficultyImg, hardDifficultyImg;
     #endregion Public Variables -----------------------------------------------
-    // Use this for initialization
+
+    #region Unity Events ------------------------------------------------------
+    /// <summary>
+    /// Initialize the data needed to build this page when it is first loaded
+    /// </summary>
 	void Start () {
         // If the player's Lessons and WordSets have not been loaded from 
         // persistent storage, do so
@@ -180,7 +184,11 @@ public class NewGame : MonoBehaviour {
     {
         CreateGUI();
     }
-
+    #endregion Unity Events ---------------------------------------------------
+    
+    /// <summary>
+    /// Create all controls displayed in this scene 
+    /// </summary>
     private void CreateGUI()
     {
         // Calculate the location where the top left of the GUI should 
@@ -196,26 +204,21 @@ public class NewGame : MonoBehaviour {
         if (guiAreaTop < 0)
             guiAreaTop = 0;
 
-        // Create the background for the screen
-        //GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), backgroundImg);
         // Create the background image for the difficulty levels
         GUI.DrawTexture(new Rect(guiAreaLeft - 70, guiAreaTop + 100, 410, 330), difficultyLevelsBackgroundImg);
-        
         // Create the background image for the lessons
         GUI.DrawTexture(new Rect(guiAreaLeft + 400, guiAreaTop - 10, 290, 530), lessonsBackgroundImg);
-        // Create the background page (for the curriculum and lessons)
-        //GUI.DrawTexture(new Rect(guiAreaLeft + 470, guiAreaTop - 10, 270, 270), wordAreaBackgroundImg);
 
         GUILayout.BeginArea(new Rect(guiAreaLeft, guiAreaTop, 700, 600));
 
+        // Create the areas the user will use to select the game difficulty and the lesson to learn
         CreateDifficultyLevelArea();
-
         CreateAllLessonsArea();
 
         GUILayout.EndArea();
 
+        // Create the buttons to start the game and return to the main menu
         CreateStartGameBtn();
-
         CreateMainMenuBtn();
     }
 
