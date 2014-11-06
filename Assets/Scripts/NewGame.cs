@@ -184,7 +184,7 @@ public class NewGame : MonoBehaviour {
     {
         CreateGUI();
     }
-    #region Unity Events ------------------------------------------------------
+    #endregion Unity Events ---------------------------------------------------
     
     /// <summary>
     /// Create all controls displayed in this scene 
