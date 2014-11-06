@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: 56d91af25be7e4fc0818b145840629a0
+guid: 16468aa1416b81b48a63cd9824994c85
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Story
+    21300000: Lesson-Management
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -22,7 +22,7 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   seamlessCubemap: 0
-  textureFormat: -1
+  textureFormat: -3
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1

@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: 56d91af25be7e4fc0818b145840629a0
+guid: ce65547e7f2279d40998c3ebb946111a
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Story
+    21300000: StickyNote6
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -26,9 +26,9 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: 1
+    aniso: -1
     mipBias: -1
-    wrapMode: 1
+    wrapMode: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50

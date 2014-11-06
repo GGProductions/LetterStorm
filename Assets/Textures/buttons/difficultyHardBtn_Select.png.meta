@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: 56d91af25be7e4fc0818b145840629a0
+guid: 28b57e8b594d5f1428dde371f18caf9d
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Story
+    21300000: difficultyHardBtn_Select
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
