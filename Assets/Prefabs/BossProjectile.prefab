@@ -14,6 +14,7 @@ GameObject:
   - 114: {fileID: 11400000}
   - 135: {fileID: 13500002}
   - 54: {fileID: 5400000}
+  - 114: {fileID: 11400002}
   m_Layer: 0
   m_Name: BossProjectile
   m_TagString: bossProjectileTag
@@ -46,7 +47,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalPosition: {x: 1.51258159, y: .2754637, z: 7.63315296}
   m_LocalScale: {x: .400000006, y: .400000006, z: .400000006}
   m_Children:
   - {fileID: 400002}
@@ -201,11 +202,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 528345a1f2b937e4baea7ab01429e188, type: 3}
+  m_Script: {fileID: 11500000, guid: d842710ad446d874ab4021792949a8fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileSpeed: 6
-  explosion: {fileID: 100000, guid: 140767ec9fe300b4281bde40ede571d3, type: 2}
+  projectileSpeed: 5
+  explosion: {fileID: 100000, guid: db3f26d37383eb543b89bd47aab9f1e8, type: 2}
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d842710ad446d874ab4021792949a8fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileSpeed: 0
+  explosion: {fileID: 0}
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
