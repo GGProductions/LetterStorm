@@ -11,24 +11,24 @@ using GGProductions.LetterStorm.Configuration;
 public class NewGame : MonoBehaviour {
 
     #region Private Variables -------------------------------------------------
-    private static PlayerData playerData = null;
-    private static DifficultyLevels difficultyLevels = new DifficultyLevels();
-    private static List<string> difficultyLevelNames = null;
-    private static List<string> difficultyLevelDescriptions = null;
-    private static List<string> lessonNames = null;
-    private static int selectedDifficultyLevelBtnIdx = 0;
-    private static int selectedLessonBtnIdx = 0;
+    private PlayerData playerData = null;
+    private DifficultyLevels difficultyLevels = new DifficultyLevels();
+    private List<string> difficultyLevelNames = null;
+    private List<string> difficultyLevelDescriptions = null;
+    private List<string> lessonNames = null;
+    private int selectedDifficultyLevelBtnIdx = 0;
+    private int selectedLessonBtnIdx = 0;
     /// <summary>
     /// Vector used to store the scrolled position of the Scrollable View 
     /// within the Diifficulty Levels Area
     /// </summary>
-    private static Vector2 difficultyLevelsScrollPosition;
+    private Vector2 difficultyLevelsScrollPosition;
     
     /// <summary>
     /// Vector used to store the scrolled position of the Scrollable View 
     /// within the AllLessons Area
     /// </summary>
-    private static Vector2 allLessonsScrollPosition;
+    private Vector2 allLessonsScrollPosition;
 
     /// <summary>
     /// The styles used for header labels
@@ -154,7 +154,11 @@ public class NewGame : MonoBehaviour {
     /// </summary>
     public Texture easyDifficultyImg, normalDifficultyImg, hardDifficultyImg;
     #endregion Public Variables -----------------------------------------------
-    // Use this for initialization
+
+    #region Unity Events ------------------------------------------------------
+    /// <summary>
+    /// Initialize the data needed to build this page when it is first loaded
+    /// </summary>
 	void Start () {
         // If the player's Lessons and WordSets have not been loaded from 
         // persistent storage, do so
@@ -180,7 +184,11 @@ public class NewGame : MonoBehaviour {
     {
         CreateGUI();
     }
-
+    #endregion Unity Events ---------------------------------------------------
+    
+    /// <summary>
+    /// Create all controls displayed in this scene 
+    /// </summary>
     private void CreateGUI()
     {
         // Calculate the location where the top left of the GUI should 
@@ -196,26 +204,21 @@ public class NewGame : MonoBehaviour {
         if (guiAreaTop < 0)
             guiAreaTop = 0;
 
-        // Create the background for the screen
-        //GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), backgroundImg);
         // Create the background image for the difficulty levels
         GUI.DrawTexture(new Rect(guiAreaLeft - 70, guiAreaTop + 100, 410, 330), difficultyLevelsBackgroundImg);
-        
         // Create the background image for the lessons
         GUI.DrawTexture(new Rect(guiAreaLeft + 400, guiAreaTop - 10, 290, 530), lessonsBackgroundImg);
-        // Create the background page (for the curriculum and lessons)
-        //GUI.DrawTexture(new Rect(guiAreaLeft + 470, guiAreaTop - 10, 270, 270), wordAreaBackgroundImg);
 
         GUILayout.BeginArea(new Rect(guiAreaLeft, guiAreaTop, 700, 600));
 
+        // Create the areas the user will use to select the game difficulty and the lesson to learn
         CreateDifficultyLevelArea();
-
         CreateAllLessonsArea();
 
         GUILayout.EndArea();
 
+        // Create the buttons to start the game and return to the main menu
         CreateStartGameBtn();
-
         CreateMainMenuBtn();
     }
 
@@ -340,7 +343,14 @@ public class NewGame : MonoBehaviour {
         // Create the button used to create a new lesson.  If it was clicked...
         if (GUI.Button(new Rect((Screen.width / 2) - 200, Screen.height - 100, 400, 60), "Play Game!", _startGameButtonStyle))
         {
-            // Return to the main menu
+            // Set the enemy difficulty level the game will use
+            Context.EnemyDifficulty = difficultyLevels[selectedDifficultyLevelBtnIdx];
+            // Set the lesson the game will use
+            Context.CurrentLessonId = playerData.Curriculum.Lessons[selectedLessonBtnIdx].ID;
+            // Set the initial player life count based on the difficulty choosen
+            Context.PlayerLives = Context.EnemyDifficulty.InitialLifeCount;
+
+            // Load the first level
             Application.LoadLevel("EnemyTesting");
         }
     }

@@ -14,7 +14,6 @@ GameObject:
   - 114: {fileID: 11400000}
   - 135: {fileID: 13500002}
   - 54: {fileID: 5400000}
-  - 114: {fileID: 11400002}
   m_Layer: 0
   m_Name: BossProjectile
   m_TagString: bossProjectileTag
@@ -207,19 +206,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSpeed: 5
   explosion: {fileID: 100000, guid: db3f26d37383eb543b89bd47aab9f1e8, type: 2}
---- !u!114 &11400002
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d842710ad446d874ab4021792949a8fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectileSpeed: 0
-  explosion: {fileID: 0}
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

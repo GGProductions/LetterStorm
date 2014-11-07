@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: 80e3cc4f5b6ea5741ade5987614f6928
+guid: 16468aa1416b81b48a63cd9824994c85
 TextureImporter:
   fileIDToRecycleName:
-    21300000: StickyNote2
+    21300000: Lesson-Management
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -22,13 +22,13 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   seamlessCubemap: 0
-  textureFormat: -1
+  textureFormat: -3
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 1
     mipBias: -1
-    wrapMode: -1
+    wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50

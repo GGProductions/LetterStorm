@@ -28,7 +28,7 @@ public class Boss_eye_and_gun : MonoBehaviour {
         float damp = 1.8f;
         angleNeeded = Quaternion.LookRotation(planeLoc - transform.position);
         transform.rotation = Quaternion.Slerp(transform.rotation, angleNeeded, Time.deltaTime * damp);
-        if (hitcount > 0)
+        if (hitcount > 10)
         {
             bossWordGenScript.AllerAlbert();
             Destroy(gameObject);

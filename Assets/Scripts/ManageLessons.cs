@@ -10,21 +10,21 @@ using System.Text.RegularExpressions;
 public class ManageLessons : MonoBehaviour
 {
     #region Private Variables -------------------------------------------------
-    private static PlayerData playerData = null;
-    private static List<string> lessonNames = null;
-    private static List<string> lessonWordTexts = null;
-    private static int selectedLessonBtnIdx = 0;
-    private static int selectedWordBtnIdx = 0;
+    private PlayerData playerData = null;
+    private List<string> lessonNames = null;
+    private List<string> lessonWordTexts = null;
+    private int selectedLessonBtnIdx = 0;
+    private int selectedWordBtnIdx = 0;
     /// <summary>
     /// Vector used to store the scrolled position of the Scrollable View 
     /// within the AllLessons Area
     /// </summary>
-    private static Vector2 allLessonsScrollPosition;
+    private Vector2 allLessonsScrollPosition;
     /// <summary>
     /// Vector used to store the scrolled position of the Scrollable View 
     /// for the selected lesson's words within the CurrentLessons Area
     /// </summary>
-    private static Vector2 lessonWordsScrollPosition;
+    private Vector2 lessonWordsScrollPosition;
 
     /// <summary>
     /// The styles used for header labels
@@ -109,7 +109,12 @@ public class ManageLessons : MonoBehaviour
     /// The GUI skin containing all the styles used for the GUI elements
     /// </summary>
     public GUISkin smartMenuSkin;
-    
+
+    /// <summary>
+    /// The image to used for the screen's title
+    /// </summary>
+    public Texture titleImg;
+
     /// <summary>
     /// The background image for the screen
     /// </summary>
@@ -163,7 +168,7 @@ public class ManageLessons : MonoBehaviour
         // Calculate the location where the top left of the GUI should 
         // start if it is to be centered on screen
         int guiAreaLeft = (Screen.width / 2) - (700 / 2);
-        int guiAreaTop = (Screen.height / 2) - (600 / 2);
+        int guiAreaTop = (Screen.height / 2) - (600 / 2) + 70;
 
         // If any of the calculations fall below zero (because the screen is too small),
         // default to zero
@@ -174,12 +179,14 @@ public class ManageLessons : MonoBehaviour
 
         // Create the background for the screen
         GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), backgroundImg);
+        // Create the page title
+        GUI.DrawTexture(new Rect((Screen.width / 2) - (titleImg.width / 2), 30.0f, titleImg.width, titleImg.height), titleImg);
         // Create the background page (for the curriculum and lessons)
-        GUI.DrawTexture(new Rect(guiAreaLeft - 85, guiAreaTop - 10, 540, 630), areaBackgroundImg);
+        GUI.DrawTexture(new Rect(guiAreaLeft - 85, guiAreaTop - 10, 540, 560), areaBackgroundImg);
         // Create the background page (for the curriculum and lessons)
         GUI.DrawTexture(new Rect(guiAreaLeft + 470, guiAreaTop - 10, 270, 270), wordAreaBackgroundImg);
 
-        GUILayout.BeginArea(new Rect(guiAreaLeft, guiAreaTop, 700, 600));
+        GUILayout.BeginArea(new Rect(guiAreaLeft, guiAreaTop, 700, 530));
 
         CreateAllLessonsArea();
 
@@ -200,7 +207,7 @@ public class ManageLessons : MonoBehaviour
         BuildLessonNamesCache(false);
 
         // Wrap everything in the designated GUI Area to group controls together
-        GUILayout.BeginArea(new Rect(0, 0, 200, 600));
+        GUILayout.BeginArea(new Rect(0, 0, 200, 530));
 
         // Ensure the controls are laid out vertically
         GUILayout.BeginVertical();
@@ -277,7 +284,7 @@ public class ManageLessons : MonoBehaviour
         BuildLessonWordsCache(lessonIdx, refreshWordList);
 
         // Wrap everything in the designated GUI Area to group controls together
-        GUILayout.BeginArea(new Rect(250, 0, 200, 600));
+        GUILayout.BeginArea(new Rect(250, 0, 200, 530));
         // Ensure the controls are laid out vertically
         GUILayout.BeginVertical();
 

@@ -2110,44 +2110,6 @@ Prefab:
   m_RootGameObject: {fileID: 981801328}
   m_IsPrefabParent: 0
   m_IsExploded: 1
---- !u!1 &1963813400
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1963813402}
-  - 114: {fileID: 1963813401}
-  m_Layer: 0
-  m_Name: Context
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1963813401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1963813400}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2a911f0463b4eb4586cd37802882a4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1963813402
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1963813400}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.429326773, y: -.570501566, z: .826994658}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
 --- !u!1 &1972480582
 GameObject:
   m_ObjectHideFlags: 0
@@ -2202,13 +2164,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff4c3923019b2304395cc0efa6893506, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ResumeGameButtonTexture: {fileID: 2800000, guid: 670b927203340fc48ad5a53bde0f9ac8,
+  ResumeGameButtonTexture: {fileID: 2800000, guid: 39fad58494d79a64b8d35c74f8da2a87,
     type: 3}
-  HowToPlayGameButtonTexture: {fileID: 2800000, guid: 2379a304729521f40b3cbb8520f632bc,
+  HowToPlayGameButtonTexture: {fileID: 2800000, guid: 38d5e0c8d7ae84741aa6d0434ab211a3,
     type: 3}
-  QuitGameButtonTexture: {fileID: 2800000, guid: d4fe9a6e7a0cf9642855a63f527b2b3a,
+  QuitGameButtonTexture: {fileID: 2800000, guid: 80e3cc4f5b6ea5741ade5987614f6928,
     type: 3}
-  CorkBoardTexture: {fileID: 2800000, guid: b3a5d6d3e54f2984b9d6962623638c68, type: 3}
+  MainMenuGameButtonTexture: {fileID: 2800000, guid: 0e44f685beac3974592f328a5140f281,
+    type: 3}
+  SettingsGameButtonTexture: {fileID: 2800000, guid: 48662023ca29dea4ca61ac642d5460ce,
+    type: 3}
+  SaveGameButtonTexture: {fileID: 2800000, guid: ce65547e7f2279d40998c3ebb946111a,
+    type: 3}
+  HowToPlayTexture1: {fileID: 2800000, guid: 0053068102092f64195962ba4e32ef67, type: 3}
+  CorkBoardTexture: {fileID: 2800000, guid: 722ddafb95b7ecb42a60e126e38b6df1, type: 3}
 --- !u!4 &1986525867
 Transform:
   m_ObjectHideFlags: 0

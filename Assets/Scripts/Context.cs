@@ -3,13 +3,11 @@ using System.Collections;
 using GGProductions.LetterStorm.Data.Collections;
 using GGProductions.LetterStorm.Data;
 using GGProductions.LetterStorm.Utilities;
+using System;
+using GGProductions.LetterStorm.Configuration;
 
 public class Context : MonoBehaviour
 {
-    #region Pathfinding Variables ---------------------------------------------
-    // Boss word hint
-    public static string BossWordHint;
-    #endregion Pathfinding Variables ------------------------------------------
 
     #region Private Variables ---------------------------------------------
     // Create the private variables that the this class's 
@@ -21,6 +19,8 @@ public class Context : MonoBehaviour
     private static char[] _alphabet;
     private static Word _word;
     private static int _level = 1;
+    private static EnemyDifficulty _enemyDifficulty;
+    private static Guid _currentLessonId;
     #endregion Private Variables ------------------------------------------
 
     #region Properties ----------------------------------------------------
@@ -39,7 +39,10 @@ public class Context : MonoBehaviour
         {
             if (_word == null)
             {
-                _word = Curriculum.Lessons[0].Words.GetRandomWord();
+                if (_currentLessonId == null)
+                    _word = Curriculum.Lessons[0].Words.GetRandomWord();
+                else
+                    _word = Curriculum.Lessons.GetLessonById(_currentLessonId).Words.GetRandomWord();
             }
 
             return _word; 
@@ -77,6 +80,20 @@ public class Context : MonoBehaviour
         get { return _playerLives; }
         set { _playerLives = value; }
     }
+
+    /// <summary>The enemy difficulty level chosen for the game playthrough</summary>
+    public static EnemyDifficulty EnemyDifficulty
+    {
+        get { return _enemyDifficulty; }
+        set { _enemyDifficulty = value; }
+    }
+
+    /// <summary>The id of the lesson chosen for the game playthrough</summary>
+    public static Guid CurrentLessonId
+    {
+        get { return _currentLessonId; }
+        set { _currentLessonId = value; }
+    }
     #endregion Properties -------------------------------------------------
 
     #region Event Handlers ----------------------------------------------------
@@ -88,7 +105,6 @@ public class Context : MonoBehaviour
         PlayerLives = 3;
         PlayerInventory = new Inventory();
         Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
-        BossWordHint = "\nRoar, I am a hint >:D Rawrawrawrawrwrwarw";
 
         // Populate the Context from the save file
         LoadDataFromSaveFile(false);
