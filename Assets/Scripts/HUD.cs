@@ -106,33 +106,6 @@ public class HUD : MonoBehaviour {
     /// </summary>
     void DisplayInventoryWindow()
     {
-        // Determine size of inventory "boxes" depending on screen size
-        if (Screen.width <= 1000)
-        {
-            InventoryItemBoxWidth = (int)(Screen.width / 25);
-            InventoryItemBoxHeight = (int)(Screen.width / 25);
-            scaleFactorPauseMenuButtons = 0.60f;
-        }
-        else
-        {
-            InventoryItemBoxWidth = (int)(Screen.width / 40);
-            InventoryItemBoxHeight = (int)(Screen.width / 40);
-            scaleFactorPauseMenuButtons = 1;
-        }
-
-        // Dimensions - CorkBoard for pause menu
-        CorkBoardWidth = CorkBoardTexture.width * scaleFactorPauseMenuButtons;
-        CorkBoardHeight = CorkBoardTexture.height * scaleFactorPauseMenuButtons;
-        CorkBoardBorderSize = CorkBoardWidth / 15 * scaleFactorPauseMenuButtons;
-        CorkBoardDivisionSizeWidth = (CorkBoardWidth - CorkBoardBorderSize * 4) / 3;
-        CorkBoardDivisionSizeHeight = (CorkBoardHeight - CorkBoardBorderSize * 4) / 2;
-
-        // Dimensions - How To Play Menu
-        HowToPlayTexture1Width = HowToPlayTexture1.width * scaleFactorPauseMenuButtons;
-        HowToPlayTexture1Height = HowToPlayTexture1.height * scaleFactorPauseMenuButtons;
-
-        // Font size of letters in inventory boxes
-        InventoryLetterFontSize = InventoryItemBoxHeight * 0.57f;
 
         
         #region Determine which letters to show in the inventory --------------------------------------------
@@ -364,6 +337,7 @@ public class HUD : MonoBehaviour {
 
     void DisplayPauseMenu()
     {
+
         // Draw pause menu
         if (isPaused)
         {
@@ -457,6 +431,36 @@ public class HUD : MonoBehaviour {
     /// </summary>
     void Update()
     {
+
+        // Determine size of inventory "boxes" depending on screen size
+        if (Screen.width <= 1000)
+        {
+            InventoryItemBoxWidth = (int)(Screen.width / 25);
+            InventoryItemBoxHeight = (int)(Screen.width / 25);
+            scaleFactorPauseMenuButtons = 0.60f;
+        }
+        else
+        {
+            InventoryItemBoxWidth = (int)(Screen.width / 40);
+            InventoryItemBoxHeight = (int)(Screen.width / 40);
+            scaleFactorPauseMenuButtons = 1;
+        }
+
+        // Font size of letters in inventory boxes
+        InventoryLetterFontSize = InventoryItemBoxHeight * 0.57f;
+
+        // Dimensions - CorkBoard for pause menu
+        CorkBoardWidth = CorkBoardTexture.width * scaleFactorPauseMenuButtons;
+        CorkBoardHeight = CorkBoardTexture.height * scaleFactorPauseMenuButtons;
+        CorkBoardBorderSize = CorkBoardWidth / 15 * scaleFactorPauseMenuButtons;
+        CorkBoardDivisionSizeWidth = (CorkBoardWidth - CorkBoardBorderSize * 4) / 3;
+        CorkBoardDivisionSizeHeight = (CorkBoardHeight - CorkBoardBorderSize * 4) / 2;
+
+        // Dimensions - How To Play Menu
+        HowToPlayTexture1Width = HowToPlayTexture1.width * scaleFactorPauseMenuButtons;
+        HowToPlayTexture1Height = HowToPlayTexture1.height * scaleFactorPauseMenuButtons;
+
+
 
         // If [Esc] is pressed, pause the game
         if (Input.GetKeyDown(KeyCode.Escape))
