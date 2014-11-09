@@ -72,4 +72,25 @@ public class Enemy : MonoBehaviour
     public virtual void findPath(float atm){}
  
     #endregion
+
+
+    /// <summary>
+    /// thsi will allow both types of enemies to react to aoe. 
+    /// aoe itself has the same tag as the pecil 
+    /// look at consShellScript.cs and Letter projectile.cs
+    /// </summary>
+    /// <param name="otherObj"></param>
+    void OnTriggerEnter(Collider otherObj)
+    {
+
+        if (otherObj.name == "aoeSpherePrefab(Clone)")
+        {
+            Instantiate(Resources.Load("Explosions/ExplosionGreen"),
+                                      transform.position,
+                                      Quaternion.Euler(-180, 0, 0));
+        }
+      
+
+    }
+
 }

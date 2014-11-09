@@ -298,7 +298,7 @@ public class AlbertController2 : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.Z)) { LetterBulletname = "z_projectilePrefab"; }
 
 
-		if (Input.GetKeyDown(KeyCode.Alpha1)) { Debug.Log("1");
+		if (Input.GetKeyDown(KeyCode.Alpha1)) {// Debug.Log("1");
 
 		_aoeBall = Instantiate(aoeBall,  this.transform.position, this.transform.rotation) as GameObject;
 		}
@@ -393,12 +393,16 @@ public class AlbertController2 : MonoBehaviour {
 
 	void OnTriggerEnter(Collider otherObj)
 	{
-		Debug.Log(otherObj.tag + " is the tag registered");
+	//	Debug.Log(otherObj.tag + " is the tag registered");
 
 		if (otherObj.tag == "enemy" || otherObj.tag == "bossTag" || otherObj.tag == "bossProjectileTag")
 		{
 		  //  Debug.Log("Vowel");
 			 Context.PlayerLives--;
+			 Instantiate(Resources.Load("Explosions/blackStars1"),
+									  transform.position,
+									  Quaternion.Euler(-180, 0, 0));
+		   
 			 StartCoroutine(Take_Damage_Routine());
 		}
 

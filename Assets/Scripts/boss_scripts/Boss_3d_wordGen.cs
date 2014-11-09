@@ -64,7 +64,7 @@ public class Boss_3d_wordGen : MonoBehaviour {
         {
 
             letter = Context.Word.Text[cnt];
-            Debug.Log(letter);
+           // Debug.Log(letter);
             float XpositionOfLetter = kerning * (((float)wordlength / 2) - ((float)cnt));
             GameObject letterGo = Instantiate(Resources.Load("Boss_letters/" + letter + "_boss"),
                                        new Vector3(_wordHook.position.x - XpositionOfLetter, _wordHook.position.y, _wordHook.position.z),

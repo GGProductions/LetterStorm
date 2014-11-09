@@ -11,6 +11,11 @@ public class Boss_Motion_animation : MonoBehaviour {
 	private Vector3 here;
 	private float tem;
 
+   private Vector3 point_topleft;
+   private Vector3 point_mid;
+   private Vector3 point_toright;
+ 
+
 	void OnEnable()
 	{
 		Boss_3d_wordGen.OnWrongCollision += CHaaaarge;
@@ -24,13 +29,20 @@ public class Boss_Motion_animation : MonoBehaviour {
 
 	void Awake()
 	{
+		 point_topleft= new Vector3(-3f,0f,4.5f);
+		 point_mid = new Vector3(0f, 0f, 0f); 
+		 point_toright=new Vector3(3f,0f,4.5f);
+
+		here = new Vector3(0f, 0f, 4);
+		gameObject.transform.position = here;
+		tem = 0;
+		animation.wrapMode = WrapMode.Once;
+		animation.AddClip(CurlUpAnimationClip, "curl");
+		animation.AddClip(UncurlAnimationClip, "uncurl");
+
 		animation.wrapMode = WrapMode.Loop;
 		animation.AddClip(ActionAnimationClip, "action");
 		//animation.wrapMode = WrapMode.Default;
-
-
-
-
 		//animation.Stop();
 	//	animation["curl"].layer = 1;
 	//	animation["uncurl"].layer = 0;
@@ -43,28 +55,25 @@ public class Boss_Motion_animation : MonoBehaviour {
 	private float startTime;
 	private float journeyLength=10f;
 	public Transform target;
-	public float smooth = 5.0F;
+	public float smooth = 5.0F;    
 
-
-	// Use this for initialization
-
-	void Start () {
-
-		animation.wrapMode = WrapMode.Once;
-		animation.AddClip(CurlUpAnimationClip, "curl");
-		animation.AddClip(UncurlAnimationClip, "uncurl");
-
-
-		//startMarker = new Vector3 (-4f, 0f, 0f);
-	   // startTime = Time.time;
-	   // journeyLength = Vector3.Distance(startMarker.position, endMarker.position);
-
-		here = new Vector3(0f, 0f, 4);
-		gameObject.transform.position = here;
-		tem = 0;
-	   // StartCoroutine(BossEnters());
-
+	void Start()
+	{
+		
 	}
+	IEnumerator MoveObject(Transform thisTransform, Vector3 startPos, Vector3 endPos, float time)
+	{
+		var i = 0.0f;
+		var rate = 1.0f / time;
+		while (i < 1.0f)
+		{
+			i += Time.deltaTime * rate;
+			thisTransform.position = Vector3.Lerp(startPos, endPos, i);
+			yield return null;
+		}
+	}
+
+
 	
 	// Update is called once per frame
 	void Update () {
@@ -74,7 +83,7 @@ public class Boss_Motion_animation : MonoBehaviour {
 
 		float factor = Mathf.Cos((tem));
 		transform.Translate(Vector3.right * (factor / 20), Space.World);
-		transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+	transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 
 
 	//	float distCovered = (Time.time - startTime) * speed;
