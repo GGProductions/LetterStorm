@@ -69,14 +69,6 @@ public class Boss_Motion_animation : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-	  /*  while (transform.position.z > 4f)
-		{
-			transform.rotation = Quaternion.Euler(0, 180, 0);
-			//animation.CrossFade("curl");
-			float amtToMove = 6.52f * Time.deltaTime;
-			transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - amtToMove);	   
-		}
-		*/
 		animation.CrossFade("action");
 		tem += Time.deltaTime;
 

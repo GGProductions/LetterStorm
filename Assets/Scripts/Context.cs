@@ -102,7 +102,7 @@ public class Context : MonoBehaviour
     /// </summary>
     void Awake()
     {
-        PlayerLives = 3;
+        PlayerLives = 10;
         PlayerInventory = new Inventory();
         Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
 

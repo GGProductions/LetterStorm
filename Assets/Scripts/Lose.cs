@@ -15,6 +15,7 @@ public class Lose : MonoBehaviour
 		//JR if pressed continue playing last level with fresh lives
         if(GUI.Button(new Rect(Screen.width / 2 - 100, Screen.height / 2 + 25, 200, 20), "Insert Coin, to continue playing"))
         {
+            Context.PlayerLives =10;
 
 		//JR Loads level and gives players fresh lives, however score and misses should stay the same
 			Application.LoadLevel("EnemyTesting");

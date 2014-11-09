@@ -9,6 +9,9 @@ public class Boss_eye_and_gun : MonoBehaviour {
     private int hitcount;
     private GameObject theBoss;
     private Boss_3d_wordGen bossWordGenScript;
+    //  float damp = 1.8f; //easy
+  // public  float damp = 10f; //hard
+   public float damp = 3f; //med
     void Awake()
     {
     
@@ -25,21 +28,23 @@ public class Boss_eye_and_gun : MonoBehaviour {
     void Update()
     {
         planeLoc = GameObject.Find("AlbertPrefab2").transform.position;
-        float damp = 1.8f;
+
         angleNeeded = Quaternion.LookRotation(planeLoc - transform.position);
         transform.rotation = Quaternion.Slerp(transform.rotation, angleNeeded, Time.deltaTime * damp);
-        if (hitcount > 10)
+        if (hitcount > 5)
         {
             bossWordGenScript.AllerAlbert();
             Destroy(gameObject);
         }
 
     }
-
+    
+      
 
 
     void OnTriggerEnter(Collider otherObj)
     {
+        
         if (otherObj.tag == "projectileTag" || otherObj.tag == "letterProjectile")
         {
             hitcount++;

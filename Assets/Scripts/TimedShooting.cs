@@ -12,7 +12,7 @@ public class TimedShooting : MonoBehaviour {
 		{
 			Vector3 here= new Vector3( gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);	
 			{Instantiate (theShot, here, transform.rotation );	
-				yield return new WaitForSeconds(shotDelay);}
+				yield return new WaitForSeconds(0.7f);}
 		}
 	}	
 	

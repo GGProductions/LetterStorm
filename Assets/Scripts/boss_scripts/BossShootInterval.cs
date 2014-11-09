@@ -16,7 +16,7 @@ public class BossShootInterval_V1 : MonoBehaviour {
             Vector3 here = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
             Instantiate(theShot, here, transform.rotation);
 
-            yield return new WaitForSeconds(fireRate);
+            yield return new WaitForSeconds(2.8f);
         }
 
 

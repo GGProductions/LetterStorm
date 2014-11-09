@@ -681,6 +681,7 @@ GameObject:
   - 114: {fileID: 11400014}
   - 65: {fileID: 6500000}
   - 114: {fileID: 11400016}
+  - 54: {fileID: 5400000}
   m_Layer: 0
   m_Name: Boss_V4_prefab
   m_TagString: bossTag
@@ -1388,6 +1389,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100084}
   m_Mesh: {fileID: 4300004, guid: 07e92547083303b4e8a788a9f5b2a880, type: 3}
+--- !u!54 &5400000
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100086}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &6500000
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -1395,7 +1411,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100086}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3.06999993, y: 1.44000006, z: 1}
@@ -1522,7 +1538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theShot: {fileID: 100000, guid: 757d301ffccc06b4cafe7bc7dce3d485, type: 2}
-  shotDelay: .200000003
+  shotDelay: 1
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
