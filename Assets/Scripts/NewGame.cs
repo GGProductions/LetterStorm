@@ -138,6 +138,11 @@ public class NewGame : MonoBehaviour {
     /// The GUI skin containing all the styles used for the GUI elements
     /// </summary>
     public GUISkin smartMenuSkin;
+    
+    /// <summary>
+    /// The image to used for the screen's title
+    /// </summary>
+    public Texture titleImg;
 
     /// <summary>
     /// The backgound image to use for the difficultyLevels area
@@ -148,11 +153,6 @@ public class NewGame : MonoBehaviour {
     /// The backgound image to use for the lesson area
     /// </summary>
     public Texture lessonsBackgroundImg;
-
-    /// <summary>
-    /// Images to use for the easy, normal, and hard difficulty levels
-    /// </summary>
-    public Texture easyDifficultyImg, normalDifficultyImg, hardDifficultyImg;
     #endregion Public Variables -----------------------------------------------
 
     #region Unity Events ------------------------------------------------------
@@ -204,10 +204,12 @@ public class NewGame : MonoBehaviour {
         if (guiAreaTop < 0)
             guiAreaTop = 0;
 
+        // Create the page title
+        GUI.DrawTexture(new Rect((Screen.width / 2) - (titleImg.width / 2), 30.0f, titleImg.width, titleImg.height), titleImg);
         // Create the background image for the difficulty levels
         GUI.DrawTexture(new Rect(guiAreaLeft - 70, guiAreaTop + 100, 410, 330), difficultyLevelsBackgroundImg);
         // Create the background image for the lessons
-        GUI.DrawTexture(new Rect(guiAreaLeft + 400, guiAreaTop - 10, 290, 530), lessonsBackgroundImg);
+        GUI.DrawTexture(new Rect(guiAreaLeft + 400, guiAreaTop + 60, 290, 480), lessonsBackgroundImg);
 
         GUILayout.BeginArea(new Rect(guiAreaLeft, guiAreaTop, 700, 600));
 
@@ -310,7 +312,7 @@ public class NewGame : MonoBehaviour {
         BuildLessonNamesCache(false);
 
         // Wrap everything in the designated GUI Area to group controls together
-        GUILayout.BeginArea(new Rect(450, 0, 200, 500));
+        GUILayout.BeginArea(new Rect(450, 70, 200, 450));
 
         // Ensure the controls are laid out vertically
         GUILayout.BeginVertical();
@@ -347,8 +349,6 @@ public class NewGame : MonoBehaviour {
             Context.EnemyDifficulty = difficultyLevels[selectedDifficultyLevelBtnIdx];
             // Set the lesson the game will use
             Context.CurrentLessonId = playerData.Curriculum.Lessons[selectedLessonBtnIdx].ID;
-            // Set the initial player life count based on the difficulty choosen
-            Context.PlayerLives = Context.EnemyDifficulty.InitialLifeCount;
 
             // Load the first level
             Application.LoadLevel("EnemyTesting");

@@ -36,7 +36,7 @@ namespace GGProductions.LetterStorm.Configuration.Collections
                 "Easy",
                 "Enemies are slower and spawn in smaller groups, the user has more initial lifes, and bosses are easier to defeat.  Recommended for young children who are new to gaming.",
                 0.7f,   // Game speed: slower than normal
-                7,      // Initial life count: more than normal
+                10,      // Initial life count: more than normal
                 4,      // Max enemies on screen: less than normal
                 0.5f,   // Boss health modifier: less than normal
                 false); // Don't enable boss rage mode

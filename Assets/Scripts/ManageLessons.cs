@@ -130,8 +130,12 @@ public class ManageLessons : MonoBehaviour
     /// </summary>
     public Texture wordAreaBackgroundImg;
     #endregion Public Variables -----------------------------------------------
-
-    void OnGUI()
+    
+    #region Unity Events ------------------------------------------------------
+    /// <summary>
+    /// Initialize the data needed to build this page when it is first loaded
+    /// </summary>
+    void Start()
     {
         // If the player's Lessons and WordSets have not been loaded from 
         // persistent storage, do so
@@ -139,30 +143,20 @@ public class ManageLessons : MonoBehaviour
         {
             playerData = GameStateUtilities.Load();
 
-            if(playerData.Curriculum.Lessons.Count == 0)
+            if (playerData.Curriculum.Lessons.Count == 0)
                 playerData.Curriculum.CreateSampleLessons();
         }
-
-
-        CreateGUI();
-
-
-        //// Make a background box
-        //GUI.Box(new Rect(10, 10, 100, 90), "Loader Menu");
-
-        //// Make the first button. If it is pressed, Application.Loadlevel (1) will be executed
-        //if (GUI.Button(new Rect(20, 40, 80, 20), "Level 1"))
-        //{
-        //    Application.LoadLevel(1);
-        //}
-
-        //// Make the second button.
-        //if (GUI.Button(new Rect(20, 70, 80, 20), "Level 2"))
-        //{
-        //    Application.LoadLevel(2);
-        //}
     }
-
+    
+    void OnGUI()
+    {
+        CreateGUI();
+    }
+    #endregion Unity Events ---------------------------------------------------
+    
+    /// <summary>
+    /// Create all controls displayed in this scene 
+    /// </summary>
     private void CreateGUI()
     {
         // Calculate the location where the top left of the GUI should 
@@ -188,19 +182,28 @@ public class ManageLessons : MonoBehaviour
 
         GUILayout.BeginArea(new Rect(guiAreaLeft, guiAreaTop, 700, 530));
 
-        CreateAllLessonsArea();
+        // Populate the Curriculum/Lessons area with the names of all existing lessons
+        bool wasDifferentLessonSelected = CreateAllLessonsArea();
+
+        // Populate the Words area with the word set corresponding to the selected lesson
+        CreateCurrentLessonArea(ref selectedLessonBtnIdx, wasDifferentLessonSelected);
+
+        // Create the Edit Word area with the text and hint of the selected word
+        CreateWordEditorArea(selectedLessonBtnIdx, ref selectedWordBtnIdx);
 
         GUILayout.EndArea();
 
         CreateMainMenuBtn();
     }
 
+
     #region All Lessons Area Methods ------------------------------------------
     /// <summary>
     /// Create all the controls used to display all existing lessons and 
     /// create new lessons
     /// </summary>
-    private void CreateAllLessonsArea()
+    /// <returns>Whether or not a new lesson was selected</returns>
+    private bool CreateAllLessonsArea()
     {
         // If the List of lesson names has not yet been built, 
         // populate the lessons name cache
@@ -236,11 +239,13 @@ public class ManageLessons : MonoBehaviour
 
         // If the currently-selected button is different from that selected last frame...
         if (selectedLessonBtnIdx != oldSelectedLessonIdx)
+            return true;
             // Populate the Words area from a new word set corresponding to the selected lesson
-            CreateCurrentLessonArea(ref selectedLessonBtnIdx, true);
+            //CreateCurrentLessonArea(ref selectedLessonBtnIdx, true);
         // Else, repopulate the Words area from the word set stored in cache
         else
-            CreateCurrentLessonArea(ref selectedLessonBtnIdx, false);
+            return false;
+            //CreateCurrentLessonArea(ref selectedLessonBtnIdx, false);
     }
 
     /// <summary>
@@ -315,13 +320,12 @@ public class ManageLessons : MonoBehaviour
         GUILayout.EndScrollView();
 
         // Create the button used to delete the selected lesson, and do so if it has been clicked
+        GUILayout.Space(10.0f);
         CreateDeleteLessonBtn(ref lessonIdx);
 
         // End the cotroller wrappers
         GUILayout.EndVertical();
         GUILayout.EndArea();
-
-        CreateWordEditorArea(lessonIdx, ref selectedWordBtnIdx);
     }
 
     /// <summary>

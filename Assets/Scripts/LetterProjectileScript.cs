@@ -45,8 +45,8 @@ public class LetterProjectileScript : MonoBehaviour {
 
     void OnTriggerEnter(Collider otherObj)
     {
-       
 
+  
         
         if (otherObj.tag == "bossTag")
         {

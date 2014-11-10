@@ -7,20 +7,18 @@ public class Vowel : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		this.transform.GetComponent<BoxCollider>().enabled = true;
+		this.transform.GetComponent<BoxCollider>().isTrigger = true;
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
 	void OnTriggerEnter(Collider otherObj) { 
 		
 		if (otherObj.tag == "projectileTag") {
 		GameObject go = Instantiate(theDrop, transform.position, Quaternion.Euler(270, 0, 0) ) as GameObject;
 		go.name = theDrop.name;
-
-		Destroy(otherObj.gameObject);
+		//keep the follwoing line if we want vowels to destroy aoe . pecile gets auto destroyed.
+		//Destroy(otherObj.gameObject);
 		Destroy(gameObject);  
 	
 	} 
