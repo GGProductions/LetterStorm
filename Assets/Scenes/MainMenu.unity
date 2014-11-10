@@ -142,8 +142,11 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
   m_HDR: 0
   m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: .0219999999
 --- !u!4 &971484762
 Transform:
   m_ObjectHideFlags: 0
@@ -155,6 +158,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+  m_RootOrder: 0
 --- !u!114 &971484763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,4 +170,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df4ffabfbc95fdd449effb184dce5978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundTexture: {fileID: 2800000, guid: c77b4c8a672484ee0968f05f31b59065, type: 3}
+  backgroundTexture: {fileID: 2800000, guid: 51b4a162bc8254848ba3fa76153fa69b, type: 3}
+  titleTexture: {fileID: 2800000, guid: 48c22c19c481e45a8ac9ae96f789ad4c, type: 3}
