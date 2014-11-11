@@ -7,6 +7,9 @@ public class Blank : MonoBehaviour
 	//JR Texture for the background in the scene
     public Texture backgroundTexture;
 	
+	//JR Title Texture
+	public Texture storyTexture;
+	
 	//JR Scrollview
     private Vector2 scrollViewVector = Vector2.zero;
 	
@@ -17,6 +20,9 @@ public class Blank : MonoBehaviour
     {
 		//JR draws background texture
         GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), backgroundTexture);
+		
+		//JR Calls up title texture which is a .png file inside textures folder
+        GUI.DrawTexture(new Rect(Screen.width / 2 - 120 , Screen.height / 2 - 200, 240, 75), storyTexture);
 		
 		//JR Make text font black
 		//GUI.contentColor = Color.black;
