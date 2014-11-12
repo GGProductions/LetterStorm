@@ -15,4 +15,5 @@ public class CollectibleChar : MonoBehaviour {
 		transform.Translate(Vector3.back * 1.2f * Time.deltaTime, Space.World);
 		if (transform.position.z < -6f) Destroy(gameObject);
 	}
+
 }

@@ -40,7 +40,7 @@ public class LandGenerator : MonoBehaviour {
 
 	void Awake()
 	{
-		state = LandGenerator.State.sand;
+		state = LandGenerator.State.brick;
 	}
 
 	IEnumerator Start()
@@ -183,6 +183,8 @@ public class LandGenerator : MonoBehaviour {
 		
 	}
 
+
+	/*
 		void brick() { Instantiate(Resources.Load("LandBlocks/1_block"), transform.position, Quaternion.Euler(-180, 0, 0)); }
 		void briksand(){Instantiate(Resources.Load("LandBlocks/2_block"), transform.position, Quaternion.Euler(-180, 0, 0)); }
 		void sand() { Instantiate(Resources.Load("LandBlocks/3_block"), transform.position, Quaternion.Euler(-180, 0, 0)); }
@@ -198,7 +200,23 @@ public class LandGenerator : MonoBehaviour {
 	void bridge() { Instantiate(Resources.Load("LandBlocks/8_block"), transform.position, Quaternion.Euler(-180, 0, 0)); }
 		void dirtsand() { Instantiate(Resources.Load("LandBlocks/9_block"), transform.position, Quaternion.Euler(-180, 0, 0)); }
 
+	*/
+			void brick() { Instantiate(Resources.Load("LandBlocksIce/1_block"), transform.position, Quaternion.Euler(-180, 0, 0)); }
+		void briksand(){Instantiate(Resources.Load("LandBlocksIce/2_block"), transform.position, Quaternion.Euler(-180, 0, 0)); }
+		void sand() { Instantiate(Resources.Load("LandBlocksIce/3_block"), transform.position, Quaternion.Euler(-180, 0, 0)); }
+	   
+	void sandbrick() { Instantiate(Resources.Load("LandBlocksIce/4_block"), transform.position, Quaternion.Euler(-180, 0, 0)); }
+	   
+	void sanddirt() { Instantiate(Resources.Load("LandBlocksIce/5_block"), transform.position, Quaternion.Euler(-180, 0, 0)); }
+	  
+	void dirt() { Instantiate(Resources.Load("LandBlocksIce/6_block"), transform.position, Quaternion.Euler(-180, 0, 0)); }
+ 
+	void grass() { Instantiate(Resources.Load("LandBlocksIce/7_block"), transform.position, Quaternion.Euler(-180, 0, 0)); }
+	
+	void bridge() { Instantiate(Resources.Load("LandBlocksIce/8_block"), transform.position, Quaternion.Euler(-180, 0, 0)); }
+		void dirtsand() { Instantiate(Resources.Load("LandBlocksIce/9_block"), transform.position, Quaternion.Euler(-180, 0, 0)); }
 
+  
 
 
 	// Update is called once per frame
