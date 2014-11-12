@@ -6,21 +6,41 @@ using GGProductions.LetterStorm.Data.Collections;
 
 public class Boss_3d_wordGen : MonoBehaviour {
 
+
+    /// <summary>
+    /// setting up the event that will broadcast to Boss_Motion_animation.cs which will start Chaaaarge()
+    /// I was experomenting with events ... 
+    /// Chaaarge() could probably be accesed from here by getting a ref to Boss_Motion_animation.cs since it and this script are both attached to the same object
+    /// </summary>
+    public delegate void wrongLetterCollision();
+    public static event wrongLetterCollision OnWrongCollision;
+
+  
    
     public delegate void BossgunsDied();
     public static event BossgunsDied OnMyGunsDied;
 
-    private int NumberOfGunsDestroyed = 0;
-    public void AllerAlbert()
-    {
-        NumberOfGunsDestroyed++;
-        if (NumberOfGunsDestroyed == 2) OnMyGunsDied();
 
+
+    private Transform armature;
+
+    private int HowmanyChildrenHave_Boss_Canon_script = 0;
+    /// <summary>
+    /// make sure to check how many guns this boss has attached to him
+    /// when a gun dies (using Boss_eye_gun.cs line 67), it informs this script by accessing AllertAlbert ()
+    /// ...wow this needs a beeter way 
+    /// </summary>
+    private int NumberOfGunsDestroyed = 0;
+   
+
+    public void AcannonHasDied() {
+        NumberOfGunsDestroyed++;     
+        Debug.Log("BOSS_calling albert");
+        if (NumberOfGunsDestroyed == HowmanyChildrenHave_Boss_Canon_script) OnMyGunsDied();
     }
 
-    //***********************************************************
-    public delegate void wrongLetterCollision();
-    public static event wrongLetterCollision OnWrongCollision;
+
+ 
 
     private Transform _wordHook;
     private List<GameObject> List3dLetterGO = new List<GameObject>();
@@ -30,13 +50,60 @@ public class Boss_3d_wordGen : MonoBehaviour {
     EnemyGenerator _enemygen;
 
  
-
+    /// <summary>
+    /// fetch the current word from context
+    /// initialize index that keeps track of current letter to solve
+    /// </summary>
     void Awake()
     {
-        wordGenerated_index_of_currLetterTosolve = 0;
         fetchWordandConstruct();
+        wordGenerated_index_of_currLetterTosolve = 0;
+        HowmanyChildrenHave_Boss_Canon_script = findHowMany_Cannons();
+        // Debug.Log("I have"+ findHowMany_Cannons()+ "cannons");
+    }
+
+
+    /// <summary>
+    /// search up the chain of children transform through the entire skeleton to find how many cannons are attached . 
+    /// this only searches objects that have Boss_Cannon_script.cs attached to it
+    /// ps: this cannot find multiple guns on the same branch , it stops searching a branch as soon as it finds  what it's looking for
+    /// </summary>
+    /// <returns></returns>
+    int findHowMany_Cannons()
+    {
+        int cannonsFound = 0;
+        armature = transform.FindChild("Armature");
+
+        foreach (Transform childTransf in this.transform)
+        {
+            if (childTransf.GetComponentInChildren<Boss_Cannon_script>() != null)
+            {
+                cannonsFound++;
+                // Debug.Log("fond1");
+            }
+            // Debug.Log("bone i have child-->" + childTransf.name);
+            foreach (Transform subChild in childTransf)
+            {
+
+                if (subChild.GetComponentInChildren<Boss_Cannon_script>() != null)
+                {
+                    cannonsFound++;
+                    // Debug.Log("fond1");
+                }
+            }
+        }
+        return cannonsFound;
+
 
     }
+
+    public void AllerAlbert()
+    {
+        NumberOfGunsDestroyed++;
+        if (NumberOfGunsDestroyed == 2) OnMyGunsDied();
+
+    }
+
     void Update()
     {
         //Debug.Log("name is " + List3dLetterGO[2].name);
@@ -51,7 +118,7 @@ public class Boss_3d_wordGen : MonoBehaviour {
     void fetchWordandConstruct()
     {
         //  ctxt = GameObject.Find("Context").GetComponent<Context>();
-        _enemygen = GameObject.Find("EnemyGenerator").GetComponent<EnemyGenerator>();
+       // _enemygen = GameObject.Find("EnemyGenerator").GetComponent<EnemyGenerator>();
         _wordHook = this.transform.FindChild("Boss_Word_hook");
         if (_wordHook == null) Debug.Log("not correct");
 
@@ -77,13 +144,18 @@ public class Boss_3d_wordGen : MonoBehaviour {
         }
     }
 
+
+    /// <summary>
+    /// Handles collisions with projectile letters
+    /// </summary>
+    /// <param name="otherObj"></param>
     void OnTriggerEnter(Collider otherObj){
         if (NumberOfGunsDestroyed == 2){
             if (otherObj.tag == "letterProjectile") {
                 if (otherObj.GetComponent<LetterProjectileScript>().isactive){
                     char input = otherObj.name[0];
                     if (input == Context.Word.Text[wordGenerated_index_of_currLetterTosolve]) {
-                        Debug.Log("ITS A MATCH)");
+                       // Debug.Log("ITS A MATCH)");
                         if (wordGenerated_index_of_currLetterTosolve < Context.Word.Text.Length + 1) {
                             List3dLetterGO[wordGenerated_index_of_currLetterTosolve].GetComponent<MeshRenderer>().enabled = enabled;
                             wordGenerated_index_of_currLetterTosolve++;

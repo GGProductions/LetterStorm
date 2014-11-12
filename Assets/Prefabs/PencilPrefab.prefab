@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50559938ba7d03b47914fedeb6a82143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boom: {fileID: 100000, guid: db3f26d37383eb543b89bd47aab9f1e8, type: 2}
+  PencilExplosion: {fileID: 100000, guid: db3f26d37383eb543b89bd47aab9f1e8, type: 2}
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

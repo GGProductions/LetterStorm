@@ -8,59 +8,62 @@ public class Boss_Motion_animation : MonoBehaviour {
 	public AnimationClip CurlUpAnimationClip;
 	public AnimationClip UncurlAnimationClip;
 
+
+
+    private bool switchon = false;
+
 	private Vector3 here;
-	private float tem;
+	private float timeElapsed;
 
    private Vector3 point_topleft;
    private Vector3 point_mid;
    private Vector3 point_toright;
- 
 
+   
+
+
+    /// <summary>
+    /// setting up the listeners. 
+    /// 1)analyzing  weather or not a right letter has collided with the boss is don in the other script attached to the boss: Boss_3d_wordGen
+    /// 2) so , Boss_3d_wordgen initiates an event  onWrongCollision() whenever a wrong letter hits
+    /// 3) we subscribe to this event with Chaaaarge()  which is a coroutine that sends the boss hurleing down the screen 
+    /// </summary>
 	void OnEnable()
 	{
 		Boss_3d_wordGen.OnWrongCollision += CHaaaarge;
-	}
-	 
+	}	 
 	void OnDisable()
 	{
 		Boss_3d_wordGen.OnWrongCollision -= CHaaaarge;
 	}
 
-
+	/// <summary>
+	///  init animations, and initial boss position. this may change depending on BossEnterScnene fade 
+	/// </summary>
 	void Awake()
 	{
 		 point_topleft= new Vector3(-3f,0f,4.5f);
 		 point_mid = new Vector3(0f, 0f, 0f); 
 		 point_toright=new Vector3(3f,0f,4.5f);
 
+
 		here = new Vector3(0f, 0f, 4);
 		gameObject.transform.position = here;
-		tem = 0;
+		timeElapsed = 0;
 		animation.wrapMode = WrapMode.Once;
 		animation.AddClip(CurlUpAnimationClip, "curl");
 		animation.AddClip(UncurlAnimationClip, "uncurl");
 
 		animation.wrapMode = WrapMode.Loop;
 		animation.AddClip(ActionAnimationClip, "action");
-		//animation.wrapMode = WrapMode.Default;
-		//animation.Stop();
-	//	animation["curl"].layer = 1;
-	//	animation["uncurl"].layer = 0;
-	//	animation["action"].layer = 0;
+
+
+      
+
+     
 	}
 
-	public Transform startMarker;
-	public Transform endMarker;
-	public float speed = 1.0F;
-	private float startTime;
-	private float journeyLength=10f;
-	public Transform target;
-	public float smooth = 5.0F;    
-
-	void Start()
-	{
-		
-	}
+  
 	IEnumerator MoveObject(Transform thisTransform, Vector3 startPos, Vector3 endPos, float time)
 	{
 		var i = 0.0f;
@@ -75,30 +78,28 @@ public class Boss_Motion_animation : MonoBehaviour {
 
 
 	
-	// Update is called once per frame
+	/// <summary>
+	///  the boss moves left and right with a position= cos(time)
+    ///  this is subject to a few bugs: when hitting escape, the boss keeps on moving
+    ///  and since the motion is a function of time, the game will behave differently on diffrent processors
+    ///  slower machins will see a very slow moving boss.
+    ///  the boss motion should be done in a diffreent way: lerping between point1 and boint2
+    ///  the problem with that is making sure the boss goes back to where he left off after fininshing an Chaaarge() coroutine
+	/// </summary>
 	void Update () {
 
 		animation.CrossFade("action");
-		tem += Time.deltaTime;
+		timeElapsed += Time.deltaTime;
 
-		float factor = Mathf.Cos((tem));
+		float factor = Mathf.Cos((timeElapsed));
 		transform.Translate(Vector3.right * (factor / 20), Space.World);
 	transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 
-
-	//	float distCovered = (Time.time - startTime) * speed;
-	//	float fracJourney = distCovered / journeyLength;
-	//	transform.position = Vector3.Lerp(new Vector3(0f, 4f, 0f), new Vector3(4f, 0f, 0f), 2.5f);
-
-
-		//if (Input.GetKeyDown(KeyCode.Q)) animation.CrossFade("action");
-		//if (Input.GetKeyDown(KeyCode.W)) animation.CrossFade("curl");
-		//if (Input.GetKeyDown(KeyCode.E)) animation.CrossFade("uncurl");
 		if(switchon)
 		animation.CrossFade("curl");
 	}
 
-	private bool switchon = false;
+
 
 	public void CHaaaarge( )
 	{

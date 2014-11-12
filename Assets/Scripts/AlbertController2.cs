@@ -36,13 +36,15 @@ public class AlbertController2 : MonoBehaviour {
 
 	public string LetterBulletname;
 
+	private GameObject poof;
+   
 	void OnEnable(){
 		Boss_3d_wordGen.OnMyGunsDied += ListenToBoss;}
 	
 	void OnDisable(){
 		Boss_3d_wordGen.OnMyGunsDied -= ListenToBoss;
 	}
-
+	
 	void ListenToBoss() { Debug.Log("Albert heard you"); LetterMode = true; }
 
 	/// <summary>
@@ -79,17 +81,64 @@ public class AlbertController2 : MonoBehaviour {
 		animation.Stop();
 	  * */
 	}
-	private GameObject poof;
-	void Update()
-	{
-	  if (state != State.Explosion &&  state != State.Invincible && state == State.Playing)
-		   oldupdate();
+	void Update() {
+
+		float tiltAroundz = Input.GetAxis("Horizontal") * tiltAngle;
+		Quaternion target = Quaternion.Euler(0, tiltAroundz, 0);
+		transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * smooth);
 
 		if (Context.PlayerLives <= 0) Application.LoadLevel(3);
+		if (state != State.Explosion && state != State.Invincible && state == State.Playing)
+		{
+			// Debug.Log("can MOVE");
+			oldupdate();
+		   
+		}
 
-
-//Debug.Log(x.ToString());
 	}
+
+	void FixedUpdate()
+	{
+		//rigidbody.freezeRotation = true;
+		//this.rigidbody.AddRelativeForce(transform.forward * 1.0f * Input.GetAxis("Vertical"));
+		rigidbody.velocity = (Input.GetAxis("Horizontal") * transform.right.normalized + Input.GetAxis("Vertical") * transform.forward).normalized * 3f;
+	
+		/*
+		if (Context.PlayerLives <= 0) Application.LoadLevel(3);
+		if (state != State.Explosion && state != State.Invincible && state == State.Playing)
+		{
+			// Debug.Log("can MOVE");
+			//oldupdate();
+			moveForce();
+		}
+		*/
+		
+	}
+	
+	/*
+	void FixedUpdate()
+	{
+		this.rigidbody.AddForce(transform.forward * 1000.0f);
+		if (Context.PlayerLives <= 0) Application.LoadLevel(3);
+		if (state != State.Explosion && state != State.Invincible && state == State.Playing)
+		{
+			// Debug.Log("can MOVE");
+			//oldupdate();
+			moveForce();
+		}
+
+
+	}
+	  */
+	void moveForce() {
+		if (Input.GetAxis("Horizontal") != 0f)
+		{
+
+			this.rigidbody.AddForce(new Vector3(0, 0, Input.GetAxis("Horizontal")));
+		}
+	
+	}
+
 
 	void SwitchCaseMove(int x) {
 		float coef = 0.05f;
@@ -406,14 +455,19 @@ public class AlbertController2 : MonoBehaviour {
 			 StartCoroutine(Take_Damage_Routine());
 		}
 
-		if (otherObj.tag != "bossTag" && otherObj.tag != "bossProjectileTag" && otherObj.tag != "enemy")
+
+		//fyi, the pencil collids with albert when he instanciates it 
+		if (otherObj.tag != "bossTag" && otherObj.tag != "bossProjectileTag" && otherObj.tag != "enemy" && otherObj.tag != "projectileTag")
 		{
-			otherObj.transform.GetComponent<SphereCollider>().isTrigger = true;
-			Messenger<string>.Broadcast("picked up a letter", otherObj.name);   // Nabil: Added this so I can remove letters from my dict whenever Albert has picked them up to keep from overspawning
-			// letters that he needs but already has -Paul
-		   Context.PlayerInventory.AddCollectedLetter(otherObj.name);      
-			GameObject go = otherObj.gameObject;
-			Destroy(go);
+			if (otherObj.transform.GetComponent<SphereCollider>() != null) {
+				otherObj.transform.GetComponent<SphereCollider>().isTrigger = true;
+				Messenger<string>.Broadcast("picked up a letter", otherObj.name);   // Nabil: Added this so I can remove letters from my dict whenever Albert has picked them up to keep from overspawning
+				// letters that he needs but already has -Paul
+				Context.PlayerInventory.AddCollectedLetter(otherObj.name);
+				GameObject go = otherObj.gameObject;
+				Destroy(go);
+			}
+		
 		}
 
 		if (otherObj.tag == "letterProjectile") {
