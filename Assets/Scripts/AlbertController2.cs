@@ -87,7 +87,7 @@ public class AlbertController2 : MonoBehaviour {
 		Quaternion target = Quaternion.Euler(0, tiltAroundz, 0);
 		transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * smooth);
 
-		if (Context.PlayerLives <= 0) Application.LoadLevel("Lose");
+		if (Context.PlayerHealth.hasNoHealth()) Application.LoadLevel("Lose");
 		if (state != State.Explosion && state != State.Invincible && state == State.Playing)
 		{
 			// Debug.Log("can MOVE");
@@ -96,7 +96,7 @@ public class AlbertController2 : MonoBehaviour {
 		}
 
 	}
-
+    
 	void FixedUpdate()
 	{
 		//rigidbody.freezeRotation = true;
@@ -104,7 +104,7 @@ public class AlbertController2 : MonoBehaviour {
 		rigidbody.velocity = (Input.GetAxis("Horizontal") * transform.right.normalized + Input.GetAxis("Vertical") * transform.forward).normalized * 3f;
 	
 		/*
-		if (Context.PlayerLives <= 0) Application.LoadLevel(3);
+		if (Context.PlayerHealth.hasNoHealth()) Application.LoadLevel(3);
 		if (state != State.Explosion && state != State.Invincible && state == State.Playing)
 		{
 			// Debug.Log("can MOVE");
@@ -119,7 +119,7 @@ public class AlbertController2 : MonoBehaviour {
 	void FixedUpdate()
 	{
 		this.rigidbody.AddForce(transform.forward * 1000.0f);
-		if (Context.PlayerLives <= 0) Application.LoadLevel(3);
+		if (Context.PlayerHealth.hasNoHealth()) Application.LoadLevel(3);
 		if (state != State.Explosion && state != State.Invincible && state == State.Playing)
 		{
 			// Debug.Log("can MOVE");
@@ -447,7 +447,7 @@ public class AlbertController2 : MonoBehaviour {
 		if (otherObj.tag == "enemy" || otherObj.tag == "bossTag" || otherObj.tag == "bossProjectileTag")
 		{
 		  //  Debug.Log("Vowel");
-			 Context.PlayerLives--;
+             Context.PlayerHealth.decreaseHealth(Context.DefaultPlayerHealthDecreaseFactor);
 			 Instantiate(Resources.Load("Explosions/blackStars1"),
 									  transform.position,
 									  Quaternion.Euler(-180, 0, 0));
@@ -480,7 +480,7 @@ public class AlbertController2 : MonoBehaviour {
 		else
 		{
 		   // animation.CrossFade("falling");
-		   // Context.PlayerLives--;
+            // Context.PlayerHealth.decreaseHealth(Context.DefaultPlayerHealthDecreaseFactor);
 		}
    
 	}
@@ -503,7 +503,7 @@ public class AlbertController2 : MonoBehaviour {
 		yield return new WaitForSeconds(2 * animation["falling"].length );
 		//yield return new WaitForSeconds(1f);
 
-		if (Context.PlayerLives > 0)
+		if (Context.PlayerHealth.hasHealth())
 		{
 			this.transform.GetComponent<CapsuleCollider>().enabled = true;
 		state = State.Playing;

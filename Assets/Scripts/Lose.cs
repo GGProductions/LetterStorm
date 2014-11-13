@@ -16,7 +16,8 @@ public class Lose : MonoBehaviour
         if(GUI.Button(new Rect(Screen.width / 2 - 100, Screen.height / 2 + 25, 200, 20), "Insert Coin, to continue playing"))
         {
             //Nabil: added this line to start the next level with 15 lives
-            Context.PlayerLives =15;
+            //JT: changed 15 to half of maximum health
+            Context.PlayerHealth.CurHealth = Context.PlayerHealth.MaxHealth / 2;
 
 
 		//JR Loads level and gives players fresh lives, however score and misses should stay the same

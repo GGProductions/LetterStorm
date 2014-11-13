@@ -15,6 +15,8 @@ public class Context : MonoBehaviour
     //  properties will use to store their data
     private static LessonBook _curriculum;
     private static int? _playerLives = null;
+    private static PlayerHealth _playerHealth;
+    private static int? _defaultPlayerHealthDecreaseFactor = null;
     private static Inventory _playerInventory;
     private static string _selectedLetter;
     private static char[] _alphabet;
@@ -106,6 +108,36 @@ public class Context : MonoBehaviour
             return _curriculum; 
         }
         set { _curriculum = value; }
+    }
+
+    /// <summary>Player health</summary>
+    public static PlayerHealth PlayerHealth
+    {
+        get
+        {
+            if (_playerHealth == null)
+            {
+                _playerHealth = new PlayerHealth();
+            }
+            return _playerHealth;
+        }
+        set { _playerHealth = value; }
+    }
+
+    /// <summary>
+    /// DefaultPlayerHealthDecreaseFactor
+    /// </summary>
+    public static int DefaultPlayerHealthDecreaseFactor
+    {
+        get
+        {
+            if (_defaultPlayerHealthDecreaseFactor == null)
+            {
+                _defaultPlayerHealthDecreaseFactor = 10;
+            }
+            return (int)_defaultPlayerHealthDecreaseFactor;
+        }
+        set { _defaultPlayerHealthDecreaseFactor = value; }
     }
 
     /// <summary>Player inventory</summary>

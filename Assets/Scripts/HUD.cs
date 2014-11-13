@@ -93,7 +93,8 @@ public class HUD : MonoBehaviour {
     /// </summary>
     void OnGUI()
     {
-        GUILayout.Box("Lives: " + Context.PlayerLives.ToString());
+        //Context.PlayerHealth.decreaseHealth(Context.DefaultPlayerHealthDecreaseFactor);
+        GUILayout.Box("Lives: " + Context.PlayerHealth.CurHealth.ToString());
         GUILayout.Box("Letters Collected: " + Context.PlayerInventory.TotalCollectedLetters);
         GUILayout.Box("Hint: " + Context.Word.Hint);
         
@@ -108,7 +109,6 @@ public class HUD : MonoBehaviour {
     void DisplayInventoryWindow()
     {
 
-        
         #region Determine which letters to show in the inventory --------------------------------------------
         // Determine which letters to show in the inventory
         CurrentLettersInInventory.Clear();
@@ -385,7 +385,7 @@ public class HUD : MonoBehaviour {
                     CorkBoardDivisionSizeHeight), MainMenuGameButtonTexture, emptyStyle))
                 {
                     // Reset values and reload to Main Menu
-                    Context.PlayerLives = 5;
+                    Context.PlayerHealth.CurHealth = Context.PlayerHealth.MaxHealth;
                     Context.PlayerInventory = new Inventory();
                     isPaused = false;                           // Unpause
                     Application.LoadLevel("MainMenu");
