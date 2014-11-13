@@ -500,9 +500,9 @@ public class HUD : MonoBehaviour {
     private void UpdatePlayerStats()
     {
         // Always keep track of player health
-        CurrentHealth = Context.PlayerHealth.CurHealth;
-        MinimumHealth = Context.PlayerHealth.MinHealth;
-        MaximumHealth = Context.PlayerHealth.MaxHealth;
+        CurrentHealth = (int)Context.PlayerHealth.CurHealth;
+        MinimumHealth = (int)Context.PlayerHealth.MinHealth;
+        MaximumHealth = (int)Context.PlayerHealth.MaxHealth;
         HealthBarLength = (float)((Screen.width / 2) * (float)((float)CurrentHealth / (float)MaximumHealth));
     }
 

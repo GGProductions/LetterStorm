@@ -5,34 +5,55 @@ public class PlayerHealth
 {
 
     #region Private Variables ---------------------------------------------
-    private int _minHealth = 0;
-    private int _maxHealth = 100;
-    private int _curHealth = 100;
+    private int? _minHealth = null;
+    private int? _maxHealth = null;
+    private int? _curHealth = null;
 
     /// <summary>
     /// The amount of the minimum health of player
     /// </summary>
-    public int MinHealth
+    public int? MinHealth
     {
-        get { return _minHealth; }
+        get 
+        {
+            if (_minHealth == null)
+            {
+                _minHealth = 0;
+            }
+            return (int)_minHealth;
+        }
         set { _minHealth = value; }
     }
 
     /// <summary>
     /// The amount of the maximum health of player
     /// </summary>
-    public int MaxHealth
+    public int? MaxHealth
     {
-        get { return _maxHealth; }
+        get {
+            if (_maxHealth == null)
+            {
+                _maxHealth = 100;
+            }
+            return (int)_maxHealth; 
+        }
         set { _maxHealth = value; }
     }
 
     /// <summary>
     /// The amount of the current health of player
     /// </summary>
-    public int CurHealth
+    public int? CurHealth
     {
-        get { return _curHealth; }
+        get {
+
+            if (_curHealth == null)
+            {
+                _curHealth = MaxHealth;
+            }
+            return (int)_curHealth; 
+        
+        }
         set { _curHealth = value; }
     }
     #endregion Private Variables ------------------------------------------
