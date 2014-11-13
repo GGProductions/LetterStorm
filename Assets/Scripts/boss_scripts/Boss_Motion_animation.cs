@@ -10,10 +10,12 @@ public class Boss_Motion_animation : MonoBehaviour {
 
 
 
-    private bool switchon = false;
+	private bool switchon = false;
 
 	private Vector3 here;
 	private float timeElapsed;
+
+	private Vector3 starting_point;
 
    private Vector3 point_topleft;
    private Vector3 point_mid;
@@ -22,12 +24,12 @@ public class Boss_Motion_animation : MonoBehaviour {
    
 
 
-    /// <summary>
-    /// setting up the listeners. 
-    /// 1)analyzing  weather or not a right letter has collided with the boss is don in the other script attached to the boss: Boss_3d_wordGen
-    /// 2) so , Boss_3d_wordgen initiates an event  onWrongCollision() whenever a wrong letter hits
-    /// 3) we subscribe to this event with Chaaaarge()  which is a coroutine that sends the boss hurleing down the screen 
-    /// </summary>
+	/// <summary>
+	/// setting up the listeners. 
+	/// 1)analyzing  weather or not a right letter has collided with the boss is don in the other script attached to the boss: Boss_3d_wordGen
+	/// 2) so , Boss_3d_wordgen initiates an event  onWrongCollision() whenever a wrong letter hits
+	/// 3) we subscribe to this event with Chaaaarge()  which is a coroutine that sends the boss hurleing down the screen 
+	/// </summary>
 	void OnEnable()
 	{
 		Boss_3d_wordGen.OnWrongCollision += CHaaaarge;
@@ -47,7 +49,7 @@ public class Boss_Motion_animation : MonoBehaviour {
 		 point_toright=new Vector3(3f,0f,4.5f);
 
 
-		here = new Vector3(0f, 0f, 4);
+		here = new Vector3(0f, 0f, 10);
 		gameObject.transform.position = here;
 		timeElapsed = 0;
 		animation.wrapMode = WrapMode.Once;
@@ -58,9 +60,9 @@ public class Boss_Motion_animation : MonoBehaviour {
 		animation.AddClip(ActionAnimationClip, "action");
 
 
-      
 
-     
+		StartCoroutine(BossEnters());
+	 
 	}
 
   
@@ -80,11 +82,11 @@ public class Boss_Motion_animation : MonoBehaviour {
 	
 	/// <summary>
 	///  the boss moves left and right with a position= cos(time)
-    ///  this is subject to a few bugs: when hitting escape, the boss keeps on moving
-    ///  and since the motion is a function of time, the game will behave differently on diffrent processors
-    ///  slower machins will see a very slow moving boss.
-    ///  the boss motion should be done in a diffreent way: lerping between point1 and boint2
-    ///  the problem with that is making sure the boss goes back to where he left off after fininshing an Chaaarge() coroutine
+	///  this is subject to a few bugs: when hitting escape, the boss keeps on moving
+	///  and since the motion is a function of time, the game will behave differently on diffrent processors
+	///  slower machins will see a very slow moving boss.
+	///  the boss motion should be done in a diffreent way: lerping between point1 and boint2
+	///  the problem with that is making sure the boss goes back to where he left off after fininshing an Chaaarge() coroutine
 	/// </summary>
 	void Update () {
 
@@ -133,7 +135,7 @@ public class Boss_Motion_animation : MonoBehaviour {
 			float rotationSpeed = 3000 * Time.deltaTime;
 			transform.Rotate(new Vector3(10, 0, 0) * rotationSpeed);
 
-			Debug.Log(tme);
+		//	Debug.Log(tme);
 
 			yield return 0;
 
@@ -279,11 +281,11 @@ public class Boss_Motion_animation : MonoBehaviour {
 
    private IEnumerator BossEnters()
    {
-	   while (transform.position.z < -4f)
+	   while (transform.position.z > 4f)
 	   {
 		   transform.rotation = Quaternion.Euler(0, 180, 0);
 		   //animation.CrossFade("curl");
-		   float amtToMove = 6.52f * Time.deltaTime;
+		   float amtToMove = 0.82f * Time.deltaTime;
 		   transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - amtToMove);
 		   yield return 0;
 	   }

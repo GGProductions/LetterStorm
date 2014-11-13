@@ -56,12 +56,28 @@ public class Boss_3d_wordGen : MonoBehaviour {
     /// </summary>
     void Awake()
     {
-        fetchWordandConstruct();
+       fetchWordandConstruct();
         wordGenerated_index_of_currLetterTosolve = 0;
         HowmanyChildrenHave_Boss_Canon_script = findHowMany_Cannons();
         // Debug.Log("I have"+ findHowMany_Cannons()+ "cannons");
+        findEyes();
+
     }
 
+
+
+   // Boss_Scaly_eye_prefab
+
+    private Boss_Eye_script leftEyescript;
+    private Boss_Eye_script rightEyescript;
+    private List<Transform> eyeList;
+
+    void findEyes(){
+
+        rightEyescript = transform.FindChild("boss_eye_R_pivot").GetChild(0).transform.GetComponent<Boss_Eye_script>();
+        leftEyescript = transform.FindChild("boss_eye_L_pivot").GetChild(0).transform.GetComponent<Boss_Eye_script>();
+    
+    }
 
     /// <summary>
     /// search up the chain of children transform through the entire skeleton to find how many cannons are attached . 
@@ -96,6 +112,8 @@ public class Boss_3d_wordGen : MonoBehaviour {
 
 
     }
+
+
 
     public void AllerAlbert()
     {
@@ -150,6 +168,8 @@ public class Boss_3d_wordGen : MonoBehaviour {
     /// </summary>
     /// <param name="otherObj"></param>
     void OnTriggerEnter(Collider otherObj){
+
+
         if (NumberOfGunsDestroyed == 2){
             if (otherObj.tag == "letterProjectile") {
                 if (otherObj.GetComponent<LetterProjectileScript>().isactive){
@@ -166,12 +186,15 @@ public class Boss_3d_wordGen : MonoBehaviour {
                         }
                         if (wordGenerated_index_of_currLetterTosolve == Context.Word.Text.Length) {
                             Context.PrepareForNextLevel();
+                            //Fade out boss coroutine 
                             Application.LoadLevel(2);
                         }
                     }
                     else
                         if (input != Context.Word.Text[wordGenerated_index_of_currLetterTosolve]) {
                             OnWrongCollision();
+                            rightEyescript.DoFlashEye();
+                            leftEyescript.DoFlashEye();
                         }      
                 }          
             }

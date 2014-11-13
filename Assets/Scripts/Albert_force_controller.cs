@@ -7,7 +7,7 @@ using System.Collections;
 
 public class Albert_force_controller : MonoBehaviour
 {
-	
+	#region publics
 
 	//All clips
 	public AnimationClip walkAnimationClip;
@@ -16,14 +16,21 @@ public class Albert_force_controller : MonoBehaviour
 	public AnimationClip wakBackAnimationClip;
 	public AnimationClip throwAnimationClip;
 
-
-	public GameObject ProjectilePrefab;
-	private GameObject Albert_explosion;
-
+	public GameObject ProjectilePrefab; //I should just put this projectile in /Resources and make this private as well..
+	
 	public string LetterBulletname="";
 	public bool LetterMode = true;
+#endregion
 
 	#region privVar
+
+	//the limits of mobility
+	private float Limit_lefft = -7f;
+	private float Limit_right = 7f;
+	private float Limit_up = 6f;
+	private float Limit_down = -4.9f;
+
+	private GameObject Albert_explosion;
 
 	private float playerspeed = 5f;
 	//tilting variables
@@ -38,6 +45,8 @@ public class Albert_force_controller : MonoBehaviour
 	private float Global_leftright;
 	private float Global_updown;
 
+	private float scaleFactorOfRworth=0.1f;
+	private float OriginalScale = 0.5f;
 	enum AlbertState
 	{
 		Playing,
@@ -47,6 +56,7 @@ public class Albert_force_controller : MonoBehaviour
 
 	private AlbertState curr_state = AlbertState.Playing;
 
+	private bool canwalk = true;
 	#endregion
 
 
@@ -67,6 +77,7 @@ public class Albert_force_controller : MonoBehaviour
 	/// </summary>
 	void Awake()
 	{
+		this.transform.localScale = new Vector3(OriginalScale, OriginalScale, OriginalScale);
 		 Global_leftright=0f;
 		 Global_updown=0f;
 		Albert_originalRotation = this.transform.rotation;
@@ -85,25 +96,19 @@ public class Albert_force_controller : MonoBehaviour
 		animation.AddClip(throwAnimationClip, "throwing");
 	}
 
-	private bool canwalk=true;
+	
 
 	/// <summary>
 	/// only deal with checking input form keyboard, and Horizontal axis for tilting albert left to right down for walking backward
 	/// </summary>
 	void Update() {
+		this.transform.localScale = new Vector3(OriginalScale + scaleFactorOfRworth, OriginalScale + scaleFactorOfRworth, OriginalScale + scaleFactorOfRworth);
 		getKeyPressed(); //keep waiting for a key pressed to populate  string LetterBulletname
 
-
-
-
-		 if    (curr_state == AlbertState.Playing) {
-
-			
+		 if    (curr_state == AlbertState.Playing) 
+		 {
 				 animation.Play("walking");
-
-				
 			   //  Debug.Log(rigidbody.velocity.normalized);
-
 				 if (Input.GetKeyDown("space"))
 				 {
 					 animation.CrossFade("throwing");
@@ -116,13 +121,9 @@ public class Albert_force_controller : MonoBehaviour
 
 				 if (Input.GetKeyDown(KeyCode.DownArrow))
 				{
-				   Debug.Log("walking back now>?");
+				 //  Debug.Log("walking back now>?");
 				   mytransform.rotation = Albert_originalRotation;
-				  //   animation.Stop("walking");
-				  //   animation.CrossFade("walkingback");
-				}
-
-	 
+				} 
 		 }	
 	
 
@@ -251,6 +252,26 @@ public class Albert_force_controller : MonoBehaviour
 			   }
 	}
 
+
+
+
+	/// <summary>
+	/// keep albert inside the screen boundaries. must be used in FixedUpdate() since that is where the actual moving happens
+	/// </summary>
+	void keep_albert_within() {
+
+		if (mytransform.position.x <= Limit_lefft)
+			mytransform.position = new Vector3(Limit_lefft, transform.position.y, transform.position.z);
+		else if (mytransform.position.x >= Limit_right)
+			mytransform.position = new Vector3(Limit_right, transform.position.y, transform.position.z);
+
+		// up and down player movement limitation
+		if (mytransform.position.z > Limit_up)
+			mytransform.position = new Vector3(gameObject.transform.position.x, transform.position.y, Limit_up);
+		else if (mytransform.position.z < Limit_down)
+			mytransform.position = new Vector3(gameObject.transform.position.x, transform.position.y, Limit_down);
+	}
+
 	/// <summary>
 	/// this will deal with moving Albert's gidi body using Force and Velocity 
 	/// Albert needs a rigid body to use power ups , because a power up need to register a collision with albert
@@ -287,6 +308,8 @@ public class Albert_force_controller : MonoBehaviour
 		//reset
 		Global_leftright = 0f;
 		Global_updown = 0f;
+
+		keep_albert_within();
 	}
 	/// <summary>
 	/// throw coroutine to have the full animation play 
@@ -303,6 +326,8 @@ public class Albert_force_controller : MonoBehaviour
 	void OnTriggerEnter(Collider otherObj)
 	{
 		//	Debug.Log(otherObj.tag + " is the tag registered");
+		//just for funzies ..this will not stay unless we can see a good power up use
+		scaleFactorOfRworth = scaleFactorOfRworth + 0.02f;
 
 		if (otherObj.tag == "enemy" || otherObj.tag == "bossTag" || otherObj.tag == "bossProjectileTag")
 		{
@@ -335,7 +360,7 @@ public class Albert_force_controller : MonoBehaviour
 
 		if (otherObj.tag == "letterProjectile")
 		{
-			Debug.Log("name of letterpickedup " + otherObj.name);
+			//Debug.Log("name of letterpickedup " + otherObj.name);
 			char input = otherObj.name[0];
 			Messenger<string>.Broadcast("picked up a letter", otherObj.name);
 			Context.PlayerInventory.AddCollectedLetter(input.ToString().ToUpper());
@@ -350,7 +375,7 @@ public class Albert_force_controller : MonoBehaviour
 	}
 
 	IEnumerator doFallanimation() {
-		Debug.Log("takingDama");
+		//Debug.Log("takingDama");
 
 		canwalk = false;
 		animation.CrossFade("falling");

@@ -30,6 +30,11 @@ public class Boss_Cannon_script : MonoBehaviour
    private Transform cannonText_trans;
 
    private Transform Boss_body; //Will use this to get a ref to the boss+3d_wordgen by going up the chain of parents till i find the root. look in Start()
+
+   private GameObject smaoke;
+   private Transform myparentBone;
+
+
    #endregion
 
 
@@ -48,7 +53,7 @@ public class Boss_Cannon_script : MonoBehaviour
 	/// </summary>
 	void Start()
 	{
-	  
+		myparentBone = transform.parent;
 
 		cannonText_trans = transform.FindChild("CannonHealthLabel");
 		//run up the chain of parents :) 
@@ -85,6 +90,10 @@ public class Boss_Cannon_script : MonoBehaviour
 		{
 			//Let the boss know that this gun has died. Boss will deal with allerting allbert if the required amount of guns have died.
 			bossWordGenScript.AcannonHasDied();
+			GameObject go = Instantiate(Resources.Load("Explosions/smallsmoke"),
+										  myparentBone.transform.position, Quaternion.Euler(90, 0, 0)) as GameObject;
+
+			go.transform.parent = myparentBone;
 			Destroy(gameObject);
 		}
 

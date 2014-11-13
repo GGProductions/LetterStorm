@@ -87,7 +87,7 @@ public class AlbertController2 : MonoBehaviour {
 		Quaternion target = Quaternion.Euler(0, tiltAroundz, 0);
 		transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * smooth);
 
-		if (Context.PlayerLives <= 0) Application.LoadLevel(3);
+		if (Context.PlayerLives <= 0) Application.LoadLevel("Lose");
 		if (state != State.Explosion && state != State.Invincible && state == State.Playing)
 		{
 			// Debug.Log("can MOVE");

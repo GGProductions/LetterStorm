@@ -5,8 +5,8 @@ using System.Collections;
 public class MainMenu : MonoBehaviour
 {
 	//JR Texture for the background in the scene
-    public Texture backgroundTexture;
-    public Texture titleTexture;
+	public Texture backgroundTexture;
+	public Texture titleTexture;
 
 	
 	void start()
@@ -22,10 +22,10 @@ public class MainMenu : MonoBehaviour
 	void OnGUI()
 	{
 		//JR Calls up background texture which is a .png file inside textures folder
-        GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), backgroundTexture);
+		GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), backgroundTexture);
 		
 		//JR Calls up title texture which is a .png file inside textures folder
-        GUI.DrawTexture(new Rect(Screen.width / 2 - 250 , Screen.height / 2 - 250, 500, 300), titleTexture);
+		GUI.DrawTexture(new Rect(Screen.width / 2 - 250 , Screen.height / 2 - 250, 500, 300), titleTexture);
 		
 		
 		//JR Displays "Play"" button on the Main Menu, this button Loads level1 scene
@@ -34,9 +34,9 @@ public class MainMenu : MonoBehaviour
 		{
 			Application.LoadLevel("NewGame");
 			//JR loads level with 3 lives, 0 score and misses
-            Player.Score = 0;
-            Player.Lives = 3;
-            Player.Missed = 0;
+			Player.Score = 0;
+			Player.Lives = 3;
+			Player.Missed = 0;
 		}
 
 			
