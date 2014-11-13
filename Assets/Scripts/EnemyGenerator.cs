@@ -5,6 +5,11 @@ using System.Collections.Generic;
 using GGProductions.LetterStorm.Data;
 using GGProductions.LetterStorm.Data.Collections;
 
+/// <summary>
+/// A FSM that spawns enemies or the boss depending on a number of criteria. The Enemy Generator keeps track of how many enemies are currently alive,
+/// how many spawn points are available, whether or not the player has collected all letters necessary to defeat the boss and whether or not the player
+/// has missed the boss with a letter required to win.
+/// </summary>
 public class EnemyGenerator : MonoBehaviour
 {
     #region Public Variables ---------------------------------------------
@@ -51,10 +56,17 @@ public class EnemyGenerator : MonoBehaviour
     #endregion Private Variables ---------------------------------------------
 
     #region Event Handlers ---------------------------------------------
+    /// <summary>
+    /// As soon as possible, the FSM enters the initialization state.
+    /// </summary>
     void Awake()
     {
         state = State.Initialize;
     }
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
     IEnumerator Start()
     {
         while (true)
