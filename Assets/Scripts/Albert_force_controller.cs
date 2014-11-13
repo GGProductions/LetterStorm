@@ -173,9 +173,9 @@ public class Albert_force_controller : MonoBehaviour
 		string CapitalLetter = input.ToString().ToUpper();
 
 
-		Debug.Log("fiering a letter= " + CapitalLetter); 
-	//	if (Context.PlayerInventory.GetLetterCount(LettercChosen) > 0)
-			if (true)
+		Debug.Log("fiering a letter= " + CapitalLetter);
+		if (Context.PlayerInventory.GetLetterCount(CapitalLetter) > 0)
+	//		if (true)
 
 		{
 			Albert_explosion = Instantiate(Resources.Load("LettesProjectile/" + LetterBulletname), fromwhere, Quaternion.Euler(-90, 0, 0)) as GameObject;
