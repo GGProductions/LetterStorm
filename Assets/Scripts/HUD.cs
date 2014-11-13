@@ -45,7 +45,13 @@ public class HUD : MonoBehaviour {
     // Useful styles
     private GUIStyle emptyStyle = new GUIStyle();   // Null style, for transparent backgrounds
     private GUIStyle pauseMenuButtonsStyle = new GUIStyle();
+    public GUIStyle hintStyle;
     
+    // Player health variables
+    private int CurrentHealth;
+    private int MaximumHealth;
+    private int MinimumHealth;
+    private float HealthBarLength;
 
     // If game is paused or not paused
     private bool isPaused;
@@ -57,6 +63,9 @@ public class HUD : MonoBehaviour {
     /// </summary>
     void Start()
     {
+        // GUI styles
+        //hintStyle.wordWrap = true;
+
         isPaused = false;
         isInHowToPlayMenu = false;
         Time.timeScale = 1;
@@ -67,6 +76,9 @@ public class HUD : MonoBehaviour {
         
         // Scaling factors
         scaleFactorPauseMenuButtons = 1;
+
+        // Player health
+        UpdatePlayerStats();
 
         // Dimensions - Inventory
         InventoryBoxWidth = (int)(Screen.width * .75);
@@ -93,10 +105,10 @@ public class HUD : MonoBehaviour {
     /// </summary>
     void OnGUI()
     {
-        //Context.PlayerHealth.decreaseHealth(Context.DefaultPlayerHealthDecreaseFactor);
-        GUILayout.Box("Lives: " + Context.PlayerHealth.CurHealth.ToString());
-        GUILayout.Box("Letters Collected: " + Context.PlayerInventory.TotalCollectedLetters);
-        GUILayout.Box("Hint: " + Context.Word.Hint);
+        GUI.skin.button.wordWrap = true;
+        GUI.Box(new Rect(10, 10, HealthBarLength, 20), "HP: " + CurrentHealth.ToString() + "/" + MaximumHealth.ToString());
+        GUI.Box(new Rect(10, 40, 250, 20),"Letters Collected: " + Context.PlayerInventory.TotalCollectedLetters);
+        GUI.Box(new Rect(10, 70, 250, 100), "Hint: " + Context.Word.Hint, hintStyle);
         
         DisplayPauseMenu();
         DisplayInventoryWindow();
@@ -106,7 +118,7 @@ public class HUD : MonoBehaviour {
     /// Method that updates HUD once every frame
     /// Displays game, player information, and player inventory
     /// </summary>
-    void DisplayInventoryWindow()
+    private void DisplayInventoryWindow()
     {
 
         #region Determine which letters to show in the inventory --------------------------------------------
@@ -336,7 +348,7 @@ public class HUD : MonoBehaviour {
 
     }
 
-    void DisplayPauseMenu()
+    private void DisplayPauseMenu()
     {
 
         // Draw pause menu
@@ -434,20 +446,11 @@ public class HUD : MonoBehaviour {
     /// </summary>
     void Update()
     {
-        
+        // Always keep track of player health
+        UpdatePlayerStats();
+
         // Determine size of inventory "boxes" depending on screen size
-        if (Screen.width <= 1000)
-        {
-            InventoryItemBoxWidth = (int)(Screen.width / 25);
-            InventoryItemBoxHeight = (int)(Screen.width / 25);
-            scaleFactorPauseMenuButtons = 0.60f;
-        }
-        else
-        {
-            InventoryItemBoxWidth = (int)(Screen.width / 40);
-            InventoryItemBoxHeight = (int)(Screen.width / 40);
-            scaleFactorPauseMenuButtons = 1;
-        }
+        AdjustInventoryDimensions();
 
         // Font size of letters in inventory boxes
         InventoryLetterFontSize = InventoryItemBoxHeight * 0.57f;
@@ -493,4 +496,30 @@ public class HUD : MonoBehaviour {
             Context.PlayerInventory.SubtractCollectedLetter("A");
         }*/
     }
+
+    private void UpdatePlayerStats()
+    {
+        // Always keep track of player health
+        CurrentHealth = Context.PlayerHealth.CurHealth;
+        MinimumHealth = Context.PlayerHealth.MinHealth;
+        MaximumHealth = Context.PlayerHealth.MaxHealth;
+        HealthBarLength = (float)((Screen.width / 2) * (float)((float)CurrentHealth / (float)MaximumHealth));
+    }
+
+    private void AdjustInventoryDimensions()
+    {
+        if (Screen.width <= 1000)
+        {
+            InventoryItemBoxWidth = (int)(Screen.width / 25);
+            InventoryItemBoxHeight = (int)(Screen.width / 25);
+            scaleFactorPauseMenuButtons = 0.60f;
+        }
+        else
+        {
+            InventoryItemBoxWidth = (int)(Screen.width / 40);
+            InventoryItemBoxHeight = (int)(Screen.width / 40);
+            scaleFactorPauseMenuButtons = 1;
+        }
+    }
+
 }
