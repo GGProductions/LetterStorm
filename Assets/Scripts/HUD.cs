@@ -59,6 +59,7 @@ public class HUD : MonoBehaviour {
     {
         isPaused = false;
         isInHowToPlayMenu = false;
+        Time.timeScale = 1;
         DefaultLetterButtonColor = GUI.backgroundColor;
 
         CurrentLettersInInventory = new ArrayList();
@@ -356,7 +357,7 @@ public class HUD : MonoBehaviour {
                     CorkBoardDivisionSizeWidth,
                     CorkBoardDivisionSizeHeight), ResumeGameButtonTexture, emptyStyle))
                 {
-                    Time.timeScale = 1;
+                    //Time.timeScale = 1;
                     isPaused = false;
                     isInHowToPlayMenu = false;
                 }
@@ -374,6 +375,7 @@ public class HUD : MonoBehaviour {
                     CorkBoardDivisionSizeWidth,
                     CorkBoardDivisionSizeHeight), QuitGameButtonTexture, emptyStyle))
                 {
+                    isPaused = false;
                     Application.Quit();
                 }
                 // Main menu button
@@ -383,9 +385,9 @@ public class HUD : MonoBehaviour {
                     CorkBoardDivisionSizeHeight), MainMenuGameButtonTexture, emptyStyle))
                 {
                     // Reset values and reload to Main Menu
-                    Context.PlayerLives = 3;
+                    Context.PlayerLives = 5;
                     Context.PlayerInventory = new Inventory();
-                    Time.timeScale = 1; // Unpause
+                    isPaused = false;                           // Unpause
                     Application.LoadLevel("MainMenu");
                 }
                 // Save game button
@@ -402,6 +404,7 @@ public class HUD : MonoBehaviour {
                     CorkBoardDivisionSizeWidth,
                     CorkBoardDivisionSizeHeight), SettingsGameButtonTexture, emptyStyle))
                 {
+                    isPaused = false;
                     Application.LoadLevel("ManageLessons");
                 }
             }
@@ -431,7 +434,7 @@ public class HUD : MonoBehaviour {
     /// </summary>
     void Update()
     {
-
+        
         // Determine size of inventory "boxes" depending on screen size
         if (Screen.width <= 1000)
         {
@@ -460,7 +463,8 @@ public class HUD : MonoBehaviour {
         HowToPlayTexture1Width = HowToPlayTexture1.width * scaleFactorPauseMenuButtons;
         HowToPlayTexture1Height = HowToPlayTexture1.height * scaleFactorPauseMenuButtons;
 
-
+        // Pause/Unpause game flow control
+        Time.timeScale = isPaused ? 0 : 1;
 
         // If [Esc] is pressed, pause the game
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -468,7 +472,6 @@ public class HUD : MonoBehaviour {
             // If paused already, unpause
             if (isPaused)
             {
-                Time.timeScale = 1;
                 isPaused = false;
                 isInHowToPlayMenu = false;
 
@@ -476,11 +479,11 @@ public class HUD : MonoBehaviour {
             // If not paused, pause game
             else
             {
-                Time.timeScale = 0;
                 isPaused = true;
-
             }
-        }/*
+        }
+        
+        /*
         else if (Input.GetKeyDown(KeyCode.L))
         {
             Context.PlayerInventory.AddCollectedLetter("A");
