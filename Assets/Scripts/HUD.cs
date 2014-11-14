@@ -77,7 +77,7 @@ public class HUD : MonoBehaviour {
         // Scaling factors
         scaleFactorPauseMenuButtons = 1;
 
-        // Player health
+        // Obtain player health
         UpdatePlayerStats();
 
         // Dimensions - Inventory
@@ -348,6 +348,9 @@ public class HUD : MonoBehaviour {
 
     }
 
+    /// <summary>
+    /// Method to draw the pause menu
+    /// </summary>
     private void DisplayPauseMenu()
     {
 
@@ -456,11 +459,7 @@ public class HUD : MonoBehaviour {
         InventoryLetterFontSize = InventoryItemBoxHeight * 0.57f;
 
         // Dimensions - CorkBoard for pause menu
-        CorkBoardWidth = CorkBoardTexture.width * scaleFactorPauseMenuButtons;
-        CorkBoardHeight = CorkBoardTexture.height * scaleFactorPauseMenuButtons;
-        CorkBoardBorderSize = CorkBoardWidth / 15 * scaleFactorPauseMenuButtons;
-        CorkBoardDivisionSizeWidth = (CorkBoardWidth - CorkBoardBorderSize * 4) / 3;
-        CorkBoardDivisionSizeHeight = (CorkBoardHeight - CorkBoardBorderSize * 4) / 2;
+        AdjustCorkboardDimensions();
 
         // Dimensions - How To Play Menu
         HowToPlayTexture1Width = HowToPlayTexture1.width * scaleFactorPauseMenuButtons;
@@ -487,6 +486,10 @@ public class HUD : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Sets the player stats to local variables, from the Context global class, 
+    /// and computes other stats or dimensions for displaying player stats
+    /// </summary>
     private void UpdatePlayerStats()
     {
         // Always keep track of player health
@@ -496,6 +499,9 @@ public class HUD : MonoBehaviour {
         HealthBarLength = (float)((Screen.width / 2) * (float)((float)CurrentHealth / (float)MaximumHealth));
     }
 
+    /// <summary>
+    /// Determines the dimensions for drawing components of the player's inventory
+    /// </summary>
     private void AdjustInventoryDimensions()
     {
         if (Screen.width <= 1000)
@@ -510,6 +516,18 @@ public class HUD : MonoBehaviour {
             InventoryItemBoxHeight = (int)(Screen.width / 40);
             scaleFactorPauseMenuButtons = 1;
         }
+    }
+
+    /// <summary>
+    /// Determines the dimensions for drawing components of the player's inventory
+    /// </summary>
+    private void AdjustCorkboardDimensions()
+    {
+        CorkBoardWidth = CorkBoardTexture.width * scaleFactorPauseMenuButtons;
+        CorkBoardHeight = CorkBoardTexture.height * scaleFactorPauseMenuButtons;
+        CorkBoardBorderSize = CorkBoardWidth / 15 * 0.95f;
+        CorkBoardDivisionSizeWidth = (CorkBoardWidth - CorkBoardBorderSize * 4) / 3;
+        CorkBoardDivisionSizeHeight = (CorkBoardHeight - CorkBoardBorderSize * 4) / 2;
     }
 
 }
