@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
+using GGProductions.LetterStorm.Configuration;
+using GGProductions.LetterStorm.Configuration.Collections;
 
 public class PlayerHealth
 {
@@ -8,7 +11,9 @@ public class PlayerHealth
     private int? _minHealth = null;
     private int? _maxHealth = null;
     private int? _curHealth = null;
+    #endregion Private Variables ------------------------------------------
 
+    #region Properties ----------------------------------------------------
     /// <summary>
     /// The amount of the minimum health of player
     /// </summary>
@@ -56,7 +61,15 @@ public class PlayerHealth
         }
         set { _curHealth = value; }
     }
-    #endregion Private Variables ------------------------------------------
+    #endregion Properties -------------------------------------------------
+    /// <summary>
+    /// Initializes the current and maximum health of player
+    /// </summary>
+    /// <param name="difficulty">Initial max and current health of the player</param>
+    public void InitializeHealth(EnemyDifficulty difficulty)
+    {
+        _curHealth = _maxHealth = difficulty.InitialLifeCount;
+    }
 
     #region Methods -------------------------------------------------------
     /// <summary>

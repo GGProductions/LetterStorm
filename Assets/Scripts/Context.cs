@@ -110,14 +110,17 @@ public class Context : MonoBehaviour
         set { _curriculum = value; }
     }
 
-    /// <summary>Player health</summary>
+    /// <summary>Tracks player health</summary>
     public static PlayerHealth PlayerHealth
     {
         get
         {
+            // If the life count has not yet been set, default it to that associated with the enemy difficulty selected by the user
             if (_playerHealth == null)
             {
                 _playerHealth = new PlayerHealth();
+                //_playerHealth.InitializeHealth(EnemyDifficulty);
+
             }
             return _playerHealth;
         }
@@ -158,20 +161,6 @@ public class Context : MonoBehaviour
     {
         get { return _selectedLetter; }
         set { _selectedLetter = value; }
-    }
-
-    /// <summary>Tracks player lives</summary>
-    public static int PlayerLives
-    {
-        get {
-            // If the life count has not yet been set, default it to that associated with the enemy difficulty selected by the user
-            if (_playerLives == null)
-            {
-                _playerLives = EnemyDifficulty.InitialLifeCount;
-            }
-            return (int)_playerLives; 
-        }
-        set { _playerLives = value; }
     }
 
     /// <summary>The enemy difficulty level chosen for the game playthrough</summary>

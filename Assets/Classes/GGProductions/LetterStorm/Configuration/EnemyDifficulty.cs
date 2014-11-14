@@ -16,7 +16,7 @@ namespace GGProductions.LetterStorm.Configuration
         private string _name;
         private string _description;
         private float _gameSpeed = 1.0f;
-        private int _initialLifeCount = 5;
+        private int _initialLifeCount = 100;
         private int _maxEnemiesOnScreen = 5;
         private float _bossHealthHandicap = 1.0f;
         private bool _enableBossRageMode = true;
