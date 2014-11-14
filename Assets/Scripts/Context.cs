@@ -118,12 +118,7 @@ public class Context : MonoBehaviour
             // If the life count has not yet been set, default it to that associated with the enemy difficulty selected by the user
             if (_playerHealth == null)
             {
-<<<<<<< HEAD
-                _playerHealth = new PlayerHealth();
-                //_playerHealth.InitializeHealth(EnemyDifficulty);
-=======
                 _playerHealth = new Health(EnemyDifficulty);
->>>>>>> 1578123fc4f42719bef1d1d13858f7f35af76353
             }
             return _playerHealth;
         }
