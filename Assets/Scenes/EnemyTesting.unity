@@ -2255,7 +2255,6 @@ MonoBehaviour:
     m_FixedHeight: 0
     m_StretchWidth: 1
     m_StretchHeight: 0
-  HealthBarLength: 0
 --- !u!4 &1986525867
 Transform:
   m_ObjectHideFlags: 0
