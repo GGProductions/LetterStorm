@@ -3,14 +3,18 @@ using System.Collections;
 
 public class SmartEnemy : Enemy {
 
-	/*// Use this for initialization
+    private float timeElapsed;
+    private bool reachedWaypoint;
+    
+	// Use this for initialization
 	void Start () {
-	
+        base.Start();
+        timeElapsed = 0;
 	}
 	
 	// Update is called once per frame
-	void Update () {
-     
+	/*void Update () {
+    
 	}*/
 
     public override void findPath(float atm)
@@ -34,13 +38,18 @@ public class SmartEnemy : Enemy {
 
     private void SinMove(float atm)
     {
-        if (transform.position.z <= 1.5f)
+        timeElapsed += Time.deltaTime;
+
+        if (reachedWaypoint)
         {
-            //sinusoidal patrol
-            transform.Translate(new Vector3(1f, 0, 0) * atm, Space.World);
+            float factor = Mathf.Cos(timeElapsed);
+            transform.Translate(Vector3.right * (factor / 20) * Time.timeScale, Space.World);
+            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         }
-        else
-        {
+        else if (transform.position.z <= 1f) {
+                reachedWaypoint = true;
+        }
+        else {
             transform.Translate(Vector3.back * atm, Space.World);
         }
     }

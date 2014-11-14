@@ -33,14 +33,14 @@ public class Enemy : MonoBehaviour
     #endregion
 
     #region Functions
-    void Start()
+    public virtual void Start()
     {
         
         SetScaleAndSpeed();
         Path = Random.Range(0, 4);
     }
 
-    void Update()
+    public virtual void Update()
     {
         //float rotationSpeed = currentRotationSpeed * Time.deltaTime;
         //transform.Rotate(new Vector3(-1, 0, 0) * rotationSpeed);
