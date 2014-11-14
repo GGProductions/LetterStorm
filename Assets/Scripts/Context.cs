@@ -6,6 +6,7 @@ using GGProductions.LetterStorm.Utilities;
 using System;
 using GGProductions.LetterStorm.Configuration;
 using GGProductions.LetterStorm.Configuration.Collections;
+using GGProductions.LetterStorm.InGameHelpClasses;
 
 public class Context : MonoBehaviour
 {
@@ -15,8 +16,7 @@ public class Context : MonoBehaviour
     //  properties will use to store their data
     private static LessonBook _curriculum;
     private static int? _playerLives = null;
-    private static PlayerHealth _playerHealth;
-    private static int? _defaultPlayerHealthDecreaseFactor = null;
+    private static Health _playerHealth;
     private static Inventory _playerInventory;
     private static string _selectedLetter;
     private static char[] _alphabet;
@@ -111,15 +111,19 @@ public class Context : MonoBehaviour
     }
 
     /// <summary>Tracks player health</summary>
-    public static PlayerHealth PlayerHealth
+    public static Health PlayerHealth
     {
         get
         {
             // If the life count has not yet been set, default it to that associated with the enemy difficulty selected by the user
             if (_playerHealth == null)
             {
+<<<<<<< HEAD
                 _playerHealth = new PlayerHealth();
                 //_playerHealth.InitializeHealth(EnemyDifficulty);
+=======
+                _playerHealth = new Health(EnemyDifficulty);
+>>>>>>> 1578123fc4f42719bef1d1d13858f7f35af76353
             }
             return _playerHealth;
         }
@@ -127,22 +131,8 @@ public class Context : MonoBehaviour
     }
 
     /// <summary>
-    /// DefaultPlayerHealthDecreaseFactor
+    /// Player inventory
     /// </summary>
-    public static int DefaultPlayerHealthDecreaseFactor
-    {
-        get
-        {
-            if (_defaultPlayerHealthDecreaseFactor == null)
-            {
-                _defaultPlayerHealthDecreaseFactor = 10;
-            }
-            return (int)_defaultPlayerHealthDecreaseFactor;
-        }
-        set { _defaultPlayerHealthDecreaseFactor = value; }
-    }
-
-    /// <summary>Player inventory</summary>
     public static Inventory PlayerInventory
     {
         get {
@@ -155,14 +145,18 @@ public class Context : MonoBehaviour
         set { _playerInventory = value; }
     }
 
-    /// <summary>Selected letter in inventory</summary>
+    /// <summary>
+    /// Selected letter in inventory
+    /// </summary>
     public static string SelectedLetter
     {
         get { return _selectedLetter; }
         set { _selectedLetter = value; }
     }
 
-    /// <summary>The enemy difficulty level chosen for the game playthrough</summary>
+    /// <summary>
+    /// The enemy difficulty level chosen for the game playthrough
+    /// </summary>
     public static EnemyDifficulty EnemyDifficulty
     {
         get {
@@ -178,7 +172,9 @@ public class Context : MonoBehaviour
         set { _enemyDifficulty = value; }
     }
 
-    /// <summary>The id of the lesson chosen for the game playthrough</summary>
+    /// <summary>
+    /// The id of the lesson chosen for the game playthrough
+    /// </summary>
     public static Guid CurrentLessonId
     {
         get { return _currentLessonId; }

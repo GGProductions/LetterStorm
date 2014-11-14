@@ -34,9 +34,10 @@ namespace GGProductions.LetterStorm.Configuration.Collections
             EnemyDifficulty easy = new EnemyDifficulty(
                 1,
                 "Easy",
-                "Enemies are slower and spawn in smaller groups, the user has more initial lifes, and bosses are easier to defeat.  Recommended for young children who are new to gaming.",
+                "Enemies are slower and spawn in smaller groups, the player takes less damage per hit, and bosses are easier to defeat.  Recommended for young children who are new to gaming.",
                 0.7f,   // Game speed: slower than normal
-                10,      // Initial life count: more than normal
+                100,    // Initial health: normal
+                5,      // Damage taken per hit: less than normal
                 4,      // Max enemies on screen: less than normal
                 0.5f,   // Boss health modifier: less than normal
                 false); // Don't enable boss rage mode
@@ -45,9 +46,10 @@ namespace GGProductions.LetterStorm.Configuration.Collections
             EnemyDifficulty normal = new EnemyDifficulty(
                 5,
                 "Normal",
-                "Enemies confront the user in mid-sized groups, the user starts the game with a reasonable number of initial lifes, and bosses are challenging.  Recommended for children who have some experience gaming.",
+                "Enemies confront the user in mid-sized groups, the player takes reasonable damage per hit, and bosses are challenging.  Recommended for children who have some experience gaming.",
                 1.0f,   // Game speed: normal
-                5,      // Initial life count: normal
+                100,    // Initial health: normal
+                10,     // Damage taken per hit: normal
                 6,      // Max enemies on screen: normal
                 1.0f,   // Boss health modifier: normal
                 true);  // Enable boss rage mode
@@ -56,9 +58,10 @@ namespace GGProductions.LetterStorm.Configuration.Collections
             EnemyDifficulty hard = new EnemyDifficulty(
                 9,
                 "Hard",
-                "Enemies are faster and spawn in large groups, the user has less initial lifes, and bosses are significantly challenging.  Recommended for older children who have significant experience gaming.",
+                "Enemies are faster and spawn in large groups, the player takes more damage per hit, and bosses are significantly challenging.  Recommended for older children who have significant experience gaming.",
                 1.3f,   // Game speed: faster than normal
-                3,      // Initial life count: less than normal
+                100,    // Initial life count: normal
+                20,     // Damage taken per hit: more than normal
                 10,     // Max enemies on screen: more than normal
                 1.5f,   // Boss health modifier: more than normal
                 true);  // Enable boss rage mode
