@@ -128,7 +128,7 @@ public class Context : MonoBehaviour
     }
 
     /// <summary>
-    /// DefaultPlayerHealthDecreaseFactor
+    /// The amount of damage a player takes when hit by a projectile or enemy.
     /// </summary>
     public static int DefaultPlayerHealthDecreaseFactor
     {
@@ -136,14 +136,16 @@ public class Context : MonoBehaviour
         {
             if (_defaultPlayerHealthDecreaseFactor == null)
             {
-                _defaultPlayerHealthDecreaseFactor = 10;
+                _defaultPlayerHealthDecreaseFactor = EnemyDifficulty.DamageToPlayerPerHit;
             }
             return (int)_defaultPlayerHealthDecreaseFactor;
         }
         set { _defaultPlayerHealthDecreaseFactor = value; }
     }
 
-    /// <summary>Player inventory</summary>
+    /// <summary>
+    /// Player inventory
+    /// </summary>
     public static Inventory PlayerInventory
     {
         get {
@@ -156,14 +158,18 @@ public class Context : MonoBehaviour
         set { _playerInventory = value; }
     }
 
-    /// <summary>Selected letter in inventory</summary>
+    /// <summary>
+    /// Selected letter in inventory
+    /// </summary>
     public static string SelectedLetter
     {
         get { return _selectedLetter; }
         set { _selectedLetter = value; }
     }
 
-    /// <summary>The enemy difficulty level chosen for the game playthrough</summary>
+    /// <summary>
+    /// The enemy difficulty level chosen for the game playthrough
+    /// </summary>
     public static EnemyDifficulty EnemyDifficulty
     {
         get {
@@ -179,7 +185,9 @@ public class Context : MonoBehaviour
         set { _enemyDifficulty = value; }
     }
 
-    /// <summary>The id of the lesson chosen for the game playthrough</summary>
+    /// <summary>
+    /// The id of the lesson chosen for the game playthrough
+    /// </summary>
     public static Guid CurrentLessonId
     {
         get { return _currentLessonId; }
