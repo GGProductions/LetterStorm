@@ -192,32 +192,32 @@ public class Albert_force_controller : MonoBehaviour
 	/// </summary>
 	void getKeyPressed() {
 
-        if (Input.GetKeyDown(KeyCode.A)) { LetterBulletname = "a_projectilePrefab"; Context.SelectedLetter = "A"; }
-        if (Input.GetKeyDown(KeyCode.B)) { LetterBulletname = "b_projectilePrefab"; Context.SelectedLetter = "B"; }
-        if (Input.GetKeyDown(KeyCode.C)) { LetterBulletname = "c_projectilePrefab"; Context.SelectedLetter = "C"; }
-        if (Input.GetKeyDown(KeyCode.D)) { LetterBulletname = "d_projectilePrefab"; Context.SelectedLetter = "D"; }
-        if (Input.GetKeyDown(KeyCode.E)) { LetterBulletname = "e_projectilePrefab"; Context.SelectedLetter = "E"; }
-        if (Input.GetKeyDown(KeyCode.F)) { LetterBulletname = "f_projectilePrefab"; Context.SelectedLetter = "F"; }
-        if (Input.GetKeyDown(KeyCode.G)) { LetterBulletname = "g_projectilePrefab"; Context.SelectedLetter = "G"; }
-        if (Input.GetKeyDown(KeyCode.H)) { LetterBulletname = "h_projectilePrefab"; Context.SelectedLetter = "H"; }
-        if (Input.GetKeyDown(KeyCode.I)) { LetterBulletname = "i_projectilePrefab"; Context.SelectedLetter = "I"; }
-        if (Input.GetKeyDown(KeyCode.J)) { LetterBulletname = "j_projectilePrefab"; Context.SelectedLetter = "J"; }
-        if (Input.GetKeyDown(KeyCode.K)) { LetterBulletname = "k_projectilePrefab"; Context.SelectedLetter = "K"; }
-        if (Input.GetKeyDown(KeyCode.L)) { LetterBulletname = "l_projectilePrefab"; Context.SelectedLetter = "L"; }
-        if (Input.GetKeyDown(KeyCode.M)) { LetterBulletname = "m_projectilePrefab"; Context.SelectedLetter = "M"; }
-        if (Input.GetKeyDown(KeyCode.N)) { LetterBulletname = "n_projectilePrefab"; Context.SelectedLetter = "N"; }
-        if (Input.GetKeyDown(KeyCode.O)) { LetterBulletname = "o_projectilePrefab"; Context.SelectedLetter = "O"; }
-        if (Input.GetKeyDown(KeyCode.P)) { LetterBulletname = "p_projectilePrefab"; Context.SelectedLetter = "P"; }
-        if (Input.GetKeyDown(KeyCode.Q)) { LetterBulletname = "q_projectilePrefab"; Context.SelectedLetter = "Q"; }
-        if (Input.GetKeyDown(KeyCode.R)) { LetterBulletname = "r_projectilePrefab"; Context.SelectedLetter = "R"; }
-        if (Input.GetKeyDown(KeyCode.S)) { LetterBulletname = "s_projectilePrefab"; Context.SelectedLetter = "S"; }
-        if (Input.GetKeyDown(KeyCode.T)) { LetterBulletname = "t_projectilePrefab"; Context.SelectedLetter = "T"; }
-        if (Input.GetKeyDown(KeyCode.U)) { LetterBulletname = "u_projectilePrefab"; Context.SelectedLetter = "U"; }
-        if (Input.GetKeyDown(KeyCode.V)) { LetterBulletname = "v_projectilePrefab"; Context.SelectedLetter = "V"; }
-        if (Input.GetKeyDown(KeyCode.W)) { LetterBulletname = "w_projectilePrefab"; Context.SelectedLetter = "W"; }
-        if (Input.GetKeyDown(KeyCode.X)) { LetterBulletname = "x_projectilePrefab"; Context.SelectedLetter = "X"; }
-        if (Input.GetKeyDown(KeyCode.Y)) { LetterBulletname = "y_projectilePrefab"; Context.SelectedLetter = "Y"; }
-        if (Input.GetKeyDown(KeyCode.Z)) { LetterBulletname = "z_projectilePrefab"; Context.SelectedLetter = "Z"; }
+        if (Context.SelectedLetter == "A") { LetterBulletname = "a_projectilePrefab"; }
+        if (Context.SelectedLetter == "B") { LetterBulletname = "b_projectilePrefab"; }
+        if (Context.SelectedLetter == "C") { LetterBulletname = "c_projectilePrefab"; }
+        if (Context.SelectedLetter == "D") { LetterBulletname = "d_projectilePrefab"; }
+        if (Context.SelectedLetter == "E") { LetterBulletname = "e_projectilePrefab"; }
+        if (Context.SelectedLetter == "F") { LetterBulletname = "f_projectilePrefab"; }
+        if (Context.SelectedLetter == "G") { LetterBulletname = "g_projectilePrefab"; }
+        if (Context.SelectedLetter == "H") { LetterBulletname = "h_projectilePrefab"; }
+        if (Context.SelectedLetter == "I") { LetterBulletname = "i_projectilePrefab"; }
+        if (Context.SelectedLetter == "J") { LetterBulletname = "j_projectilePrefab"; }
+        if (Context.SelectedLetter == "K") { LetterBulletname = "k_projectilePrefab"; }
+        if (Context.SelectedLetter == "L") { LetterBulletname = "l_projectilePrefab"; }
+        if (Context.SelectedLetter == "M") { LetterBulletname = "m_projectilePrefab"; }
+        if (Context.SelectedLetter == "N") { LetterBulletname = "n_projectilePrefab"; }
+        if (Context.SelectedLetter == "O") { LetterBulletname = "o_projectilePrefab"; }
+        if (Context.SelectedLetter == "P") { LetterBulletname = "p_projectilePrefab"; }
+        if (Context.SelectedLetter == "Q") { LetterBulletname = "q_projectilePrefab"; }
+        if (Context.SelectedLetter == "R") { LetterBulletname = "r_projectilePrefab"; }
+        if (Context.SelectedLetter == "S") { LetterBulletname = "s_projectilePrefab"; }
+        if (Context.SelectedLetter == "T") { LetterBulletname = "t_projectilePrefab"; }
+        if (Context.SelectedLetter == "U") { LetterBulletname = "u_projectilePrefab"; }
+        if (Context.SelectedLetter == "V") { LetterBulletname = "v_projectilePrefab"; }
+        if (Context.SelectedLetter == "W") { LetterBulletname = "w_projectilePrefab"; }
+        if (Context.SelectedLetter == "X") { LetterBulletname = "x_projectilePrefab"; }
+        if (Context.SelectedLetter == "Y") { LetterBulletname = "y_projectilePrefab"; }
+        if (Context.SelectedLetter == "Z") { LetterBulletname = "z_projectilePrefab"; }
 	
 	}
 

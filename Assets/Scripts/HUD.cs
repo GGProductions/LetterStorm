@@ -468,6 +468,9 @@ public class HUD : MonoBehaviour {
         // Pause/Unpause game flow control
         Time.timeScale = isPaused ? 0 : 1;
 
+        // Determine which letter is selected based on key presses
+        SetSelectedLetterFromKeyPress();
+
         // If [Esc] is pressed, pause the game
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -528,6 +531,36 @@ public class HUD : MonoBehaviour {
         CorkBoardBorderSize = CorkBoardWidth / 15 * 0.95f;
         CorkBoardDivisionSizeWidth = (CorkBoardWidth - CorkBoardBorderSize * 4) / 3;
         CorkBoardDivisionSizeHeight = (CorkBoardHeight - CorkBoardBorderSize * 4) / 2;
+    }
+
+    private void SetSelectedLetterFromKeyPress()
+    {
+        if (Input.GetKeyDown(KeyCode.A)) { Context.SelectedLetter = "A"; }
+        if (Input.GetKeyDown(KeyCode.B)) { Context.SelectedLetter = "B"; }
+        if (Input.GetKeyDown(KeyCode.C)) { Context.SelectedLetter = "C"; }
+        if (Input.GetKeyDown(KeyCode.D)) { Context.SelectedLetter = "D"; }
+        if (Input.GetKeyDown(KeyCode.E)) { Context.SelectedLetter = "E"; }
+        if (Input.GetKeyDown(KeyCode.F)) { Context.SelectedLetter = "F"; }
+        if (Input.GetKeyDown(KeyCode.G)) { Context.SelectedLetter = "G"; }
+        if (Input.GetKeyDown(KeyCode.H)) { Context.SelectedLetter = "H"; }
+        if (Input.GetKeyDown(KeyCode.I)) { Context.SelectedLetter = "I"; }
+        if (Input.GetKeyDown(KeyCode.J)) { Context.SelectedLetter = "J"; }
+        if (Input.GetKeyDown(KeyCode.K)) { Context.SelectedLetter = "K"; }
+        if (Input.GetKeyDown(KeyCode.L)) { Context.SelectedLetter = "L"; }
+        if (Input.GetKeyDown(KeyCode.M)) { Context.SelectedLetter = "M"; }
+        if (Input.GetKeyDown(KeyCode.N)) { Context.SelectedLetter = "N"; }
+        if (Input.GetKeyDown(KeyCode.O)) { Context.SelectedLetter = "O"; }
+        if (Input.GetKeyDown(KeyCode.P)) { Context.SelectedLetter = "P"; }
+        if (Input.GetKeyDown(KeyCode.Q)) { Context.SelectedLetter = "Q"; }
+        if (Input.GetKeyDown(KeyCode.R)) { Context.SelectedLetter = "R"; }
+        if (Input.GetKeyDown(KeyCode.S)) { Context.SelectedLetter = "S"; }
+        if (Input.GetKeyDown(KeyCode.T)) { Context.SelectedLetter = "T"; }
+        if (Input.GetKeyDown(KeyCode.U)) { Context.SelectedLetter = "U"; }
+        if (Input.GetKeyDown(KeyCode.V)) { Context.SelectedLetter = "V"; }
+        if (Input.GetKeyDown(KeyCode.W)) { Context.SelectedLetter = "W"; }
+        if (Input.GetKeyDown(KeyCode.X)) { Context.SelectedLetter = "X"; }
+        if (Input.GetKeyDown(KeyCode.Y)) { Context.SelectedLetter = "Y"; }
+        if (Input.GetKeyDown(KeyCode.Z)) { Context.SelectedLetter = "Z"; }
     }
 
 }
