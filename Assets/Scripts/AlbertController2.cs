@@ -87,7 +87,7 @@ public class AlbertController2 : MonoBehaviour {
 		Quaternion target = Quaternion.Euler(0, tiltAroundz, 0);
 		transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * smooth);
 
-		if (Context.PlayerHealth.hasNoHealth()) Application.LoadLevel("Lose");
+		if (Context.PlayerHealth.HasNoHealth()) Application.LoadLevel("Lose");
 		if (state != State.Explosion && state != State.Invincible && state == State.Playing)
 		{
 			// Debug.Log("can MOVE");
@@ -447,7 +447,7 @@ public class AlbertController2 : MonoBehaviour {
 		if (otherObj.tag == "enemy" || otherObj.tag == "bossTag" || otherObj.tag == "bossProjectileTag")
 		{
 		  //  Debug.Log("Vowel");
-             Context.PlayerHealth.decreaseHealth(Context.DefaultPlayerHealthDecreaseFactor);
+             Context.PlayerHealth.DecreaseHealth();
 			 Instantiate(Resources.Load("Explosions/blackStars1"),
 									  transform.position,
 									  Quaternion.Euler(-180, 0, 0));
@@ -503,7 +503,7 @@ public class AlbertController2 : MonoBehaviour {
 		yield return new WaitForSeconds(2 * animation["falling"].length );
 		//yield return new WaitForSeconds(1f);
 
-		if (Context.PlayerHealth.hasHealth())
+		if (Context.PlayerHealth.HasHealth())
 		{
 			this.transform.GetComponent<CapsuleCollider>().enabled = true;
 		state = State.Playing;

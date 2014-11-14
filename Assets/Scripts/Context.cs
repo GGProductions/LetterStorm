@@ -15,8 +15,7 @@ public class Context : MonoBehaviour
     //  properties will use to store their data
     private static LessonBook _curriculum;
     private static int? _playerLives = null;
-    private static PlayerHealth _playerHealth;
-    private static int? _defaultPlayerHealthDecreaseFactor = null;
+    private static Health _playerHealth;
     private static Inventory _playerInventory;
     private static string _selectedLetter;
     private static char[] _alphabet;
@@ -111,36 +110,18 @@ public class Context : MonoBehaviour
     }
 
     /// <summary>Tracks player health</summary>
-    public static PlayerHealth PlayerHealth
+    public static Health PlayerHealth
     {
         get
         {
             // If the life count has not yet been set, default it to that associated with the enemy difficulty selected by the user
             if (_playerHealth == null)
             {
-                _playerHealth = new PlayerHealth();
-                //_playerHealth.InitializeHealth(EnemyDifficulty);
-
+                _playerHealth = new Health(EnemyDifficulty);
             }
             return _playerHealth;
         }
         set { _playerHealth = value; }
-    }
-
-    /// <summary>
-    /// The amount of damage a player takes when hit by a projectile or enemy.
-    /// </summary>
-    public static int DefaultPlayerHealthDecreaseFactor
-    {
-        get
-        {
-            if (_defaultPlayerHealthDecreaseFactor == null)
-            {
-                _defaultPlayerHealthDecreaseFactor = EnemyDifficulty.DamageToPlayerPerHit;
-            }
-            return (int)_defaultPlayerHealthDecreaseFactor;
-        }
-        set { _defaultPlayerHealthDecreaseFactor = value; }
     }
 
     /// <summary>

@@ -279,7 +279,7 @@ public class Albert_force_controller : MonoBehaviour
 	/// </summary>
 	void FixedUpdate() {
 
-		if (Context.PlayerHealth.hasNoHealth()) Application.LoadLevel(3);
+		if (Context.PlayerHealth.HasNoHealth()) Application.LoadLevel(3);
 		if (curr_state == AlbertState.Playing)
 		{
 
@@ -333,7 +333,7 @@ public class Albert_force_controller : MonoBehaviour
 		{
 			curr_state = AlbertState.GotHit;
 			//  Debug.Log("Vowel");
-			Context.PlayerHealth.decreaseHealth(Context.DefaultPlayerHealthDecreaseFactor);
+			Context.PlayerHealth.DecreaseHealth();
 			Instantiate(Resources.Load("Explosions/blackStars1"),
 									 transform.position,
 									 Quaternion.Euler(-180, 0, 0));
@@ -421,7 +421,7 @@ public class Albert_force_controller : MonoBehaviour
 		
 		//yield return new WaitForSeconds(1f);
 
-		if (Context.PlayerHealth.hasHealth())
+		if (Context.PlayerHealth.HasHealth())
 		{
 			this.transform.GetComponent<CapsuleCollider>().enabled = true;
 			curr_state = AlbertState.Playing;
