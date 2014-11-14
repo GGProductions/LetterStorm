@@ -3,7 +3,6 @@ using System.Collections;
 
 public class Pencil1Projectile : MonoBehaviour
 {
-
     #region Public Variables ---------------------------------------------
     public GameObject PencilExplosion;
     #endregion Public Variables ------------------------------------------
