@@ -119,7 +119,8 @@ public class Context : MonoBehaviour
             if (_playerHealth == null)
             {
                 _playerHealth = new PlayerHealth();
-                _playerHealth.InitializeHealth(EnemyDifficulty);
+                //_playerHealth.InitializeHealth(EnemyDifficulty);
+
             }
             return _playerHealth;
         }
