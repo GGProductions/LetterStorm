@@ -120,7 +120,6 @@ public class Context : MonoBehaviour
             {
                 _playerHealth = new PlayerHealth();
                 //_playerHealth.InitializeHealth(EnemyDifficulty);
-
             }
             return _playerHealth;
         }

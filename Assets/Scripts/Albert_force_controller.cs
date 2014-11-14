@@ -218,39 +218,44 @@ public class Albert_force_controller : MonoBehaviour
         if (Context.SelectedLetter == "X") { LetterBulletname = "x_projectilePrefab"; }
         if (Context.SelectedLetter == "Y") { LetterBulletname = "y_projectilePrefab"; }
         if (Context.SelectedLetter == "Z") { LetterBulletname = "z_projectilePrefab"; }
-	
 	}
 
+    void updateDirrection_fromKeypressed() {
+        
+        if(  Input.GetKey(KeyCode.UpArrow)) {
 
+            Global_updown = 1f;
 
-	void updateDirrection_fromKeypressed() {
-	
-   if(  Input.GetKey(KeyCode.UpArrow)) {
-	   Global_updown = 1f;
-	   if (Input.GetKey(KeyCode.RightArrow))  { Global_leftright = 1f;  }
-	   if (Input.GetKey(KeyCode.LeftArrow)) { Global_leftright = -1f; }
-   }
-   else
-	   if( Input.GetKey(KeyCode.DownArrow)){
-		
-		   Global_updown = -1f;
-	   }
-	   else
-		   if (Input.GetKey(KeyCode.RightArrow)) {
-			   Global_leftright = 1f;
-			
-		   }
-		   else
-			   if (Input.GetKey(KeyCode.LeftArrow)) {
-				   Global_leftright = -1f;
-			   }
-
-			   else
-			   { 
-				 Global_leftright = 0f;
-				 Global_updown = 0f;
-			   }
-	}
+            if (Input.GetKey(KeyCode.RightArrow))
+            {
+                Global_leftright = 1f;  
+            }
+            if (Input.GetKey(KeyCode.LeftArrow)) 
+            {
+                Global_leftright = -1f; 
+            }
+        }
+        else
+            if( Input.GetKey(KeyCode.DownArrow))
+            {
+                Global_updown = -1f;
+            }
+            else
+                if (Input.GetKey(KeyCode.RightArrow))
+                {
+                    Global_leftright = 1f;
+                }
+                else
+                    if (Input.GetKey(KeyCode.LeftArrow))
+                    {
+                        Global_leftright = -1f;
+                    }
+                    else
+                    { 
+                        Global_leftright = 0f;
+                        Global_updown = 0f;
+                    }
+    }
 
 
 

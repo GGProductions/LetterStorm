@@ -455,9 +455,6 @@ public class HUD : MonoBehaviour {
         // Determine size of inventory "boxes" depending on screen size
         AdjustInventoryDimensions();
 
-        // Font size of letters in inventory boxes
-        InventoryLetterFontSize = InventoryItemBoxHeight * 0.57f;
-
         // Dimensions - CorkBoard for pause menu
         AdjustCorkboardDimensions();
 
@@ -479,7 +476,6 @@ public class HUD : MonoBehaviour {
             {
                 isPaused = false;
                 isInHowToPlayMenu = false;
-
             }
             // If not paused, pause game
             else
@@ -519,6 +515,9 @@ public class HUD : MonoBehaviour {
             InventoryItemBoxHeight = (int)(Screen.width / 40);
             scaleFactorPauseMenuButtons = 1;
         }
+
+        // Font size of letters in inventory boxes
+        InventoryLetterFontSize = InventoryItemBoxHeight * 0.57f;
     }
 
     /// <summary>
@@ -533,6 +532,9 @@ public class HUD : MonoBehaviour {
         CorkBoardDivisionSizeHeight = (CorkBoardHeight - CorkBoardBorderSize * 4) / 2;
     }
 
+    /// <summary>
+    /// Set selected letter from inventory upon keypress
+    /// </summary>
     private void SetSelectedLetterFromKeyPress()
     {
         if (Input.GetKeyDown(KeyCode.A)) { Context.SelectedLetter = "A"; }

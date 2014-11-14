@@ -317,8 +317,7 @@ public class AlbertController2 : MonoBehaviour {
 	/// </summary>
 	void oldupdate()
 	{
-
-
+        // Load in the selected letter for shooting
 		if (Input.GetKeyDown(KeyCode.A)) { LetterBulletname = "a_projectilePrefab"; }
 		if (Input.GetKeyDown(KeyCode.B)) { LetterBulletname = "b_projectilePrefab"; }
 		if (Input.GetKeyDown(KeyCode.C)) { LetterBulletname = "c_projectilePrefab"; }
