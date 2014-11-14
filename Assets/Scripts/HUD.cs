@@ -485,16 +485,6 @@ public class HUD : MonoBehaviour {
                 isPaused = true;
             }
         }
-        
-        /*
-        else if (Input.GetKeyDown(KeyCode.L))
-        {
-            Context.PlayerInventory.AddCollectedLetter("A");
-        }
-        else if (Input.GetKeyDown(KeyCode.K))
-        {
-            Context.PlayerInventory.SubtractCollectedLetter("A");
-        }*/
     }
 
     private void UpdatePlayerStats()
