@@ -16,7 +16,8 @@ namespace GGProductions.LetterStorm.Configuration
         private string _name;
         private string _description;
         private float _gameSpeed = 1.0f;
-        private int _initialLifeCount = 100;
+        private int _initialHealth = 100;
+        private int _damageToPlayerPerHit = 10;
         private int _maxEnemiesOnScreen = 5;
         private float _bossHealthHandicap = 1.0f;
         private bool _enableBossRageMode = true;
@@ -51,11 +52,18 @@ namespace GGProductions.LetterStorm.Configuration
             set { _gameSpeed = value; }
         }
 
-        /// <summary>The number of lives the user starts the first level with.</summary>
-        public int InitialLifeCount
+        /// <summary>The amount of health the player starts the first level with.</summary>
+        public int InitialHealth
         {
-            get { return _initialLifeCount; }
-            set { _initialLifeCount = value; }
+            get { return _initialHealth; }
+            set { _initialHealth = value; }
+        }
+
+        /// <summary>The amount of damage taken by the player when he is hit by a projectile or enemy</summary>
+        public int DamageToPlayerPerHit
+        {
+            get { return _damageToPlayerPerHit; }
+            set { _damageToPlayerPerHit = value; }
         }
 
         /// <summary>The (approximate) maximum number of enemies displayed on the screen simultaneously</summary>
@@ -101,7 +109,8 @@ namespace GGProductions.LetterStorm.Configuration
         /// <param name="name">The name of this difficulty level</param>
         /// <param name="description">The description of this difficulty level</param>
         /// <param name="gameSpeed">The speed at which the screen scrolls and enemies move.  The default value is 1.0</param>
-        /// <param name="initialLifeCount">The number of lives the user starts the first level with</param>
+        /// <param name="initialHealth">The amount of health the player starts the first level with</param>
+        /// <param name="damageToPlayerPerHit">The amount of damage taken by the player when he is hit by a projectile or enemy</param>
         /// <param name="maxEnemiesonScreen">The (approximate) maximum number of enemies displayed on the screen simultaneously</param>
         /// <param name="bossHealthHandicap">
         /// The amount by which the boss's health should be decreased or increased.  
@@ -110,13 +119,14 @@ namespace GGProductions.LetterStorm.Configuration
         /// </param>
         /// <param name="enableBossRageMode">Whether the boss should charge the user when he fires the wrong letter</param>
         public EnemyDifficulty(int id, string name, string description, float gameSpeed, 
-            int initialLifeCount, int maxEnemiesonScreen, float bossHealthHandicap, bool enableBossRageMode)
+            int initialHealth, int damageToPlayerPerHit, int maxEnemiesonScreen, float bossHealthHandicap, bool enableBossRageMode)
         {
             _id = id;
             _name = name;
             _description = description;
             _gameSpeed = gameSpeed;
-            _initialLifeCount = initialLifeCount;
+            _initialHealth = initialHealth;
+            _damageToPlayerPerHit = damageToPlayerPerHit;
             _maxEnemiesOnScreen = maxEnemiesonScreen;
             _bossHealthHandicap = bossHealthHandicap;
             _enableBossRageMode = enableBossRageMode;
