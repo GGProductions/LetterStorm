@@ -582,6 +582,7 @@ public class HUD : MonoBehaviour {
     private void SetSelectedPowerUpFromKeyPress()
     {
         // Set SelectedPowerUp from Context as index of the PlayerInventory.CollectedPowerUpsList
+        if (Input.GetKeyDown(KeyCode.Alpha1)) { }    // Number 1 on top of alphanumeric keyboard, selects the normal ammo
         if (Input.GetKeyDown(KeyCode.Alpha2)) { Context.SelectedPowerUp = 0; }    // Number 2 on top of alphanumeric keyboard, selects first PowerUp
         if (Input.GetKeyDown(KeyCode.Alpha3)) { Context.SelectedPowerUp = 1; }    // Number 3 on top of alphanumeric keyboard, selects second PowerUp
         if (Input.GetKeyDown(KeyCode.Alpha4)) { Context.SelectedPowerUp = 2; }    // Number 4 on top of alphanumeric keyboard, selects third PowerUp

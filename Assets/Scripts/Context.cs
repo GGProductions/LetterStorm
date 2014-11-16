@@ -249,5 +249,12 @@ public class Context : MonoBehaviour
         _word = null;
         _level++;
     }
+
+    public static void ClearStatsNextLevel()
+    {
+        Context.PlayerInventory = new Inventory();
+        Context.DualPencils = new PowerUp("DualPencils");
+        Context.PlayerInventory.CollectedPowerUpsList.Add(Context.DualPencils);
+    }
     #endregion Helper Methods -------------------------------------------------
 }
