@@ -13,7 +13,7 @@ public class CollectibleChar : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		transform.Translate(Vector3.back * 1.2f * Time.deltaTime, Space.World);
-		if (transform.position.z < -6f) Destroy(gameObject);
+		if (transform.position.z < -11f) Destroy(gameObject);
 	}
 
 }

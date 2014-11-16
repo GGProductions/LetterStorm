@@ -1056,6 +1056,10 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5400000, guid: dfcae672710136548a2205cc67ab4e1e, type: 2}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dfcae672710136548a2205cc67ab4e1e, type: 2}
   m_RootGameObject: {fileID: 1107241768}
@@ -1140,7 +1144,8 @@ MonoBehaviour:
   wakBackAnimationClip: {fileID: 7400012, guid: 8b997a999c553154b86f0897df7563b1,
     type: 3}
   throwAnimationClip: {fileID: 7400010, guid: 8b997a999c553154b86f0897df7563b1, type: 3}
-  ProjectilePrefab: {fileID: 160776, guid: 730b8f83c4910f141977590edc85ff31, type: 2}
+  ProjectilePrefab: {fileID: 100000, guid: 92f9d75e3baca6a42a7498aaf56677d0, type: 2}
+  SecondaryProjectilePrefab: {fileID: 0}
   LetterBulletname: 
   LetterMode: 0
 --- !u!136 &1107241771
