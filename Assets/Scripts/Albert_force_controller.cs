@@ -176,8 +176,10 @@ public class Albert_force_controller : MonoBehaviour
                 Transform pencil2 = ProjectileGameObject.transform.GetChild(1);
 
                 // Propel each of the pencil projetiles
-                pencil1.gameObject.rigidbody.AddForce(mytransform.forward * 500.0f);
-                pencil2.gameObject.rigidbody.AddForce(mytransform.forward * 500.0f);
+                pencil1.gameObject.rigidbody.AddForce(new Vector3(-1, 0, 1) * 500.0f);
+                pencil2.gameObject.rigidbody.AddForce(new Vector3(1, 0, 1) * 500.0f);
+                //pencil1.gameObject.rigidbody.AddForce(mytransform.forward * 500.0f);
+                //pencil2.gameObject.rigidbody.AddForce(mytransform.forward * 500.0f);
             }
         }
 		
