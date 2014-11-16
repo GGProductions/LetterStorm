@@ -89,7 +89,7 @@ public class HUD : MonoBehaviour {
 
         // Dimensions - CorkBoard for pause menu
         CorkBoardWidth = CorkBoardTexture.width;//
-        CorkBoardHeight = CorkBoardTexture.height;// * scaleFactorPauseMenuButtons
+        CorkBoardHeight = CorkBoardTexture.height;
         CorkBoardBorderSize = CorkBoardWidth / 15;
         CorkBoardDivisionSizeWidth = (CorkBoardWidth - CorkBoardBorderSize * 4) / 3;
         CorkBoardDivisionSizeHeight = (CorkBoardHeight - CorkBoardBorderSize * 4) / 2;
@@ -109,6 +109,14 @@ public class HUD : MonoBehaviour {
         GUI.Box(new Rect(10, 10, HealthBarLength, 20), "HP: " + CurrentHealth.ToString() + "/" + MaximumHealth.ToString());
         GUI.Box(new Rect(10, 40, 250, 20),"Letters Collected: " + Context.PlayerInventory.TotalCollectedLetters);
         GUI.Box(new Rect(10, 70, 250, 100), "Hint: " + Context.Word.Hint, hintStyle);
+
+        GUI.color = DefaultLetterButtonColor;
+        foreach (PowerUp pUp in Context.PlayerInventory.CollectedPowerUpsList) {
+            if (Context.SelectedPowerUp == 0)
+                GUI.color = SelectedLetterButtonColor;
+            GUI.Box(new Rect(Screen.width - 200, Screen.height / 2, 100, 50), "DualPencils\nCollected: \n" + pUp.Count);
+            GUI.color = DefaultLetterButtonColor;
+        }
         
         DisplayPauseMenu();
         DisplayInventoryWindow();
@@ -468,6 +476,9 @@ public class HUD : MonoBehaviour {
         // Determine which letter is selected based on key presses
         SetSelectedLetterFromKeyPress();
 
+        // Determine which power up is selected based on key press (numeric keys on alphanumeric keyboard)
+        SetSelectedPowerUpFromKeyPress();
+
         // If [Esc] is pressed, pause the game
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -563,6 +574,17 @@ public class HUD : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.X)) { Context.SelectedLetter = "X"; }
         if (Input.GetKeyDown(KeyCode.Y)) { Context.SelectedLetter = "Y"; }
         if (Input.GetKeyDown(KeyCode.Z)) { Context.SelectedLetter = "Z"; }
+    }
+
+    /// <summary>
+    /// Set selected power-up from inventory upon keypress
+    /// </summary>
+    private void SetSelectedPowerUpFromKeyPress()
+    {
+        // Set SelectedPowerUp from Context as index of the PlayerInventory.CollectedPowerUpsList
+        if (Input.GetKeyDown(KeyCode.Alpha2)) { Context.SelectedPowerUp = 0; }    // Number 2 on top of alphanumeric keyboard, selects first PowerUp
+        if (Input.GetKeyDown(KeyCode.Alpha3)) { Context.SelectedPowerUp = 1; }    // Number 3 on top of alphanumeric keyboard, selects second PowerUp
+        if (Input.GetKeyDown(KeyCode.Alpha4)) { Context.SelectedPowerUp = 2; }    // Number 4 on top of alphanumeric keyboard, selects third PowerUp
     }
 
 }

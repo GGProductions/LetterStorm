@@ -47,6 +47,7 @@ public class Albert_force_controller : MonoBehaviour
 
 	private float scaleFactorOfRworth=0.1f;
 	private float OriginalScale = 0.5f;
+
 	enum AlbertState
 	{
 		Playing,
@@ -94,9 +95,8 @@ public class Albert_force_controller : MonoBehaviour
 
 		animation.wrapMode = WrapMode.Once;
 		animation.AddClip(throwAnimationClip, "throwing");
-	}
 
-	
+	}
 
 	/// <summary>
 	/// only deal with checking input form keyboard, and Horizontal axis for tilting albert left to right down for walking backward
@@ -155,29 +155,29 @@ public class Albert_force_controller : MonoBehaviour
 	/// Fire projectile at specified location
 	/// </summary>
 	/// <param name="fromwhere"></param>
-	void fireApencil(Vector3 fromwhere)
+    void fireApencil(Vector3 fromwhere)
 	{
 		// Fire projectile
 		GameObject ProjectileGameObject  = Instantiate(ProjectilePrefab, fromwhere, mytransform.rotation) as GameObject;
 
         if (ProjectileGameObject.transform.name.Equals("PencilPrefab(Clone)"))
         {
-            ProjectileGameObject.rigidbody.AddForce(mytransform.forward * 1000.0f);
+            ProjectileGameObject.rigidbody.AddForce(mytransform.forward * 700.0f);
         }
         else if (ProjectileGameObject.transform.name.Equals("DualPencilPrefab(Clone)"))
         {
             // Make sure Game Object has children (the two pencils)
             if (ProjectileGameObject.transform.childCount > 0)
             {
-                //ProjectileGameObject.rigidbody.AddForce(mytransform.forward * 500.0f);
-
                 // Get the transform of each pencil projectile
                 Transform pencil1 = ProjectileGameObject.transform.GetChild(0);
                 Transform pencil2 = ProjectileGameObject.transform.GetChild(1);
 
                 // Propel each of the pencil projetiles
-                pencil1.gameObject.rigidbody.AddForce(new Vector3(-1, 0, 1) * 500.0f);
-                pencil2.gameObject.rigidbody.AddForce(new Vector3(1, 0, 1) * 500.0f);
+                pencil1.gameObject.rigidbody.AddForce(new Vector3(-0.75f, 0, 1) * 500.0f);
+                pencil2.gameObject.rigidbody.AddForce(new Vector3(0.75f, 0, 1) * 500.0f);
+                //ProjectileGameObject.rigidbody.AddForce(mytransform.forward * 500.0f);
+
                 //pencil1.gameObject.rigidbody.AddForce(mytransform.forward * 500.0f);
                 //pencil2.gameObject.rigidbody.AddForce(mytransform.forward * 500.0f);
             }
@@ -200,7 +200,7 @@ public class Albert_force_controller : MonoBehaviour
 			Albert_explosion = Instantiate(Resources.Load("LettesProjectile/" + LetterBulletname), fromwhere, Quaternion.Euler(-90, 0, 0)) as GameObject;
 			Albert_explosion.GetComponent<LetterProjectileScript>().isactive = true;// I can't change this here
 			Albert_explosion.rigidbody.AddForce(mytransform.forward * 1000.0f);
-			Context.PlayerInventory.take_letterAway(CapitalLetter);
+            Context.PlayerInventory.DecrementLetter(CapitalLetter);
 		}
 	}
 
@@ -365,7 +365,7 @@ public class Albert_force_controller : MonoBehaviour
 		}
 
 
-		//fyi, the pencil collids with albert when he instanciates it 
+		//fyi, the pencil collides with albert when he instantiates it 
 		// did we pickup a letter?
 		if (otherObj.tag != "bossTag" && otherObj.tag != "bossProjectileTag" && otherObj.tag != "enemy" && otherObj.tag != "projectileTag")
 		{
@@ -387,7 +387,6 @@ public class Albert_force_controller : MonoBehaviour
 			char input = otherObj.name[0];
 			Messenger<string>.Broadcast("picked up a letter", otherObj.name);
 			Context.PlayerInventory.AddCollectedLetter(input.ToString().ToUpper());
-
 		}
 		else
 		{
@@ -395,6 +394,10 @@ public class Albert_force_controller : MonoBehaviour
 			// Context.PlayerHealth.decreaseHealth(Context.DefaultPlayerHealthDecreaseFactor);
 		}
 
+        if (otherObj.tag == "dualpencilProjectile")
+        {
+            Context.PlayerInventory.IncrementPowerUp("DualPencils");
+        }
 	}
 
 	IEnumerator doFallanimation() {

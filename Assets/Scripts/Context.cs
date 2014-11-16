@@ -24,6 +24,10 @@ public class Context : MonoBehaviour
     private static int _level = 1;
     private static EnemyDifficulty _enemyDifficulty;
     private static Guid _currentLessonId;
+
+    // Possible Power-Ups
+    private static PowerUp _dualPencils;
+    private static int _selectedPowerUp;
     #endregion Private Variables ------------------------------------------
 
     #region Enums ---------------------------------------------------------
@@ -134,6 +138,7 @@ public class Context : MonoBehaviour
             if (_playerInventory == null)
             {
                 _playerInventory = new Inventory();
+                _playerInventory.CollectedPowerUpsList.Add(DualPencils);
             }
             return _playerInventory; 
         }
@@ -147,6 +152,21 @@ public class Context : MonoBehaviour
     {
         get { return _selectedLetter; }
         set { _selectedLetter = value; }
+    }
+
+    /// <summary>
+    /// Selected power up in inventory
+    /// </summary>
+    public static int SelectedPowerUp
+    {
+        get 
+        {
+            if (_selectedPowerUp == null)
+                _selectedPowerUp = 0;
+
+            return _selectedPowerUp; 
+        }
+        set { _selectedPowerUp = value; }
     }
 
     /// <summary>
@@ -174,6 +194,22 @@ public class Context : MonoBehaviour
     {
         get { return _currentLessonId; }
         set { _currentLessonId = value; }
+    }
+
+    /// <summary>
+    /// Stores the dual pencils powerups collected or used
+    /// </summary>
+    public static PowerUp DualPencils
+    {
+        get
+        {
+            if (_dualPencils == null)
+            {
+                _dualPencils = new PowerUp("DualPencils");
+            }
+            return _dualPencils;
+        }
+        set { _dualPencils = value; }
     }
     #endregion Properties -------------------------------------------------
 
