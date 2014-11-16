@@ -17,7 +17,8 @@ public class Albert_force_controller : MonoBehaviour
 	public AnimationClip throwAnimationClip;
 
 	public GameObject ProjectilePrefab; //I should just put this projectile in /Resources and make this private as well..
-	
+    public GameObject SecondaryProjectilePrefab; //I should just put this projectile in /Resources and make this private as well..
+
 	public string LetterBulletname="";
 	public bool LetterMode = true;
 #endregion
@@ -155,33 +156,33 @@ public class Albert_force_controller : MonoBehaviour
 	/// Fire projectile at specified location
 	/// </summary>
 	/// <param name="fromwhere"></param>
-    void fireApencil(Vector3 fromwhere)
+	void fireApencil(Vector3 fromwhere)
 	{
 		// Fire projectile
 		GameObject ProjectileGameObject  = Instantiate(ProjectilePrefab, fromwhere, mytransform.rotation) as GameObject;
 
-        if (ProjectileGameObject.transform.name.Equals("PencilPrefab(Clone)"))
-        {
-            ProjectileGameObject.rigidbody.AddForce(mytransform.forward * 700.0f);
-        }
-        else if (ProjectileGameObject.transform.name.Equals("DualPencilPrefab(Clone)"))
-        {
-            // Make sure Game Object has children (the two pencils)
-            if (ProjectileGameObject.transform.childCount > 0)
-            {
-                // Get the transform of each pencil projectile
-                Transform pencil1 = ProjectileGameObject.transform.GetChild(0);
-                Transform pencil2 = ProjectileGameObject.transform.GetChild(1);
+		if (ProjectileGameObject.transform.name.Equals("PencilPrefab(Clone)"))
+		{
+			ProjectileGameObject.rigidbody.AddForce(mytransform.forward * 700.0f);
+		}
+		else if (ProjectileGameObject.transform.name.Equals("DualPencilPrefab(Clone)"))
+		{
+			// Make sure Game Object has children (the two pencils)
+			if (ProjectileGameObject.transform.childCount > 0)
+			{
+				// Get the transform of each pencil projectile
+				Transform pencil1 = ProjectileGameObject.transform.GetChild(0);
+				Transform pencil2 = ProjectileGameObject.transform.GetChild(1);
 
-                // Propel each of the pencil projetiles
-                pencil1.gameObject.rigidbody.AddForce(new Vector3(-0.75f, 0, 1) * 500.0f);
-                pencil2.gameObject.rigidbody.AddForce(new Vector3(0.75f, 0, 1) * 500.0f);
-                //ProjectileGameObject.rigidbody.AddForce(mytransform.forward * 500.0f);
+				// Propel each of the pencil projetiles
+				pencil1.gameObject.rigidbody.AddForce(new Vector3(-0.75f, 0, 1) * 500.0f);
+				pencil2.gameObject.rigidbody.AddForce(new Vector3(0.75f, 0, 1) * 500.0f);
+				//ProjectileGameObject.rigidbody.AddForce(mytransform.forward * 500.0f);
 
-                //pencil1.gameObject.rigidbody.AddForce(mytransform.forward * 500.0f);
-                //pencil2.gameObject.rigidbody.AddForce(mytransform.forward * 500.0f);
-            }
-        }
+				//pencil1.gameObject.rigidbody.AddForce(mytransform.forward * 500.0f);
+				//pencil2.gameObject.rigidbody.AddForce(mytransform.forward * 500.0f);
+			}
+		}
 		
 	}
 
@@ -200,7 +201,7 @@ public class Albert_force_controller : MonoBehaviour
 			Albert_explosion = Instantiate(Resources.Load("LettesProjectile/" + LetterBulletname), fromwhere, Quaternion.Euler(-90, 0, 0)) as GameObject;
 			Albert_explosion.GetComponent<LetterProjectileScript>().isactive = true;// I can't change this here
 			Albert_explosion.rigidbody.AddForce(mytransform.forward * 1000.0f);
-            Context.PlayerInventory.DecrementLetter(CapitalLetter);
+			Context.PlayerInventory.DecrementLetter(CapitalLetter);
 		}
 	}
 
@@ -394,10 +395,12 @@ public class Albert_force_controller : MonoBehaviour
 			// Context.PlayerHealth.decreaseHealth(Context.DefaultPlayerHealthDecreaseFactor);
 		}
 
-        if (otherObj.tag == "dualpencilProjectile")
-        {
-            Context.PlayerInventory.IncrementPowerUp("DualPencils");
-        }
+		if (otherObj.tag == "dualpencilProjectile")
+		{
+			Context.PlayerInventory.IncrementPowerUp("DualPencils");
+            Destroy(otherObj);
+
+		}
 	}
 
 	IEnumerator doFallanimation() {

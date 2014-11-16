@@ -59,7 +59,8 @@ public class Boss_3d_wordGen : MonoBehaviour {
        fetchWordandConstruct();
         wordGenerated_index_of_currLetterTosolve = 0;
         HowmanyChildrenHave_Boss_Canon_script = findHowMany_Cannons();
-        // Debug.Log("I have"+ findHowMany_Cannons()+ "cannons");
+
+        Debug.Log("I have" + HowmanyChildrenHave_Boss_Canon_script + "cannons");
         findEyes();
 
     }
@@ -119,7 +120,6 @@ public class Boss_3d_wordGen : MonoBehaviour {
     {
         NumberOfGunsDestroyed++;
         if (NumberOfGunsDestroyed == 2) OnMyGunsDied();
-
     }
 
     void Update()
@@ -168,14 +168,17 @@ public class Boss_3d_wordGen : MonoBehaviour {
     /// </summary>
     /// <param name="otherObj"></param>
     void OnTriggerEnter(Collider otherObj){
+        Debug.Log("Collison");
 
-
-        if (NumberOfGunsDestroyed == 2){
+        if (NumberOfGunsDestroyed == HowmanyChildrenHave_Boss_Canon_script)
+        {
             if (otherObj.tag == "letterProjectile") {
+                Debug.Log("Collison with letter");
                 if (otherObj.GetComponent<LetterProjectileScript>().isactive){
+                    Debug.Log("Collison with ACTIVE letter");
                     char input = otherObj.name[0];
                     if (input == Context.Word.Text[wordGenerated_index_of_currLetterTosolve]) {
-                       // Debug.Log("ITS A MATCH)");
+                        Debug.Log("ITS A MATCH)");
                         if (wordGenerated_index_of_currLetterTosolve < Context.Word.Text.Length + 1) {
                             List3dLetterGO[wordGenerated_index_of_currLetterTosolve].GetComponent<MeshRenderer>().enabled = enabled;
                             wordGenerated_index_of_currLetterTosolve++;
@@ -192,6 +195,7 @@ public class Boss_3d_wordGen : MonoBehaviour {
                     }
                     else
                         if (input != Context.Word.Text[wordGenerated_index_of_currLetterTosolve]) {
+
                             OnWrongCollision();
                             rightEyescript.DoFlashEye();
                             leftEyescript.DoFlashEye();

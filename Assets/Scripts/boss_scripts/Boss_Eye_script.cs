@@ -34,7 +34,7 @@ public class Boss_Eye_script : MonoBehaviour {
     void Update()
     {
         if(switchon)Debug.Log( switchon.ToString() + "EEEEEE" );
-        Debug.Log(switchon.ToString());
+     //   Debug.Log(switchon.ToString());
 
         //locating Albert must be done continuously 
         player_location_transform = GameObject.Find("AlbertPlayerPrefab").transform.position;
