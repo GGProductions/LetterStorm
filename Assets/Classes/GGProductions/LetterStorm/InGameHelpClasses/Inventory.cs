@@ -7,6 +7,7 @@ public class Inventory
     // Private variables representing the collection of collectible letters 
     public CollectedLetter A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z;
     private int _TotalCollectedLetters;
+    private ArrayList _CollectedPowerUpsList;
     #endregion Private Variables ------------------------------------------
 
     #region Properties ----------------------------------------------------
@@ -22,6 +23,23 @@ public class Inventory
         set
         {
             _TotalCollectedLetters = value;
+        }
+    }
+
+    /// <summary>
+    /// List of collected powerups
+    /// </summary>
+    public ArrayList CollectedPowerUpsList
+    {
+        get
+        {
+            if (_CollectedPowerUpsList == null)
+                _CollectedPowerUpsList = new ArrayList();
+            return _CollectedPowerUpsList;
+        }
+        set
+        {
+            _CollectedPowerUpsList = value;
         }
     }
 
@@ -242,7 +260,7 @@ public class Inventory
     /// <summary>
     /// Decrements count of letter
     /// </summary>
-    private void DecrementLetter(string letter)
+    public void DecrementLetter(string letter)
     {
         switch (letter)
         {
@@ -355,6 +373,59 @@ public class Inventory
         }
     }
 
+    /// <summary>
+    /// Adds a powerup to the inventory and update the total letters count
+    /// </summary>
+    /// <param name="powerUpName">Name of the PowerUp that is to be incremented</param>
+    public void IncrementPowerUp(string powerUpName)
+    {
+        foreach (PowerUp pUp in _CollectedPowerUpsList)
+        {
+            if (pUp.Name.Equals(powerUpName))
+            {
+                pUp.IncrementCount();
+                return;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Subtracts a powerup to the inventory and update the total letters count
+    /// </summary>
+    /// <param name="powerUpName">Name of the PowerUp that is to be decremented</param>
+    public void DecrementPowerUp(string powerUpName)
+    {
+        foreach (PowerUp pUp in _CollectedPowerUpsList)
+        {
+            if (pUp.Name.Equals(powerUpName))
+            {
+                if (pUp.Count - 1 < 0)
+                    pUp.Count = 0;
+                else
+                    pUp.DecrementCount();
+
+                return;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Adds a powerup to the inventory and update the total letters count
+    /// </summary>
+    /// <param name="powerUpName">Name of the PowerUp that is to be incremented</param>
+    public PowerUp GetPowerUpAtIndex(int index)
+    {
+        int ii = 0;
+        foreach (PowerUp pUp in _CollectedPowerUpsList)
+        {
+            if (ii == index)
+            {
+                return pUp;
+            }
+        }
+        return null;
+    }
+
     #endregion Functions ------------------------------------------
 
     #region Constructors --------------------------------------------------
@@ -390,13 +461,8 @@ public class Inventory
         X = new CollectedLetter("X");
         Y = new CollectedLetter("Y");
         Z = new CollectedLetter("Z");
+        CollectedPowerUpsList = new ArrayList();
     }
     #endregion Constructors -----------------------------------------------
 
-
-    public void take_letterAway(string letter) { 
-       DecrementLetter( letter);
-    }
-
-  
 }

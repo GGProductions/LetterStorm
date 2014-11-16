@@ -380,7 +380,7 @@ public class AlbertController2 : MonoBehaviour {
 						poof = Instantiate(Resources.Load("LettesProjectile/" + LetterBulletname), position, Quaternion.Euler(-90, 0, 0)) as GameObject;
 						poof.GetComponent<LetterProjectileScript>().isactive = true;// I can't change this here
 						poof.rigidbody.AddForce(transform.forward * 1000.0f);
-						Context.PlayerInventory.take_letterAway(LettercChosen);
+						Context.PlayerInventory.DecrementLetter(LettercChosen);
 					}
 
 
