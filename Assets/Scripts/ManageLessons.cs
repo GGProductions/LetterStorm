@@ -497,7 +497,7 @@ public class ManageLessons : MonoBehaviour
     private void CreateMainMenuBtn()
     {
         // Create the button used to create a new lesson.  If it was clicked...
-        if (GUI.Button(new Rect(Screen.width - 200, Screen.height - 90, 150, 40), "Main Menu", _mainMenuButtonStyle))
+        if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height - 90, 150, 40), "Main Menu", _mainMenuButtonStyle))
         {
             GameStateUtilities.Save(playerData);
 
