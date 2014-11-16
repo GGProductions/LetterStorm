@@ -15,6 +15,7 @@ public class Context : MonoBehaviour
     // Create the private variables that the this class's 
     //  properties will use to store their data
     private static LessonBook _curriculum;
+    private static ScoreKeeper _currentScore;
     private static int? _playerLives = null;
     private static Health _playerHealth;
     private static Inventory _playerInventory;
@@ -194,6 +195,21 @@ public class Context : MonoBehaviour
     {
         get { return _currentLessonId; }
         set { _currentLessonId = value; }
+    }
+
+    /// <summary>
+    /// Keeps track of all score points accumulated by a user in one playthrough
+    /// </summary>
+    public static ScoreKeeper CurrentScore
+    {
+        get
+        {
+            if (_currentScore == null)
+            {
+                _currentScore = new ScoreKeeper();
+            }
+            return _currentScore;
+        }
     }
 
     /// <summary>
