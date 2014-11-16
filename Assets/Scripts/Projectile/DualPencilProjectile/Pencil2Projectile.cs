@@ -23,7 +23,7 @@ public class Pencil2Projectile : MonoBehaviour
     void Update()
     {
         this.transform.Rotate(new Vector3(0, 0, 2) * currentRotationSpeed * -1 * Time.deltaTime);
-        if (transform.position.z > 20)
+        if (transform.position.z < -10 || transform.position.z > 7 || transform.position.x < -10 || transform.position.x > 10)
             Destroy(gameObject);
     }
 

@@ -152,36 +152,34 @@ public class Albert_force_controller : MonoBehaviour
 	}
 
 	/// <summary>
-	/// instatciate the pecnist at locatoin
+	/// Fire projectile at specified location
 	/// </summary>
 	/// <param name="fromwhere"></param>
 	void fireApencil(Vector3 fromwhere)
 	{
 		// Fire projectile
-		GameObject GO  = Instantiate(ProjectilePrefab, fromwhere, mytransform.rotation) as GameObject;
+		GameObject ProjectileGameObject  = Instantiate(ProjectilePrefab, fromwhere, mytransform.rotation) as GameObject;
 
-		GO.rigidbody.AddForce(mytransform.forward * 500.0f);
-	//	Transform root = GO.transform.GetChild(0);
-	//	Transform root2 = GO.transform.GetChild(1);
-		//root.gameObject.rigidbody.AddForce(mytransform.forward * 100.0f);
-		//root2.gameObject.rigidbody.AddForce(mytransform.forward * 100.0f);
+        if (ProjectileGameObject.transform.name.Equals("PencilPrefab(Clone)"))
+        {
+            ProjectileGameObject.rigidbody.AddForce(mytransform.forward * 1000.0f);
+        }
+        else if (ProjectileGameObject.transform.name.Equals("DualPencilPrefab(Clone)"))
+        {
+            // Make sure Game Object has children (the two pencils)
+            if (ProjectileGameObject.transform.childCount > 0)
+            {
+                //ProjectileGameObject.rigidbody.AddForce(mytransform.forward * 500.0f);
 
-		/*
-	  //  Transform
+                // Get the transform of each pencil projectile
+                Transform pencil1 = ProjectileGameObject.transform.GetChild(0);
+                Transform pencil2 = ProjectileGameObject.transform.GetChild(1);
 
-		if (GO.rigidbody != null)
-		{
-
-
-			//Debug.Log("YO");
-			GO.rigidbody.AddForce(mytransform.forward * 1000.0f);
-		}
-		else
-		{
-
-			
-		}
-		*/
+                // Propel each of the pencil projetiles
+                pencil1.gameObject.rigidbody.AddForce(mytransform.forward * 500.0f);
+                pencil2.gameObject.rigidbody.AddForce(mytransform.forward * 500.0f);
+            }
+        }
 		
 	}
 
@@ -192,21 +190,16 @@ public class Albert_force_controller : MonoBehaviour
 	/// <param name="input"></param>
 	void fireAletter(Vector3 fromwhere, char input)
 	{
-		
 		string CapitalLetter = input.ToString().ToUpper();
-
 
 		Debug.Log("fiering a letter= " + CapitalLetter);
 		if (Context.PlayerInventory.GetLetterCount(CapitalLetter) > 0)
-	//		if (true)
-
 		{
 			Albert_explosion = Instantiate(Resources.Load("LettesProjectile/" + LetterBulletname), fromwhere, Quaternion.Euler(-90, 0, 0)) as GameObject;
 			Albert_explosion.GetComponent<LetterProjectileScript>().isactive = true;// I can't change this here
 			Albert_explosion.rigidbody.AddForce(mytransform.forward * 1000.0f);
 			Context.PlayerInventory.take_letterAway(CapitalLetter);
 		}
-
 	}
 
 

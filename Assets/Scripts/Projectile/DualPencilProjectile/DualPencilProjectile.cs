@@ -17,6 +17,8 @@ public class DualPencilProjectile : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
+        if (this.transform.childCount <= 0)
+            Destroy(gameObject);
         //Pencil1.Rotate(new Vector3(0, 0, 2) * 20f * Time.deltaTime);
         //Pencil2.Rotate(new Vector3(0, 0, 2) * 20f * Time.deltaTime);
 	}
