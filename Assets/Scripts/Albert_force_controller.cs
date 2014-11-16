@@ -158,31 +158,35 @@ public class Albert_force_controller : MonoBehaviour
 	/// <param name="fromwhere"></param>
 	void fireApencil(Vector3 fromwhere)
 	{
-		// Fire projectile
-		GameObject ProjectileGameObject  = Instantiate(ProjectilePrefab, fromwhere, mytransform.rotation) as GameObject;
+        if (Context.PlayerInventory.HasPowerUp("DualPencils") && 
+            Context.PlayerInventory.DualPencil.HasExpired() == false)
+        {
+            // Fire dual pencil projectile
+            GameObject ProjectileGameObject = Instantiate(SecondaryProjectilePrefab, fromwhere, mytransform.rotation) as GameObject;
 
-		if (ProjectileGameObject.transform.name.Equals("PencilPrefab(Clone)"))
-		{
-			ProjectileGameObject.rigidbody.AddForce(mytransform.forward * 700.0f);
-		}
-		else if (ProjectileGameObject.transform.name.Equals("DualPencilPrefab(Clone)"))
-		{
-			// Make sure Game Object has children (the two pencils)
-			if (ProjectileGameObject.transform.childCount > 0)
-			{
-				// Get the transform of each pencil projectile
-				Transform pencil1 = ProjectileGameObject.transform.GetChild(0);
-				Transform pencil2 = ProjectileGameObject.transform.GetChild(1);
+            // Make sure Game Object has children (the two pencils)
+            if (ProjectileGameObject.transform.childCount > 0)
+            {
+                // Get the transform of each pencil projectile
+                Transform pencil1 = ProjectileGameObject.transform.GetChild(0);
+                Transform pencil2 = ProjectileGameObject.transform.GetChild(1);
 
-				// Propel each of the pencil projetiles
-				pencil1.gameObject.rigidbody.AddForce(new Vector3(-0.75f, 0, 1) * 500.0f);
-				pencil2.gameObject.rigidbody.AddForce(new Vector3(0.75f, 0, 1) * 500.0f);
-				//ProjectileGameObject.rigidbody.AddForce(mytransform.forward * 500.0f);
+                // Propel each of the pencil projetiles
+                pencil1.gameObject.rigidbody.AddForce(new Vector3(-0.75f, 0, 1) * 500.0f);
+                pencil2.gameObject.rigidbody.AddForce(new Vector3(0.75f, 0, 1) * 500.0f);
+                //ProjectileGameObject.rigidbody.AddForce(mytransform.forward * 500.0f);
 
-				//pencil1.gameObject.rigidbody.AddForce(mytransform.forward * 500.0f);
-				//pencil2.gameObject.rigidbody.AddForce(mytransform.forward * 500.0f);
-			}
-		}
+                //pencil1.gameObject.rigidbody.AddForce(mytransform.forward * 500.0f);
+                //pencil2.gameObject.rigidbody.AddForce(mytransform.forward * 500.0f);
+            }
+        }
+        else
+        {
+            // Fire single pencil projectile
+            GameObject ProjectileGameObject = Instantiate(ProjectilePrefab, fromwhere, mytransform.rotation) as GameObject;
+
+            ProjectileGameObject.rigidbody.AddForce(mytransform.forward * 700.0f);
+        }
 		
 	}
 

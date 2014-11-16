@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Linq;
+using System.Collections.Generic;
+using System;
 
 public class Inventory
 {
@@ -7,7 +10,7 @@ public class Inventory
     // Private variables representing the collection of collectible letters 
     public CollectedLetter A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z;
     private int _TotalCollectedLetters;
-    private ArrayList _CollectedPowerUpsList;
+    private List<PowerUp> _CollectedPowerUpsList;
     #endregion Private Variables ------------------------------------------
 
     #region Properties ----------------------------------------------------
@@ -29,12 +32,12 @@ public class Inventory
     /// <summary>
     /// List of collected powerups
     /// </summary>
-    public ArrayList CollectedPowerUpsList
+    public List<PowerUp> CollectedPowerUpsList
     {
         get
         {
             if (_CollectedPowerUpsList == null)
-                _CollectedPowerUpsList = new ArrayList();
+                _CollectedPowerUpsList = new List<PowerUp>();
             return _CollectedPowerUpsList;
         }
         set
@@ -43,6 +46,17 @@ public class Inventory
         }
     }
 
+    /// <summary>
+    /// Get the DualPencil powerup
+    /// </summary>
+    public PowerUp DualPencil
+    {
+        get
+        {
+            Debug.Log("Getting Dual Pencil");
+            return _CollectedPowerUpsList.First(p => (p.Name.IndexOf("DualPencils", System.StringComparison.OrdinalIgnoreCase) >= 0));
+        }
+    }
     #endregion Properties -------------------------------------------------
 
     #region Functions ---------------------------------------------
@@ -383,7 +397,16 @@ public class Inventory
         {
             if (pUp.Name.Equals(powerUpName))
             {
-                pUp.IncrementCount();
+                // Set the Dual Pencil powerup to expire after 10 seconds
+                if (pUp.Name.IndexOf("DualPencils", System.StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+                    Debug.Log("Setting expiration time");
+                    pUp.SetExpireTime(10);
+                }
+                else
+                {
+                    pUp.IncrementCount();
+                }
                 return;
             }
         }
@@ -426,6 +449,15 @@ public class Inventory
         return null;
     }
 
+    /// <summary>
+    /// Check if the inventory contains the named powerup
+    /// </summary>
+    /// <param name="powerUpName">The name of the powerup to look for</param>
+    public bool HasPowerUp(string powerUpName)
+    {
+        Debug.Log("Checking for powerup");
+        return _CollectedPowerUpsList.Exists(p => p.Name.IndexOf(powerUpName, System.StringComparison.OrdinalIgnoreCase) >= 0);
+    }
     #endregion Functions ------------------------------------------
 
     #region Constructors --------------------------------------------------
@@ -461,7 +493,7 @@ public class Inventory
         X = new CollectedLetter("X");
         Y = new CollectedLetter("Y");
         Z = new CollectedLetter("Z");
-        CollectedPowerUpsList = new ArrayList();
+        CollectedPowerUpsList = new List<PowerUp>();
     }
     #endregion Constructors -----------------------------------------------
 

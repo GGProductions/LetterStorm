@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class PowerUp
 {
@@ -7,6 +8,7 @@ public class PowerUp
     private string _name;
     private int _count;
     private bool _isEmpty;
+    private DateTime _expireAt;
     #endregion Private Variables ------------------------------------------
 
     #region Properties ----------------------------------------------------
@@ -53,6 +55,15 @@ public class PowerUp
                 return false;
         }
     }
+
+    /// <summary>
+    /// The time and date the powerup should expire
+    /// </summary>
+    public DateTime ExpireAt
+    {
+        get { return _expireAt; }
+        set { _expireAt = value; }
+    }
     #endregion Properties -------------------------------------------------
 
     #region Constructors --------------------------------------------------
@@ -97,5 +108,27 @@ public class PowerUp
             _count = 0;
         else
             _count--;
+    }
+
+    /// <summary>
+    /// Check if the powerup has expired
+    /// </summary>
+    public bool HasExpired()
+    {
+        if (_expireAt != null && _expireAt != DateTime.MinValue)
+        {
+            return (_expireAt < DateTime.Now);
+        }
+        else 
+            return true;
+    }
+
+    /// <summary>
+    /// Set the time at which the powerup should expire
+    /// </summary>
+    /// <param name="secondsFromNow">The number of seconds from now the powerup should expire</param>
+    public void SetExpireTime(int secondsFromNow)
+    {
+        _expireAt = DateTime.Now.AddSeconds(secondsFromNow);
     }
 }
