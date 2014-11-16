@@ -109,6 +109,7 @@ public class HUD : MonoBehaviour {
         GUI.Box(new Rect(10, 10, HealthBarLength, 20), "HP: " + CurrentHealth.ToString() + "/" + MaximumHealth.ToString());
         GUI.Box(new Rect(10, 40, 250, 20),"Letters Collected: " + Context.PlayerInventory.TotalCollectedLetters);
         GUI.Box(new Rect(10, 70, 250, 100), "Hint: " + Context.Word.Hint, hintStyle);
+        GUI.Box(new Rect(Screen.width - 170, 10, 150, 20), "Score: " + Context.CurrentScore.Score);
 
         GUI.color = DefaultLetterButtonColor;
         foreach (PowerUp pUp in Context.PlayerInventory.CollectedPowerUpsList) {

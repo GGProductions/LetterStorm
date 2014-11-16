@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using GGProductions.LetterStorm.InGameHelpClasses;
 
 
 [RequireComponent(typeof(Rigidbody))]
@@ -199,7 +200,7 @@ public class Albert_force_controller : MonoBehaviour
 	{
 		string CapitalLetter = input.ToString().ToUpper();
 
-		Debug.Log("fiering a letter= " + CapitalLetter);
+	//	Debug.Log("fiering a letter= " + CapitalLetter);
 		if (Context.PlayerInventory.GetLetterCount(CapitalLetter) > 0)
 		{
 			Albert_explosion = Instantiate(Resources.Load("LettesProjectile/" + LetterBulletname), fromwhere, Quaternion.Euler(-90, 0, 0)) as GameObject;
@@ -380,6 +381,10 @@ public class Albert_force_controller : MonoBehaviour
 				Messenger<string>.Broadcast("picked up a letter", otherObj.name);   // Nabil: Added this so I can remove letters from my dict whenever Albert has picked them up to keep from overspawning
 				// letters that he needs but already has -Paul
 				Context.PlayerInventory.AddCollectedLetter(otherObj.name);
+
+                // Grant the user points for collecting the letter
+                Context.CurrentScore.Increase(ScoreKeeper.PlayerAchievement.CollectLetter);
+
 				GameObject go = otherObj.gameObject;
 				Destroy(go);
 			}

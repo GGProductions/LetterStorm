@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using GGProductions.LetterStorm.Data;
 using GGProductions.LetterStorm.Data.Collections;
+using GGProductions.LetterStorm.InGameHelpClasses;
 
 public class Boss_3d_wordGen : MonoBehaviour {
 
@@ -168,17 +169,17 @@ public class Boss_3d_wordGen : MonoBehaviour {
     /// </summary>
     /// <param name="otherObj"></param>
     void OnTriggerEnter(Collider otherObj){
-        Debug.Log("Collison");
+       // Debug.Log("Collison");
 
         if (NumberOfGunsDestroyed == HowmanyChildrenHave_Boss_Canon_script)
         {
             if (otherObj.tag == "letterProjectile") {
-                Debug.Log("Collison with letter");
+ //               Debug.Log("Collison with letter");
                 if (otherObj.GetComponent<LetterProjectileScript>().isactive){
-                    Debug.Log("Collison with ACTIVE letter");
+   //                 Debug.Log("Collison with ACTIVE letter");
                     char input = otherObj.name[0];
                     if (input == Context.Word.Text[wordGenerated_index_of_currLetterTosolve]) {
-                        Debug.Log("ITS A MATCH)");
+     //                   Debug.Log("ITS A MATCH)");
                         if (wordGenerated_index_of_currLetterTosolve < Context.Word.Text.Length + 1) {
                             List3dLetterGO[wordGenerated_index_of_currLetterTosolve].GetComponent<MeshRenderer>().enabled = enabled;
                             wordGenerated_index_of_currLetterTosolve++;
@@ -188,6 +189,10 @@ public class Boss_3d_wordGen : MonoBehaviour {
                             Destroy(otherObj.gameObject);
                         }
                         if (wordGenerated_index_of_currLetterTosolve == Context.Word.Text.Length) {
+
+                            // Grant the user points for defeating the boss
+                            Context.CurrentScore.Increase(ScoreKeeper.PlayerAchievement.DefeatBoss);
+
                             Context.PrepareForNextLevel();
                             //Fade out boss coroutine 
                             Application.LoadLevel(2);
