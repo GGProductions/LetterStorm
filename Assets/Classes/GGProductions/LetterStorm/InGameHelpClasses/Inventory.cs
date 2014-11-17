@@ -53,7 +53,7 @@ public class Inventory
     {
         get
         {
-            Debug.Log("Getting Dual Pencil");
+       //     Debug.Log("Getting Dual Pencil");
             return _CollectedPowerUpsList.First(p => (p.Name.IndexOf("DualPencils", System.StringComparison.OrdinalIgnoreCase) >= 0));
         }
     }
@@ -455,7 +455,7 @@ public class Inventory
     /// <param name="powerUpName">The name of the powerup to look for</param>
     public bool HasPowerUp(string powerUpName)
     {
-        Debug.Log("Checking for powerup");
+  //      Debug.Log("Checking for powerup");
         return _CollectedPowerUpsList.Exists(p => p.Name.IndexOf(powerUpName, System.StringComparison.OrdinalIgnoreCase) >= 0);
     }
     #endregion Functions ------------------------------------------

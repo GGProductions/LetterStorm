@@ -94,8 +94,8 @@ public class Boss_Motion_animation : MonoBehaviour {
 		timeElapsed += Time.deltaTime;
 
 		float factor = Mathf.Cos(timeElapsed);
-        transform.Translate(Vector3.right * (factor / 20) * Time.timeScale, Space.World);
-	    transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+		transform.Translate(Vector3.right * (factor / 20) * Time.timeScale, Space.World);
+		transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 
 		if(switchon)
 		animation.CrossFade("curl");

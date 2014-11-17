@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using GGProductions.LetterStorm.InGameHelpClasses;
 
 public class Boss_Cannon_script : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class Boss_Cannon_script : MonoBehaviour
 	/// damp = 3.0f ----> medium  mode , medium lag 
 	/// damp = 10f ----> Hard  mode , very short lag,  
 	/// </summary>
-   public float cannonAngleDamp = 3f; //med
+   public float cannonAngleDamp = 3.5f; //med
 
 	#endregion
 
@@ -92,6 +93,9 @@ public class Boss_Cannon_script : MonoBehaviour
 			bossWordGenScript.AcannonHasDied();
 			GameObject go = Instantiate(Resources.Load("Explosions/smallsmoke"),
 										  myparentBone.transform.position, Quaternion.Euler(90, 0, 0)) as GameObject;
+
+			// Grant the user points for defeating the part of the boss
+			Context.CurrentScore.Increase(ScoreKeeper.PlayerAchievement.DefeatBossPart);
 
 			go.transform.parent = myparentBone;
 			Destroy(gameObject);
