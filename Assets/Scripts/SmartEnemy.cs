@@ -14,7 +14,7 @@ public class SmartEnemy : Enemy {
         reachedWaypoint = false;
         timeElapsed = 0;
         zDestination = Random.Range(1f, 3f);
-        factorDivisor = Random.Range(8, 14);
+        factorDivisor = Random.Range(12, 20);
 	}
 	
 	// Update is called once per frame
@@ -45,7 +45,7 @@ public class SmartEnemy : Enemy {
 
     private void BackMove(float atm)
     {
-        timeElapsed += Time.deltaTime;
+        //timeElapsed += Time.deltaTime;
 
         if (reachedWaypoint)
         {
@@ -61,7 +61,7 @@ public class SmartEnemy : Enemy {
     }
     private void LeftMove(float atm)
     {
-        timeElapsed += Time.deltaTime;
+        //timeElapsed += Time.deltaTime;
 
         if (reachedWaypoint)
         {
@@ -78,7 +78,7 @@ public class SmartEnemy : Enemy {
     }
     private void RightMove(float atm)
     {
-        timeElapsed += Time.deltaTime;
+        //timeElapsed += Time.deltaTime;
 
         if (reachedWaypoint)
         {
@@ -87,6 +87,7 @@ public class SmartEnemy : Enemy {
         else if (transform.position.z <= zDestination)
         {
             reachedWaypoint = true;
+
         }
         else
         {
@@ -95,7 +96,7 @@ public class SmartEnemy : Enemy {
     }
     private void SinMove(float atm)
     {
-        timeElapsed += Time.deltaTime;
+        //timeElapsed += Time.deltaTime;
 
         if (reachedWaypoint)
         {
@@ -104,6 +105,7 @@ public class SmartEnemy : Enemy {
         else if (transform.position.z <= zDestination)
         {
             reachedWaypoint = true;
+
         }
         else
         {
@@ -113,8 +115,12 @@ public class SmartEnemy : Enemy {
 
     private void WaypointReached()
     {
-        float factor = Mathf.Cos(timeElapsed);
-        transform.Translate(Vector3.right * (factor / factorDivisor) * Time.timeScale, Space.World);
+        timeElapsed += Time.deltaTime;
+        //Debug.Log("TimeElapsed: " + timeElapsed);
+        float factor = Mathf.Cos(timeElapsed * 0.5f * Mathf.PI);
+
+        Debug.Log("Factor: " + factor);
+        transform.Translate(Vector3.right * (factor / factorDivisor), Space.World);
         transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
     }
 }
