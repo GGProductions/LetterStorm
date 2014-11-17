@@ -171,4 +171,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backgroundTexture: {fileID: 2800000, guid: f5f71946a4b2b464d8f59ec125887c0c, type: 3}
+  photoTexture: {fileID: 2800000, guid: 01baea6d5e98f4059a8c1a3620db1b29, type: 3}
   titleTexture: {fileID: 2800000, guid: ecb47d7348aee4c59902f2cb3b73085d, type: 3}
