@@ -3,24 +3,36 @@ using System.Collections;
 
 public class SmartEnemy : Enemy {
 
+    public GameObject Projectile;
     private float timeElapsed;
     private float zDestination;
     private bool reachedWaypoint;
     private int factorDivisor;
+    private Vector3 playerLoc;
+    private Quaternion aim;
+    private Transform shooter;
     
+
 	// Use this for initialization
 	void Start () {
         base.Start();
         reachedWaypoint = false;
         timeElapsed = 0;
-        zDestination = Random.Range(1f, 3f);
+        zDestination = Random.Range(1f, 4.5f);
         factorDivisor = Random.Range(12, 20);
+        shooter = transform.Find("SmartEnemyShooter");
 	}
 	
 	// Update is called once per frame
-	/*void Update () {
-    
-	}*/
+	void Update () {
+        base.Update();
+        playerLoc = GameObject.Find("AlbertPlayerPrefab").transform.position;
+        aim = Quaternion.LookRotation(playerLoc - transform.position);
+        shooter.rotation = Quaternion.Slerp(transform.rotation, aim, Time.deltaTime);
+        
+
+
+	}
 
     public override void findPath(float atm)
     {

@@ -142,6 +142,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &100018
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400018}
+  - 114: {fileID: 11400004}
+  m_Layer: 0
+  m_Name: SmartEnemyShooter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &400000
 Transform:
   m_ObjectHideFlags: 1
@@ -156,6 +172,7 @@ Transform:
   - {fileID: 400006}
   - {fileID: 400002}
   m_Father: {fileID: 400012}
+  m_RootOrder: 0
 --- !u!4 &400002
 Transform:
   m_ObjectHideFlags: 1
@@ -167,6 +184,7 @@ Transform:
   m_LocalScale: {x: .999999881, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400000}
+  m_RootOrder: 2
 --- !u!4 &400004
 Transform:
   m_ObjectHideFlags: 1
@@ -178,6 +196,7 @@ Transform:
   m_LocalScale: {x: .999999881, y: .999999881, z: .999999821}
   m_Children: []
   m_Father: {fileID: 400006}
+  m_RootOrder: 0
 --- !u!4 &400006
 Transform:
   m_ObjectHideFlags: 1
@@ -190,6 +209,7 @@ Transform:
   m_Children:
   - {fileID: 400004}
   m_Father: {fileID: 400000}
+  m_RootOrder: 1
 --- !u!4 &400008
 Transform:
   m_ObjectHideFlags: 1
@@ -201,6 +221,7 @@ Transform:
   m_LocalScale: {x: 1, y: .999999821, z: .99999994}
   m_Children: []
   m_Father: {fileID: 400010}
+  m_RootOrder: 0
 --- !u!4 &400010
 Transform:
   m_ObjectHideFlags: 1
@@ -213,6 +234,7 @@ Transform:
   m_Children:
   - {fileID: 400008}
   m_Father: {fileID: 400000}
+  m_RootOrder: 0
 --- !u!4 &400012
 Transform:
   m_ObjectHideFlags: 1
@@ -225,6 +247,7 @@ Transform:
   m_Children:
   - {fileID: 400000}
   m_Father: {fileID: 400016}
+  m_RootOrder: 1
 --- !u!4 &400014
 Transform:
   m_ObjectHideFlags: 1
@@ -236,6 +259,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400016}
+  m_RootOrder: 0
 --- !u!4 &400016
 Transform:
   m_ObjectHideFlags: 1
@@ -243,12 +267,26 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100016}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.88751209, y: -1, z: 0}
+  m_LocalPosition: {x: .163799763, y: -.649999976, z: 3.09715343}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400014}
   - {fileID: 400012}
+  - {fileID: 400018}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!4 &400018
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100018}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400016}
+  m_RootOrder: 2
 --- !u!54 &5400000
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -317,6 +355,20 @@ MonoBehaviour:
   MinSpeed: 4
   MaxSpeed: 10
   Path: 0
+  Projectile: {fileID: 0}
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ca8ccc4554ee3545a032bc077451168, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theShot: {fileID: 100000, guid: 4372a206ca7c383448f007ce9b0e0140, type: 2}
+  shotDelay: 1
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -353,9 +405,8 @@ SkinnedMeshRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
   m_SortingLayerID: 0
+  m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
