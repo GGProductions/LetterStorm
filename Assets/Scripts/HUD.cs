@@ -55,6 +55,7 @@ public class HUD : MonoBehaviour {
 
     // If game is paused or not paused
     private bool isPaused;
+    private bool isPlayingBGM;
     private bool isInHowToPlayMenu;
     #endregion Private Variables ------------------------------------------
 
@@ -67,6 +68,7 @@ public class HUD : MonoBehaviour {
         //hintStyle.wordWrap = true;
 
         isPaused = false;
+        isPlayingBGM = true;
         isInHowToPlayMenu = false;
         Time.timeScale = 1;
         DefaultLetterButtonColor = GUI.backgroundColor;
@@ -428,8 +430,7 @@ public class HUD : MonoBehaviour {
                     CorkBoardDivisionSizeWidth,
                     CorkBoardDivisionSizeHeight), SettingsGameButtonTexture, emptyStyle))
                 {
-                    isPaused = false;
-                    Application.LoadLevel("ManageLessons");
+                    isPlayingBGM = !isPlayingBGM;
                 }
             }
             // How to Play Menu
@@ -472,7 +473,7 @@ public class HUD : MonoBehaviour {
         HowToPlayTexture1Height = HowToPlayTexture1.height * scaleFactorPauseMenuButtons;
 
         // Pause/Unpause game flow control
-        Time.timeScale = isPaused ? 0 : 1;
+        PauseOrUnpauseGame();
 
         // Determine which letter is selected based on key presses
         SetSelectedLetterFromKeyPress();
@@ -495,6 +496,34 @@ public class HUD : MonoBehaviour {
                 isPaused = true;
             }
         }
+    }
+
+    /// <summary>
+    /// Pause or Unpause the game
+    /// </summary>
+    private void PauseOrUnpauseGame()
+    {
+        if (isPaused)
+        {
+            AudioListener.pause = true;
+            Time.timeScale = 0;
+        }
+        else
+        {
+            PauseOrUnpauseBGM();
+            Time.timeScale = 1;
+        }
+    }
+
+    /// <summary>
+    /// Pause or Unpause the background music
+    /// </summary>
+    private void PauseOrUnpauseBGM()
+    {
+        if (isPlayingBGM)
+            AudioListener.pause = false;
+        else
+            AudioListener.pause = true;
     }
 
     /// <summary>
