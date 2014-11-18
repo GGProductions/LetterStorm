@@ -40,6 +40,7 @@ public class Vowel : MonoBehaviour
 
             //keep the follwoing line if we want vowels to destroy aoe . pecile gets auto destroyed.
             //Destroy(otherObj.gameObject);
+            Messenger.Broadcast("vowel died");
             Destroy(gameObject);
 
         }

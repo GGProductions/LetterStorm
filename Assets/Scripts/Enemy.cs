@@ -6,7 +6,8 @@ public class Enemy : MonoBehaviour
     #region Fields
     public float MinSpeed;
     public float MaxSpeed;
-    public int Path;
+    
+    protected int Path;
 
     
     private float MinRotateSpeed = 60f;
@@ -27,8 +28,13 @@ public class Enemy : MonoBehaviour
     #endregion
 
     #region Properties
-    
 
+    public float Speed
+    {
+        get { return currentSpeed; }
+
+        set { currentSpeed = value; }
+    }
 
     #endregion
 
@@ -37,7 +43,7 @@ public class Enemy : MonoBehaviour
     {
         
         SetScaleAndSpeed();
-        Path = Random.Range(0, 4);
+        Path = FindPath();
     }
 
     public virtual void Update()
@@ -46,7 +52,7 @@ public class Enemy : MonoBehaviour
         //transform.Rotate(new Vector3(-1, 0, 0) * rotationSpeed);
 
         float amtToMove = currentSpeed * Time.deltaTime;
-        findPath(amtToMove);
+        MoveEnemy(amtToMove);
 
         if (transform.position.z <= -6.2f)
         {
@@ -63,13 +69,28 @@ public class Enemy : MonoBehaviour
         currentScaleY = Random.Range(MinScale, MaxScale);
         currentScaleZ = Random.Range(MinScale, MaxScale);
        
-        currentSpeed = Random.Range(MinSpeed, MaxSpeed);
+        currentSpeed = Random.Range(MinSpeed, MaxSpeed) * Context.EnemyDifficulty.GameSpeed;
+        Debug.Log("Game speed: " + Context.EnemyDifficulty.GameSpeed);
 
         transform.localScale = new Vector3(currentScaleX, currentScaleY, currentScaleZ);
         
     }
-
-    public virtual void findPath(float atm){}
+    private int FindPath()
+    {
+        if (transform.parent.name == "Spawnpoint1" || transform.parent.name == "Spawnpoint2")
+        {
+            return Random.Range(0, 2);
+        }
+        else if (transform.parent.name == "Spawnpoint4" || transform.parent.name == "Spawnpoint5")
+        {
+            return Random.Range(1, 3);
+        }
+        else
+        {
+            return Random.Range(0, 3);
+        }
+    }
+    public virtual void MoveEnemy(float atm){}
  
     #endregion
 

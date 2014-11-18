@@ -20,8 +20,6 @@ public class conshellScript : MonoBehaviour {
 			GameObject go = Instantiate(conson, transform.position, Quaternion.Euler(270, 0, 0)) as GameObject;
 			go.name = conson.name;
 
-            // Grant the user points for defeating the enemy
-            Context.CurrentScore.Increase(ScoreKeeper.PlayerAchievement.DefeatDumbEnemy);
 
 			Destroy(gameObject);
 		}

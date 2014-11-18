@@ -47,6 +47,8 @@ public class EnemyGenerator : MonoBehaviour
                      
     private int enemiesSpawned = 0;
     private bool bossSpawned = false;
+    private bool slowMode = false;
+    private int slowTicks;
 
     private List<char> letterList;
 
@@ -152,7 +154,7 @@ public class EnemyGenerator : MonoBehaviour
 
     private void Idle()
     {
-        
+
     }
 
     private void Boss()
@@ -239,6 +241,10 @@ public class EnemyGenerator : MonoBehaviour
             enemiesSpawned++;
 
         }
+        /*if (slowMode && enemiesSpawned > 0)
+        {
+            Slow();
+        }*/
     }
 
     public void RequiredSpawn(GameObject[] sps, char rl, int si)
@@ -247,7 +253,13 @@ public class EnemyGenerator : MonoBehaviour
                                sps[si].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
 
          go.name = enemyPrefabs[LetterDict[rl]].name;
+         go.GetComponent<Enemy>().Speed = 2;
          go.transform.parent = sps[si].transform;
+         Debug.Log("req slowmode: " + slowMode);
+         if (slowMode)
+         {
+             go.GetComponent<Enemy>().Speed *= 0.4f;
+         }
     }
 
     public void RandomSpawn(GameObject[] sps, int ei, int si)
@@ -256,18 +268,72 @@ public class EnemyGenerator : MonoBehaviour
                                sps[si].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
 
         go.name = enemyPrefabs[ei].name;
+        go.GetComponent<Enemy>().Speed = 2;
         go.transform.parent = sps[si].transform;
+      //  Debug.Log("random slowmode: " + slowMode);
+        if (slowMode)
+        {
+            go.GetComponent<Enemy>().Speed *= 0.4f;
+        }
     }
     public void OnEnable()
     {
         Messenger<char>.AddListener("letter projectile died", InventoryCheck);
         Messenger<string>.AddListener("picked up a letter", RequirementCheck);
+        Messenger<string>.AddListener("slowing down time", Slow);
+        Messenger.AddListener("vowel died", EnemyDead);
+        Messenger.AddListener("cons died", EnemyDead);
     }
     public void OnDisable()
     {
         Messenger<char>.RemoveListener("letter projectile died", InventoryCheck);
         Messenger<string>.RemoveListener("picked up a letter", RequirementCheck);
+        Messenger<string>.RemoveListener("slowing down time", Slow);
+        Messenger.RemoveListener("vowel died", EnemyDead);
+        Messenger.RemoveListener("cons died", EnemyDead);
     }
+    public void EnemyDead()
+    {
+        enemiesSpawned--;
+    }
+    public void Slow(string s) //questionable parameter that's never used but seems to be necessary for messenger
+    {
+        slowMode = true;
+        slowTicks = 5;
+        for (int i = 0; i < spawnPoints.Length; i++)
+        {
+            //Debug.Log("SP: " + spawnPoints[i].name);
+            foreach (Transform t in spawnPoints[i].transform) {
+                Enemy e = t.GetComponent<Enemy>();
+                //Debug.Log(t.name);
+                e.Speed *= 0.4f;
+            }
+        }
+
+    }
+    /*
+    public void Slow() //for local access
+    {
+        if (slowTicks == 0)
+        {
+            slowMode = false;
+        }
+        else
+        {
+            slowTicks--;
+            for (int i = 0; i < spawnPoints.Length; i++)
+            {
+                Debug.Log("SP: " + spawnPoints[i].name);
+                foreach (Transform t in spawnPoints[i].transform)
+                {
+                    Enemy e = t.GetComponent<Enemy>();
+                    Debug.Log(t.name);
+                    e.Speed *= 0.5f;
+                }
+            }
+        }
+
+    }*/
 
     public void InventoryCheck(char c)
     {

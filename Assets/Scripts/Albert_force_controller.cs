@@ -2,7 +2,8 @@
 using System.Collections;
 using GGProductions.LetterStorm.InGameHelpClasses;
 
-
+// TODO: give albert invincibility timer on wakeup from hit
+// also letter projectile need to be triggered off if boss loaded is bigboss  while bigboss is in closedclaw stated 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(CapsuleCollider))]
 
@@ -18,7 +19,7 @@ public class Albert_force_controller : MonoBehaviour
 	public AnimationClip throwAnimationClip;
 
 	public GameObject ProjectilePrefab; //I should just put this projectile in /Resources and make this private as well..
-    public GameObject SecondaryProjectilePrefab; //I should just put this projectile in /Resources and make this private as well..
+	public GameObject SecondaryProjectilePrefab; //I should just put this projectile in /Resources and make this private as well..
 
 	public string LetterBulletname="";
 	public bool LetterMode = true;
@@ -159,35 +160,35 @@ public class Albert_force_controller : MonoBehaviour
 	/// <param name="fromwhere"></param>
 	void fireApencil(Vector3 fromwhere)
 	{
-        if (Context.PlayerInventory.HasPowerUp("DualPencils") && 
-            Context.PlayerInventory.DualPencil.HasExpired() == false)
-        {
-            // Fire dual pencil projectile
-            GameObject ProjectileGameObject = Instantiate(SecondaryProjectilePrefab, fromwhere, mytransform.rotation) as GameObject;
+		if (Context.PlayerInventory.HasPowerUp("DualPencils") && 
+			Context.PlayerInventory.DualPencil.HasExpired() == false)
+		{
+			// Fire dual pencil projectile
+			GameObject ProjectileGameObject = Instantiate(SecondaryProjectilePrefab, fromwhere, mytransform.rotation) as GameObject;
 
-            // Make sure Game Object has children (the two pencils)
-            if (ProjectileGameObject.transform.childCount > 0)
-            {
-                // Get the transform of each pencil projectile
-                Transform pencil1 = ProjectileGameObject.transform.GetChild(0);
-                Transform pencil2 = ProjectileGameObject.transform.GetChild(1);
+			// Make sure Game Object has children (the two pencils)
+			if (ProjectileGameObject.transform.childCount > 0)
+			{
+				// Get the transform of each pencil projectile
+				Transform pencil1 = ProjectileGameObject.transform.GetChild(0);
+				Transform pencil2 = ProjectileGameObject.transform.GetChild(1);
 
-                // Propel each of the pencil projetiles
-                pencil1.gameObject.rigidbody.AddForce(new Vector3(-0.75f, 0, 1) * 500.0f);
-                pencil2.gameObject.rigidbody.AddForce(new Vector3(0.75f, 0, 1) * 500.0f);
-                //ProjectileGameObject.rigidbody.AddForce(mytransform.forward * 500.0f);
+				// Propel each of the pencil projetiles
+				pencil1.gameObject.rigidbody.AddForce(new Vector3(-0.75f, 0, 1) * 500.0f);
+				pencil2.gameObject.rigidbody.AddForce(new Vector3(0.75f, 0, 1) * 500.0f);
+				//ProjectileGameObject.rigidbody.AddForce(mytransform.forward * 500.0f);
 
-                //pencil1.gameObject.rigidbody.AddForce(mytransform.forward * 500.0f);
-                //pencil2.gameObject.rigidbody.AddForce(mytransform.forward * 500.0f);
-            }
-        }
-        else
-        {
-            // Fire single pencil projectile
-            GameObject ProjectileGameObject = Instantiate(ProjectilePrefab, fromwhere, mytransform.rotation) as GameObject;
+				//pencil1.gameObject.rigidbody.AddForce(mytransform.forward * 500.0f);
+				//pencil2.gameObject.rigidbody.AddForce(mytransform.forward * 500.0f);
+			}
+		}
+		else
+		{
+			// Fire single pencil projectile
+			GameObject ProjectileGameObject = Instantiate(ProjectilePrefab, fromwhere, mytransform.rotation) as GameObject;
 
-            ProjectileGameObject.rigidbody.AddForce(mytransform.forward * 700.0f);
-        }
+			ProjectileGameObject.rigidbody.AddForce(mytransform.forward * 700.0f);
+		}
 		
 	}
 
@@ -203,9 +204,10 @@ public class Albert_force_controller : MonoBehaviour
 	//	Debug.Log("fiering a letter= " + CapitalLetter);
 		if (Context.PlayerInventory.GetLetterCount(CapitalLetter) > 0)
 		{
-			Albert_explosion = Instantiate(Resources.Load("LettesProjectile/" + LetterBulletname), fromwhere, Quaternion.Euler(-90, 0, 0)) as GameObject;
-			Albert_explosion.GetComponent<LetterProjectileScript>().isactive = true;// I can't change this here
-			Albert_explosion.rigidbody.AddForce(mytransform.forward * 1000.0f);
+			GameObject go = Instantiate(Resources.Load("LettesProjectile/" + LetterBulletname), fromwhere, Quaternion.Euler(-90, 0, 0)) as GameObject;
+			go.GetComponent<LetterProjectileScript>().isactive = true;// I can't change this here
+			go.rigidbody.AddForce(mytransform.forward * 1000.0f);
+			go.collider.isTrigger = false;
 			Context.PlayerInventory.DecrementLetter(CapitalLetter);
 		}
 	}
@@ -358,7 +360,7 @@ public class Albert_force_controller : MonoBehaviour
 		//just for funzies ..this will not stay unless we can see a good power up use
 		scaleFactorOfRworth = scaleFactorOfRworth + 0.02f;
 
-		if (otherObj.tag == "enemy" || otherObj.tag == "bossTag" || otherObj.tag == "bossProjectileTag")
+		if (otherObj.tag == "enemy" || otherObj.tag == "bossTag" || otherObj.tag == "bossProjectileTag" || otherObj.tag == "smartProjectile")
 		{
 			curr_state = AlbertState.GotHit;
 			//  Debug.Log("Vowel");
@@ -382,8 +384,8 @@ public class Albert_force_controller : MonoBehaviour
 				// letters that he needs but already has -Paul
 				Context.PlayerInventory.AddCollectedLetter(otherObj.name);
 
-                // Grant the user points for collecting the letter
-                Context.CurrentScore.Increase(ScoreKeeper.PlayerAchievement.CollectLetter);
+				// Grant the user points for collecting the letter
+				Context.CurrentScore.Increase(ScoreKeeper.PlayerAchievement.CollectLetter);
 
 				GameObject go = otherObj.gameObject;
 				Destroy(go);
@@ -407,8 +409,13 @@ public class Albert_force_controller : MonoBehaviour
 		if (otherObj.tag == "dualpencilProjectile")
 		{
 			Context.PlayerInventory.IncrementPowerUp("DualPencils");
-            Destroy(otherObj);
+			Destroy(otherObj);
 
+		}
+
+		if (otherObj.tag == "slowDown")
+		{
+			Messenger<string>.Broadcast("slowing down time", otherObj.name);
 		}
 	}
 
