@@ -360,7 +360,7 @@ public class Albert_force_controller : MonoBehaviour
 		//just for funzies ..this will not stay unless we can see a good power up use
 		scaleFactorOfRworth = scaleFactorOfRworth + 0.02f;
 
-		if (otherObj.tag == "enemy" || otherObj.tag == "bossTag" || otherObj.tag == "bossProjectileTag")
+		if (otherObj.tag == "enemy" || otherObj.tag == "bossTag" || otherObj.tag == "bossProjectileTag" || otherObj.tag == "smartProjectile")
 		{
 			curr_state = AlbertState.GotHit;
 			//  Debug.Log("Vowel");

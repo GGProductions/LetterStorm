@@ -384,7 +384,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MinSpeed: 4
   MaxSpeed: 10
-  Path: 0
   Projectile: {fileID: 0}
 --- !u!114 &11400004
 MonoBehaviour:

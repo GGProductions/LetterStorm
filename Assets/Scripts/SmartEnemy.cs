@@ -32,7 +32,7 @@ public class SmartEnemy : Enemy {
 
 	}
 
-    public override void findPath(float atm)
+    public override void MoveEnemy(float atm)
     {
         switch (Path)
         {
