@@ -27,8 +27,13 @@ public class Enemy : MonoBehaviour
     #endregion
 
     #region Properties
-    
 
+    public float Speed
+    {
+        get { return currentSpeed; }
+
+        set { currentSpeed = value; }
+    }
 
     #endregion
 
