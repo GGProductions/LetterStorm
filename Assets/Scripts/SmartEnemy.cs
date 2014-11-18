@@ -28,8 +28,9 @@ public class SmartEnemy : Enemy {
         base.Update();
         playerLoc = GameObject.Find("AlbertPlayerPrefab").transform.position;
         aim = Quaternion.LookRotation(playerLoc - transform.position);
-        shooter.rotation = Quaternion.Slerp(transform.rotation, aim, Time.deltaTime);
-        
+        shooter.rotation = Quaternion.Slerp(transform.rotation, aim, Time.deltaTime * 100f);
+
+        Debug.Log( playerLoc);
 
 
 	}
