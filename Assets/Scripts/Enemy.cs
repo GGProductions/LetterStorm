@@ -69,7 +69,8 @@ public class Enemy : MonoBehaviour
         currentScaleY = Random.Range(MinScale, MaxScale);
         currentScaleZ = Random.Range(MinScale, MaxScale);
        
-        currentSpeed = Random.Range(MinSpeed, MaxSpeed);
+        currentSpeed = Random.Range(MinSpeed, MaxSpeed) * Context.EnemyDifficulty.GameSpeed;
+        Debug.Log("Game speed: " + Context.EnemyDifficulty.GameSpeed);
 
         transform.localScale = new Vector3(currentScaleX, currentScaleY, currentScaleZ);
         
