@@ -32,11 +32,12 @@ public class MainMenu : MonoBehaviour
 		//JR if Button is pressed load scene
 		if(GUI.Button(new Rect(Screen.width / 2 - 40 , Screen.height / 2 - 30, 80, 20), "Play"))
 		{
+			Context.PlayerHealth.CurHealth = Context.PlayerHealth.MaxHealth;
 			Application.LoadLevel("NewGame");
 			//JR loads level with 3 lives, 0 score and misses
-			Player.Score = 0;
-			Player.Lives = 3;
-			Player.Missed = 0;
+			//Player.Score = 0; //JR Old Code from first Iteration
+			//Player.Lives = 3; //JR Old Code from first Iteration
+			//Player.Missed = 0; //JR Old Code from first Iteration
 		}
 
 			

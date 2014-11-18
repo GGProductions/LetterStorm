@@ -195,7 +195,7 @@ public class Boss_3d_wordGen : MonoBehaviour {
 
                             Context.PrepareForNextLevel();
                             //Fade out boss coroutine 
-                            Application.LoadLevel(2);
+                            Application.LoadLevel("Win");
                         }
                     }
                     else

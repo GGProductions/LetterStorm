@@ -104,7 +104,7 @@ public class AlbertController2 : MonoBehaviour {
 		rigidbody.velocity = (Input.GetAxis("Horizontal") * transform.right.normalized + Input.GetAxis("Vertical") * transform.forward).normalized * 3f;
 	
 		/*
-		if (Context.PlayerHealth.hasNoHealth()) Application.LoadLevel(3);
+		if (Context.PlayerHealth.hasNoHealth()) Application.LoadLevel("Lose");
 		if (state != State.Explosion && state != State.Invincible && state == State.Playing)
 		{
 			// Debug.Log("can MOVE");
@@ -119,7 +119,7 @@ public class AlbertController2 : MonoBehaviour {
 	void FixedUpdate()
 	{
 		this.rigidbody.AddForce(transform.forward * 1000.0f);
-		if (Context.PlayerHealth.hasNoHealth()) Application.LoadLevel(3);
+		if (Context.PlayerHealth.hasNoHealth()) Application.LoadLevel("Lose");
 		if (state != State.Explosion && state != State.Invincible && state == State.Playing)
 		{
 			// Debug.Log("can MOVE");

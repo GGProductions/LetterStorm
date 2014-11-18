@@ -29,7 +29,7 @@ public class Lose : MonoBehaviour
 		//JR Loads level and gives players fresh lives, however score and misses should stay the same
             Context.ClearStatsNextLevel();
 			Application.LoadLevel("EnemyTesting");
-            Player.Lives = 3;
+            //Player.Lives = 3; //JR Old Code from first Iteration
         }
         
 		//JR if pressed continue playing last level with fresh lives, score and misses
@@ -39,9 +39,9 @@ public class Lose : MonoBehaviour
 			//JR Loads level and gives players fresh lives and 0s out the score and misses
             Context.ClearStatsNextLevel();
             Application.LoadLevel("EnemyTesting");
-            Player.Score = 0;
-            Player.Lives = 3;
-            Player.Missed = 0;
+            //Player.Score = 0; //JR Old Code from first Iteration
+            //Player.Lives = 3; //JR Old Code from first Iteration
+            //Player.Missed = 0; //JR Old Code from first Iteration
         }
         
 		//JR if pressed load Main Menu

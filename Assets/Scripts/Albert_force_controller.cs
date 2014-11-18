@@ -308,7 +308,7 @@ public class Albert_force_controller : MonoBehaviour
 	/// </summary>
 	void FixedUpdate() {
 
-		if (Context.PlayerHealth.HasNoHealth()) Application.LoadLevel(3);
+		if (Context.PlayerHealth.HasNoHealth()) Application.LoadLevel("Lose");
 		if (curr_state == AlbertState.Playing)
 		{
 
