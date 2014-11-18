@@ -22,7 +22,7 @@ public class conshellScript : MonoBehaviour {
 
             // Grant the user points for defeating the enemy
             Context.CurrentScore.Increase(ScoreKeeper.PlayerAchievement.DefeatDumbEnemy);
-
+            Messenger.Broadcast("cons died");
 			Destroy(gameObject);
 		}
 

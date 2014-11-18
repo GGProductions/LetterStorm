@@ -2,7 +2,7 @@
 using System.Collections;
 using GGProductions.LetterStorm.InGameHelpClasses;
 
-
+// TODO: give albert invincibility timer on wakeup from hit
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(CapsuleCollider))]
 
@@ -410,6 +410,11 @@ public class Albert_force_controller : MonoBehaviour
             Destroy(otherObj);
 
 		}
+
+        if (otherObj.tag == "slowDown")
+        {
+            Messenger<string>.Broadcast("slowing down time", otherObj.name);
+        }
 	}
 
 	IEnumerator doFallanimation() {

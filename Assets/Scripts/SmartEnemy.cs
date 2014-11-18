@@ -30,9 +30,6 @@ public class SmartEnemy : Enemy {
         aim = Quaternion.LookRotation(playerLoc - transform.position);
         shooter.rotation = Quaternion.Slerp(transform.rotation, aim, Time.deltaTime * 100f);
 
-        Debug.Log( playerLoc);
-
-
 	}
 
     public override void findPath(float atm)
@@ -132,7 +129,6 @@ public class SmartEnemy : Enemy {
         //Debug.Log("TimeElapsed: " + timeElapsed);
         float factor = Mathf.Cos(timeElapsed * 0.5f * Mathf.PI);
 
-        Debug.Log("Factor: " + factor);
         transform.Translate(Vector3.right * (factor / factorDivisor), Space.World);
         transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
     }
