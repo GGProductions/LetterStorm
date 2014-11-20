@@ -255,7 +255,7 @@ public class EnemyGenerator : MonoBehaviour
          go.name = enemyPrefabs[LetterDict[rl]].name;
          go.GetComponent<Enemy>().Speed = 2;
          go.transform.parent = sps[si].transform;
-         Debug.Log("req slowmode: " + slowMode);
+      //   Debug.Log("req slowmode: " + slowMode);
          if (slowMode)
          {
              go.GetComponent<Enemy>().Speed *= 0.4f;

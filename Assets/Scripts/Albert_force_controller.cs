@@ -63,6 +63,13 @@ public class Albert_force_controller : MonoBehaviour
 	private bool canwalk = true;
 	#endregion
 
+    private Transform MeshObject;
+    private SkinnedMeshRenderer SMR;
+    private float THETIME=0f;
+
+    private float blinkRate = 0.1f;
+    private int numberOfTimesToBlink = 10;
+    private int blinkCount = 0;
 
 	void OnEnable()
 	{
@@ -81,6 +88,8 @@ public class Albert_force_controller : MonoBehaviour
 	/// </summary>
 	void Awake()
 	{
+        MeshObject = this.transform.GetChild(1).GetChild(0);
+        SMR = MeshObject.GetComponent<SkinnedMeshRenderer>();
 		this.transform.localScale = new Vector3(OriginalScale, OriginalScale, OriginalScale);
 		 Global_leftright=0f;
 		 Global_updown=0f;
@@ -105,35 +114,82 @@ public class Albert_force_controller : MonoBehaviour
 	/// only deal with checking input form keyboard, and Horizontal axis for tilting albert left to right down for walking backward
 	/// </summary>
 	void Update() {
+      //  Debug.Log(MeshObject.name);
+        THETIME += Time.deltaTime;
+
+        Debug.Log("update " +curr_state.ToString() + THETIME);
+
 		this.transform.localScale = new Vector3(OriginalScale + scaleFactorOfRworth, OriginalScale + scaleFactorOfRworth, OriginalScale + scaleFactorOfRworth);
 		getKeyPressed(); //keep waiting for a key pressed to populate  string LetterBulletname
 
-		 if    (curr_state == AlbertState.Playing) 
-		 {
-				 animation.Play("walking");
-			   //  Debug.Log(rigidbody.velocity.normalized);
-				 if (Input.GetKeyDown("space"))
-				 {
-					 animation.CrossFade("throwing");
-					 doShooting();
-				 }
+        if (curr_state != AlbertState.GotHit)
+        {
+            //this.transform.GetComponent<CapsuleCollider>().enabled = true;
+            animation.Play("walking");
+            //  Debug.Log(rigidbody.velocity.normalized);
+            if (Input.GetKeyDown("space"))
+            {
+                animation.CrossFade("throwing");
+                doShooting();
+            }
 
-				 float tiltAroundz = Input.GetAxis("Horizontal") * tiltAngle;
-				 Quaternion target_rotation = Quaternion.Euler(0, tiltAroundz, 0);
-				 mytransform.rotation = Quaternion.Slerp(mytransform.rotation, target_rotation, Time.deltaTime * smooth);
+            float tiltAroundz = Input.GetAxis("Horizontal") * tiltAngle;
+            Quaternion target_rotation = Quaternion.Euler(0, tiltAroundz, 0);
+            mytransform.rotation = Quaternion.Slerp(mytransform.rotation, target_rotation, Time.deltaTime * smooth);
 
-				 if (Input.GetKeyDown(KeyCode.DownArrow))
-				{
-				 //  Debug.Log("walking back now>?");
-				   mytransform.rotation = Albert_originalRotation;
-				} 
-		 }	
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                //  Debug.Log("walking back now>?");
+                mytransform.rotation = Albert_originalRotation;
+            }
+        }
+        else if (curr_state == AlbertState.Invincible){
+         //   this.transform.GetComponent<CapsuleCollider>().enabled = false;
+        }
 	
 
 	}
 
+    void FixedUpdate()
+    {
 
-	void doShooting() {
+        if (Context.PlayerHealth.HasNoHealth()) Application.LoadLevel("Lose");
+        if (curr_state == AlbertState.Playing || curr_state == AlbertState.Invincible)
+        {
+
+            updateDirrection_fromKeypressed();
+
+
+            //	rigidbody.velocity = (Input.GetAxis("Horizontal") * mytransform.right + Input.GetAxis("Vertical") * mytransform.forward).normalized * playerspeed;
+            rigidbody.velocity = (Global_leftright * mytransform.right + Global_updown * mytransform.forward).normalized * playerspeed;
+
+
+            //this velocity must be changed into a globla velocity or else albert will not be able to strafe left and right while he is tilting
+            // he would strafe in his local left and right      
+            float xVal = rigidbody.velocity.x;
+            Vector3 localVelo = mytransform.InverseTransformDirection(rigidbody.velocity);
+            localVelo.x = 0.0f;
+            Vector3 worldV = mytransform.TransformDirection(localVelo);
+            worldV.x = xVal;
+            rigidbody.velocity = worldV;
+
+        }
+        else
+            rigidbody.velocity = Vector3.zero;
+
+
+
+        //reset
+        Global_leftright = 0f;
+        Global_updown = 0f;
+
+        keep_albert_within();
+    }
+
+
+    #region one
+
+    void doShooting() {
 	   
 		Vector3 Load_position = new Vector3(myAmmoSpawn.position.x, myAmmoSpawn.position.y, myAmmoSpawn.position.z);
 
@@ -308,40 +364,7 @@ public class Albert_force_controller : MonoBehaviour
 	/// Albert needs a rigid body to use power ups , because a power up need to register a collision with albert
 	/// unlike all the other objects. those get a reaction from albert...
 	/// </summary>
-	void FixedUpdate() {
 
-		if (Context.PlayerHealth.HasNoHealth()) Application.LoadLevel("Lose");
-		if (curr_state == AlbertState.Playing)
-		{
-
-			updateDirrection_fromKeypressed();
-
-
-		//	rigidbody.velocity = (Input.GetAxis("Horizontal") * mytransform.right + Input.GetAxis("Vertical") * mytransform.forward).normalized * playerspeed;
-			rigidbody.velocity = (Global_leftright * mytransform.right + Global_updown * mytransform.forward).normalized * playerspeed;
-			
-			
-			//this velocity must be changed into a globla velocity or else albert will not be able to strafe left and right while he is tilting
-			// he would strafe in his local left and right      
-			float xVal = rigidbody.velocity.x;
-			Vector3 localVelo = mytransform.InverseTransformDirection(rigidbody.velocity);
-			localVelo.x = 0.0f;
-			Vector3 worldV = mytransform.TransformDirection(localVelo);
-			worldV.x = xVal;
-			rigidbody.velocity = worldV;
-
-		}
-		else
-			rigidbody.velocity = Vector3.zero;
-		
-
-
-		//reset
-		Global_leftright = 0f;
-		Global_updown = 0f;
-
-		keep_albert_within();
-	}
 	/// <summary>
 	/// throw coroutine to have the full animation play 
 	/// </summary>
@@ -354,25 +377,48 @@ public class Albert_force_controller : MonoBehaviour
 
 	}
 
+
+
+
+
 	void OnTriggerEnter(Collider otherObj)
 	{
+
+
 		//	Debug.Log(otherObj.tag + " is the tag registered");
 		//just for funzies ..this will not stay unless we can see a good power up use
 		scaleFactorOfRworth = scaleFactorOfRworth + 0.02f;
 
 		if (otherObj.tag == "enemy" || otherObj.tag == "bossTag" || otherObj.tag == "bossProjectileTag" || otherObj.tag == "smartProjectile")
 		{
+            Debug.Log("collisioat " + THETIME);
 			curr_state = AlbertState.GotHit;
 			//  Debug.Log("Vowel");
 			Context.PlayerHealth.DecreaseHealth();
 			Instantiate(Resources.Load("Explosions/blackStars1"),
 									 transform.position,
 									 Quaternion.Euler(-180, 0, 0));
-		   
-			StartCoroutine(Take_Damage_Routine());
+
+
+            //CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+            //CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+            //CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+            //CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+            	StartCoroutine(doFallanimation1());
+                StartCoroutine(doFallanimation2());
+//                Debug.Log("outside of both coroutins at " + THETIME);
+
+
+            //CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+            //CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+            //CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+            //CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+            Debug.Log("instant coffere");
 		}
 
-
+        
 		//fyi, the pencil collides with albert when he instantiates it 
 		// did we pickup a letter?
 		if (otherObj.tag != "bossTag" && otherObj.tag != "bossProjectileTag" && otherObj.tag != "enemy" && otherObj.tag != "projectileTag")
@@ -419,61 +465,48 @@ public class Albert_force_controller : MonoBehaviour
 		}
 	}
 
-	IEnumerator doFallanimation() {
-		//Debug.Log("takingDama");
+
+        #endregion
+
+
+
+    IEnumerator doFallanimation1() {
+        Debug.Log("in dofall1 " + THETIME);
 
 		canwalk = false;
 		animation.CrossFade("falling");
 
-		curr_state = AlbertState.Invincible;
-	   // this.transform.GetComponent<CapsuleCollider>().enabled = false;
-		float amtToMove = 50f * Time.deltaTime;
-	   // if (mytransform.position.z > -2f)
-	   // {
-			//transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - amtToMove);
-	   // }
 
+        Debug.Log("GOThitt in fall1 at " + THETIME);
+        this.transform.GetComponent<CapsuleCollider>().enabled = false;
+        yield return new WaitForSeconds( 1.5f * animation["falling"].length);
 
-		// curr_state = AlbertState.Invincible;
-		yield return new WaitForSeconds( 1.5f * animation["falling"].length);
+        curr_state = AlbertState.Invincible;
 	}
 
-	/// <summary>
-	/// state machine 
-	/// </summary>
-	/// <returns></returns>
-	IEnumerator Take_Damage_Routine()
-	{
 
-		yield return StartCoroutine(doFallanimation());
-	
-		/*
-		Debug.Log("takingDama");
-		animation.Stop("walking");
-		animation.CrossFade("falling");
 
-		curr_state = AlbertState.GotHit;
-		this.transform.GetComponent<CapsuleCollider>().enabled = false;
-		float amtToMove = 50f * Time.deltaTime;
-		if (mytransform.position.z > -2f)
-		{
-			//transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - amtToMove);
-		}
-		*/
-		
-	   // curr_state = AlbertState.Invincible;
-		//yield return new WaitForSeconds(2 * animation["falling"].length);
-		
-		//yield return new WaitForSeconds(1f);
 
-		if (Context.PlayerHealth.HasHealth())
-		{
-			this.transform.GetComponent<CapsuleCollider>().enabled = true;
-			curr_state = AlbertState.Playing;
-		}
+    IEnumerator doFallanimation2()
+    {
+        //Debug.Log("in dofall-2 " + THETIME);
+        //Debug.Log("isinvis in fall02 at " + THETIME);
 
-		yield return 0;
-	}
+        while (blinkCount < numberOfTimesToBlink)
+        {
+            SMR.enabled = !SMR.enabled;
+
+            if (SMR.enabled == true)
+                blinkCount++;
+
+            yield return new WaitForSeconds(blinkRate);
+        }
+        blinkCount = 0;
+        curr_state = AlbertState.Playing;
+        this.transform.GetComponent<CapsuleCollider>().enabled = true;
+       // Debug.Log("in dofal-2 end of func" + THETIME);
+    }
+
 
 
 
