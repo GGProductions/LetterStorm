@@ -397,11 +397,11 @@ public class Inventory
         {
             if (pUp.Name.Equals(powerUpName))
             {
-                // Set the Dual Pencil powerup to expire after 10 seconds
+                // Set the Dual Pencil powerup to expire after 3 seconds
                 if (pUp.Name.IndexOf("DualPencils", System.StringComparison.OrdinalIgnoreCase) >= 0)
                 {
                     Debug.Log("Setting expiration time");
-                    pUp.SetExpireTime(10);
+                    pUp.SetExpireTime(3);
                 }
                 else
                 {
