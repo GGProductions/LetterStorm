@@ -113,13 +113,13 @@ public class HUD : MonoBehaviour {
         GUI.Box(new Rect(10, 70, 250, 100), "Hint: " + Context.Word.Hint, hintStyle);
         GUI.Box(new Rect(Screen.width - 170, 10, 150, 20), "Score: " + Context.CurrentScore.Score);
 
-        GUI.color = DefaultLetterButtonColor;
+        /*GUI.color = DefaultLetterButtonColor;
         foreach (PowerUp pUp in Context.PlayerInventory.CollectedPowerUpsList) {
             if (Context.SelectedPowerUp == 0)
                 GUI.color = SelectedLetterButtonColor;
             GUI.Box(new Rect(Screen.width - 200, Screen.height / 2, 100, 50), "DualPencils\nCollected: \n" + pUp.Count);
             GUI.color = DefaultLetterButtonColor;
-        }
+        }*/
         
         DisplayPauseMenu();
         DisplayInventoryWindow();

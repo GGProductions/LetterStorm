@@ -456,8 +456,18 @@ public class Albert_force_controller : MonoBehaviour
 		{
 			Context.PlayerInventory.IncrementPowerUp("DualPencils");
 			Destroy(otherObj);
-
 		}
+
+        if (otherObj.tag == "poisonousMushroomPowerUp")
+        {
+            curr_state = AlbertState.GotHit;
+            Context.PlayerHealth.DecreaseHealth();
+            Instantiate(Resources.Load("Explosions/blackStars1"),
+                                     transform.position,
+                                     Quaternion.Euler(-180, 0, 0));
+            Destroy(otherObj);
+            StartCoroutine(Take_Damage_Routine());
+        }
 
 		if (otherObj.tag == "slowDown")
 		{

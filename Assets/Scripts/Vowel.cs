@@ -21,18 +21,22 @@ public class Vowel : MonoBehaviour
 
         if (otherObj.tag == "projectileTag")
         {
-            int rndChance = Random.Range(0, 50);
+            int rndChance = Random.Range(0, 100);
             
-            if (rndChance > 1)
+            if (rndChance > 25)
             {
                 GameObject go = Instantiate(theDrop, transform.position, Quaternion.Euler(270, 0, 0)) as GameObject;
                 go.name = theDrop.name;
             }
             else
             {
-                Instantiate(Resources.Load("PowerUpsResources/dualPen_pickup"),
-                                          transform.position, Quaternion.Euler(90, 0, 0)) ;
-
+                rndChance = Random.Range(0, 100);
+                if (rndChance > 50)
+                    Instantiate(Resources.Load("PowerUpsResources/dualPen_pickup"),
+                        transform.position, Quaternion.Euler(90, 0, 0));
+                else
+                    Instantiate(Resources.Load("PowerUpsResources/PoisonousMushroomPowerUpPrefab"),
+                        transform.position, Quaternion.Euler(-45, 0, 0));
             }
 
             // Grant the user points for defeating the enemy
