@@ -134,15 +134,27 @@ public class Albert_force_controller : MonoBehaviour
 				doShooting();
 			}
 
-			float tiltAroundz = Input.GetAxis("Horizontal") * tiltAngle;
-			Quaternion target_rotation = Quaternion.Euler(0, tiltAroundz, 0);
-			mytransform.rotation = Quaternion.Slerp(mytransform.rotation, target_rotation, Time.deltaTime * smooth);
 
+            if (Input.GetAxis("Vertical") > -0.1)
+            {
+                float tiltAroundz = Input.GetAxis("Horizontal") * tiltAngle;
+                Quaternion target_rotation = Quaternion.Euler(0, tiltAroundz, 0);
+                mytransform.rotation = Quaternion.Slerp(mytransform.rotation, target_rotation, Time.deltaTime * smooth);
+            }
+            else  {
+                mytransform.rotation = Albert_originalRotation;
+                Debug.Log("doing the else");
+            }
+             
+               // mytransform.rotation = Quaternion.Slerp(mytransform.rotation, Quaternion.identity, 1);
+		
+/*
 			if (Input.GetKeyDown(KeyCode.DownArrow))
 			{
 				//  Debug.Log("walking back now>?");
 				mytransform.rotation = Albert_originalRotation;
 			}
+            */
 		}
 		else if (curr_state == AlbertState.Invincible){
 		 //   this.transform.GetComponent<CapsuleCollider>().enabled = false;
