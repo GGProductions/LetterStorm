@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using GGProductions.LetterStorm.Utilities;
+using GGProductions.LetterStorm.Data;
 
 public class HUD : MonoBehaviour {
 
@@ -427,7 +429,6 @@ public class HUD : MonoBehaviour {
                     CorkBoardDivisionSizeWidth,
                     CorkBoardDivisionSizeHeight), ResumeGameButtonTexture, emptyStyle))
                 {
-                    //Time.timeScale = 1;
                     isPaused = false;
                     isInHowToPlayMenu = false;
                 }
@@ -457,7 +458,7 @@ public class HUD : MonoBehaviour {
                     // Reset values and reload to Main Menu
                     Context.PlayerHealth.CurHealth = Context.PlayerHealth.MaxHealth;
                     Context.PlayerInventory = new Inventory();
-                    isPaused = false;                           // Unpause
+                    isPaused = false;                                       // Unpause
                     Application.LoadLevel("MainMenu");
                 }
                 // Save game button
@@ -466,7 +467,7 @@ public class HUD : MonoBehaviour {
                     CorkBoardDivisionSizeWidth,
                     CorkBoardDivisionSizeHeight), SaveGameButtonTexture, emptyStyle))
                 {
-
+                    SaveGamePreferences();
                 }
                 // Settings button
                 if (GUI.Button(new Rect(Screen.width / 2 - CorkBoardWidth / 2 + CorkBoardDivisionSizeWidth * 2 + CorkBoardBorderSize * 3,
@@ -519,9 +520,6 @@ public class HUD : MonoBehaviour {
 
         // Determine which letter is selected based on key presses
         SetSelectedLetterFromKeyPress();
-
-        // Determine which power up is selected based on key press (numeric keys on alphanumeric keyboard)
-        SetSelectedPowerUpFromKeyPress();
 
         // If [Esc] is pressed, pause the game
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -660,15 +658,17 @@ public class HUD : MonoBehaviour {
     }
 
     /// <summary>
-    /// Set selected power-up from inventory upon keypress
+    /// Saves user's current game preferences, scores, and HP
     /// </summary>
-    private void SetSelectedPowerUpFromKeyPress()
+    private void SaveGamePreferences()
     {
-        // Set SelectedPowerUp from Context as index of the PlayerInventory.CollectedPowerUpsList
-        if (Input.GetKeyDown(KeyCode.Alpha1)) { }    // Number 1 on top of alphanumeric keyboard, selects the normal ammo
-        if (Input.GetKeyDown(KeyCode.Alpha2)) { Context.SelectedPowerUp = 0; }    // Number 2 on top of alphanumeric keyboard, selects first PowerUp
-        if (Input.GetKeyDown(KeyCode.Alpha3)) { Context.SelectedPowerUp = 1; }    // Number 3 on top of alphanumeric keyboard, selects second PowerUp
-        if (Input.GetKeyDown(KeyCode.Alpha4)) { Context.SelectedPowerUp = 2; }    // Number 4 on top of alphanumeric keyboard, selects third PowerUp
+        PlayerData dataToSave = GameStateUtilities.Load();
+        dataToSave.Curriculum = Context.Curriculum;
+        dataToSave.CurrentLessonId = Context.CurrentLessonId;
+        dataToSave.LifeCount = (int)Context.PlayerHealth.CurHealth;
+        dataToSave.CurrentScore = Context.CurrentScore.Score;
+        dataToSave.EnemyDifficultyId = Context.EnemyDifficulty.ID;
+        GameStateUtilities.Save(dataToSave);
     }
 
 }

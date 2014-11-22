@@ -66,7 +66,7 @@ public class SmartEnemy : Enemy {
                 reachedWaypoint = true;
         }
         else {
-            transform.Translate(Vector3.back * atm, Space.World);
+            transform.Translate(Vector3.back * atm * Time.timeScale, Space.World);
         }
     }
     private void LeftMove(float atm)
@@ -83,7 +83,7 @@ public class SmartEnemy : Enemy {
         }
         else
         {
-            transform.Translate(new Vector3(-0.5f, 0f, -1f) * atm, Space.World);
+            transform.Translate(new Vector3(-0.5f, 0f, -1f) * atm * Time.timeScale, Space.World);
         }
     }
     private void RightMove(float atm)
@@ -101,7 +101,7 @@ public class SmartEnemy : Enemy {
         }
         else
         {
-            transform.Translate(new Vector3(0.5f, 0f, -1f) * atm, Space.World);
+            transform.Translate(new Vector3(0.5f, 0f, -1f) * atm * Time.timeScale, Space.World);
         }
     }
     private void SinMove(float atm)
@@ -119,7 +119,7 @@ public class SmartEnemy : Enemy {
         }
         else
         {
-            transform.Translate(Vector3.back * atm, Space.World);
+            transform.Translate(Vector3.back * atm * Time.timeScale, Space.World);
         }
     }
 
@@ -129,7 +129,7 @@ public class SmartEnemy : Enemy {
         //Debug.Log("TimeElapsed: " + timeElapsed);
         float factor = Mathf.Cos(timeElapsed * 0.5f * Mathf.PI);
 
-        transform.Translate(Vector3.right * (factor / factorDivisor), Space.World);
+        transform.Translate(Vector3.right * (factor / factorDivisor) * Time.timeScale, Space.World);
         transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
     }
 }
