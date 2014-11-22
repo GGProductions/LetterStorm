@@ -36,7 +36,7 @@ public class Boss_3d_wordGen : MonoBehaviour {
 
     public void AcannonHasDied() {
         NumberOfGunsDestroyed++;     
-        Debug.Log("BOSS_calling albert");
+       // Debug.Log("BOSS_calling albert");
         if (NumberOfGunsDestroyed == HowmanyChildrenHave_Boss_Canon_script) OnMyGunsDied();
     }
 
@@ -163,7 +163,7 @@ public class Boss_3d_wordGen : MonoBehaviour {
         }
     }
 
-
+    
     /// <summary>
     /// Handles collisions with projectile letters
     /// </summary>

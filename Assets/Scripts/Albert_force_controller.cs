@@ -81,7 +81,9 @@ public class Albert_force_controller : MonoBehaviour
 	{
 		Boss_3d_wordGen.OnMyGunsDied -= ListenToBoss;
 	}
-	void ListenToBoss() { Debug.Log("Albert heard you"); LetterMode = true; }
+	void ListenToBoss() {
+        // Debug.Log("Albert heard you"); 
+        LetterMode = true; }
 
 	Quaternion Albert_originalRotation;
 	/// <summary>
@@ -404,7 +406,7 @@ public class Albert_force_controller : MonoBehaviour
 
 		if (otherObj.tag == "enemy" || otherObj.tag == "bossTag" || otherObj.tag == "bossProjectileTag" || otherObj.tag == "smartProjectile")
 		{
-			Debug.Log("collisioat " + THETIME);
+			//Debug.Log("collisioat " + THETIME);
 			curr_state = AlbertState.GotHit;
 			//  Debug.Log("Vowel");
 			Context.PlayerHealth.DecreaseHealth();
@@ -428,7 +430,7 @@ public class Albert_force_controller : MonoBehaviour
 			//CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 			//CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 
-			Debug.Log("instant coffere");
+			//Debug.Log("instant coffere");
 		}
 
 		
