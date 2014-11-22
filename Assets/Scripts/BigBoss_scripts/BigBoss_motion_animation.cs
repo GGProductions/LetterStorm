@@ -134,42 +134,77 @@ public class BigBoss_motion_animation : MonoBehaviour {
 		animation["closingClaw"].AddMixingTransform(lc);
 		animation["openingClaw"].AddMixingTransform(rc);
 		animation["closingClaw"].AddMixingTransform(rc);
-	  //  StartCoroutine(openCorout());
+	   StartCoroutine(open1());
 
 	}
     private float timeElapsed;
-	
+    private int  inttimeElapsed;
+
+    private float firstTimer = 5;
+
+    private float secondTimer = 10;
 	// Update is called once per frame
 	void LateUpdate()
 	{
 
 		animation.CrossFade("slithering");
-	/*	if (Input.GetKeyDown (KeyCode.A)) {animation.CrossFade("openingClaw"); }
+
+        
+        /*
+        if (Input.GetKeyDown (KeyCode.A)) {animation.CrossFade("openingClaw"); }
 		else
-
 			if (Input.GetKeyDown(KeyCode.S)){animation.CrossFade("closingClaw");	}
- */
+ 
+        */
 
-	    timeElapsed += Time.deltaTime;
+   //     inttimeElapsed = (int)timeElapsed;
 
-		float factor = Mathf.Cos(timeElapsed);
-		transform.Translate(Vector3.right * (factor / 20) * Time.timeScale, Space.World);
-		transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 
+        Debug.Log(inttimeElapsed + " " + isopen);
+
+        sidetoside();
 	}
 
+    void sidetoside() {
+        timeElapsed += Time.deltaTime;
+        float factor = Mathf.Cos(timeElapsed);
+        transform.Translate(Vector3.right * (factor / 20) * Time.timeScale, Space.World);
+        transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+    }
+
+    private bool isopen=false;
 
 	IEnumerator open1() {
 	  //  animation.Stop("slithering");
-		animation.CrossFade("openingClaw");
-		yield return new WaitForSeconds(animation["openingClaw"].length);
-	
-	}
 
-	IEnumerator openCorout()
-	{
-		lc.transform.rotation = Quaternion.Lerp(lcclosed, lcclosed, Time.time * 300f);
-			yield return null;
+        while (gameObject) {
+            if (!isopen) {
+                animation.CrossFade("openingClaw");
+                yield return new WaitForSeconds(animation["openingClaw"].length);
+                Debug.Log("This message appears after animation!");
+                isopen = true;
+
+                for (float timer = 3; timer >= 0; timer -= Time.deltaTime)
+                    yield return 0;
+
+                Debug.Log("This message appears after 3 seconds!");
+            
+            }
+            else
+                if (isopen) {
+                    animation.CrossFade("closingClaw");
+                    yield return new WaitForSeconds(animation["closingClaw"].length);
+                    Debug.Log("This message appears after animation!");
+                    isopen = false;
+
+                    for (float timer = 8; timer >= 0; timer -= Time.deltaTime)
+                        yield return 0;
+
+                }
+
+        }
+
+	
 	}
 
 
