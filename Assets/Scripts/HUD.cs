@@ -50,6 +50,7 @@ public class HUD : MonoBehaviour {
     public GUIStyle hintStyle;
     public GUIStyle HPBarStyle = new GUIStyle();
     public GUIStyle ScoreBarStyle = new GUIStyle();
+    public GUIStyle InventoryBackgroundStyle = new GUIStyle();
     
     // Player health variables
     private int CurrentHealth;
@@ -65,7 +66,6 @@ public class HUD : MonoBehaviour {
     // Scrolling hint text variables
     private string hintText;
     private Rect hintTextRectangle;
-    public Texture2D ChalkBoardTexture;
 
     #endregion Private Variables ------------------------------------------
 
@@ -129,7 +129,7 @@ public class HUD : MonoBehaviour {
         GUI.TextField(new Rect(10, 10, HealthBarLength, 20), 
             "HP: " + CurrentHealth.ToString() + "/" + MaximumHealth.ToString(), HPBarStyle);
 
-        // Draw Total # of collected letters and current score
+        // Draw Player's Score
         ScoreBarStyle.alignment = TextAnchor.MiddleCenter;
         ScoreBarStyle.normal.textColor = Color.black;
         GUI.skin.button.wordWrap = true;
@@ -219,6 +219,13 @@ public class HUD : MonoBehaviour {
         #endregion Determine which letters to show in the inventory -----------------------------------------
 
         // Define inventory box area
+
+        InventoryBackgroundStyle.alignment = TextAnchor.MiddleCenter;
+        GUI.TextField(new Rect(
+            Screen.width / 2 - InventoryItemBoxWidth * 18 / 2, 
+            Screen.height - InventoryItemBoxHeight * 3 - InventoryBoxBottomMargin - 10, 
+            InventoryItemBoxWidth * 18, 
+            InventoryItemBoxHeight * 3), "", InventoryBackgroundStyle);                 // Inventory's background
         GUILayout.BeginArea(new Rect(
             Screen.width / 2 - InventoryItemBoxWidth * 31 / 2,                          // X start position
             Screen.height - InventoryItemBoxHeight * 3 - InventoryBoxBottomMargin,      // Y start position
