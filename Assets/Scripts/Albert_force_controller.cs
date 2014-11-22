@@ -316,40 +316,15 @@ public class Albert_force_controller : MonoBehaviour
 	}
 
 	void updateDirrection_fromKeypressed() {
-		
-		if(  Input.GetKey(KeyCode.UpArrow)) {
 
-			Global_updown = 1f;
-
-			if (Input.GetKey(KeyCode.RightArrow))
-			{
-				Global_leftright = 1f;  
-			}
-			if (Input.GetKey(KeyCode.LeftArrow)) 
-			{
-				Global_leftright = -1f; 
-			}
-		}
-		else
-			if( Input.GetKey(KeyCode.DownArrow))
-			{
-				Global_updown = -1f;
-			}
-			else
-				if (Input.GetKey(KeyCode.RightArrow))
-				{
-					Global_leftright = 1f;
-				}
-				else
-					if (Input.GetKey(KeyCode.LeftArrow))
-					{
-						Global_leftright = -1f;
-					}
-					else
-					{ 
-						Global_leftright = 0f;
-						Global_updown = 0f;
-					}
+        if (Input.GetKey(KeyCode.UpArrow))
+            Global_updown = 1f;
+        if (Input.GetKey(KeyCode.DownArrow))
+            Global_updown = -1f;
+        if (Input.GetKey(KeyCode.RightArrow))
+            Global_leftright = 1f;
+        if (Input.GetKey(KeyCode.LeftArrow))
+            Global_leftright = -1f;
 	}
 
 
