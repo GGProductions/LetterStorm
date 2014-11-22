@@ -82,8 +82,8 @@ public class Albert_force_controller : MonoBehaviour
 		Boss_3d_wordGen.OnMyGunsDied -= ListenToBoss;
 	}
 	void ListenToBoss() {
-        // Debug.Log("Albert heard you"); 
-        LetterMode = true; }
+		// Debug.Log("Albert heard you"); 
+		LetterMode = true; }
 
 	Quaternion Albert_originalRotation;
 	/// <summary>

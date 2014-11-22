@@ -92,13 +92,16 @@ public class BigBoss_motion_animation : MonoBehaviour {
 	}
 
 	// Use this for initialization
-	void Start () {
+    IEnumerator Start()
+    {
 
         transform.position = new Vector3(2f, 0.2f, 10f);
 
         thePlayerOBJ = GameObject.Find("AlbertPlayerPrefab");
 
         CurIndex = 0;
+       // nextIndex = 1;
+
         transList = new List<Transform>();
         Debug.Log("init list count " + transList.Count );
 
@@ -125,15 +128,36 @@ public class BigBoss_motion_animation : MonoBehaviour {
 		animation["closingClaw"].AddMixingTransform(lc);
 		animation["openingClaw"].AddMixingTransform(rc);
 		animation["closingClaw"].AddMixingTransform(rc);
-	   StartCoroutine(open1());
+	   StartCoroutine(Open_Close_animations());
 
 
-     //  StartCoroutine(Enetring());
-	  // StartCoroutine(initMove());
-      StartCoroutine( "initMovePASS",1);
+      yield return StartCoroutine(Enetring());
+
 	}
 
     private int CurIndex;
+    private int nextIndex;
+
+    void calcCurnext() {
+
+        if (CurIndex < transList.Count - 1)
+        {
+            nextIndex = CurIndex + 1;
+        }
+        else 
+            if (CurIndex==  transList.Count - 1)
+        {
+          //  CurIndex = transList.Count-1 ;
+            nextIndex = 0;
+        }
+            else
+                if (CurIndex > transList.Count - 1)
+                {
+                     CurIndex =0 ;
+                    nextIndex = 1;
+                }
+
+    }
 
     IEnumerator Enetring() {
 
@@ -148,44 +172,16 @@ public class BigBoss_motion_animation : MonoBehaviour {
            
         }
         Debug.Log("arrived");
-        StartCoroutine("initMovePASS", 1);
+       // StartCoroutine("initMovePASS", 0);
+        StartCoroutine("MovePtP_globalIndex");
     }
-
-	IEnumerator initMove()
-	{
-     
-        //do enterring the scene between point 0 and point 1 
-        yield return StartCoroutine(MoveObject(transform, transList[0].position, transList[1].position, 4.0f));
-		
-		while (true)
-		{
-            //loop through 1-> end
-            if (CurIndex == transList.Count - 1) { CurIndex = 1;
-            yield return StartCoroutine(MoveObject(transform, transList[transList.Count - 1].position, transList[CurIndex ].position, 3.0f));
-            }
-            yield return StartCoroutine(MoveObject(transform, transList[CurIndex].position, transList[CurIndex+1].position, 3.0f));
-
-            CurIndex++;
-           
-
-
-           // yield return StartCoroutine(MoveObject(transform, transList[1].position, transList[2].position, 3.0f));
-           // yield return StartCoroutine(MoveObject(transform, transList[2].position, transList[3].position, 3.0f));
-           // yield return StartCoroutine(MoveObject(transform, transList[3].position, transList[4].position, 4.0f));
-           // yield return StartCoroutine(MoveObject(transform, transList[4].position, transList[1].position, 4.0f));
-
-		}
-	}
+   
 
     IEnumerator initMovePASS(int initIndex)
     {
 
         CurIndex = initIndex;
-       
-        //do enterring the scene between point 0 and point 1 
-      //  yield return StartCoroutine(MoveObject(transform, transList[0].position, transList[1].position, 4.0f));
         int indexplusone = CurIndex + 1;
-
         while (true)
         {
             //loop through 1-> end
@@ -201,16 +197,26 @@ public class BigBoss_motion_animation : MonoBehaviour {
 
             CurIndex++;
             indexplusone++;
-
-
-            // yield return StartCoroutine(MoveObject(transform, transList[1].position, transList[2].position, 3.0f));
-            // yield return StartCoroutine(MoveObject(transform, transList[2].position, transList[3].position, 3.0f));
-            // yield return StartCoroutine(MoveObject(transform, transList[3].position, transList[4].position, 4.0f));
-            // yield return StartCoroutine(MoveObject(transform, transList[4].position, transList[1].position, 4.0f));
-
         }
+
+
     }
 
+
+    IEnumerator MovePtP_globalIndex()
+    {   
+        while (true)
+        {
+            calcCurnext();
+            //loop through 1-> end
+          
+            //   indexplusone = CurIndex + 1;
+            yield return StartCoroutine(MoveObject(transform, transList[CurIndex].position, transList[nextIndex].position, 3.0f));
+            CurIndex++;         
+        }
+
+
+    }
 
 
 
@@ -224,25 +230,62 @@ public class BigBoss_motion_animation : MonoBehaviour {
     /// </summary>
     public void CHaaaarge()
     {
+        calcCurnext();
         int curInd = CurIndex;
         //StartCoroutine(Curlup());
         Vector3 albertPos = thePlayerOBJ.transform.position;
         //Debug.Log("Albert's is at " + albertPos);
 
-        StartCoroutine(breakCourputAttack(albertPos, curInd));
-        //   StopCorou
+         StartCoroutine("breakCourputAttack", curInd);
+       // StartCoroutine(" MovePtP_globalIndex");
 
     }
 
-    IEnumerator breakCourputAttack(Vector3 alberLoc, int oldIndex)
+    IEnumerator breakCourputAttack( int oldIndex)
     {
-        Debug.Log("I should be here going to " + alberLoc);
-        StopCoroutine("initMovePASS");
-        yield return StartCoroutine(MoveObjecttoalbert(transform, transform.position, alberLoc, 1.0f));
-        yield return StartCoroutine(MoveObject(transform, alberLoc, transList[oldIndex +1 ].position, 3.0f));
-        yield return StartCoroutine("initMovePASS", oldIndex );
+       // Debug.Log("I should be here going to " + alberLoc);
+      //  StopCoroutine("initMovePASS");
+        StopCoroutine("MovePtP_globalIndex");
+        yield return StartCoroutine( "MoveObjecttoalbert_local", 0.1f  );
+     //   yield return StartCoroutine(MoveObject(transform, alberLoc, transList[oldIndex +1 ].position, 3.0f));
+      //  yield return StartCoroutine("initMovePASS", oldIndex+1 );
     }
 
+
+    IEnumerator MoveObjecttoalbert_local(float time)
+    {
+          CurIndex++;
+       // calcCurnext();
+
+        Vector3 endPos = thePlayerOBJ.transform.position;
+        StopCoroutine("MovePtP_globalIndex");
+
+        Debug.Log("moving to alberts" + endPos);
+        var i = 0.0f;
+        var rate = 1.0f / time;
+        while (i < 1.0f)
+        {
+            i += Time.deltaTime * rate;
+            transform.position = Vector3.Lerp(transform.position, endPos, i);
+            yield return null;
+        }
+
+
+        var j = 0.0f;
+        var rate2 = 1.0f / time;
+        while (j < 1.0f)
+        {
+            i += Time.deltaTime * rate;
+            transform.position = Vector3.Lerp(transform.position, transList[CurIndex].position, i);
+            yield return null;
+        }
+
+       // CurIndex++;
+
+        calcCurnext();
+      StartCoroutine("initMovePASS", CurIndex );
+    //    StartCoroutine("MovePtP_globalIndex");
+    }
 
     IEnumerator MoveObjecttoalbert(Transform thisTransform, Vector3 startPos, Vector3 endPos, float time)
     {
@@ -260,8 +303,8 @@ public class BigBoss_motion_animation : MonoBehaviour {
 
 	IEnumerator MoveObject(Transform thisTransform, Vector3 startPos, Vector3 endPos, float time)
 	{
-		var i = 0.0f;
-		var rate = 1.0f / time;
+		float i = 0.0f;
+		float rate = 1.0f / time;
 		while (i < 1.0f)
 		{
 			i += Time.deltaTime * rate;
@@ -275,31 +318,15 @@ public class BigBoss_motion_animation : MonoBehaviour {
 	private float timeElapsed;
 	private int  inttimeElapsed;
 
-	//private float firstTimer = 5;
-
-	//private float secondTimer = 10;
 
 	private float time_toStayOpen = 5;
 	private float time_toStayclosed = 2;
-	// Update is called once per frame
 	void LateUpdate()
 	{
-
+        calcCurnext();
 		animation.CrossFade("slithering");
-
-		/*
-		if (Input.GetKeyDown (KeyCode.A)) {animation.CrossFade("openingClaw"); }
-		else
-			if (Input.GetKeyDown(KeyCode.S)){animation.CrossFade("closingClaw");	}
- 
-		*/
-
-   //     inttimeElapsed = (int)timeElapsed;
-
-
-		//Debug.Log(inttimeElapsed + " " + isopen);
-
-		sidetoside();
+        Debug.Log("cur is " + CurIndex);
+	
 	}
 
 	void sidetoside() {
@@ -311,7 +338,7 @@ public class BigBoss_motion_animation : MonoBehaviour {
 
 	private bool isopen=false;
 
-	IEnumerator open1() {
+	IEnumerator Open_Close_animations() {
 	  //  animation.Stop("slithering");
 
 		while (gameObject) {
@@ -344,6 +371,35 @@ public class BigBoss_motion_animation : MonoBehaviour {
 	
 	}
 
+
+
+    /*
+   IEnumerator initMove()
+   {
+     
+       //do enterring the scene between point 0 and point 1 
+       yield return StartCoroutine(MoveObject(transform, transList[0].position, transList[1].position, 4.0f));
+		
+       while (true)
+       {
+           //loop through 1-> end
+           if (CurIndex == transList.Count - 1) { CurIndex = 1;
+           yield return StartCoroutine(MoveObject(transform, transList[transList.Count - 1].position, transList[CurIndex ].position, 3.0f));
+           }
+           yield return StartCoroutine(MoveObject(transform, transList[CurIndex].position, transList[CurIndex+1].position, 3.0f));
+
+           CurIndex++;
+           
+
+
+          // yield return StartCoroutine(MoveObject(transform, transList[1].position, transList[2].position, 3.0f));
+          // yield return StartCoroutine(MoveObject(transform, transList[2].position, transList[3].position, 3.0f));
+          // yield return StartCoroutine(MoveObject(transform, transList[3].position, transList[4].position, 4.0f));
+          // yield return StartCoroutine(MoveObject(transform, transList[4].position, transList[1].position, 4.0f));
+
+       }
+   }
+*/
 
 
 
