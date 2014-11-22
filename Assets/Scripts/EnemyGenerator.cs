@@ -18,6 +18,9 @@ public class EnemyGenerator : MonoBehaviour
     public GameObject[] enemyPrefabs;
     public GameObject[] spawnPoints;
     public GameObject BossPrefab;
+    public GameObject Boss1Prefab;
+    public GameObject Boss2Prefab;
+
 
     public bool WordSolvingStage = false;  //hey Paul: this coul be a state ... I just needed a quick way to lett Albert know what stage it is
     //when albert kills the boss guns, the boss informs the enemy generator that it is now Word solving time

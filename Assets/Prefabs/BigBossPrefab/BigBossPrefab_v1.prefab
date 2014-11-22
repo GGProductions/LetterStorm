@@ -1244,6 +1244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef6fa10371a1dc34698630cd92bbefc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transArra: []
   slither: {fileID: 7400008, guid: ac6c6b8d7e80fa74ab6d3059e9cf3d1a, type: 3}
   openClaw: {fileID: 7400006, guid: ac6c6b8d7e80fa74ab6d3059e9cf3d1a, type: 3}
   closeClaw: {fileID: 7400004, guid: ac6c6b8d7e80fa74ab6d3059e9cf3d1a, type: 3}

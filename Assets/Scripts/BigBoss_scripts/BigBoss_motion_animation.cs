@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class BigBoss_motion_animation : MonoBehaviour {
 
-	public List<Transform> listOfPoints;
+	public Transform[] transArra;
 
 
 	public AnimationClip slither;
@@ -92,7 +92,7 @@ public class BigBoss_motion_animation : MonoBehaviour {
 	}
 
 	void Awake() {
-
+		//listOfPoints = new Transform[4];
 
 		 rcclosed=new Quaternion(1.0f,0.2f,0.0f,0.0f);
 		 rcopen=new Quaternion(0.9f,-0.4f,0.0f,0.0f);
@@ -139,8 +139,37 @@ public class BigBoss_motion_animation : MonoBehaviour {
 		animation["openingClaw"].AddMixingTransform(rc);
 		animation["closingClaw"].AddMixingTransform(rc);
 	   StartCoroutine(open1());
+	   StartCoroutine(initMove());
 
 	}
+	IEnumerator initMove()
+	{
+		yield return StartCoroutine(MoveObject(transform, transArra[0].position, transArra[1].position, 4.0f));
+		//Vector3 pointA_init = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+		while (true)
+		{
+			
+			yield return StartCoroutine(MoveObject(transform, transArra[1].position, transArra[2].position, 3.0f));
+			yield return StartCoroutine(MoveObject(transform, transArra[2].position, transArra[3].position, 3.0f));
+			yield return StartCoroutine(MoveObject(transform, transArra[3].position, transArra[4].position, 4.0f));
+			yield return StartCoroutine(MoveObject(transform, transArra[4].position, transArra[1].position, 4.0f));
+
+		}
+	}
+	IEnumerator MoveObject(Transform thisTransform, Vector3 startPos, Vector3 endPos, float time)
+	{
+		var i = 0.0f;
+		var rate = 1.0f / time;
+		while (i < 1.0f)
+		{
+			i += Time.deltaTime * rate;
+			thisTransform.position = Vector3.Lerp(startPos, endPos, i);
+			yield return null;
+		}
+	}
+
+
+
 	private float timeElapsed;
 	private int  inttimeElapsed;
 
@@ -166,7 +195,7 @@ public class BigBoss_motion_animation : MonoBehaviour {
    //     inttimeElapsed = (int)timeElapsed;
 
 
-		Debug.Log(inttimeElapsed + " " + isopen);
+		//Debug.Log(inttimeElapsed + " " + isopen);
 
 		sidetoside();
 	}

@@ -20,7 +20,7 @@ public class Albert_force_controller : MonoBehaviour
 
 	public GameObject ProjectilePrefab; //I should just put this projectile in /Resources and make this private as well..
 	public GameObject SecondaryProjectilePrefab; //I should just put this projectile in /Resources and make this private as well..
-    public GameObject HurricaneProjectile; //same with this
+	public GameObject HurricaneProjectile; //same with this
 
 	public string LetterBulletname="";
 	public bool LetterMode = true;
@@ -135,18 +135,18 @@ public class Albert_force_controller : MonoBehaviour
 			}
 
 
-            if (Input.GetAxis("Vertical") > -0.1)
-            {
-                float tiltAroundz = Input.GetAxis("Horizontal") * tiltAngle;
-                Quaternion target_rotation = Quaternion.Euler(0, tiltAroundz, 0);
-                mytransform.rotation = Quaternion.Slerp(mytransform.rotation, target_rotation, Time.deltaTime * smooth);
-            }
-            else  {
-                mytransform.rotation = Albert_originalRotation;
-                Debug.Log("doing the else");
-            }
-             
-               // mytransform.rotation = Quaternion.Slerp(mytransform.rotation, Quaternion.identity, 1);
+			if (Input.GetAxis("Vertical") > -0.1)
+			{
+				float tiltAroundz = Input.GetAxis("Horizontal") * tiltAngle;
+				Quaternion target_rotation = Quaternion.Euler(0, tiltAroundz, 0);
+				mytransform.rotation = Quaternion.Slerp(mytransform.rotation, target_rotation, Time.deltaTime * smooth);
+			}
+			else  {
+				mytransform.rotation = Albert_originalRotation;
+			   // Debug.Log("doing the else");
+			}
+			 
+			   // mytransform.rotation = Quaternion.Slerp(mytransform.rotation, Quaternion.identity, 1);
 		
 /*
 			if (Input.GetKeyDown(KeyCode.DownArrow))
@@ -154,7 +154,7 @@ public class Albert_force_controller : MonoBehaviour
 				//  Debug.Log("walking back now>?");
 				mytransform.rotation = Albert_originalRotation;
 			}
-            */
+			*/
 		}
 		else if (curr_state == AlbertState.Invincible){
 		 //   this.transform.GetComponent<CapsuleCollider>().enabled = false;
