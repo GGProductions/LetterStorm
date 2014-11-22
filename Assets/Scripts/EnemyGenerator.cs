@@ -163,9 +163,9 @@ public class EnemyGenerator : MonoBehaviour
     private void Boss()
     {
 
-        GameObject go = Instantiate(BossPrefab,
+        GameObject go = Instantiate(Boss1Prefab,
                                            new Vector3(0,0,2), Quaternion.Euler(180, 0, 180)) as GameObject;
-        go.name = BossPrefab.name;
+        go.name = Boss1Prefab.name;
 
         bossSpawned = true;
         state = State.Idle;

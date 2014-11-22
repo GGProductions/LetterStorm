@@ -276,7 +276,7 @@ public class Albert_force_controller : MonoBehaviour
 			GameObject go = Instantiate(Resources.Load("LettesProjectile/" + LetterBulletname), fromwhere, Quaternion.Euler(-90, 0, 0)) as GameObject;
 			go.GetComponent<LetterProjectileScript>().isactive = true;// I can't change this here
 			go.rigidbody.AddForce(mytransform.forward * 1000.0f);
-			go.collider.isTrigger = false;
+			//go.collider.isTrigger = false;
 			Context.PlayerInventory.DecrementLetter(CapitalLetter);
 		}
 	}
