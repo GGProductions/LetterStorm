@@ -81,7 +81,9 @@ public class Albert_force_controller : MonoBehaviour
 	{
 		Boss_3d_wordGen.OnMyGunsDied -= ListenToBoss;
 	}
-	void ListenToBoss() { Debug.Log("Albert heard you"); LetterMode = true; }
+	void ListenToBoss() {
+		// Debug.Log("Albert heard you"); 
+		LetterMode = true; }
 
 	Quaternion Albert_originalRotation;
 	/// <summary>
@@ -316,40 +318,15 @@ public class Albert_force_controller : MonoBehaviour
 	}
 
 	void updateDirrection_fromKeypressed() {
-		
-		if(  Input.GetKey(KeyCode.UpArrow)) {
 
-			Global_updown = 1f;
-
-			if (Input.GetKey(KeyCode.RightArrow))
-			{
-				Global_leftright = 1f;  
-			}
-			if (Input.GetKey(KeyCode.LeftArrow)) 
-			{
-				Global_leftright = -1f; 
-			}
-		}
-		else
-			if( Input.GetKey(KeyCode.DownArrow))
-			{
-				Global_updown = -1f;
-			}
-			else
-				if (Input.GetKey(KeyCode.RightArrow))
-				{
-					Global_leftright = 1f;
-				}
-				else
-					if (Input.GetKey(KeyCode.LeftArrow))
-					{
-						Global_leftright = -1f;
-					}
-					else
-					{ 
-						Global_leftright = 0f;
-						Global_updown = 0f;
-					}
+        if (Input.GetKey(KeyCode.UpArrow))
+            Global_updown = 1f;
+        if (Input.GetKey(KeyCode.DownArrow))
+            Global_updown = -1f;
+        if (Input.GetKey(KeyCode.RightArrow))
+            Global_leftright = 1f;
+        if (Input.GetKey(KeyCode.LeftArrow))
+            Global_leftright = -1f;
 	}
 
 
@@ -404,7 +381,7 @@ public class Albert_force_controller : MonoBehaviour
 
 		if (otherObj.tag == "enemy" || otherObj.tag == "bossTag" || otherObj.tag == "bossProjectileTag" || otherObj.tag == "smartProjectile")
 		{
-			Debug.Log("collisioat " + THETIME);
+			//Debug.Log("collisioat " + THETIME);
 			curr_state = AlbertState.GotHit;
 			//  Debug.Log("Vowel");
 			Context.PlayerHealth.DecreaseHealth();
@@ -428,7 +405,7 @@ public class Albert_force_controller : MonoBehaviour
 			//CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 			//CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 
-			Debug.Log("instant coffere");
+			//Debug.Log("instant coffere");
 		}
 
 		

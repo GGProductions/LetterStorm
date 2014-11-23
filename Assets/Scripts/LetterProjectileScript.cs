@@ -25,7 +25,7 @@ public class LetterProjectileScript : MonoBehaviour {
         if (transform.position.z > 20 || transform.position.z < -10 || transform.position.x > 8 || transform.position.x < -8)
         {
             Messenger<char>.Broadcast("letter projectile died", this.transform.name[0]);
-            Debug.Log("yo im dead");
+          //  Debug.Log("yo im dead");
             Destroy(gameObject);
 
         }

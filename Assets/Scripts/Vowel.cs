@@ -13,7 +13,7 @@ public class Vowel : MonoBehaviour
 
 
         int rndChance = Random.Range(0, 100);
-        Debug.Log(" ???" + rndChance);
+        //Debug.Log(" ???" + rndChance);
 
         if (rndChance <= 50)
         {
@@ -34,7 +34,7 @@ public class Vowel : MonoBehaviour
                 {
                     Instantiate(Resources.Load("PowerUpsResources/Hurricane_pickup"),
                     transform.position, Quaternion.Euler(90, 0, 0));
-                    Debug.Log("made a hurricane");
+                   // Debug.Log("made a hurricane");
 
                 }
 

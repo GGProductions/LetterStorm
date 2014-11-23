@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using GGProductions.LetterStorm.Utilities;
+using GGProductions.LetterStorm.Data;
 
 public class HUD : MonoBehaviour {
 
@@ -46,6 +48,9 @@ public class HUD : MonoBehaviour {
     private GUIStyle emptyStyle = new GUIStyle();   // Null style, for transparent backgrounds
     private GUIStyle pauseMenuButtonsStyle = new GUIStyle();
     public GUIStyle hintStyle;
+    public GUIStyle HPBarStyle = new GUIStyle();
+    public GUIStyle ScoreBarStyle = new GUIStyle();
+    public GUIStyle InventoryBackgroundStyle = new GUIStyle();
     
     // Player health variables
     private int CurrentHealth;
@@ -57,6 +62,11 @@ public class HUD : MonoBehaviour {
     private bool isPaused;
     private bool isPlayingBGM;
     private bool isInHowToPlayMenu;
+
+    // Scrolling hint text variables
+    private string hintText;
+    private Rect hintTextRectangle;
+
     #endregion Private Variables ------------------------------------------
 
     /// <summary>
@@ -107,22 +117,58 @@ public class HUD : MonoBehaviour {
     /// </summary>
     void OnGUI()
     {
-        GUI.skin.button.wordWrap = true;
-        GUI.Box(new Rect(10, 10, HealthBarLength, 20), "HP: " + CurrentHealth.ToString() + "/" + MaximumHealth.ToString());
-        GUI.Box(new Rect(10, 40, 250, 20),"Letters Collected: " + Context.PlayerInventory.TotalCollectedLetters);
-        GUI.Box(new Rect(10, 70, 250, 100), "Hint: " + Context.Word.Hint, hintStyle);
-        GUI.Box(new Rect(Screen.width - 170, 10, 150, 20), "Score: " + Context.CurrentScore.Score);
+        // Scrolling hint text
+        SetHintTextScrollingBox();
+        hintStyle.normal.textColor = Color.blue;
+        GUI.Label(hintTextRectangle, hintText, hintStyle);
 
-        /*GUI.color = DefaultLetterButtonColor;
-        foreach (PowerUp pUp in Context.PlayerInventory.CollectedPowerUpsList) {
-            if (Context.SelectedPowerUp == 0)
-                GUI.color = SelectedLetterButtonColor;
-            GUI.Box(new Rect(Screen.width - 200, Screen.height / 2, 100, 50), "DualPencils\nCollected: \n" + pUp.Count);
-            GUI.color = DefaultLetterButtonColor;
-        }*/
-        
+        // Draw HP Bar
+        GUI.TextField(new Rect(10, 10, Screen.width / 2, 20), "");          // Bar's background
+        HPBarStyle.alignment = TextAnchor.MiddleCenter;
+        HPBarStyle.normal.textColor = Color.black;
+        GUI.TextField(new Rect(10, 10, HealthBarLength, 20), 
+            "HP: " + CurrentHealth.ToString() + "/" + MaximumHealth.ToString(), HPBarStyle);
+
+        // Draw Player's Score
+        ScoreBarStyle.alignment = TextAnchor.MiddleCenter;
+        ScoreBarStyle.normal.textColor = Color.black;
+        GUI.skin.button.wordWrap = true;
+        GUI.Box(new Rect(Screen.width - 170, 10, 150, 20), "Score: " + Context.CurrentScore.Score, ScoreBarStyle);
+
         DisplayPauseMenu();
         DisplayInventoryWindow();
+    }
+
+    /// <summary>
+    /// Sets up the scrolling rectangular region for scrolling the hint text from right to left on top of the screen
+    /// </summary>
+    public void SetHintTextScrollingBox()
+    {
+        float scrollSpeed = 65;
+        hintText = "Hint: " + Context.Word.Hint + " ";
+
+        if (hintTextRectangle.width == 0)
+        {
+            var dimensions = GUI.skin.label.CalcSize(new GUIContent(hintText));
+
+            // Start message past the right side of the screen.
+            hintTextRectangle.x = -dimensions.x;
+            hintTextRectangle.y = dimensions.y + 20;
+            hintTextRectangle.width = dimensions.x;
+            hintTextRectangle.height = dimensions.y;
+        }
+
+        hintTextRectangle.x -= Time.deltaTime * scrollSpeed;
+
+        // If message has moved past the right side, move it back to the left.
+        /*if (hintTextRectangle.x > Screen.width)
+        {
+            hintTextRectangle.x = -hintTextRectangle.width;
+        }*/
+
+        // If message has moved past the left side, move it back to the right.
+        if (hintTextRectangle.x + hintTextRectangle.width * 3 < 0)
+            hintTextRectangle.x = Screen.width;
     }
 
     /// <summary>
@@ -173,6 +219,13 @@ public class HUD : MonoBehaviour {
         #endregion Determine which letters to show in the inventory -----------------------------------------
 
         // Define inventory box area
+
+        InventoryBackgroundStyle.alignment = TextAnchor.MiddleCenter;
+        GUI.TextField(new Rect(
+            Screen.width / 2 - InventoryItemBoxWidth * 18 / 2, 
+            Screen.height - InventoryItemBoxHeight * 3 - InventoryBoxBottomMargin - 10, 
+            InventoryItemBoxWidth * 18, 
+            InventoryItemBoxHeight * 3), "", InventoryBackgroundStyle);                 // Inventory's background
         GUILayout.BeginArea(new Rect(
             Screen.width / 2 - InventoryItemBoxWidth * 31 / 2,                          // X start position
             Screen.height - InventoryItemBoxHeight * 3 - InventoryBoxBottomMargin,      // Y start position
@@ -383,7 +436,6 @@ public class HUD : MonoBehaviour {
                     CorkBoardDivisionSizeWidth,
                     CorkBoardDivisionSizeHeight), ResumeGameButtonTexture, emptyStyle))
                 {
-                    //Time.timeScale = 1;
                     isPaused = false;
                     isInHowToPlayMenu = false;
                 }
@@ -413,7 +465,7 @@ public class HUD : MonoBehaviour {
                     // Reset values and reload to Main Menu
                     Context.PlayerHealth.CurHealth = Context.PlayerHealth.MaxHealth;
                     Context.PlayerInventory = new Inventory();
-                    isPaused = false;                           // Unpause
+                    isPaused = false;                                       // Unpause
                     Application.LoadLevel("MainMenu");
                 }
                 // Save game button
@@ -422,7 +474,7 @@ public class HUD : MonoBehaviour {
                     CorkBoardDivisionSizeWidth,
                     CorkBoardDivisionSizeHeight), SaveGameButtonTexture, emptyStyle))
                 {
-
+                    SaveGamePreferences();
                 }
                 // Settings button
                 if (GUI.Button(new Rect(Screen.width / 2 - CorkBoardWidth / 2 + CorkBoardDivisionSizeWidth * 2 + CorkBoardBorderSize * 3,
@@ -446,11 +498,6 @@ public class HUD : MonoBehaviour {
                 }
             }
 
-            // Draw pause menu button words
-            //pauseMenuButtonsStyle = GUI.skin.label;
-            //pauseMenuButtonsStyle.alignment = TextAnchor.MiddleCenter;
-            //pauseMenuButtonsStyle.normal.textColor = Color.black;
-            //GUI.TextField(new Rect(Screen.width / 2 - CorkBoardTexture.width / 2 + CorkBoardBorderSize, Screen.height / 2 - CorkBoardTexture.height / 2 + CorkBoardBorderSize, CorkBoardDivisionSizeWidth, CorkBoardDivisionSizeHeight), "<size=" + InventoryLetterFontSize + ">" + "Resume" + "</size>", pauseMenuButtonsStyle);
         }
     }
 
@@ -461,6 +508,9 @@ public class HUD : MonoBehaviour {
     {
         // Always keep track of player health
         UpdatePlayerStats();
+
+        // Determine scrolling hint text dimensions
+        AdjustScrollingHintDimensions();
 
         // Determine size of inventory "boxes" depending on screen size
         AdjustInventoryDimensions();
@@ -477,9 +527,6 @@ public class HUD : MonoBehaviour {
 
         // Determine which letter is selected based on key presses
         SetSelectedLetterFromKeyPress();
-
-        // Determine which power up is selected based on key press (numeric keys on alphanumeric keyboard)
-        SetSelectedPowerUpFromKeyPress();
 
         // If [Esc] is pressed, pause the game
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -537,6 +584,17 @@ public class HUD : MonoBehaviour {
         MinimumHealth = (int)Context.PlayerHealth.MinHealth;
         MaximumHealth = (int)Context.PlayerHealth.MaxHealth;
         HealthBarLength = (float)((Screen.width / 2) * (float)((float)CurrentHealth / (float)MaximumHealth));
+    }
+
+    /// <summary>
+    /// Determines dimensions for the scrolling hint text, such as font size, depending on screen size
+    /// </summary>
+    private void AdjustScrollingHintDimensions()
+    {
+        if (Screen.width <= 1000)
+            hintStyle.fontSize = 25;
+        else
+            hintStyle.fontSize = 35;
     }
 
     /// <summary>
@@ -607,15 +665,17 @@ public class HUD : MonoBehaviour {
     }
 
     /// <summary>
-    /// Set selected power-up from inventory upon keypress
+    /// Saves user's current game preferences, scores, and HP
     /// </summary>
-    private void SetSelectedPowerUpFromKeyPress()
+    private void SaveGamePreferences()
     {
-        // Set SelectedPowerUp from Context as index of the PlayerInventory.CollectedPowerUpsList
-        if (Input.GetKeyDown(KeyCode.Alpha1)) { }    // Number 1 on top of alphanumeric keyboard, selects the normal ammo
-        if (Input.GetKeyDown(KeyCode.Alpha2)) { Context.SelectedPowerUp = 0; }    // Number 2 on top of alphanumeric keyboard, selects first PowerUp
-        if (Input.GetKeyDown(KeyCode.Alpha3)) { Context.SelectedPowerUp = 1; }    // Number 3 on top of alphanumeric keyboard, selects second PowerUp
-        if (Input.GetKeyDown(KeyCode.Alpha4)) { Context.SelectedPowerUp = 2; }    // Number 4 on top of alphanumeric keyboard, selects third PowerUp
+        PlayerData dataToSave = GameStateUtilities.Load();
+        dataToSave.Curriculum = Context.Curriculum;
+        dataToSave.CurrentLessonId = Context.CurrentLessonId;
+        dataToSave.LifeCount = (int)Context.PlayerHealth.CurHealth;
+        dataToSave.CurrentScore = Context.CurrentScore.Score;
+        dataToSave.EnemyDifficultyId = Context.EnemyDifficulty.ID;
+        GameStateUtilities.Save(dataToSave);
     }
 
 }
