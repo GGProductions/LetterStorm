@@ -86,7 +86,7 @@ public class Boss_Motion_animation : MonoBehaviour {
 	///  and since the motion is a function of time, the game will behave differently on diffrent processors
 	///  slower machins will see a very slow moving boss.
 	///  the boss motion should be done in a diffreent way: lerping between point1 and boint2
-	///  the problem with that is making sure the boss goes back to where he left off after fininshing an Chaaarge() coroutine
+	///  the problem with that is making sure the boss goes back to where he left off after fininshing a Chaaarge() coroutine
 	/// </summary>
 	void Update () {
 

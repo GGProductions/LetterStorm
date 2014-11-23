@@ -19,7 +19,7 @@ public class Vowel : MonoBehaviour
         {
             GameObject go = Instantiate(theDrop, transform.position, Quaternion.Euler(270, 0, 0)) as GameObject;
             go.name = theDrop.name;
-            Debug.Log("made a letter");
+         //   Debug.Log("made a letter");
         }
         else
             if (rndChance > 50 && rndChance <= 60)

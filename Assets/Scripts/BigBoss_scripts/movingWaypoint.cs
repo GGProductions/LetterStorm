@@ -7,14 +7,14 @@ public class movingWaypoint : MonoBehaviour {
 	private float timeElapsed;
 	// Use this for initialization
 	void Start () {
-	
+        transform.GetComponent<MeshRenderer>().enabled = false;
+
+    //    this.transform.GetComponent<MeshRenderer>().enabled= false;
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		timeElapsed += Time.deltaTime * 0.5f;
-		float factor = Mathf.Cos(timeElapsed) * 0.2f;
-
-        transform.Translate(Vector3.forward * (factor / 10) * Time.timeScale, Space.World);
-	}
+    void Update()
+    { }
+    
 }
+    
