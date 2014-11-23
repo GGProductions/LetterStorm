@@ -16,6 +16,9 @@ public class Boss_3d_wordGen : MonoBehaviour {
     public delegate void wrongLetterCollision();
     public static event wrongLetterCollision OnWrongCollision;
 
+	//JR Delay boss prior to loading next level
+	public float delayTime = 2;
+
   
    
     public delegate void BossgunsDied();
@@ -194,6 +197,10 @@ public class Boss_3d_wordGen : MonoBehaviour {
                             Context.CurrentScore.Increase(ScoreKeeper.PlayerAchievement.DefeatBoss);
 
                             Context.PrepareForNextLevel();
+
+							//JR delay loading next level
+							yield return new WaitForSeconds( delayTime );
+
                             //Fade out boss coroutine 
                             Application.LoadLevel("Win");
                         }
