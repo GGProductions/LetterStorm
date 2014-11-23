@@ -424,17 +424,26 @@ public class Albert_force_controller : MonoBehaviour
 				Context.CurrentScore.Increase(ScoreKeeper.PlayerAchievement.CollectLetter);
 
 				GameObject go = otherObj.gameObject;
+
+
 				Destroy(go);
+                Debug.Log("itshappeneing");
 			}
 
 		}
 
 		if (otherObj.tag == "letterProjectile")
 		{
-			//Debug.Log("name of letterpickedup " + otherObj.name);
-			char input = otherObj.name[0];
-			Messenger<string>.Broadcast("picked up a letter", otherObj.name);
-			Context.PlayerInventory.AddCollectedLetter(input.ToString().ToUpper());
+            Debug.Log("itshappeneing again");
+          
+           
+         
+              
+               //Debug.Log("name of letterpickedup " + otherObj.name);
+               char input = otherObj.name[0];
+               Messenger<string>.Broadcast("picked up a letter", otherObj.name);
+               Context.PlayerInventory.AddCollectedLetter(input.ToString().ToUpper());
+                   
 		}
 		else
 		{
