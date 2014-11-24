@@ -38,6 +38,10 @@ public class BigBoss_motion_animation : MonoBehaviour
     private int CurIndex;
     private int nextIndex;
 
+
+    private bool isopen = false;
+
+    private bool stop_followingWaypoints = false;
     #endregion
 
     #region listenners
@@ -52,7 +56,9 @@ public class BigBoss_motion_animation : MonoBehaviour
 	}
     #endregion
 
-
+    /// <summary>
+    /// get ref to claws and initialize animations
+    /// </summary>
 	void Awake() {
 
 		lc = transform.GetChild(0).GetChild(0).GetChild(2);
@@ -63,7 +69,9 @@ public class BigBoss_motion_animation : MonoBehaviour
 		animation.AddClip(closeClaw, "closingClaw");
 	}
 
-	// Use this for initialization
+	/// <summary>
+	///  starts with "enterring" coroutine which will then start the waypoint navigation coroutine
+	/// </summary>
     void Start()
     {
         transform.position = new Vector3(2f, 0.2f, 10f);
@@ -79,12 +87,13 @@ public class BigBoss_motion_animation : MonoBehaviour
             transList.Add(c);
         }
 
- 
 		animation.wrapMode = WrapMode.Loop;
 
 		animation["openingClaw"].wrapMode = WrapMode.ClampForever;
 		animation["closingClaw"].wrapMode = WrapMode.Clamp;
-  
+
+        //set layers for animation priorities , lowest layers have highest priority
+        //this will ensure that the boss keeps on slithering while he opens and closes his claws
 		animation["slithering"].layer = 0;
 		animation["openingClaw"].layer = 10;
 		animation["closingClaw"].layer = 10;
@@ -95,12 +104,15 @@ public class BigBoss_motion_animation : MonoBehaviour
 		animation["closingClaw"].AddMixingTransform(rc);
 
 	   StartCoroutine(Open_Close_animations());
-    //   StartCoroutine("MovePtP_globalIndex");
-        //entring will start the loop around the waypoint 
+ 
+      //entring will start the loop around the waypoint 
       StartCoroutine("Enetring");
 
 	}
 
+    /// <summary>
+    /// makes sure there is no overflow , the next waypoint cannot be greater than # of componants in translist
+    /// </summary>
     void calcCurnext() {
 
         if (CurIndex < transList.Count - 1)
@@ -122,6 +134,13 @@ public class BigBoss_motion_animation : MonoBehaviour
 
     }
 
+
+    /// <summary>
+    /// the initial coroutine , the boss is instanciated and slowly moves to waypoint 0
+    /// please make sure that waypoint 0 is lined up with the boss, because the boss only stops when he reaches the level of the waypoint on the x axis 
+    /// -When boss arrives at destination, he starts his "move coroutine"
+    /// </summary>
+    /// <returns></returns>
     IEnumerator Enetring() {
 
         while (transform.position.z > transList[0].position.z)
@@ -131,49 +150,48 @@ public class BigBoss_motion_animation : MonoBehaviour
 
             yield return 0;      
         }
-        StopCoroutine("Enetring");
-        Debug.Log("arrived");
-        StartCoroutine("onlyCoroutine");
+        StartCoroutine("Waypoint_routine");
     }
 
 
-    private bool stopped=false;
-    IEnumerator onlyCoroutine()
+    /// <summary>
+    /// will navigathe through waypoints if the boss was not hit with a wrong letter
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator Waypoint_routine()
     {
-       
-
         while (true)
         {
-           if (stopped)
+           if (stop_followingWaypoints)
             {
                break;
             }  
             calcCurnext();
-            //loop through 1-> end
-          
-            //   indexplusone = CurIndex + 1;
             yield return StartCoroutine(Move_A_B_time(transform, transList[CurIndex].position, transList[nextIndex].position, 3.0f));
             CurIndex++;
         
         }
-        //Vector3 curBossPo = transform.position;
-
-        //this works  but 
-        //yield return StartCoroutine(Special_Move_A_B_time(transform, curBossPo, albertisat, 0.2f));
-        yield return StartCoroutine(Special_back_Move_A_B_time(transform, transList[nextIndex].position, 0.3f));
-      
-
+        //starting this coroutine with move back, but mooveback will wait for move forward to be done 
+        yield return StartCoroutine(move_back_from_Albert_location(transform, transList[nextIndex].position, 0.3f));
 
     }
 
-    IEnumerator Special_back_Move_A_B_time(Transform thisTransform,  Vector3 endPos, float time)
+    /// <summary>
+    /// single coroutine that will first wait fro movetowardAlbert to finish 
+    /// this will set stopfollow to false , untill boss is hit witha  wrong letter again
+    /// </summary>
+    /// <param name="thisTransform"> this bigboss</param>
+    /// <param name="endPos"> ends at albet's location</param>
+    /// <param name="time"> .2f is pretty fast </param>
+    /// <returns></returns>
+    IEnumerator move_back_from_Albert_location(Transform thisTransform,  Vector3 endPos, float time)
     {
         Vector3 albertisat = thePlayerOBJ.transform.position;
         Vector3 curBossPo = transform.position;
-        yield return StartCoroutine(Special_Move_A_B_time(transform, curBossPo, albertisat, 0.2f));
+        yield return StartCoroutine(move_toward_Albert_location(transform, curBossPo, albertisat, 0.2f));
 
          curBossPo = transform.position;
-        Debug.Log("we in special");
+      //  Debug.Log("we in special");
         float i = 0.0f;
         float rate = 1.0f / time;
         while (i < 1.0f)
@@ -182,16 +200,23 @@ public class BigBoss_motion_animation : MonoBehaviour
             thisTransform.position = Vector3.Lerp(curBossPo, endPos, i);
             yield return null;
         }
-        Debug.Log("we out special");
-        stopped = false;
+        //Debug.Log("we out special");
+        stop_followingWaypoints = false;
 
-        StartCoroutine("onlyCoroutine");
+        StartCoroutine("Waypoint_routine");
     }
 
-
-    IEnumerator Special_Move_A_B_time(Transform thisTransform, Vector3 startPos, Vector3 endPos, float time)
+    /// <summary>
+    /// single coroutine moves boss from current location to Albert's location
+    /// </summary>
+    /// <param name="thisTransform"></param>
+    /// <param name="startPos"></param>
+    /// <param name="endPos"></param>
+    /// <param name="time"></param>
+    /// <returns></returns>
+    IEnumerator move_toward_Albert_location(Transform thisTransform, Vector3 startPos, Vector3 endPos, float time)
     {
-        Debug.Log("we in special");
+        
         float i = 0.0f;
         float rate = 1.0f / time;
         while (i < 1.0f)
@@ -200,119 +225,30 @@ public class BigBoss_motion_animation : MonoBehaviour
             thisTransform.position = Vector3.Lerp(startPos, endPos, i);
             yield return null;
         }
-        Debug.Log("we out special");
+       
     }
 
 
 
     /// <summary>
-    /// this is bigboss's chaaaarge , which is diffeternt than rebular boss's chaarge 
-    /// , this should stop coroutine,
-    /// find what index we at, 
-    /// attach record albert's poistin
-    /// go to that position
-    /// comback to the index'es position and go on
+    /// only sets a bool instead of trying to stop waypoint coroutine, and then start a new one, then stop that one , and resume waypoinnavigation
     /// </summary>
     public void CHaaaarge()
     {
-        stopped = true;
-        Debug.Log("stopped =ttrue");
-       // Vector3 albertPos = thePlayerOBJ.transform.position;
-     //  StopCoroutine("MovePtP_globalIndex");
-      
-       // StartCoroutine("breakCourputAttack");
-       // Debug.Log("GO TO ALBERT");
-      
-
-        //this doesnot work
-       // StartCoroutine("breakCourputAttack");
+        stop_followingWaypoints = true;
+       // Debug.Log("stopped =ttrue");
+    
     }
-
-    IEnumerator Move_A_B_time2(Transform thisTransform, Vector3 startPos, Vector3 endPos, float time)
-    {
-        float i = 0.0f;
-        float rate = 1.0f / time;
-        while (i < 1.0f)
-        {
-            i += Time.deltaTime * rate;
-            thisTransform.position = Vector3.Lerp(startPos, endPos, i);
-            yield return null;
-        }
-    }
-
-
-
-    IEnumerator breakCourputAttack( )
-    {
-        //stopped = true;
-       // StopCoroutine("Enetring");
-      //
-       // StopCoroutine("Enetring");
-       // StopCoroutine("MovePtP_globalIndex");
-
-        Debug.Log("GO TO ALBERT");
-        Vector3 albertisat = thePlayerOBJ.transform.position;
-        Vector3 curBossPo = transform.position;
-        StartCoroutine(Move_A_B_time(transform, curBossPo, albertisat, 0.2f));
-        yield return 0;
-     //   yield return StartCoroutine(Move_A_B_time(transform, curBossPo, transList[CurIndex].position, 0.2f));
-     //    yield return 0;
-     //   yield return StartCoroutine(MoveObjecttoalbert_local(0.2f));
-
-       // Debug.Log("I should be here going to " + alberLoc);
-      //  StopCoroutine("initMovePASS");
-       
-      //  yield return StartCoroutine( "MoveObjecttoalbert_local", 0.1f  );
-     //   yield return StartCoroutine(MoveObject(transform, alberLoc, transList[oldIndex +1 ].position, 3.0f));
-      //  yield return StartCoroutine("initMovePASS", oldIndex+1 );
-    }
-
-
-    IEnumerator MoveObjecttoalbert_local(float time)
-    {
-          Vector3 albertisat = thePlayerOBJ.transform.position;
-
-        yield return Move_A_B_time(transform, transform.position, albertisat, 0.2f);
-
-/*
-
-       //   CurIndex++;
-       // calcCurnext();
-
-        Vector3 endPos = thePlayerOBJ.transform.position;
-        StopCoroutine("MovePtP_globalIndex");
-
-        Debug.Log("moving to alberts" + endPos);
-        var i = 0.0f;
-        var rate = 1.0f / time;
-        while (i < 1.0f)
-        {
-            i += Time.deltaTime * rate;
-            transform.position = Vector3.Lerp(transform.position, endPos, i);
-            yield return null;
-        }
-
-
-        var j = 0.0f;
-        var rate2 = 1.0f / time;
-        while (j < 1.0f)
-        {
-            i += Time.deltaTime * rate;
-            transform.position = Vector3.Lerp(transform.position, transList[CurIndex].position, i);
-            yield return null;
-        }
-
-       // CurIndex++;
 
    
-  //    StartCoroutine("initMovePASS", CurIndex );
-    //    StartCoroutine("MovePtP_globalIndex");
-
-
-        */
-    }
-
-
+    /// <summary>
+    /// most basic coroutine which moves any object from A to B in t time
+    /// </summary>
+    /// <param name="thisTransform"></param>
+    /// <param name="startPos"></param>
+    /// <param name="endPos"></param>
+    /// <param name="time"></param>
+    /// <returns></returns>
 	IEnumerator Move_A_B_time(Transform thisTransform, Vector3 startPos, Vector3 endPos, float time)
 	{
 		float i = 0.0f;
@@ -326,34 +262,30 @@ public class BigBoss_motion_animation : MonoBehaviour
 	}
 
 
-
-
+    /// <summary>
+    /// only activates the slither animation
+    /// </summary>
 	void LateUpdate()
-	{
-       
+	{   
 		animation.CrossFade("slithering");
-     //   Debug.Log("cur is " + CurIndex);
-	
 	}
 
 
-	private bool isopen=false;
-
+	
+    /// <summary>
+    /// opening anc closing claws accoring to opentime and close time variables
+    /// </summary>
+    /// <returns></returns>
 	IEnumerator Open_Close_animations() {
-	  //  animation.Stop("slithering");
 
 		while (gameObject) {
 			if (!isopen) {
 				animation.CrossFade("openingClaw");
 				yield return new WaitForSeconds(animation["openingClaw"].length);
-			//	Debug.Log("This message appears after animation!");
 				isopen = true;
 
 				for (float timer = time_toStayOpen; timer >= 0; timer -= Time.deltaTime)
-					yield return 0;
-
-				//Debug.Log("This message appears after 3 seconds!");
-			
+					yield return 0;		
 			}
 			else
 				if (isopen) {
@@ -371,120 +303,6 @@ public class BigBoss_motion_animation : MonoBehaviour
 
 	
 	}
-
-
-
-    /*
-  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
- /// this guy and the other one with no parameters is how I used to move from wp to wp
- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   
-    IEnumerator initMovePASS(int initIndex)
-    {
-
-        CurIndex = initIndex;
-        int indexplusone = CurIndex + 1;
-        while (true)
-        {
-            //loop through 1-> end
-            if (CurIndex >= transList.Count -1)
-            {
-                indexplusone = 0;
-                yield return StartCoroutine(MoveObject(transform, transList[CurIndex].position, transList[indexplusone].position, 3.0f));
-                indexplusone ++;
-                CurIndex = 0;
-            }
-            else
-          //   indexplusone = CurIndex + 1;
-            yield return StartCoroutine(MoveObject(transform, transList[CurIndex].position, transList[indexplusone].position, 3.0f));
-
-            CurIndex++;
-            indexplusone++;
-        }
-
-
-    }
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-     	
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-    IEnumerator MoveObjecttoalbert(Transform thisTransform, Vector3 startPos, Vector3 endPos, float time)
-    {
-        StopCoroutine("initMovePASS");
-        Debug.Log("moving to alberts");
-        var i = 0.0f;
-        var rate = 1.0f / time;
-        while (i < 1.0f)
-        {
-            i += Time.deltaTime * rate;
-            thisTransform.position = Vector3.Lerp(startPos, endPos, i);
-            yield return null;
-        }
-    }
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-    IEnumerator Func1()
-	{
-		animation.CrossFade("openingClaw");
-		yield return new WaitForSeconds(animation["openingClaw"].length);
-
-	}
-
-
- 
-      
-    IEnumerator initMove()
-   {
-     
-       //do enterring the scene between point 0 and point 1 
-       yield return StartCoroutine(MoveObject(transform, transList[0].position, transList[1].position, 4.0f));
-		
-       while (true)
-       {
-           //loop through 1-> end
-           if (CurIndex == transList.Count - 1) { CurIndex = 1;
-           yield return StartCoroutine(MoveObject(transform, transList[transList.Count - 1].position, transList[CurIndex ].position, 3.0f));
-           }
-           yield return StartCoroutine(MoveObject(transform, transList[CurIndex].position, transList[CurIndex+1].position, 3.0f));
-
-           CurIndex++;
-           
-
-
-          // yield return StartCoroutine(MoveObject(transform, transList[1].position, transList[2].position, 3.0f));
-          // yield return StartCoroutine(MoveObject(transform, transList[2].position, transList[3].position, 3.0f));
-          // yield return StartCoroutine(MoveObject(transform, transList[3].position, transList[4].position, 4.0f));
-          // yield return StartCoroutine(MoveObject(transform, transList[4].position, transList[1].position, 4.0f));
-
-       }
-   }
-     * 
-     *
-	void sidetoside() {
-		timeElapsed += Time.deltaTime;
-		float factor = Mathf.Cos(timeElapsed);
-		transform.Translate(Vector3.right * (factor / 20) * Time.timeScale, Space.World);
-		transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-	} 
-     * 
-     * 
-     * 
-     *
-*/
 
 
 

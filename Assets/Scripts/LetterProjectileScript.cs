@@ -5,6 +5,9 @@ public class LetterProjectileScript : MonoBehaviour {
 
     private float currentRotationSpeed;
 
+    void Awake() {
+    //    isactive = true; 
+    }
     // Use this for initialization
     void Start()
     {
@@ -60,11 +63,11 @@ public class LetterProjectileScript : MonoBehaviour {
             //    Destroy(gameObject);
 
         }
-        if (otherObj.tag == "AlbertPrefab2")
+        if (otherObj.tag == "AlbertPrefab2"  )
         {
-            Debug.Log("I am letter --->albert");
-           // this.transform.GetComponent<SphereCollider>().isTrigger = true;
-            Destroy(gameObject);
+          // if(isactive)
+
+           Destroy(gameObject);
         }
            
     }

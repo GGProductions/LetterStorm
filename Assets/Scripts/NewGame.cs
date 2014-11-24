@@ -235,7 +235,7 @@ public class NewGame : MonoBehaviour
     }
 
     /// <summary>
-    /// The styles used for tooltip label
+    /// The styles used for start game button
     /// </summary>
     private GUIStyle startGameButtonStyle
     {
@@ -323,7 +323,7 @@ public class NewGame : MonoBehaviour
     /// </summary>
     private void CreateGUI()
     {
-        // Calculate the factor by which the GUI should be sized/resized
+        // Calculate the factor by which the GUI should be sized/resized based on the screen size
         CalculateGUIScaleFactor();
 
         // Calculate the location where the top left of the GUI should 
@@ -480,7 +480,7 @@ public class NewGame : MonoBehaviour
     /// </summary>
     private void CreateStartGameBtn()
     {
-        // Create the button used to create a new lesson.  If it was clicked...
+        // Create the button used to start a new game.  If it was clicked...
         if (GUI.Button(new Rect((Screen.width / 2) - (200 * scaleFactor), Screen.height - (100 * scaleFactor), (400 * scaleFactor), (60 * scaleFactor)), "Play Game!", startGameButtonStyle))
         {
             // Set the enemy difficulty level the game will use
@@ -499,7 +499,7 @@ public class NewGame : MonoBehaviour
     /// </summary>
     private void CreateMainMenuBtn()
     {
-        // Create the button used to create a new lesson.  If it was clicked...
+        // Create the button used to return to the main menu.  If it was clicked...
         if (GUI.Button(new Rect(Screen.width - (200 * scaleFactor), Screen.height - (90 * scaleFactor), (150 * scaleFactor), (40 * scaleFactor)), "Main Menu", mainMenuButtonStyle))
         {
             // Return to the main menu
