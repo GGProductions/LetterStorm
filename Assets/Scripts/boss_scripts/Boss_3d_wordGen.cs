@@ -197,14 +197,10 @@ public class Boss_3d_wordGen : MonoBehaviour {
                             Context.CurrentScore.Increase(ScoreKeeper.PlayerAchievement.DefeatBoss);
 
                             Context.PrepareForNextLevel();
-<<<<<<< HEAD
 
 							//JR delay loading next level
 							//yield return new WaitForSeconds( delayTime );
 
-                            //Fade out boss coroutine 
-                            Application.LoadLevel("Win");
-=======
                             //Fade out boss coroutine
                             if (Context.Curriculum.Lessons.GetLessonById(Context.CurrentLessonId).Words.ContainsUntestedWords())
                             {
@@ -214,7 +210,6 @@ public class Boss_3d_wordGen : MonoBehaviour {
                             {
                                 Application.LoadLevel("WinAll");
                             }
->>>>>>> 98a5289dcba0729dd18f8457d5918428790dcf97
                         }
                     }
                     else
