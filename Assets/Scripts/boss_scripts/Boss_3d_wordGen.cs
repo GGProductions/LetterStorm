@@ -17,7 +17,7 @@ public class Boss_3d_wordGen : MonoBehaviour {
     public static event wrongLetterCollision OnWrongCollision;
 
 	//JR Delay boss prior to loading next level
-	public float delayTime = 2;
+	//public float delayTime = 2;
 
   
    
@@ -199,7 +199,7 @@ public class Boss_3d_wordGen : MonoBehaviour {
                             Context.PrepareForNextLevel();
 
 							//JR delay loading next level
-							yield return new WaitForSeconds( delayTime );
+							//yield return new WaitForSeconds( delayTime );
 
                             //Fade out boss coroutine 
                             Application.LoadLevel("Win");

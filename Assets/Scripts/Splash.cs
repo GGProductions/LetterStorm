@@ -6,7 +6,7 @@ using System.Collections;
 public class Splash : MonoBehaviour {
   
   	//JR splash scene displays for 5 seconds
-    public float delayTime = 5;
+    public float delayTime = 2;
     
 	//JR Texture for the background in the scene
     public Texture backgroundTexture;
