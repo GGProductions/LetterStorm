@@ -194,8 +194,15 @@ public class Boss_3d_wordGen : MonoBehaviour {
                             Context.CurrentScore.Increase(ScoreKeeper.PlayerAchievement.DefeatBoss);
 
                             Context.PrepareForNextLevel();
-                            //Fade out boss coroutine 
-                            Application.LoadLevel("Win");
+                            //Fade out boss coroutine
+                            if (Context.Curriculum.Lessons.GetLessonById(Context.CurrentLessonId).Words.ContainsUntestedWords())
+                            {
+                                Application.LoadLevel("Win");
+                            }
+                            else
+                            {
+                                Application.LoadLevel("WinAll");
+                            }
                         }
                     }
                     else

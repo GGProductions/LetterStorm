@@ -270,8 +270,6 @@ public class Context : MonoBehaviour
     {
         Context.PlayerInventory = new Inventory();
         Context.DualPencils = new PowerUp("DualPencils");
-        //Context.PlayerHealth = new Health(_enemyDifficulty);
-        //Context.PlayerHealth.CurHealth = Context.PlayerHealth.MaxHealth;
         Context.PlayerHealth = new Health(EnemyDifficulty);
         Context.PlayerInventory.CollectedPowerUpsList.Add(Context.DualPencils);
     }
