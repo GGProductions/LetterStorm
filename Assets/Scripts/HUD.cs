@@ -145,7 +145,16 @@ public class HUD : MonoBehaviour {
     public void SetHintTextScrollingBox()
     {
         float scrollSpeed = 65;
-        hintText = "Hint: " + Context.Word.Hint + " ";
+        try
+        {
+            hintText = "Hint: " + Context.Word.Hint + " ";
+        }
+        // This exception will be thrown during the last frames of the last boss, 
+        // in which case do nothing (since the user doesn't need the hint any more)
+        catch (NoUntestedWordsException)
+        {
+            // Do nothing
+        }
 
         if (hintTextRectangle.width == 0)
         {
