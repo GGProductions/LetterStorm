@@ -22,6 +22,7 @@ namespace GGProductions.LetterStorm.Configuration
         private float _bossHealthHandicap = 1.0f;
         private bool _enableBossRageMode = true;
         #endregion Private Variables ------------------------------------------
+        
 
         #region Properties ----------------------------------------------------
         /// <summary>The unique id of this difficulty level</summary>

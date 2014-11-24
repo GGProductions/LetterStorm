@@ -195,7 +195,7 @@ public class Boss_3d_wordGen : MonoBehaviour {
 
                             Context.PrepareForNextLevel();
                             //Fade out boss coroutine 
-                            Application.LoadLevel("Win");
+                            StartCoroutine(wait_toLoadWin());
                         }
                     }
                     else
@@ -213,5 +213,12 @@ public class Boss_3d_wordGen : MonoBehaviour {
         }
 
 
+    }
+
+
+    IEnumerator wait_toLoadWin() {
+
+        yield return new WaitForSeconds(3f);
+        Application.LoadLevel("Win");
     }
 }

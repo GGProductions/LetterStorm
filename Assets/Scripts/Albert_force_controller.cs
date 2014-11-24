@@ -62,15 +62,17 @@ public class Albert_force_controller : MonoBehaviour
 	private AlbertState curr_state = AlbertState.Playing;
 
 	private bool canwalk = true;
-	#endregion
-
 	private Transform MeshObject;
 	private SkinnedMeshRenderer SMR;
-	private float THETIME=0f;
+	private float THETIME = 0f;
 
 	private float blinkRate = 0.1f;
 	private int numberOfTimesToBlink = 10;
 	private int blinkCount = 0;
+
+
+	#endregion
+
 
 	void OnEnable()
 	{
@@ -164,16 +166,22 @@ public class Albert_force_controller : MonoBehaviour
 	
 
 	}
+	IEnumerator wait_toLoadlose()
+	{
+		animation.CrossFade("falling");
+		yield return new WaitForSeconds(3f);
+		Application.LoadLevel("Lose");
+	}
 
 	void FixedUpdate()
 	{
 
-		if (Context.PlayerHealth.HasNoHealth()) Application.LoadLevel("Lose");
+		if (Context.PlayerHealth.HasNoHealth()) StartCoroutine(wait_toLoadlose());
+
 		if (curr_state == AlbertState.Playing || curr_state == AlbertState.Invincible)
 		{
 
 			updateDirrection_fromKeypressed();
-
 
 			//	rigidbody.velocity = (Input.GetAxis("Horizontal") * mytransform.right + Input.GetAxis("Vertical") * mytransform.forward).normalized * playerspeed;
 			rigidbody.velocity = (Global_leftright * mytransform.right + Global_updown * mytransform.forward).normalized * playerspeed;
@@ -319,14 +327,14 @@ public class Albert_force_controller : MonoBehaviour
 
 	void updateDirrection_fromKeypressed() {
 
-        if (Input.GetKey(KeyCode.UpArrow))
-            Global_updown = 1f;
-        if (Input.GetKey(KeyCode.DownArrow))
-            Global_updown = -1f;
-        if (Input.GetKey(KeyCode.RightArrow))
-            Global_leftright = 1f;
-        if (Input.GetKey(KeyCode.LeftArrow))
-            Global_leftright = -1f;
+		if (Input.GetKey(KeyCode.UpArrow))
+			Global_updown = 1f;
+		if (Input.GetKey(KeyCode.DownArrow))
+			Global_updown = -1f;
+		if (Input.GetKey(KeyCode.RightArrow))
+			Global_leftright = 1f;
+		if (Input.GetKey(KeyCode.LeftArrow))
+			Global_leftright = -1f;
 	}
 
 
@@ -368,16 +376,59 @@ public class Albert_force_controller : MonoBehaviour
 	}
 
 
+	
 
 
+	
+
+
+		#endregion
 
 	void OnTriggerEnter(Collider otherObj)
 	{
 
 
+		if (otherObj.tag == "letterProjectile")
+		{
+			Debug.Log("itshappeneing again");
+
+
+			//Debug.Log("name of letterpickedup " + otherObj.name);
+			char input = otherObj.name[0];
+			Messenger<string>.Broadcast("picked up a letter", otherObj.name);
+			Context.PlayerInventory.AddCollectedLetter(input.ToString().ToUpper());
+
+
+		}
+		else
+
+			if (otherObj.tag == "dualpencilProjectile")
+			{
+				Debug.Log("dualpencilProjectile");
+				Context.PlayerInventory.IncrementPowerUp("DualPencils");
+				Destroy(otherObj);
+			}
+			else
+				if (otherObj.tag == "poisonousMushroomPowerUp")
+				{
+					Debug.Log("poisonousMushroomPowerUp");
+					curr_state = AlbertState.GotHit;
+					Context.PlayerHealth.DecreaseHealth();
+					Instantiate(Resources.Load("Explosions/blackStars1"),
+											 transform.position,
+											 Quaternion.Euler(-180, 0, 0));
+					Destroy(otherObj);
+					StartCoroutine(doFallanimation1());
+					StartCoroutine(doFallanimation2());
+				}
+
+				else
+		// animation.CrossFade("falling");
+		// Context.PlayerHealth.decreaseHealth(Context.DefaultPlayerHealthDecreaseFactor);
+		
 		//	Debug.Log(otherObj.tag + " is the tag registered");
 		//just for funzies ..this will not stay unless we can see a good power up use
-	//	scaleFactorOfRworth = scaleFactorOfRworth + 0.02f;
+		//	scaleFactorOfRworth = scaleFactorOfRworth + 0.02f;
 
 		if (otherObj.tag == "enemy" || otherObj.tag == "bossTag" || otherObj.tag == "bossProjectileTag" || otherObj.tag == "smartProjectile")
 		{
@@ -395,9 +446,9 @@ public class Albert_force_controller : MonoBehaviour
 			//CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 			//CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 
-				StartCoroutine(doFallanimation1());
-				StartCoroutine(doFallanimation2());
-//                Debug.Log("outside of both coroutins at " + THETIME);
+			StartCoroutine(doFallanimation1());
+			StartCoroutine(doFallanimation2());
+			//                Debug.Log("outside of both coroutins at " + THETIME);
 
 
 			//CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
@@ -408,77 +459,60 @@ public class Albert_force_controller : MonoBehaviour
 			//Debug.Log("instant coffere");
 		}
 
-		
+		else
 		//fyi, the pencil collides with albert when he instantiates it 
 		// did we pickup a letter?
 		if (otherObj.tag != "bossTag" && otherObj.tag != "bossProjectileTag" && otherObj.tag != "enemy" && otherObj.tag != "projectileTag")
 		{
 			if (otherObj.transform.GetComponent<SphereCollider>() != null)
 			{
-				otherObj.transform.GetComponent<SphereCollider>().isTrigger = true;
-				Messenger<string>.Broadcast("picked up a letter", otherObj.name);   // Nabil: Added this so I can remove letters from my dict whenever Albert has picked them up to keep from overspawning
-				// letters that he needs but already has -Paul
-				Context.PlayerInventory.AddCollectedLetter(otherObj.name);
+				if (otherObj.GetComponent<CollectibleChar>() != null) {
+					otherObj.transform.GetComponent<SphereCollider>().isTrigger = true;
+					Messenger<string>.Broadcast("picked up a letter", otherObj.name);   // Nabil: Added this so I can remove letters from my dict whenever Albert has picked them up to keep from overspawning
+					// letters that he needs but already has -Paul
+					Context.PlayerInventory.AddCollectedLetter(otherObj.name);
 
-				// Grant the user points for collecting the letter
-				Context.CurrentScore.Increase(ScoreKeeper.PlayerAchievement.CollectLetter);
+					// Grant the user points for collecting the letter
+					Context.CurrentScore.Increase(ScoreKeeper.PlayerAchievement.CollectLetter);
 
-				GameObject go = otherObj.gameObject;
+					GameObject go = otherObj.gameObject;
 
 
-				Destroy(go);
-                Debug.Log("itshappeneing");
+					Destroy(go);
+					Debug.Log("itshappeneing");
+				}
+
+			  
 			}
 
 		}
 
-		if (otherObj.tag == "letterProjectile")
-		{
-            Debug.Log("itshappeneing again");
-          
-           
-         
-              
-               //Debug.Log("name of letterpickedup " + otherObj.name);
-               char input = otherObj.name[0];
-               Messenger<string>.Broadcast("picked up a letter", otherObj.name);
-               Context.PlayerInventory.AddCollectedLetter(input.ToString().ToUpper());
-                   
-		}
 		else
-		{
-			// animation.CrossFade("falling");
-			// Context.PlayerHealth.decreaseHealth(Context.DefaultPlayerHealthDecreaseFactor);
-		}
 
-		if (otherObj.tag == "dualpencilProjectile")
-		{
-			Context.PlayerInventory.IncrementPowerUp("DualPencils");
-			Destroy(otherObj);
-		}
 
-		if (otherObj.tag == "poisonousMushroomPowerUp")
-		{
-			curr_state = AlbertState.GotHit;
-			Context.PlayerHealth.DecreaseHealth();
-			Instantiate(Resources.Load("Explosions/blackStars1"),
-									 transform.position,
-									 Quaternion.Euler(-180, 0, 0));
-			Destroy(otherObj);
-			StartCoroutine(doFallanimation1());
-			StartCoroutine(doFallanimation2());
-		}
+		
 
 		if (otherObj.tag == "slowDown")
 		{
 			Messenger<string>.Broadcast("slowing down time", otherObj.name);
 		}
+		/*
+		if (otherObj.tag == "hurricane_pickupTag")
+		{
+			Destroy(otherObj);
+		}
+
+		if (otherObj.tag == "poisonousMushroomPowerUp")
+		{
+			Destroy(otherObj);
+		}
+			if (otherObj.tag == "dualpencilProjectile")
+		{
+			Destroy(otherObj);
+		}
+		
+		*/
 	}
-
-
-		#endregion
-
-
 
 	IEnumerator doFallanimation1() {
 	//	Debug.Log("in dofall1 " + THETIME);
