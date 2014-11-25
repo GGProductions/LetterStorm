@@ -209,6 +209,7 @@ public class ManageLessons : MonoBehaviour
                                              (int)(_mainMenuButtonStyleOrig.padding.right * scaleFactor),
                                              (int)(_mainMenuButtonStyleOrig.padding.top * scaleFactor),
                                              (int)(_mainMenuButtonStyleOrig.padding.bottom * scaleFactor));
+            _mainMenuButtonStyle.fixedWidth = (int)(_mainMenuButtonStyleOrig.fixedWidth * scaleFactor);
 
             return _mainMenuButtonStyle;
         }
@@ -230,6 +231,11 @@ public class ManageLessons : MonoBehaviour
     /// The background image for the screen
     /// </summary>
     public Texture backgroundImg;
+
+    /// <summary>
+    /// The left margin of the backgound image to use for the curriculum and lesson areas
+    /// </summary>
+    public Texture areaLeftMarginImg;
 
     /// <summary>
     /// The backgound image to use for the curriculum and lesson areas
@@ -292,12 +298,15 @@ public class ManageLessons : MonoBehaviour
         float titleImgHeight = titleImg.height * scaleFactor;
         float titleDistanceFromTop = 30.0f * scaleFactor;
         GUI.DrawTexture(new Rect((Screen.width / 2) - (titleImgWidth / 2), titleDistanceFromTop, titleImgWidth, titleImgHeight), titleImg);
-        // Create the background page (for the curriculum and lessons)
-        GUI.DrawTexture(new Rect(guiAreaLeft - (85 * scaleFactor), guiAreaTop - (10 * scaleFactor), (540 * scaleFactor), (560 * scaleFactor)), areaBackgroundImg);
-        // Create the background page (for the word area)
-        GUI.DrawTexture(new Rect(guiAreaLeft + (470 * scaleFactor), guiAreaTop - (10 * scaleFactor), (270 * scaleFactor), (270 * scaleFactor)), wordAreaBackgroundImg);
 
-        GUILayout.BeginArea(new Rect(guiAreaLeft, guiAreaTop, (700 * scaleFactor), (530 * scaleFactor)));
+        // Create the left border of the background page (for the curriculum and lessons)
+        GUI.DrawTexture(new Rect(guiAreaLeft - (110 * scaleFactor), guiAreaTop - (10 * scaleFactor), (60 * scaleFactor), (580 * scaleFactor)), areaLeftMarginImg);
+        // Create the background page (for the curriculum and lessons)
+        GUI.DrawTexture(new Rect(guiAreaLeft - (50 * scaleFactor), guiAreaTop - (10 * scaleFactor), (560 * scaleFactor), (580 * scaleFactor)), areaBackgroundImg);
+        // Create the background page (for the word area)
+        GUI.DrawTexture(new Rect(guiAreaLeft + (545 * scaleFactor), guiAreaTop - (10 * scaleFactor), (270 * scaleFactor), (270 * scaleFactor)), wordAreaBackgroundImg);
+
+        GUILayout.BeginArea(new Rect(guiAreaLeft - (40 * scaleFactor), guiAreaTop, (815 * scaleFactor), (550 * scaleFactor)));
 
         // Populate the Curriculum/Lessons area with the names of all existing lessons
         bool wasDifferentLessonSelected = CreateAllLessonsArea();
@@ -327,7 +336,7 @@ public class ManageLessons : MonoBehaviour
         BuildLessonNamesCache(false);
 
         // Wrap everything in the designated GUI Area to group controls together
-        GUILayout.BeginArea(new Rect(0, 0, (200 * scaleFactor), (530 * scaleFactor)));
+        GUILayout.BeginArea(new Rect(0, 0, (250 * scaleFactor), (550 * scaleFactor)));
 
         // Ensure the controls are laid out vertically
         GUILayout.BeginVertical();
@@ -406,7 +415,7 @@ public class ManageLessons : MonoBehaviour
         BuildLessonWordsCache(lessonIdx, refreshWordList);
 
         // Wrap everything in the designated GUI Area to group controls together
-        GUILayout.BeginArea(new Rect((250 * scaleFactor), 0, (200 * scaleFactor), (530 * scaleFactor)));
+        GUILayout.BeginArea(new Rect((280 * scaleFactor), 0, (250 * scaleFactor), (550 * scaleFactor)));
         // Ensure the controls are laid out vertically
         GUILayout.BeginVertical();
 
@@ -421,7 +430,7 @@ public class ManageLessons : MonoBehaviour
         CreateLessonNameTextField(lessonIdx);
 
         // Create the Words subheader label
-        GUILayout.Label("", subHeaderStyle);
+        GUILayout.Space(10.0f * scaleFactor);
         GUILayout.Label("Words: ", subHeaderStyle);
 
         // Create the button used to create a new word, and do so if it has been clicked
@@ -453,7 +462,7 @@ public class ManageLessons : MonoBehaviour
     private void CreateLessonNameTextField(int lessonIdx)
     {
         // Build the text field used to update the current lesson's name, and retrieve any text the user entered
-        string lessonName = GUILayout.TextField(lessonNames[lessonIdx], (int)(50 * scaleFactor), inputFieldsStyle);
+        string lessonName = GUILayout.TextField(lessonNames[lessonIdx], 50, inputFieldsStyle);
         // If text was entered by the user, and if it only contains characters, numbers, or spaces, accept/store it
         if (lessonNames[lessonIdx].Equals(lessonName, System.StringComparison.InvariantCultureIgnoreCase) == false &&
             Regex.IsMatch(lessonName, "([^A-Za-z0-9 ]+)") == false)
@@ -495,7 +504,7 @@ public class ManageLessons : MonoBehaviour
     private void CreateDeleteLessonBtn(ref int lessonIdx)
     {
         // Create the button used to delete the selected lesson.  If it was clicked...
-        if (GUILayout.Button("Delete Lesson", deleteButtonStyle))
+        if (GUILayout.Button("Delete " + System.Environment.NewLine + "Lesson", deleteButtonStyle))
         {   // If there is at least one lesson left...
             if (lessonNames.Count > 1)
             {   // Remove the lesson from the curriculum
@@ -524,7 +533,7 @@ public class ManageLessons : MonoBehaviour
     private void CreateWordEditorArea(int lessonIdx, ref int wordIdx)
     {
         // Wrap everything in the designated GUI Area to group controls together
-        GUILayout.BeginArea(new Rect((500 * scaleFactor), (15 * scaleFactor), (200 * scaleFactor), (250 * scaleFactor)));
+        GUILayout.BeginArea(new Rect((615 * scaleFactor), (15 * scaleFactor), (200 * scaleFactor), (300 * scaleFactor)));
         // Ensure the controls are laid out vertically
         GUILayout.BeginVertical();
 
@@ -541,7 +550,7 @@ public class ManageLessons : MonoBehaviour
 
         // Wrap everything in the designated GUI Area to group controls together
         // Why create a second area?  So the delete button can stay fixed as the Hint text area grows/shrinks to fit its contents
-        GUILayout.BeginArea(new Rect((500 * scaleFactor), (265 * scaleFactor), (200 * scaleFactor), (300 * scaleFactor)));
+        GUILayout.BeginArea(new Rect((615 * scaleFactor), (315 * scaleFactor), (200 * scaleFactor), (300 * scaleFactor)));
         // Create the button used to delete the selected word, and do so if it was clicked
         CreateDeleteWordBtn(lessonIdx, ref wordIdx);
         // End the controller wrappers
@@ -557,7 +566,7 @@ public class ManageLessons : MonoBehaviour
     private void CreateWordTextTextField(int lessonIdx, Word wordToEdit)
     {
         // Create the text field used to edit the word's text, and retrieve its current contents
-        string wordText = GUILayout.TextField(wordToEdit.Text, (int)(25 * scaleFactor), inputFieldsStyle);
+        string wordText = GUILayout.TextField(wordToEdit.Text, 25, inputFieldsStyle);
 
         // If text was entered by the user, and if it only contains characters, accept/store it
         if (wordToEdit.Text.Equals(wordText, System.StringComparison.InvariantCultureIgnoreCase) == false &&
@@ -577,7 +586,7 @@ public class ManageLessons : MonoBehaviour
     private void CreateWordHintTextArea(Word wordToEdit)
     {
         // Create the text area used to edit the word's hint, and store any changes to the hint
-        wordToEdit.Hint = GUILayout.TextArea(wordToEdit.Hint, (int)(150 * scaleFactor), inputFieldsStyle);
+        wordToEdit.Hint = GUILayout.TextArea(wordToEdit.Hint, 150, inputFieldsStyle);
     }
 
     /// <summary>
@@ -589,7 +598,7 @@ public class ManageLessons : MonoBehaviour
     private void CreateDeleteWordBtn(int lessonIdx, ref int wordIdx)
     {
         // If the button used to delete the selected word was clicked...
-        if (GUILayout.Button("Delete Word", deleteButtonStyle))
+        if (GUILayout.Button("Delete" + System.Environment.NewLine + "Word", deleteButtonStyle))
         {   // If there is at least one word left in the lesson...
             if (lessonWordTexts.Count > 1)
             {   // Remove the word from the lesson
