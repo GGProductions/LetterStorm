@@ -171,7 +171,8 @@ public class Boss_3d_wordGen : MonoBehaviour {
 	/// Handles collisions with projectile letters
 	/// </summary>
 	/// <param name="otherObj"></param>
-	void OnTriggerEnter(Collider otherObj){
+	void OnTriggerEnter(Collider otherObj) {davidOntrig(otherObj); }
+	void myoldTrig(Collider otherObj){
 	   // Debug.Log("Collison");
 
 		if (NumberOfGunsDestroyed == HowmanyChildrenHave_Boss_Canon_script)
@@ -217,6 +218,63 @@ public class Boss_3d_wordGen : MonoBehaviour {
 
 	}
 
+	void davidOntrig(Collider otherObj){
+	   // Debug.Log("Collison");
+
+		if (NumberOfGunsDestroyed == HowmanyChildrenHave_Boss_Canon_script)
+		{
+			if (otherObj.tag == "letterProjectile") {
+ //               Debug.Log("Collison with letter");
+				if (otherObj.GetComponent<LetterProjectileScript>().isactive){
+   //                 Debug.Log("Collison with ACTIVE letter");
+					char input = otherObj.name[0];
+					if (input == Context.Word.Text[wordGenerated_index_of_currLetterTosolve]) {
+	 //                   Debug.Log("ITS A MATCH)");
+						if (wordGenerated_index_of_currLetterTosolve < Context.Word.Text.Length + 1) {
+							List3dLetterGO[wordGenerated_index_of_currLetterTosolve].GetComponent<MeshRenderer>().enabled = enabled;
+							wordGenerated_index_of_currLetterTosolve++;
+							Destroy(otherObj.gameObject);
+						}
+						else{
+							Destroy(otherObj.gameObject);
+						}
+						if (wordGenerated_index_of_currLetterTosolve == Context.Word.Text.Length) {
+
+							// Grant the user points for defeating the boss
+							Context.CurrentScore.Increase(ScoreKeeper.PlayerAchievement.DefeatBoss);
+
+							Context.PrepareForNextLevel();
+
+							//JR delay loading next level
+							//yield return new WaitForSeconds( delayTime );
+
+							//Fade out boss coroutine
+							if (Context.Curriculum.Lessons.GetLessonById(Context.CurrentLessonId).Words.ContainsUntestedWords())
+							{
+								Application.LoadLevel("Win");
+							}
+							else
+							{
+								Application.LoadLevel("WinAll");
+							}
+						}
+					}
+					else
+						if (input != Context.Word.Text[wordGenerated_index_of_currLetterTosolve]) {
+
+							OnWrongCollision();
+							rightEyescript.DoFlashEye();
+							leftEyescript.DoFlashEye();
+						}      
+				}          
+			}
+			else{
+				char nameofletterthathit = otherObj.name[0];
+			}
+		}
+
+
+	}
 
 	IEnumerator wait_toLoadWin() {
 
