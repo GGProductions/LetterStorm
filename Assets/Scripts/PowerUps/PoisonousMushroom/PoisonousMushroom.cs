@@ -34,4 +34,9 @@ public class PoisonousMushroom : MonoBehaviour {
         if (transform.position.z < -5f || transform.position.z > 7 || transform.position.x < -10 || transform.position.x > 10)
             Destroy(gameObject);
     }
+
+    void OnTriggerEnter(Collider otherObj){
+        if (otherObj.tag == "albertTag") Destroy(gameObject);
+    
+    }
 }

@@ -37,6 +37,7 @@ public class LetterProjectileScript : MonoBehaviour {
         if (timer > 1f) {
             isactive = false; 
             this.transform.GetComponent<SphereCollider>().isTrigger = true;
+            gameObject.tag = "letterPickup";
             timer = 0;
             startCounter = false;
           
@@ -54,6 +55,7 @@ public class LetterProjectileScript : MonoBehaviour {
         
         if (otherObj.tag == "bossTag")
         {
+           
             this.transform.GetComponent<SphereCollider>().isTrigger = false;
             startCounter=true;
             timer = 0;

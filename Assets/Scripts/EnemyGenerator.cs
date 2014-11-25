@@ -331,7 +331,7 @@ public class EnemyGenerator : MonoBehaviour
                                             spawnPoints[3].transform.position, Quaternion.Euler(90, 0, 0)) as GameObject;
 
             go.AddComponent("CollectibleChar");
-            
+            go.tag = "letterPickup";
         }
     }
 

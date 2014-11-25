@@ -17,6 +17,7 @@ TagManager:
   - slowDown
   - poisonousMushroomPowerUp
   - hurricane_pickupTag
+  - letterPickup
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
