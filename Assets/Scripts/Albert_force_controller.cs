@@ -399,7 +399,8 @@ public class Albert_force_controller : MonoBehaviour
 
         if (otherObj.tag == "bossTag" || 
             otherObj.tag == "bossProjectileTag" || 
-            otherObj.tag == "enemy")
+            otherObj.tag == "enemy" ||
+             otherObj.tag == "smartProjectile")
         {
             TakeABeating();
         }
@@ -432,10 +433,6 @@ public class Albert_force_controller : MonoBehaviour
             Context.PlayerInventory.AddCollectedLetter(input.ToString().ToUpper());
             Destroy(otherObj.gameObject);
         }
-
-
-
-
     }
 
 
@@ -471,10 +468,6 @@ public class Albert_force_controller : MonoBehaviour
         if (otherObj.tag == "letterProjectile")
         {
             Debug.Log("itshappeneing again");
-
-
-
-
             //Debug.Log("name of letterpickedup " + otherObj.name);
             char input = otherObj.name[0];
             Messenger<string>.Broadcast("picked up a letter", otherObj.name);

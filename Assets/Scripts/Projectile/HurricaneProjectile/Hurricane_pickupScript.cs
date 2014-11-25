@@ -34,11 +34,14 @@ public class Hurricane_pickupScript : MonoBehaviour {
 
 
 	  void OnTriggerEnter(Collider otherObj){
-        if (otherObj.tag == "albertTag")
-            Instantiate(Resources.Load("PowerUpsResources/HurricanePrefab"),
+		if (otherObj.tag == "albertTag")
+			Instantiate(Resources.Load("PowerUpsResources/HurricanePrefab"),
 										  transform.position,
 										  Quaternion.Euler(-180, 0, 0));
+		Destroy(gameObject);
 		}
+
+
 	
 	
 }
