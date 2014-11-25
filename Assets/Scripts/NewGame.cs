@@ -41,9 +41,9 @@ public class NewGame : MonoBehaviour
 
     /// <summary>
     /// Vector used to store the scrolled position of the Scrollable View 
-    /// within the Diifficulty Levels Area
+    /// for the Difficulty description tooltip
     /// </summary>
-    private Vector2 difficultyLevelsScrollPosition;
+    private Vector2 tooltipScrollPosition;
 
     /// <summary>
     /// Vector used to store the scrolled position of the Scrollable View 
@@ -116,6 +116,7 @@ public class NewGame : MonoBehaviour
                                              (int)(_mainMenuButtonStyleOrig.padding.right * scaleFactor),
                                              (int)(_mainMenuButtonStyleOrig.padding.top * scaleFactor),
                                              (int)(_mainMenuButtonStyleOrig.padding.bottom * scaleFactor));
+            _mainMenuButtonStyle.fixedWidth = (int)(_mainMenuButtonStyleOrig.fixedWidth * scaleFactor);
 
             return _mainMenuButtonStyle;
         }
@@ -345,11 +346,11 @@ public class NewGame : MonoBehaviour
         float titleDistanceFromTop = 30.0f * scaleFactor;
         GUI.DrawTexture(new Rect((Screen.width / 2) - (titleImgWidth / 2), titleDistanceFromTop, titleImgWidth, titleImgHeight), titleImg);
         // Create the background image for the difficulty levels
-        GUI.DrawTexture(new Rect(guiAreaLeft - (70 * scaleFactor), guiAreaTop + (100 * scaleFactor), (410 * scaleFactor), (330 * scaleFactor)), difficultyLevelsBackgroundImg);
+        GUI.DrawTexture(new Rect(guiAreaLeft - (70 * scaleFactor), guiAreaTop + (100 * scaleFactor), (410 * scaleFactor), (440 * scaleFactor)), difficultyLevelsBackgroundImg);
         // Create the background image for the lessons
-        GUI.DrawTexture(new Rect(guiAreaLeft + (400 * scaleFactor), guiAreaTop + (60 * scaleFactor), (290 * scaleFactor), (480 * scaleFactor)), lessonsBackgroundImg);
+        GUI.DrawTexture(new Rect(guiAreaLeft + (400 * scaleFactor), guiAreaTop + (60 * scaleFactor), (390 * scaleFactor), (480 * scaleFactor)), lessonsBackgroundImg);
 
-        GUILayout.BeginArea(new Rect(guiAreaLeft, guiAreaTop, (700 * scaleFactor), (600 * scaleFactor)));
+        GUILayout.BeginArea(new Rect(guiAreaLeft, guiAreaTop, (800 * scaleFactor), (600 * scaleFactor)));
 
         // Create the areas the user will use to select the game difficulty and the lesson to learn
         CreateDifficultyLevelArea();
@@ -373,7 +374,7 @@ public class NewGame : MonoBehaviour
         BuildDifficultyLevelNamesCache(false);
 
         // Wrap everything in the designated GUI Area to group controls together
-        GUILayout.BeginArea(new Rect(0, (110 * scaleFactor), (300 * scaleFactor), (300 * scaleFactor)));
+        GUILayout.BeginArea(new Rect(0, (110 * scaleFactor), (300 * scaleFactor), (410 * scaleFactor)));
 
         GUILayout.BeginVertical();
 
@@ -383,9 +384,14 @@ public class NewGame : MonoBehaviour
         // Create the buttons used to select the game's difficulty
         CreateDifficultyButtons();
 
+        // Create a scrollable area incase the difficulty description tooltip exceeds the space available
+        tooltipScrollPosition = GUILayout.BeginScrollView(tooltipScrollPosition);
+        
         // Create the label used to display a tooltip describing what each difficulty level means
         GUILayout.Space((20.0f * scaleFactor));
         CreateDifficultyTooltipLabel();
+        
+        GUILayout.EndScrollView();
 
         GUILayout.EndVertical();
         GUILayout.EndArea();
@@ -450,7 +456,7 @@ public class NewGame : MonoBehaviour
         BuildLessonNamesCache(false);
 
         // Wrap everything in the designated GUI Area to group controls together
-        GUILayout.BeginArea(new Rect((450 * scaleFactor), (70 * scaleFactor), (200 * scaleFactor), (450 * scaleFactor)));
+        GUILayout.BeginArea(new Rect((470 * scaleFactor), (70 * scaleFactor), (300 * scaleFactor), (450 * scaleFactor)));
 
         // Ensure the controls are laid out vertically
         GUILayout.BeginVertical();
