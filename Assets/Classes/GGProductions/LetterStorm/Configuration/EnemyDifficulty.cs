@@ -21,6 +21,11 @@ namespace GGProductions.LetterStorm.Configuration
         private int _maxEnemiesOnScreen = 5;
         private float _bossHealthHandicap = 1.0f;
         private bool _enableBossRageMode = true;
+        private float _bossCannonTrackingAccuracy = 1.0f;
+        private float _bossCannonProjectilesPerSecond = 1.0f;
+        private float _bossRageChargeSpeed = 1.0f;
+        private int _bigBossWindowToAcceptLetters = 5;
+        private int _bigBossWindowToDeflectLetters = 5;
         #endregion Private Variables ------------------------------------------
         
 
@@ -91,6 +96,55 @@ namespace GGProductions.LetterStorm.Configuration
             get { return _enableBossRageMode; }
             set { _enableBossRageMode = value; }
         }
+
+        /// <summary>
+        /// How tightly the boss's cannons lock on to the main character.  
+        /// A value of 1.0f means they are always locked on, while lower values will introduce lag.
+        /// </summary>
+        public float BossCannonTrackingAccuracy
+        {
+            get { return _bossCannonTrackingAccuracy; }
+            set { _bossCannonTrackingAccuracy = value; }
+        }
+
+        /// <summary>
+        /// The number of projectiles per second the boss can fire from one of cannons
+        /// </summary>
+        public float BossCannonProjectilesPerSecond
+        {
+            get { return _bossCannonProjectilesPerSecond; }
+            set { _bossCannonProjectilesPerSecond = value; }
+        }
+
+        /// <summary>
+        /// When the boss enters rage mode, the speed at which he will charge the user.  
+        /// A value of 1.0f represents his normal speed.
+        /// </summary>
+        public float BossRageChargeSpeed
+        {
+            get { return _bossRageChargeSpeed; }
+            set { _bossRageChargeSpeed = value; }
+        }
+
+        /// <summary>
+        /// The number of seconds the big boss can accept valid letters. 
+        /// This can be used to determine, for example, how long the boss keeps his mouth open.
+        /// </summary>
+        public int BigBossWindowToAcceptLetters
+        {
+            get { return _bigBossWindowToAcceptLetters; }
+            set { _bigBossWindowToAcceptLetters = value; }
+        }
+
+        /// <summary>
+        /// The number of seconds the big boss will not accept valid letters.
+        /// This can be used to determine, for example, how long the boss keeps his mouth closed.
+        /// </summary>
+        public int BigBossWindowToDeflectLetters
+        {
+            get { return _bigBossWindowToDeflectLetters; }
+            set { _bigBossWindowToDeflectLetters = value; }
+        }
         #endregion Properties -------------------------------------------------
 
         #region Constructors --------------------------------------------------
@@ -119,8 +173,27 @@ namespace GGProductions.LetterStorm.Configuration
         /// The default value is 1.0
         /// </param>
         /// <param name="enableBossRageMode">Whether the boss should charge the user when he fires the wrong letter</param>
+        /// <param name="bossCannonTrackingAccuracy">
+        /// How tightly the boss's cannons lock on to the main character.  
+        /// A value of 1.0f means they are always locked on, while lower values will introduce lag.
+        /// </param>
+        /// <param name="bossCannonProjectilesPerSecond">The number of projectiles per second the boss can fire from one of cannons</param>
+        /// <param name="bossRageChargeSpeed">
+        /// When the boss enters rage mode, the speed at which he will charge the user.  
+        /// A value of 1.0f represents his normal speed.
+        /// </param>
+        /// <param name="bigBossWindowToAcceptLetters">
+        /// The number of seconds the big boss can accept valid letters. 
+        /// This can be used to determine, for example, how long the boss keeps his mouth open.
+        /// </param>
+        /// <param name="bigBossWindowToDeflectLetters">
+        /// The number of seconds the big boss will not accept valid letters.
+        /// This can be used to determine, for example, how long the boss keeps his mouth closed.
+        /// </param>
         public EnemyDifficulty(int id, string name, string description, float gameSpeed, 
-            int initialHealth, int damageToPlayerPerHit, int maxEnemiesonScreen, float bossHealthHandicap, bool enableBossRageMode)
+            int initialHealth, int damageToPlayerPerHit, int maxEnemiesonScreen, float bossHealthHandicap, bool enableBossRageMode,
+            float bossCannonTrackingAccuracy, float bossCannonProjectilesPerSecond, float bossRageChargeSpeed, 
+            int bigBossWindowToAcceptLetters, int bigBossWindowToDeflectLetters)
         {
             _id = id;
             _name = name;
@@ -131,6 +204,11 @@ namespace GGProductions.LetterStorm.Configuration
             _maxEnemiesOnScreen = maxEnemiesonScreen;
             _bossHealthHandicap = bossHealthHandicap;
             _enableBossRageMode = enableBossRageMode;
+            _bossCannonTrackingAccuracy = bossCannonTrackingAccuracy;
+            _bossCannonProjectilesPerSecond = bossCannonProjectilesPerSecond;
+            _bossRageChargeSpeed = bossRageChargeSpeed;
+            _bigBossWindowToAcceptLetters = bigBossWindowToAcceptLetters;
+            _bigBossWindowToDeflectLetters = bigBossWindowToDeflectLetters;
         }
         #endregion Constructors -----------------------------------------------
     }

@@ -40,7 +40,13 @@ namespace GGProductions.LetterStorm.Configuration.Collections
                 5,      // Damage taken per hit: less than normal
                 4,      // Max enemies on screen: less than normal
                 0.5f,   // Boss health modifier: less than normal
-                false); // Don't enable boss rage mode
+                false,  // Don't enable boss rage mode
+                0.5f,   // Boss cannon tracking accuracy: significant lag
+                2,      // Boss cannon projectiles/second: slow fire rate
+                0.7f,   // Boss rage mode charge speed: less than normal
+                10,     // Big boss window to accept letters: larger than normal
+                5);     // Big boss window to deflect letters: normal
+                
 
             // Create the "Normal" difficulty level for children with some gaming experience
             EnemyDifficulty normal = new EnemyDifficulty(
@@ -52,7 +58,12 @@ namespace GGProductions.LetterStorm.Configuration.Collections
                 10,     // Damage taken per hit: normal
                 6,      // Max enemies on screen: normal
                 1.0f,   // Boss health modifier: normal
-                true);  // Enable boss rage mode
+                true,   // Enable boss rage mode
+                0.75f,  // Boss cannon tracking accuracy: slight lag
+                3,      // Boss cannon projectiles/second: average fire rate
+                1.0f,   // Boss rage mode charge speed: normal
+                5,      // Big boss window to accept letters: normal
+                5);     // Big boss window to deflect letters: normal
 
             // Create the "Hard" difficulty level for older children with significant gaming experience
             EnemyDifficulty hard = new EnemyDifficulty(
@@ -64,7 +75,12 @@ namespace GGProductions.LetterStorm.Configuration.Collections
                 20,     // Damage taken per hit: more than normal
                 10,     // Max enemies on screen: more than normal
                 1.5f,   // Boss health modifier: more than normal
-                true);  // Enable boss rage mode
+                true,   // Enable boss rage mode
+                1.0f,   // Boss cannon tracking accuracy: no lag
+                5,      // Boss cannon projectiles/second: fast fire rate
+                1.3f,   // Boss rage mode charge speed: faster than normal
+                5,      // Big boss window to accept letters: normal
+                10);    // Big boss window to deflect letters: larger than normal
 
             // Add the enemy difficulty levels to this list
             this.Add(easy);
