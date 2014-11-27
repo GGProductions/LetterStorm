@@ -12,7 +12,7 @@ public class Boss_Cannon_script : MonoBehaviour
 	/// damp = 3.0f ----> medium  mode , medium lag 
 	/// damp = 10f ----> Hard  mode , very short lag,  
 	/// </summary>
-   public float cannonAngleDamp = 3.5f; //med
+   public float cannonAngleDamp = 30.5f; //med
 
 	#endregion
 
