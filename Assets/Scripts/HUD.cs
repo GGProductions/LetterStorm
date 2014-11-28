@@ -14,6 +14,14 @@ public class HUD : MonoBehaviour {
     private int InventoryItemBoxHeight;
     private int InventoryBoxBottomMargin;
     private float InventoryLetterFontSize;
+    private int InventoryX;
+    private int InventoryY;
+    private int InventoryWidth;
+    private int InventoryHeight;
+    private int InventoryBackgroundX;
+    private int InventoryBackgroundY;
+    private int InventoryBackgroundWidth;
+    private int InventoryBackgroundHeight;
 
     private Color DefaultLetterButtonColor;
     private Color SelectedLetterButtonColor;
@@ -40,6 +48,12 @@ public class HUD : MonoBehaviour {
     private float CorkBoardHeight;
     private float CorkBoardDivisionSizeWidth;
     private float CorkBoardDivisionSizeHeight;
+
+    // HP Bar dimensions
+    private float HPBarX;
+    private float HPBarY;
+    private float HPBarWidth;
+    private float HPBarHeight;
 
     // Scale factors for screen resize
     private float scaleFactorPauseMenuButtons;
@@ -74,9 +88,6 @@ public class HUD : MonoBehaviour {
     /// </summary>
     void Start()
     {
-        // GUI styles
-        //hintStyle.wordWrap = true;
-
         isPaused = false;
         isPlayingBGM = true;
         isInHowToPlayMenu = false;
@@ -99,12 +110,28 @@ public class HUD : MonoBehaviour {
         InventoryLetterFontSize = (float)(Screen.height * 0.0255f);
         InventoryBoxBottomMargin = 5;
 
+        InventoryX = Screen.width / 2 - InventoryItemBoxWidth * 31 / 2;
+        InventoryY = Screen.height - InventoryItemBoxHeight * 3 - InventoryBoxBottomMargin;
+        InventoryWidth = InventoryItemBoxWidth * 31;
+        InventoryHeight = InventoryItemBoxHeight * 3;
+
+        InventoryBackgroundX = Screen.width / 2 - InventoryItemBoxWidth * 18 / 2;
+        InventoryBackgroundY = Screen.height - InventoryItemBoxHeight * 3 - InventoryBoxBottomMargin - 10;
+        InventoryBackgroundWidth = InventoryItemBoxWidth * 18;
+        InventoryBackgroundHeight = InventoryItemBoxHeight * 3;
+
         // Dimensions - CorkBoard for pause menu
         CorkBoardWidth = CorkBoardTexture.width;//
         CorkBoardHeight = CorkBoardTexture.height;
         CorkBoardBorderSize = CorkBoardWidth / 15;
         CorkBoardDivisionSizeWidth = (CorkBoardWidth - CorkBoardBorderSize * 4) / 3;
         CorkBoardDivisionSizeHeight = (CorkBoardHeight - CorkBoardBorderSize * 4) / 2;
+
+        // Dimensions - HP bar
+        HPBarX = InventoryBackgroundX + 10;
+        HPBarY = InventoryBackgroundY - 20;
+        HPBarWidth = Screen.width / 2;
+        HPBarHeight = 20;
 
         // Dimensions - How To Play Menu
         HowToPlayTexture1Width = HowToPlayTexture1.width;
@@ -117,26 +144,44 @@ public class HUD : MonoBehaviour {
     /// </summary>
     void OnGUI()
     {
-        // Scrolling hint text
+        DisplayHints();                     // Draw hints text
+        DisplayHPBar();                     // Draw HP Bar
+        DisplayScoreBar();                  // Draw Player's Score
+        DisplayPauseMenu();                 // Draw Pause Menu when in pause mode
+        DisplayInventoryWindow();           // Draw Inventory
+    }
+
+    /// <summary>
+    /// Displays hints in HUD
+    /// </summary>
+    public void DisplayHints()
+    {
         SetHintTextScrollingBox();
         hintStyle.normal.textColor = Color.blue;
         GUI.Label(hintTextRectangle, hintText, hintStyle);
+    }
 
-        // Draw HP Bar
-        GUI.TextField(new Rect(10, 10, Screen.width / 2, 20), "");          // Bar's background
+    /// <summary>
+    /// Displays HP bar in HUD
+    /// </summary>
+    public void DisplayHPBar()
+    {
+        GUI.TextField(new Rect(HPBarX, HPBarY, HPBarWidth, HPBarHeight), "");          // Bar's background
         HPBarStyle.alignment = TextAnchor.MiddleCenter;
         HPBarStyle.normal.textColor = Color.black;
-        GUI.TextField(new Rect(10, 10, HealthBarLength, 20), 
+        GUI.TextField(new Rect(HPBarX, HPBarY, HealthBarLength, HPBarHeight),
             "HP: " + CurrentHealth.ToString() + "/" + MaximumHealth.ToString(), HPBarStyle);
+    }
 
-        // Draw Player's Score
+    /// <summary>
+    /// Displays Score bar in HUD
+    /// </summary>
+    public void DisplayScoreBar()
+    {
         ScoreBarStyle.alignment = TextAnchor.MiddleCenter;
         ScoreBarStyle.normal.textColor = Color.black;
         GUI.skin.button.wordWrap = true;
-        GUI.Box(new Rect(Screen.width - 170, 10, 150, 20), "Score: " + Context.CurrentScore.Score, ScoreBarStyle);
-
-        DisplayPauseMenu();
-        DisplayInventoryWindow();
+        GUI.Box(new Rect(HPBarX + HPBarWidth + 5, HPBarY, InventoryBackgroundWidth - HPBarWidth, 20), "Score: " + Context.CurrentScore.Score, ScoreBarStyle);
     }
 
     /// <summary>
@@ -230,16 +275,21 @@ public class HUD : MonoBehaviour {
         // Define inventory box area
 
         InventoryBackgroundStyle.alignment = TextAnchor.MiddleCenter;
+
+
+        // Inventory's background/texture
         GUI.TextField(new Rect(
-            Screen.width / 2 - InventoryItemBoxWidth * 18 / 2, 
-            Screen.height - InventoryItemBoxHeight * 3 - InventoryBoxBottomMargin - 10, 
-            InventoryItemBoxWidth * 18, 
-            InventoryItemBoxHeight * 3), "", InventoryBackgroundStyle);                 // Inventory's background
+            InventoryBackgroundX,
+            InventoryBackgroundY,
+            InventoryBackgroundWidth,
+            InventoryBackgroundHeight), "", InventoryBackgroundStyle);
+
+        // Inventory dimensions         
         GUILayout.BeginArea(new Rect(
-            Screen.width / 2 - InventoryItemBoxWidth * 31 / 2,                          // X start position
-            Screen.height - InventoryItemBoxHeight * 3 - InventoryBoxBottomMargin,      // Y start position
-            InventoryItemBoxWidth * 31,                                                 // Width
-            InventoryItemBoxHeight * 3));                                               // Height
+            InventoryX,                                                                 // X start position
+            InventoryY,                                                                 // Y start position
+            InventoryWidth,                                                             // Width
+            InventoryHeight));                                                          // Height
 
         #region Letter in Inventory --------------------------------------------
         // Draw collected letters in Inventory
@@ -523,6 +573,9 @@ public class HUD : MonoBehaviour {
 
         // Determine size of inventory "boxes" depending on screen size
         AdjustInventoryDimensions();
+        
+        // Dimensions - HP bar
+        AdjustHPBarDimensions();
 
         // Dimensions - CorkBoard for pause menu
         AdjustCorkboardDimensions();
@@ -592,7 +645,6 @@ public class HUD : MonoBehaviour {
         CurrentHealth = (int)Context.PlayerHealth.CurHealth;
         MinimumHealth = (int)Context.PlayerHealth.MinHealth;
         MaximumHealth = (int)Context.PlayerHealth.MaxHealth;
-        HealthBarLength = (float)((Screen.width / 2) * (float)((float)CurrentHealth / (float)MaximumHealth));
     }
 
     /// <summary>
@@ -626,6 +678,18 @@ public class HUD : MonoBehaviour {
 
         // Font size of letters in inventory boxes
         InventoryLetterFontSize = InventoryItemBoxHeight * 0.57f;
+
+        // Inventory dimensions
+        InventoryX = Screen.width / 2 - InventoryItemBoxWidth * 31 / 2;
+        InventoryY = Screen.height - InventoryItemBoxHeight * 3 - InventoryBoxBottomMargin;
+        InventoryWidth = InventoryItemBoxWidth * 31;
+        InventoryHeight = InventoryItemBoxHeight * 3;
+
+        // Inventory background/texture dimensions
+        InventoryBackgroundX = Screen.width / 2 - InventoryItemBoxWidth * 18 / 2;
+        InventoryBackgroundY = Screen.height - InventoryItemBoxHeight * 3 - InventoryBoxBottomMargin - 10;
+        InventoryBackgroundWidth = InventoryItemBoxWidth * 18;
+        InventoryBackgroundHeight = InventoryItemBoxHeight * 3;
     }
 
     /// <summary>
@@ -640,6 +704,18 @@ public class HUD : MonoBehaviour {
         CorkBoardDivisionSizeHeight = (CorkBoardHeight - CorkBoardBorderSize * 4) / 2;
     }
 
+    /// <summary>
+    /// Adjusts the HP bar dimensions based on screen sizes
+    /// </summary>
+    private void AdjustHPBarDimensions()
+    {
+        HPBarX = InventoryBackgroundX + 10;
+        HPBarY = InventoryBackgroundY - 20;
+        HPBarWidth = InventoryBackgroundWidth * 0.75f;
+        HPBarHeight = 20;
+
+        HealthBarLength = (float)(HPBarWidth * (float)((float)CurrentHealth / (float)MaximumHealth));
+    }
     /// <summary>
     /// Set selected letter from inventory upon keypress
     /// </summary>
