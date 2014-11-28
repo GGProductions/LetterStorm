@@ -3,11 +3,11 @@ using System.Collections;
 
 public class BossProjectile_V1 : MonoBehaviour {
 
-    public float projectileSpeed;
+    private float projectileSpeed;
     public GameObject explosion;
     void Start()
     {
-
+        projectileSpeed = 10f;
     }
 
     // Update is called once per frame
