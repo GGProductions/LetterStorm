@@ -201,20 +201,69 @@ public class LandGenerator : MonoBehaviour {
 		void dirtsand() { Instantiate(Resources.Load("LandBlocks/9_block"), transform.position, Quaternion.Euler(-180, 0, 0)); }
 
 	*/
-			void brick() { Instantiate(Resources.Load("LandBlocksIce/1_block"), transform.position, Quaternion.Euler(-180, 0, 0)); }
-		void briksand(){Instantiate(Resources.Load("LandBlocksIce/2_block"), transform.position, Quaternion.Euler(-180, 0, 0)); }
-		void sand() { Instantiate(Resources.Load("LandBlocksIce/3_block"), transform.position, Quaternion.Euler(-180, 0, 0)); }
+			void brick() {
+				if(Context.LevelNum %2 ==0)
+				Instantiate(Resources.Load("LandBlocksIce/1_block"), transform.position, Quaternion.Euler(-180, 0, 0));
+				else
+					Instantiate(Resources.Load("LandBlocks/1_block"), transform.position, Quaternion.Euler(-180, 0, 0));
+
+			}
+
+		void briksand(){
+			if (Context.LevelNum % 2 == 0)
+				Instantiate(Resources.Load("LandBlocksIce/2_block"), transform.position, Quaternion.Euler(-180, 0, 0));
+			 else
+				Instantiate(Resources.Load("LandBlocks/2_block"), transform.position, Quaternion.Euler(-180, 0, 0));
+		}
+		void sand() {
+			if (Context.LevelNum % 2 == 0) 
+				Instantiate(Resources.Load("LandBlocksIce/3_block"), transform.position, Quaternion.Euler(-180, 0, 0));
+			 else
+				Instantiate(Resources.Load("LandBlocks/3_block"), transform.position, Quaternion.Euler(-180, 0, 0)); 
+		}
 	   
-	void sandbrick() { Instantiate(Resources.Load("LandBlocksIce/4_block"), transform.position, Quaternion.Euler(-180, 0, 0)); }
+	void sandbrick() {
+		if (Context.LevelNum % 2 == 0)
+		Instantiate(Resources.Load("LandBlocksIce/4_block"), transform.position, Quaternion.Euler(-180, 0, 0)); 
+	 else
+		   Instantiate(Resources.Load("LandBlocks/4_block"), transform.position, Quaternion.Euler(-180, 0, 0)); 
+		}
 	   
-	void sanddirt() { Instantiate(Resources.Load("LandBlocksIce/5_block"), transform.position, Quaternion.Euler(-180, 0, 0)); }
+	void sanddirt() {
+		if (Context.LevelNum % 2 == 0)
+		Instantiate(Resources.Load("LandBlocksIce/5_block"), transform.position, Quaternion.Euler(-180, 0, 0));
+		 else
+			Instantiate(Resources.Load("LandBlocks/5_block"), transform.position, Quaternion.Euler(-180, 0, 0)); 
+	}
 	  
-	void dirt() { Instantiate(Resources.Load("LandBlocksIce/6_block"), transform.position, Quaternion.Euler(-180, 0, 0)); }
+	void dirt() {
+		if (Context.LevelNum % 2 == 0) 
+			Instantiate(Resources.Load("LandBlocksIce/6_block"), transform.position, Quaternion.Euler(-180, 0, 0));
+		 else
+			Instantiate(Resources.Load("LandBlocks/6_block"), transform.position, Quaternion.Euler(-180, 0, 0));
+	}
  
-	void grass() { Instantiate(Resources.Load("LandBlocksIce/7_block"), transform.position, Quaternion.Euler(-180, 0, 0)); }
+	void grass() {
+		if (Context.LevelNum % 2 == 0) 
+			Instantiate(Resources.Load("LandBlocksIce/7_block"), transform.position, Quaternion.Euler(-180, 0, 0));
+		 else
+			Instantiate(Resources.Load("LandBlocks/7_block"), transform.position, Quaternion.Euler(-180, 0, 0)); 
+	}
 	
-	void bridge() { Instantiate(Resources.Load("LandBlocksIce/8_block"), transform.position, Quaternion.Euler(-180, 0, 0)); }
-		void dirtsand() { Instantiate(Resources.Load("LandBlocksIce/9_block"), transform.position, Quaternion.Euler(-180, 0, 0)); }
+	void bridge() {
+		if (Context.LevelNum % 2 == 0)
+		Instantiate(Resources.Load("LandBlocksIce/8_block"), transform.position, Quaternion.Euler(-180, 0, 0));
+		 else
+			Instantiate(Resources.Load("LandBlocks/8_block"), transform.position, Quaternion.Euler(-180, 0, 0)); 
+	}
+		
+	
+	void dirtsand() {
+		if (Context.LevelNum % 2 == 0)
+		Instantiate(Resources.Load("LandBlocksIce/9_block"), transform.position, Quaternion.Euler(-180, 0, 0));
+		 else
+			Instantiate(Resources.Load("LandBlocks/9_block"), transform.position, Quaternion.Euler(-180, 0, 0)); 
+	}
 
   
 
