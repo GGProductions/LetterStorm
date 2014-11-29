@@ -28,20 +28,22 @@ public class Hurricane_pickupScript : MonoBehaviour {
 
 		this.transform.localScale = new Vector3(factor, 1, factor);
 
-		if (transform.position.z < -5f || transform.position.z > 7 || transform.position.x < -10 || transform.position.x > 10)
+		if (transform.position.z < -5f || transform.position.z > 9 || transform.position.x < -10 || transform.position.x > 10)
 			Destroy(gameObject);
 	}
 
-
+	
 	  void OnTriggerEnter(Collider otherObj){
-		if (otherObj.tag == "albertTag")
-			Instantiate(Resources.Load("PowerUpsResources/HurricanePrefab"),
-										  transform.position,
-										  Quaternion.Euler(-180, 0, 0));
-		Destroy(gameObject);
+		  if (otherObj.tag == "albertTag")
+		  {
+			  Instantiate(Resources.Load("PowerUpsResources/HurricanePrefab"),
+											transform.position,
+											Quaternion.Euler(-180, 0, 0));
+			  Destroy(gameObject);
+		  }
 		}
 
-
+	
 	
 	
 }

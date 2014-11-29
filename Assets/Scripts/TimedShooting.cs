@@ -9,11 +9,11 @@ public class TimedShooting : MonoBehaviour {
 	void Awake() {
 
 
-	   Debug.Log("Levelis"+ Context.LevelNum);
+	//   Debug.Log("Levelis"+ Context.LevelNum);
 
 	   float levelFloat = (float)Context.LevelNum;
 	   float divisor = Mathf.Pow(1.2f, levelFloat);
-	   shotDelay = (1.7f / divisor )+ Context.EnemyDifficulty.BossCannonProjectilesPerSecond;
+	   shotDelay = (0.5f / divisor )+ Context.EnemyDifficulty.BossCannonProjectilesPerSecond;
 	
 
 	   Debug.Log("shot delay " + shotDelay + "level " + levelFloat);

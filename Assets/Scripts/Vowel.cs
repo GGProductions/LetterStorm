@@ -30,7 +30,7 @@ public class Vowel : MonoBehaviour
                 Debug.Log("made a dualpen");
             }
             else
-                if (rndChance > 60 && rndChance <= 75)
+                if (rndChance > 60 && rndChance <= 70)
                 {
                     Instantiate(Resources.Load("PowerUpsResources/Hurricane_pickup"),
                     transform.position, Quaternion.Euler(90, 0, 0));
@@ -39,14 +39,21 @@ public class Vowel : MonoBehaviour
                 }
 
                 else
-                    if (rndChance > 75 )
+                    if (rndChance > 70 && rndChance <= 80)
                     {
                         Instantiate(Resources.Load("PowerUpsResources/PoisonousMushroomPowerUpPrefab"),
                     transform.position, Quaternion.Euler(-45, 0, 0));
                       //  Debug.Log("made a l");
 
                     }
-      
+                    else
+                        if (rndChance > 80 )
+                        {
+                            Instantiate(Resources.Load("PowerUpsResources/HourGlass_pickup"),
+                        transform.position, Quaternion.Euler(-45, 0, 0));
+                            //  Debug.Log("made a l");
+
+                        }
 
 
 

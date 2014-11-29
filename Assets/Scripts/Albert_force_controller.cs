@@ -490,6 +490,7 @@ public class Albert_force_controller : MonoBehaviour
         if (otherObj.tag == "slowDown")
         {
             Messenger<string>.Broadcast("slowing down time", otherObj.name);
+        
         }
     }
 

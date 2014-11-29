@@ -8,7 +8,7 @@ public class BossProjectile_V1 : MonoBehaviour {
     void Start()
     {
         projectileSpeed = 3f +  (float)Context.LevelNum;
-        Debug.Log("projectile speed is  " + projectileSpeed);
+     //   Debug.Log("projectile speed is  " + projectileSpeed);
     }
 
     // Update is called once per frame

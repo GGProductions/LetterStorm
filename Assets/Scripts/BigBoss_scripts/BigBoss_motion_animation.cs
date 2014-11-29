@@ -31,8 +31,8 @@ public class BigBoss_motion_animation : MonoBehaviour
 	private int inttimeElapsed;
 
 
-	private float time_toStayOpen = 3;
-	private float time_toStayclosed = 5f;
+	private float time_toStayOpen ;
+	private float time_toStayclosed;
 
 
 	private int CurIndex;
@@ -74,6 +74,10 @@ public class BigBoss_motion_animation : MonoBehaviour
 	/// </summary>
 	void Start()
 	{
+       time_toStayOpen = 0.5f;
+	   time_toStayclosed = 0.2f;
+
+
 		transform.position = new Vector3(2f, 0.2f, 10f);
 		thePlayerOBJ = GameObject.Find("AlbertPlayerPrefab");
 		CurIndex = 0;
@@ -81,7 +85,9 @@ public class BigBoss_motion_animation : MonoBehaviour
 		//find all the waypoints , they should be clumped in a single prefab .
 		//basically I find that prefab and count its children (eche child is a waypoint)
 		transList = new List<Transform>();
-		waipointBlockPrefab = GameObject.Find("waypints1");
+        if (Context.LevelNum % 2 == 0) { waipointBlockPrefab = GameObject.Find("waypints1"); }
+        else
+            waipointBlockPrefab = GameObject.Find("waypints2");
 		foreach (Transform c in waipointBlockPrefab.transform)
 		{
 			transList.Add(c);

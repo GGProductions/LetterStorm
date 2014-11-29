@@ -54,6 +54,7 @@ public class Boss_Cannon_script : MonoBehaviour
 	/// </summary>
 	void Start()
 	{
+		MaxHits = MaxHits + Context.LevelNum;
 		myparentBone = transform.parent;
 
 		cannonText_trans = transform.FindChild("CannonHealthLabel");
