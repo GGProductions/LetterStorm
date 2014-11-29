@@ -42,6 +42,8 @@ public class BigBoss_motion_animation : MonoBehaviour
 	private bool isopen = false;
 
 	private bool stop_followingWaypoints = false;
+
+    private Transform colorCube;
 	#endregion
 
 	#region listenners
@@ -67,6 +69,11 @@ public class BigBoss_motion_animation : MonoBehaviour
 		animation.AddClip(slither, "slithering");
 		animation.AddClip(openClaw, "openingClaw");
 		animation.AddClip(closeClaw, "closingClaw");
+
+        colorCube = transform.Find("Cube");
+        Debug.Log(colorCube.name);
+        colorCube.GetComponent<Renderer>().material.color = Color.red;
+
 	}
 
 	/// <summary>
