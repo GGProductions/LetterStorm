@@ -44,6 +44,11 @@ public class BigBoss_motion_animation : MonoBehaviour
 	private bool stop_followingWaypoints = false;
 
     private Transform colorCube;
+
+    private List<Color32> mycolors;
+
+ 
+
 	#endregion
 
 	#region listenners
@@ -72,15 +77,47 @@ public class BigBoss_motion_animation : MonoBehaviour
 
         colorCube = transform.Find("Cube");
         Debug.Log(colorCube.name);
-        colorCube.GetComponent<Renderer>().material.color = Color.red;
+      //  colorCube.GetComponent<Renderer>().material.color = Color.red;
+    //    colorCube.GetComponent<Renderer>().material.color = mygreen;
+        mycolors = new List<Color32>();
+        Color32 c0 = new Color32(100, 48, 8, 255);
+        Color32 c1 = new Color32(0, 217, 70, 255);
+        Color32 c2 = new Color32(228, 240, 18, 255);
+        Color32 c3 = new Color32(200, 50, 50, 255);
+        Color32 c4 = new Color32(120, 40, 10, 255);
+        Color32 c5 = new Color32(50, 200, 200, 255);
+        Color32 c6 = new Color32(10, 0, 130, 255);
+        Color32 c7 = new Color32(20, 50, 20, 255);
+        Color32 c8 = new Color32(13, 75, 13, 255);
+        Color32 c9 = new Color32(8, 48, 8, 255);
+        
+        mycolors.Add(c0);
+        mycolors.Add(c1);
+        mycolors.Add(c2);
+        mycolors.Add(c3);
+        mycolors.Add(c4);
+        mycolors.Add(c5);
+        mycolors.Add(c6);
+        mycolors.Add(c7);
+        mycolors.Add(c8);
+        mycolors.Add(c9);
+        
+        int index = Context.LevelNum%10;
+        colorCube.GetComponent<Renderer>().material.color = mycolors[index];
 
-	}
+    }
 
 	/// <summary>
 	///  starts with "enterring" coroutine which will then start the waypoint navigation coroutine
 	/// </summary>
 	void Start()
 	{
+
+     //   mycolors= new Color32[10];
+
+
+
+   
        time_toStayOpen = 0.5f;
 	   time_toStayclosed = 0.2f;
 
@@ -120,6 +157,7 @@ public class BigBoss_motion_animation : MonoBehaviour
  
 	  //entring will start the loop around the waypoint 
 	  StartCoroutine("Enetring");
+
 
 	}
 

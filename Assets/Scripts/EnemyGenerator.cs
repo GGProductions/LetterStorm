@@ -57,6 +57,9 @@ public class EnemyGenerator : MonoBehaviour
 
     private char reqLetter;
 
+    private GameObject[] bossArray=new GameObject[3];
+
+    private int index;
     #endregion Private Variables ---------------------------------------------
 
     #region Event Handlers ---------------------------------------------
@@ -65,6 +68,12 @@ public class EnemyGenerator : MonoBehaviour
     /// </summary>
     void Awake()
     {
+        bossArray[0] = BossPrefab;
+        bossArray[1] = Boss1Prefab;
+        bossArray[2] = Boss2Prefab;
+
+        index = Context.LevelNum % 3;
+
         state = State.Initialize;
     }
     /// <summary>
@@ -208,8 +217,12 @@ public class EnemyGenerator : MonoBehaviour
     private void Boss()
     {
 
-        GameObject go = Instantiate(Boss2Prefab,
-                                           new Vector3(0,0,2), Quaternion.Euler(180, 0, 180)) as GameObject;
+      //  GameObject go = Instantiate(Boss2Prefab,  new Vector3(0,0,2), Quaternion.Euler(180, 0, 180)) as GameObject;
+
+        GameObject go = Instantiate(bossArray[index], new Vector3(0, 0, 2), Quaternion.Euler(180, 0, 180)) as GameObject;
+
+      
+
         go.name = Boss2Prefab.name;
 
         bossSpawned = true;
