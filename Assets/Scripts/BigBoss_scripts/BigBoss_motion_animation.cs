@@ -129,9 +129,14 @@ public class BigBoss_motion_animation : MonoBehaviour
 		//find all the waypoints , they should be clumped in a single prefab .
 		//basically I find that prefab and count its children (eche child is a waypoint)
 		transList = new List<Transform>();
-        if (Context.LevelNum % 2 == 0) { waipointBlockPrefab = GameObject.Find("waypints1"); }
+        if (Context.LevelNum % 2 == 0) { waipointBlockPrefab = GameObject.Find("waypints3"); }
         else
-            waipointBlockPrefab = GameObject.Find("waypints2");
+            if (Context.LevelNum % 2 == 1) { waipointBlockPrefab = GameObject.Find("waypints2"); }
+         //   else
+           //     if (Context.LevelNum % 3 == 2) { waipointBlockPrefab = GameObject.Find("waypints3"); }
+        
+
+
 		foreach (Transform c in waipointBlockPrefab.transform)
 		{
 			transList.Add(c);
