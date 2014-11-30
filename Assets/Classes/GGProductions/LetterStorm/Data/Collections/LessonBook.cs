@@ -54,6 +54,7 @@ namespace GGProductions.LetterStorm.Data.Collections
         {
             // Create a sample Kindergarden Lesson with a few words and hints
             Lesson sampleK5Lesson = new Lesson("K5 Sample");
+            sampleK5Lesson.Words.Add(new Word("slug", "(noun) a homeless snail"));
             sampleK5Lesson.Words.Add(new Word("cat", "(noun) the most famous animal on YouTube"));
             sampleK5Lesson.Words.Add(new Word("dog", "(noun) man's best friend"));
             sampleK5Lesson.Words.Add(new Word("bug", "(noun) a small insect"));
