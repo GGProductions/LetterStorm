@@ -32,6 +32,10 @@ public class SmartEnemy : Enemy {
 
 	}
 
+    /// <summary>
+    /// A swith case that calls whichever movement algorithm has been predetermined based on an enemy's spawning location.
+    /// </summary>
+    /// <param name="atm">The distance an enemy is to move evey frame update.</param>
     public override void MoveEnemy(float atm)
     {
         switch (Path)
@@ -41,18 +45,20 @@ public class SmartEnemy : Enemy {
                 break;
             case 1:
                 RightMove(atm);
-                //transform.Translate(new Vector3(0.5f, 0f, -1f) * atm, Space.World);
                 break;
             case 2:
                 LeftMove(atm);
-                //transform.Translate(new Vector3(-0.5f, 0f, -1f) * atm, Space.World);
                 break;
             case 3:
                 SinMove(atm);
                 break;
         }
     }
-
+    
+    /// <summary>
+    /// The enemy moves straight back and then back and forth. The enemy remains on screen until the player destroys it.
+    /// </summary>
+    /// <param name="atm">The distance an enemy is to move evey frame update.</param>
     private void BackMove(float atm)
     {
         //timeElapsed += Time.deltaTime;
@@ -69,10 +75,13 @@ public class SmartEnemy : Enemy {
             transform.Translate(Vector3.back * atm * Time.timeScale, Space.World);
         }
     }
+    /// <summary>
+    /// The enemy has spawned sufficiently far to the right that it will move in a down-left direction and then back and forth. The enemy remains
+    /// on screen until the player destroys it.
+    /// </summary>
+    /// <param name="atm">The distance an enemy is to move evey frame update.</param>
     private void LeftMove(float atm)
     {
-        //timeElapsed += Time.deltaTime;
-
         if (reachedWaypoint)
         {
             WaypointReached();
@@ -86,10 +95,13 @@ public class SmartEnemy : Enemy {
             transform.Translate(new Vector3(-0.5f, 0f, -1f) * atm * Time.timeScale, Space.World);
         }
     }
+    /// <summary>
+    /// The enemy has spawned sufficiently far to the left that it will move in a down-right direction and then back and forth. The enemy remains
+    /// on screen until the player destroys it.
+    /// </summary>
+    /// <param name="atm">The distance an enemy is to move evey frame update.</param>
     private void RightMove(float atm)
     {
-        //timeElapsed += Time.deltaTime;
-
         if (reachedWaypoint)
         {
             WaypointReached();
@@ -106,8 +118,6 @@ public class SmartEnemy : Enemy {
     }
     private void SinMove(float atm)
     {
-        //timeElapsed += Time.deltaTime;
-
         if (reachedWaypoint)
         {
             WaypointReached();
@@ -122,7 +132,9 @@ public class SmartEnemy : Enemy {
             transform.Translate(Vector3.back * atm * Time.timeScale, Space.World);
         }
     }
-
+    /// <summary>
+    /// Once an enemy has reached a specific point on the screen, it no longer moves along the z-axis, and simply moves back and forth until it is destroyed, firing at the player.
+    /// </summary>
     private void WaypointReached()
     {
         timeElapsed += Time.deltaTime;

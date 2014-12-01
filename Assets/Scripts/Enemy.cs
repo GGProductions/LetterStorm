@@ -75,6 +75,12 @@ public class Enemy : MonoBehaviour
         transform.localScale = new Vector3(currentScaleX, currentScaleY, currentScaleZ);
         
     }
+
+    /// <summary>
+    /// A method that determines which movement trajectory an enemy will take depending on its spawn point.
+    /// Smart and dumb enemies have different movement patterns determined by their respective versions of this method.
+    /// </summary>
+    /// <returns>Returns an integer corresponding to a movement trajectory.</returns>
     private int FindPath()
     {
         if (transform.parent.name == "Spawnpoint1" || transform.parent.name == "Spawnpoint2")
@@ -90,15 +96,20 @@ public class Enemy : MonoBehaviour
             return Random.Range(0, 3);
         }
     }
+    /// <summary>
+    /// A virtual method implemented in both SmartEnemy.cs and DumbEnemy.cs. The Path determined in FindPath() is used to execute
+    /// a corresponding movement algorithm in whichever enemy has spawned.
+    /// </summary>
+    /// <param name="atm">The distance an enemy moves every frame update.</param>
     public virtual void MoveEnemy(float atm){}
  
     #endregion
 
 
     /// <summary>
-    /// thsi will allow both types of enemies to react to aoe. 
-    /// aoe itself has the same tag as the pecil 
-    /// look at consShellScript.cs and Letter projectile.cs
+    /// Allow both types of enemies to react to AOE attack. 
+    /// AOE itself has the same tag as the pecil, 
+    /// See consShellScript.cs and Letter projectile.cs
     /// </summary>
     /// <param name="otherObj"></param>
     void OnTriggerEnter(Collider otherObj)
