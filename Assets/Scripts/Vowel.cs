@@ -8,7 +8,32 @@ public class Vowel : MonoBehaviour
 
     public GameObject theDrop;
 
+	
+	void chance2() {
+		
+		
+		int rndChance = Random.Range(0, 100);
+		//Debug.Log(" ???" + rndChance);
+		
+		if (rndChance <= 50)
+		{
+			GameObject go = Instantiate(theDrop, transform.position, Quaternion.Euler(270, 0, 0)) as GameObject;
+			go.name = theDrop.name;
+			//   Debug.Log("made a letter");
+		}
 
+		else
+
+		{
+			Instantiate(Resources.Load("PowerUpsResources/HealthShroom"),
+			            transform.position, Quaternion.Euler(-45, 0, 0));
+			//  Debug.Log("made a l");
+			
+		}
+
+		
+	
+	}
     void chance() {
 
 
@@ -46,14 +71,22 @@ public class Vowel : MonoBehaviour
                       //  Debug.Log("made a l");
 
                     }
-                    else
-                        if (rndChance > 80 )
-                        {
-                            Instantiate(Resources.Load("PowerUpsResources/HourGlass_pickup"),
-                        transform.position, Quaternion.Euler(-45, 0, 0));
-                            //  Debug.Log("made a l");
+					else
+						if (rndChance > 70 && rndChance <= 80)
+						{
+			Instantiate(Resources.Load("PowerUpsResources/HealthShroom"),
+			            transform.position, Quaternion.Euler(-45, 0, 0));
+						//  Debug.Log("made a l");
+			
+						}
+                    	else
+                       		if (rndChance > 80 )
+                        	{
+                            	Instantiate(Resources.Load("PowerUpsResources/HourGlass_pickup"),
+                        	transform.position, Quaternion.Euler(-45, 0, 0));
+                           		//  Debug.Log("made a l");
 
-                        }
+                        	}
 
 
 
@@ -84,7 +117,7 @@ public class Vowel : MonoBehaviour
 
         if (otherObj.tag == "projectileTag")
         {
-            chance();
+            chance2();
 
             /*
             int rndChance = Random.Range(0, 100);

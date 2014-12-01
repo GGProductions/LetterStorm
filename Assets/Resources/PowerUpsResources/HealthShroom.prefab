@@ -11,13 +11,13 @@ GameObject:
   - 33: {fileID: 3300000}
   - 23: {fileID: 2300000}
   - 95: {fileID: 9500000}
-  - 114: {fileID: 11400000}
-  - 54: {fileID: 5400000}
-  - 135: {fileID: 13500000}
+  - 114: {fileID: 11400002}
   - 82: {fileID: 8200000}
+  - 135: {fileID: 13500000}
+  - 54: {fileID: 5400000}
   m_Layer: 0
-  m_Name: PencilPrefab
-  m_TagString: projectileTag
+  m_Name: HealthShroom
+  m_TagString: HeathShroomTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,9 +28,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
-  m_LocalPosition: {x: 3.52983713, y: -.873894989, z: 1.61634541}
-  m_LocalScale: {x: .0199999996, y: .00999999978, z: .0199999996}
+  m_LocalRotation: {x: -.707106888, y: 0, z: -0, w: .707106769}
+  m_LocalPosition: {x: -1.30361915, y: 2.43108034, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -46,11 +46,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 5c0f979cb5fe19249a61d78f5b68f56d, type: 2}
-  - {fileID: 2100000, guid: 8dac22b2c6a3c67418d5b6156d38fdad, type: 2}
-  - {fileID: 2100000, guid: 14640be5680c50d48adba4e38b688169, type: 2}
-  - {fileID: 2100000, guid: ac5b1b71df4913d418097cfecb022fdb, type: 2}
-  - {fileID: 2100000, guid: 97a787d38827b344f8fa171dbf87cb1f, type: 2}
+  - {fileID: 2100000, guid: 01870bbc424b04140a3790eb8090e0ce, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -64,7 +60,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Mesh: {fileID: 4300000, guid: 89bca1d7baec1954ab7cb56503ab4400, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 55c172a9f14a0f3478510174fc4b8608, type: 3}
 --- !u!54 &5400000
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -88,7 +84,7 @@ AudioSource:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 23f69c7b8ca96415fa665b1d58c12e50, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d0a7c4647d7304fad92ba78612e73abc, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -146,14 +142,14 @@ Animator:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 89bca1d7baec1954ab7cb56503ab4400, type: 3}
+  m_Avatar: {fileID: 9000000, guid: 55c172a9f14a0f3478510174fc4b8608, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11400000
+--- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -161,10 +157,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50559938ba7d03b47914fedeb6a82143, type: 3}
+  m_Script: {fileID: 11500000, guid: 0432582d0f46a46cc95fcfccdb3b1075, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PencilExplosion: {fileID: 100000, guid: db3f26d37383eb543b89bd47aab9f1e8, type: 2}
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -175,8 +170,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 20
-  m_Center: {x: 0, y: -1.84974861, z: -4.529953e-05}
+  m_Radius: .349747807
+  m_Center: {x: -4.47034836e-08, y: 0, z: -.283406824}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -13,7 +13,8 @@ namespace GGProductions.LetterStorm.InGameHelpClasses
         private int? _maxHealth = null;
         private int? _curHealth = null;
         private int _decreaseFactor = 10;
-        #endregion Private Variables ------------------------------------------
+		private int _increaseFactor = 10;
+        #endregion Private Variables -----------------------------------------
 
         #region Properties ----------------------------------------------------
         /// <summary>
@@ -92,7 +93,8 @@ namespace GGProductions.LetterStorm.InGameHelpClasses
         /// <summary>
         /// Decreases current player health by the default decrease factor. Player health cannot be below the specified minimum.
         /// </summary>
-        public void DecreaseHealth()
+        
+		public void DecreaseHealth()
         {
             DecreaseHealth(_decreaseFactor);
         }
@@ -110,7 +112,13 @@ namespace GGProductions.LetterStorm.InGameHelpClasses
         /// Increases current player health by an integer. Player health cannot be above the specified maximum.
         /// </summary>
         /// <param name="increaseFactor">The amount to increase current health by</param>
-        public void IncreaseHealth(int increaseFactor)
+        
+		public void IncreaseHealth()
+		{
+			IncreaseHealth(_increaseFactor);
+		}
+
+		public void IncreaseHealth(int increaseFactor)
         {
             _curHealth = (_curHealth + increaseFactor > _maxHealth) ? _maxHealth : (_curHealth + increaseFactor);
         }
@@ -118,7 +126,13 @@ namespace GGProductions.LetterStorm.InGameHelpClasses
         /// <summary>
         /// Returns true if current player health is the minimum (minimum is default 0).
         /// </summary>
-        public bool HasNoHealth()
+        
+
+
+
+
+
+		public bool HasNoHealth()
         {
             return (_curHealth <= _minHealth);
         }

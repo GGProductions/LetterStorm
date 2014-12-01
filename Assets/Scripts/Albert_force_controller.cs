@@ -1,4 +1,4 @@
-﻿﻿using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using GGProductions.LetterStorm.InGameHelpClasses;
 
@@ -390,6 +390,14 @@ public class Albert_force_controller : MonoBehaviour
 
         }
 
+	void GainHealth()
+	{
+		Context.PlayerHealth.IncreaseHealth();
+	//	Instantiate(Resources.Load("Explosions/blackStars1"),
+		//            transform.position,
+		//            Quaternion.Euler(-180, 0, 0));
+	}
+
 
 
     void OnTriggerEnter(Collider otherObj)
@@ -413,6 +421,11 @@ public class Albert_force_controller : MonoBehaviour
         if (otherObj.tag == "poisonousMushroomPowerUp"){
             TakeABeating();
         }
+		//HeathShroomTag
+
+		if (otherObj.tag == "HeathShroomTag"){
+			GainHealth();
+		}
 
         if (otherObj.tag == "slowDown") {
             Messenger<string>.Broadcast("slowing down time", otherObj.name);
@@ -487,6 +500,11 @@ public class Albert_force_controller : MonoBehaviour
             TakeABeating();
         }
 
+	//	if (otherObj.tag == "HealthShroomPowerUp")
+	//	{
+	//		GainHealth();
+//		}
+	//
         if (otherObj.tag == "slowDown")
         {
             Messenger<string>.Broadcast("slowing down time", otherObj.name);
