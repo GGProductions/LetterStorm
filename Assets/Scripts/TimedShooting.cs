@@ -16,7 +16,7 @@ public class TimedShooting : MonoBehaviour {
 	   shotDelay = (0.5f / divisor )+ Context.EnemyDifficulty.BossCannonProjectilesPerSecond;
 	
 
-	   Debug.Log("shot delay " + shotDelay + "level " + levelFloat);
+//	   Debug.Log("shot delay " + shotDelay + "level " + levelFloat);
 		}
 
 	IEnumerator Start() 
@@ -26,6 +26,7 @@ public class TimedShooting : MonoBehaviour {
 			Vector3 here= new Vector3( gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);	
 			{Instantiate (theShot, here, transform.rotation );
 			yield return new WaitForSeconds(shotDelay);
+
 			}
 		}
 	}	

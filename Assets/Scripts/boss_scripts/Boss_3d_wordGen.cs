@@ -24,7 +24,7 @@ public class Boss_3d_wordGen : MonoBehaviour {
 	public delegate void BossgunsDied();
 	public static event BossgunsDied OnMyGunsDied;
 
-
+	private GameObject faderGO;
 
 	private Transform armature;
 
@@ -53,13 +53,24 @@ public class Boss_3d_wordGen : MonoBehaviour {
 	private float kerning = 0.6f;
 	EnemyGenerator _enemygen;
 
+	private FadeBlack2Clear fadescript;
  
+
+
+
 	/// <summary>
 	/// fetch the current word from context
 	/// initialize index that keeps track of current letter to solve
 	/// </summary>
 	void Awake()
 	{
+
+
+
+		faderGO = GameObject.Find ("fadingPRefab");
+		fadescript = faderGO.GetComponent<FadeBlack2Clear> ();
+
+
 	   fetchWordandConstruct();
 		wordGenerated_index_of_currLetterTosolve = 0;
 		HowmanyChildrenHave_Boss_Canon_script = findHowMany_Cannons();
@@ -247,16 +258,14 @@ public class Boss_3d_wordGen : MonoBehaviour {
 
 							//JR delay loading next level
 							//yield return new WaitForSeconds( delayTime );
-
+							StartCoroutine(WaitingFunction());
+							fadescript.turnOnSwitch();
 							//Fade out boss coroutine
-							if (Context.Curriculum.Lessons.GetLessonById(Context.CurrentLessonId).Words.ContainsUntestedWords())
-							{
-								Application.LoadLevel("Win");
-							}
-							else
-							{
-								Application.LoadLevel("WinAll");
-							}
+
+							//////////////////////////////	//////////////////////////////	//////////////////////////////
+
+							//////////////////////////////	//////////////////////////////	//////////////////////////////
+
 						}
 					}
 					else
@@ -276,9 +285,24 @@ public class Boss_3d_wordGen : MonoBehaviour {
 
 	}
 
-	IEnumerator wait_toLoadWin() {
+	private bool moveon=false;
+	IEnumerator WaitingFunction(){
+		//JR delay loading next level
+		yield return new WaitForSeconds( 5f );
+		Debug.Log ("its been 5 Seconds");
+		moveon = true;
 
-		yield return new WaitForSeconds(3f);
-		Application.LoadLevel("Win");
+		if (Context.Curriculum.Lessons.GetLessonById(Context.CurrentLessonId).Words.ContainsUntestedWords())
+		{
+			Application.LoadLevel("Win");
+			
+			
+			
+		}
+		else
+		{
+			Application.LoadLevel("WinAll");
+		}
+		
 	}
 }
