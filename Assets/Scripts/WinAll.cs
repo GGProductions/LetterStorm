@@ -138,6 +138,9 @@ public class WinAll : MonoBehaviour
 	// Title Texture
 	public Texture titleImg;
 
+    // Title Texture
+    public Texture AlbertWins;
+
     /// <summary>
     /// The GUI skin containing all the styles used for the GUI elements
     /// </summary>
@@ -196,7 +199,13 @@ public class WinAll : MonoBehaviour
         //JR Calls up enemy defeated texture which is a .png file inside textures folder
         float bossImgWidth = photoTexture.width * scaleFactor;
         float bossImgHeight = photoTexture.height * scaleFactor;
-        GUI.DrawTexture(new Rect((120 * scaleFactor), (290 * scaleFactor), bossImgWidth, bossImgHeight), photoTexture);
+      //  GUI.DrawTexture(new Rect((120 * scaleFactor), (290 * scaleFactor), bossImgWidth, bossImgHeight), photoTexture);
+
+        float alberImgWidth = photoTexture.width * scaleFactor;
+        float albertImgHeight = photoTexture.height * scaleFactor;
+        GUI.DrawTexture(new Rect((120 * scaleFactor), (290 * scaleFactor), alberImgWidth, albertImgHeight), AlbertWins);
+
+        
 
         // Create the list of word the user has spelled
         CreateLessonWordsArea();
