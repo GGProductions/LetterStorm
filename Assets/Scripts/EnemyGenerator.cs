@@ -290,7 +290,16 @@ public class EnemyGenerator : MonoBehaviour
     /// <returns>Returns the number of enemies to spawn as an integer.</returns>
     private int SpawnQuantity(int splen)
     {
-        return UnityEngine.Random.Range(0, splen);
+        int sq = UnityEngine.Random.Range(0, splen);
+
+        if (Context.EnemyDifficulty.MaxEnemiesOnScreen < sq)
+        {
+            return Context.EnemyDifficulty.MaxEnemiesOnScreen;
+        }
+        else
+        {
+            return sq;
+        }
     }
 
     /// <summary>

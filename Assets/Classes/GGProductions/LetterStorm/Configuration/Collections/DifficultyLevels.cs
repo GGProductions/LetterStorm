@@ -35,10 +35,10 @@ namespace GGProductions.LetterStorm.Configuration.Collections
                 1,
                 "Easy",
                 "Enemies are slower and spawn in smaller groups, the player takes less damage per hit, and bosses are easier to defeat.  Recommended for young children who are new to gaming.",
-                0.7f,   // Game speed: slower than normal
+                0.65f,   // Game speed: slower than normal
                 100,    // Initial health: normal
                 5,      // Damage taken per hit: less than normal
-                4,      // Max enemies on screen: less than normal
+                3,      // Max enemies on screen: less than normal
                 0.5f,   // Boss health modifier: less than normal
                 false,  // Don't enable boss rage mode
                 0.5f,   // Boss cannon tracking accuracy: significant lag
