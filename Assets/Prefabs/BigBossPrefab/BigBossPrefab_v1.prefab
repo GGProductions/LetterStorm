@@ -1172,7 +1172,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theShot: {fileID: 100002, guid: 70bade057986dca43a47980897a8d69a, type: 2}
-  shotDelay: .800000012
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1185,7 +1184,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theShot: {fileID: 100002, guid: 70bade057986dca43a47980897a8d69a, type: 2}
-  shotDelay: .800000012
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
