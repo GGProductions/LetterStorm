@@ -512,7 +512,7 @@ public class HUD : MonoBehaviour {
                     CorkBoardDivisionSizeWidth,
                     CorkBoardDivisionSizeHeight), QuitGameButtonTexture, emptyStyle))
                 {
-                    isPaused = false;
+                    //isPaused = false;
                     Application.Quit();
                 }
                 // Main menu button
@@ -522,8 +522,9 @@ public class HUD : MonoBehaviour {
                     CorkBoardDivisionSizeHeight), MainMenuGameButtonTexture, emptyStyle))
                 {
                     // Reset values and reload to Main Menu
-                    Context.PlayerHealth.CurHealth = Context.PlayerHealth.MaxHealth;
-                    Context.PlayerInventory = new Inventory();
+                    //Context.PlayerHealth.CurHealth = Context.PlayerHealth.MaxHealth;
+                    //Context.PlayerInventory = new Inventory();
+                    Context.ClearStatsNextLevel();
                     isPaused = false;                                       // Unpause
                     Application.LoadLevel("MainMenu");
                 }
