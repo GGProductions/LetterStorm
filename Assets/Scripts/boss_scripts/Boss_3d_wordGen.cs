@@ -108,21 +108,18 @@ public class Boss_3d_wordGen : MonoBehaviour {
 
 		foreach (Transform childTransf in this.transform)
 		{
-			if (childTransf.GetComponentInChildren<Boss_Cannon_script>() != null)
-			{
-				cannonsFound++;
-				// Debug.Log("fond1");
-			}
-			// Debug.Log("bone i have child-->" + childTransf.name);
-			foreach (Transform subChild in childTransf)
-			{
+            if (childTransf.GetComponentInChildren<Boss_Cannon_script>() != null)
+            {
+                cannonsFound++;
 
-				if (subChild.GetComponentInChildren<Boss_Cannon_script>() != null)
-				{
-					cannonsFound++;
-					// Debug.Log("fond1");
-				}
-			}
+                foreach (Transform subChild in childTransf)
+                {
+                    if (subChild.GetComponentInChildren<Boss_Cannon_script>() != null)
+                    {
+                        cannonsFound++;
+                    }
+                }
+            }
 		}
 		return cannonsFound;
 
@@ -300,8 +297,9 @@ public class Boss_3d_wordGen : MonoBehaviour {
 			
 		}
 		else
-		{
-			Application.LoadLevel("WinAll");
+        {
+            Application.LoadLevel("Credits_scene");
+			//Application.LoadLevel("WinAll");
 		}
 		
 	}

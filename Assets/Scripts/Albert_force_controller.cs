@@ -408,8 +408,11 @@ public class Albert_force_controller : MonoBehaviour
 		if (otherObj.tag == "bossTag" || 
 			otherObj.tag == "bossProjectileTag" || 
 			otherObj.tag == "enemy" ||
-			 otherObj.tag == "smartProjectile")
+			 otherObj.tag == "smartProjectile" ||
+			 otherObj.tag == "clawTag"
+			)
 		{
+			Debug.Log("ran intoboss");
 			TakeABeating();
 		}
 

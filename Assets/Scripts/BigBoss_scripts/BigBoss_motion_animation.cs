@@ -223,13 +223,13 @@ public class BigBoss_motion_animation : MonoBehaviour
 			   break;
 			}  
 			calcCurnext();
-			yield return StartCoroutine(Move_A_B_time(transform, transList[CurIndex].position, transList[nextIndex].position, 3.0f));
-			CurIndex++;
-		
+			yield return StartCoroutine(Move_A_B_time(transform, transList[CurIndex].position, 
+                                            transList[nextIndex].position,
+                                            3.0f));
+			CurIndex++;	
 		}
-		//starting this coroutine with move back, but mooveback will wait for move forward to be done 
+		//starting this coroutine with move back, but moveback will wait for move forward to be done 
 		yield return StartCoroutine(move_back_from_Albert_location(transform, transList[nextIndex].position, 0.3f));
-
 	}
 
 	/// <summary>
@@ -247,7 +247,6 @@ public class BigBoss_motion_animation : MonoBehaviour
 		yield return StartCoroutine(move_toward_Albert_location(transform, curBossPo, albertisat, 0.2f));
 
 		 curBossPo = transform.position;
-	  //  Debug.Log("we in special");
 		float i = 0.0f;
 		float rate = 1.0f / time;
 		while (i < 1.0f)

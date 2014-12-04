@@ -39,15 +39,15 @@ public class Win : MonoBehaviour
 			GUI.DrawTexture(new Rect(Screen.width / 2 - 300, Screen.height / 2 - 75, 300, 250), DeadBoss1);
 
 		//JR if pressed load Next Level
-		if(GUI.Button(new Rect(Screen.width / 2 + 10, Screen.height / 2 + 25, 80, 20), "Level 1"))
-		{
+	//	if(GUI.Button(new Rect(Screen.width / 2 + 10, Screen.height / 2 + 25, 80, 20), "Level 1"))
+	//	{
 			//JR Gives players fresh lives and 0s out the score and misses
 			//Player.Score = 0; //JR Old Code from first Iteration
 			//Player.Lives = 3; //JR Old Code from first Iteration
 			//Player.Missed = 0; //JR Old Code from first Iteration
-			Context.ClearStatsNextLevel();
-			Application.LoadLevel("EnemyTesting");
-		}
+	//		Context.ClearStatsNextLevel();
+		//	Application.LoadLevel("EnemyTesting");
+		//}
 		
 		//JR if pressed load Next Level
 		if(GUI.Button(new Rect(Screen.width / 2 + 10 , Screen.height / 2 + 50, 80, 20), "Next Level"))

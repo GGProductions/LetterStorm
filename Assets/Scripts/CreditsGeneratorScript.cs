@@ -11,7 +11,8 @@ public class CreditsGeneratorScript : MonoBehaviour {
     private string james = "james raygor";
     private string music = "music by";
     private string han = "paul han";
-    
+
+    private string thankyou = "thank you";
 
     void makeString(string s, float zpos)
     {
@@ -22,7 +23,8 @@ public class CreditsGeneratorScript : MonoBehaviour {
             float kern = (float)index;
             kern = kern * 0.8f;
 
-            if (letter == ' ') { Debug.Log("blank"); }
+            if (letter == ' ') {// Debug.Log("blank"); //
+            }
             else
             if(letter == 'a' ||letter == 'e' ||letter == 'i' ||letter == 'o' ||letter == 'u' ||letter == 'y')
             Instantiate(Resources.Load("forCredits/" + letter),
@@ -37,7 +39,7 @@ public class CreditsGeneratorScript : MonoBehaviour {
     }
 
     float line = 0;
-    float space = 7f;
+    float space = 5f;
 
 	// Use this for initialization
 	void Start () {
@@ -58,7 +60,14 @@ public class CreditsGeneratorScript : MonoBehaviour {
         makeString(music, line);
         line = line + space;
         makeString(han, line);
-       
+          line = line + space;
+          makeString(thankyou, line);
+
+
+
+        
+
+        StartCoroutine("waitabit");
 
 	}
 	
@@ -66,4 +75,12 @@ public class CreditsGeneratorScript : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    IEnumerator waitabit() {
+
+        yield return new WaitForSeconds(60f);
+        Debug.Log("3 sec");
+        Application.LoadLevel("WinAll");
+    }
+
 }

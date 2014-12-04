@@ -1773,7 +1773,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100104}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.77999997, y: 1.60000002, z: 1}
@@ -1940,7 +1940,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theShot: {fileID: 100002, guid: 70bade057986dca43a47980897a8d69a, type: 2}
-  shotDelay: .800000012
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1989,7 +1988,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theShot: {fileID: 100002, guid: 70bade057986dca43a47980897a8d69a, type: 2}
-  shotDelay: .800000012
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2014,7 +2012,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theShot: {fileID: 100002, guid: 70bade057986dca43a47980897a8d69a, type: 2}
-  shotDelay: .800000012
 --- !u!114 &11400014
 MonoBehaviour:
   m_ObjectHideFlags: 1
