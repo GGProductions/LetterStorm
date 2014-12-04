@@ -73,6 +73,7 @@
   </HelpKINode>
   <HelpKINode Title="AlbertProjectile.AlbertProjectile constructor" Url="html/M_AlbertProjectile__ctor.htm" />
   <HelpKINode Title="AlbertProjectile.PencilExplosion field" Url="html/F_AlbertProjectile_PencilExplosion.htm" />
+  <HelpKINode Title="AlbertWins field" Url="html/F_WinAll_AlbertWins.htm" />
   <HelpKINode Title="Albert_force_controller class">
     <HelpKINode Title="Albert_force_controller Class" Url="html/T_Albert_force_controller.htm" />
     <HelpKINode Title="about Albert_force_controller class" Url="html/T_Albert_force_controller.htm" />
@@ -1521,6 +1522,7 @@
     <HelpKINode Title="methods" Url="html/Methods_T_WinAll.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_WinAll.htm" />
   </HelpKINode>
+  <HelpKINode Title="WinAll.AlbertWins field" Url="html/F_WinAll_AlbertWins.htm" />
   <HelpKINode Title="WinAll.areaBackgroundImg field" Url="html/F_WinAll_areaBackgroundImg.htm" />
   <HelpKINode Title="WinAll.backgroundTexture field" Url="html/F_WinAll_backgroundTexture.htm" />
   <HelpKINode Title="WinAll.photoTexture field" Url="html/F_WinAll_photoTexture.htm" />
