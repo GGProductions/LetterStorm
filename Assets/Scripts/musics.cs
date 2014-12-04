@@ -5,7 +5,7 @@ public class musics : MonoBehaviour {
 
 	public AudioClip[] AudioClips;
 
-	public AudioSource au_footsteps;
+	public AudioSource MusicAudioSource;
 	// Use this for initialization
 
 	private List<string> songnames =new List<string>();
@@ -26,15 +26,15 @@ public class musics : MonoBehaviour {
 
 		int index = Context.LevelNum % 6;
 
-		au_footsteps = (AudioSource)gameObject.AddComponent("AudioSource");
+		MusicAudioSource = (AudioSource)gameObject.AddComponent("AudioSource");
 		AudioClip myAudioclip;
 		myAudioclip = (AudioClip)Resources.Load(songnames[index]);
 
 
 
-		au_footsteps.clip = myAudioclip;
-		au_footsteps.loop=true;
-		au_footsteps.Play();
+		MusicAudioSource.clip = myAudioclip;
+		MusicAudioSource.loop=true;
+		MusicAudioSource.Play();
 	}
 	
 	// Update is called once per frame

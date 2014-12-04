@@ -24,6 +24,8 @@ public class Albert_force_controller : MonoBehaviour
 
 	public string LetterBulletname = "";
 	public bool LetterMode = true;
+	
+
 	#endregion
 
 	#region privVar
@@ -88,6 +90,8 @@ public class Albert_force_controller : MonoBehaviour
 	}
 
 	Quaternion Albert_originalRotation;
+
+    public AudioSource MusicAudioSource;
 	/// <summary>
 	/// loading all the animations. can be done in start() as well but i'm not sure what the difference is
 	/// </summary>
@@ -113,6 +117,10 @@ public class Albert_force_controller : MonoBehaviour
 		animation.wrapMode = WrapMode.Once;
 		animation.AddClip(throwAnimationClip, "throwing");
 
+
+        MusicAudioSource = (AudioSource)gameObject.AddComponent("AudioSource");
+        myAudioclip = (AudioClip)Resources.Load("SFX/albertOuch");
+        
 	}
 
 	/// <summary>
@@ -377,7 +385,9 @@ public class Albert_force_controller : MonoBehaviour
 	}
 
 	 void TakeABeating()
-		{
+    {
+            MusicAudioSource.clip = myAudioclip;
+            MusicAudioSource.Play();
 			//Debug.Log("collisioat " + THETIME);
 			curr_state = AlbertState.GotHit;
 			//  Debug.Log("Vowel");
@@ -400,6 +410,8 @@ public class Albert_force_controller : MonoBehaviour
 
 
 
+      AudioClip myAudioclip;
+
 	void OnTriggerEnter(Collider otherObj)
 	{
 
@@ -412,7 +424,7 @@ public class Albert_force_controller : MonoBehaviour
 			 otherObj.tag == "clawTag"
 			)
 		{
-			Debug.Log("ran intoboss");
+		//	Debug.Log("ran intoboss");
 			TakeABeating();
 		}
 

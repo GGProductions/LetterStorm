@@ -78,7 +78,7 @@ public class CreditsGeneratorScript : MonoBehaviour {
 
     IEnumerator waitabit() {
 
-        yield return new WaitForSeconds(60f);
+        yield return new WaitForSeconds(55f);
         Debug.Log("3 sec");
         Application.LoadLevel("WinAll");
     }
