@@ -20,6 +20,7 @@ public class FadeBlack2Clear : MonoBehaviour {
 		void Start(){
 			//guiTexture.color = Color.black;
 		guiTexture.color = Color.clear;
+        transform.position = new Vector3(0, 0, 0);
 		}
 		
 

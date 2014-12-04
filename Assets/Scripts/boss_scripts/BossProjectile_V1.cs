@@ -18,7 +18,7 @@ public class BossProjectile_V1 : MonoBehaviour {
         float moveY;
         moveY = projectileSpeed * Time.deltaTime;
         transform.Translate(Vector3.forward * moveY);
-        if (transform.position.z > 6.4f || transform.position.z < -7f || transform.position.x < -10f || transform.position.x > 10f) { Destroy(this.gameObject); }
+        if (transform.position.z > 8.4f || transform.position.z < -7f || transform.position.x < -10f || transform.position.x > 10f) { Destroy(this.gameObject); }
 
     }
 
