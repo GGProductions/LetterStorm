@@ -1,0 +1,1563 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpKI>
+  <HelpKINode Title=" namespace" Url="html/N_.htm" />
+  <HelpKINode Title="A field" Url="html/F_Inventory_A.htm" />
+  <HelpKINode Title="AcannonHasDied method" Url="html/M_Boss_3d_wordGen_AcannonHasDied.htm" />
+  <HelpKINode Title="ActionAnimationClip field">
+    <HelpKINode Title="Boss1_move.ActionAnimationClip Field" Url="html/F_Boss1_move_ActionAnimationClip.htm" />
+    <HelpKINode Title="Boss1_moveV2.ActionAnimationClip Field" Url="html/F_Boss1_moveV2_ActionAnimationClip.htm" />
+    <HelpKINode Title="Boss_Motion_animation.ActionAnimationClip Field" Url="html/F_Boss_Motion_animation_ActionAnimationClip.htm" />
+    <HelpKINode Title="Boss_move_PtP.ActionAnimationClip Field" Url="html/F_Boss_move_PtP_ActionAnimationClip.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AddCollectedLetter method" Url="html/M_Inventory_AddCollectedLetter.htm" />
+  <HelpKINode Title="AddListener method">
+    <HelpKINode Title="Messenger(T).AddListener Method " Url="html/Overload_Messenger_1_AddListener.htm" />
+    <HelpKINode Title="Messenger(T, U).AddListener Method " Url="html/Overload_Messenger_2_AddListener.htm" />
+    <HelpKINode Title="Messenger(T, U, V).AddListener Method " Url="html/Overload_Messenger_3_AddListener.htm" />
+    <HelpKINode Title="Messenger.AddListener Method " Url="html/Overload_Messenger_AddListener.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AlbertController class">
+    <HelpKINode Title="AlbertController Class" Url="html/T_AlbertController.htm" />
+    <HelpKINode Title="about AlbertController class" Url="html/T_AlbertController.htm" />
+    <HelpKINode Title="constructor" Url="html/M_AlbertController__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_AlbertController.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_AlbertController.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_AlbertController.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AlbertController.AlbertController constructor" Url="html/M_AlbertController__ctor.htm" />
+  <HelpKINode Title="AlbertController.fallAnimationClip field" Url="html/F_AlbertController_fallAnimationClip.htm" />
+  <HelpKINode Title="AlbertController.idleAnimationClip field" Url="html/F_AlbertController_idleAnimationClip.htm" />
+  <HelpKINode Title="AlbertController.PlayerSpeed field" Url="html/F_AlbertController_PlayerSpeed.htm" />
+  <HelpKINode Title="AlbertController.ProjectilePrefab field" Url="html/F_AlbertController_ProjectilePrefab.htm" />
+  <HelpKINode Title="AlbertController.rotateSpeed field" Url="html/F_AlbertController_rotateSpeed.htm" />
+  <HelpKINode Title="AlbertController.smooth field" Url="html/F_AlbertController_smooth.htm" />
+  <HelpKINode Title="AlbertController.tiltAngle field" Url="html/F_AlbertController_tiltAngle.htm" />
+  <HelpKINode Title="AlbertController.walkAnimationClip field" Url="html/F_AlbertController_walkAnimationClip.htm" />
+  <HelpKINode Title="AlbertController2 class">
+    <HelpKINode Title="AlbertController2 Class" Url="html/T_AlbertController2.htm" />
+    <HelpKINode Title="about AlbertController2 class" Url="html/T_AlbertController2.htm" />
+    <HelpKINode Title="constructor" Url="html/M_AlbertController2__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_AlbertController2.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_AlbertController2.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_AlbertController2.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AlbertController2.AlbertController2 constructor" Url="html/M_AlbertController2__ctor.htm" />
+  <HelpKINode Title="AlbertController2.aoeBall field" Url="html/F_AlbertController2_aoeBall.htm" />
+  <HelpKINode Title="AlbertController2.fallAnimationClip field" Url="html/F_AlbertController2_fallAnimationClip.htm" />
+  <HelpKINode Title="AlbertController2.idleAnimationClip field" Url="html/F_AlbertController2_idleAnimationClip.htm" />
+  <HelpKINode Title="AlbertController2.LetterBulletname field" Url="html/F_AlbertController2_LetterBulletname.htm" />
+  <HelpKINode Title="AlbertController2.LetterMode field" Url="html/F_AlbertController2_LetterMode.htm" />
+  <HelpKINode Title="AlbertController2.PlayerSpeed field" Url="html/F_AlbertController2_PlayerSpeed.htm" />
+  <HelpKINode Title="AlbertController2.ProjectilePrefab field" Url="html/F_AlbertController2_ProjectilePrefab.htm" />
+  <HelpKINode Title="AlbertController2.rotateSpeed field" Url="html/F_AlbertController2_rotateSpeed.htm" />
+  <HelpKINode Title="AlbertController2.smooth field" Url="html/F_AlbertController2_smooth.htm" />
+  <HelpKINode Title="AlbertController2.throwAnimationClip field" Url="html/F_AlbertController2_throwAnimationClip.htm" />
+  <HelpKINode Title="AlbertController2.tiltAngle field" Url="html/F_AlbertController2_tiltAngle.htm" />
+  <HelpKINode Title="AlbertController2.wakBackAnimationClip field" Url="html/F_AlbertController2_wakBackAnimationClip.htm" />
+  <HelpKINode Title="AlbertController2.walkAnimationClip field" Url="html/F_AlbertController2_walkAnimationClip.htm" />
+  <HelpKINode Title="AlbertController3 class">
+    <HelpKINode Title="AlbertController3 Class" Url="html/T_AlbertController3.htm" />
+    <HelpKINode Title="about AlbertController3 class" Url="html/T_AlbertController3.htm" />
+    <HelpKINode Title="constructor" Url="html/M_AlbertController3__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_AlbertController3.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_AlbertController3.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AlbertController3.AlbertController3 constructor" Url="html/M_AlbertController3__ctor.htm" />
+  <HelpKINode Title="AlbertProjectile class">
+    <HelpKINode Title="AlbertProjectile Class" Url="html/T_AlbertProjectile.htm" />
+    <HelpKINode Title="about AlbertProjectile class" Url="html/T_AlbertProjectile.htm" />
+    <HelpKINode Title="constructor" Url="html/M_AlbertProjectile__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_AlbertProjectile.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_AlbertProjectile.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_AlbertProjectile.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AlbertProjectile.AlbertProjectile constructor" Url="html/M_AlbertProjectile__ctor.htm" />
+  <HelpKINode Title="AlbertProjectile.PencilExplosion field" Url="html/F_AlbertProjectile_PencilExplosion.htm" />
+  <HelpKINode Title="AlbertWins field" Url="html/F_WinAll_AlbertWins.htm" />
+  <HelpKINode Title="Albert_force_controller class">
+    <HelpKINode Title="Albert_force_controller Class" Url="html/T_Albert_force_controller.htm" />
+    <HelpKINode Title="about Albert_force_controller class" Url="html/T_Albert_force_controller.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Albert_force_controller__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_Albert_force_controller.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Albert_force_controller.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Albert_force_controller.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Albert_force_controller.Albert_force_controller constructor" Url="html/M_Albert_force_controller__ctor.htm" />
+  <HelpKINode Title="Albert_force_controller.fallAnimationClip field" Url="html/F_Albert_force_controller_fallAnimationClip.htm" />
+  <HelpKINode Title="Albert_force_controller.HurricaneProjectile field" Url="html/F_Albert_force_controller_HurricaneProjectile.htm" />
+  <HelpKINode Title="Albert_force_controller.idleAnimationClip field" Url="html/F_Albert_force_controller_idleAnimationClip.htm" />
+  <HelpKINode Title="Albert_force_controller.LetterBulletname field" Url="html/F_Albert_force_controller_LetterBulletname.htm" />
+  <HelpKINode Title="Albert_force_controller.LetterMode field" Url="html/F_Albert_force_controller_LetterMode.htm" />
+  <HelpKINode Title="Albert_force_controller.ProjectilePrefab field" Url="html/F_Albert_force_controller_ProjectilePrefab.htm" />
+  <HelpKINode Title="Albert_force_controller.SecondaryProjectilePrefab field" Url="html/F_Albert_force_controller_SecondaryProjectilePrefab.htm" />
+  <HelpKINode Title="Albert_force_controller.throwAnimationClip field" Url="html/F_Albert_force_controller_throwAnimationClip.htm" />
+  <HelpKINode Title="Albert_force_controller.wakBackAnimationClip field" Url="html/F_Albert_force_controller_wakBackAnimationClip.htm" />
+  <HelpKINode Title="Albert_force_controller.walkAnimationClip field" Url="html/F_Albert_force_controller_walkAnimationClip.htm" />
+  <HelpKINode Title="AllerAlbert method" Url="html/M_Boss_3d_wordGen_AllerAlbert.htm" />
+  <HelpKINode Title="Alphabet property" Url="html/P_Context_Alphabet.htm" />
+  <HelpKINode Title="amount field" Url="html/F_FadeBlack2Clear_amount.htm" />
+  <HelpKINode Title="angleNeeded field">
+    <HelpKINode Title="BossV1.angleNeeded Field" Url="html/F_BossV1_angleNeeded.htm" />
+    <HelpKINode Title="Boss_eye_and_gun.angleNeeded Field" Url="html/F_Boss_eye_and_gun_angleNeeded.htm" />
+    <HelpKINode Title="Boss_Eye_script.angleNeeded Field" Url="html/F_Boss_Eye_script_angleNeeded.htm" />
+  </HelpKINode>
+  <HelpKINode Title="aoe field" Url="html/F_AoePowerUp_aoe.htm" />
+  <HelpKINode Title="AoeBall class">
+    <HelpKINode Title="AoeBall Class" Url="html/T_AoeBall.htm" />
+    <HelpKINode Title="about AoeBall class" Url="html/T_AoeBall.htm" />
+    <HelpKINode Title="constructor" Url="html/M_AoeBall__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_AoeBall.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_AoeBall.htm" />
+  </HelpKINode>
+  <HelpKINode Title="aoeBall field" Url="html/F_AlbertController2_aoeBall.htm" />
+  <HelpKINode Title="AoeBall.AoeBall constructor" Url="html/M_AoeBall__ctor.htm" />
+  <HelpKINode Title="AoePowerUp class">
+    <HelpKINode Title="AoePowerUp Class" Url="html/T_AoePowerUp.htm" />
+    <HelpKINode Title="about AoePowerUp class" Url="html/T_AoePowerUp.htm" />
+    <HelpKINode Title="constructor" Url="html/M_AoePowerUp__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_AoePowerUp.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_AoePowerUp.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_AoePowerUp.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AoePowerUp.aoe field" Url="html/F_AoePowerUp_aoe.htm" />
+  <HelpKINode Title="AoePowerUp.AoePowerUp constructor" Url="html/M_AoePowerUp__ctor.htm" />
+  <HelpKINode Title="areaBackgroundImg field">
+    <HelpKINode Title="ManageLessons.areaBackgroundImg Field" Url="html/F_ManageLessons_areaBackgroundImg.htm" />
+    <HelpKINode Title="WinAll.areaBackgroundImg Field" Url="html/F_WinAll_areaBackgroundImg.htm" />
+  </HelpKINode>
+  <HelpKINode Title="areaLeftMarginImg field" Url="html/F_ManageLessons_areaLeftMarginImg.htm" />
+  <HelpKINode Title="AudioClips field" Url="html/F_musics_AudioClips.htm" />
+  <HelpKINode Title="au_footsteps field" Url="html/F_musics_au_footsteps.htm" />
+  <HelpKINode Title="Awake method" Url="html/M_Boss_Eye_script_Awake.htm" />
+  <HelpKINode Title="B field" Url="html/F_Inventory_B.htm" />
+  <HelpKINode Title="backgroundImg field" Url="html/F_ManageLessons_backgroundImg.htm" />
+  <HelpKINode Title="backgroundTexture field">
+    <HelpKINode Title="Blank.backgroundTexture Field" Url="html/F_Blank_backgroundTexture.htm" />
+    <HelpKINode Title="Learn.backgroundTexture Field" Url="html/F_Learn_backgroundTexture.htm" />
+    <HelpKINode Title="Lose.backgroundTexture Field" Url="html/F_Lose_backgroundTexture.htm" />
+    <HelpKINode Title="MainMenu.backgroundTexture Field" Url="html/F_MainMenu_backgroundTexture.htm" />
+    <HelpKINode Title="Options.backgroundTexture Field" Url="html/F_Options_backgroundTexture.htm" />
+    <HelpKINode Title="Splash.backgroundTexture Field" Url="html/F_Splash_backgroundTexture.htm" />
+    <HelpKINode Title="Win.backgroundTexture Field" Url="html/F_Win_backgroundTexture.htm" />
+    <HelpKINode Title="WinAll.backgroundTexture Field" Url="html/F_WinAll_backgroundTexture.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BigBossWindowToAcceptLetters property" Url="html/P_GGProductions_LetterStorm_Configuration_EnemyDifficulty_BigBossWindowToAcceptLetters.htm" />
+  <HelpKINode Title="BigBossWindowToDeflectLetters property" Url="html/P_GGProductions_LetterStorm_Configuration_EnemyDifficulty_BigBossWindowToDeflectLetters.htm" />
+  <HelpKINode Title="BigBoss_motion_animation class">
+    <HelpKINode Title="BigBoss_motion_animation Class" Url="html/T_BigBoss_motion_animation.htm" />
+    <HelpKINode Title="about BigBoss_motion_animation class" Url="html/T_BigBoss_motion_animation.htm" />
+    <HelpKINode Title="constructor" Url="html/M_BigBoss_motion_animation__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_BigBoss_motion_animation.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_BigBoss_motion_animation.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_BigBoss_motion_animation.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BigBoss_motion_animation.BigBoss_motion_animation constructor" Url="html/M_BigBoss_motion_animation__ctor.htm" />
+  <HelpKINode Title="BigBoss_motion_animation.CHaaaarge method" Url="html/M_BigBoss_motion_animation_CHaaaarge.htm" />
+  <HelpKINode Title="BigBoss_motion_animation.closeClaw field" Url="html/F_BigBoss_motion_animation_closeClaw.htm" />
+  <HelpKINode Title="BigBoss_motion_animation.openClaw field" Url="html/F_BigBoss_motion_animation_openClaw.htm" />
+  <HelpKINode Title="BigBoss_motion_animation.slither field" Url="html/F_BigBoss_motion_animation_slither.htm" />
+  <HelpKINode Title="BigBoss_motion_animation.transList field" Url="html/F_BigBoss_motion_animation_transList.htm" />
+  <HelpKINode Title="Blank class">
+    <HelpKINode Title="Blank Class" Url="html/T_Blank.htm" />
+    <HelpKINode Title="about Blank class" Url="html/T_Blank.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Blank__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_Blank.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Blank.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Blank.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Blank.backgroundTexture field" Url="html/F_Blank_backgroundTexture.htm" />
+  <HelpKINode Title="Blank.Blank constructor" Url="html/M_Blank__ctor.htm" />
+  <HelpKINode Title="Blank.storyTexture field" Url="html/F_Blank_storyTexture.htm" />
+  <HelpKINode Title="Boss1Prefab field" Url="html/F_EnemyGenerator_Boss1Prefab.htm" />
+  <HelpKINode Title="Boss1_move class">
+    <HelpKINode Title="Boss1_move Class" Url="html/T_Boss1_move.htm" />
+    <HelpKINode Title="about Boss1_move class" Url="html/T_Boss1_move.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Boss1_move__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_Boss1_move.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Boss1_move.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Boss1_move.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Boss1_move.ActionAnimationClip field" Url="html/F_Boss1_move_ActionAnimationClip.htm" />
+  <HelpKINode Title="Boss1_move.Boss1_move constructor" Url="html/M_Boss1_move__ctor.htm" />
+  <HelpKINode Title="Boss1_move.CurlUpAnimationClip field" Url="html/F_Boss1_move_CurlUpAnimationClip.htm" />
+  <HelpKINode Title="Boss1_move.getPissed method" Url="html/M_Boss1_move_getPissed.htm" />
+  <HelpKINode Title="Boss1_move.rot field" Url="html/F_Boss1_move_rot.htm" />
+  <HelpKINode Title="Boss1_move.UncurlAnimationClip field" Url="html/F_Boss1_move_UncurlAnimationClip.htm" />
+  <HelpKINode Title="Boss1_moveV2 class">
+    <HelpKINode Title="Boss1_moveV2 Class" Url="html/T_Boss1_moveV2.htm" />
+    <HelpKINode Title="about Boss1_moveV2 class" Url="html/T_Boss1_moveV2.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Boss1_moveV2__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_Boss1_moveV2.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Boss1_moveV2.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Boss1_moveV2.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Boss1_moveV2.ActionAnimationClip field" Url="html/F_Boss1_moveV2_ActionAnimationClip.htm" />
+  <HelpKINode Title="Boss1_moveV2.Boss1_moveV2 constructor" Url="html/M_Boss1_moveV2__ctor.htm" />
+  <HelpKINode Title="Boss1_moveV2.CurlUpAnimationClip field" Url="html/F_Boss1_moveV2_CurlUpAnimationClip.htm" />
+  <HelpKINode Title="Boss1_moveV2.getPissed method" Url="html/M_Boss1_moveV2_getPissed.htm" />
+  <HelpKINode Title="Boss1_moveV2.rot field" Url="html/F_Boss1_moveV2_rot.htm" />
+  <HelpKINode Title="Boss1_moveV2.UncurlAnimationClip field" Url="html/F_Boss1_moveV2_UncurlAnimationClip.htm" />
+  <HelpKINode Title="Boss2Prefab field" Url="html/F_EnemyGenerator_Boss2Prefab.htm" />
+  <HelpKINode Title="BossCannonProjectilesPerSecond property" Url="html/P_GGProductions_LetterStorm_Configuration_EnemyDifficulty_BossCannonProjectilesPerSecond.htm" />
+  <HelpKINode Title="BossCannonTrackingAccuracy property" Url="html/P_GGProductions_LetterStorm_Configuration_EnemyDifficulty_BossCannonTrackingAccuracy.htm" />
+  <HelpKINode Title="BossHealthHandicap property" Url="html/P_GGProductions_LetterStorm_Configuration_EnemyDifficulty_BossHealthHandicap.htm" />
+  <HelpKINode Title="BossPrefab field" Url="html/F_EnemyGenerator_BossPrefab.htm" />
+  <HelpKINode Title="BossProjectile class">
+    <HelpKINode Title="BossProjectile Class" Url="html/T_BossProjectile.htm" />
+    <HelpKINode Title="about BossProjectile class" Url="html/T_BossProjectile.htm" />
+    <HelpKINode Title="constructor" Url="html/M_BossProjectile__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_BossProjectile.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_BossProjectile.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_BossProjectile.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BossProjectile.BossProjectile constructor" Url="html/M_BossProjectile__ctor.htm" />
+  <HelpKINode Title="BossProjectile.explosion field" Url="html/F_BossProjectile_explosion.htm" />
+  <HelpKINode Title="BossProjectile.projectileSpeed field" Url="html/F_BossProjectile_projectileSpeed.htm" />
+  <HelpKINode Title="BossProjectile_V1 class">
+    <HelpKINode Title="BossProjectile_V1 Class" Url="html/T_BossProjectile_V1.htm" />
+    <HelpKINode Title="about BossProjectile_V1 class" Url="html/T_BossProjectile_V1.htm" />
+    <HelpKINode Title="constructor" Url="html/M_BossProjectile_V1__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_BossProjectile_V1.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_BossProjectile_V1.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_BossProjectile_V1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BossProjectile_V1.BossProjectile_V1 constructor" Url="html/M_BossProjectile_V1__ctor.htm" />
+  <HelpKINode Title="BossProjectile_V1.explosion field" Url="html/F_BossProjectile_V1_explosion.htm" />
+  <HelpKINode Title="BossRageChargeSpeed property" Url="html/P_GGProductions_LetterStorm_Configuration_EnemyDifficulty_BossRageChargeSpeed.htm" />
+  <HelpKINode Title="BossShootInterval_V1 class">
+    <HelpKINode Title="BossShootInterval_V1 Class" Url="html/T_BossShootInterval_V1.htm" />
+    <HelpKINode Title="about BossShootInterval_V1 class" Url="html/T_BossShootInterval_V1.htm" />
+    <HelpKINode Title="constructor" Url="html/M_BossShootInterval_V1__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_BossShootInterval_V1.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_BossShootInterval_V1.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_BossShootInterval_V1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BossShootInterval_V1.BossShootInterval_V1 constructor" Url="html/M_BossShootInterval_V1__ctor.htm" />
+  <HelpKINode Title="BossShootInterval_V1.fireRate field" Url="html/F_BossShootInterval_V1_fireRate.htm" />
+  <HelpKINode Title="BossShootInterval_V1.theShot field" Url="html/F_BossShootInterval_V1_theShot.htm" />
+  <HelpKINode Title="BossV1 class">
+    <HelpKINode Title="BossV1 Class" Url="html/T_BossV1.htm" />
+    <HelpKINode Title="about BossV1 class" Url="html/T_BossV1.htm" />
+    <HelpKINode Title="constructor" Url="html/M_BossV1__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_BossV1.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_BossV1.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_BossV1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BossV1.angleNeeded field" Url="html/F_BossV1_angleNeeded.htm" />
+  <HelpKINode Title="BossV1.BossV1 constructor" Url="html/M_BossV1__ctor.htm" />
+  <HelpKINode Title="Boss_3d_wordGen class">
+    <HelpKINode Title="Boss_3d_wordGen Class" Url="html/T_Boss_3d_wordGen.htm" />
+    <HelpKINode Title="about Boss_3d_wordGen class" Url="html/T_Boss_3d_wordGen.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Boss_3d_wordGen__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_Boss_3d_wordGen.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Boss_3d_wordGen.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Boss_3d_wordGen.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Boss_3d_wordGen.AcannonHasDied method" Url="html/M_Boss_3d_wordGen_AcannonHasDied.htm" />
+  <HelpKINode Title="Boss_3d_wordGen.AllerAlbert method" Url="html/M_Boss_3d_wordGen_AllerAlbert.htm" />
+  <HelpKINode Title="Boss_3d_wordGen.BossgunsDied delegate" Url="html/T_Boss_3d_wordGen_BossgunsDied.htm" />
+  <HelpKINode Title="Boss_3d_wordGen.Boss_3d_wordGen constructor" Url="html/M_Boss_3d_wordGen__ctor.htm" />
+  <HelpKINode Title="Boss_3d_wordGen.OnMyGunsDied event" Url="html/E_Boss_3d_wordGen_OnMyGunsDied.htm" />
+  <HelpKINode Title="Boss_3d_wordGen.OnWrongCollision event" Url="html/E_Boss_3d_wordGen_OnWrongCollision.htm" />
+  <HelpKINode Title="Boss_3d_wordGen.wrongLetterCollision delegate" Url="html/T_Boss_3d_wordGen_wrongLetterCollision.htm" />
+  <HelpKINode Title="Boss_Cannon_script class">
+    <HelpKINode Title="Boss_Cannon_script Class" Url="html/T_Boss_Cannon_script.htm" />
+    <HelpKINode Title="about Boss_Cannon_script class" Url="html/T_Boss_Cannon_script.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Boss_Cannon_script__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_Boss_Cannon_script.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Boss_Cannon_script.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Boss_Cannon_script.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Boss_Cannon_script.Boss_Cannon_script constructor" Url="html/M_Boss_Cannon_script__ctor.htm" />
+  <HelpKINode Title="Boss_Cannon_script.cannonAngleDamp field" Url="html/F_Boss_Cannon_script_cannonAngleDamp.htm" />
+  <HelpKINode Title="Boss_eye_and_gun class">
+    <HelpKINode Title="Boss_eye_and_gun Class" Url="html/T_Boss_eye_and_gun.htm" />
+    <HelpKINode Title="about Boss_eye_and_gun class" Url="html/T_Boss_eye_and_gun.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Boss_eye_and_gun__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_Boss_eye_and_gun.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Boss_eye_and_gun.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Boss_eye_and_gun.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Boss_eye_and_gun.angleNeeded field" Url="html/F_Boss_eye_and_gun_angleNeeded.htm" />
+  <HelpKINode Title="Boss_eye_and_gun.Boss_eye_and_gun constructor" Url="html/M_Boss_eye_and_gun__ctor.htm" />
+  <HelpKINode Title="Boss_eye_and_gun.damp field" Url="html/F_Boss_eye_and_gun_damp.htm" />
+  <HelpKINode Title="Boss_Eye_script class">
+    <HelpKINode Title="Boss_Eye_script Class" Url="html/T_Boss_Eye_script.htm" />
+    <HelpKINode Title="about Boss_Eye_script class" Url="html/T_Boss_Eye_script.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Boss_Eye_script__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_Boss_Eye_script.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Boss_Eye_script.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Boss_Eye_script.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Boss_Eye_script.angleNeeded field" Url="html/F_Boss_Eye_script_angleNeeded.htm" />
+  <HelpKINode Title="Boss_Eye_script.Awake method" Url="html/M_Boss_Eye_script_Awake.htm" />
+  <HelpKINode Title="Boss_Eye_script.Boss_Eye_script constructor" Url="html/M_Boss_Eye_script__ctor.htm" />
+  <HelpKINode Title="Boss_Eye_script.DoFlashEye method" Url="html/M_Boss_Eye_script_DoFlashEye.htm" />
+  <HelpKINode Title="Boss_Motion_animation class">
+    <HelpKINode Title="Boss_Motion_animation Class" Url="html/T_Boss_Motion_animation.htm" />
+    <HelpKINode Title="about Boss_Motion_animation class" Url="html/T_Boss_Motion_animation.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Boss_Motion_animation__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_Boss_Motion_animation.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Boss_Motion_animation.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Boss_Motion_animation.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Boss_Motion_animation.ActionAnimationClip field" Url="html/F_Boss_Motion_animation_ActionAnimationClip.htm" />
+  <HelpKINode Title="Boss_Motion_animation.Boss_Motion_animation constructor" Url="html/M_Boss_Motion_animation__ctor.htm" />
+  <HelpKINode Title="Boss_Motion_animation.CHaaaarge method" Url="html/M_Boss_Motion_animation_CHaaaarge.htm" />
+  <HelpKINode Title="Boss_Motion_animation.CurlUpAnimationClip field" Url="html/F_Boss_Motion_animation_CurlUpAnimationClip.htm" />
+  <HelpKINode Title="Boss_Motion_animation.UncurlAnimationClip field" Url="html/F_Boss_Motion_animation_UncurlAnimationClip.htm" />
+  <HelpKINode Title="Boss_move_PtP class">
+    <HelpKINode Title="Boss_move_PtP Class" Url="html/T_Boss_move_PtP.htm" />
+    <HelpKINode Title="about Boss_move_PtP class" Url="html/T_Boss_move_PtP.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Boss_move_PtP__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_Boss_move_PtP.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Boss_move_PtP.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Boss_move_PtP.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Boss_move_PtP.ActionAnimationClip field" Url="html/F_Boss_move_PtP_ActionAnimationClip.htm" />
+  <HelpKINode Title="Boss_move_PtP.Boss_move_PtP constructor" Url="html/M_Boss_move_PtP__ctor.htm" />
+  <HelpKINode Title="Boss_move_PtP.CHaaaarge method" Url="html/M_Boss_move_PtP_CHaaaarge.htm" />
+  <HelpKINode Title="Boss_move_PtP.CurlUpAnimationClip field" Url="html/F_Boss_move_PtP_CurlUpAnimationClip.htm" />
+  <HelpKINode Title="Boss_move_PtP.UncurlAnimationClip field" Url="html/F_Boss_move_PtP_UncurlAnimationClip.htm" />
+  <HelpKINode Title="boss_spinTest class">
+    <HelpKINode Title="boss_spinTest Class" Url="html/T_boss_spinTest.htm" />
+    <HelpKINode Title="about boss_spinTest class" Url="html/T_boss_spinTest.htm" />
+    <HelpKINode Title="constructor" Url="html/M_boss_spinTest__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_boss_spinTest.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_boss_spinTest.htm" />
+  </HelpKINode>
+  <HelpKINode Title="boss_spinTest.boss_spinTest constructor" Url="html/M_boss_spinTest__ctor.htm" />
+  <HelpKINode Title="brick enumeration member" Url="html/T_LandGenerator_State.htm" />
+  <HelpKINode Title="bridge enumeration member" Url="html/T_LandGenerator_State.htm" />
+  <HelpKINode Title="briksand enumeration member" Url="html/T_LandGenerator_State.htm" />
+  <HelpKINode Title="Broadcast method">
+    <HelpKINode Title="Messenger(T).Broadcast Method " Url="html/Overload_Messenger_1_Broadcast.htm" />
+    <HelpKINode Title="Messenger(T, U).Broadcast Method " Url="html/Overload_Messenger_2_Broadcast.htm" />
+    <HelpKINode Title="Messenger(T, U, V).Broadcast Method " Url="html/Overload_Messenger_3_Broadcast.htm" />
+    <HelpKINode Title="Messenger.Broadcast Method " Url="html/Overload_Messenger_Broadcast.htm" />
+  </HelpKINode>
+  <HelpKINode Title="C field" Url="html/F_Inventory_C.htm" />
+  <HelpKINode Title="Callback delegate" Url="html/T_Callback.htm" />
+  <HelpKINode Title="Callback(Of T) delegate" Url="html/T_Callback_1.htm" />
+  <HelpKINode Title="Callback(Of T, U) delegate" Url="html/T_Callback_2.htm" />
+  <HelpKINode Title="Callback(Of T, U, V) delegate" Url="html/T_Callback_3.htm" />
+  <HelpKINode Title="Callback&lt;T, U, V&gt; delegate" Url="html/T_Callback_3.htm" />
+  <HelpKINode Title="Callback&lt;T, U&gt; delegate" Url="html/T_Callback_2.htm" />
+  <HelpKINode Title="Callback&lt;T&gt; delegate" Url="html/T_Callback_1.htm" />
+  <HelpKINode Title="cannonAngleDamp field" Url="html/F_Boss_Cannon_script_cannonAngleDamp.htm" />
+  <HelpKINode Title="CHaaaarge method">
+    <HelpKINode Title="BigBoss_motion_animation.CHaaaarge Method " Url="html/M_BigBoss_motion_animation_CHaaaarge.htm" />
+    <HelpKINode Title="Boss_Motion_animation.CHaaaarge Method " Url="html/M_Boss_Motion_animation_CHaaaarge.htm" />
+    <HelpKINode Title="Boss_move_PtP.CHaaaarge Method " Url="html/M_Boss_move_PtP_CHaaaarge.htm" />
+    <HelpKINode Title="oldBigbossMove.CHaaaarge Method " Url="html/M_oldBigbossMove_CHaaaarge.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Changestate method" Url="html/M_LandGenerator_Changestate.htm" />
+  <HelpKINode Title="ClearStatsNextLevel method" Url="html/M_Context_ClearStatsNextLevel.htm" />
+  <HelpKINode Title="closeClaw field">
+    <HelpKINode Title="BigBoss_motion_animation.closeClaw Field" Url="html/F_BigBoss_motion_animation_closeClaw.htm" />
+    <HelpKINode Title="oldBigbossMove.closeClaw Field" Url="html/F_oldBigbossMove_closeClaw.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CollectedLetter class">
+    <HelpKINode Title="CollectedLetter Class" Url="html/T_CollectedLetter.htm" />
+    <HelpKINode Title="about CollectedLetter class" Url="html/T_CollectedLetter.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_CollectedLetter__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_CollectedLetter.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_CollectedLetter.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CollectedLetter.CollectedLetter constructor" Url="html/Overload_CollectedLetter__ctor.htm" />
+  <HelpKINode Title="CollectedLetter.Count property" Url="html/P_CollectedLetter_Count.htm" />
+  <HelpKINode Title="CollectedLetter.isEmpty property" Url="html/P_CollectedLetter_isEmpty.htm" />
+  <HelpKINode Title="CollectedLetter.Name property" Url="html/P_CollectedLetter_Name.htm" />
+  <HelpKINode Title="CollectedPowerUpsList property" Url="html/P_Inventory_CollectedPowerUpsList.htm" />
+  <HelpKINode Title="CollectibleChar class">
+    <HelpKINode Title="CollectibleChar Class" Url="html/T_CollectibleChar.htm" />
+    <HelpKINode Title="about CollectibleChar class" Url="html/T_CollectibleChar.htm" />
+    <HelpKINode Title="constructor" Url="html/M_CollectibleChar__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_CollectibleChar.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_CollectibleChar.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_CollectibleChar.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CollectibleChar.CollectibleChar constructor" Url="html/M_CollectibleChar__ctor.htm" />
+  <HelpKINode Title="CollectibleChar.wasThrwon field" Url="html/F_CollectibleChar_wasThrwon.htm" />
+  <HelpKINode Title="CollectLetter enumeration member" Url="html/T_GGProductions_LetterStorm_InGameHelpClasses_ScoreKeeper_PlayerAchievement.htm" />
+  <HelpKINode Title="CollectPowerUp enumeration member" Url="html/T_GGProductions_LetterStorm_InGameHelpClasses_ScoreKeeper_PlayerAchievement.htm" />
+  <HelpKINode Title="collectVowelSize class">
+    <HelpKINode Title="collectVowelSize Class" Url="html/T_collectVowelSize.htm" />
+    <HelpKINode Title="about collectVowelSize class" Url="html/T_collectVowelSize.htm" />
+    <HelpKINode Title="constructor" Url="html/M_collectVowelSize__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_collectVowelSize.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_collectVowelSize.htm" />
+  </HelpKINode>
+  <HelpKINode Title="collectVowelSize.collectVowelSize constructor" Url="html/M_collectVowelSize__ctor.htm" />
+  <HelpKINode Title="conshellScript class">
+    <HelpKINode Title="conshellScript Class" Url="html/T_conshellScript.htm" />
+    <HelpKINode Title="about conshellScript class" Url="html/T_conshellScript.htm" />
+    <HelpKINode Title="constructor" Url="html/M_conshellScript__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_conshellScript.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_conshellScript.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_conshellScript.htm" />
+  </HelpKINode>
+  <HelpKINode Title="conshellScript.conshellScript constructor" Url="html/M_conshellScript__ctor.htm" />
+  <HelpKINode Title="conshellScript.conson field" Url="html/F_conshellScript_conson.htm" />
+  <HelpKINode Title="conson field" Url="html/F_conshellScript_conson.htm" />
+  <HelpKINode Title="ContainsUntestedWords method" Url="html/M_GGProductions_LetterStorm_Data_Collections_WordSet_ContainsUntestedWords.htm" />
+  <HelpKINode Title="Context class">
+    <HelpKINode Title="Context Class" Url="html/T_Context.htm" />
+    <HelpKINode Title="about Context class" Url="html/T_Context.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Context__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Context.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Context.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Context.Alphabet property" Url="html/P_Context_Alphabet.htm" />
+  <HelpKINode Title="Context.ClearStatsNextLevel method" Url="html/M_Context_ClearStatsNextLevel.htm" />
+  <HelpKINode Title="Context.Context constructor" Url="html/M_Context__ctor.htm" />
+  <HelpKINode Title="Context.CurrentLessonId property" Url="html/P_Context_CurrentLessonId.htm" />
+  <HelpKINode Title="Context.CurrentScore property" Url="html/P_Context_CurrentScore.htm" />
+  <HelpKINode Title="Context.Curriculum property" Url="html/P_Context_Curriculum.htm" />
+  <HelpKINode Title="Context.DualPencils property" Url="html/P_Context_DualPencils.htm" />
+  <HelpKINode Title="Context.EnemyDifficulty property" Url="html/P_Context_EnemyDifficulty.htm" />
+  <HelpKINode Title="Context.LevelNum property" Url="html/P_Context_LevelNum.htm" />
+  <HelpKINode Title="Context.PlayerHealth property" Url="html/P_Context_PlayerHealth.htm" />
+  <HelpKINode Title="Context.PlayerInventory property" Url="html/P_Context_PlayerInventory.htm" />
+  <HelpKINode Title="Context.PrepareForNextLevel method" Url="html/M_Context_PrepareForNextLevel.htm" />
+  <HelpKINode Title="Context.SelectedLetter property" Url="html/P_Context_SelectedLetter.htm" />
+  <HelpKINode Title="Context.SelectedPowerUp property" Url="html/P_Context_SelectedPowerUp.htm" />
+  <HelpKINode Title="Context.Word property" Url="html/P_Context_Word.htm" />
+  <HelpKINode Title="CorkBoardTexture field" Url="html/F_HUD_CorkBoardTexture.htm" />
+  <HelpKINode Title="Count property">
+    <HelpKINode Title="CollectedLetter.Count Property " Url="html/P_CollectedLetter_Count.htm" />
+    <HelpKINode Title="PowerUp.Count Property " Url="html/P_PowerUp_Count.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CreateSampleLesson method" Url="html/M_GGProductions_LetterStorm_Data_Collections_LessonBook_CreateSampleLesson.htm" />
+  <HelpKINode Title="CreateSampleLessons method" Url="html/M_GGProductions_LetterStorm_Data_Collections_LessonBook_CreateSampleLessons.htm" />
+  <HelpKINode Title="CreditsGeneratorScript class">
+    <HelpKINode Title="CreditsGeneratorScript Class" Url="html/T_CreditsGeneratorScript.htm" />
+    <HelpKINode Title="about CreditsGeneratorScript class" Url="html/T_CreditsGeneratorScript.htm" />
+    <HelpKINode Title="constructor" Url="html/M_CreditsGeneratorScript__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_CreditsGeneratorScript.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_CreditsGeneratorScript.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CreditsGeneratorScript.CreditsGeneratorScript constructor" Url="html/M_CreditsGeneratorScript__ctor.htm" />
+  <HelpKINode Title="CurHealth property" Url="html/P_GGProductions_LetterStorm_InGameHelpClasses_Health_CurHealth.htm" />
+  <HelpKINode Title="CurlUpAnimationClip field">
+    <HelpKINode Title="Boss1_move.CurlUpAnimationClip Field" Url="html/F_Boss1_move_CurlUpAnimationClip.htm" />
+    <HelpKINode Title="Boss1_moveV2.CurlUpAnimationClip Field" Url="html/F_Boss1_moveV2_CurlUpAnimationClip.htm" />
+    <HelpKINode Title="Boss_Motion_animation.CurlUpAnimationClip Field" Url="html/F_Boss_Motion_animation_CurlUpAnimationClip.htm" />
+    <HelpKINode Title="Boss_move_PtP.CurlUpAnimationClip Field" Url="html/F_Boss_move_PtP_CurlUpAnimationClip.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CurrentLessonId property">
+    <HelpKINode Title="Context.CurrentLessonId Property " Url="html/P_Context_CurrentLessonId.htm" />
+    <HelpKINode Title="PlayerData.CurrentLessonId Property " Url="html/P_GGProductions_LetterStorm_Data_PlayerData_CurrentLessonId.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CurrentScore property">
+    <HelpKINode Title="Context.CurrentScore Property " Url="html/P_Context_CurrentScore.htm" />
+    <HelpKINode Title="PlayerData.CurrentScore Property " Url="html/P_GGProductions_LetterStorm_Data_PlayerData_CurrentScore.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Curriculum property">
+    <HelpKINode Title="Context.Curriculum Property " Url="html/P_Context_Curriculum.htm" />
+    <HelpKINode Title="PlayerData.Curriculum Property " Url="html/P_GGProductions_LetterStorm_Data_PlayerData_Curriculum.htm" />
+  </HelpKINode>
+  <HelpKINode Title="D field" Url="html/F_Inventory_D.htm" />
+  <HelpKINode Title="DamageToPlayerPerHit property" Url="html/P_GGProductions_LetterStorm_Configuration_EnemyDifficulty_DamageToPlayerPerHit.htm" />
+  <HelpKINode Title="damp field" Url="html/F_Boss_eye_and_gun_damp.htm" />
+  <HelpKINode Title="DeadBigBoss field" Url="html/F_Win_DeadBigBoss.htm" />
+  <HelpKINode Title="DeadBoss1 field" Url="html/F_Win_DeadBoss1.htm" />
+  <HelpKINode Title="Decrease method" Url="html/M_GGProductions_LetterStorm_InGameHelpClasses_ScoreKeeper_Decrease.htm" />
+  <HelpKINode Title="DecreaseHealth method" Url="html/Overload_GGProductions_LetterStorm_InGameHelpClasses_Health_DecreaseHealth.htm" />
+  <HelpKINode Title="DecrementCount method" Url="html/M_PowerUp_DecrementCount.htm" />
+  <HelpKINode Title="DecrementLetter method" Url="html/M_Inventory_DecrementLetter.htm" />
+  <HelpKINode Title="DecrementPowerUp method" Url="html/M_Inventory_DecrementPowerUp.htm" />
+  <HelpKINode Title="DefeatBoss enumeration member" Url="html/T_GGProductions_LetterStorm_InGameHelpClasses_ScoreKeeper_PlayerAchievement.htm" />
+  <HelpKINode Title="DefeatBossPart enumeration member" Url="html/T_GGProductions_LetterStorm_InGameHelpClasses_ScoreKeeper_PlayerAchievement.htm" />
+  <HelpKINode Title="DefeatDumbEnemy enumeration member" Url="html/T_GGProductions_LetterStorm_InGameHelpClasses_ScoreKeeper_PlayerAchievement.htm" />
+  <HelpKINode Title="DefeatSmartEnemy enumeration member" Url="html/T_GGProductions_LetterStorm_InGameHelpClasses_ScoreKeeper_PlayerAchievement.htm" />
+  <HelpKINode Title="delayTime field" Url="html/F_Splash_delayTime.htm" />
+  <HelpKINode Title="Description property" Url="html/P_GGProductions_LetterStorm_Configuration_EnemyDifficulty_Description.htm" />
+  <HelpKINode Title="DestroyedExplosion field" Url="html/F_HurricaneOuterProjectile1_DestroyedExplosion.htm" />
+  <HelpKINode Title="DifficultyLevels class">
+    <HelpKINode Title="DifficultyLevels Class" Url="html/T_GGProductions_LetterStorm_Configuration_Collections_DifficultyLevels.htm" />
+    <HelpKINode Title="about DifficultyLevels class" Url="html/T_GGProductions_LetterStorm_Configuration_Collections_DifficultyLevels.htm" />
+    <HelpKINode Title="constructor" Url="html/M_GGProductions_LetterStorm_Configuration_Collections_DifficultyLevels__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_GGProductions_LetterStorm_Configuration_Collections_DifficultyLevels.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_GGProductions_LetterStorm_Configuration_Collections_DifficultyLevels.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DifficultyLevels.DifficultyLevels constructor" Url="html/M_GGProductions_LetterStorm_Configuration_Collections_DifficultyLevels__ctor.htm" />
+  <HelpKINode Title="DifficultyLevels.GetDifficultyById method" Url="html/M_GGProductions_LetterStorm_Configuration_Collections_DifficultyLevels_GetDifficultyById.htm" />
+  <HelpKINode Title="DifficultyLevels.GetDifficultyByName method" Url="html/M_GGProductions_LetterStorm_Configuration_Collections_DifficultyLevels_GetDifficultyByName.htm" />
+  <HelpKINode Title="difficultyLevelsBackgroundImg field" Url="html/F_NewGame_difficultyLevelsBackgroundImg.htm" />
+  <HelpKINode Title="dirt enumeration member" Url="html/T_LandGenerator_State.htm" />
+  <HelpKINode Title="dirtsand enumeration member" Url="html/T_LandGenerator_State.htm" />
+  <HelpKINode Title="DisplayHints method" Url="html/M_HUD_DisplayHints.htm" />
+  <HelpKINode Title="DisplayHPBar method" Url="html/M_HUD_DisplayHPBar.htm" />
+  <HelpKINode Title="DisplayScoreBar method" Url="html/M_HUD_DisplayScoreBar.htm" />
+  <HelpKINode Title="DoFlashEye method" Url="html/M_Boss_Eye_script_DoFlashEye.htm" />
+  <HelpKINode Title="DONT_REQUIRE_LISTENER enumeration member" Url="html/T_MessengerMode.htm" />
+  <HelpKINode Title="DualPencil property" Url="html/P_Inventory_DualPencil.htm" />
+  <HelpKINode Title="DualPencilProjectile class">
+    <HelpKINode Title="DualPencilProjectile Class" Url="html/T_DualPencilProjectile.htm" />
+    <HelpKINode Title="about DualPencilProjectile class" Url="html/T_DualPencilProjectile.htm" />
+    <HelpKINode Title="constructor" Url="html/M_DualPencilProjectile__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_DualPencilProjectile.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_DualPencilProjectile.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DualPencilProjectile.DualPencilProjectile constructor" Url="html/M_DualPencilProjectile__ctor.htm" />
+  <HelpKINode Title="DualPencils property" Url="html/P_Context_DualPencils.htm" />
+  <HelpKINode Title="DualPenPickupScript class">
+    <HelpKINode Title="DualPenPickupScript Class" Url="html/T_DualPenPickupScript.htm" />
+    <HelpKINode Title="about DualPenPickupScript class" Url="html/T_DualPenPickupScript.htm" />
+    <HelpKINode Title="constructor" Url="html/M_DualPenPickupScript__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_DualPenPickupScript.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_DualPenPickupScript.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DualPenPickupScript.DualPenPickupScript constructor" Url="html/M_DualPenPickupScript__ctor.htm" />
+  <HelpKINode Title="DumbEnemy class">
+    <HelpKINode Title="DumbEnemy Class" Url="html/T_DumbEnemy.htm" />
+    <HelpKINode Title="about DumbEnemy class" Url="html/T_DumbEnemy.htm" />
+    <HelpKINode Title="constructor" Url="html/M_DumbEnemy__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_DumbEnemy.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_DumbEnemy.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_DumbEnemy.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DumbEnemy.DumbEnemy constructor" Url="html/M_DumbEnemy__ctor.htm" />
+  <HelpKINode Title="DumbEnemy.MoveEnemy method" Url="html/M_DumbEnemy_MoveEnemy.htm" />
+  <HelpKINode Title="E field" Url="html/F_Inventory_E.htm" />
+  <HelpKINode Title="EnableBossRageMode property" Url="html/P_GGProductions_LetterStorm_Configuration_EnemyDifficulty_EnableBossRageMode.htm" />
+  <HelpKINode Title="EndScene method" Url="html/M_FadeBlack2Clear_EndScene.htm" />
+  <HelpKINode Title="Enemy class">
+    <HelpKINode Title="Enemy Class" Url="html/T_Enemy.htm" />
+    <HelpKINode Title="about Enemy class" Url="html/T_Enemy.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Enemy__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_Enemy.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Enemy.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Enemy.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Enemy.Enemy constructor" Url="html/M_Enemy__ctor.htm" />
+  <HelpKINode Title="Enemy.MaxSpeed field" Url="html/F_Enemy_MaxSpeed.htm" />
+  <HelpKINode Title="Enemy.MinSpeed field" Url="html/F_Enemy_MinSpeed.htm" />
+  <HelpKINode Title="Enemy.MoveEnemy method" Url="html/M_Enemy_MoveEnemy.htm" />
+  <HelpKINode Title="Enemy.Path field" Url="html/F_Enemy_Path.htm" />
+  <HelpKINode Title="Enemy.SetScaleAndSpeed method" Url="html/M_Enemy_SetScaleAndSpeed.htm" />
+  <HelpKINode Title="Enemy.Speed property" Url="html/P_Enemy_Speed.htm" />
+  <HelpKINode Title="Enemy.Start method" Url="html/M_Enemy_Start.htm" />
+  <HelpKINode Title="Enemy.Update method" Url="html/M_Enemy_Update.htm" />
+  <HelpKINode Title="EnemyDead method" Url="html/M_EnemyGenerator_EnemyDead.htm" />
+  <HelpKINode Title="EnemyDifficulty class">
+    <HelpKINode Title="EnemyDifficulty Class" Url="html/T_GGProductions_LetterStorm_Configuration_EnemyDifficulty.htm" />
+    <HelpKINode Title="about EnemyDifficulty class" Url="html/T_GGProductions_LetterStorm_Configuration_EnemyDifficulty.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_GGProductions_LetterStorm_Configuration_EnemyDifficulty__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_GGProductions_LetterStorm_Configuration_EnemyDifficulty.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_GGProductions_LetterStorm_Configuration_EnemyDifficulty.htm" />
+  </HelpKINode>
+  <HelpKINode Title="EnemyDifficulty property" Url="html/P_Context_EnemyDifficulty.htm" />
+  <HelpKINode Title="EnemyDifficulty.BigBossWindowToAcceptLetters property" Url="html/P_GGProductions_LetterStorm_Configuration_EnemyDifficulty_BigBossWindowToAcceptLetters.htm" />
+  <HelpKINode Title="EnemyDifficulty.BigBossWindowToDeflectLetters property" Url="html/P_GGProductions_LetterStorm_Configuration_EnemyDifficulty_BigBossWindowToDeflectLetters.htm" />
+  <HelpKINode Title="EnemyDifficulty.BossCannonProjectilesPerSecond property" Url="html/P_GGProductions_LetterStorm_Configuration_EnemyDifficulty_BossCannonProjectilesPerSecond.htm" />
+  <HelpKINode Title="EnemyDifficulty.BossCannonTrackingAccuracy property" Url="html/P_GGProductions_LetterStorm_Configuration_EnemyDifficulty_BossCannonTrackingAccuracy.htm" />
+  <HelpKINode Title="EnemyDifficulty.BossHealthHandicap property" Url="html/P_GGProductions_LetterStorm_Configuration_EnemyDifficulty_BossHealthHandicap.htm" />
+  <HelpKINode Title="EnemyDifficulty.BossRageChargeSpeed property" Url="html/P_GGProductions_LetterStorm_Configuration_EnemyDifficulty_BossRageChargeSpeed.htm" />
+  <HelpKINode Title="EnemyDifficulty.DamageToPlayerPerHit property" Url="html/P_GGProductions_LetterStorm_Configuration_EnemyDifficulty_DamageToPlayerPerHit.htm" />
+  <HelpKINode Title="EnemyDifficulty.Description property" Url="html/P_GGProductions_LetterStorm_Configuration_EnemyDifficulty_Description.htm" />
+  <HelpKINode Title="EnemyDifficulty.EnableBossRageMode property" Url="html/P_GGProductions_LetterStorm_Configuration_EnemyDifficulty_EnableBossRageMode.htm" />
+  <HelpKINode Title="EnemyDifficulty.EnemyDifficulty constructor" Url="html/Overload_GGProductions_LetterStorm_Configuration_EnemyDifficulty__ctor.htm" />
+  <HelpKINode Title="EnemyDifficulty.GameSpeed property" Url="html/P_GGProductions_LetterStorm_Configuration_EnemyDifficulty_GameSpeed.htm" />
+  <HelpKINode Title="EnemyDifficulty.ID property" Url="html/P_GGProductions_LetterStorm_Configuration_EnemyDifficulty_ID.htm" />
+  <HelpKINode Title="EnemyDifficulty.InitialHealth property" Url="html/P_GGProductions_LetterStorm_Configuration_EnemyDifficulty_InitialHealth.htm" />
+  <HelpKINode Title="EnemyDifficulty.MaxEnemiesOnScreen property" Url="html/P_GGProductions_LetterStorm_Configuration_EnemyDifficulty_MaxEnemiesOnScreen.htm" />
+  <HelpKINode Title="EnemyDifficulty.Name property" Url="html/P_GGProductions_LetterStorm_Configuration_EnemyDifficulty_Name.htm" />
+  <HelpKINode Title="EnemyDifficultyId property" Url="html/P_GGProductions_LetterStorm_Data_PlayerData_EnemyDifficultyId.htm" />
+  <HelpKINode Title="EnemyDifficultyNotFoundException class">
+    <HelpKINode Title="EnemyDifficultyNotFoundException Class" Url="html/T_GGProductions_LetterStorm_Data_EnemyDifficultyNotFoundException.htm" />
+    <HelpKINode Title="about EnemyDifficultyNotFoundException class" Url="html/T_GGProductions_LetterStorm_Data_EnemyDifficultyNotFoundException.htm" />
+    <HelpKINode Title="constructor" Url="html/M_GGProductions_LetterStorm_Data_EnemyDifficultyNotFoundException__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_GGProductions_LetterStorm_Data_EnemyDifficultyNotFoundException.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_GGProductions_LetterStorm_Data_EnemyDifficultyNotFoundException.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_GGProductions_LetterStorm_Data_EnemyDifficultyNotFoundException.htm" />
+  </HelpKINode>
+  <HelpKINode Title="EnemyDifficultyNotFoundException.EnemyDifficultyNotFoundException constructor" Url="html/M_GGProductions_LetterStorm_Data_EnemyDifficultyNotFoundException__ctor.htm" />
+  <HelpKINode Title="EnemyGenerator class">
+    <HelpKINode Title="EnemyGenerator Class" Url="html/T_EnemyGenerator.htm" />
+    <HelpKINode Title="about EnemyGenerator class" Url="html/T_EnemyGenerator.htm" />
+    <HelpKINode Title="constructor" Url="html/M_EnemyGenerator__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_EnemyGenerator.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_EnemyGenerator.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_EnemyGenerator.htm" />
+  </HelpKINode>
+  <HelpKINode Title="EnemyGenerator.Boss1Prefab field" Url="html/F_EnemyGenerator_Boss1Prefab.htm" />
+  <HelpKINode Title="EnemyGenerator.Boss2Prefab field" Url="html/F_EnemyGenerator_Boss2Prefab.htm" />
+  <HelpKINode Title="EnemyGenerator.BossPrefab field" Url="html/F_EnemyGenerator_BossPrefab.htm" />
+  <HelpKINode Title="EnemyGenerator.EnemyDead method" Url="html/M_EnemyGenerator_EnemyDead.htm" />
+  <HelpKINode Title="EnemyGenerator.EnemyGenerator constructor" Url="html/M_EnemyGenerator__ctor.htm" />
+  <HelpKINode Title="EnemyGenerator.enemyPrefabs field" Url="html/F_EnemyGenerator_enemyPrefabs.htm" />
+  <HelpKINode Title="EnemyGenerator.InventoryCheck method" Url="html/M_EnemyGenerator_InventoryCheck.htm" />
+  <HelpKINode Title="EnemyGenerator.OnDisable method" Url="html/M_EnemyGenerator_OnDisable.htm" />
+  <HelpKINode Title="EnemyGenerator.OnEnable method" Url="html/M_EnemyGenerator_OnEnable.htm" />
+  <HelpKINode Title="EnemyGenerator.RandomSpawn method" Url="html/M_EnemyGenerator_RandomSpawn.htm" />
+  <HelpKINode Title="EnemyGenerator.RequiredSpawn method" Url="html/M_EnemyGenerator_RequiredSpawn.htm" />
+  <HelpKINode Title="EnemyGenerator.RequirementCheck method" Url="html/M_EnemyGenerator_RequirementCheck.htm" />
+  <HelpKINode Title="EnemyGenerator.Slow method" Url="html/M_EnemyGenerator_Slow.htm" />
+  <HelpKINode Title="EnemyGenerator.spawnPoints field" Url="html/F_EnemyGenerator_spawnPoints.htm" />
+  <HelpKINode Title="EnemyGenerator.WordSolvingStage field" Url="html/F_EnemyGenerator_WordSolvingStage.htm" />
+  <HelpKINode Title="enemyPrefabs field" Url="html/F_EnemyGenerator_enemyPrefabs.htm" />
+  <HelpKINode Title="ExpireAt property" Url="html/P_PowerUp_ExpireAt.htm" />
+  <HelpKINode Title="explosion field">
+    <HelpKINode Title="BossProjectile.explosion Field" Url="html/F_BossProjectile_explosion.htm" />
+    <HelpKINode Title="BossProjectile_V1.explosion Field" Url="html/F_BossProjectile_V1_explosion.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ExplosionPrefab field">
+    <HelpKINode Title="Player.ExplosionPrefab Field" Url="html/F_Player_ExplosionPrefab.htm" />
+    <HelpKINode Title="Projectile.ExplosionPrefab Field" Url="html/F_Projectile_ExplosionPrefab.htm" />
+  </HelpKINode>
+  <HelpKINode Title="F field" Url="html/F_Inventory_F.htm" />
+  <HelpKINode Title="FadeBlack2Clear class">
+    <HelpKINode Title="FadeBlack2Clear Class" Url="html/T_FadeBlack2Clear.htm" />
+    <HelpKINode Title="about FadeBlack2Clear class" Url="html/T_FadeBlack2Clear.htm" />
+    <HelpKINode Title="constructor" Url="html/M_FadeBlack2Clear__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_FadeBlack2Clear.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_FadeBlack2Clear.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_FadeBlack2Clear.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FadeBlack2Clear.amount field" Url="html/F_FadeBlack2Clear_amount.htm" />
+  <HelpKINode Title="FadeBlack2Clear.EndScene method" Url="html/M_FadeBlack2Clear_EndScene.htm" />
+  <HelpKINode Title="FadeBlack2Clear.FadeBlack2Clear constructor" Url="html/M_FadeBlack2Clear__ctor.htm" />
+  <HelpKINode Title="FadeBlack2Clear.fadeSpeed field" Url="html/F_FadeBlack2Clear_fadeSpeed.htm" />
+  <HelpKINode Title="FadeBlack2Clear.godude field" Url="html/F_FadeBlack2Clear_godude.htm" />
+  <HelpKINode Title="FadeBlack2Clear.turnOnSwitch method" Url="html/M_FadeBlack2Clear_turnOnSwitch.htm" />
+  <HelpKINode Title="fadeSpeed field" Url="html/F_FadeBlack2Clear_fadeSpeed.htm" />
+  <HelpKINode Title="fallAnimationClip field">
+    <HelpKINode Title="AlbertController.fallAnimationClip Field" Url="html/F_AlbertController_fallAnimationClip.htm" />
+    <HelpKINode Title="AlbertController2.fallAnimationClip Field" Url="html/F_AlbertController2_fallAnimationClip.htm" />
+    <HelpKINode Title="Albert_force_controller.fallAnimationClip Field" Url="html/F_Albert_force_controller_fallAnimationClip.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FiredBadLetter enumeration member" Url="html/T_GGProductions_LetterStorm_InGameHelpClasses_ScoreKeeper_PlayerFailure.htm" />
+  <HelpKINode Title="fireRate field" Url="html/F_BossShootInterval_V1_fireRate.htm" />
+  <HelpKINode Title="from field" Url="html/F_OpenClose_from.htm" />
+  <HelpKINode Title="G field" Url="html/F_Inventory_G.htm" />
+  <HelpKINode Title="GameSpeed property" Url="html/P_GGProductions_LetterStorm_Configuration_EnemyDifficulty_GameSpeed.htm" />
+  <HelpKINode Title="GameStateUtilities class">
+    <HelpKINode Title="GameStateUtilities Class" Url="html/T_GGProductions_LetterStorm_Utilities_GameStateUtilities.htm" />
+    <HelpKINode Title="about GameStateUtilities class" Url="html/T_GGProductions_LetterStorm_Utilities_GameStateUtilities.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_GGProductions_LetterStorm_Utilities_GameStateUtilities.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GameStateUtilities.Load method" Url="html/M_GGProductions_LetterStorm_Utilities_GameStateUtilities_Load.htm" />
+  <HelpKINode Title="GameStateUtilities.Save method" Url="html/M_GGProductions_LetterStorm_Utilities_GameStateUtilities_Save.htm" />
+  <HelpKINode Title="GeneratedLand class">
+    <HelpKINode Title="GeneratedLand Class" Url="html/T_GeneratedLand.htm" />
+    <HelpKINode Title="about GeneratedLand class" Url="html/T_GeneratedLand.htm" />
+    <HelpKINode Title="constructor" Url="html/M_GeneratedLand__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_GeneratedLand.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_GeneratedLand.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GeneratedLand.GeneratedLand constructor" Url="html/M_GeneratedLand__ctor.htm" />
+  <HelpKINode Title="GetDifficultyById method" Url="html/M_GGProductions_LetterStorm_Configuration_Collections_DifficultyLevels_GetDifficultyById.htm" />
+  <HelpKINode Title="GetDifficultyByName method" Url="html/M_GGProductions_LetterStorm_Configuration_Collections_DifficultyLevels_GetDifficultyByName.htm" />
+  <HelpKINode Title="GetLessonById method" Url="html/M_GGProductions_LetterStorm_Data_Collections_LessonCollection_GetLessonById.htm" />
+  <HelpKINode Title="GetLetterCount method" Url="html/M_Inventory_GetLetterCount.htm" />
+  <HelpKINode Title="GetNextWord method" Url="html/M_GGProductions_LetterStorm_Data_Collections_WordSet_GetNextWord.htm" />
+  <HelpKINode Title="getPissed method">
+    <HelpKINode Title="Boss1_move.getPissed Method " Url="html/M_Boss1_move_getPissed.htm" />
+    <HelpKINode Title="Boss1_moveV2.getPissed Method " Url="html/M_Boss1_moveV2_getPissed.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetPowerUpAtIndex method" Url="html/M_Inventory_GetPowerUpAtIndex.htm" />
+  <HelpKINode Title="GetRandomWord method" Url="html/M_GGProductions_LetterStorm_Data_Collections_WordSet_GetRandomWord.htm" />
+  <HelpKINode Title="GGProductions.LetterStorm.Configuration namespace" Url="html/N_GGProductions_LetterStorm_Configuration.htm" />
+  <HelpKINode Title="GGProductions.LetterStorm.Configuration.Collections namespace" Url="html/N_GGProductions_LetterStorm_Configuration_Collections.htm" />
+  <HelpKINode Title="GGProductions.LetterStorm.Configuration.Collections.DifficultyLevels class" Url="html/T_GGProductions_LetterStorm_Configuration_Collections_DifficultyLevels.htm" />
+  <HelpKINode Title="GGProductions.LetterStorm.Configuration.EnemyDifficulty class" Url="html/T_GGProductions_LetterStorm_Configuration_EnemyDifficulty.htm" />
+  <HelpKINode Title="GGProductions.LetterStorm.Data namespace" Url="html/N_GGProductions_LetterStorm_Data.htm" />
+  <HelpKINode Title="GGProductions.LetterStorm.Data.Collections namespace" Url="html/N_GGProductions_LetterStorm_Data_Collections.htm" />
+  <HelpKINode Title="GGProductions.LetterStorm.Data.Collections.Lesson class" Url="html/T_GGProductions_LetterStorm_Data_Collections_Lesson.htm" />
+  <HelpKINode Title="GGProductions.LetterStorm.Data.Collections.LessonBook class" Url="html/T_GGProductions_LetterStorm_Data_Collections_LessonBook.htm" />
+  <HelpKINode Title="GGProductions.LetterStorm.Data.Collections.LessonCollection class" Url="html/T_GGProductions_LetterStorm_Data_Collections_LessonCollection.htm" />
+  <HelpKINode Title="GGProductions.LetterStorm.Data.Collections.WordSet class" Url="html/T_GGProductions_LetterStorm_Data_Collections_WordSet.htm" />
+  <HelpKINode Title="GGProductions.LetterStorm.Data.EnemyDifficultyNotFoundException class" Url="html/T_GGProductions_LetterStorm_Data_EnemyDifficultyNotFoundException.htm" />
+  <HelpKINode Title="GGProductions.LetterStorm.Data.LessonNotFoundException class" Url="html/T_GGProductions_LetterStorm_Data_LessonNotFoundException.htm" />
+  <HelpKINode Title="GGProductions.LetterStorm.Data.NoUntestedWordsException class" Url="html/T_GGProductions_LetterStorm_Data_NoUntestedWordsException.htm" />
+  <HelpKINode Title="GGProductions.LetterStorm.Data.PlayerData class" Url="html/T_GGProductions_LetterStorm_Data_PlayerData.htm" />
+  <HelpKINode Title="GGProductions.LetterStorm.Data.Word class" Url="html/T_GGProductions_LetterStorm_Data_Word.htm" />
+  <HelpKINode Title="GGProductions.LetterStorm.InGameHelpClasses namespace" Url="html/N_GGProductions_LetterStorm_InGameHelpClasses.htm" />
+  <HelpKINode Title="GGProductions.LetterStorm.InGameHelpClasses.Health class" Url="html/T_GGProductions_LetterStorm_InGameHelpClasses_Health.htm" />
+  <HelpKINode Title="GGProductions.LetterStorm.InGameHelpClasses.ScoreKeeper class" Url="html/T_GGProductions_LetterStorm_InGameHelpClasses_ScoreKeeper.htm" />
+  <HelpKINode Title="GGProductions.LetterStorm.InGameHelpClasses.ScoreKeeper.PlayerAchievement enumeration" Url="html/T_GGProductions_LetterStorm_InGameHelpClasses_ScoreKeeper_PlayerAchievement.htm" />
+  <HelpKINode Title="GGProductions.LetterStorm.InGameHelpClasses.ScoreKeeper.PlayerFailure enumeration" Url="html/T_GGProductions_LetterStorm_InGameHelpClasses_ScoreKeeper_PlayerFailure.htm" />
+  <HelpKINode Title="GGProductions.LetterStorm.Utilities namespace" Url="html/N_GGProductions_LetterStorm_Utilities.htm" />
+  <HelpKINode Title="GGProductions.LetterStorm.Utilities.GameStateUtilities class" Url="html/T_GGProductions_LetterStorm_Utilities_GameStateUtilities.htm" />
+  <HelpKINode Title="godude field" Url="html/F_FadeBlack2Clear_godude.htm" />
+  <HelpKINode Title="grass enumeration member" Url="html/T_LandGenerator_State.htm" />
+  <HelpKINode Title="H field" Url="html/F_Inventory_H.htm" />
+  <HelpKINode Title="HasExpired method" Url="html/M_PowerUp_HasExpired.htm" />
+  <HelpKINode Title="HasHealth method" Url="html/M_GGProductions_LetterStorm_InGameHelpClasses_Health_HasHealth.htm" />
+  <HelpKINode Title="HasNoHealth method" Url="html/M_GGProductions_LetterStorm_InGameHelpClasses_Health_HasNoHealth.htm" />
+  <HelpKINode Title="HasPowerUp method" Url="html/M_Inventory_HasPowerUp.htm" />
+  <HelpKINode Title="Health class">
+    <HelpKINode Title="Health Class" Url="html/T_GGProductions_LetterStorm_InGameHelpClasses_Health.htm" />
+    <HelpKINode Title="about Health class" Url="html/T_GGProductions_LetterStorm_InGameHelpClasses_Health.htm" />
+    <HelpKINode Title="constructor" Url="html/M_GGProductions_LetterStorm_InGameHelpClasses_Health__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_GGProductions_LetterStorm_InGameHelpClasses_Health.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_GGProductions_LetterStorm_InGameHelpClasses_Health.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Health.CurHealth property" Url="html/P_GGProductions_LetterStorm_InGameHelpClasses_Health_CurHealth.htm" />
+  <HelpKINode Title="Health.DecreaseHealth method" Url="html/Overload_GGProductions_LetterStorm_InGameHelpClasses_Health_DecreaseHealth.htm" />
+  <HelpKINode Title="Health.HasHealth method" Url="html/M_GGProductions_LetterStorm_InGameHelpClasses_Health_HasHealth.htm" />
+  <HelpKINode Title="Health.HasNoHealth method" Url="html/M_GGProductions_LetterStorm_InGameHelpClasses_Health_HasNoHealth.htm" />
+  <HelpKINode Title="Health.Health constructor" Url="html/M_GGProductions_LetterStorm_InGameHelpClasses_Health__ctor.htm" />
+  <HelpKINode Title="Health.IncreaseHealth method" Url="html/Overload_GGProductions_LetterStorm_InGameHelpClasses_Health_IncreaseHealth.htm" />
+  <HelpKINode Title="Health.InitializeHealth method" Url="html/M_GGProductions_LetterStorm_InGameHelpClasses_Health_InitializeHealth.htm" />
+  <HelpKINode Title="Health.MaxHealth property" Url="html/P_GGProductions_LetterStorm_InGameHelpClasses_Health_MaxHealth.htm" />
+  <HelpKINode Title="Health.MinHealth property" Url="html/P_GGProductions_LetterStorm_InGameHelpClasses_Health_MinHealth.htm" />
+  <HelpKINode Title="HealthShroom class">
+    <HelpKINode Title="HealthShroom Class" Url="html/T_HealthShroom.htm" />
+    <HelpKINode Title="about HealthShroom class" Url="html/T_HealthShroom.htm" />
+    <HelpKINode Title="constructor" Url="html/M_HealthShroom__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_HealthShroom.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_HealthShroom.htm" />
+  </HelpKINode>
+  <HelpKINode Title="HealthShroom.HealthShroom constructor" Url="html/M_HealthShroom__ctor.htm" />
+  <HelpKINode Title="Hint property" Url="html/P_GGProductions_LetterStorm_Data_Word_Hint.htm" />
+  <HelpKINode Title="hintStyle field" Url="html/F_HUD_hintStyle.htm" />
+  <HelpKINode Title="HitByBossBody enumeration member" Url="html/T_GGProductions_LetterStorm_InGameHelpClasses_ScoreKeeper_PlayerFailure.htm" />
+  <HelpKINode Title="HitByBossProjectile enumeration member" Url="html/T_GGProductions_LetterStorm_InGameHelpClasses_ScoreKeeper_PlayerFailure.htm" />
+  <HelpKINode Title="HitByDumbEnemy enumeration member" Url="html/T_GGProductions_LetterStorm_InGameHelpClasses_ScoreKeeper_PlayerFailure.htm" />
+  <HelpKINode Title="HitBySmartEnemy enumeration member" Url="html/T_GGProductions_LetterStorm_InGameHelpClasses_ScoreKeeper_PlayerFailure.htm" />
+  <HelpKINode Title="HourGlassScript class">
+    <HelpKINode Title="HourGlassScript Class" Url="html/T_HourGlassScript.htm" />
+    <HelpKINode Title="about HourGlassScript class" Url="html/T_HourGlassScript.htm" />
+    <HelpKINode Title="constructor" Url="html/M_HourGlassScript__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_HourGlassScript.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_HourGlassScript.htm" />
+  </HelpKINode>
+  <HelpKINode Title="HourGlassScript.HourGlassScript constructor" Url="html/M_HourGlassScript__ctor.htm" />
+  <HelpKINode Title="HowToPlayGameButtonTexture field" Url="html/F_HUD_HowToPlayGameButtonTexture.htm" />
+  <HelpKINode Title="HowToPlayTexture1 field" Url="html/F_HUD_HowToPlayTexture1.htm" />
+  <HelpKINode Title="HPBarStyle field" Url="html/F_HUD_HPBarStyle.htm" />
+  <HelpKINode Title="HUD class">
+    <HelpKINode Title="HUD Class" Url="html/T_HUD.htm" />
+    <HelpKINode Title="about HUD class" Url="html/T_HUD.htm" />
+    <HelpKINode Title="constructor" Url="html/M_HUD__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_HUD.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_HUD.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_HUD.htm" />
+  </HelpKINode>
+  <HelpKINode Title="HUD.CorkBoardTexture field" Url="html/F_HUD_CorkBoardTexture.htm" />
+  <HelpKINode Title="HUD.DisplayHints method" Url="html/M_HUD_DisplayHints.htm" />
+  <HelpKINode Title="HUD.DisplayHPBar method" Url="html/M_HUD_DisplayHPBar.htm" />
+  <HelpKINode Title="HUD.DisplayScoreBar method" Url="html/M_HUD_DisplayScoreBar.htm" />
+  <HelpKINode Title="HUD.hintStyle field" Url="html/F_HUD_hintStyle.htm" />
+  <HelpKINode Title="HUD.HowToPlayGameButtonTexture field" Url="html/F_HUD_HowToPlayGameButtonTexture.htm" />
+  <HelpKINode Title="HUD.HowToPlayTexture1 field" Url="html/F_HUD_HowToPlayTexture1.htm" />
+  <HelpKINode Title="HUD.HPBarStyle field" Url="html/F_HUD_HPBarStyle.htm" />
+  <HelpKINode Title="HUD.HUD constructor" Url="html/M_HUD__ctor.htm" />
+  <HelpKINode Title="HUD.InventoryBackgroundStyle field" Url="html/F_HUD_InventoryBackgroundStyle.htm" />
+  <HelpKINode Title="HUD.MainMenuGameButtonTexture field" Url="html/F_HUD_MainMenuGameButtonTexture.htm" />
+  <HelpKINode Title="HUD.QuitGameButtonTexture field" Url="html/F_HUD_QuitGameButtonTexture.htm" />
+  <HelpKINode Title="HUD.ResumeGameButtonTexture field" Url="html/F_HUD_ResumeGameButtonTexture.htm" />
+  <HelpKINode Title="HUD.SaveGameButtonTexture field" Url="html/F_HUD_SaveGameButtonTexture.htm" />
+  <HelpKINode Title="HUD.ScoreBarStyle field" Url="html/F_HUD_ScoreBarStyle.htm" />
+  <HelpKINode Title="HUD.SetHintTextScrollingBox method" Url="html/M_HUD_SetHintTextScrollingBox.htm" />
+  <HelpKINode Title="HUD.SettingsGameButtonTexture field" Url="html/F_HUD_SettingsGameButtonTexture.htm" />
+  <HelpKINode Title="HurricaneOuterProjectile1 class">
+    <HelpKINode Title="HurricaneOuterProjectile1 Class" Url="html/T_HurricaneOuterProjectile1.htm" />
+    <HelpKINode Title="about HurricaneOuterProjectile1 class" Url="html/T_HurricaneOuterProjectile1.htm" />
+    <HelpKINode Title="constructor" Url="html/M_HurricaneOuterProjectile1__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_HurricaneOuterProjectile1.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_HurricaneOuterProjectile1.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_HurricaneOuterProjectile1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="HurricaneOuterProjectile1.DestroyedExplosion field" Url="html/F_HurricaneOuterProjectile1_DestroyedExplosion.htm" />
+  <HelpKINode Title="HurricaneOuterProjectile1.HurricaneOuterProjectile1 constructor" Url="html/M_HurricaneOuterProjectile1__ctor.htm" />
+  <HelpKINode Title="HurricaneProjectile class">
+    <HelpKINode Title="HurricaneProjectile Class" Url="html/T_HurricaneProjectile.htm" />
+    <HelpKINode Title="about HurricaneProjectile class" Url="html/T_HurricaneProjectile.htm" />
+    <HelpKINode Title="constructor" Url="html/M_HurricaneProjectile__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_HurricaneProjectile.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_HurricaneProjectile.htm" />
+  </HelpKINode>
+  <HelpKINode Title="HurricaneProjectile field" Url="html/F_Albert_force_controller_HurricaneProjectile.htm" />
+  <HelpKINode Title="HurricaneProjectile.HurricaneProjectile constructor" Url="html/M_HurricaneProjectile__ctor.htm" />
+  <HelpKINode Title="Hurricane_pickupScript class">
+    <HelpKINode Title="Hurricane_pickupScript Class" Url="html/T_Hurricane_pickupScript.htm" />
+    <HelpKINode Title="about Hurricane_pickupScript class" Url="html/T_Hurricane_pickupScript.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Hurricane_pickupScript__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Hurricane_pickupScript.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Hurricane_pickupScript.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Hurricane_pickupScript.Hurricane_pickupScript constructor" Url="html/M_Hurricane_pickupScript__ctor.htm" />
+  <HelpKINode Title="I field" Url="html/F_Inventory_I.htm" />
+  <HelpKINode Title="ID property">
+    <HelpKINode Title="EnemyDifficulty.ID Property " Url="html/P_GGProductions_LetterStorm_Configuration_EnemyDifficulty_ID.htm" />
+    <HelpKINode Title="Lesson.ID Property " Url="html/P_GGProductions_LetterStorm_Data_Collections_Lesson_ID.htm" />
+  </HelpKINode>
+  <HelpKINode Title="idleAnimationClip field">
+    <HelpKINode Title="AlbertController.idleAnimationClip Field" Url="html/F_AlbertController_idleAnimationClip.htm" />
+    <HelpKINode Title="AlbertController2.idleAnimationClip Field" Url="html/F_AlbertController2_idleAnimationClip.htm" />
+    <HelpKINode Title="Albert_force_controller.idleAnimationClip Field" Url="html/F_Albert_force_controller_idleAnimationClip.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Increase method" Url="html/M_GGProductions_LetterStorm_InGameHelpClasses_ScoreKeeper_Increase.htm" />
+  <HelpKINode Title="IncreaseHealth method" Url="html/Overload_GGProductions_LetterStorm_InGameHelpClasses_Health_IncreaseHealth.htm" />
+  <HelpKINode Title="IncrementCount method" Url="html/M_PowerUp_IncrementCount.htm" />
+  <HelpKINode Title="IncrementPowerUp method" Url="html/M_Inventory_IncrementPowerUp.htm" />
+  <HelpKINode Title="InitialHealth property" Url="html/P_GGProductions_LetterStorm_Configuration_EnemyDifficulty_InitialHealth.htm" />
+  <HelpKINode Title="InitializeHealth method" Url="html/M_GGProductions_LetterStorm_InGameHelpClasses_Health_InitializeHealth.htm" />
+  <HelpKINode Title="Inventory class">
+    <HelpKINode Title="Inventory Class" Url="html/T_Inventory.htm" />
+    <HelpKINode Title="about Inventory class" Url="html/T_Inventory.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Inventory__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_Inventory.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Inventory.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Inventory.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Inventory.A field" Url="html/F_Inventory_A.htm" />
+  <HelpKINode Title="Inventory.AddCollectedLetter method" Url="html/M_Inventory_AddCollectedLetter.htm" />
+  <HelpKINode Title="Inventory.B field" Url="html/F_Inventory_B.htm" />
+  <HelpKINode Title="Inventory.C field" Url="html/F_Inventory_C.htm" />
+  <HelpKINode Title="Inventory.CollectedPowerUpsList property" Url="html/P_Inventory_CollectedPowerUpsList.htm" />
+  <HelpKINode Title="Inventory.D field" Url="html/F_Inventory_D.htm" />
+  <HelpKINode Title="Inventory.DecrementLetter method" Url="html/M_Inventory_DecrementLetter.htm" />
+  <HelpKINode Title="Inventory.DecrementPowerUp method" Url="html/M_Inventory_DecrementPowerUp.htm" />
+  <HelpKINode Title="Inventory.DualPencil property" Url="html/P_Inventory_DualPencil.htm" />
+  <HelpKINode Title="Inventory.E field" Url="html/F_Inventory_E.htm" />
+  <HelpKINode Title="Inventory.F field" Url="html/F_Inventory_F.htm" />
+  <HelpKINode Title="Inventory.G field" Url="html/F_Inventory_G.htm" />
+  <HelpKINode Title="Inventory.GetLetterCount method" Url="html/M_Inventory_GetLetterCount.htm" />
+  <HelpKINode Title="Inventory.GetPowerUpAtIndex method" Url="html/M_Inventory_GetPowerUpAtIndex.htm" />
+  <HelpKINode Title="Inventory.H field" Url="html/F_Inventory_H.htm" />
+  <HelpKINode Title="Inventory.HasPowerUp method" Url="html/M_Inventory_HasPowerUp.htm" />
+  <HelpKINode Title="Inventory.I field" Url="html/F_Inventory_I.htm" />
+  <HelpKINode Title="Inventory.IncrementPowerUp method" Url="html/M_Inventory_IncrementPowerUp.htm" />
+  <HelpKINode Title="Inventory.Inventory constructor" Url="html/M_Inventory__ctor.htm" />
+  <HelpKINode Title="Inventory.J field" Url="html/F_Inventory_J.htm" />
+  <HelpKINode Title="Inventory.K field" Url="html/F_Inventory_K.htm" />
+  <HelpKINode Title="Inventory.L field" Url="html/F_Inventory_L.htm" />
+  <HelpKINode Title="Inventory.M field" Url="html/F_Inventory_M.htm" />
+  <HelpKINode Title="Inventory.N field" Url="html/F_Inventory_N.htm" />
+  <HelpKINode Title="Inventory.O field" Url="html/F_Inventory_O.htm" />
+  <HelpKINode Title="Inventory.P field" Url="html/F_Inventory_P.htm" />
+  <HelpKINode Title="Inventory.Q field" Url="html/F_Inventory_Q.htm" />
+  <HelpKINode Title="Inventory.R field" Url="html/F_Inventory_R.htm" />
+  <HelpKINode Title="Inventory.S field" Url="html/F_Inventory_S.htm" />
+  <HelpKINode Title="Inventory.SubtractCollectedLetter method" Url="html/M_Inventory_SubtractCollectedLetter.htm" />
+  <HelpKINode Title="Inventory.T field" Url="html/F_Inventory_T.htm" />
+  <HelpKINode Title="Inventory.TotalCollectedLetters property" Url="html/P_Inventory_TotalCollectedLetters.htm" />
+  <HelpKINode Title="Inventory.U field" Url="html/F_Inventory_U.htm" />
+  <HelpKINode Title="Inventory.V field" Url="html/F_Inventory_V.htm" />
+  <HelpKINode Title="Inventory.W field" Url="html/F_Inventory_W.htm" />
+  <HelpKINode Title="Inventory.X field" Url="html/F_Inventory_X.htm" />
+  <HelpKINode Title="Inventory.Y field" Url="html/F_Inventory_Y.htm" />
+  <HelpKINode Title="Inventory.Z field" Url="html/F_Inventory_Z.htm" />
+  <HelpKINode Title="InventoryBackgroundStyle field" Url="html/F_HUD_InventoryBackgroundStyle.htm" />
+  <HelpKINode Title="InventoryCheck method" Url="html/M_EnemyGenerator_InventoryCheck.htm" />
+  <HelpKINode Title="isactive field" Url="html/F_LetterProjectileScript_isactive.htm" />
+  <HelpKINode Title="isEmpty property">
+    <HelpKINode Title="CollectedLetter.isEmpty Property " Url="html/P_CollectedLetter_isEmpty.htm" />
+    <HelpKINode Title="PowerUp.isEmpty Property " Url="html/P_PowerUp_isEmpty.htm" />
+  </HelpKINode>
+  <HelpKINode Title="J field" Url="html/F_Inventory_J.htm" />
+  <HelpKINode Title="K field" Url="html/F_Inventory_K.htm" />
+  <HelpKINode Title="L field" Url="html/F_Inventory_L.htm" />
+  <HelpKINode Title="l2PlayTexture field" Url="html/F_Learn_l2PlayTexture.htm" />
+  <HelpKINode Title="LandGenerator class">
+    <HelpKINode Title="LandGenerator Class" Url="html/T_LandGenerator.htm" />
+    <HelpKINode Title="about LandGenerator class" Url="html/T_LandGenerator.htm" />
+    <HelpKINode Title="constructor" Url="html/M_LandGenerator__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_LandGenerator.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_LandGenerator.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_LandGenerator.htm" />
+  </HelpKINode>
+  <HelpKINode Title="LandGenerator.Changestate method" Url="html/M_LandGenerator_Changestate.htm" />
+  <HelpKINode Title="LandGenerator.LandGenerator constructor" Url="html/M_LandGenerator__ctor.htm" />
+  <HelpKINode Title="LandGenerator.State enumeration" Url="html/T_LandGenerator_State.htm" />
+  <HelpKINode Title="LandGenerator.state field" Url="html/F_LandGenerator_state.htm" />
+  <HelpKINode Title="Learn class">
+    <HelpKINode Title="Learn Class" Url="html/T_Learn.htm" />
+    <HelpKINode Title="about Learn class" Url="html/T_Learn.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Learn__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_Learn.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Learn.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Learn.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Learn.backgroundTexture field" Url="html/F_Learn_backgroundTexture.htm" />
+  <HelpKINode Title="Learn.l2PlayTexture field" Url="html/F_Learn_l2PlayTexture.htm" />
+  <HelpKINode Title="Learn.Learn constructor" Url="html/M_Learn__ctor.htm" />
+  <HelpKINode Title="Learn.licenseTexture field" Url="html/F_Learn_licenseTexture.htm" />
+  <HelpKINode Title="Lesson class">
+    <HelpKINode Title="Lesson Class" Url="html/T_GGProductions_LetterStorm_Data_Collections_Lesson.htm" />
+    <HelpKINode Title="about Lesson class" Url="html/T_GGProductions_LetterStorm_Data_Collections_Lesson.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_GGProductions_LetterStorm_Data_Collections_Lesson__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_GGProductions_LetterStorm_Data_Collections_Lesson.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_GGProductions_LetterStorm_Data_Collections_Lesson.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Lesson.ID property" Url="html/P_GGProductions_LetterStorm_Data_Collections_Lesson_ID.htm" />
+  <HelpKINode Title="Lesson.Lesson constructor" Url="html/Overload_GGProductions_LetterStorm_Data_Collections_Lesson__ctor.htm" />
+  <HelpKINode Title="Lesson.Name property" Url="html/P_GGProductions_LetterStorm_Data_Collections_Lesson_Name.htm" />
+  <HelpKINode Title="Lesson.Words property" Url="html/P_GGProductions_LetterStorm_Data_Collections_Lesson_Words.htm" />
+  <HelpKINode Title="LessonBook class">
+    <HelpKINode Title="LessonBook Class" Url="html/T_GGProductions_LetterStorm_Data_Collections_LessonBook.htm" />
+    <HelpKINode Title="about LessonBook class" Url="html/T_GGProductions_LetterStorm_Data_Collections_LessonBook.htm" />
+    <HelpKINode Title="constructor" Url="html/M_GGProductions_LetterStorm_Data_Collections_LessonBook__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_GGProductions_LetterStorm_Data_Collections_LessonBook.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_GGProductions_LetterStorm_Data_Collections_LessonBook.htm" />
+  </HelpKINode>
+  <HelpKINode Title="LessonBook.CreateSampleLesson method" Url="html/M_GGProductions_LetterStorm_Data_Collections_LessonBook_CreateSampleLesson.htm" />
+  <HelpKINode Title="LessonBook.CreateSampleLessons method" Url="html/M_GGProductions_LetterStorm_Data_Collections_LessonBook_CreateSampleLessons.htm" />
+  <HelpKINode Title="LessonBook.LessonBook constructor" Url="html/M_GGProductions_LetterStorm_Data_Collections_LessonBook__ctor.htm" />
+  <HelpKINode Title="LessonBook.Lessons property" Url="html/P_GGProductions_LetterStorm_Data_Collections_LessonBook_Lessons.htm" />
+  <HelpKINode Title="LessonCollection class">
+    <HelpKINode Title="LessonCollection Class" Url="html/T_GGProductions_LetterStorm_Data_Collections_LessonCollection.htm" />
+    <HelpKINode Title="about LessonCollection class" Url="html/T_GGProductions_LetterStorm_Data_Collections_LessonCollection.htm" />
+    <HelpKINode Title="constructor" Url="html/M_GGProductions_LetterStorm_Data_Collections_LessonCollection__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_GGProductions_LetterStorm_Data_Collections_LessonCollection.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_GGProductions_LetterStorm_Data_Collections_LessonCollection.htm" />
+  </HelpKINode>
+  <HelpKINode Title="LessonCollection.GetLessonById method" Url="html/M_GGProductions_LetterStorm_Data_Collections_LessonCollection_GetLessonById.htm" />
+  <HelpKINode Title="LessonCollection.LessonCollection constructor" Url="html/M_GGProductions_LetterStorm_Data_Collections_LessonCollection__ctor.htm" />
+  <HelpKINode Title="LessonNotFoundException class">
+    <HelpKINode Title="LessonNotFoundException Class" Url="html/T_GGProductions_LetterStorm_Data_LessonNotFoundException.htm" />
+    <HelpKINode Title="about LessonNotFoundException class" Url="html/T_GGProductions_LetterStorm_Data_LessonNotFoundException.htm" />
+    <HelpKINode Title="constructor" Url="html/M_GGProductions_LetterStorm_Data_LessonNotFoundException__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_GGProductions_LetterStorm_Data_LessonNotFoundException.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_GGProductions_LetterStorm_Data_LessonNotFoundException.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_GGProductions_LetterStorm_Data_LessonNotFoundException.htm" />
+  </HelpKINode>
+  <HelpKINode Title="LessonNotFoundException.LessonNotFoundException constructor" Url="html/M_GGProductions_LetterStorm_Data_LessonNotFoundException__ctor.htm" />
+  <HelpKINode Title="Lessons property" Url="html/P_GGProductions_LetterStorm_Data_Collections_LessonBook_Lessons.htm" />
+  <HelpKINode Title="lessonsBackgroundImg field" Url="html/F_NewGame_lessonsBackgroundImg.htm" />
+  <HelpKINode Title="LetterBulletname field">
+    <HelpKINode Title="AlbertController2.LetterBulletname Field" Url="html/F_AlbertController2_LetterBulletname.htm" />
+    <HelpKINode Title="Albert_force_controller.LetterBulletname Field" Url="html/F_Albert_force_controller_LetterBulletname.htm" />
+  </HelpKINode>
+  <HelpKINode Title="LetterCollect class">
+    <HelpKINode Title="LetterCollect Class" Url="html/T_LetterCollect.htm" />
+    <HelpKINode Title="about LetterCollect class" Url="html/T_LetterCollect.htm" />
+    <HelpKINode Title="constructor" Url="html/M_LetterCollect__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_LetterCollect.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_LetterCollect.htm" />
+  </HelpKINode>
+  <HelpKINode Title="LetterCollect.LetterCollect constructor" Url="html/M_LetterCollect__ctor.htm" />
+  <HelpKINode Title="LetterMode field">
+    <HelpKINode Title="AlbertController2.LetterMode Field" Url="html/F_AlbertController2_LetterMode.htm" />
+    <HelpKINode Title="Albert_force_controller.LetterMode Field" Url="html/F_Albert_force_controller_LetterMode.htm" />
+  </HelpKINode>
+  <HelpKINode Title="LetterProjectileScript class">
+    <HelpKINode Title="LetterProjectileScript Class" Url="html/T_LetterProjectileScript.htm" />
+    <HelpKINode Title="about LetterProjectileScript class" Url="html/T_LetterProjectileScript.htm" />
+    <HelpKINode Title="constructor" Url="html/M_LetterProjectileScript__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_LetterProjectileScript.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_LetterProjectileScript.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_LetterProjectileScript.htm" />
+  </HelpKINode>
+  <HelpKINode Title="LetterProjectileScript.isactive field" Url="html/F_LetterProjectileScript_isactive.htm" />
+  <HelpKINode Title="LetterProjectileScript.LetterProjectileScript constructor" Url="html/M_LetterProjectileScript__ctor.htm" />
+  <HelpKINode Title="letterScript_test class">
+    <HelpKINode Title="letterScript_test Class" Url="html/T_letterScript_test.htm" />
+    <HelpKINode Title="about letterScript_test class" Url="html/T_letterScript_test.htm" />
+    <HelpKINode Title="constructor" Url="html/M_letterScript_test__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_letterScript_test.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_letterScript_test.htm" />
+  </HelpKINode>
+  <HelpKINode Title="letterScript_test.letterScript_test constructor" Url="html/M_letterScript_test__ctor.htm" />
+  <HelpKINode Title="Level property" Url="html/P_GGProductions_LetterStorm_Data_PlayerData_Level.htm" />
+  <HelpKINode Title="LevelNum property" Url="html/P_Context_LevelNum.htm" />
+  <HelpKINode Title="licenseTexture field" Url="html/F_Learn_licenseTexture.htm" />
+  <HelpKINode Title="LifeCount property" Url="html/P_GGProductions_LetterStorm_Data_PlayerData_LifeCount.htm" />
+  <HelpKINode Title="Lives field" Url="html/F_Player_Lives.htm" />
+  <HelpKINode Title="Load method" Url="html/M_GGProductions_LetterStorm_Utilities_GameStateUtilities_Load.htm" />
+  <HelpKINode Title="Lose class">
+    <HelpKINode Title="Lose Class" Url="html/T_Lose.htm" />
+    <HelpKINode Title="about Lose class" Url="html/T_Lose.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Lose__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_Lose.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Lose.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Lose.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Lose.backgroundTexture field" Url="html/F_Lose_backgroundTexture.htm" />
+  <HelpKINode Title="Lose.Lose constructor" Url="html/M_Lose__ctor.htm" />
+  <HelpKINode Title="Lose.titleTexture field" Url="html/F_Lose_titleTexture.htm" />
+  <HelpKINode Title="M field" Url="html/F_Inventory_M.htm" />
+  <HelpKINode Title="MainMenu class">
+    <HelpKINode Title="MainMenu Class" Url="html/T_MainMenu.htm" />
+    <HelpKINode Title="about MainMenu class" Url="html/T_MainMenu.htm" />
+    <HelpKINode Title="constructor" Url="html/M_MainMenu__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_MainMenu.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_MainMenu.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_MainMenu.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MainMenu.backgroundTexture field" Url="html/F_MainMenu_backgroundTexture.htm" />
+  <HelpKINode Title="MainMenu.MainMenu constructor" Url="html/M_MainMenu__ctor.htm" />
+  <HelpKINode Title="MainMenu.titleTexture field" Url="html/F_MainMenu_titleTexture.htm" />
+  <HelpKINode Title="MainMenuGameButtonTexture field" Url="html/F_HUD_MainMenuGameButtonTexture.htm" />
+  <HelpKINode Title="ManageLessons class">
+    <HelpKINode Title="ManageLessons Class" Url="html/T_ManageLessons.htm" />
+    <HelpKINode Title="about ManageLessons class" Url="html/T_ManageLessons.htm" />
+    <HelpKINode Title="constructor" Url="html/M_ManageLessons__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_ManageLessons.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_ManageLessons.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_ManageLessons.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ManageLessons.areaBackgroundImg field" Url="html/F_ManageLessons_areaBackgroundImg.htm" />
+  <HelpKINode Title="ManageLessons.areaLeftMarginImg field" Url="html/F_ManageLessons_areaLeftMarginImg.htm" />
+  <HelpKINode Title="ManageLessons.backgroundImg field" Url="html/F_ManageLessons_backgroundImg.htm" />
+  <HelpKINode Title="ManageLessons.ManageLessons constructor" Url="html/M_ManageLessons__ctor.htm" />
+  <HelpKINode Title="ManageLessons.smartMenuSkin field" Url="html/F_ManageLessons_smartMenuSkin.htm" />
+  <HelpKINode Title="ManageLessons.titleImg field" Url="html/F_ManageLessons_titleImg.htm" />
+  <HelpKINode Title="ManageLessons.wordAreaBackgroundImg field" Url="html/F_ManageLessons_wordAreaBackgroundImg.htm" />
+  <HelpKINode Title="MaxEnemiesOnScreen property" Url="html/P_GGProductions_LetterStorm_Configuration_EnemyDifficulty_MaxEnemiesOnScreen.htm" />
+  <HelpKINode Title="MaxHealth property" Url="html/P_GGProductions_LetterStorm_InGameHelpClasses_Health_MaxHealth.htm" />
+  <HelpKINode Title="MaxSpeed field" Url="html/F_Enemy_MaxSpeed.htm" />
+  <HelpKINode Title="Messenger class">
+    <HelpKINode Title="Messenger Class" Url="html/T_Messenger.htm" />
+    <HelpKINode Title="about Messenger class" Url="html/T_Messenger.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Messenger.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Messenger(Of T) class">
+    <HelpKINode Title="Messenger(T) Class" Url="html/T_Messenger_1.htm" />
+    <HelpKINode Title="about Messenger(Of T) class" Url="html/T_Messenger_1.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Messenger_1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Messenger(Of T).AddListener method" Url="html/Overload_Messenger_1_AddListener.htm" />
+  <HelpKINode Title="Messenger(Of T).Broadcast method" Url="html/Overload_Messenger_1_Broadcast.htm" />
+  <HelpKINode Title="Messenger(Of T).RemoveListener method" Url="html/Overload_Messenger_1_RemoveListener.htm" />
+  <HelpKINode Title="Messenger(Of T, U) class">
+    <HelpKINode Title="Messenger(T, U) Class" Url="html/T_Messenger_2.htm" />
+    <HelpKINode Title="about Messenger(Of T, U) class" Url="html/T_Messenger_2.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Messenger_2.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Messenger(Of T, U).AddListener method" Url="html/Overload_Messenger_2_AddListener.htm" />
+  <HelpKINode Title="Messenger(Of T, U).Broadcast method" Url="html/Overload_Messenger_2_Broadcast.htm" />
+  <HelpKINode Title="Messenger(Of T, U).RemoveListener method" Url="html/Overload_Messenger_2_RemoveListener.htm" />
+  <HelpKINode Title="Messenger(Of T, U, V) class">
+    <HelpKINode Title="Messenger(T, U, V) Class" Url="html/T_Messenger_3.htm" />
+    <HelpKINode Title="about Messenger(Of T, U, V) class" Url="html/T_Messenger_3.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Messenger_3.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Messenger(Of T, U, V).AddListener method" Url="html/Overload_Messenger_3_AddListener.htm" />
+  <HelpKINode Title="Messenger(Of T, U, V).Broadcast method" Url="html/Overload_Messenger_3_Broadcast.htm" />
+  <HelpKINode Title="Messenger(Of T, U, V).RemoveListener method" Url="html/Overload_Messenger_3_RemoveListener.htm" />
+  <HelpKINode Title="Messenger.AddListener method" Url="html/Overload_Messenger_AddListener.htm" />
+  <HelpKINode Title="Messenger.Broadcast method" Url="html/Overload_Messenger_Broadcast.htm" />
+  <HelpKINode Title="Messenger.RemoveListener method" Url="html/Overload_Messenger_RemoveListener.htm" />
+  <HelpKINode Title="Messenger&lt;T, U, V&gt; class">
+    <HelpKINode Title="Messenger(T, U, V) Class" Url="html/T_Messenger_3.htm" />
+    <HelpKINode Title="about Messenger&lt;T, U, V&gt; class" Url="html/T_Messenger_3.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Messenger_3.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Messenger&lt;T, U, V&gt;.AddListener method" Url="html/Overload_Messenger_3_AddListener.htm" />
+  <HelpKINode Title="Messenger&lt;T, U, V&gt;.Broadcast method" Url="html/Overload_Messenger_3_Broadcast.htm" />
+  <HelpKINode Title="Messenger&lt;T, U, V&gt;.RemoveListener method" Url="html/Overload_Messenger_3_RemoveListener.htm" />
+  <HelpKINode Title="Messenger&lt;T, U&gt; class">
+    <HelpKINode Title="Messenger(T, U) Class" Url="html/T_Messenger_2.htm" />
+    <HelpKINode Title="about Messenger&lt;T, U&gt; class" Url="html/T_Messenger_2.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Messenger_2.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Messenger&lt;T, U&gt;.AddListener method" Url="html/Overload_Messenger_2_AddListener.htm" />
+  <HelpKINode Title="Messenger&lt;T, U&gt;.Broadcast method" Url="html/Overload_Messenger_2_Broadcast.htm" />
+  <HelpKINode Title="Messenger&lt;T, U&gt;.RemoveListener method" Url="html/Overload_Messenger_2_RemoveListener.htm" />
+  <HelpKINode Title="Messenger&lt;T&gt; class">
+    <HelpKINode Title="Messenger(T) Class" Url="html/T_Messenger_1.htm" />
+    <HelpKINode Title="about Messenger&lt;T&gt; class" Url="html/T_Messenger_1.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Messenger_1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Messenger&lt;T&gt;.AddListener method" Url="html/Overload_Messenger_1_AddListener.htm" />
+  <HelpKINode Title="Messenger&lt;T&gt;.Broadcast method" Url="html/Overload_Messenger_1_Broadcast.htm" />
+  <HelpKINode Title="Messenger&lt;T&gt;.RemoveListener method" Url="html/Overload_Messenger_1_RemoveListener.htm" />
+  <HelpKINode Title="MessengerMode enumeration" Url="html/T_MessengerMode.htm" />
+  <HelpKINode Title="MinHealth property" Url="html/P_GGProductions_LetterStorm_InGameHelpClasses_Health_MinHealth.htm" />
+  <HelpKINode Title="MinSpeed field" Url="html/F_Enemy_MinSpeed.htm" />
+  <HelpKINode Title="Missed field" Url="html/F_Player_Missed.htm" />
+  <HelpKINode Title="MoveEnemy method">
+    <HelpKINode Title="DumbEnemy.MoveEnemy Method " Url="html/M_DumbEnemy_MoveEnemy.htm" />
+    <HelpKINode Title="Enemy.MoveEnemy Method " Url="html/M_Enemy_MoveEnemy.htm" />
+    <HelpKINode Title="SmartEnemy.MoveEnemy Method " Url="html/M_SmartEnemy_MoveEnemy.htm" />
+  </HelpKINode>
+  <HelpKINode Title="movingWaypoint class">
+    <HelpKINode Title="movingWaypoint Class" Url="html/T_movingWaypoint.htm" />
+    <HelpKINode Title="about movingWaypoint class" Url="html/T_movingWaypoint.htm" />
+    <HelpKINode Title="constructor" Url="html/M_movingWaypoint__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_movingWaypoint.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_movingWaypoint.htm" />
+  </HelpKINode>
+  <HelpKINode Title="movingWaypoint.movingWaypoint constructor" Url="html/M_movingWaypoint__ctor.htm" />
+  <HelpKINode Title="MushroomScript class">
+    <HelpKINode Title="MushroomScript Class" Url="html/T_MushroomScript.htm" />
+    <HelpKINode Title="about MushroomScript class" Url="html/T_MushroomScript.htm" />
+    <HelpKINode Title="constructor" Url="html/M_MushroomScript__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_MushroomScript.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_MushroomScript.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MushroomScript.MushroomScript constructor" Url="html/M_MushroomScript__ctor.htm" />
+  <HelpKINode Title="musics class">
+    <HelpKINode Title="musics Class" Url="html/T_musics.htm" />
+    <HelpKINode Title="about musics class" Url="html/T_musics.htm" />
+    <HelpKINode Title="constructor" Url="html/M_musics__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_musics.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_musics.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_musics.htm" />
+  </HelpKINode>
+  <HelpKINode Title="musics.AudioClips field" Url="html/F_musics_AudioClips.htm" />
+  <HelpKINode Title="musics.au_footsteps field" Url="html/F_musics_au_footsteps.htm" />
+  <HelpKINode Title="musics.musics constructor" Url="html/M_musics__ctor.htm" />
+  <HelpKINode Title="N field" Url="html/F_Inventory_N.htm" />
+  <HelpKINode Title="Name property">
+    <HelpKINode Title="CollectedLetter.Name Property " Url="html/P_CollectedLetter_Name.htm" />
+    <HelpKINode Title="EnemyDifficulty.Name Property " Url="html/P_GGProductions_LetterStorm_Configuration_EnemyDifficulty_Name.htm" />
+    <HelpKINode Title="Lesson.Name Property " Url="html/P_GGProductions_LetterStorm_Data_Collections_Lesson_Name.htm" />
+    <HelpKINode Title="PowerUp.Name Property " Url="html/P_PowerUp_Name.htm" />
+  </HelpKINode>
+  <HelpKINode Title="NewBehaviourScript class">
+    <HelpKINode Title="NewBehaviourScript Class" Url="html/T_NewBehaviourScript.htm" />
+    <HelpKINode Title="about NewBehaviourScript class" Url="html/T_NewBehaviourScript.htm" />
+    <HelpKINode Title="constructor" Url="html/M_NewBehaviourScript__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_NewBehaviourScript.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_NewBehaviourScript.htm" />
+  </HelpKINode>
+  <HelpKINode Title="NewBehaviourScript.NewBehaviourScript constructor" Url="html/M_NewBehaviourScript__ctor.htm" />
+  <HelpKINode Title="NewGame class">
+    <HelpKINode Title="NewGame Class" Url="html/T_NewGame.htm" />
+    <HelpKINode Title="about NewGame class" Url="html/T_NewGame.htm" />
+    <HelpKINode Title="constructor" Url="html/M_NewGame__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_NewGame.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_NewGame.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_NewGame.htm" />
+  </HelpKINode>
+  <HelpKINode Title="NewGame.difficultyLevelsBackgroundImg field" Url="html/F_NewGame_difficultyLevelsBackgroundImg.htm" />
+  <HelpKINode Title="NewGame.lessonsBackgroundImg field" Url="html/F_NewGame_lessonsBackgroundImg.htm" />
+  <HelpKINode Title="NewGame.NewGame constructor" Url="html/M_NewGame__ctor.htm" />
+  <HelpKINode Title="NewGame.smartMenuSkin field" Url="html/F_NewGame_smartMenuSkin.htm" />
+  <HelpKINode Title="NewGame.titleImg field" Url="html/F_NewGame_titleImg.htm" />
+  <HelpKINode Title="NoUntestedWordsException class">
+    <HelpKINode Title="NoUntestedWordsException Class" Url="html/T_GGProductions_LetterStorm_Data_NoUntestedWordsException.htm" />
+    <HelpKINode Title="about NoUntestedWordsException class" Url="html/T_GGProductions_LetterStorm_Data_NoUntestedWordsException.htm" />
+    <HelpKINode Title="constructor" Url="html/M_GGProductions_LetterStorm_Data_NoUntestedWordsException__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_GGProductions_LetterStorm_Data_NoUntestedWordsException.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_GGProductions_LetterStorm_Data_NoUntestedWordsException.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_GGProductions_LetterStorm_Data_NoUntestedWordsException.htm" />
+  </HelpKINode>
+  <HelpKINode Title="NoUntestedWordsException.NoUntestedWordsException constructor" Url="html/M_GGProductions_LetterStorm_Data_NoUntestedWordsException__ctor.htm" />
+  <HelpKINode Title="O field" Url="html/F_Inventory_O.htm" />
+  <HelpKINode Title="oldBigbossMove class">
+    <HelpKINode Title="oldBigbossMove Class" Url="html/T_oldBigbossMove.htm" />
+    <HelpKINode Title="about oldBigbossMove class" Url="html/T_oldBigbossMove.htm" />
+    <HelpKINode Title="constructor" Url="html/M_oldBigbossMove__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_oldBigbossMove.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_oldBigbossMove.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_oldBigbossMove.htm" />
+  </HelpKINode>
+  <HelpKINode Title="oldBigbossMove.CHaaaarge method" Url="html/M_oldBigbossMove_CHaaaarge.htm" />
+  <HelpKINode Title="oldBigbossMove.closeClaw field" Url="html/F_oldBigbossMove_closeClaw.htm" />
+  <HelpKINode Title="oldBigbossMove.oldBigbossMove constructor" Url="html/M_oldBigbossMove__ctor.htm" />
+  <HelpKINode Title="oldBigbossMove.openClaw field" Url="html/F_oldBigbossMove_openClaw.htm" />
+  <HelpKINode Title="oldBigbossMove.slither field" Url="html/F_oldBigbossMove_slither.htm" />
+  <HelpKINode Title="oldBigbossMove.transList field" Url="html/F_oldBigbossMove_transList.htm" />
+  <HelpKINode Title="OnDisable method" Url="html/M_EnemyGenerator_OnDisable.htm" />
+  <HelpKINode Title="OnEnable method" Url="html/M_EnemyGenerator_OnEnable.htm" />
+  <HelpKINode Title="OnMyGunsDied event" Url="html/E_Boss_3d_wordGen_OnMyGunsDied.htm" />
+  <HelpKINode Title="OnWrongCollision event" Url="html/E_Boss_3d_wordGen_OnWrongCollision.htm" />
+  <HelpKINode Title="openClaw field">
+    <HelpKINode Title="BigBoss_motion_animation.openClaw Field" Url="html/F_BigBoss_motion_animation_openClaw.htm" />
+    <HelpKINode Title="oldBigbossMove.openClaw Field" Url="html/F_oldBigbossMove_openClaw.htm" />
+  </HelpKINode>
+  <HelpKINode Title="OpenClose class">
+    <HelpKINode Title="OpenClose Class" Url="html/T_OpenClose.htm" />
+    <HelpKINode Title="about OpenClose class" Url="html/T_OpenClose.htm" />
+    <HelpKINode Title="constructor" Url="html/M_OpenClose__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_OpenClose.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_OpenClose.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_OpenClose.htm" />
+  </HelpKINode>
+  <HelpKINode Title="OpenClose.from field" Url="html/F_OpenClose_from.htm" />
+  <HelpKINode Title="OpenClose.OpenClose constructor" Url="html/M_OpenClose__ctor.htm" />
+  <HelpKINode Title="OpenClose.slide1 field" Url="html/F_OpenClose_slide1.htm" />
+  <HelpKINode Title="OpenClose.slide2 field" Url="html/F_OpenClose_slide2.htm" />
+  <HelpKINode Title="OpenClose.slide3 field" Url="html/F_OpenClose_slide3.htm" />
+  <HelpKINode Title="OpenClose.speed field" Url="html/F_OpenClose_speed.htm" />
+  <HelpKINode Title="OpenClose.to field" Url="html/F_OpenClose_to.htm" />
+  <HelpKINode Title="Options class">
+    <HelpKINode Title="Options Class" Url="html/T_Options.htm" />
+    <HelpKINode Title="about Options class" Url="html/T_Options.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Options__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_Options.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Options.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Options.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Options.backgroundTexture field" Url="html/F_Options_backgroundTexture.htm" />
+  <HelpKINode Title="Options.Options constructor" Url="html/M_Options__ctor.htm" />
+  <HelpKINode Title="P field" Url="html/F_Inventory_P.htm" />
+  <HelpKINode Title="Path field" Url="html/F_Enemy_Path.htm" />
+  <HelpKINode Title="Pencil1Projectile class">
+    <HelpKINode Title="Pencil1Projectile Class" Url="html/T_Pencil1Projectile.htm" />
+    <HelpKINode Title="about Pencil1Projectile class" Url="html/T_Pencil1Projectile.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Pencil1Projectile__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_Pencil1Projectile.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Pencil1Projectile.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Pencil1Projectile.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Pencil1Projectile.Pencil1Projectile constructor" Url="html/M_Pencil1Projectile__ctor.htm" />
+  <HelpKINode Title="Pencil1Projectile.PencilExplosion field" Url="html/F_Pencil1Projectile_PencilExplosion.htm" />
+  <HelpKINode Title="Pencil2Projectile class">
+    <HelpKINode Title="Pencil2Projectile Class" Url="html/T_Pencil2Projectile.htm" />
+    <HelpKINode Title="about Pencil2Projectile class" Url="html/T_Pencil2Projectile.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Pencil2Projectile__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_Pencil2Projectile.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Pencil2Projectile.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Pencil2Projectile.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Pencil2Projectile.Pencil2Projectile constructor" Url="html/M_Pencil2Projectile__ctor.htm" />
+  <HelpKINode Title="Pencil2Projectile.PencilExplosion field" Url="html/F_Pencil2Projectile_PencilExplosion.htm" />
+  <HelpKINode Title="PencilExplosion field">
+    <HelpKINode Title="AlbertProjectile.PencilExplosion Field" Url="html/F_AlbertProjectile_PencilExplosion.htm" />
+    <HelpKINode Title="Pencil1Projectile.PencilExplosion Field" Url="html/F_Pencil1Projectile_PencilExplosion.htm" />
+    <HelpKINode Title="Pencil2Projectile.PencilExplosion Field" Url="html/F_Pencil2Projectile_PencilExplosion.htm" />
+  </HelpKINode>
+  <HelpKINode Title="photoTexture field">
+    <HelpKINode Title="Win.photoTexture Field" Url="html/F_Win_photoTexture.htm" />
+    <HelpKINode Title="WinAll.photoTexture Field" Url="html/F_WinAll_photoTexture.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Player class">
+    <HelpKINode Title="Player Class" Url="html/T_Player.htm" />
+    <HelpKINode Title="about Player class" Url="html/T_Player.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Player__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_Player.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Player.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Player.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Player.ExplosionPrefab field" Url="html/F_Player_ExplosionPrefab.htm" />
+  <HelpKINode Title="Player.Lives field" Url="html/F_Player_Lives.htm" />
+  <HelpKINode Title="Player.Missed field" Url="html/F_Player_Missed.htm" />
+  <HelpKINode Title="Player.Player constructor" Url="html/M_Player__ctor.htm" />
+  <HelpKINode Title="Player.PlayerSpeed field" Url="html/F_Player_PlayerSpeed.htm" />
+  <HelpKINode Title="Player.ProjectilePrefab field" Url="html/F_Player_ProjectilePrefab.htm" />
+  <HelpKINode Title="Player.Score field" Url="html/F_Player_Score.htm" />
+  <HelpKINode Title="PlayerData class">
+    <HelpKINode Title="PlayerData Class" Url="html/T_GGProductions_LetterStorm_Data_PlayerData.htm" />
+    <HelpKINode Title="about PlayerData class" Url="html/T_GGProductions_LetterStorm_Data_PlayerData.htm" />
+    <HelpKINode Title="constructor" Url="html/M_GGProductions_LetterStorm_Data_PlayerData__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_GGProductions_LetterStorm_Data_PlayerData.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_GGProductions_LetterStorm_Data_PlayerData.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PlayerData.CurrentLessonId property" Url="html/P_GGProductions_LetterStorm_Data_PlayerData_CurrentLessonId.htm" />
+  <HelpKINode Title="PlayerData.CurrentScore property" Url="html/P_GGProductions_LetterStorm_Data_PlayerData_CurrentScore.htm" />
+  <HelpKINode Title="PlayerData.Curriculum property" Url="html/P_GGProductions_LetterStorm_Data_PlayerData_Curriculum.htm" />
+  <HelpKINode Title="PlayerData.EnemyDifficultyId property" Url="html/P_GGProductions_LetterStorm_Data_PlayerData_EnemyDifficultyId.htm" />
+  <HelpKINode Title="PlayerData.Level property" Url="html/P_GGProductions_LetterStorm_Data_PlayerData_Level.htm" />
+  <HelpKINode Title="PlayerData.LifeCount property" Url="html/P_GGProductions_LetterStorm_Data_PlayerData_LifeCount.htm" />
+  <HelpKINode Title="PlayerData.PlayerData constructor" Url="html/M_GGProductions_LetterStorm_Data_PlayerData__ctor.htm" />
+  <HelpKINode Title="PlayerHealth property" Url="html/P_Context_PlayerHealth.htm" />
+  <HelpKINode Title="PlayerInventory property" Url="html/P_Context_PlayerInventory.htm" />
+  <HelpKINode Title="PlayerSpeed field">
+    <HelpKINode Title="AlbertController.PlayerSpeed Field" Url="html/F_AlbertController_PlayerSpeed.htm" />
+    <HelpKINode Title="AlbertController2.PlayerSpeed Field" Url="html/F_AlbertController2_PlayerSpeed.htm" />
+    <HelpKINode Title="Player.PlayerSpeed Field" Url="html/F_Player_PlayerSpeed.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PoisonousMushroom class">
+    <HelpKINode Title="PoisonousMushroom Class" Url="html/T_PoisonousMushroom.htm" />
+    <HelpKINode Title="about PoisonousMushroom class" Url="html/T_PoisonousMushroom.htm" />
+    <HelpKINode Title="constructor" Url="html/M_PoisonousMushroom__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_PoisonousMushroom.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_PoisonousMushroom.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PoisonousMushroom.PoisonousMushroom constructor" Url="html/M_PoisonousMushroom__ctor.htm" />
+  <HelpKINode Title="PowerUp class">
+    <HelpKINode Title="PowerUp Class" Url="html/T_PowerUp.htm" />
+    <HelpKINode Title="about PowerUp class" Url="html/T_PowerUp.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_PowerUp__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_PowerUp.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_PowerUp.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PowerUp.Count property" Url="html/P_PowerUp_Count.htm" />
+  <HelpKINode Title="PowerUp.DecrementCount method" Url="html/M_PowerUp_DecrementCount.htm" />
+  <HelpKINode Title="PowerUp.ExpireAt property" Url="html/P_PowerUp_ExpireAt.htm" />
+  <HelpKINode Title="PowerUp.HasExpired method" Url="html/M_PowerUp_HasExpired.htm" />
+  <HelpKINode Title="PowerUp.IncrementCount method" Url="html/M_PowerUp_IncrementCount.htm" />
+  <HelpKINode Title="PowerUp.isEmpty property" Url="html/P_PowerUp_isEmpty.htm" />
+  <HelpKINode Title="PowerUp.Name property" Url="html/P_PowerUp_Name.htm" />
+  <HelpKINode Title="PowerUp.PowerUp constructor" Url="html/Overload_PowerUp__ctor.htm" />
+  <HelpKINode Title="PowerUp.SetExpireTime method" Url="html/M_PowerUp_SetExpireTime.htm" />
+  <HelpKINode Title="PrepareForNextLevel method" Url="html/M_Context_PrepareForNextLevel.htm" />
+  <HelpKINode Title="Projectile class">
+    <HelpKINode Title="Projectile Class" Url="html/T_Projectile.htm" />
+    <HelpKINode Title="about Projectile class" Url="html/T_Projectile.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Projectile__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_Projectile.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Projectile.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Projectile.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Projectile field" Url="html/F_SmartEnemy_Projectile.htm" />
+  <HelpKINode Title="Projectile.ExplosionPrefab field" Url="html/F_Projectile_ExplosionPrefab.htm" />
+  <HelpKINode Title="Projectile.Projectile constructor" Url="html/M_Projectile__ctor.htm" />
+  <HelpKINode Title="Projectile.ProjectileSpeed field" Url="html/F_Projectile_ProjectileSpeed.htm" />
+  <HelpKINode Title="ProjectilePrefab field">
+    <HelpKINode Title="AlbertController.ProjectilePrefab Field" Url="html/F_AlbertController_ProjectilePrefab.htm" />
+    <HelpKINode Title="AlbertController2.ProjectilePrefab Field" Url="html/F_AlbertController2_ProjectilePrefab.htm" />
+    <HelpKINode Title="Albert_force_controller.ProjectilePrefab Field" Url="html/F_Albert_force_controller_ProjectilePrefab.htm" />
+    <HelpKINode Title="Player.ProjectilePrefab Field" Url="html/F_Player_ProjectilePrefab.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ProjectileSpeed field" Url="html/F_Projectile_ProjectileSpeed.htm" />
+  <HelpKINode Title="projectileSpeed field" Url="html/F_BossProjectile_projectileSpeed.htm" />
+  <HelpKINode Title="Q field" Url="html/F_Inventory_Q.htm" />
+  <HelpKINode Title="QuitGameButtonTexture field" Url="html/F_HUD_QuitGameButtonTexture.htm" />
+  <HelpKINode Title="R field" Url="html/F_Inventory_R.htm" />
+  <HelpKINode Title="RandomSpawn method" Url="html/M_EnemyGenerator_RandomSpawn.htm" />
+  <HelpKINode Title="RemoveListener method">
+    <HelpKINode Title="Messenger(T).RemoveListener Method " Url="html/Overload_Messenger_1_RemoveListener.htm" />
+    <HelpKINode Title="Messenger(T, U).RemoveListener Method " Url="html/Overload_Messenger_2_RemoveListener.htm" />
+    <HelpKINode Title="Messenger(T, U, V).RemoveListener Method " Url="html/Overload_Messenger_3_RemoveListener.htm" />
+    <HelpKINode Title="Messenger.RemoveListener Method " Url="html/Overload_Messenger_RemoveListener.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RequiredSpawn method" Url="html/M_EnemyGenerator_RequiredSpawn.htm" />
+  <HelpKINode Title="RequirementCheck method" Url="html/M_EnemyGenerator_RequirementCheck.htm" />
+  <HelpKINode Title="REQUIRE_LISTENER enumeration member" Url="html/T_MessengerMode.htm" />
+  <HelpKINode Title="Reset method" Url="html/M_GGProductions_LetterStorm_InGameHelpClasses_ScoreKeeper_Reset.htm" />
+  <HelpKINode Title="ResetAllWordsToUntested method" Url="html/M_GGProductions_LetterStorm_Data_Collections_WordSet_ResetAllWordsToUntested.htm" />
+  <HelpKINode Title="ResumeGameButtonTexture field" Url="html/F_HUD_ResumeGameButtonTexture.htm" />
+  <HelpKINode Title="rot field">
+    <HelpKINode Title="Boss1_move.rot Field" Url="html/F_Boss1_move_rot.htm" />
+    <HelpKINode Title="Boss1_moveV2.rot Field" Url="html/F_Boss1_moveV2_rot.htm" />
+  </HelpKINode>
+  <HelpKINode Title="rotateSpeed field">
+    <HelpKINode Title="AlbertController.rotateSpeed Field" Url="html/F_AlbertController_rotateSpeed.htm" />
+    <HelpKINode Title="AlbertController2.rotateSpeed Field" Url="html/F_AlbertController2_rotateSpeed.htm" />
+  </HelpKINode>
+  <HelpKINode Title="S field" Url="html/F_Inventory_S.htm" />
+  <HelpKINode Title="sand enumeration member" Url="html/T_LandGenerator_State.htm" />
+  <HelpKINode Title="sandbrick enumeration member" Url="html/T_LandGenerator_State.htm" />
+  <HelpKINode Title="sanddirt enumeration member" Url="html/T_LandGenerator_State.htm" />
+  <HelpKINode Title="Save method" Url="html/M_GGProductions_LetterStorm_Utilities_GameStateUtilities_Save.htm" />
+  <HelpKINode Title="SaveGameButtonTexture field" Url="html/F_HUD_SaveGameButtonTexture.htm" />
+  <HelpKINode Title="Score field" Url="html/F_Player_Score.htm" />
+  <HelpKINode Title="Score property" Url="html/P_GGProductions_LetterStorm_InGameHelpClasses_ScoreKeeper_Score.htm" />
+  <HelpKINode Title="ScoreBarStyle field" Url="html/F_HUD_ScoreBarStyle.htm" />
+  <HelpKINode Title="ScoreKeeper class">
+    <HelpKINode Title="ScoreKeeper Class" Url="html/T_GGProductions_LetterStorm_InGameHelpClasses_ScoreKeeper.htm" />
+    <HelpKINode Title="about ScoreKeeper class" Url="html/T_GGProductions_LetterStorm_InGameHelpClasses_ScoreKeeper.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_GGProductions_LetterStorm_InGameHelpClasses_ScoreKeeper__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_GGProductions_LetterStorm_InGameHelpClasses_ScoreKeeper.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_GGProductions_LetterStorm_InGameHelpClasses_ScoreKeeper.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ScoreKeeper.Decrease method" Url="html/M_GGProductions_LetterStorm_InGameHelpClasses_ScoreKeeper_Decrease.htm" />
+  <HelpKINode Title="ScoreKeeper.Increase method" Url="html/M_GGProductions_LetterStorm_InGameHelpClasses_ScoreKeeper_Increase.htm" />
+  <HelpKINode Title="ScoreKeeper.PlayerAchievement enumeration" Url="html/T_GGProductions_LetterStorm_InGameHelpClasses_ScoreKeeper_PlayerAchievement.htm" />
+  <HelpKINode Title="ScoreKeeper.PlayerFailure enumeration" Url="html/T_GGProductions_LetterStorm_InGameHelpClasses_ScoreKeeper_PlayerFailure.htm" />
+  <HelpKINode Title="ScoreKeeper.Reset method" Url="html/M_GGProductions_LetterStorm_InGameHelpClasses_ScoreKeeper_Reset.htm" />
+  <HelpKINode Title="ScoreKeeper.Score property" Url="html/P_GGProductions_LetterStorm_InGameHelpClasses_ScoreKeeper_Score.htm" />
+  <HelpKINode Title="ScoreKeeper.ScoreKeeper constructor" Url="html/Overload_GGProductions_LetterStorm_InGameHelpClasses_ScoreKeeper__ctor.htm" />
+  <HelpKINode Title="SecondaryProjectilePrefab field" Url="html/F_Albert_force_controller_SecondaryProjectilePrefab.htm" />
+  <HelpKINode Title="SelectedLetter property" Url="html/P_Context_SelectedLetter.htm" />
+  <HelpKINode Title="SelectedPowerUp property" Url="html/P_Context_SelectedPowerUp.htm" />
+  <HelpKINode Title="SetExpireTime method" Url="html/M_PowerUp_SetExpireTime.htm" />
+  <HelpKINode Title="SetHintTextScrollingBox method" Url="html/M_HUD_SetHintTextScrollingBox.htm" />
+  <HelpKINode Title="SetScaleAndSpeed method" Url="html/M_Enemy_SetScaleAndSpeed.htm" />
+  <HelpKINode Title="SettingsGameButtonTexture field" Url="html/F_HUD_SettingsGameButtonTexture.htm" />
+  <HelpKINode Title="simpleScript class">
+    <HelpKINode Title="simpleScript Class" Url="html/T_simpleScript.htm" />
+    <HelpKINode Title="about simpleScript class" Url="html/T_simpleScript.htm" />
+    <HelpKINode Title="constructor" Url="html/M_simpleScript__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_simpleScript.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_simpleScript.htm" />
+  </HelpKINode>
+  <HelpKINode Title="simpleScript.simpleScript constructor" Url="html/M_simpleScript__ctor.htm" />
+  <HelpKINode Title="slide1 field" Url="html/F_OpenClose_slide1.htm" />
+  <HelpKINode Title="slide2 field" Url="html/F_OpenClose_slide2.htm" />
+  <HelpKINode Title="slide3 field" Url="html/F_OpenClose_slide3.htm" />
+  <HelpKINode Title="slither field">
+    <HelpKINode Title="BigBoss_motion_animation.slither Field" Url="html/F_BigBoss_motion_animation_slither.htm" />
+    <HelpKINode Title="oldBigbossMove.slither Field" Url="html/F_oldBigbossMove_slither.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Slow method" Url="html/M_EnemyGenerator_Slow.htm" />
+  <HelpKINode Title="SmartEnemy class">
+    <HelpKINode Title="SmartEnemy Class" Url="html/T_SmartEnemy.htm" />
+    <HelpKINode Title="about SmartEnemy class" Url="html/T_SmartEnemy.htm" />
+    <HelpKINode Title="constructor" Url="html/M_SmartEnemy__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_SmartEnemy.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_SmartEnemy.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_SmartEnemy.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SmartEnemy.MoveEnemy method" Url="html/M_SmartEnemy_MoveEnemy.htm" />
+  <HelpKINode Title="SmartEnemy.Projectile field" Url="html/F_SmartEnemy_Projectile.htm" />
+  <HelpKINode Title="SmartEnemy.SmartEnemy constructor" Url="html/M_SmartEnemy__ctor.htm" />
+  <HelpKINode Title="smartMenuSkin field">
+    <HelpKINode Title="ManageLessons.smartMenuSkin Field" Url="html/F_ManageLessons_smartMenuSkin.htm" />
+    <HelpKINode Title="NewGame.smartMenuSkin Field" Url="html/F_NewGame_smartMenuSkin.htm" />
+    <HelpKINode Title="WinAll.smartMenuSkin Field" Url="html/F_WinAll_smartMenuSkin.htm" />
+  </HelpKINode>
+  <HelpKINode Title="smooth field">
+    <HelpKINode Title="AlbertController.smooth Field" Url="html/F_AlbertController_smooth.htm" />
+    <HelpKINode Title="AlbertController2.smooth Field" Url="html/F_AlbertController2_smooth.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SpawnManager class">
+    <HelpKINode Title="SpawnManager Class" Url="html/T_SpawnManager.htm" />
+    <HelpKINode Title="about SpawnManager class" Url="html/T_SpawnManager.htm" />
+    <HelpKINode Title="constructor" Url="html/M_SpawnManager__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_SpawnManager.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_SpawnManager.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SpawnManager.SpawnManager constructor" Url="html/M_SpawnManager__ctor.htm" />
+  <HelpKINode Title="spawnPoints field" Url="html/F_EnemyGenerator_spawnPoints.htm" />
+  <HelpKINode Title="Speed field" Url="html/F_Stars_Speed.htm" />
+  <HelpKINode Title="speed field" Url="html/F_OpenClose_speed.htm" />
+  <HelpKINode Title="Speed property" Url="html/P_Enemy_Speed.htm" />
+  <HelpKINode Title="Splash class">
+    <HelpKINode Title="Splash Class" Url="html/T_Splash.htm" />
+    <HelpKINode Title="about Splash class" Url="html/T_Splash.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Splash__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_Splash.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Splash.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Splash.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Splash.backgroundTexture field" Url="html/F_Splash_backgroundTexture.htm" />
+  <HelpKINode Title="Splash.delayTime field" Url="html/F_Splash_delayTime.htm" />
+  <HelpKINode Title="Splash.Splash constructor" Url="html/M_Splash__ctor.htm" />
+  <HelpKINode Title="Stars class">
+    <HelpKINode Title="Stars Class" Url="html/T_Stars.htm" />
+    <HelpKINode Title="about Stars class" Url="html/T_Stars.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Stars__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_Stars.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Stars.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Stars.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Stars.Speed field" Url="html/F_Stars_Speed.htm" />
+  <HelpKINode Title="Stars.Stars constructor" Url="html/M_Stars__ctor.htm" />
+  <HelpKINode Title="Start method" Url="html/M_Enemy_Start.htm" />
+  <HelpKINode Title="state field" Url="html/F_LandGenerator_state.htm" />
+  <HelpKINode Title="storyTexture field" Url="html/F_Blank_storyTexture.htm" />
+  <HelpKINode Title="SubtractCollectedLetter method" Url="html/M_Inventory_SubtractCollectedLetter.htm" />
+  <HelpKINode Title="T field" Url="html/F_Inventory_T.htm" />
+  <HelpKINode Title="terrainScroll class">
+    <HelpKINode Title="terrainScroll Class" Url="html/T_terrainScroll.htm" />
+    <HelpKINode Title="about terrainScroll class" Url="html/T_terrainScroll.htm" />
+    <HelpKINode Title="constructor" Url="html/M_terrainScroll__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_terrainScroll.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_terrainScroll.htm" />
+  </HelpKINode>
+  <HelpKINode Title="terrainScroll.terrainScroll constructor" Url="html/M_terrainScroll__ctor.htm" />
+  <HelpKINode Title="Tested property" Url="html/P_GGProductions_LetterStorm_Data_Word_Tested.htm" />
+  <HelpKINode Title="Text property" Url="html/P_GGProductions_LetterStorm_Data_Word_Text.htm" />
+  <HelpKINode Title="theDrop field" Url="html/F_Vowel_theDrop.htm" />
+  <HelpKINode Title="theShot field">
+    <HelpKINode Title="BossShootInterval_V1.theShot Field" Url="html/F_BossShootInterval_V1_theShot.htm" />
+    <HelpKINode Title="TimedShooting.theShot Field" Url="html/F_TimedShooting_theShot.htm" />
+  </HelpKINode>
+  <HelpKINode Title="throwAnimationClip field">
+    <HelpKINode Title="AlbertController2.throwAnimationClip Field" Url="html/F_AlbertController2_throwAnimationClip.htm" />
+    <HelpKINode Title="Albert_force_controller.throwAnimationClip Field" Url="html/F_Albert_force_controller_throwAnimationClip.htm" />
+  </HelpKINode>
+  <HelpKINode Title="tiltAngle field">
+    <HelpKINode Title="AlbertController.tiltAngle Field" Url="html/F_AlbertController_tiltAngle.htm" />
+    <HelpKINode Title="AlbertController2.tiltAngle Field" Url="html/F_AlbertController2_tiltAngle.htm" />
+  </HelpKINode>
+  <HelpKINode Title="TimedShooting class">
+    <HelpKINode Title="TimedShooting Class" Url="html/T_TimedShooting.htm" />
+    <HelpKINode Title="about TimedShooting class" Url="html/T_TimedShooting.htm" />
+    <HelpKINode Title="constructor" Url="html/M_TimedShooting__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_TimedShooting.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_TimedShooting.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_TimedShooting.htm" />
+  </HelpKINode>
+  <HelpKINode Title="TimedShooting.theShot field" Url="html/F_TimedShooting_theShot.htm" />
+  <HelpKINode Title="TimedShooting.TimedShooting constructor" Url="html/M_TimedShooting__ctor.htm" />
+  <HelpKINode Title="titleImg field">
+    <HelpKINode Title="ManageLessons.titleImg Field" Url="html/F_ManageLessons_titleImg.htm" />
+    <HelpKINode Title="NewGame.titleImg Field" Url="html/F_NewGame_titleImg.htm" />
+    <HelpKINode Title="WinAll.titleImg Field" Url="html/F_WinAll_titleImg.htm" />
+  </HelpKINode>
+  <HelpKINode Title="titleTexture field">
+    <HelpKINode Title="Lose.titleTexture Field" Url="html/F_Lose_titleTexture.htm" />
+    <HelpKINode Title="MainMenu.titleTexture Field" Url="html/F_MainMenu_titleTexture.htm" />
+    <HelpKINode Title="Win.titleTexture Field" Url="html/F_Win_titleTexture.htm" />
+  </HelpKINode>
+  <HelpKINode Title="to field" Url="html/F_OpenClose_to.htm" />
+  <HelpKINode Title="ToString method" Url="html/M_GGProductions_LetterStorm_Data_Word_ToString.htm" />
+  <HelpKINode Title="TotalCollectedLetters property" Url="html/P_Inventory_TotalCollectedLetters.htm" />
+  <HelpKINode Title="transList field">
+    <HelpKINode Title="BigBoss_motion_animation.transList Field" Url="html/F_BigBoss_motion_animation_transList.htm" />
+    <HelpKINode Title="oldBigbossMove.transList Field" Url="html/F_oldBigbossMove_transList.htm" />
+  </HelpKINode>
+  <HelpKINode Title="turnOnSwitch method" Url="html/M_FadeBlack2Clear_turnOnSwitch.htm" />
+  <HelpKINode Title="U field" Url="html/F_Inventory_U.htm" />
+  <HelpKINode Title="UncurlAnimationClip field">
+    <HelpKINode Title="Boss1_move.UncurlAnimationClip Field" Url="html/F_Boss1_move_UncurlAnimationClip.htm" />
+    <HelpKINode Title="Boss1_moveV2.UncurlAnimationClip Field" Url="html/F_Boss1_moveV2_UncurlAnimationClip.htm" />
+    <HelpKINode Title="Boss_Motion_animation.UncurlAnimationClip Field" Url="html/F_Boss_Motion_animation_UncurlAnimationClip.htm" />
+    <HelpKINode Title="Boss_move_PtP.UncurlAnimationClip Field" Url="html/F_Boss_move_PtP_UncurlAnimationClip.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Update method" Url="html/M_Enemy_Update.htm" />
+  <HelpKINode Title="V field" Url="html/F_Inventory_V.htm" />
+  <HelpKINode Title="Vowel class">
+    <HelpKINode Title="Vowel Class" Url="html/T_Vowel.htm" />
+    <HelpKINode Title="about Vowel class" Url="html/T_Vowel.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Vowel__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_Vowel.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Vowel.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Vowel.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Vowel.theDrop field" Url="html/F_Vowel_theDrop.htm" />
+  <HelpKINode Title="Vowel.Vowel constructor" Url="html/M_Vowel__ctor.htm" />
+  <HelpKINode Title="W field" Url="html/F_Inventory_W.htm" />
+  <HelpKINode Title="wakBackAnimationClip field">
+    <HelpKINode Title="AlbertController2.wakBackAnimationClip Field" Url="html/F_AlbertController2_wakBackAnimationClip.htm" />
+    <HelpKINode Title="Albert_force_controller.wakBackAnimationClip Field" Url="html/F_Albert_force_controller_wakBackAnimationClip.htm" />
+  </HelpKINode>
+  <HelpKINode Title="walkAnimationClip field">
+    <HelpKINode Title="AlbertController.walkAnimationClip Field" Url="html/F_AlbertController_walkAnimationClip.htm" />
+    <HelpKINode Title="AlbertController2.walkAnimationClip Field" Url="html/F_AlbertController2_walkAnimationClip.htm" />
+    <HelpKINode Title="Albert_force_controller.walkAnimationClip Field" Url="html/F_Albert_force_controller_walkAnimationClip.htm" />
+  </HelpKINode>
+  <HelpKINode Title="wasThrwon field" Url="html/F_CollectibleChar_wasThrwon.htm" />
+  <HelpKINode Title="Win class">
+    <HelpKINode Title="Win Class" Url="html/T_Win.htm" />
+    <HelpKINode Title="about Win class" Url="html/T_Win.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Win__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_Win.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Win.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_Win.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Win.backgroundTexture field" Url="html/F_Win_backgroundTexture.htm" />
+  <HelpKINode Title="Win.DeadBigBoss field" Url="html/F_Win_DeadBigBoss.htm" />
+  <HelpKINode Title="Win.DeadBoss1 field" Url="html/F_Win_DeadBoss1.htm" />
+  <HelpKINode Title="Win.photoTexture field" Url="html/F_Win_photoTexture.htm" />
+  <HelpKINode Title="Win.titleTexture field" Url="html/F_Win_titleTexture.htm" />
+  <HelpKINode Title="Win.Win constructor" Url="html/M_Win__ctor.htm" />
+  <HelpKINode Title="WinAll class">
+    <HelpKINode Title="WinAll Class" Url="html/T_WinAll.htm" />
+    <HelpKINode Title="about WinAll class" Url="html/T_WinAll.htm" />
+    <HelpKINode Title="constructor" Url="html/M_WinAll__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_WinAll.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_WinAll.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_WinAll.htm" />
+  </HelpKINode>
+  <HelpKINode Title="WinAll.AlbertWins field" Url="html/F_WinAll_AlbertWins.htm" />
+  <HelpKINode Title="WinAll.areaBackgroundImg field" Url="html/F_WinAll_areaBackgroundImg.htm" />
+  <HelpKINode Title="WinAll.backgroundTexture field" Url="html/F_WinAll_backgroundTexture.htm" />
+  <HelpKINode Title="WinAll.photoTexture field" Url="html/F_WinAll_photoTexture.htm" />
+  <HelpKINode Title="WinAll.smartMenuSkin field" Url="html/F_WinAll_smartMenuSkin.htm" />
+  <HelpKINode Title="WinAll.titleImg field" Url="html/F_WinAll_titleImg.htm" />
+  <HelpKINode Title="WinAll.WinAll constructor" Url="html/M_WinAll__ctor.htm" />
+  <HelpKINode Title="Word class">
+    <HelpKINode Title="Word Class" Url="html/T_GGProductions_LetterStorm_Data_Word.htm" />
+    <HelpKINode Title="about Word class" Url="html/T_GGProductions_LetterStorm_Data_Word.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_GGProductions_LetterStorm_Data_Word__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_GGProductions_LetterStorm_Data_Word.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_GGProductions_LetterStorm_Data_Word.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Word property" Url="html/P_Context_Word.htm" />
+  <HelpKINode Title="Word.Hint property" Url="html/P_GGProductions_LetterStorm_Data_Word_Hint.htm" />
+  <HelpKINode Title="Word.Tested property" Url="html/P_GGProductions_LetterStorm_Data_Word_Tested.htm" />
+  <HelpKINode Title="Word.Text property" Url="html/P_GGProductions_LetterStorm_Data_Word_Text.htm" />
+  <HelpKINode Title="Word.ToString method" Url="html/M_GGProductions_LetterStorm_Data_Word_ToString.htm" />
+  <HelpKINode Title="Word.Word constructor" Url="html/Overload_GGProductions_LetterStorm_Data_Word__ctor.htm" />
+  <HelpKINode Title="wordAreaBackgroundImg field" Url="html/F_ManageLessons_wordAreaBackgroundImg.htm" />
+  <HelpKINode Title="Words property" Url="html/P_GGProductions_LetterStorm_Data_Collections_Lesson_Words.htm" />
+  <HelpKINode Title="WordSet class">
+    <HelpKINode Title="WordSet Class" Url="html/T_GGProductions_LetterStorm_Data_Collections_WordSet.htm" />
+    <HelpKINode Title="about WordSet class" Url="html/T_GGProductions_LetterStorm_Data_Collections_WordSet.htm" />
+    <HelpKINode Title="constructor" Url="html/M_GGProductions_LetterStorm_Data_Collections_WordSet__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_GGProductions_LetterStorm_Data_Collections_WordSet.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_GGProductions_LetterStorm_Data_Collections_WordSet.htm" />
+  </HelpKINode>
+  <HelpKINode Title="WordSet.ContainsUntestedWords method" Url="html/M_GGProductions_LetterStorm_Data_Collections_WordSet_ContainsUntestedWords.htm" />
+  <HelpKINode Title="WordSet.GetNextWord method" Url="html/M_GGProductions_LetterStorm_Data_Collections_WordSet_GetNextWord.htm" />
+  <HelpKINode Title="WordSet.GetRandomWord method" Url="html/M_GGProductions_LetterStorm_Data_Collections_WordSet_GetRandomWord.htm" />
+  <HelpKINode Title="WordSet.ResetAllWordsToUntested method" Url="html/M_GGProductions_LetterStorm_Data_Collections_WordSet_ResetAllWordsToUntested.htm" />
+  <HelpKINode Title="WordSet.WordSet constructor" Url="html/M_GGProductions_LetterStorm_Data_Collections_WordSet__ctor.htm" />
+  <HelpKINode Title="WordSolvingStage field" Url="html/F_EnemyGenerator_WordSolvingStage.htm" />
+  <HelpKINode Title="X field" Url="html/F_Inventory_X.htm" />
+  <HelpKINode Title="Y field" Url="html/F_Inventory_Y.htm" />
+  <HelpKINode Title="Z field" Url="html/F_Inventory_Z.htm" />
+</HelpKI>

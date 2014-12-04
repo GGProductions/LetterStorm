@@ -8,96 +8,100 @@ public class Boss_Motion_animation : MonoBehaviour {
 	public AnimationClip CurlUpAnimationClip;
 	public AnimationClip UncurlAnimationClip;
 
-	private Vector3 here;
-	private float tem;
 
+
+	private bool switchon = false;
+
+	private Vector3 here;
+	private float timeElapsed;
+
+	private Vector3 starting_point;
+
+   private Vector3 point_topleft;
+   private Vector3 point_mid;
+   private Vector3 point_toright;
+
+   
+
+
+	/// <summary>
+	/// setting up the listeners. 
+	/// 1)analyzing  weather or not a right letter has collided with the boss is don in the other script attached to the boss: Boss_3d_wordGen
+	/// 2) so , Boss_3d_wordgen initiates an event  onWrongCollision() whenever a wrong letter hits
+	/// 3) we subscribe to this event with Chaaaarge()  which is a coroutine that sends the boss hurleing down the screen 
+	/// </summary>
 	void OnEnable()
 	{
 		Boss_3d_wordGen.OnWrongCollision += CHaaaarge;
-	}
-	 
+	}	 
 	void OnDisable()
 	{
 		Boss_3d_wordGen.OnWrongCollision -= CHaaaarge;
 	}
 
-
+	/// <summary>
+	///  init animations, and initial boss position. this may change depending on BossEnterScnene fade 
+	/// </summary>
 	void Awake()
 	{
-		animation.wrapMode = WrapMode.Loop;
-		animation.AddClip(ActionAnimationClip, "action");
-		//animation.wrapMode = WrapMode.Default;
+		 point_topleft= new Vector3(-3f,0f,4.5f);
+		 point_mid = new Vector3(0f, 0f, 0f); 
+		 point_toright=new Vector3(3f,0f,4.5f);
 
 
-
-
-		//animation.Stop();
-	//	animation["curl"].layer = 1;
-	//	animation["uncurl"].layer = 0;
-	//	animation["action"].layer = 0;
-	}
-
-	public Transform startMarker;
-	public Transform endMarker;
-	public float speed = 1.0F;
-	private float startTime;
-	private float journeyLength=10f;
-	public Transform target;
-	public float smooth = 5.0F;
-
-
-	// Use this for initialization
-
-	void Start () {
-
+		here = new Vector3(0f, 0f, 10);
+		gameObject.transform.position = here;
+		timeElapsed = 0;
 		animation.wrapMode = WrapMode.Once;
 		animation.AddClip(CurlUpAnimationClip, "curl");
 		animation.AddClip(UncurlAnimationClip, "uncurl");
 
+		animation.wrapMode = WrapMode.Loop;
+		animation.AddClip(ActionAnimationClip, "action");
 
-		//startMarker = new Vector3 (-4f, 0f, 0f);
-	   // startTime = Time.time;
-	   // journeyLength = Vector3.Distance(startMarker.position, endMarker.position);
 
-		here = new Vector3(0f, 0f, 4);
-		gameObject.transform.position = here;
-		tem = 0;
-	   // StartCoroutine(BossEnters());
 
+		StartCoroutine(BossEnters());
+	 
 	}
+
+  
+	IEnumerator MoveObject(Transform thisTransform, Vector3 startPos, Vector3 endPos, float time)
+	{
+		var i = 0.0f;
+		var rate = 1.0f / time;
+		while (i < 1.0f)
+		{
+			i += Time.deltaTime * rate;
+			thisTransform.position = Vector3.Lerp(startPos, endPos, i);
+			yield return null;
+		}
+	}
+
+
 	
-	// Update is called once per frame
+	/// <summary>
+	///  the boss moves left and right with a position= cos(time)
+	///  this is subject to a few bugs: when hitting escape, the boss keeps on moving
+	///  and since the motion is a function of time, the game will behave differently on diffrent processors
+	///  slower machins will see a very slow moving boss.
+	///  the boss motion should be done in a diffreent way: lerping between point1 and boint2
+	///  the problem with that is making sure the boss goes back to where he left off after fininshing a Chaaarge() coroutine
+	/// </summary>
 	void Update () {
 
-	  /*  while (transform.position.z > 4f)
-		{
-			transform.rotation = Quaternion.Euler(0, 180, 0);
-			//animation.CrossFade("curl");
-			float amtToMove = 6.52f * Time.deltaTime;
-			transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - amtToMove);	   
-		}
-		*/
 		animation.CrossFade("action");
-		tem += Time.deltaTime;
+		timeElapsed += Time.deltaTime;
 
-		float factor = Mathf.Cos((tem));
-		transform.Translate(Vector3.right * (factor / 20), Space.World);
+		float factor = Mathf.Cos(timeElapsed);
+		transform.Translate(Vector3.right * (factor / 20) * Time.timeScale, Space.World);
 		transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 
-
-	//	float distCovered = (Time.time - startTime) * speed;
-	//	float fracJourney = distCovered / journeyLength;
-	//	transform.position = Vector3.Lerp(new Vector3(0f, 4f, 0f), new Vector3(4f, 0f, 0f), 2.5f);
-
-
-		//if (Input.GetKeyDown(KeyCode.Q)) animation.CrossFade("action");
-		//if (Input.GetKeyDown(KeyCode.W)) animation.CrossFade("curl");
-		//if (Input.GetKeyDown(KeyCode.E)) animation.CrossFade("uncurl");
 		if(switchon)
 		animation.CrossFade("curl");
 	}
 
-	private bool switchon = false;
+
 
 	public void CHaaaarge( )
 	{
@@ -131,7 +135,7 @@ public class Boss_Motion_animation : MonoBehaviour {
 			float rotationSpeed = 3000 * Time.deltaTime;
 			transform.Rotate(new Vector3(10, 0, 0) * rotationSpeed);
 
-			Debug.Log(tme);
+		//	Debug.Log(tme);
 
 			yield return 0;
 
@@ -277,11 +281,11 @@ public class Boss_Motion_animation : MonoBehaviour {
 
    private IEnumerator BossEnters()
    {
-	   while (transform.position.z < -4f)
+	   while (transform.position.z > 4f)
 	   {
 		   transform.rotation = Quaternion.Euler(0, 180, 0);
 		   //animation.CrossFade("curl");
-		   float amtToMove = 6.52f * Time.deltaTime;
+		   float amtToMove = 0.82f * Time.deltaTime;
 		   transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - amtToMove);
 		   yield return 0;
 	   }

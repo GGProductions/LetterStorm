@@ -34,34 +34,53 @@ namespace GGProductions.LetterStorm.Configuration.Collections
             EnemyDifficulty easy = new EnemyDifficulty(
                 1,
                 "Easy",
-                "Enemies are slower and spawn in smaller groups, the user has more initial lifes, and bosses are easier to defeat.  Recommended for young children who are new to gaming.",
-                0.7f,   // Game speed: slower than normal
-                7,      // Initial life count: more than normal
-                4,      // Max enemies on screen: less than normal
+                "Enemies are slower and spawn in smaller groups, the player takes less damage per hit, and bosses are easier to defeat.  Recommended for young children who are new to gaming.",
+                0.65f,   // Game speed: slower than normal
+                100,    // Initial health: normal
+                5,      // Damage taken per hit: less than normal
+                3,      // Max enemies on screen: less than normal
                 0.5f,   // Boss health modifier: less than normal
-                false); // Don't enable boss rage mode
+                false,  // Don't enable boss rage mode
+                0.5f,   // Boss cannon tracking accuracy: significant lag
+                1f,      // Boss cannon projectiles/second: slow fire rate //Using 1 , 0.7 and 0.2 as coefficients 
+                0.7f,   // Boss rage mode charge speed: less than normal
+                10,     // Big boss window to accept letters: larger than normal
+                5);     // Big boss window to deflect letters: normal
+                
 
             // Create the "Normal" difficulty level for children with some gaming experience
             EnemyDifficulty normal = new EnemyDifficulty(
                 5,
                 "Normal",
-                "Enemies confront the user in mid-sized groups, the user starts the game with a reasonable number of initial lifes, and bosses are challenging.  Recommended for children who have some experience gaming.",
+                "Enemies confront the user in mid-sized groups, the player takes reasonable damage per hit, and bosses are challenging.  Recommended for children who have some experience gaming.",
                 1.0f,   // Game speed: normal
-                5,      // Initial life count: normal
+                100,    // Initial health: normal
+                10,     // Damage taken per hit: normal
                 6,      // Max enemies on screen: normal
                 1.0f,   // Boss health modifier: normal
-                true);  // Enable boss rage mode
+                true,   // Enable boss rage mode
+                0.75f,  // Boss cannon tracking accuracy: slight lag
+                0.7f,      // Boss cannon projectiles/second: average fire rate
+                1.0f,   // Boss rage mode charge speed: normal
+                5,      // Big boss window to accept letters: normal
+                5);     // Big boss window to deflect letters: normal
 
             // Create the "Hard" difficulty level for older children with significant gaming experience
             EnemyDifficulty hard = new EnemyDifficulty(
                 9,
                 "Hard",
-                "Enemies are faster and spawn in large groups, the user has less initial lifes, and bosses are significantly challenging.  Recommended for older children who have significant experience gaming.",
+                "Enemies are faster and spawn in large groups, the player takes more damage per hit, and bosses are significantly challenging.  Recommended for older children who have significant experience gaming.",
                 1.3f,   // Game speed: faster than normal
-                3,      // Initial life count: less than normal
+                100,    // Initial life count: normal
+                20,     // Damage taken per hit: more than normal
                 10,     // Max enemies on screen: more than normal
                 1.5f,   // Boss health modifier: more than normal
-                true);  // Enable boss rage mode
+                true,   // Enable boss rage mode
+                1.0f,   // Boss cannon tracking accuracy: no lag
+                0.2f,      // Boss cannon projectiles/second: fast fire rate
+                1.3f,   // Boss rage mode charge speed: faster than normal
+                5,      // Big boss window to accept letters: normal
+                10);    // Big boss window to deflect letters: larger than normal
 
             // Add the enemy difficulty levels to this list
             this.Add(easy);

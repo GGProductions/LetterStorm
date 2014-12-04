@@ -3,11 +3,12 @@ using System.Collections;
 
 public class BossProjectile_V1 : MonoBehaviour {
 
-    public float projectileSpeed;
+    private float projectileSpeed;
     public GameObject explosion;
     void Start()
     {
-
+        projectileSpeed = 3f +  (float)Context.LevelNum;
+     //   Debug.Log("projectile speed is  " + projectileSpeed);
     }
 
     // Update is called once per frame
@@ -17,7 +18,7 @@ public class BossProjectile_V1 : MonoBehaviour {
         float moveY;
         moveY = projectileSpeed * Time.deltaTime;
         transform.Translate(Vector3.forward * moveY);
-        if (transform.position.z > 6.4f || transform.position.z < -7f || transform.position.x < -10f || transform.position.x > 10f) { Destroy(this.gameObject); }
+        if (transform.position.z > 8.4f || transform.position.z < -7f || transform.position.x < -10f || transform.position.x > 10f) { Destroy(this.gameObject); }
 
     }
 

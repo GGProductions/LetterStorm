@@ -5,6 +5,9 @@ public class LetterProjectileScript : MonoBehaviour {
 
     private float currentRotationSpeed;
 
+    void Awake() {
+    //    isactive = true; 
+    }
     // Use this for initialization
     void Start()
     {
@@ -25,6 +28,7 @@ public class LetterProjectileScript : MonoBehaviour {
         if (transform.position.z > 20 || transform.position.z < -10 || transform.position.x > 8 || transform.position.x < -8)
         {
             Messenger<char>.Broadcast("letter projectile died", this.transform.name[0]);
+          //  Debug.Log("yo im dead");
             Destroy(gameObject);
 
         }
@@ -33,6 +37,7 @@ public class LetterProjectileScript : MonoBehaviour {
         if (timer > 1f) {
             isactive = false; 
             this.transform.GetComponent<SphereCollider>().isTrigger = true;
+            gameObject.tag = "letterPickup";
             timer = 0;
             startCounter = false;
           
@@ -45,11 +50,12 @@ public class LetterProjectileScript : MonoBehaviour {
 
     void OnTriggerEnter(Collider otherObj)
     {
-       
 
+  
         
         if (otherObj.tag == "bossTag")
         {
+           
             this.transform.GetComponent<SphereCollider>().isTrigger = false;
             startCounter=true;
             timer = 0;
@@ -59,11 +65,11 @@ public class LetterProjectileScript : MonoBehaviour {
             //    Destroy(gameObject);
 
         }
-        if (otherObj.tag == "AlbertPrefab2")
+        if (otherObj.tag == "AlbertPrefab2"  )
         {
-            Debug.Log("I am letter --->albert");
-           // this.transform.GetComponent<SphereCollider>().isTrigger = true;
-            Destroy(gameObject);
+          // if(isactive)
+
+           Destroy(gameObject);
         }
            
     }

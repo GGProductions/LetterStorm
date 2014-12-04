@@ -46,8 +46,9 @@ public class Projectile : MonoBehaviour {
 
             //enemy.SetPositionAndSpeed();
             //Debug.Log(enemy.);
+            //Messenger.Broadcast("enemy down", )
             Destroy(gameObject);
-            Destroy(enemy);
+            //Destroy(enemy);
             Player.Score += 100;
 
         }

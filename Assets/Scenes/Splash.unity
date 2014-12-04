@@ -170,5 +170,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5e26754ac34740b28d3043211c2b105, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayTime: 5
+  delayTime: 2
   backgroundTexture: {fileID: 2800000, guid: f58443e9ed0d44cca960a8df2cb0a50a, type: 3}

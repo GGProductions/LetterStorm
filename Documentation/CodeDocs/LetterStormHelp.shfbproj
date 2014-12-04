@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <!-- The configuration and platform will be used to determine which assemblies to include from solution and
+				 project documentation sources -->
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{10ab3b08-c711-4d26-9142-2a4b094ac9dd}</ProjectGuid>
+    <SHFBSchemaVersion>1.9.9.0</SHFBSchemaVersion>
+    <!-- AssemblyName, Name, and RootNamespace are not used by SHFB but Visual Studio adds them anyway -->
+    <AssemblyName>Documentation</AssemblyName>
+    <RootNamespace>Documentation</RootNamespace>
+    <Name>Documentation</Name>
+    <!-- SHFB properties -->
+    <FrameworkVersion>.NET Framework 4.0</FrameworkVersion>
+    <OutputPath>Help\</OutputPath>
+    <HtmlHelpName>LetterStormDocumentation</HtmlHelpName>
+    <Language>en-US</Language>
+    <BuildAssemblerVerbosity>OnlyWarningsAndErrors</BuildAssemblerVerbosity>
+    <BuildLogFile>LetterStormDocs.log</BuildLogFile>
+    <HelpFileFormat>HtmlHelp1, Website</HelpFileFormat>
+    <IndentHtml>False</IndentHtml>
+    <KeepLogFile>True</KeepLogFile>
+    <DisableCodeBlockComponent>False</DisableCodeBlockComponent>
+    <CppCommentsFixup>False</CppCommentsFixup>
+    <CleanIntermediates>True</CleanIntermediates>
+    <MaximumGroupParts>2</MaximumGroupParts>
+    <NamespaceGrouping>True</NamespaceGrouping>
+    <SyntaxFilters>Standard</SyntaxFilters>
+    <SdkLinkTarget>Blank</SdkLinkTarget>
+    <RootNamespaceContainer>True</RootNamespaceContainer>
+    <PresentationStyle>VS2013</PresentationStyle>
+    <Preliminary>False</Preliminary>
+    <NamingMethod>MemberName</NamingMethod>
+    <HelpTitle>LetterStorm Source Code Documentation</HelpTitle>
+    <ContentPlacement>AboveNamespaces</ContentPlacement>
+    <WorkingPath>Temp\</WorkingPath>
+    <ComponentConfigurations>
+      <ComponentConfig id="API Token Resolution" enabled="True" xmlns="">
+        <component id="API Token Resolution">{@TokenFiles}
+<replace elements="/*//token" item="string(.)" /></component>
+      </ComponentConfig>
+      <ComponentConfig id="Code Block Component" enabled="True" xmlns="">
+        <component id="Code Block Component">
+          <basePath value="{@HtmlEncProjectFolder}" />
+          <outputPaths>{@HelpFormatOutputPaths}</outputPaths>
+          <allowMissingSource value="false" />
+          <removeRegionMarkers value="false" />
+          <colorizer syntaxFile="{@SHFBFolder}PresentationStyles\Colorizer\highlight.xml" styleFile="{@SHFBFolder}PresentationStyles\Colorizer\highlight.xsl" stylesheet="{@SHFBFolder}PresentationStyles\Colorizer\highlight.css" scriptFile="{@SHFBFolder}PresentationStyles\Colorizer\highlight.js" disabled="{@DisableCodeBlockComponent}" language="cs" tabSize="0" numberLines="false" outlining="false" keepSeeTags="false" defaultTitle="true" />
+        </component>
+      </ComponentConfig>
+      <ComponentConfig id="IntelliSense Component" enabled="True" xmlns="">
+        <component id="IntelliSense Component">
+          <!-- Output options (optional)
+  Attributes:
+    Include namespaces (false by default)
+    Namespaces comments filename ("Namespaces" if not specified or empty)
+    Output folder (current folder if not specified or empty) -->
+          <output includeNamespaces="false" namespacesFile="Namespaces" folder="{@OutputFolder}" />
+        </component>
+      </ComponentConfig>
+      <ComponentConfig id="Syntax Component" enabled="True" xmlns="">
+        <component id="Syntax Component">
+          <syntax input="/document/reference" output="/document/syntax" renderReferenceLinks="false" />
+          <generators>
+    {@SyntaxFilters}
+</generators>
+          <containerElement name="codeSnippetGroup" addNoExampleTabs="true" includeOnSingleSnippets="false" groupingEnabled="{@CodeSnippetGrouping}" />
+          <configurations>
+            <generator id="C#" />
+            <generator id="Visual Basic">
+              <includeLineContinuation value="false" />
+            </generator>
+            <generator id="Visual Basic Usage">
+              <includeLineContinuation value="false" />
+            </generator>
+            <generator id="Managed C++" />
+            <generator id="F#" />
+            <generator id="J#" />
+            <generator id="JScript" />
+            <generator id="JavaScript" />
+            <generator id="XAML Usage" />
+            <generator id="ASP.NET" />
+          </configurations>
+        </component>
+      </ComponentConfig>
+    </ComponentConfigurations>
+    <DocumentationSources>
+      <DocumentationSource sourceFile="..\..\Temp\bin\Debug\Assembly-CSharp.dll" />
+<DocumentationSource sourceFile="..\..\Temp\bin\Debug\Assembly-CSharp.XML" /></DocumentationSources>
+    <ApiFilter>
+      <Filter entryType="Namespace" fullName="" isExposed="False">
+        <Filter entryType="Class" fullName="Albert_force_controller" isExposed="True" />
+        <Filter entryType="Class" fullName="AlbertController" isExposed="True" />
+        <Filter entryType="Class" fullName="AlbertController2" isExposed="True" />
+        <Filter entryType="Class" fullName="AlbertController3" isExposed="True" />
+        <Filter entryType="Class" fullName="AlbertProjectile" isExposed="True" />
+        <Filter entryType="Class" fullName="AoeBall" isExposed="True" />
+        <Filter entryType="Class" fullName="AoePowerUp" isExposed="True" />
+        <Filter entryType="Class" fullName="BigBoss_motion_animation" isExposed="True" />
+        <Filter entryType="Class" fullName="Blank" isExposed="True" />
+        <Filter entryType="Class" fullName="Boss_3d_wordGen" isExposed="True" />
+        <Filter entryType="Delegate" fullName="Boss_3d_wordGen.BossgunsDied" isExposed="True" />
+        <Filter entryType="Delegate" fullName="Boss_3d_wordGen.wrongLetterCollision" isExposed="True" />
+        <Filter entryType="Class" fullName="Boss_Cannon_script" isExposed="True" />
+        <Filter entryType="Class" fullName="Boss_eye_and_gun" isExposed="True" />
+        <Filter entryType="Class" fullName="Boss_Eye_script" isExposed="True" />
+        <Filter entryType="Class" fullName="Boss_Motion_animation" isExposed="True" />
+        <Filter entryType="Class" fullName="Boss_move_PtP" isExposed="True" />
+        <Filter entryType="Class" fullName="boss_spinTest" isExposed="True" />
+        <Filter entryType="Class" fullName="Boss1_move" isExposed="True" />
+        <Filter entryType="Class" fullName="Boss1_moveV2" isExposed="True" />
+        <Filter entryType="Class" fullName="BossProjectile" isExposed="True" />
+        <Filter entryType="Class" fullName="BossProjectile_V1" isExposed="True" />
+        <Filter entryType="Class" fullName="BossShootInterval_V1" isExposed="True" />
+        <Filter entryType="Class" fullName="BossV1" isExposed="True" />
+        <Filter entryType="Delegate" fullName="Callback" isExposed="True" />
+        <Filter entryType="Delegate" fullName="Callback`3" isExposed="True" />
+        <Filter entryType="Delegate" fullName="Callback`2" isExposed="True" />
+        <Filter entryType="Delegate" fullName="Callback`1" isExposed="True" />
+        <Filter entryType="Class" fullName="CollectedLetter" isExposed="True" />
+        <Filter entryType="Class" fullName="CollectibleChar" isExposed="True" />
+        <Filter entryType="Class" fullName="collectVowelSize" isExposed="True" />
+        <Filter entryType="Class" fullName="conshellScript" isExposed="True" />
+        <Filter entryType="Class" fullName="Context" isExposed="True" />
+        <Filter entryType="Class" fullName="CreditsGeneratorScript" isExposed="True" />
+        <Filter entryType="Class" fullName="DualPencilProjectile" isExposed="True" />
+        <Filter entryType="Class" fullName="DualPenPickupScript" isExposed="True" />
+        <Filter entryType="Class" fullName="DumbEnemy" isExposed="True" />
+        <Filter entryType="Class" fullName="Enemy" isExposed="True" />
+        <Filter entryType="Class" fullName="EnemyGenerator" isExposed="True" />
+        <Filter entryType="Class" fullName="FadeBlack2Clear" isExposed="True" />
+        <Filter entryType="Class" fullName="GeneratedLand" isExposed="True" />
+        <Filter entryType="Class" fullName="HealthShroom" isExposed="True" />
+        <Filter entryType="Class" fullName="HourGlassScript" isExposed="True" />
+        <Filter entryType="Class" fullName="HUD" isExposed="True" />
+        <Filter entryType="Class" fullName="Hurricane_pickupScript" isExposed="True" />
+        <Filter entryType="Class" fullName="HurricaneOuterProjectile1" isExposed="True" />
+        <Filter entryType="Class" fullName="HurricaneProjectile" isExposed="True" />
+        <Filter entryType="Class" fullName="Inventory" isExposed="True" />
+        <Filter entryType="Class" fullName="LandGenerator" isExposed="True" />
+        <Filter entryType="Enumeration" fullName="LandGenerator.State" isExposed="True" />
+        <Filter entryType="Class" fullName="Learn" isExposed="True" />
+        <Filter entryType="Class" fullName="LetterCollect" isExposed="True" />
+        <Filter entryType="Class" fullName="LetterProjectileScript" isExposed="True" />
+        <Filter entryType="Class" fullName="letterScript_test" isExposed="True" />
+        <Filter entryType="Class" fullName="Lose" isExposed="True" />
+        <Filter entryType="Class" fullName="MainMenu" isExposed="True" />
+        <Filter entryType="Class" fullName="ManageLessons" isExposed="True" />
+        <Filter entryType="Class" fullName="Messenger" isExposed="True" />
+        <Filter entryType="Class" fullName="Messenger`3" isExposed="True" />
+        <Filter entryType="Class" fullName="Messenger`2" isExposed="True" />
+        <Filter entryType="Class" fullName="Messenger`1" isExposed="True" />
+        <Filter entryType="Enumeration" fullName="MessengerMode" isExposed="True" />
+        <Filter entryType="Class" fullName="movingWaypoint" isExposed="True" />
+        <Filter entryType="Class" fullName="MushroomScript" isExposed="True" />
+        <Filter entryType="Class" fullName="musics" isExposed="True" />
+        <Filter entryType="Class" fullName="NewBehaviourScript" isExposed="True" />
+        <Filter entryType="Class" fullName="NewGame" isExposed="True" />
+        <Filter entryType="Class" fullName="oldBigbossMove" isExposed="True" />
+        <Filter entryType="Class" fullName="OpenClose" isExposed="True" />
+        <Filter entryType="Class" fullName="Options" isExposed="True" />
+        <Filter entryType="Class" fullName="Pencil1Projectile" isExposed="True" />
+        <Filter entryType="Class" fullName="Pencil2Projectile" isExposed="True" />
+        <Filter entryType="Class" fullName="Player" isExposed="True" />
+        <Filter entryType="Class" fullName="PoisonousMushroom" isExposed="True" />
+        <Filter entryType="Class" fullName="PowerUp" isExposed="True" />
+        <Filter entryType="Class" fullName="Projectile" isExposed="True" />
+        <Filter entryType="Class" fullName="simpleScript" isExposed="True" />
+        <Filter entryType="Class" fullName="SmartEnemy" isExposed="True" />
+        <Filter entryType="Class" fullName="SpawnManager" isExposed="True" />
+        <Filter entryType="Class" fullName="Splash" isExposed="True" />
+        <Filter entryType="Class" fullName="Stars" isExposed="True" />
+        <Filter entryType="Class" fullName="terrainScroll" isExposed="True" />
+        <Filter entryType="Class" fullName="TimedShooting" isExposed="True" />
+        <Filter entryType="Class" fullName="Vowel" isExposed="True" />
+        <Filter entryType="Class" fullName="Win" isExposed="True" />
+        <Filter entryType="Class" fullName="WinAll" isExposed="True" />
+      </Filter>
+    </ApiFilter>
+    <VisibleItems>InheritedMembers, InheritedFrameworkMembers, Protected, ProtectedInternalAsProtected</VisibleItems>
+    <MissingTags>AutoDocumentCtors, AutoDocumentDispose</MissingTags>
+  </PropertyGroup>
+  <!-- There are no properties for these groups.  AnyCPU needs to appear in order for Visual Studio to perform
+			 the build.  The others are optional common platform types that may appear. -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Win32' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Win32' ">
+  </PropertyGroup>
+  <!-- Import the SHFB build targets -->
+  <Import Project="$(SHFBROOT)\SandcastleHelpFileBuilder.targets" />
+</Project>

@@ -10,6 +10,15 @@ TagManager:
   - bossTag
   - bossProjectileTag
   - letterProjectile
+  - aoeTag
+  - dualpencilProjectile
+  - clawTag
+  - smartProjectile
+  - slowDown
+  - poisonousMushroomPowerUp
+  - hurricane_pickupTag
+  - letterPickup
+  - HeathShroomTag
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

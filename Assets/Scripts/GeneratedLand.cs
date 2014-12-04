@@ -39,9 +39,10 @@ public class GeneratedLand : MonoBehaviour {
         {
             landGenScript.Changestate();
             Destroy(gameObject);
-            //old option to send th eblock back to the start w
-          //  transform.position = new Vector3(transform.position.x, transform.position.y, 176f);
+ 
         }
+    
+
     }
 
 

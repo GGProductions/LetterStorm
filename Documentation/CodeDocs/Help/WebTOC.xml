@@ -1,0 +1,1003 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOC>
+
+  <HelpTOCNode Id="9a6dd840-8dca-4dee-96b5-cf81268c2785" Title="Namespaces" Url="html/R_Project_LetterStormDocumentation.htm">
+    <HelpTOCNode Id="1bf8d3a3-09d1-4a3c-aa2f-de0e94d72001" Title="( Default Namespace )" Url="html/N_.htm">
+      <HelpTOCNode Id="1dcd4c50-f692-455f-88dd-8dae7a2a0b90" Title="Albert_force_controller Class" Url="html/T_Albert_force_controller.htm">
+        <HelpTOCNode Title="Albert_force_controller Constructor " Url="html/M_Albert_force_controller__ctor.htm" />
+        <HelpTOCNode Id="fb16865b-6119-49fa-8710-61f5f794c997" Title="Albert_force_controller Fields" Url="html/Fields_T_Albert_force_controller.htm">
+          <HelpTOCNode Title="fallAnimationClip Field" Url="html/F_Albert_force_controller_fallAnimationClip.htm" />
+          <HelpTOCNode Title="HurricaneProjectile Field" Url="html/F_Albert_force_controller_HurricaneProjectile.htm" />
+          <HelpTOCNode Title="idleAnimationClip Field" Url="html/F_Albert_force_controller_idleAnimationClip.htm" />
+          <HelpTOCNode Title="LetterBulletname Field" Url="html/F_Albert_force_controller_LetterBulletname.htm" />
+          <HelpTOCNode Title="LetterMode Field" Url="html/F_Albert_force_controller_LetterMode.htm" />
+          <HelpTOCNode Title="ProjectilePrefab Field" Url="html/F_Albert_force_controller_ProjectilePrefab.htm" />
+          <HelpTOCNode Title="SecondaryProjectilePrefab Field" Url="html/F_Albert_force_controller_SecondaryProjectilePrefab.htm" />
+          <HelpTOCNode Title="throwAnimationClip Field" Url="html/F_Albert_force_controller_throwAnimationClip.htm" />
+          <HelpTOCNode Title="wakBackAnimationClip Field" Url="html/F_Albert_force_controller_wakBackAnimationClip.htm" />
+          <HelpTOCNode Title="walkAnimationClip Field" Url="html/F_Albert_force_controller_walkAnimationClip.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Albert_force_controller Methods" Url="html/Methods_T_Albert_force_controller.htm" />
+        <HelpTOCNode Title="Albert_force_controller Properties" Url="html/Properties_T_Albert_force_controller.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="59f075a2-606c-43cf-8157-739356ce8f73" Title="AlbertController Class" Url="html/T_AlbertController.htm">
+        <HelpTOCNode Title="AlbertController Constructor " Url="html/M_AlbertController__ctor.htm" />
+        <HelpTOCNode Id="af653092-bafb-4706-b23a-fba2f84d38c5" Title="AlbertController Fields" Url="html/Fields_T_AlbertController.htm">
+          <HelpTOCNode Title="fallAnimationClip Field" Url="html/F_AlbertController_fallAnimationClip.htm" />
+          <HelpTOCNode Title="idleAnimationClip Field" Url="html/F_AlbertController_idleAnimationClip.htm" />
+          <HelpTOCNode Title="PlayerSpeed Field" Url="html/F_AlbertController_PlayerSpeed.htm" />
+          <HelpTOCNode Title="ProjectilePrefab Field" Url="html/F_AlbertController_ProjectilePrefab.htm" />
+          <HelpTOCNode Title="rotateSpeed Field" Url="html/F_AlbertController_rotateSpeed.htm" />
+          <HelpTOCNode Title="smooth Field" Url="html/F_AlbertController_smooth.htm" />
+          <HelpTOCNode Title="tiltAngle Field" Url="html/F_AlbertController_tiltAngle.htm" />
+          <HelpTOCNode Title="walkAnimationClip Field" Url="html/F_AlbertController_walkAnimationClip.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="AlbertController Methods" Url="html/Methods_T_AlbertController.htm" />
+        <HelpTOCNode Title="AlbertController Properties" Url="html/Properties_T_AlbertController.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="c0cbe8ea-bf6a-492c-b86d-8d2f20af45d2" Title="AlbertController2 Class" Url="html/T_AlbertController2.htm">
+        <HelpTOCNode Title="AlbertController2 Constructor " Url="html/M_AlbertController2__ctor.htm" />
+        <HelpTOCNode Id="4cc4ce6d-1892-44ee-a711-b116432553dc" Title="AlbertController2 Fields" Url="html/Fields_T_AlbertController2.htm">
+          <HelpTOCNode Title="aoeBall Field" Url="html/F_AlbertController2_aoeBall.htm" />
+          <HelpTOCNode Title="fallAnimationClip Field" Url="html/F_AlbertController2_fallAnimationClip.htm" />
+          <HelpTOCNode Title="idleAnimationClip Field" Url="html/F_AlbertController2_idleAnimationClip.htm" />
+          <HelpTOCNode Title="LetterBulletname Field" Url="html/F_AlbertController2_LetterBulletname.htm" />
+          <HelpTOCNode Title="LetterMode Field" Url="html/F_AlbertController2_LetterMode.htm" />
+          <HelpTOCNode Title="PlayerSpeed Field" Url="html/F_AlbertController2_PlayerSpeed.htm" />
+          <HelpTOCNode Title="ProjectilePrefab Field" Url="html/F_AlbertController2_ProjectilePrefab.htm" />
+          <HelpTOCNode Title="rotateSpeed Field" Url="html/F_AlbertController2_rotateSpeed.htm" />
+          <HelpTOCNode Title="smooth Field" Url="html/F_AlbertController2_smooth.htm" />
+          <HelpTOCNode Title="throwAnimationClip Field" Url="html/F_AlbertController2_throwAnimationClip.htm" />
+          <HelpTOCNode Title="tiltAngle Field" Url="html/F_AlbertController2_tiltAngle.htm" />
+          <HelpTOCNode Title="wakBackAnimationClip Field" Url="html/F_AlbertController2_wakBackAnimationClip.htm" />
+          <HelpTOCNode Title="walkAnimationClip Field" Url="html/F_AlbertController2_walkAnimationClip.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="AlbertController2 Methods" Url="html/Methods_T_AlbertController2.htm" />
+        <HelpTOCNode Title="AlbertController2 Properties" Url="html/Properties_T_AlbertController2.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="a3db9a7e-66fe-4cbd-a410-52cd18239428" Title="AlbertController3 Class" Url="html/T_AlbertController3.htm">
+        <HelpTOCNode Title="AlbertController3 Constructor " Url="html/M_AlbertController3__ctor.htm" />
+        <HelpTOCNode Title="AlbertController3 Methods" Url="html/Methods_T_AlbertController3.htm" />
+        <HelpTOCNode Title="AlbertController3 Properties" Url="html/Properties_T_AlbertController3.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="98bd39b6-99ad-43cd-a64b-5c7e1a41d63e" Title="AlbertProjectile Class" Url="html/T_AlbertProjectile.htm">
+        <HelpTOCNode Title="AlbertProjectile Constructor " Url="html/M_AlbertProjectile__ctor.htm" />
+        <HelpTOCNode Id="8402c3c1-97e1-4391-b560-3105db9d35f7" Title="AlbertProjectile Fields" Url="html/Fields_T_AlbertProjectile.htm">
+          <HelpTOCNode Title="PencilExplosion Field" Url="html/F_AlbertProjectile_PencilExplosion.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="AlbertProjectile Methods" Url="html/Methods_T_AlbertProjectile.htm" />
+        <HelpTOCNode Title="AlbertProjectile Properties" Url="html/Properties_T_AlbertProjectile.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="d1aa074e-ba9e-4960-8ea5-e4dd3a735981" Title="AoeBall Class" Url="html/T_AoeBall.htm">
+        <HelpTOCNode Title="AoeBall Constructor " Url="html/M_AoeBall__ctor.htm" />
+        <HelpTOCNode Title="AoeBall Methods" Url="html/Methods_T_AoeBall.htm" />
+        <HelpTOCNode Title="AoeBall Properties" Url="html/Properties_T_AoeBall.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="fb77ebdc-48d1-4633-92ba-fc05b4229f9b" Title="AoePowerUp Class" Url="html/T_AoePowerUp.htm">
+        <HelpTOCNode Title="AoePowerUp Constructor " Url="html/M_AoePowerUp__ctor.htm" />
+        <HelpTOCNode Id="d7d8da23-bc26-4416-97d0-16b24ee8ec88" Title="AoePowerUp Fields" Url="html/Fields_T_AoePowerUp.htm">
+          <HelpTOCNode Title="aoe Field" Url="html/F_AoePowerUp_aoe.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="AoePowerUp Methods" Url="html/Methods_T_AoePowerUp.htm" />
+        <HelpTOCNode Title="AoePowerUp Properties" Url="html/Properties_T_AoePowerUp.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="bd7c1657-672b-44ec-adae-62570607aef5" Title="BigBoss_motion_animation Class" Url="html/T_BigBoss_motion_animation.htm">
+        <HelpTOCNode Title="BigBoss_motion_animation Constructor " Url="html/M_BigBoss_motion_animation__ctor.htm" />
+        <HelpTOCNode Id="0113f9c8-e358-46a4-b124-4341dcf25901" Title="BigBoss_motion_animation Fields" Url="html/Fields_T_BigBoss_motion_animation.htm">
+          <HelpTOCNode Title="closeClaw Field" Url="html/F_BigBoss_motion_animation_closeClaw.htm" />
+          <HelpTOCNode Title="openClaw Field" Url="html/F_BigBoss_motion_animation_openClaw.htm" />
+          <HelpTOCNode Title="slither Field" Url="html/F_BigBoss_motion_animation_slither.htm" />
+          <HelpTOCNode Title="transList Field" Url="html/F_BigBoss_motion_animation_transList.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="c91ce676-d263-4ede-9e31-019d7c5d6e7c" Title="BigBoss_motion_animation Methods" Url="html/Methods_T_BigBoss_motion_animation.htm">
+          <HelpTOCNode Title="CHaaaarge Method " Url="html/M_BigBoss_motion_animation_CHaaaarge.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="BigBoss_motion_animation Properties" Url="html/Properties_T_BigBoss_motion_animation.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="4836828d-3d17-4161-8d03-e70bc12c1c08" Title="Blank Class" Url="html/T_Blank.htm">
+        <HelpTOCNode Title="Blank Constructor " Url="html/M_Blank__ctor.htm" />
+        <HelpTOCNode Id="ab85ec2b-5118-4436-988e-4989960b715f" Title="Blank Fields" Url="html/Fields_T_Blank.htm">
+          <HelpTOCNode Title="backgroundTexture Field" Url="html/F_Blank_backgroundTexture.htm" />
+          <HelpTOCNode Title="storyTexture Field" Url="html/F_Blank_storyTexture.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Blank Methods" Url="html/Methods_T_Blank.htm" />
+        <HelpTOCNode Title="Blank Properties" Url="html/Properties_T_Blank.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="6db4be2a-9c55-4228-bdec-e05a84a9305e" Title="Boss_3d_wordGen Class" Url="html/T_Boss_3d_wordGen.htm">
+        <HelpTOCNode Title="Boss_3d_wordGen Constructor " Url="html/M_Boss_3d_wordGen__ctor.htm" />
+        <HelpTOCNode Id="a3033466-208e-41d2-a6a0-431a29c39ed9" Title="Boss_3d_wordGen Methods" Url="html/Methods_T_Boss_3d_wordGen.htm">
+          <HelpTOCNode Title="AcannonHasDied Method " Url="html/M_Boss_3d_wordGen_AcannonHasDied.htm" />
+          <HelpTOCNode Title="AllerAlbert Method " Url="html/M_Boss_3d_wordGen_AllerAlbert.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Boss_3d_wordGen Properties" Url="html/Properties_T_Boss_3d_wordGen.htm" />
+        <HelpTOCNode Id="a3e77213-b59f-4934-adfe-0aa5472e4860" Title="Boss_3d_wordGen Events" Url="html/Events_T_Boss_3d_wordGen.htm">
+          <HelpTOCNode Title="OnMyGunsDied Event" Url="html/E_Boss_3d_wordGen_OnMyGunsDied.htm" />
+          <HelpTOCNode Title="OnWrongCollision Event" Url="html/E_Boss_3d_wordGen_OnWrongCollision.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Title="Boss_3d_wordGen.BossgunsDied Delegate" Url="html/T_Boss_3d_wordGen_BossgunsDied.htm" />
+      <HelpTOCNode Title="Boss_3d_wordGen.wrongLetterCollision Delegate" Url="html/T_Boss_3d_wordGen_wrongLetterCollision.htm" />
+      <HelpTOCNode Id="1744b5d9-79cc-4f33-9856-8ffcf3775669" Title="Boss_Cannon_script Class" Url="html/T_Boss_Cannon_script.htm">
+        <HelpTOCNode Title="Boss_Cannon_script Constructor " Url="html/M_Boss_Cannon_script__ctor.htm" />
+        <HelpTOCNode Id="29ae8459-769c-479d-9332-0b895858c6cb" Title="Boss_Cannon_script Fields" Url="html/Fields_T_Boss_Cannon_script.htm">
+          <HelpTOCNode Title="cannonAngleDamp Field" Url="html/F_Boss_Cannon_script_cannonAngleDamp.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Boss_Cannon_script Methods" Url="html/Methods_T_Boss_Cannon_script.htm" />
+        <HelpTOCNode Title="Boss_Cannon_script Properties" Url="html/Properties_T_Boss_Cannon_script.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="a1228ead-e2b6-46cc-8fc5-08c5eaffac63" Title="Boss_eye_and_gun Class" Url="html/T_Boss_eye_and_gun.htm">
+        <HelpTOCNode Title="Boss_eye_and_gun Constructor " Url="html/M_Boss_eye_and_gun__ctor.htm" />
+        <HelpTOCNode Id="ccf93a7a-4003-4ad5-8f51-2b6c10843496" Title="Boss_eye_and_gun Fields" Url="html/Fields_T_Boss_eye_and_gun.htm">
+          <HelpTOCNode Title="angleNeeded Field" Url="html/F_Boss_eye_and_gun_angleNeeded.htm" />
+          <HelpTOCNode Title="damp Field" Url="html/F_Boss_eye_and_gun_damp.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Boss_eye_and_gun Methods" Url="html/Methods_T_Boss_eye_and_gun.htm" />
+        <HelpTOCNode Title="Boss_eye_and_gun Properties" Url="html/Properties_T_Boss_eye_and_gun.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="b622b94c-618c-4a02-a56b-1af8b95ffe17" Title="Boss_Eye_script Class" Url="html/T_Boss_Eye_script.htm">
+        <HelpTOCNode Title="Boss_Eye_script Constructor " Url="html/M_Boss_Eye_script__ctor.htm" />
+        <HelpTOCNode Id="5bd4b74d-651f-471e-9146-afbbf24d159d" Title="Boss_Eye_script Fields" Url="html/Fields_T_Boss_Eye_script.htm">
+          <HelpTOCNode Title="angleNeeded Field" Url="html/F_Boss_Eye_script_angleNeeded.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="f567626f-8e27-4da5-a0a7-85d241fa6072" Title="Boss_Eye_script Methods" Url="html/Methods_T_Boss_Eye_script.htm">
+          <HelpTOCNode Title="Awake Method " Url="html/M_Boss_Eye_script_Awake.htm" />
+          <HelpTOCNode Title="DoFlashEye Method " Url="html/M_Boss_Eye_script_DoFlashEye.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Boss_Eye_script Properties" Url="html/Properties_T_Boss_Eye_script.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="85effb63-0f98-4907-afdb-403d89caa9c5" Title="Boss_Motion_animation Class" Url="html/T_Boss_Motion_animation.htm">
+        <HelpTOCNode Title="Boss_Motion_animation Constructor " Url="html/M_Boss_Motion_animation__ctor.htm" />
+        <HelpTOCNode Id="8ef998c6-ceb1-46ed-91d9-4c4433a1adfb" Title="Boss_Motion_animation Fields" Url="html/Fields_T_Boss_Motion_animation.htm">
+          <HelpTOCNode Title="ActionAnimationClip Field" Url="html/F_Boss_Motion_animation_ActionAnimationClip.htm" />
+          <HelpTOCNode Title="CurlUpAnimationClip Field" Url="html/F_Boss_Motion_animation_CurlUpAnimationClip.htm" />
+          <HelpTOCNode Title="UncurlAnimationClip Field" Url="html/F_Boss_Motion_animation_UncurlAnimationClip.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="78ccf8c7-cf7c-43b1-aa74-1e1f9eea5461" Title="Boss_Motion_animation Methods" Url="html/Methods_T_Boss_Motion_animation.htm">
+          <HelpTOCNode Title="CHaaaarge Method " Url="html/M_Boss_Motion_animation_CHaaaarge.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Boss_Motion_animation Properties" Url="html/Properties_T_Boss_Motion_animation.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="5bc4ccaa-d6e7-4a6e-bcd9-87d268261719" Title="Boss_move_PtP Class" Url="html/T_Boss_move_PtP.htm">
+        <HelpTOCNode Title="Boss_move_PtP Constructor " Url="html/M_Boss_move_PtP__ctor.htm" />
+        <HelpTOCNode Id="ea3991a6-1002-4617-93c5-40fb9762ad56" Title="Boss_move_PtP Fields" Url="html/Fields_T_Boss_move_PtP.htm">
+          <HelpTOCNode Title="ActionAnimationClip Field" Url="html/F_Boss_move_PtP_ActionAnimationClip.htm" />
+          <HelpTOCNode Title="CurlUpAnimationClip Field" Url="html/F_Boss_move_PtP_CurlUpAnimationClip.htm" />
+          <HelpTOCNode Title="UncurlAnimationClip Field" Url="html/F_Boss_move_PtP_UncurlAnimationClip.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="6a68484d-6b62-41a6-a4aa-f86c738776c8" Title="Boss_move_PtP Methods" Url="html/Methods_T_Boss_move_PtP.htm">
+          <HelpTOCNode Title="CHaaaarge Method " Url="html/M_Boss_move_PtP_CHaaaarge.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Boss_move_PtP Properties" Url="html/Properties_T_Boss_move_PtP.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="c1a5dd8d-09bd-4db9-8ad3-61fab7b0309c" Title="boss_spinTest Class" Url="html/T_boss_spinTest.htm">
+        <HelpTOCNode Title="boss_spinTest Constructor " Url="html/M_boss_spinTest__ctor.htm" />
+        <HelpTOCNode Title="boss_spinTest Methods" Url="html/Methods_T_boss_spinTest.htm" />
+        <HelpTOCNode Title="boss_spinTest Properties" Url="html/Properties_T_boss_spinTest.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="c8a1303f-a1b3-46b5-86c0-cacec0c703d9" Title="Boss1_move Class" Url="html/T_Boss1_move.htm">
+        <HelpTOCNode Title="Boss1_move Constructor " Url="html/M_Boss1_move__ctor.htm" />
+        <HelpTOCNode Id="fb9c8f17-69ab-4ed9-a91b-c51e6820463e" Title="Boss1_move Fields" Url="html/Fields_T_Boss1_move.htm">
+          <HelpTOCNode Title="ActionAnimationClip Field" Url="html/F_Boss1_move_ActionAnimationClip.htm" />
+          <HelpTOCNode Title="CurlUpAnimationClip Field" Url="html/F_Boss1_move_CurlUpAnimationClip.htm" />
+          <HelpTOCNode Title="rot Field" Url="html/F_Boss1_move_rot.htm" />
+          <HelpTOCNode Title="UncurlAnimationClip Field" Url="html/F_Boss1_move_UncurlAnimationClip.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="35e0ee97-3b8f-44b5-a4e9-21eafd3e3324" Title="Boss1_move Methods" Url="html/Methods_T_Boss1_move.htm">
+          <HelpTOCNode Title="getPissed Method " Url="html/M_Boss1_move_getPissed.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Boss1_move Properties" Url="html/Properties_T_Boss1_move.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="137cabfb-25a0-4df7-b151-92df47786e27" Title="Boss1_moveV2 Class" Url="html/T_Boss1_moveV2.htm">
+        <HelpTOCNode Title="Boss1_moveV2 Constructor " Url="html/M_Boss1_moveV2__ctor.htm" />
+        <HelpTOCNode Id="9a6d341c-6855-426a-a113-1928d226cc97" Title="Boss1_moveV2 Fields" Url="html/Fields_T_Boss1_moveV2.htm">
+          <HelpTOCNode Title="ActionAnimationClip Field" Url="html/F_Boss1_moveV2_ActionAnimationClip.htm" />
+          <HelpTOCNode Title="CurlUpAnimationClip Field" Url="html/F_Boss1_moveV2_CurlUpAnimationClip.htm" />
+          <HelpTOCNode Title="rot Field" Url="html/F_Boss1_moveV2_rot.htm" />
+          <HelpTOCNode Title="UncurlAnimationClip Field" Url="html/F_Boss1_moveV2_UncurlAnimationClip.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="facb71d2-b253-491e-b711-24f96d4a71ea" Title="Boss1_moveV2 Methods" Url="html/Methods_T_Boss1_moveV2.htm">
+          <HelpTOCNode Title="getPissed Method " Url="html/M_Boss1_moveV2_getPissed.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Boss1_moveV2 Properties" Url="html/Properties_T_Boss1_moveV2.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="e75c9485-4538-4ad6-856e-8d1d8286d005" Title="BossProjectile Class" Url="html/T_BossProjectile.htm">
+        <HelpTOCNode Title="BossProjectile Constructor " Url="html/M_BossProjectile__ctor.htm" />
+        <HelpTOCNode Id="3ead8013-7c57-4800-a277-1609f0a1fedb" Title="BossProjectile Fields" Url="html/Fields_T_BossProjectile.htm">
+          <HelpTOCNode Title="explosion Field" Url="html/F_BossProjectile_explosion.htm" />
+          <HelpTOCNode Title="projectileSpeed Field" Url="html/F_BossProjectile_projectileSpeed.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="BossProjectile Methods" Url="html/Methods_T_BossProjectile.htm" />
+        <HelpTOCNode Title="BossProjectile Properties" Url="html/Properties_T_BossProjectile.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="b4c366f7-1a5f-4fba-85da-991330b93c70" Title="BossProjectile_V1 Class" Url="html/T_BossProjectile_V1.htm">
+        <HelpTOCNode Title="BossProjectile_V1 Constructor " Url="html/M_BossProjectile_V1__ctor.htm" />
+        <HelpTOCNode Id="e0654bea-babf-4f1f-bbbb-ced47eb0e3db" Title="BossProjectile_V1 Fields" Url="html/Fields_T_BossProjectile_V1.htm">
+          <HelpTOCNode Title="explosion Field" Url="html/F_BossProjectile_V1_explosion.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="BossProjectile_V1 Methods" Url="html/Methods_T_BossProjectile_V1.htm" />
+        <HelpTOCNode Title="BossProjectile_V1 Properties" Url="html/Properties_T_BossProjectile_V1.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="005fbe8a-d8ab-4d5d-b05b-973815c88d79" Title="BossShootInterval_V1 Class" Url="html/T_BossShootInterval_V1.htm">
+        <HelpTOCNode Title="BossShootInterval_V1 Constructor " Url="html/M_BossShootInterval_V1__ctor.htm" />
+        <HelpTOCNode Id="34e726df-7c86-4724-a934-7dd152b0dae9" Title="BossShootInterval_V1 Fields" Url="html/Fields_T_BossShootInterval_V1.htm">
+          <HelpTOCNode Title="fireRate Field" Url="html/F_BossShootInterval_V1_fireRate.htm" />
+          <HelpTOCNode Title="theShot Field" Url="html/F_BossShootInterval_V1_theShot.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="BossShootInterval_V1 Methods" Url="html/Methods_T_BossShootInterval_V1.htm" />
+        <HelpTOCNode Title="BossShootInterval_V1 Properties" Url="html/Properties_T_BossShootInterval_V1.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="0e52527c-3748-4fad-a5d9-5b4bbe06fcb4" Title="BossV1 Class" Url="html/T_BossV1.htm">
+        <HelpTOCNode Title="BossV1 Constructor " Url="html/M_BossV1__ctor.htm" />
+        <HelpTOCNode Id="f6ef3254-eb29-402a-ac33-7d7b48492b45" Title="BossV1 Fields" Url="html/Fields_T_BossV1.htm">
+          <HelpTOCNode Title="angleNeeded Field" Url="html/F_BossV1_angleNeeded.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="BossV1 Methods" Url="html/Methods_T_BossV1.htm" />
+        <HelpTOCNode Title="BossV1 Properties" Url="html/Properties_T_BossV1.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="Callback Delegate" Url="html/T_Callback.htm" />
+      <HelpTOCNode Title="Callback(T) Delegate" Url="html/T_Callback_1.htm" />
+      <HelpTOCNode Title="Callback(T, U) Delegate" Url="html/T_Callback_2.htm" />
+      <HelpTOCNode Title="Callback(T, U, V) Delegate" Url="html/T_Callback_3.htm" />
+      <HelpTOCNode Id="c7e5f09f-a843-4e16-a6a6-bf6d5349f367" Title="CollectedLetter Class" Url="html/T_CollectedLetter.htm">
+        <HelpTOCNode Id="c7ccb07c-585a-4e00-9965-2cedecfb027f" Title="CollectedLetter Constructor " Url="html/Overload_CollectedLetter__ctor.htm">
+          <HelpTOCNode Title="CollectedLetter Constructor (String)" Url="html/M_CollectedLetter__ctor.htm" />
+          <HelpTOCNode Title="CollectedLetter Constructor (String, Int32)" Url="html/M_CollectedLetter__ctor_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="CollectedLetter Methods" Url="html/Methods_T_CollectedLetter.htm" />
+        <HelpTOCNode Id="01a55f69-2ce8-462d-927f-889cc42278fe" Title="CollectedLetter Properties" Url="html/Properties_T_CollectedLetter.htm">
+          <HelpTOCNode Title="Count Property " Url="html/P_CollectedLetter_Count.htm" />
+          <HelpTOCNode Title="isEmpty Property " Url="html/P_CollectedLetter_isEmpty.htm" />
+          <HelpTOCNode Title="Name Property " Url="html/P_CollectedLetter_Name.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="c3a03af9-7585-47fc-ba84-7502cbf811fb" Title="CollectibleChar Class" Url="html/T_CollectibleChar.htm">
+        <HelpTOCNode Title="CollectibleChar Constructor " Url="html/M_CollectibleChar__ctor.htm" />
+        <HelpTOCNode Id="a18f2d8c-1409-4e49-abfa-eb0afe32967f" Title="CollectibleChar Fields" Url="html/Fields_T_CollectibleChar.htm">
+          <HelpTOCNode Title="wasThrwon Field" Url="html/F_CollectibleChar_wasThrwon.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="CollectibleChar Methods" Url="html/Methods_T_CollectibleChar.htm" />
+        <HelpTOCNode Title="CollectibleChar Properties" Url="html/Properties_T_CollectibleChar.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="bea0c3c1-9f27-42bd-a83b-a74c19d97107" Title="collectVowelSize Class" Url="html/T_collectVowelSize.htm">
+        <HelpTOCNode Title="collectVowelSize Constructor " Url="html/M_collectVowelSize__ctor.htm" />
+        <HelpTOCNode Title="collectVowelSize Methods" Url="html/Methods_T_collectVowelSize.htm" />
+        <HelpTOCNode Title="collectVowelSize Properties" Url="html/Properties_T_collectVowelSize.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="5b0f03f4-47c6-4d61-a9ab-2cf3a0fe9d60" Title="conshellScript Class" Url="html/T_conshellScript.htm">
+        <HelpTOCNode Title="conshellScript Constructor " Url="html/M_conshellScript__ctor.htm" />
+        <HelpTOCNode Id="a54e7daf-0835-4ebe-939c-0447ef679e6b" Title="conshellScript Fields" Url="html/Fields_T_conshellScript.htm">
+          <HelpTOCNode Title="conson Field" Url="html/F_conshellScript_conson.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="conshellScript Methods" Url="html/Methods_T_conshellScript.htm" />
+        <HelpTOCNode Title="conshellScript Properties" Url="html/Properties_T_conshellScript.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="36512560-0989-4c37-bed7-51c1ad350b2e" Title="Context Class" Url="html/T_Context.htm">
+        <HelpTOCNode Title="Context Constructor " Url="html/M_Context__ctor.htm" />
+        <HelpTOCNode Id="ef0a54e1-7280-4d8b-9780-5004a8bb5a71" Title="Context Methods" Url="html/Methods_T_Context.htm">
+          <HelpTOCNode Title="ClearStatsNextLevel Method " Url="html/M_Context_ClearStatsNextLevel.htm" />
+          <HelpTOCNode Title="PrepareForNextLevel Method " Url="html/M_Context_PrepareForNextLevel.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="9876cb9b-d32b-4c15-b425-93ae2fe21a8c" Title="Context Properties" Url="html/Properties_T_Context.htm">
+          <HelpTOCNode Title="Alphabet Property " Url="html/P_Context_Alphabet.htm" />
+          <HelpTOCNode Title="CurrentLessonId Property " Url="html/P_Context_CurrentLessonId.htm" />
+          <HelpTOCNode Title="CurrentScore Property " Url="html/P_Context_CurrentScore.htm" />
+          <HelpTOCNode Title="Curriculum Property " Url="html/P_Context_Curriculum.htm" />
+          <HelpTOCNode Title="DualPencils Property " Url="html/P_Context_DualPencils.htm" />
+          <HelpTOCNode Title="EnemyDifficulty Property " Url="html/P_Context_EnemyDifficulty.htm" />
+          <HelpTOCNode Title="LevelNum Property " Url="html/P_Context_LevelNum.htm" />
+          <HelpTOCNode Title="PlayerHealth Property " Url="html/P_Context_PlayerHealth.htm" />
+          <HelpTOCNode Title="PlayerInventory Property " Url="html/P_Context_PlayerInventory.htm" />
+          <HelpTOCNode Title="SelectedLetter Property " Url="html/P_Context_SelectedLetter.htm" />
+          <HelpTOCNode Title="SelectedPowerUp Property " Url="html/P_Context_SelectedPowerUp.htm" />
+          <HelpTOCNode Title="Word Property " Url="html/P_Context_Word.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="25b8b042-8962-4d14-b434-92dded9c412f" Title="CreditsGeneratorScript Class" Url="html/T_CreditsGeneratorScript.htm">
+        <HelpTOCNode Title="CreditsGeneratorScript Constructor " Url="html/M_CreditsGeneratorScript__ctor.htm" />
+        <HelpTOCNode Title="CreditsGeneratorScript Methods" Url="html/Methods_T_CreditsGeneratorScript.htm" />
+        <HelpTOCNode Title="CreditsGeneratorScript Properties" Url="html/Properties_T_CreditsGeneratorScript.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="b3968732-eff2-4fdd-9406-a3b53bf80c55" Title="DualPencilProjectile Class" Url="html/T_DualPencilProjectile.htm">
+        <HelpTOCNode Title="DualPencilProjectile Constructor " Url="html/M_DualPencilProjectile__ctor.htm" />
+        <HelpTOCNode Title="DualPencilProjectile Methods" Url="html/Methods_T_DualPencilProjectile.htm" />
+        <HelpTOCNode Title="DualPencilProjectile Properties" Url="html/Properties_T_DualPencilProjectile.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="9ce83c20-3dc9-4e8b-9f78-d7d03cd6b38b" Title="DualPenPickupScript Class" Url="html/T_DualPenPickupScript.htm">
+        <HelpTOCNode Title="DualPenPickupScript Constructor " Url="html/M_DualPenPickupScript__ctor.htm" />
+        <HelpTOCNode Title="DualPenPickupScript Methods" Url="html/Methods_T_DualPenPickupScript.htm" />
+        <HelpTOCNode Title="DualPenPickupScript Properties" Url="html/Properties_T_DualPenPickupScript.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="3feaeee8-efa3-4aa0-90d0-ecdd3baed8a0" Title="DumbEnemy Class" Url="html/T_DumbEnemy.htm">
+        <HelpTOCNode Title="DumbEnemy Constructor " Url="html/M_DumbEnemy__ctor.htm" />
+        <HelpTOCNode Title="DumbEnemy Fields" Url="html/Fields_T_DumbEnemy.htm" />
+        <HelpTOCNode Id="22be6c4b-d860-45a6-be24-4503f5d5aa08" Title="DumbEnemy Methods" Url="html/Methods_T_DumbEnemy.htm">
+          <HelpTOCNode Title="MoveEnemy Method " Url="html/M_DumbEnemy_MoveEnemy.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="DumbEnemy Properties" Url="html/Properties_T_DumbEnemy.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="1fbc2012-8076-44b3-9ce4-b1c1f377f506" Title="Enemy Class" Url="html/T_Enemy.htm">
+        <HelpTOCNode Title="Enemy Constructor " Url="html/M_Enemy__ctor.htm" />
+        <HelpTOCNode Id="9d5ab211-edce-4b0a-990d-d5d9240427bf" Title="Enemy Fields" Url="html/Fields_T_Enemy.htm">
+          <HelpTOCNode Title="MaxSpeed Field" Url="html/F_Enemy_MaxSpeed.htm" />
+          <HelpTOCNode Title="MinSpeed Field" Url="html/F_Enemy_MinSpeed.htm" />
+          <HelpTOCNode Title="Path Field" Url="html/F_Enemy_Path.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="d4786924-4233-4a1c-832a-33af1332141e" Title="Enemy Methods" Url="html/Methods_T_Enemy.htm">
+          <HelpTOCNode Title="MoveEnemy Method " Url="html/M_Enemy_MoveEnemy.htm" />
+          <HelpTOCNode Title="SetScaleAndSpeed Method " Url="html/M_Enemy_SetScaleAndSpeed.htm" />
+          <HelpTOCNode Title="Start Method " Url="html/M_Enemy_Start.htm" />
+          <HelpTOCNode Title="Update Method " Url="html/M_Enemy_Update.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="4d7ec6ab-889e-4b5d-80a9-dd09c11f2dfc" Title="Enemy Properties" Url="html/Properties_T_Enemy.htm">
+          <HelpTOCNode Title="Speed Property " Url="html/P_Enemy_Speed.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="a0d8564f-4a61-42d5-b987-adb2e6c500c4" Title="EnemyGenerator Class" Url="html/T_EnemyGenerator.htm">
+        <HelpTOCNode Title="EnemyGenerator Constructor " Url="html/M_EnemyGenerator__ctor.htm" />
+        <HelpTOCNode Id="fca2dbb1-c343-4f42-a588-8565d2de0b03" Title="EnemyGenerator Fields" Url="html/Fields_T_EnemyGenerator.htm">
+          <HelpTOCNode Title="Boss1Prefab Field" Url="html/F_EnemyGenerator_Boss1Prefab.htm" />
+          <HelpTOCNode Title="Boss2Prefab Field" Url="html/F_EnemyGenerator_Boss2Prefab.htm" />
+          <HelpTOCNode Title="BossPrefab Field" Url="html/F_EnemyGenerator_BossPrefab.htm" />
+          <HelpTOCNode Title="enemyPrefabs Field" Url="html/F_EnemyGenerator_enemyPrefabs.htm" />
+          <HelpTOCNode Title="spawnPoints Field" Url="html/F_EnemyGenerator_spawnPoints.htm" />
+          <HelpTOCNode Title="WordSolvingStage Field" Url="html/F_EnemyGenerator_WordSolvingStage.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="399e5bdf-f76a-4754-9284-aa80b1a4f4ed" Title="EnemyGenerator Methods" Url="html/Methods_T_EnemyGenerator.htm">
+          <HelpTOCNode Title="EnemyDead Method " Url="html/M_EnemyGenerator_EnemyDead.htm" />
+          <HelpTOCNode Title="InventoryCheck Method " Url="html/M_EnemyGenerator_InventoryCheck.htm" />
+          <HelpTOCNode Title="OnDisable Method " Url="html/M_EnemyGenerator_OnDisable.htm" />
+          <HelpTOCNode Title="OnEnable Method " Url="html/M_EnemyGenerator_OnEnable.htm" />
+          <HelpTOCNode Title="RandomSpawn Method " Url="html/M_EnemyGenerator_RandomSpawn.htm" />
+          <HelpTOCNode Title="RequiredSpawn Method " Url="html/M_EnemyGenerator_RequiredSpawn.htm" />
+          <HelpTOCNode Title="RequirementCheck Method " Url="html/M_EnemyGenerator_RequirementCheck.htm" />
+          <HelpTOCNode Title="Slow Method " Url="html/M_EnemyGenerator_Slow.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="EnemyGenerator Properties" Url="html/Properties_T_EnemyGenerator.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="a5b8df88-ce70-4639-82af-bb110cc9a336" Title="FadeBlack2Clear Class" Url="html/T_FadeBlack2Clear.htm">
+        <HelpTOCNode Title="FadeBlack2Clear Constructor " Url="html/M_FadeBlack2Clear__ctor.htm" />
+        <HelpTOCNode Id="1c544943-9849-4b3f-82ea-f1e423706926" Title="FadeBlack2Clear Fields" Url="html/Fields_T_FadeBlack2Clear.htm">
+          <HelpTOCNode Title="amount Field" Url="html/F_FadeBlack2Clear_amount.htm" />
+          <HelpTOCNode Title="fadeSpeed Field" Url="html/F_FadeBlack2Clear_fadeSpeed.htm" />
+          <HelpTOCNode Title="godude Field" Url="html/F_FadeBlack2Clear_godude.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="af2789ae-c64a-4b2e-b799-59ae3083dfcf" Title="FadeBlack2Clear Methods" Url="html/Methods_T_FadeBlack2Clear.htm">
+          <HelpTOCNode Title="EndScene Method " Url="html/M_FadeBlack2Clear_EndScene.htm" />
+          <HelpTOCNode Title="turnOnSwitch Method " Url="html/M_FadeBlack2Clear_turnOnSwitch.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="FadeBlack2Clear Properties" Url="html/Properties_T_FadeBlack2Clear.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="5d0be286-ac3f-450b-9718-79aa9af0778b" Title="GeneratedLand Class" Url="html/T_GeneratedLand.htm">
+        <HelpTOCNode Title="GeneratedLand Constructor " Url="html/M_GeneratedLand__ctor.htm" />
+        <HelpTOCNode Title="GeneratedLand Methods" Url="html/Methods_T_GeneratedLand.htm" />
+        <HelpTOCNode Title="GeneratedLand Properties" Url="html/Properties_T_GeneratedLand.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="7745df7e-219b-4a98-8aa5-deddafae7f28" Title="HealthShroom Class" Url="html/T_HealthShroom.htm">
+        <HelpTOCNode Title="HealthShroom Constructor " Url="html/M_HealthShroom__ctor.htm" />
+        <HelpTOCNode Title="HealthShroom Methods" Url="html/Methods_T_HealthShroom.htm" />
+        <HelpTOCNode Title="HealthShroom Properties" Url="html/Properties_T_HealthShroom.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="478b3880-9d7f-4833-a0a6-1d415b2697a3" Title="HourGlassScript Class" Url="html/T_HourGlassScript.htm">
+        <HelpTOCNode Title="HourGlassScript Constructor " Url="html/M_HourGlassScript__ctor.htm" />
+        <HelpTOCNode Title="HourGlassScript Methods" Url="html/Methods_T_HourGlassScript.htm" />
+        <HelpTOCNode Title="HourGlassScript Properties" Url="html/Properties_T_HourGlassScript.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="2afa0886-ee9b-41fc-81dc-17c1b8a3b4f1" Title="HUD Class" Url="html/T_HUD.htm">
+        <HelpTOCNode Title="HUD Constructor " Url="html/M_HUD__ctor.htm" />
+        <HelpTOCNode Id="d1f446d5-da6f-4400-906c-ac7dcd97297d" Title="HUD Fields" Url="html/Fields_T_HUD.htm">
+          <HelpTOCNode Title="CorkBoardTexture Field" Url="html/F_HUD_CorkBoardTexture.htm" />
+          <HelpTOCNode Title="hintStyle Field" Url="html/F_HUD_hintStyle.htm" />
+          <HelpTOCNode Title="HowToPlayGameButtonTexture Field" Url="html/F_HUD_HowToPlayGameButtonTexture.htm" />
+          <HelpTOCNode Title="HowToPlayTexture1 Field" Url="html/F_HUD_HowToPlayTexture1.htm" />
+          <HelpTOCNode Title="HPBarStyle Field" Url="html/F_HUD_HPBarStyle.htm" />
+          <HelpTOCNode Title="InventoryBackgroundStyle Field" Url="html/F_HUD_InventoryBackgroundStyle.htm" />
+          <HelpTOCNode Title="MainMenuGameButtonTexture Field" Url="html/F_HUD_MainMenuGameButtonTexture.htm" />
+          <HelpTOCNode Title="QuitGameButtonTexture Field" Url="html/F_HUD_QuitGameButtonTexture.htm" />
+          <HelpTOCNode Title="ResumeGameButtonTexture Field" Url="html/F_HUD_ResumeGameButtonTexture.htm" />
+          <HelpTOCNode Title="SaveGameButtonTexture Field" Url="html/F_HUD_SaveGameButtonTexture.htm" />
+          <HelpTOCNode Title="ScoreBarStyle Field" Url="html/F_HUD_ScoreBarStyle.htm" />
+          <HelpTOCNode Title="SettingsGameButtonTexture Field" Url="html/F_HUD_SettingsGameButtonTexture.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="ce3f6ea6-2d64-4b1c-ac0d-2976a109290e" Title="HUD Methods" Url="html/Methods_T_HUD.htm">
+          <HelpTOCNode Title="DisplayHints Method " Url="html/M_HUD_DisplayHints.htm" />
+          <HelpTOCNode Title="DisplayHPBar Method " Url="html/M_HUD_DisplayHPBar.htm" />
+          <HelpTOCNode Title="DisplayScoreBar Method " Url="html/M_HUD_DisplayScoreBar.htm" />
+          <HelpTOCNode Title="SetHintTextScrollingBox Method " Url="html/M_HUD_SetHintTextScrollingBox.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="HUD Properties" Url="html/Properties_T_HUD.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="44f2a631-835e-4aa4-949d-3c8568417939" Title="Hurricane_pickupScript Class" Url="html/T_Hurricane_pickupScript.htm">
+        <HelpTOCNode Title="Hurricane_pickupScript Constructor " Url="html/M_Hurricane_pickupScript__ctor.htm" />
+        <HelpTOCNode Title="Hurricane_pickupScript Methods" Url="html/Methods_T_Hurricane_pickupScript.htm" />
+        <HelpTOCNode Title="Hurricane_pickupScript Properties" Url="html/Properties_T_Hurricane_pickupScript.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="85ef6e20-a06f-4deb-8520-78bc1aa3cbfe" Title="HurricaneOuterProjectile1 Class" Url="html/T_HurricaneOuterProjectile1.htm">
+        <HelpTOCNode Title="HurricaneOuterProjectile1 Constructor " Url="html/M_HurricaneOuterProjectile1__ctor.htm" />
+        <HelpTOCNode Id="a467acfd-eeb9-43e0-bc55-c743c3813976" Title="HurricaneOuterProjectile1 Fields" Url="html/Fields_T_HurricaneOuterProjectile1.htm">
+          <HelpTOCNode Title="DestroyedExplosion Field" Url="html/F_HurricaneOuterProjectile1_DestroyedExplosion.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="HurricaneOuterProjectile1 Methods" Url="html/Methods_T_HurricaneOuterProjectile1.htm" />
+        <HelpTOCNode Title="HurricaneOuterProjectile1 Properties" Url="html/Properties_T_HurricaneOuterProjectile1.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="d226bf46-5d42-4466-9a16-4512bc231750" Title="HurricaneProjectile Class" Url="html/T_HurricaneProjectile.htm">
+        <HelpTOCNode Title="HurricaneProjectile Constructor " Url="html/M_HurricaneProjectile__ctor.htm" />
+        <HelpTOCNode Title="HurricaneProjectile Methods" Url="html/Methods_T_HurricaneProjectile.htm" />
+        <HelpTOCNode Title="HurricaneProjectile Properties" Url="html/Properties_T_HurricaneProjectile.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="bd55a56f-9328-4607-988e-dfaac9014051" Title="Inventory Class" Url="html/T_Inventory.htm">
+        <HelpTOCNode Title="Inventory Constructor " Url="html/M_Inventory__ctor.htm" />
+        <HelpTOCNode Id="7a698c62-5b3a-4174-b721-011f815389d1" Title="Inventory Fields" Url="html/Fields_T_Inventory.htm">
+          <HelpTOCNode Title="A Field" Url="html/F_Inventory_A.htm" />
+          <HelpTOCNode Title="B Field" Url="html/F_Inventory_B.htm" />
+          <HelpTOCNode Title="C Field" Url="html/F_Inventory_C.htm" />
+          <HelpTOCNode Title="D Field" Url="html/F_Inventory_D.htm" />
+          <HelpTOCNode Title="E Field" Url="html/F_Inventory_E.htm" />
+          <HelpTOCNode Title="F Field" Url="html/F_Inventory_F.htm" />
+          <HelpTOCNode Title="G Field" Url="html/F_Inventory_G.htm" />
+          <HelpTOCNode Title="H Field" Url="html/F_Inventory_H.htm" />
+          <HelpTOCNode Title="I Field" Url="html/F_Inventory_I.htm" />
+          <HelpTOCNode Title="J Field" Url="html/F_Inventory_J.htm" />
+          <HelpTOCNode Title="K Field" Url="html/F_Inventory_K.htm" />
+          <HelpTOCNode Title="L Field" Url="html/F_Inventory_L.htm" />
+          <HelpTOCNode Title="M Field" Url="html/F_Inventory_M.htm" />
+          <HelpTOCNode Title="N Field" Url="html/F_Inventory_N.htm" />
+          <HelpTOCNode Title="O Field" Url="html/F_Inventory_O.htm" />
+          <HelpTOCNode Title="P Field" Url="html/F_Inventory_P.htm" />
+          <HelpTOCNode Title="Q Field" Url="html/F_Inventory_Q.htm" />
+          <HelpTOCNode Title="R Field" Url="html/F_Inventory_R.htm" />
+          <HelpTOCNode Title="S Field" Url="html/F_Inventory_S.htm" />
+          <HelpTOCNode Title="T Field" Url="html/F_Inventory_T.htm" />
+          <HelpTOCNode Title="U Field" Url="html/F_Inventory_U.htm" />
+          <HelpTOCNode Title="V Field" Url="html/F_Inventory_V.htm" />
+          <HelpTOCNode Title="W Field" Url="html/F_Inventory_W.htm" />
+          <HelpTOCNode Title="X Field" Url="html/F_Inventory_X.htm" />
+          <HelpTOCNode Title="Y Field" Url="html/F_Inventory_Y.htm" />
+          <HelpTOCNode Title="Z Field" Url="html/F_Inventory_Z.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="9d4ea584-e11d-4e37-8741-248575588552" Title="Inventory Methods" Url="html/Methods_T_Inventory.htm">
+          <HelpTOCNode Title="AddCollectedLetter Method " Url="html/M_Inventory_AddCollectedLetter.htm" />
+          <HelpTOCNode Title="DecrementLetter Method " Url="html/M_Inventory_DecrementLetter.htm" />
+          <HelpTOCNode Title="DecrementPowerUp Method " Url="html/M_Inventory_DecrementPowerUp.htm" />
+          <HelpTOCNode Title="GetLetterCount Method " Url="html/M_Inventory_GetLetterCount.htm" />
+          <HelpTOCNode Title="GetPowerUpAtIndex Method " Url="html/M_Inventory_GetPowerUpAtIndex.htm" />
+          <HelpTOCNode Title="HasPowerUp Method " Url="html/M_Inventory_HasPowerUp.htm" />
+          <HelpTOCNode Title="IncrementPowerUp Method " Url="html/M_Inventory_IncrementPowerUp.htm" />
+          <HelpTOCNode Title="SubtractCollectedLetter Method " Url="html/M_Inventory_SubtractCollectedLetter.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="b5ad4ead-c494-4546-8b4e-d519fc062bb7" Title="Inventory Properties" Url="html/Properties_T_Inventory.htm">
+          <HelpTOCNode Title="CollectedPowerUpsList Property " Url="html/P_Inventory_CollectedPowerUpsList.htm" />
+          <HelpTOCNode Title="DualPencil Property " Url="html/P_Inventory_DualPencil.htm" />
+          <HelpTOCNode Title="TotalCollectedLetters Property " Url="html/P_Inventory_TotalCollectedLetters.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="f5a66106-e237-4f0a-88c8-b2942bf93aeb" Title="LandGenerator Class" Url="html/T_LandGenerator.htm">
+        <HelpTOCNode Title="LandGenerator Constructor " Url="html/M_LandGenerator__ctor.htm" />
+        <HelpTOCNode Id="5bc96e0f-1cd2-43a6-9533-227e85fa46c6" Title="LandGenerator Fields" Url="html/Fields_T_LandGenerator.htm">
+          <HelpTOCNode Title="state Field" Url="html/F_LandGenerator_state.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="79cac3d0-973f-494e-88c3-a33877bab422" Title="LandGenerator Methods" Url="html/Methods_T_LandGenerator.htm">
+          <HelpTOCNode Title="Changestate Method " Url="html/M_LandGenerator_Changestate.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="LandGenerator Properties" Url="html/Properties_T_LandGenerator.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="LandGenerator.State Enumeration" Url="html/T_LandGenerator_State.htm" />
+      <HelpTOCNode Id="8b255add-dc27-4da2-a53c-d7dbf529326f" Title="Learn Class" Url="html/T_Learn.htm">
+        <HelpTOCNode Title="Learn Constructor " Url="html/M_Learn__ctor.htm" />
+        <HelpTOCNode Id="db73c35e-cd43-47f4-8f74-5ae6eeda5dd2" Title="Learn Fields" Url="html/Fields_T_Learn.htm">
+          <HelpTOCNode Title="backgroundTexture Field" Url="html/F_Learn_backgroundTexture.htm" />
+          <HelpTOCNode Title="l2PlayTexture Field" Url="html/F_Learn_l2PlayTexture.htm" />
+          <HelpTOCNode Title="licenseTexture Field" Url="html/F_Learn_licenseTexture.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Learn Methods" Url="html/Methods_T_Learn.htm" />
+        <HelpTOCNode Title="Learn Properties" Url="html/Properties_T_Learn.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="b48cd2f3-eab3-4161-aab4-21f91d30a8fc" Title="LetterCollect Class" Url="html/T_LetterCollect.htm">
+        <HelpTOCNode Title="LetterCollect Constructor " Url="html/M_LetterCollect__ctor.htm" />
+        <HelpTOCNode Title="LetterCollect Methods" Url="html/Methods_T_LetterCollect.htm" />
+        <HelpTOCNode Title="LetterCollect Properties" Url="html/Properties_T_LetterCollect.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="c9b0c1ad-06a6-466c-bd9b-9b7b5c560c96" Title="LetterProjectileScript Class" Url="html/T_LetterProjectileScript.htm">
+        <HelpTOCNode Title="LetterProjectileScript Constructor " Url="html/M_LetterProjectileScript__ctor.htm" />
+        <HelpTOCNode Id="896ee7d0-b677-4359-bec4-536d2930f414" Title="LetterProjectileScript Fields" Url="html/Fields_T_LetterProjectileScript.htm">
+          <HelpTOCNode Title="isactive Field" Url="html/F_LetterProjectileScript_isactive.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="LetterProjectileScript Methods" Url="html/Methods_T_LetterProjectileScript.htm" />
+        <HelpTOCNode Title="LetterProjectileScript Properties" Url="html/Properties_T_LetterProjectileScript.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="d1a2a071-81fd-499f-b8fe-910a3df4a8fa" Title="letterScript_test Class" Url="html/T_letterScript_test.htm">
+        <HelpTOCNode Title="letterScript_test Constructor " Url="html/M_letterScript_test__ctor.htm" />
+        <HelpTOCNode Title="letterScript_test Methods" Url="html/Methods_T_letterScript_test.htm" />
+        <HelpTOCNode Title="letterScript_test Properties" Url="html/Properties_T_letterScript_test.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="7993e597-11a5-4892-bfeb-fb60181b9d8a" Title="Lose Class" Url="html/T_Lose.htm">
+        <HelpTOCNode Title="Lose Constructor " Url="html/M_Lose__ctor.htm" />
+        <HelpTOCNode Id="c602796e-0836-4254-b552-3f3d5052e4ae" Title="Lose Fields" Url="html/Fields_T_Lose.htm">
+          <HelpTOCNode Title="backgroundTexture Field" Url="html/F_Lose_backgroundTexture.htm" />
+          <HelpTOCNode Title="titleTexture Field" Url="html/F_Lose_titleTexture.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Lose Methods" Url="html/Methods_T_Lose.htm" />
+        <HelpTOCNode Title="Lose Properties" Url="html/Properties_T_Lose.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="930957e7-9292-4258-bb8f-4bc309100e98" Title="MainMenu Class" Url="html/T_MainMenu.htm">
+        <HelpTOCNode Title="MainMenu Constructor " Url="html/M_MainMenu__ctor.htm" />
+        <HelpTOCNode Id="a48884a1-e67e-4f26-af68-d69893718844" Title="MainMenu Fields" Url="html/Fields_T_MainMenu.htm">
+          <HelpTOCNode Title="backgroundTexture Field" Url="html/F_MainMenu_backgroundTexture.htm" />
+          <HelpTOCNode Title="titleTexture Field" Url="html/F_MainMenu_titleTexture.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="MainMenu Methods" Url="html/Methods_T_MainMenu.htm" />
+        <HelpTOCNode Title="MainMenu Properties" Url="html/Properties_T_MainMenu.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="8aff3a44-ae48-430b-b176-1cf54c971afd" Title="ManageLessons Class" Url="html/T_ManageLessons.htm">
+        <HelpTOCNode Title="ManageLessons Constructor " Url="html/M_ManageLessons__ctor.htm" />
+        <HelpTOCNode Id="b0582d95-c029-4159-b568-b991846e2273" Title="ManageLessons Fields" Url="html/Fields_T_ManageLessons.htm">
+          <HelpTOCNode Title="areaBackgroundImg Field" Url="html/F_ManageLessons_areaBackgroundImg.htm" />
+          <HelpTOCNode Title="areaLeftMarginImg Field" Url="html/F_ManageLessons_areaLeftMarginImg.htm" />
+          <HelpTOCNode Title="backgroundImg Field" Url="html/F_ManageLessons_backgroundImg.htm" />
+          <HelpTOCNode Title="smartMenuSkin Field" Url="html/F_ManageLessons_smartMenuSkin.htm" />
+          <HelpTOCNode Title="titleImg Field" Url="html/F_ManageLessons_titleImg.htm" />
+          <HelpTOCNode Title="wordAreaBackgroundImg Field" Url="html/F_ManageLessons_wordAreaBackgroundImg.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="ManageLessons Methods" Url="html/Methods_T_ManageLessons.htm" />
+        <HelpTOCNode Title="ManageLessons Properties" Url="html/Properties_T_ManageLessons.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="5d0be1f1-ab4f-410b-b195-916ca6890646" Title="Messenger Class" Url="html/T_Messenger.htm">
+        <HelpTOCNode Id="31f4242f-f2b7-41c4-bf74-310bb00cce09" Title="Messenger Methods" Url="html/Methods_T_Messenger.htm">
+          <HelpTOCNode Id="adda97cb-62ff-4dc4-8054-b5bd783c2091" Title="AddListener Method " Url="html/Overload_Messenger_AddListener.htm">
+            <HelpTOCNode Title="AddListener Method (String, Action)" Url="html/M_Messenger_AddListener.htm" />
+            <HelpTOCNode Title="AddListener(TReturn) Method (String, Func(TReturn))" Url="html/M_Messenger_AddListener__1.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Id="d7119694-f267-4baf-94f5-23984b12ebd6" Title="Broadcast Method " Url="html/Overload_Messenger_Broadcast.htm">
+            <HelpTOCNode Title="Broadcast Method (String)" Url="html/M_Messenger_Broadcast.htm" />
+            <HelpTOCNode Title="Broadcast Method (String, MessengerMode)" Url="html/M_Messenger_Broadcast_1.htm" />
+            <HelpTOCNode Title="Broadcast(TReturn) Method (String, Action(TReturn))" Url="html/M_Messenger_Broadcast__1.htm" />
+            <HelpTOCNode Title="Broadcast(TReturn) Method (String, Action(TReturn), MessengerMode)" Url="html/M_Messenger_Broadcast__1_1.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Id="822897f5-520b-4f78-90d1-c27d7ac772c7" Title="RemoveListener Method " Url="html/Overload_Messenger_RemoveListener.htm">
+            <HelpTOCNode Title="RemoveListener Method (String, Action)" Url="html/M_Messenger_RemoveListener.htm" />
+            <HelpTOCNode Title="RemoveListener(TReturn) Method (String, Func(TReturn))" Url="html/M_Messenger_RemoveListener__1.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="1aca8cd0-47b8-4611-8700-fb04f2e06658" Title="Messenger(T) Class" Url="html/T_Messenger_1.htm">
+        <HelpTOCNode Id="fc5e6151-2138-4657-83ec-5812bc69d652" Title="Messenger(T) Methods" Url="html/Methods_T_Messenger_1.htm">
+          <HelpTOCNode Id="7791f039-68cc-4ec0-8df2-99c80c9e737f" Title="AddListener Method " Url="html/Overload_Messenger_1_AddListener.htm">
+            <HelpTOCNode Title="AddListener Method (String, Action(T))" Url="html/M_Messenger_1_AddListener.htm" />
+            <HelpTOCNode Title="AddListener(TReturn) Method (String, Func(T, TReturn))" Url="html/M_Messenger_1_AddListener__1.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Id="6a340893-e00e-402f-9435-037a623ed4b2" Title="Broadcast Method " Url="html/Overload_Messenger_1_Broadcast.htm">
+            <HelpTOCNode Title="Broadcast Method (String, T)" Url="html/M_Messenger_1_Broadcast.htm" />
+            <HelpTOCNode Title="Broadcast Method (String, T, MessengerMode)" Url="html/M_Messenger_1_Broadcast_1.htm" />
+            <HelpTOCNode Title="Broadcast(TReturn) Method (String, T, Action(TReturn))" Url="html/M_Messenger_1_Broadcast__1.htm" />
+            <HelpTOCNode Title="Broadcast(TReturn) Method (String, T, Action(TReturn), MessengerMode)" Url="html/M_Messenger_1_Broadcast__1_1.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Id="2ecee320-413a-4f34-9659-62661ec5d6b4" Title="RemoveListener Method " Url="html/Overload_Messenger_1_RemoveListener.htm">
+            <HelpTOCNode Title="RemoveListener Method (String, Action(T))" Url="html/M_Messenger_1_RemoveListener.htm" />
+            <HelpTOCNode Title="RemoveListener(TReturn) Method (String, Func(T, TReturn))" Url="html/M_Messenger_1_RemoveListener__1.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="b935227e-1578-4883-8d6c-7186b4cff958" Title="Messenger(T, U) Class" Url="html/T_Messenger_2.htm">
+        <HelpTOCNode Id="f40cd3ea-92b4-4095-917b-bcca53c64844" Title="Messenger(T, U) Methods" Url="html/Methods_T_Messenger_2.htm">
+          <HelpTOCNode Id="138496cd-5e4a-4fb2-9933-28c886910827" Title="AddListener Method " Url="html/Overload_Messenger_2_AddListener.htm">
+            <HelpTOCNode Title="AddListener Method (String, Action(T, U))" Url="html/M_Messenger_2_AddListener.htm" />
+            <HelpTOCNode Title="AddListener(TReturn) Method (String, Func(T, U, TReturn))" Url="html/M_Messenger_2_AddListener__1.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Id="a0977e4e-1d0d-4dea-a51b-d7121d948eb8" Title="Broadcast Method " Url="html/Overload_Messenger_2_Broadcast.htm">
+            <HelpTOCNode Title="Broadcast Method (String, T, U)" Url="html/M_Messenger_2_Broadcast.htm" />
+            <HelpTOCNode Title="Broadcast Method (String, T, U, MessengerMode)" Url="html/M_Messenger_2_Broadcast_1.htm" />
+            <HelpTOCNode Title="Broadcast(TReturn) Method (String, T, U, Action(TReturn))" Url="html/M_Messenger_2_Broadcast__1.htm" />
+            <HelpTOCNode Title="Broadcast(TReturn) Method (String, T, U, Action(TReturn), MessengerMode)" Url="html/M_Messenger_2_Broadcast__1_1.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Id="7a922894-356e-46f5-9aac-7e534fd55bf2" Title="RemoveListener Method " Url="html/Overload_Messenger_2_RemoveListener.htm">
+            <HelpTOCNode Title="RemoveListener Method (String, Action(T, U))" Url="html/M_Messenger_2_RemoveListener.htm" />
+            <HelpTOCNode Title="RemoveListener(TReturn) Method (String, Func(T, U, TReturn))" Url="html/M_Messenger_2_RemoveListener__1.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="5bb3ec39-9417-451b-bb5e-8000e1ccc181" Title="Messenger(T, U, V) Class" Url="html/T_Messenger_3.htm">
+        <HelpTOCNode Id="fed18e3f-cd3b-4d6b-8d31-3c855cbb6f13" Title="Messenger(T, U, V) Methods" Url="html/Methods_T_Messenger_3.htm">
+          <HelpTOCNode Id="ac615e24-5123-4355-8808-42ce52a7a8d9" Title="AddListener Method " Url="html/Overload_Messenger_3_AddListener.htm">
+            <HelpTOCNode Title="AddListener Method (String, Action(T, U, V))" Url="html/M_Messenger_3_AddListener.htm" />
+            <HelpTOCNode Title="AddListener(TReturn) Method (String, Func(T, U, V, TReturn))" Url="html/M_Messenger_3_AddListener__1.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Id="81430e62-f0b3-41d5-822f-1d01ac07e8b6" Title="Broadcast Method " Url="html/Overload_Messenger_3_Broadcast.htm">
+            <HelpTOCNode Title="Broadcast Method (String, T, U, V)" Url="html/M_Messenger_3_Broadcast.htm" />
+            <HelpTOCNode Title="Broadcast Method (String, T, U, V, MessengerMode)" Url="html/M_Messenger_3_Broadcast_1.htm" />
+            <HelpTOCNode Title="Broadcast(TReturn) Method (String, T, U, V, Action(TReturn))" Url="html/M_Messenger_3_Broadcast__1.htm" />
+            <HelpTOCNode Title="Broadcast(TReturn) Method (String, T, U, V, Action(TReturn), MessengerMode)" Url="html/M_Messenger_3_Broadcast__1_1.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Id="5f57b2b6-61ad-44ef-a0a5-0047109dc017" Title="RemoveListener Method " Url="html/Overload_Messenger_3_RemoveListener.htm">
+            <HelpTOCNode Title="RemoveListener Method (String, Action(T, U, V))" Url="html/M_Messenger_3_RemoveListener.htm" />
+            <HelpTOCNode Title="RemoveListener(TReturn) Method (String, Func(T, U, V, TReturn))" Url="html/M_Messenger_3_RemoveListener__1.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Title="MessengerMode Enumeration" Url="html/T_MessengerMode.htm" />
+      <HelpTOCNode Id="002492e4-28d9-48f6-9398-bfc0c9465b3c" Title="movingWaypoint Class" Url="html/T_movingWaypoint.htm">
+        <HelpTOCNode Title="movingWaypoint Constructor " Url="html/M_movingWaypoint__ctor.htm" />
+        <HelpTOCNode Title="movingWaypoint Methods" Url="html/Methods_T_movingWaypoint.htm" />
+        <HelpTOCNode Title="movingWaypoint Properties" Url="html/Properties_T_movingWaypoint.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="704040f5-e614-45b3-9803-02e9193a2e6e" Title="MushroomScript Class" Url="html/T_MushroomScript.htm">
+        <HelpTOCNode Title="MushroomScript Constructor " Url="html/M_MushroomScript__ctor.htm" />
+        <HelpTOCNode Title="MushroomScript Methods" Url="html/Methods_T_MushroomScript.htm" />
+        <HelpTOCNode Title="MushroomScript Properties" Url="html/Properties_T_MushroomScript.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="65786466-4274-4a0f-9d95-c815d81ca184" Title="musics Class" Url="html/T_musics.htm">
+        <HelpTOCNode Title="musics Constructor " Url="html/M_musics__ctor.htm" />
+        <HelpTOCNode Id="71c2a5aa-006b-4024-a583-31b6e5e5a9a8" Title="musics Fields" Url="html/Fields_T_musics.htm">
+          <HelpTOCNode Title="au_footsteps Field" Url="html/F_musics_au_footsteps.htm" />
+          <HelpTOCNode Title="AudioClips Field" Url="html/F_musics_AudioClips.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="musics Methods" Url="html/Methods_T_musics.htm" />
+        <HelpTOCNode Title="musics Properties" Url="html/Properties_T_musics.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="e8943c17-2861-4aee-895a-bd18acf45bb7" Title="NewBehaviourScript Class" Url="html/T_NewBehaviourScript.htm">
+        <HelpTOCNode Title="NewBehaviourScript Constructor " Url="html/M_NewBehaviourScript__ctor.htm" />
+        <HelpTOCNode Title="NewBehaviourScript Methods" Url="html/Methods_T_NewBehaviourScript.htm" />
+        <HelpTOCNode Title="NewBehaviourScript Properties" Url="html/Properties_T_NewBehaviourScript.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="b50e2b23-4332-478a-912d-8a45b055cd4c" Title="NewGame Class" Url="html/T_NewGame.htm">
+        <HelpTOCNode Title="NewGame Constructor " Url="html/M_NewGame__ctor.htm" />
+        <HelpTOCNode Id="9f2775e4-d24a-4913-b3f5-6018c8a288c6" Title="NewGame Fields" Url="html/Fields_T_NewGame.htm">
+          <HelpTOCNode Title="difficultyLevelsBackgroundImg Field" Url="html/F_NewGame_difficultyLevelsBackgroundImg.htm" />
+          <HelpTOCNode Title="lessonsBackgroundImg Field" Url="html/F_NewGame_lessonsBackgroundImg.htm" />
+          <HelpTOCNode Title="smartMenuSkin Field" Url="html/F_NewGame_smartMenuSkin.htm" />
+          <HelpTOCNode Title="titleImg Field" Url="html/F_NewGame_titleImg.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="NewGame Methods" Url="html/Methods_T_NewGame.htm" />
+        <HelpTOCNode Title="NewGame Properties" Url="html/Properties_T_NewGame.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="a82886da-2a25-4660-8e1d-acd273138ea1" Title="oldBigbossMove Class" Url="html/T_oldBigbossMove.htm">
+        <HelpTOCNode Title="oldBigbossMove Constructor " Url="html/M_oldBigbossMove__ctor.htm" />
+        <HelpTOCNode Id="e6981e40-fc91-4823-bc68-abbe7c9bfd2d" Title="oldBigbossMove Fields" Url="html/Fields_T_oldBigbossMove.htm">
+          <HelpTOCNode Title="closeClaw Field" Url="html/F_oldBigbossMove_closeClaw.htm" />
+          <HelpTOCNode Title="openClaw Field" Url="html/F_oldBigbossMove_openClaw.htm" />
+          <HelpTOCNode Title="slither Field" Url="html/F_oldBigbossMove_slither.htm" />
+          <HelpTOCNode Title="transList Field" Url="html/F_oldBigbossMove_transList.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="93bb484b-13f5-4594-bef2-1de6bc61744c" Title="oldBigbossMove Methods" Url="html/Methods_T_oldBigbossMove.htm">
+          <HelpTOCNode Title="CHaaaarge Method " Url="html/M_oldBigbossMove_CHaaaarge.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="oldBigbossMove Properties" Url="html/Properties_T_oldBigbossMove.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="0ff91744-3cfa-45f1-a8b3-bba865d31b6a" Title="OpenClose Class" Url="html/T_OpenClose.htm">
+        <HelpTOCNode Title="OpenClose Constructor " Url="html/M_OpenClose__ctor.htm" />
+        <HelpTOCNode Id="ac443953-6388-46c1-b2f7-0750881556c6" Title="OpenClose Fields" Url="html/Fields_T_OpenClose.htm">
+          <HelpTOCNode Title="from Field" Url="html/F_OpenClose_from.htm" />
+          <HelpTOCNode Title="slide1 Field" Url="html/F_OpenClose_slide1.htm" />
+          <HelpTOCNode Title="slide2 Field" Url="html/F_OpenClose_slide2.htm" />
+          <HelpTOCNode Title="slide3 Field" Url="html/F_OpenClose_slide3.htm" />
+          <HelpTOCNode Title="speed Field" Url="html/F_OpenClose_speed.htm" />
+          <HelpTOCNode Title="to Field" Url="html/F_OpenClose_to.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="OpenClose Methods" Url="html/Methods_T_OpenClose.htm" />
+        <HelpTOCNode Title="OpenClose Properties" Url="html/Properties_T_OpenClose.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="40cafe57-dcda-43ac-babc-b511a1d512c9" Title="Options Class" Url="html/T_Options.htm">
+        <HelpTOCNode Title="Options Constructor " Url="html/M_Options__ctor.htm" />
+        <HelpTOCNode Id="c10ec51b-6f61-4eee-b81f-0ae2f6068d0e" Title="Options Fields" Url="html/Fields_T_Options.htm">
+          <HelpTOCNode Title="backgroundTexture Field" Url="html/F_Options_backgroundTexture.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Options Methods" Url="html/Methods_T_Options.htm" />
+        <HelpTOCNode Title="Options Properties" Url="html/Properties_T_Options.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="324a29a1-75f2-493c-877f-487eb26614ef" Title="Pencil1Projectile Class" Url="html/T_Pencil1Projectile.htm">
+        <HelpTOCNode Title="Pencil1Projectile Constructor " Url="html/M_Pencil1Projectile__ctor.htm" />
+        <HelpTOCNode Id="cd52a0ea-e698-49a8-859d-e13fa94b6e22" Title="Pencil1Projectile Fields" Url="html/Fields_T_Pencil1Projectile.htm">
+          <HelpTOCNode Title="PencilExplosion Field" Url="html/F_Pencil1Projectile_PencilExplosion.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Pencil1Projectile Methods" Url="html/Methods_T_Pencil1Projectile.htm" />
+        <HelpTOCNode Title="Pencil1Projectile Properties" Url="html/Properties_T_Pencil1Projectile.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="3b153bae-c670-4eb3-aece-7a167a234aca" Title="Pencil2Projectile Class" Url="html/T_Pencil2Projectile.htm">
+        <HelpTOCNode Title="Pencil2Projectile Constructor " Url="html/M_Pencil2Projectile__ctor.htm" />
+        <HelpTOCNode Id="a1888a68-c712-4b75-9573-60847af69848" Title="Pencil2Projectile Fields" Url="html/Fields_T_Pencil2Projectile.htm">
+          <HelpTOCNode Title="PencilExplosion Field" Url="html/F_Pencil2Projectile_PencilExplosion.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Pencil2Projectile Methods" Url="html/Methods_T_Pencil2Projectile.htm" />
+        <HelpTOCNode Title="Pencil2Projectile Properties" Url="html/Properties_T_Pencil2Projectile.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="1511905d-5bfb-4b8f-a3e5-40e3173d4ac6" Title="Player Class" Url="html/T_Player.htm">
+        <HelpTOCNode Title="Player Constructor " Url="html/M_Player__ctor.htm" />
+        <HelpTOCNode Id="883d7ad1-f9a5-45eb-97da-1b1dc0228804" Title="Player Fields" Url="html/Fields_T_Player.htm">
+          <HelpTOCNode Title="ExplosionPrefab Field" Url="html/F_Player_ExplosionPrefab.htm" />
+          <HelpTOCNode Title="Lives Field" Url="html/F_Player_Lives.htm" />
+          <HelpTOCNode Title="Missed Field" Url="html/F_Player_Missed.htm" />
+          <HelpTOCNode Title="PlayerSpeed Field" Url="html/F_Player_PlayerSpeed.htm" />
+          <HelpTOCNode Title="ProjectilePrefab Field" Url="html/F_Player_ProjectilePrefab.htm" />
+          <HelpTOCNode Title="Score Field" Url="html/F_Player_Score.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Player Methods" Url="html/Methods_T_Player.htm" />
+        <HelpTOCNode Title="Player Properties" Url="html/Properties_T_Player.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="fa13fd9f-fd6d-4d9f-abc4-4d628509a1e3" Title="PoisonousMushroom Class" Url="html/T_PoisonousMushroom.htm">
+        <HelpTOCNode Title="PoisonousMushroom Constructor " Url="html/M_PoisonousMushroom__ctor.htm" />
+        <HelpTOCNode Title="PoisonousMushroom Methods" Url="html/Methods_T_PoisonousMushroom.htm" />
+        <HelpTOCNode Title="PoisonousMushroom Properties" Url="html/Properties_T_PoisonousMushroom.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="5fe6c89e-1e5c-4b34-9a59-671443993963" Title="PowerUp Class" Url="html/T_PowerUp.htm">
+        <HelpTOCNode Id="c70159bb-d188-498f-8e85-1c5ab937b7d9" Title="PowerUp Constructor " Url="html/Overload_PowerUp__ctor.htm">
+          <HelpTOCNode Title="PowerUp Constructor (String)" Url="html/M_PowerUp__ctor.htm" />
+          <HelpTOCNode Title="PowerUp Constructor (String, Int32)" Url="html/M_PowerUp__ctor_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="a52b1c2c-580d-4ca9-827e-37f015cf3065" Title="PowerUp Methods" Url="html/Methods_T_PowerUp.htm">
+          <HelpTOCNode Title="DecrementCount Method " Url="html/M_PowerUp_DecrementCount.htm" />
+          <HelpTOCNode Title="HasExpired Method " Url="html/M_PowerUp_HasExpired.htm" />
+          <HelpTOCNode Title="IncrementCount Method " Url="html/M_PowerUp_IncrementCount.htm" />
+          <HelpTOCNode Title="SetExpireTime Method " Url="html/M_PowerUp_SetExpireTime.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="3c330e42-6ec7-4ece-a21a-721a54f1bde5" Title="PowerUp Properties" Url="html/Properties_T_PowerUp.htm">
+          <HelpTOCNode Title="Count Property " Url="html/P_PowerUp_Count.htm" />
+          <HelpTOCNode Title="ExpireAt Property " Url="html/P_PowerUp_ExpireAt.htm" />
+          <HelpTOCNode Title="isEmpty Property " Url="html/P_PowerUp_isEmpty.htm" />
+          <HelpTOCNode Title="Name Property " Url="html/P_PowerUp_Name.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="9f7c70bb-20c1-471a-b2fd-88df0e667dc2" Title="Projectile Class" Url="html/T_Projectile.htm">
+        <HelpTOCNode Title="Projectile Constructor " Url="html/M_Projectile__ctor.htm" />
+        <HelpTOCNode Id="25142628-d8e4-4612-af00-43e196d55a00" Title="Projectile Fields" Url="html/Fields_T_Projectile.htm">
+          <HelpTOCNode Title="ExplosionPrefab Field" Url="html/F_Projectile_ExplosionPrefab.htm" />
+          <HelpTOCNode Title="ProjectileSpeed Field" Url="html/F_Projectile_ProjectileSpeed.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Projectile Methods" Url="html/Methods_T_Projectile.htm" />
+        <HelpTOCNode Title="Projectile Properties" Url="html/Properties_T_Projectile.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="71b4a4b1-8744-43c7-9d4c-41784a5d37d4" Title="simpleScript Class" Url="html/T_simpleScript.htm">
+        <HelpTOCNode Title="simpleScript Constructor " Url="html/M_simpleScript__ctor.htm" />
+        <HelpTOCNode Title="simpleScript Methods" Url="html/Methods_T_simpleScript.htm" />
+        <HelpTOCNode Title="simpleScript Properties" Url="html/Properties_T_simpleScript.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="9cc5b0e7-da2c-4c1f-a85b-956861cc7eea" Title="SmartEnemy Class" Url="html/T_SmartEnemy.htm">
+        <HelpTOCNode Title="SmartEnemy Constructor " Url="html/M_SmartEnemy__ctor.htm" />
+        <HelpTOCNode Id="1e54b28b-a772-4bca-9f86-79822c40d062" Title="SmartEnemy Fields" Url="html/Fields_T_SmartEnemy.htm">
+          <HelpTOCNode Title="Projectile Field" Url="html/F_SmartEnemy_Projectile.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="ec8b2eaf-a096-403b-a1b1-92f89f3e842f" Title="SmartEnemy Methods" Url="html/Methods_T_SmartEnemy.htm">
+          <HelpTOCNode Title="MoveEnemy Method " Url="html/M_SmartEnemy_MoveEnemy.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="SmartEnemy Properties" Url="html/Properties_T_SmartEnemy.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="4c5e5ead-0682-4353-9c67-36cef51890db" Title="SpawnManager Class" Url="html/T_SpawnManager.htm">
+        <HelpTOCNode Title="SpawnManager Constructor " Url="html/M_SpawnManager__ctor.htm" />
+        <HelpTOCNode Title="SpawnManager Methods" Url="html/Methods_T_SpawnManager.htm" />
+        <HelpTOCNode Title="SpawnManager Properties" Url="html/Properties_T_SpawnManager.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="c2705dfb-c4b9-4da3-9b59-1fb5c2756272" Title="Splash Class" Url="html/T_Splash.htm">
+        <HelpTOCNode Title="Splash Constructor " Url="html/M_Splash__ctor.htm" />
+        <HelpTOCNode Id="a5545de6-3167-4793-959f-eacd1442b53d" Title="Splash Fields" Url="html/Fields_T_Splash.htm">
+          <HelpTOCNode Title="backgroundTexture Field" Url="html/F_Splash_backgroundTexture.htm" />
+          <HelpTOCNode Title="delayTime Field" Url="html/F_Splash_delayTime.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Splash Methods" Url="html/Methods_T_Splash.htm" />
+        <HelpTOCNode Title="Splash Properties" Url="html/Properties_T_Splash.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="88da72b3-d235-4d1d-b353-e466bcfcad0f" Title="Stars Class" Url="html/T_Stars.htm">
+        <HelpTOCNode Title="Stars Constructor " Url="html/M_Stars__ctor.htm" />
+        <HelpTOCNode Id="69736a8d-5f83-4f81-bfe1-82469a898074" Title="Stars Fields" Url="html/Fields_T_Stars.htm">
+          <HelpTOCNode Title="Speed Field" Url="html/F_Stars_Speed.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Stars Methods" Url="html/Methods_T_Stars.htm" />
+        <HelpTOCNode Title="Stars Properties" Url="html/Properties_T_Stars.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="166af82f-6aa9-4928-90a9-089b1a0649f0" Title="terrainScroll Class" Url="html/T_terrainScroll.htm">
+        <HelpTOCNode Title="terrainScroll Constructor " Url="html/M_terrainScroll__ctor.htm" />
+        <HelpTOCNode Title="terrainScroll Methods" Url="html/Methods_T_terrainScroll.htm" />
+        <HelpTOCNode Title="terrainScroll Properties" Url="html/Properties_T_terrainScroll.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="c020ed07-e700-45ec-a7f3-6eb2fb53ef52" Title="TimedShooting Class" Url="html/T_TimedShooting.htm">
+        <HelpTOCNode Title="TimedShooting Constructor " Url="html/M_TimedShooting__ctor.htm" />
+        <HelpTOCNode Id="9186465b-7a5c-4166-8759-3694e0ee92fd" Title="TimedShooting Fields" Url="html/Fields_T_TimedShooting.htm">
+          <HelpTOCNode Title="theShot Field" Url="html/F_TimedShooting_theShot.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="TimedShooting Methods" Url="html/Methods_T_TimedShooting.htm" />
+        <HelpTOCNode Title="TimedShooting Properties" Url="html/Properties_T_TimedShooting.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="ed252cf3-2e76-4d38-a9de-07342884697c" Title="Vowel Class" Url="html/T_Vowel.htm">
+        <HelpTOCNode Title="Vowel Constructor " Url="html/M_Vowel__ctor.htm" />
+        <HelpTOCNode Id="7a2a2a03-66ec-4073-bcdb-0457804277b5" Title="Vowel Fields" Url="html/Fields_T_Vowel.htm">
+          <HelpTOCNode Title="theDrop Field" Url="html/F_Vowel_theDrop.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Vowel Methods" Url="html/Methods_T_Vowel.htm" />
+        <HelpTOCNode Title="Vowel Properties" Url="html/Properties_T_Vowel.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="232ccfe8-6913-4b85-99c2-ab736f5d9eb1" Title="Win Class" Url="html/T_Win.htm">
+        <HelpTOCNode Title="Win Constructor " Url="html/M_Win__ctor.htm" />
+        <HelpTOCNode Id="0ae47943-b67c-4721-a02d-914dd39ecc38" Title="Win Fields" Url="html/Fields_T_Win.htm">
+          <HelpTOCNode Title="backgroundTexture Field" Url="html/F_Win_backgroundTexture.htm" />
+          <HelpTOCNode Title="DeadBigBoss Field" Url="html/F_Win_DeadBigBoss.htm" />
+          <HelpTOCNode Title="DeadBoss1 Field" Url="html/F_Win_DeadBoss1.htm" />
+          <HelpTOCNode Title="photoTexture Field" Url="html/F_Win_photoTexture.htm" />
+          <HelpTOCNode Title="titleTexture Field" Url="html/F_Win_titleTexture.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Win Methods" Url="html/Methods_T_Win.htm" />
+        <HelpTOCNode Title="Win Properties" Url="html/Properties_T_Win.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="c3a1cb5b-216b-418f-8755-7ac5fa6ac357" Title="WinAll Class" Url="html/T_WinAll.htm">
+        <HelpTOCNode Title="WinAll Constructor " Url="html/M_WinAll__ctor.htm" />
+        <HelpTOCNode Id="f7b3080b-666c-4152-b1fc-6e515c5af02b" Title="WinAll Fields" Url="html/Fields_T_WinAll.htm">
+          <HelpTOCNode Title="AlbertWins Field" Url="html/F_WinAll_AlbertWins.htm" />
+          <HelpTOCNode Title="areaBackgroundImg Field" Url="html/F_WinAll_areaBackgroundImg.htm" />
+          <HelpTOCNode Title="backgroundTexture Field" Url="html/F_WinAll_backgroundTexture.htm" />
+          <HelpTOCNode Title="photoTexture Field" Url="html/F_WinAll_photoTexture.htm" />
+          <HelpTOCNode Title="smartMenuSkin Field" Url="html/F_WinAll_smartMenuSkin.htm" />
+          <HelpTOCNode Title="titleImg Field" Url="html/F_WinAll_titleImg.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="WinAll Methods" Url="html/Methods_T_WinAll.htm" />
+        <HelpTOCNode Title="WinAll Properties" Url="html/Properties_T_WinAll.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="ca9b323f-29ae-45e9-a3bd-6e4896220487" Title="GGProductions.LetterStorm Namespaces" Url="html/G_GGProductions_LetterStorm.htm">
+      <HelpTOCNode Id="dc937bcc-e6aa-44d1-beda-9ff96bbaddbe" Title="GGProductions.LetterStorm.Configuration" Url="html/N_GGProductions_LetterStorm_Configuration.htm">
+        <HelpTOCNode Id="bcc5fdfd-0a64-490b-9aa9-b159b377d0e2" Title="EnemyDifficulty Class" Url="html/T_GGProductions_LetterStorm_Configuration_EnemyDifficulty.htm">
+          <HelpTOCNode Id="280778f9-29b0-4946-8a72-97cee5a4f1bc" Title="EnemyDifficulty Constructor " Url="html/Overload_GGProductions_LetterStorm_Configuration_EnemyDifficulty__ctor.htm">
+            <HelpTOCNode Title="EnemyDifficulty Constructor (Int32)" Url="html/M_GGProductions_LetterStorm_Configuration_EnemyDifficulty__ctor.htm" />
+            <HelpTOCNode Title="EnemyDifficulty Constructor (Int32, String, String, Single, Int32, Int32, Int32, Single, Boolean, Single, Single, Single, Int32, Int32)" Url="html/M_GGProductions_LetterStorm_Configuration_EnemyDifficulty__ctor_1.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Title="EnemyDifficulty Methods" Url="html/Methods_T_GGProductions_LetterStorm_Configuration_EnemyDifficulty.htm" />
+          <HelpTOCNode Id="0fe130ab-b962-421a-9aa9-7bcc485e1d6b" Title="EnemyDifficulty Properties" Url="html/Properties_T_GGProductions_LetterStorm_Configuration_EnemyDifficulty.htm">
+            <HelpTOCNode Title="BigBossWindowToAcceptLetters Property " Url="html/P_GGProductions_LetterStorm_Configuration_EnemyDifficulty_BigBossWindowToAcceptLetters.htm" />
+            <HelpTOCNode Title="BigBossWindowToDeflectLetters Property " Url="html/P_GGProductions_LetterStorm_Configuration_EnemyDifficulty_BigBossWindowToDeflectLetters.htm" />
+            <HelpTOCNode Title="BossCannonProjectilesPerSecond Property " Url="html/P_GGProductions_LetterStorm_Configuration_EnemyDifficulty_BossCannonProjectilesPerSecond.htm" />
+            <HelpTOCNode Title="BossCannonTrackingAccuracy Property " Url="html/P_GGProductions_LetterStorm_Configuration_EnemyDifficulty_BossCannonTrackingAccuracy.htm" />
+            <HelpTOCNode Title="BossHealthHandicap Property " Url="html/P_GGProductions_LetterStorm_Configuration_EnemyDifficulty_BossHealthHandicap.htm" />
+            <HelpTOCNode Title="BossRageChargeSpeed Property " Url="html/P_GGProductions_LetterStorm_Configuration_EnemyDifficulty_BossRageChargeSpeed.htm" />
+            <HelpTOCNode Title="DamageToPlayerPerHit Property " Url="html/P_GGProductions_LetterStorm_Configuration_EnemyDifficulty_DamageToPlayerPerHit.htm" />
+            <HelpTOCNode Title="Description Property " Url="html/P_GGProductions_LetterStorm_Configuration_EnemyDifficulty_Description.htm" />
+            <HelpTOCNode Title="EnableBossRageMode Property " Url="html/P_GGProductions_LetterStorm_Configuration_EnemyDifficulty_EnableBossRageMode.htm" />
+            <HelpTOCNode Title="GameSpeed Property " Url="html/P_GGProductions_LetterStorm_Configuration_EnemyDifficulty_GameSpeed.htm" />
+            <HelpTOCNode Title="ID Property " Url="html/P_GGProductions_LetterStorm_Configuration_EnemyDifficulty_ID.htm" />
+            <HelpTOCNode Title="InitialHealth Property " Url="html/P_GGProductions_LetterStorm_Configuration_EnemyDifficulty_InitialHealth.htm" />
+            <HelpTOCNode Title="MaxEnemiesOnScreen Property " Url="html/P_GGProductions_LetterStorm_Configuration_EnemyDifficulty_MaxEnemiesOnScreen.htm" />
+            <HelpTOCNode Title="Name Property " Url="html/P_GGProductions_LetterStorm_Configuration_EnemyDifficulty_Name.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="43d52412-629d-4bff-969f-8feb91f9e044" Title="GGProductions.LetterStorm.Configuration.Collections" Url="html/N_GGProductions_LetterStorm_Configuration_Collections.htm">
+        <HelpTOCNode Id="56455bd9-a3b0-4007-876d-92f54df1e439" Title="DifficultyLevels Class" Url="html/T_GGProductions_LetterStorm_Configuration_Collections_DifficultyLevels.htm">
+          <HelpTOCNode Title="DifficultyLevels Constructor " Url="html/M_GGProductions_LetterStorm_Configuration_Collections_DifficultyLevels__ctor.htm" />
+          <HelpTOCNode Id="ba4bffa6-b00d-42cc-ac0f-d7e9276ee0f0" Title="DifficultyLevels Methods" Url="html/Methods_T_GGProductions_LetterStorm_Configuration_Collections_DifficultyLevels.htm">
+            <HelpTOCNode Title="GetDifficultyById Method " Url="html/M_GGProductions_LetterStorm_Configuration_Collections_DifficultyLevels_GetDifficultyById.htm" />
+            <HelpTOCNode Title="GetDifficultyByName Method " Url="html/M_GGProductions_LetterStorm_Configuration_Collections_DifficultyLevels_GetDifficultyByName.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Title="DifficultyLevels Properties" Url="html/Properties_T_GGProductions_LetterStorm_Configuration_Collections_DifficultyLevels.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="a0e0f66f-45f0-4c88-ae44-06a781263b67" Title="GGProductions.LetterStorm.Data" Url="html/N_GGProductions_LetterStorm_Data.htm">
+        <HelpTOCNode Id="aa29a978-69e5-4e90-b6a5-001466cd9555" Title="EnemyDifficultyNotFoundException Class" Url="html/T_GGProductions_LetterStorm_Data_EnemyDifficultyNotFoundException.htm">
+          <HelpTOCNode Title="EnemyDifficultyNotFoundException Constructor " Url="html/M_GGProductions_LetterStorm_Data_EnemyDifficultyNotFoundException__ctor.htm" />
+          <HelpTOCNode Title="EnemyDifficultyNotFoundException Methods" Url="html/Methods_T_GGProductions_LetterStorm_Data_EnemyDifficultyNotFoundException.htm" />
+          <HelpTOCNode Title="EnemyDifficultyNotFoundException Properties" Url="html/Properties_T_GGProductions_LetterStorm_Data_EnemyDifficultyNotFoundException.htm" />
+          <HelpTOCNode Title="EnemyDifficultyNotFoundException Events" Url="html/Events_T_GGProductions_LetterStorm_Data_EnemyDifficultyNotFoundException.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="fa25a499-06b6-40e4-a613-b3c62d2ce1a5" Title="LessonNotFoundException Class" Url="html/T_GGProductions_LetterStorm_Data_LessonNotFoundException.htm">
+          <HelpTOCNode Title="LessonNotFoundException Constructor " Url="html/M_GGProductions_LetterStorm_Data_LessonNotFoundException__ctor.htm" />
+          <HelpTOCNode Title="LessonNotFoundException Methods" Url="html/Methods_T_GGProductions_LetterStorm_Data_LessonNotFoundException.htm" />
+          <HelpTOCNode Title="LessonNotFoundException Properties" Url="html/Properties_T_GGProductions_LetterStorm_Data_LessonNotFoundException.htm" />
+          <HelpTOCNode Title="LessonNotFoundException Events" Url="html/Events_T_GGProductions_LetterStorm_Data_LessonNotFoundException.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="b65ce289-adc3-4cf0-bd2e-291c8d9ed796" Title="NoUntestedWordsException Class" Url="html/T_GGProductions_LetterStorm_Data_NoUntestedWordsException.htm">
+          <HelpTOCNode Title="NoUntestedWordsException Constructor " Url="html/M_GGProductions_LetterStorm_Data_NoUntestedWordsException__ctor.htm" />
+          <HelpTOCNode Title="NoUntestedWordsException Methods" Url="html/Methods_T_GGProductions_LetterStorm_Data_NoUntestedWordsException.htm" />
+          <HelpTOCNode Title="NoUntestedWordsException Properties" Url="html/Properties_T_GGProductions_LetterStorm_Data_NoUntestedWordsException.htm" />
+          <HelpTOCNode Title="NoUntestedWordsException Events" Url="html/Events_T_GGProductions_LetterStorm_Data_NoUntestedWordsException.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="9b7722be-fcd6-4b94-968d-c87ca04baaf9" Title="PlayerData Class" Url="html/T_GGProductions_LetterStorm_Data_PlayerData.htm">
+          <HelpTOCNode Title="PlayerData Constructor " Url="html/M_GGProductions_LetterStorm_Data_PlayerData__ctor.htm" />
+          <HelpTOCNode Title="PlayerData Methods" Url="html/Methods_T_GGProductions_LetterStorm_Data_PlayerData.htm" />
+          <HelpTOCNode Id="70ac1fa0-961d-4eb6-a6fa-14053f275b99" Title="PlayerData Properties" Url="html/Properties_T_GGProductions_LetterStorm_Data_PlayerData.htm">
+            <HelpTOCNode Title="CurrentLessonId Property " Url="html/P_GGProductions_LetterStorm_Data_PlayerData_CurrentLessonId.htm" />
+            <HelpTOCNode Title="CurrentScore Property " Url="html/P_GGProductions_LetterStorm_Data_PlayerData_CurrentScore.htm" />
+            <HelpTOCNode Title="Curriculum Property " Url="html/P_GGProductions_LetterStorm_Data_PlayerData_Curriculum.htm" />
+            <HelpTOCNode Title="EnemyDifficultyId Property " Url="html/P_GGProductions_LetterStorm_Data_PlayerData_EnemyDifficultyId.htm" />
+            <HelpTOCNode Title="Level Property " Url="html/P_GGProductions_LetterStorm_Data_PlayerData_Level.htm" />
+            <HelpTOCNode Title="LifeCount Property " Url="html/P_GGProductions_LetterStorm_Data_PlayerData_LifeCount.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Id="96353e1a-19c0-4ba2-9fe7-a5159ca94562" Title="Word Class" Url="html/T_GGProductions_LetterStorm_Data_Word.htm">
+          <HelpTOCNode Id="01424bc4-4567-49ed-a971-13e6bd76baeb" Title="Word Constructor " Url="html/Overload_GGProductions_LetterStorm_Data_Word__ctor.htm">
+            <HelpTOCNode Title="Word Constructor " Url="html/M_GGProductions_LetterStorm_Data_Word__ctor.htm" />
+            <HelpTOCNode Title="Word Constructor (String)" Url="html/M_GGProductions_LetterStorm_Data_Word__ctor_1.htm" />
+            <HelpTOCNode Title="Word Constructor (String, String)" Url="html/M_GGProductions_LetterStorm_Data_Word__ctor_2.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Id="b17d4b05-0197-49bb-b6a0-39fe7c9ea3e5" Title="Word Methods" Url="html/Methods_T_GGProductions_LetterStorm_Data_Word.htm">
+            <HelpTOCNode Title="ToString Method " Url="html/M_GGProductions_LetterStorm_Data_Word_ToString.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Id="0c6a4554-c961-4148-89f2-30c63fefab13" Title="Word Properties" Url="html/Properties_T_GGProductions_LetterStorm_Data_Word.htm">
+            <HelpTOCNode Title="Hint Property " Url="html/P_GGProductions_LetterStorm_Data_Word_Hint.htm" />
+            <HelpTOCNode Title="Tested Property " Url="html/P_GGProductions_LetterStorm_Data_Word_Tested.htm" />
+            <HelpTOCNode Title="Text Property " Url="html/P_GGProductions_LetterStorm_Data_Word_Text.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="250865f9-66b5-4b63-955c-ab2832b850aa" Title="GGProductions.LetterStorm.Data.Collections" Url="html/N_GGProductions_LetterStorm_Data_Collections.htm">
+        <HelpTOCNode Id="642f7fe3-ff59-45c4-9cd1-6e2f2f921192" Title="Lesson Class" Url="html/T_GGProductions_LetterStorm_Data_Collections_Lesson.htm">
+          <HelpTOCNode Id="f8ab89cc-6e8e-4465-b305-ab43fdd6f2aa" Title="Lesson Constructor " Url="html/Overload_GGProductions_LetterStorm_Data_Collections_Lesson__ctor.htm">
+            <HelpTOCNode Title="Lesson Constructor " Url="html/M_GGProductions_LetterStorm_Data_Collections_Lesson__ctor.htm" />
+            <HelpTOCNode Title="Lesson Constructor (String)" Url="html/M_GGProductions_LetterStorm_Data_Collections_Lesson__ctor_1.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Title="Lesson Methods" Url="html/Methods_T_GGProductions_LetterStorm_Data_Collections_Lesson.htm" />
+          <HelpTOCNode Id="280a50c9-b4e7-4b4e-a29f-5da16ac2e191" Title="Lesson Properties" Url="html/Properties_T_GGProductions_LetterStorm_Data_Collections_Lesson.htm">
+            <HelpTOCNode Title="ID Property " Url="html/P_GGProductions_LetterStorm_Data_Collections_Lesson_ID.htm" />
+            <HelpTOCNode Title="Name Property " Url="html/P_GGProductions_LetterStorm_Data_Collections_Lesson_Name.htm" />
+            <HelpTOCNode Title="Words Property " Url="html/P_GGProductions_LetterStorm_Data_Collections_Lesson_Words.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Id="60048fb3-d2fd-4c66-b999-30b0aa58adb8" Title="LessonBook Class" Url="html/T_GGProductions_LetterStorm_Data_Collections_LessonBook.htm">
+          <HelpTOCNode Title="LessonBook Constructor " Url="html/M_GGProductions_LetterStorm_Data_Collections_LessonBook__ctor.htm" />
+          <HelpTOCNode Id="d3cb42d9-5b26-41e4-8777-a5e07ce1aefd" Title="LessonBook Methods" Url="html/Methods_T_GGProductions_LetterStorm_Data_Collections_LessonBook.htm">
+            <HelpTOCNode Title="CreateSampleLesson Method " Url="html/M_GGProductions_LetterStorm_Data_Collections_LessonBook_CreateSampleLesson.htm" />
+            <HelpTOCNode Title="CreateSampleLessons Method " Url="html/M_GGProductions_LetterStorm_Data_Collections_LessonBook_CreateSampleLessons.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Id="867f5d4a-3355-4391-a1f8-f247e8234263" Title="LessonBook Properties" Url="html/Properties_T_GGProductions_LetterStorm_Data_Collections_LessonBook.htm">
+            <HelpTOCNode Title="Lessons Property " Url="html/P_GGProductions_LetterStorm_Data_Collections_LessonBook_Lessons.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Id="dc27f4f1-025f-4fdc-9f46-b2779ca37b11" Title="LessonCollection Class" Url="html/T_GGProductions_LetterStorm_Data_Collections_LessonCollection.htm">
+          <HelpTOCNode Title="LessonCollection Constructor " Url="html/M_GGProductions_LetterStorm_Data_Collections_LessonCollection__ctor.htm" />
+          <HelpTOCNode Id="c147e8ee-e108-4dc7-8bea-75ca841a65c3" Title="LessonCollection Methods" Url="html/Methods_T_GGProductions_LetterStorm_Data_Collections_LessonCollection.htm">
+            <HelpTOCNode Title="GetLessonById Method " Url="html/M_GGProductions_LetterStorm_Data_Collections_LessonCollection_GetLessonById.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Title="LessonCollection Properties" Url="html/Properties_T_GGProductions_LetterStorm_Data_Collections_LessonCollection.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="37f34da8-2af4-44c7-a755-f850957061b0" Title="WordSet Class" Url="html/T_GGProductions_LetterStorm_Data_Collections_WordSet.htm">
+          <HelpTOCNode Title="WordSet Constructor " Url="html/M_GGProductions_LetterStorm_Data_Collections_WordSet__ctor.htm" />
+          <HelpTOCNode Id="bb38c454-ab89-41ff-bf7b-5e4562732a27" Title="WordSet Methods" Url="html/Methods_T_GGProductions_LetterStorm_Data_Collections_WordSet.htm">
+            <HelpTOCNode Title="ContainsUntestedWords Method " Url="html/M_GGProductions_LetterStorm_Data_Collections_WordSet_ContainsUntestedWords.htm" />
+            <HelpTOCNode Title="GetNextWord Method " Url="html/M_GGProductions_LetterStorm_Data_Collections_WordSet_GetNextWord.htm" />
+            <HelpTOCNode Title="GetRandomWord Method " Url="html/M_GGProductions_LetterStorm_Data_Collections_WordSet_GetRandomWord.htm" />
+            <HelpTOCNode Title="ResetAllWordsToUntested Method " Url="html/M_GGProductions_LetterStorm_Data_Collections_WordSet_ResetAllWordsToUntested.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Title="WordSet Properties" Url="html/Properties_T_GGProductions_LetterStorm_Data_Collections_WordSet.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="4f77a45e-a3c7-4ad8-92bf-731710bee9bd" Title="GGProductions.LetterStorm.InGameHelpClasses" Url="html/N_GGProductions_LetterStorm_InGameHelpClasses.htm">
+        <HelpTOCNode Id="95ed9226-20a8-421e-8571-e6235209664f" Title="Health Class" Url="html/T_GGProductions_LetterStorm_InGameHelpClasses_Health.htm">
+          <HelpTOCNode Title="Health Constructor " Url="html/M_GGProductions_LetterStorm_InGameHelpClasses_Health__ctor.htm" />
+          <HelpTOCNode Id="21dc2b5c-9845-455c-8356-50f6de4cd1fc" Title="Health Methods" Url="html/Methods_T_GGProductions_LetterStorm_InGameHelpClasses_Health.htm">
+            <HelpTOCNode Id="77044095-454b-4143-9322-9dedeef7f709" Title="DecreaseHealth Method " Url="html/Overload_GGProductions_LetterStorm_InGameHelpClasses_Health_DecreaseHealth.htm">
+              <HelpTOCNode Title="DecreaseHealth Method " Url="html/M_GGProductions_LetterStorm_InGameHelpClasses_Health_DecreaseHealth.htm" />
+              <HelpTOCNode Title="DecreaseHealth Method (Int32)" Url="html/M_GGProductions_LetterStorm_InGameHelpClasses_Health_DecreaseHealth_1.htm" />
+            </HelpTOCNode>
+            <HelpTOCNode Title="HasHealth Method " Url="html/M_GGProductions_LetterStorm_InGameHelpClasses_Health_HasHealth.htm" />
+            <HelpTOCNode Title="HasNoHealth Method " Url="html/M_GGProductions_LetterStorm_InGameHelpClasses_Health_HasNoHealth.htm" />
+            <HelpTOCNode Id="d51ad567-f9cb-400d-9670-5c0beb84fdab" Title="IncreaseHealth Method " Url="html/Overload_GGProductions_LetterStorm_InGameHelpClasses_Health_IncreaseHealth.htm">
+              <HelpTOCNode Title="IncreaseHealth Method " Url="html/M_GGProductions_LetterStorm_InGameHelpClasses_Health_IncreaseHealth.htm" />
+              <HelpTOCNode Title="IncreaseHealth Method (Int32)" Url="html/M_GGProductions_LetterStorm_InGameHelpClasses_Health_IncreaseHealth_1.htm" />
+            </HelpTOCNode>
+            <HelpTOCNode Title="InitializeHealth Method " Url="html/M_GGProductions_LetterStorm_InGameHelpClasses_Health_InitializeHealth.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Id="ac907b75-f9a2-49f0-8f0d-4e2af946b089" Title="Health Properties" Url="html/Properties_T_GGProductions_LetterStorm_InGameHelpClasses_Health.htm">
+            <HelpTOCNode Title="CurHealth Property " Url="html/P_GGProductions_LetterStorm_InGameHelpClasses_Health_CurHealth.htm" />
+            <HelpTOCNode Title="MaxHealth Property " Url="html/P_GGProductions_LetterStorm_InGameHelpClasses_Health_MaxHealth.htm" />
+            <HelpTOCNode Title="MinHealth Property " Url="html/P_GGProductions_LetterStorm_InGameHelpClasses_Health_MinHealth.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Id="d8816902-2ff0-4d0e-b28d-20dddfd9b1b2" Title="ScoreKeeper Class" Url="html/T_GGProductions_LetterStorm_InGameHelpClasses_ScoreKeeper.htm">
+          <HelpTOCNode Id="313d15d8-7c23-4076-a5a8-2fed497ecb3b" Title="ScoreKeeper Constructor " Url="html/Overload_GGProductions_LetterStorm_InGameHelpClasses_ScoreKeeper__ctor.htm">
+            <HelpTOCNode Title="ScoreKeeper Constructor " Url="html/M_GGProductions_LetterStorm_InGameHelpClasses_ScoreKeeper__ctor.htm" />
+            <HelpTOCNode Title="ScoreKeeper Constructor (Int32)" Url="html/M_GGProductions_LetterStorm_InGameHelpClasses_ScoreKeeper__ctor_1.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Id="9a4093ba-5d9f-4cff-9e00-a571731496fa" Title="ScoreKeeper Methods" Url="html/Methods_T_GGProductions_LetterStorm_InGameHelpClasses_ScoreKeeper.htm">
+            <HelpTOCNode Title="Decrease Method " Url="html/M_GGProductions_LetterStorm_InGameHelpClasses_ScoreKeeper_Decrease.htm" />
+            <HelpTOCNode Title="Increase Method " Url="html/M_GGProductions_LetterStorm_InGameHelpClasses_ScoreKeeper_Increase.htm" />
+            <HelpTOCNode Title="Reset Method " Url="html/M_GGProductions_LetterStorm_InGameHelpClasses_ScoreKeeper_Reset.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Id="8aa330db-94f4-4de2-8c7f-954312f9ab1c" Title="ScoreKeeper Properties" Url="html/Properties_T_GGProductions_LetterStorm_InGameHelpClasses_ScoreKeeper.htm">
+            <HelpTOCNode Title="Score Property " Url="html/P_GGProductions_LetterStorm_InGameHelpClasses_ScoreKeeper_Score.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Title="ScoreKeeper.PlayerAchievement Enumeration" Url="html/T_GGProductions_LetterStorm_InGameHelpClasses_ScoreKeeper_PlayerAchievement.htm" />
+        <HelpTOCNode Title="ScoreKeeper.PlayerFailure Enumeration" Url="html/T_GGProductions_LetterStorm_InGameHelpClasses_ScoreKeeper_PlayerFailure.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="fe14e895-5730-41f1-8357-9655143bb34f" Title="GGProductions.LetterStorm.Utilities" Url="html/N_GGProductions_LetterStorm_Utilities.htm">
+        <HelpTOCNode Id="059129e0-141a-4122-857b-4ab3cd2bf397" Title="GameStateUtilities Class" Url="html/T_GGProductions_LetterStorm_Utilities_GameStateUtilities.htm">
+          <HelpTOCNode Id="89681c62-8c90-444f-81f0-3dbc88dc6109" Title="GameStateUtilities Methods" Url="html/Methods_T_GGProductions_LetterStorm_Utilities_GameStateUtilities.htm">
+            <HelpTOCNode Title="Load Method " Url="html/M_GGProductions_LetterStorm_Utilities_GameStateUtilities_Load.htm" />
+            <HelpTOCNode Title="Save Method " Url="html/M_GGProductions_LetterStorm_Utilities_GameStateUtilities_Save.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+</HelpTOC>

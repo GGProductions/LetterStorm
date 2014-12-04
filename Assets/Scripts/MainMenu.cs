@@ -5,8 +5,8 @@ using System.Collections;
 public class MainMenu : MonoBehaviour
 {
 	//JR Texture for the background in the scene
-    public Texture backgroundTexture;
-    
+	public Texture backgroundTexture;
+	public Texture titleTexture;
 
 	
 	void start()
@@ -22,7 +22,11 @@ public class MainMenu : MonoBehaviour
 	void OnGUI()
 	{
 		//JR Calls up background texture which is a .png file inside textures folder
-        GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), backgroundTexture);
+		GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), backgroundTexture);
+		
+		//JR Calls up title texture which is a .png file inside textures folder
+		GUI.DrawTexture(new Rect(Screen.width / 2 - 250 , Screen.height / 2 - 250, 500, 300), titleTexture);
+		
 		
 		//JR Displays "Play"" button on the Main Menu, this button Loads level1 scene
 		//JR if Button is pressed load scene
@@ -30,9 +34,9 @@ public class MainMenu : MonoBehaviour
 		{
 			Application.LoadLevel("NewGame");
 			//JR loads level with 3 lives, 0 score and misses
-            Player.Score = 0;
-            Player.Lives = 3;
-            Player.Missed = 0;
+			//Player.Score = 0; //JR Old Code from first Iteration
+			//Player.Lives = 3; //JR Old Code from first Iteration
+			//Player.Missed = 0; //JR Old Code from first Iteration
 		}
 
 			
@@ -46,7 +50,7 @@ public class MainMenu : MonoBehaviour
 		//JR Creates "Options" button on the Main Menu, this button Loads Options scene
 		//JR if Button is pressed load scene
 		//JR swapped positions with "License" button on the Main Menu
-		if(GUI.Button(new Rect(Screen.width / 2 - 40 , Screen.height / 2 + 75 , 80, 20), "Options"))
+		if(GUI.Button(new Rect(Screen.width / 2 - 40 , Screen.height / 2 + 75 , 80, 20), "Lessons"))
 		{
 			Application.LoadLevel("ManageLessons");
 		}

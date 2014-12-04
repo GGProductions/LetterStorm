@@ -50,10 +50,7 @@ public class AlbertController : MonoBehaviour {
 
 		if (leftRight != 0 && forwardBackward != 0)
 		{
-
-            //slw speed
-
-
+			//slw speed
 		}
 
 		else

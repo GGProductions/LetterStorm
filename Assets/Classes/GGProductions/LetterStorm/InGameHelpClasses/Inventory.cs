@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Linq;
+using System.Collections.Generic;
+using System;
 
 public class Inventory
 {
@@ -7,6 +10,7 @@ public class Inventory
     // Private variables representing the collection of collectible letters 
     public CollectedLetter A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z;
     private int _TotalCollectedLetters;
+    private List<PowerUp> _CollectedPowerUpsList;
     #endregion Private Variables ------------------------------------------
 
     #region Properties ----------------------------------------------------
@@ -25,6 +29,34 @@ public class Inventory
         }
     }
 
+    /// <summary>
+    /// List of collected powerups
+    /// </summary>
+    public List<PowerUp> CollectedPowerUpsList
+    {
+        get
+        {
+            if (_CollectedPowerUpsList == null)
+                _CollectedPowerUpsList = new List<PowerUp>();
+            return _CollectedPowerUpsList;
+        }
+        set
+        {
+            _CollectedPowerUpsList = value;
+        }
+    }
+
+    /// <summary>
+    /// Get the DualPencil powerup
+    /// </summary>
+    public PowerUp DualPencil
+    {
+        get
+        {
+       //     Debug.Log("Getting Dual Pencil");
+            return _CollectedPowerUpsList.First(p => (p.Name.IndexOf("DualPencils", System.StringComparison.OrdinalIgnoreCase) >= 0));
+        }
+    }
     #endregion Properties -------------------------------------------------
 
     #region Functions ---------------------------------------------
@@ -242,7 +274,7 @@ public class Inventory
     /// <summary>
     /// Decrements count of letter
     /// </summary>
-    private void DecrementLetter(string letter)
+    public void DecrementLetter(string letter)
     {
         switch (letter)
         {
@@ -355,6 +387,77 @@ public class Inventory
         }
     }
 
+    /// <summary>
+    /// Adds a powerup to the inventory and update the total letters count
+    /// </summary>
+    /// <param name="powerUpName">Name of the PowerUp that is to be incremented</param>
+    public void IncrementPowerUp(string powerUpName)
+    {
+        foreach (PowerUp pUp in _CollectedPowerUpsList)
+        {
+            if (pUp.Name.Equals(powerUpName))
+            {
+                // Set the Dual Pencil powerup to expire after 3 seconds
+                if (pUp.Name.IndexOf("DualPencils", System.StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+                    Debug.Log("Setting expiration time");
+                    pUp.SetExpireTime(3);
+                }
+                else
+                {
+                    pUp.IncrementCount();
+                }
+                return;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Subtracts a powerup to the inventory and update the total letters count
+    /// </summary>
+    /// <param name="powerUpName">Name of the PowerUp that is to be decremented</param>
+    public void DecrementPowerUp(string powerUpName)
+    {
+        foreach (PowerUp pUp in _CollectedPowerUpsList)
+        {
+            if (pUp.Name.Equals(powerUpName))
+            {
+                if (pUp.Count - 1 < 0)
+                    pUp.Count = 0;
+                else
+                    pUp.DecrementCount();
+
+                return;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Adds a powerup to the inventory and update the total letters count
+    /// </summary>
+    /// <param name="powerUpName">Name of the PowerUp that is to be incremented</param>
+    public PowerUp GetPowerUpAtIndex(int index)
+    {
+        int ii = 0;
+        foreach (PowerUp pUp in _CollectedPowerUpsList)
+        {
+            if (ii == index)
+            {
+                return pUp;
+            }
+        }
+        return null;
+    }
+
+    /// <summary>
+    /// Check if the inventory contains the named powerup
+    /// </summary>
+    /// <param name="powerUpName">The name of the powerup to look for</param>
+    public bool HasPowerUp(string powerUpName)
+    {
+  //      Debug.Log("Checking for powerup");
+        return _CollectedPowerUpsList.Exists(p => p.Name.IndexOf(powerUpName, System.StringComparison.OrdinalIgnoreCase) >= 0);
+    }
     #endregion Functions ------------------------------------------
 
     #region Constructors --------------------------------------------------
@@ -390,13 +493,8 @@ public class Inventory
         X = new CollectedLetter("X");
         Y = new CollectedLetter("Y");
         Z = new CollectedLetter("Z");
+        CollectedPowerUpsList = new List<PowerUp>();
     }
     #endregion Constructors -----------------------------------------------
 
-
-    public void take_letterAway(string letter) { 
-       DecrementLetter( letter);
-    }
-
-  
 }

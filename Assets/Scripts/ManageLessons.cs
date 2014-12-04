@@ -15,6 +15,25 @@ public class ManageLessons : MonoBehaviour
     private List<string> lessonWordTexts = null;
     private int selectedLessonBtnIdx = 0;
     private int selectedWordBtnIdx = 0;
+    private float scaleFactor = 1.0f;
+
+    // Variables used to store the original and scaled versions of the GUI styles
+    private GUIStyle _headerStyle = null;
+    private GUIStyle _headerStyleOrig = null;
+    private GUIStyle _subHeaderStyle = null;
+    private GUIStyle _subHeaderStyleOrig = null;
+    private GUIStyle _generalButtonStyle = null;
+    private GUIStyle _generalButtonStyleOrig = null;
+    private GUIStyle _createButtonStyle = null;
+    private GUIStyle _createButtonStyleOrig = null;
+    private GUIStyle _deleteButtonStyle = null;
+    private GUIStyle _deleteButtonStyleOrig = null;
+    private GUIStyle _inputFieldsStyle = null;
+    private GUIStyle _inputFieldsStyleOrig = null;
+    private GUIStyle _mainMenuButtonStyle = null;
+    private GUIStyle _mainMenuButtonStyleOrig = null;
+
+
     /// <summary>
     /// Vector used to store the scrolled position of the Scrollable View 
     /// within the AllLessons Area
@@ -29,77 +48,170 @@ public class ManageLessons : MonoBehaviour
     /// <summary>
     /// The styles used for header labels
     /// </summary>
-    private GUIStyle _headerStyle
+    private GUIStyle headerStyle
     {
         get
         {
-            return smartMenuSkin.customStyles.First(s => s.name.Equals("headerStyle", System.StringComparison.OrdinalIgnoreCase));
+            // If the style hasn't been retrieved, fetch it and make a copy for scaling
+            if (_headerStyle == null)
+            {
+                _headerStyleOrig = smartMenuSkin.customStyles.First(s => s.name.Equals("headerStyle", System.StringComparison.OrdinalIgnoreCase));
+                _headerStyle = new GUIStyle(_headerStyleOrig);
+            }
+            // Scale the style according to the screen size
+            _headerStyle.fontSize = (int)(_headerStyleOrig.fontSize * scaleFactor);
+            _headerStyle.fixedHeight = (int)(_headerStyleOrig.fixedHeight * scaleFactor);
+
+            return _headerStyle;
         }
     }
 
     /// <summary>
     /// The styles used for subheader labels
     /// </summary>
-    private GUIStyle _subHeaderStyle
+    private GUIStyle subHeaderStyle
     {
         get
         {
-            return smartMenuSkin.customStyles.First(s => s.name.Equals("subHeaderStyle", System.StringComparison.OrdinalIgnoreCase));
+            // If the style hasn't been retrieved, fetch it and make a copy for scaling
+            if (_subHeaderStyle == null)
+            {
+                _subHeaderStyleOrig = smartMenuSkin.customStyles.First(s => s.name.Equals("subHeaderStyle", System.StringComparison.OrdinalIgnoreCase));
+                _subHeaderStyle = new GUIStyle(_subHeaderStyleOrig);
+            }
+            // Scale the style according to the screen size
+            _subHeaderStyle.fontSize = (int)(_subHeaderStyleOrig.fontSize * scaleFactor);
+
+            return _subHeaderStyle;
         }
     }
 
     /// <summary>
     /// The style used for most buttons
     /// </summary>
-    private GUIStyle _generalButtonStyle
+    private GUIStyle generalButtonStyle
     {
         get
         {
-            return smartMenuSkin.customStyles.First(s => s.name.Equals("generalButtonStyle", System.StringComparison.OrdinalIgnoreCase));
+            // If the style hasn't been retrieved, fetch it and make a copy for scaling
+            if (_generalButtonStyle == null)
+            {
+                _generalButtonStyleOrig = smartMenuSkin.customStyles.First(s => s.name.Equals("generalButtonStyle", System.StringComparison.OrdinalIgnoreCase));
+                _generalButtonStyle = new GUIStyle(_generalButtonStyleOrig);
+            }
+            // Scale the style according to the screen size
+            _generalButtonStyle.fontSize = (int)(_generalButtonStyleOrig.fontSize * scaleFactor);
+            _generalButtonStyle.padding = new RectOffset((int)(_generalButtonStyleOrig.padding.left * scaleFactor),
+                                                         (int)(_generalButtonStyleOrig.padding.right * scaleFactor),
+                                                         (int)(_generalButtonStyleOrig.padding.top * scaleFactor),
+                                                         (int)(_generalButtonStyleOrig.padding.bottom * scaleFactor));
+            _generalButtonStyle.fixedHeight = (int)(_generalButtonStyleOrig.fixedHeight * scaleFactor);
+
+            return _generalButtonStyle;
         }
     }
 
     /// <summary>
     /// The styles used for create buttons
     /// </summary>
-    private GUIStyle _createButtonStyle
+    private GUIStyle createButtonStyle
     {
         get
         {
-            return smartMenuSkin.customStyles.First(s => s.name.Equals("createButtonStyle", System.StringComparison.OrdinalIgnoreCase));
+            // If the style hasn't been retrieved, fetch it and make a copy for scaling
+            if (_createButtonStyle == null)
+            {
+                _createButtonStyleOrig = smartMenuSkin.customStyles.First(s => s.name.Equals("createButtonStyle", System.StringComparison.OrdinalIgnoreCase));
+                _createButtonStyle = new GUIStyle(_createButtonStyleOrig);
+            }
+            // Scale the style according to the screen size
+            _createButtonStyle.fontSize = (int)(_createButtonStyleOrig.fontSize * scaleFactor);
+            _createButtonStyle.margin = new RectOffset((int)(_createButtonStyleOrig.margin.left * scaleFactor),
+                                                         (int)(_createButtonStyleOrig.margin.right * scaleFactor),
+                                                         (int)(_createButtonStyleOrig.margin.top * scaleFactor),
+                                                         (int)(_createButtonStyleOrig.margin.bottom * scaleFactor));
+            _createButtonStyle.fixedHeight = (int)(_createButtonStyleOrig.fixedHeight * scaleFactor);
+
+            return _createButtonStyle;
         }
     }
 
     /// <summary>
     /// The styles used for delete buttons
     /// </summary>
-    private GUIStyle _deleteButtonStyle
+    private GUIStyle deleteButtonStyle
     {
         get
         {
-            return smartMenuSkin.customStyles.First(s => s.name.Equals("deleteButtonStyle", System.StringComparison.OrdinalIgnoreCase));
+            // If the style hasn't been retrieved, fetch it and make a copy for scaling
+            if (_deleteButtonStyle == null)
+            {
+                _deleteButtonStyleOrig = smartMenuSkin.customStyles.First(s => s.name.Equals("deleteButtonStyle", System.StringComparison.OrdinalIgnoreCase));
+                _deleteButtonStyle = new GUIStyle(_deleteButtonStyleOrig);
+            }
+            // Scale the style according to the screen size
+            _deleteButtonStyle.fontSize = (int)(_deleteButtonStyleOrig.fontSize * scaleFactor);
+            _deleteButtonStyle.padding = new RectOffset((int)(_deleteButtonStyleOrig.padding.left * scaleFactor),
+                                                         (int)(_deleteButtonStyleOrig.padding.right * scaleFactor),
+                                                         (int)(_deleteButtonStyleOrig.padding.top * scaleFactor),
+                                                         (int)(_deleteButtonStyleOrig.padding.bottom * scaleFactor));
+            _deleteButtonStyle.fixedWidth = (int)(_deleteButtonStyleOrig.fixedWidth * scaleFactor);
+            _deleteButtonStyle.fixedHeight = (int)(_deleteButtonStyleOrig.fixedHeight * scaleFactor);
+
+            return _deleteButtonStyle;
         }
     }
 
     /// <summary>
     /// The styles used by the input fields
     /// </summary>
-    private GUIStyle _inputFieldsStyle
+    private GUIStyle inputFieldsStyle
     {
         get
         {
-            return smartMenuSkin.customStyles.First(s => s.name.Equals("inputFieldsStyle", System.StringComparison.OrdinalIgnoreCase));
+            // If the style hasn't been retrieved, fetch it and make a copy for scaling
+            if (_inputFieldsStyle == null)
+            {
+                _inputFieldsStyleOrig = smartMenuSkin.customStyles.First(s => s.name.Equals("inputFieldsStyle", System.StringComparison.OrdinalIgnoreCase));
+                _inputFieldsStyle = new GUIStyle(_inputFieldsStyleOrig);
+            }
+            // Scale the style according to the screen size
+            _inputFieldsStyle.fontSize = (int)(_inputFieldsStyleOrig.fontSize * scaleFactor);
+            _inputFieldsStyle.margin = new RectOffset((int)(_inputFieldsStyleOrig.margin.left * scaleFactor),
+                                                      (int)(_inputFieldsStyleOrig.margin.right * scaleFactor),
+                                                      (int)(_inputFieldsStyleOrig.margin.top * scaleFactor),
+                                                      (int)(_inputFieldsStyleOrig.margin.bottom * scaleFactor));
+            _inputFieldsStyle.padding = new RectOffset((int)(_inputFieldsStyleOrig.padding.left * scaleFactor),
+                                                       (int)(_inputFieldsStyleOrig.padding.right * scaleFactor),
+                                                       (int)(_inputFieldsStyleOrig.padding.top * scaleFactor),
+                                                       (int)(_inputFieldsStyleOrig.padding.bottom * scaleFactor));
+
+            return _inputFieldsStyle;
         }
     }
 
     /// <summary>
     /// The styles used for return to main menu button
     /// </summary>
-    private GUIStyle _mainMenuButtonStyle
+    private GUIStyle mainMenuButtonStyle
     {
         get
         {
-            return smartMenuSkin.customStyles.First(s => s.name.Equals("mainMenuButtonStyle", System.StringComparison.OrdinalIgnoreCase));
+            // If the style hasn't been retrieved, fetch it and make a copy for scaling
+            if (_mainMenuButtonStyle == null)
+            {
+                _mainMenuButtonStyleOrig = smartMenuSkin.customStyles.First(s => s.name.Equals("mainMenuButtonStyle", System.StringComparison.OrdinalIgnoreCase));
+                _mainMenuButtonStyle = new GUIStyle(_mainMenuButtonStyleOrig);
+            }
+            // Scale the style according to the screen size
+            _mainMenuButtonStyle.fontSize = (int)(_mainMenuButtonStyleOrig.fontSize * scaleFactor);
+            _mainMenuButtonStyle.padding = new RectOffset((int)(_mainMenuButtonStyleOrig.padding.left * scaleFactor),
+                                             (int)(_mainMenuButtonStyleOrig.padding.right * scaleFactor),
+                                             (int)(_mainMenuButtonStyleOrig.padding.top * scaleFactor),
+                                             (int)(_mainMenuButtonStyleOrig.padding.bottom * scaleFactor));
+            _mainMenuButtonStyle.fixedWidth = (int)(_mainMenuButtonStyleOrig.fixedWidth * scaleFactor);
+
+            return _mainMenuButtonStyle;
         }
     }
     #endregion Private Variables ----------------------------------------------
@@ -121,6 +233,11 @@ public class ManageLessons : MonoBehaviour
     public Texture backgroundImg;
 
     /// <summary>
+    /// The left margin of the backgound image to use for the curriculum and lesson areas
+    /// </summary>
+    public Texture areaLeftMarginImg;
+
+    /// <summary>
     /// The backgound image to use for the curriculum and lesson areas
     /// </summary>
     public Texture areaBackgroundImg;
@@ -130,8 +247,12 @@ public class ManageLessons : MonoBehaviour
     /// </summary>
     public Texture wordAreaBackgroundImg;
     #endregion Public Variables -----------------------------------------------
-
-    void OnGUI()
+    
+    #region Unity Events ------------------------------------------------------
+    /// <summary>
+    /// Initialize the data needed to build this page when it is first loaded
+    /// </summary>
+    void Start()
     {
         // If the player's Lessons and WordSets have not been loaded from 
         // persistent storage, do so
@@ -139,36 +260,29 @@ public class ManageLessons : MonoBehaviour
         {
             playerData = GameStateUtilities.Load();
 
-            if(playerData.Curriculum.Lessons.Count == 0)
+            if (playerData.Curriculum.Lessons.Count == 0)
                 playerData.Curriculum.CreateSampleLessons();
         }
-
-
-        CreateGUI();
-
-
-        //// Make a background box
-        //GUI.Box(new Rect(10, 10, 100, 90), "Loader Menu");
-
-        //// Make the first button. If it is pressed, Application.Loadlevel (1) will be executed
-        //if (GUI.Button(new Rect(20, 40, 80, 20), "Level 1"))
-        //{
-        //    Application.LoadLevel(1);
-        //}
-
-        //// Make the second button.
-        //if (GUI.Button(new Rect(20, 70, 80, 20), "Level 2"))
-        //{
-        //    Application.LoadLevel(2);
-        //}
     }
-
+    
+    void OnGUI()
+    {
+        CreateGUI();
+    }
+    #endregion Unity Events ---------------------------------------------------
+    
+    /// <summary>
+    /// Create all controls displayed in this scene 
+    /// </summary>
     private void CreateGUI()
     {
+        // Calculate the factor by which the GUI should be sized/resized based on the screen size
+        CalculateGUIScaleFactor();
+
         // Calculate the location where the top left of the GUI should 
         // start if it is to be centered on screen
-        int guiAreaLeft = (Screen.width / 2) - (700 / 2);
-        int guiAreaTop = (Screen.height / 2) - (600 / 2) + 70;
+        int guiAreaLeft = (Screen.width / 2) - ((int)(700 * scaleFactor) / 2);
+        int guiAreaTop = (Screen.height / 2) - (int)((600 * scaleFactor) / 2) + (int)(70 * scaleFactor);
 
         // If any of the calculations fall below zero (because the screen is too small),
         // default to zero
@@ -180,34 +294,49 @@ public class ManageLessons : MonoBehaviour
         // Create the background for the screen
         GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), backgroundImg);
         // Create the page title
-        GUI.DrawTexture(new Rect((Screen.width / 2) - (titleImg.width / 2), 30.0f, titleImg.width, titleImg.height), titleImg);
-        // Create the background page (for the curriculum and lessons)
-        GUI.DrawTexture(new Rect(guiAreaLeft - 85, guiAreaTop - 10, 540, 560), areaBackgroundImg);
-        // Create the background page (for the curriculum and lessons)
-        GUI.DrawTexture(new Rect(guiAreaLeft + 470, guiAreaTop - 10, 270, 270), wordAreaBackgroundImg);
+        float titleImgWidth = titleImg.width * scaleFactor;
+        float titleImgHeight = titleImg.height * scaleFactor;
+        float titleDistanceFromTop = 30.0f * scaleFactor;
+        GUI.DrawTexture(new Rect((Screen.width / 2) - (titleImgWidth / 2), titleDistanceFromTop, titleImgWidth, titleImgHeight), titleImg);
 
-        GUILayout.BeginArea(new Rect(guiAreaLeft, guiAreaTop, 700, 530));
+        // Create the left border of the background page (for the curriculum and lessons)
+        GUI.DrawTexture(new Rect(guiAreaLeft - (110 * scaleFactor), guiAreaTop - (10 * scaleFactor), (60 * scaleFactor), (580 * scaleFactor)), areaLeftMarginImg);
+        // Create the background page (for the curriculum and lessons)
+        GUI.DrawTexture(new Rect(guiAreaLeft - (50 * scaleFactor), guiAreaTop - (10 * scaleFactor), (560 * scaleFactor), (580 * scaleFactor)), areaBackgroundImg);
+        // Create the background page (for the word area)
+        GUI.DrawTexture(new Rect(guiAreaLeft + (545 * scaleFactor), guiAreaTop - (10 * scaleFactor), (270 * scaleFactor), (270 * scaleFactor)), wordAreaBackgroundImg);
 
-        CreateAllLessonsArea();
+        GUILayout.BeginArea(new Rect(guiAreaLeft - (40 * scaleFactor), guiAreaTop, (815 * scaleFactor), (550 * scaleFactor)));
+
+        // Populate the Curriculum/Lessons area with the names of all existing lessons
+        bool wasDifferentLessonSelected = CreateAllLessonsArea();
+
+        // Populate the Words area with the word set corresponding to the selected lesson
+        CreateCurrentLessonArea(ref selectedLessonBtnIdx, wasDifferentLessonSelected);
+
+        // Create the Edit Word area with the text and hint of the selected word
+        CreateWordEditorArea(selectedLessonBtnIdx, ref selectedWordBtnIdx);
 
         GUILayout.EndArea();
 
         CreateMainMenuBtn();
     }
 
+
     #region All Lessons Area Methods ------------------------------------------
     /// <summary>
     /// Create all the controls used to display all existing lessons and 
     /// create new lessons
     /// </summary>
-    private void CreateAllLessonsArea()
+    /// <returns>Whether or not a new lesson was selected</returns>
+    private bool CreateAllLessonsArea()
     {
         // If the List of lesson names has not yet been built, 
         // populate the lessons name cache
         BuildLessonNamesCache(false);
 
         // Wrap everything in the designated GUI Area to group controls together
-        GUILayout.BeginArea(new Rect(0, 0, 200, 530));
+        GUILayout.BeginArea(new Rect(0, 0, (250 * scaleFactor), (550 * scaleFactor)));
 
         // Ensure the controls are laid out vertically
         GUILayout.BeginVertical();
@@ -216,7 +345,7 @@ public class ManageLessons : MonoBehaviour
         int oldSelectedLessonIdx = selectedLessonBtnIdx;
 
         // Create the Curriculum header label
-        GUILayout.Label("Curriculum", _headerStyle);
+        GUILayout.Label("Curriculum", headerStyle);
 
         // Create the button used to create a new lesson, and do so if it has been clicked
         CreateNewLessonBtn(ref selectedLessonBtnIdx, ref oldSelectedLessonIdx);
@@ -226,7 +355,7 @@ public class ManageLessons : MonoBehaviour
         
         // Build a vertical, one-column grid of buttons corresponding to the 
         // lesson names, and note which one the player selected
-        selectedLessonBtnIdx = GUILayout.SelectionGrid(selectedLessonBtnIdx, lessonNames.ToArray(), 1, _generalButtonStyle);
+        selectedLessonBtnIdx = GUILayout.SelectionGrid(selectedLessonBtnIdx, lessonNames.ToArray(), 1, generalButtonStyle);
 
         GUILayout.EndScrollView();
 
@@ -236,11 +365,13 @@ public class ManageLessons : MonoBehaviour
 
         // If the currently-selected button is different from that selected last frame...
         if (selectedLessonBtnIdx != oldSelectedLessonIdx)
+            return true;
             // Populate the Words area from a new word set corresponding to the selected lesson
-            CreateCurrentLessonArea(ref selectedLessonBtnIdx, true);
+            //CreateCurrentLessonArea(ref selectedLessonBtnIdx, true);
         // Else, repopulate the Words area from the word set stored in cache
         else
-            CreateCurrentLessonArea(ref selectedLessonBtnIdx, false);
+            return false;
+            //CreateCurrentLessonArea(ref selectedLessonBtnIdx, false);
     }
 
     /// <summary>
@@ -252,7 +383,7 @@ public class ManageLessons : MonoBehaviour
     private void CreateNewLessonBtn(ref int selectedLessonIdx, ref int oldSelectedLessonIdx)
     {
         // Create the button used to create a new lesson.  If it was clicked...
-        if (GUILayout.Button("New Lesson", _createButtonStyle))
+        if (GUILayout.Button("New Lesson", createButtonStyle))
         {   // If a lesson with the same name does not already exist...
             if (lessonNames.Contains("Lesson") == false)
             {
@@ -284,23 +415,23 @@ public class ManageLessons : MonoBehaviour
         BuildLessonWordsCache(lessonIdx, refreshWordList);
 
         // Wrap everything in the designated GUI Area to group controls together
-        GUILayout.BeginArea(new Rect(250, 0, 200, 530));
+        GUILayout.BeginArea(new Rect((280 * scaleFactor), 0, (250 * scaleFactor), (550 * scaleFactor)));
         // Ensure the controls are laid out vertically
         GUILayout.BeginVertical();
 
         // Create the Lesson header label
-        GUILayout.Label("Lesson", _headerStyle);
+        GUILayout.Label("Lesson", headerStyle);
 
         // Create the Lesson name subheader label
-        GUILayout.Label("Name: ", _subHeaderStyle);
+        GUILayout.Label("Name: ", subHeaderStyle);
 
         // Create the text field used to update the current lesson's name, 
         // and do so if the user changes its contents
         CreateLessonNameTextField(lessonIdx);
 
         // Create the Words subheader label
-        GUILayout.Label("", _subHeaderStyle);
-        GUILayout.Label("Words: ", _subHeaderStyle);
+        GUILayout.Space(10.0f * scaleFactor);
+        GUILayout.Label("Words: ", subHeaderStyle);
 
         // Create the button used to create a new word, and do so if it has been clicked
         CreateNewWordBtn(lessonIdx, ref selectedWordBtnIdx);
@@ -310,18 +441,17 @@ public class ManageLessons : MonoBehaviour
 
         // Build a vertical, one-column grid of buttons corresponding to the 
         // lesson words, and note which one the player selected
-        selectedWordBtnIdx = GUILayout.SelectionGrid(selectedWordBtnIdx, lessonWordTexts.ToArray(), 1, _generalButtonStyle);
+        selectedWordBtnIdx = GUILayout.SelectionGrid(selectedWordBtnIdx, lessonWordTexts.ToArray(), 1, generalButtonStyle);
 
         GUILayout.EndScrollView();
 
         // Create the button used to delete the selected lesson, and do so if it has been clicked
+        GUILayout.Space(10.0f * scaleFactor);
         CreateDeleteLessonBtn(ref lessonIdx);
 
         // End the cotroller wrappers
         GUILayout.EndVertical();
         GUILayout.EndArea();
-
-        CreateWordEditorArea(lessonIdx, ref selectedWordBtnIdx);
     }
 
     /// <summary>
@@ -332,7 +462,7 @@ public class ManageLessons : MonoBehaviour
     private void CreateLessonNameTextField(int lessonIdx)
     {
         // Build the text field used to update the current lesson's name, and retrieve any text the user entered
-        string lessonName = GUILayout.TextField(lessonNames[lessonIdx], 50, _inputFieldsStyle);
+        string lessonName = GUILayout.TextField(lessonNames[lessonIdx], 50, inputFieldsStyle);
         // If text was entered by the user, and if it only contains characters, numbers, or spaces, accept/store it
         if (lessonNames[lessonIdx].Equals(lessonName, System.StringComparison.InvariantCultureIgnoreCase) == false &&
             Regex.IsMatch(lessonName, "([^A-Za-z0-9 ]+)") == false)
@@ -352,7 +482,7 @@ public class ManageLessons : MonoBehaviour
     private void CreateNewWordBtn(int lessonIdx, ref int selectedWordIdx)
     {
         // If the button used to create a new word was clicked...
-        if (GUILayout.Button("New Word", _createButtonStyle))
+        if (GUILayout.Button("New Word", createButtonStyle))
         {   // If the lesson does not already contain a new word...
             if (lessonWordTexts.Contains("word") == false)
             {
@@ -374,7 +504,7 @@ public class ManageLessons : MonoBehaviour
     private void CreateDeleteLessonBtn(ref int lessonIdx)
     {
         // Create the button used to delete the selected lesson.  If it was clicked...
-        if (GUILayout.Button("Delete Lesson", _deleteButtonStyle))
+        if (GUILayout.Button("Delete " + System.Environment.NewLine + "Lesson", deleteButtonStyle))
         {   // If there is at least one lesson left...
             if (lessonNames.Count > 1)
             {   // Remove the lesson from the curriculum
@@ -403,15 +533,15 @@ public class ManageLessons : MonoBehaviour
     private void CreateWordEditorArea(int lessonIdx, ref int wordIdx)
     {
         // Wrap everything in the designated GUI Area to group controls together
-        GUILayout.BeginArea(new Rect(500, 15, 200, 250));
+        GUILayout.BeginArea(new Rect((615 * scaleFactor), (15 * scaleFactor), (200 * scaleFactor), (300 * scaleFactor)));
         // Ensure the controls are laid out vertically
         GUILayout.BeginVertical();
 
         // Create the text fields to edit the word text and hint, retrieving anything the user entered
         Word wordToEdit = playerData.Curriculum.Lessons[lessonIdx].Words[wordIdx];
-        GUILayout.Label("Word: ", _subHeaderStyle);
+        GUILayout.Label("Word: ", subHeaderStyle);
         CreateWordTextTextField(lessonIdx, wordToEdit);
-        GUILayout.Label("Hint: ", _subHeaderStyle);
+        GUILayout.Label("Hint: ", subHeaderStyle);
         CreateWordHintTextArea(wordToEdit);
         
         // End the controller wrappers
@@ -420,7 +550,7 @@ public class ManageLessons : MonoBehaviour
 
         // Wrap everything in the designated GUI Area to group controls together
         // Why create a second area?  So the delete button can stay fixed as the Hint text area grows/shrinks to fit its contents
-        GUILayout.BeginArea(new Rect(500, 265, 200, 300));
+        GUILayout.BeginArea(new Rect((615 * scaleFactor), (315 * scaleFactor), (200 * scaleFactor), (300 * scaleFactor)));
         // Create the button used to delete the selected word, and do so if it was clicked
         CreateDeleteWordBtn(lessonIdx, ref wordIdx);
         // End the controller wrappers
@@ -436,7 +566,7 @@ public class ManageLessons : MonoBehaviour
     private void CreateWordTextTextField(int lessonIdx, Word wordToEdit)
     {
         // Create the text field used to edit the word's text, and retrieve its current contents
-        string wordText = GUILayout.TextField(wordToEdit.Text, 25, _inputFieldsStyle);
+        string wordText = GUILayout.TextField(wordToEdit.Text, 25, inputFieldsStyle);
 
         // If text was entered by the user, and if it only contains characters, accept/store it
         if (wordToEdit.Text.Equals(wordText, System.StringComparison.InvariantCultureIgnoreCase) == false &&
@@ -444,7 +574,7 @@ public class ManageLessons : MonoBehaviour
         {
             wordToEdit.Text = wordText.ToLowerInvariant();
             BuildLessonWordsCache(lessonIdx, true); // Refresh the word cache so the updated
-            // word will appear in the words list
+                                                    // word will appear in the words list
         }
     }
 
@@ -456,7 +586,7 @@ public class ManageLessons : MonoBehaviour
     private void CreateWordHintTextArea(Word wordToEdit)
     {
         // Create the text area used to edit the word's hint, and store any changes to the hint
-        wordToEdit.Hint = GUILayout.TextArea(wordToEdit.Hint, 150, _inputFieldsStyle);
+        wordToEdit.Hint = GUILayout.TextArea(wordToEdit.Hint, 150, inputFieldsStyle);
     }
 
     /// <summary>
@@ -468,7 +598,7 @@ public class ManageLessons : MonoBehaviour
     private void CreateDeleteWordBtn(int lessonIdx, ref int wordIdx)
     {
         // If the button used to delete the selected word was clicked...
-        if (GUILayout.Button("Delete Word", _deleteButtonStyle))
+        if (GUILayout.Button("Delete" + System.Environment.NewLine + "Word", deleteButtonStyle))
         {   // If there is at least one word left in the lesson...
             if (lessonWordTexts.Count > 1)
             {   // Remove the word from the lesson
@@ -493,7 +623,7 @@ public class ManageLessons : MonoBehaviour
     private void CreateMainMenuBtn()
     {
         // Create the button used to create a new lesson.  If it was clicked...
-        if (GUI.Button(new Rect(Screen.width - 200, Screen.height - 90, 150, 40), "Main Menu", _mainMenuButtonStyle))
+        if (GUI.Button(new Rect(Screen.width - (200 * scaleFactor), Screen.height - (90 * scaleFactor), (150 * scaleFactor), (40 * scaleFactor)), "Main Menu", mainMenuButtonStyle))
         {
             GameStateUtilities.Save(playerData);
 
@@ -542,5 +672,24 @@ public class ManageLessons : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Calculate by what factor the GUI should be resized
+    /// </summary>
+    private void CalculateGUIScaleFactor()
+    {
+        const float idealWidth = 1024f;
+        const float idealHeight = 768f;
+
+        // Calculate the ratio of the current screen width and height to the ideal
+        float curToIdealWidthRatio = Screen.width / idealWidth;
+        float curToIdealHeightRatio = Screen.height / idealHeight;
+
+        // Use the smallest ratio as the scale factor
+        scaleFactor = (curToIdealHeightRatio < curToIdealWidthRatio) ? curToIdealHeightRatio : curToIdealWidthRatio;
+
+        // If the scale factor is greater than 1, use 1 instead
+        if (scaleFactor > 1.0f)
+            scaleFactor = 1.0f;
+    }
     #endregion Helper Methods -------------------------------------------------
 }

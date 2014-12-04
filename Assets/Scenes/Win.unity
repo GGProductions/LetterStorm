@@ -74,6 +74,69 @@ NavMeshSettings:
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
   m_NavMesh: {fileID: 0}
+--- !u!1 &455060342
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: cb4eecf86e51f4cbca5b6564a42ba453, type: 2}
+  m_PrefabInternal: {fileID: 1007076461}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 455060345}
+  - 131: {fileID: 455060344}
+  - 114: {fileID: 455060343}
+  m_Layer: 0
+  m_Name: fadingTexture
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &455060343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: cb4eecf86e51f4cbca5b6564a42ba453,
+    type: 2}
+  m_PrefabInternal: {fileID: 1007076461}
+  m_GameObject: {fileID: 455060342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be427993bd3cf4885971ff8bd9fda533, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeSpeed: .100000001
+  amount: .5
+--- !u!131 &455060344
+GUITexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 13100000, guid: cb4eecf86e51f4cbca5b6564a42ba453,
+    type: 2}
+  m_PrefabInternal: {fileID: 1007076461}
+  m_GameObject: {fileID: 455060342}
+  m_Enabled: 1
+  m_Texture: {fileID: 2800000, guid: 7b86738882cf24b9eaf47b7888161329, type: 3}
+  m_Color: {r: .5, g: .5, b: .5, a: .5}
+  m_PixelInset:
+    serializedVersion: 2
+    x: -64
+    y: -29
+    width: 128
+    height: 58
+  m_LeftBorder: 0
+  m_RightBorder: 0
+  m_TopBorder: 0
+  m_BottomBorder: 0
+--- !u!4 &455060345
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: cb4eecf86e51f4cbca5b6564a42ba453, type: 2}
+  m_PrefabInternal: {fileID: 1007076461}
+  m_GameObject: {fileID: 455060342}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .5, y: .5, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
 --- !u!1 &971484757
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,4 +233,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4945dbaf20b5c5c409d1765367307e52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundTexture: {fileID: 2800000, guid: 1903cb36fd3334288bdf14c51edd3e10, type: 3}
+  backgroundTexture: {fileID: 2800000, guid: f5f71946a4b2b464d8f59ec125887c0c, type: 3}
+  photoTexture: {fileID: 2800000, guid: 01baea6d5e98f4059a8c1a3620db1b29, type: 3}
+  titleTexture: {fileID: 2800000, guid: ecb47d7348aee4c59902f2cb3b73085d, type: 3}
+  DeadBoss1: {fileID: 2800000, guid: 0e6c4f310ba6bbd43847dd9227848570, type: 3}
+  DeadBigBoss: {fileID: 2800000, guid: 8f2a31494fe91a545937ed21827ea6bd, type: 3}
+--- !u!1001 &1007076461
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: cb4eecf86e51f4cbca5b6564a42ba453, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: cb4eecf86e51f4cbca5b6564a42ba453, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: cb4eecf86e51f4cbca5b6564a42ba453, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: cb4eecf86e51f4cbca5b6564a42ba453, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: cb4eecf86e51f4cbca5b6564a42ba453, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: cb4eecf86e51f4cbca5b6564a42ba453, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: cb4eecf86e51f4cbca5b6564a42ba453, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: cb4eecf86e51f4cbca5b6564a42ba453, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cb4eecf86e51f4cbca5b6564a42ba453, type: 2}
+      propertyPath: m_Name
+      value: fadingTexture
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: cb4eecf86e51f4cbca5b6564a42ba453, type: 2}
+  m_RootGameObject: {fileID: 455060342}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
