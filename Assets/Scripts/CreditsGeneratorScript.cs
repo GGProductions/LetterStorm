@@ -10,7 +10,7 @@ public class CreditsGeneratorScript : MonoBehaviour {
     private string jeannie = "jeannie trinh";
     private string james = "james raygor";
     private string music = "music by";
-    private string han = "paul han";
+    private string han = "jake han";
 
     private string thankyou = "thank you";
 
