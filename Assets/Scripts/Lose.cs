@@ -19,18 +19,18 @@ public class Lose : MonoBehaviour
         GUI.DrawTexture(new Rect(Screen.width / 2 - 120 , Screen.height / 2 - 100, 240, 60), titleTexture);
 		
 		//JR if pressed continue playing last level with fresh lives
-        if(GUI.Button(new Rect(Screen.width / 2 - 100, Screen.height / 2 + 25, 200, 20), "Insert Coin, to continue playing"))
-        {
-            //Nabil: added this line to start the next level with 15 lives
-            //JT: changed 15 to half of maximum health
-            Context.PlayerHealth.CurHealth = Context.PlayerHealth.MaxHealth / 2;
+        //if(GUI.Button(new Rect(Screen.width / 2 - 100, Screen.height / 2 + 25, 200, 20), "Insert Coin, to continue playing"))
+        //{
+        //    //Nabil: added this line to start the next level with 15 lives
+        //    //JT: changed 15 to half of maximum health
+        //    Context.PlayerHealth.CurHealth = Context.PlayerHealth.MaxHealth / 2;
 
 
-		//JR Loads level and gives players fresh lives, however score and misses should stay the same
-            Context.ClearStatsNextLevel();
-			Application.LoadLevel("EnemyTesting");
-            //Player.Lives = 3; //JR Old Code from first Iteration
-        }
+        ////JR Loads level and gives players fresh lives, however score and misses should stay the same
+        //    Context.ClearStatsNextLevel();
+        //    Application.LoadLevel("EnemyTesting");
+        //    //Player.Lives = 3; //JR Old Code from first Iteration
+        //}
         
 		//JR if pressed continue playing last level with fresh lives, score and misses
         if(GUI.Button(new Rect(Screen.width / 2 - 45, Screen.height / 2 + 50, 90, 20), "Restart Level"))
@@ -38,6 +38,7 @@ public class Lose : MonoBehaviour
 
 			//JR Loads level and gives players fresh lives and 0s out the score and misses
             Context.ClearStatsNextLevel();
+            Context.CurrentScore.Reset();   // Reset the score to 0 so the user can't get a high score by dieing 
             Application.LoadLevel("EnemyTesting");
             //Player.Score = 0; //JR Old Code from first Iteration
             //Player.Lives = 3; //JR Old Code from first Iteration
